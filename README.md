@@ -1,5 +1,7 @@
 ### Hi there 👋! I am currently studying in the School of Information Science and Engineering, Lanzhou University. I work in the research group of intelligent computing and photoelectric information sensor. My main research direction is the application of Raman spectrum in medical technology. I graduated from the School of Computer Science of Northwestern Polytechnical University with a bachelor's degree.
 
+* I will place some Latex files in this repository
+
 <!--
 **npukujui11/npukujui11** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
