@@ -1,0 +1,84 @@
+\contentsline {section}{\numberline {1}文献阅读}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}(综述2021.04)Lighting the darkness in the deep learning era}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}背景}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}介绍}{3}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}细节}{3}{subsubsection.1.2.3}%
+\contentsline {paragraph}{Network Structure}{3}{figure.caption.2}%
+\contentsline {paragraph}{Combination of Deep Model and Retinex Theory}{5}{figure.caption.2}%
+\contentsline {paragraph}{Data Format}{5}{figure.caption.2}%
+\contentsline {paragraph}{Loss Function}{5}{figure.caption.2}%
+\contentsline {paragraph}{Training Datasets}{5}{figure.caption.2}%
+\contentsline {paragraph}{Testing Dataset}{6}{figure.caption.2}%
+\contentsline {paragraph}{Benchmarking and Empirical Analysis}{6}{table.caption.4}%
+\contentsline {paragraph}{A New Low-light Image and Video Dataset}{6}{table.caption.4}%
+\contentsline {paragraph}{Online Evaluation Platform}{7}{figure.caption.6}%
+\contentsline {paragraph}{Benchmark Results}{7}{figure.caption.6}%
+\contentsline {paragraph}{Computational Complexity}{11}{table.caption.12}%
+\contentsline {paragraph}{Application-based Evaluation}{12}{table.caption.13}%
+\contentsline {paragraph}{Discussion}{12}{figure.caption.15}%
+\contentsline {paragraph}{Future Research Directions}{13}{figure.caption.15}%
+\contentsline {subparagraph}{Effective Learning Strategies}{13}{figure.caption.15}%
+\contentsline {subparagraph}{Specialized Network Structures}{13}{figure.caption.15}%
+\contentsline {subparagraph}{Loss Function}{13}{figure.caption.15}%
+\contentsline {subparagraph}{Realistic Training Data}{14}{figure.caption.15}%
+\contentsline {subparagraph}{Standard Testing Data}{14}{figure.caption.15}%
+\contentsline {subparagraph}{Task-Specific Evaluation Metrics}{14}{figure.caption.15}%
+\contentsline {subparagraph}{Robust Generalization Capability}{14}{figure.caption.15}%
+\contentsline {subparagraph}{Extension to Low-light Video Enhancement}{14}{figure.caption.15}%
+\contentsline {subparagraph}{Integrating Semantic Information}{14}{figure.caption.15}%
+\contentsline {subsubsection}{\numberline {1.2.4}项目链接}{14}{subsubsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.3}GLADNet: Low Light Enhancement Network with Global Awareness}{15}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}全局亮度先验估计}{15}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}细节还原}{15}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}损失函数}{16}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}Deep Retinex Decomposition for Low Light Enhancement}{16}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}损失函数}{17}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}Kindling the Darkness: A Practical Low Light Image Enhancer}{18}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}损失函数}{19}{subsubsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.6}MSRNet Low Light Image Enhancement using Deep Convolutional Networks}{20}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}A Pipeline Neural Network for Low Light Image Enhancemen}{20}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}LLCNN A Convolutional Neural Network for Low Light Image Enhancement}{20}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}DSLR Quality Photos on Mobile Devices with Deep Convolutional Networks}{20}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Learning to see in the dark}{20}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Learning Digital Camera Pipeline for Extreme Low Light Imaging}{20}{subsection.1.11}%
+\contentsline {subsubsection}{\numberline {1.11.1}损失函数}{20}{subsubsection.1.11.1}%
+\contentsline {subsection}{\numberline {1.12}End to End Denoising of Dark Burst Images using Recurrent Fully Convolutionaly Networks}{21}{subsection.1.12}%
+\contentsline {subsubsection}{\numberline {1.12.1}损失函数}{21}{subsubsection.1.12.1}%
+\contentsline {subsection}{\numberline {1.13}Deep Burst Noising}{21}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}DeepISP Toward Learning an End to End Image Processing Pipeline}{21}{subsection.1.14}%
+\contentsline {subsubsection}{\numberline {1.14.1}网络架构}{21}{subsubsection.1.14.1}%
+\contentsline {paragraph}{Low Level Stage}{21}{figure.caption.20}%
+\contentsline {paragraph}{High Level Stage}{22}{figure.caption.20}%
+\contentsline {paragraph}{Output}{22}{figure.caption.20}%
+\contentsline {subsubsection}{\numberline {1.14.2}损失函数}{23}{subsubsection.1.14.2}%
+\contentsline {subsection}{\numberline {1.15}Underexposed Photo Enhancement using Deep Illumination Estimation}{23}{subsection.1.15}%
+\contentsline {subsubsection}{\numberline {1.15.1}网络架构}{24}{subsubsection.1.15.1}%
+\contentsline {paragraph}{有效学习}{24}{subsubsection.1.15.1}%
+\contentsline {paragraph}{高效计算}{24}{subsubsection.1.15.1}%
+\contentsline {subsubsection}{\numberline {1.15.2}损失函数}{24}{subsubsection.1.15.2}%
+\contentsline {paragraph}{重建损失}{25}{equation.1.12}%
+\contentsline {paragraph}{平滑损失}{25}{equation.1.13}%
+\contentsline {paragraph}{颜色损失}{25}{equation.1.14}%
+\contentsline {subsection}{\numberline {1.16}Deep Bilateral Learning for Real Time Image Enhancement}{25}{subsection.1.16}%
+\contentsline {subsubsection}{\numberline {1.16.1}网络架构}{26}{subsubsection.1.16.1}%
+\contentsline {paragraph}{低分辨率分支}{26}{subsubsection.1.16.1}%
+\contentsline {paragraph}{高分辨率分支}{27}{subsubsection.1.16.1}%
+\contentsline {paragraph}{重建分支}{27}{equation.1.16}%
+\contentsline {section}{\numberline {2}个人工作进展}{28}{section.2}%
+\contentsline {subsection}{\numberline {2.1}疾病的诊断与AI结合的初步调研}{28}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}甲状腺功能亢进}{28}{subsubsection.2.1.1}%
+\contentsline {paragraph}{诊断}{28}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{病史和体格检查}{28}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{血液检测}{28}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{更进一步的检查}{29}{subsubsection.2.1.1}%
+\contentsline {paragraph}{治疗}{29}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{抗甲状腺药物}{29}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{$\beta $-受体阻滞剂}{30}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{放射性碘疗法}{30}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{甲状腺切除术}{30}{subsubsection.2.1.1}%
+\contentsline {paragraph}{发展}{30}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}癫痫前期诊断---望闻问切}{31}{subsubsection.2.1.2}%
+\contentsline {paragraph}{采用人工智能驱动的ConvNet检测癫痫发作}{31}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}按照paper脉络梳理暗弱光技术}{32}{subsection.2.2}%
+\contentsline {section}{\numberline {3}下周工作计划}{33}{section.3}%

@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{GLADNet}
+Wenjing Wang, Chen Wei, Wenhan Yang, and Jiaying Liu.
+\newblock {{GLADNet}}: {{Low-light}} enhancement network with global awareness.
+\newblock In {\em 2018 13th {{IEEE}} International Conference on Automatic Face
+  \& Gesture Recognition ({{FG}} 2018)}, pages 751--755.
+
+\bibitem{ConVNet}
+Arpana Mahajan, Kavitha Somaraj, and Mustafa Sameer.
+\newblock Adopting artificial intelligence powered convnet to detect epileptic
+  seizures.
+\newblock In {\em 2020 IEEE-EMBS Conference on Biomedical Engineering and
+  Sciences (IECBES)}, pages 427--432, 2021.
+
+\end{thebibliography}
