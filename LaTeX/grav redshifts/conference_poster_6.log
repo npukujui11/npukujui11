@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  6 MAY 2023 21:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  7 MAY 2023 00:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,7 +688,7 @@ Package rerunfilecheck Info: File `conference_poster_6.out' has not changed.
 Here is how much of TeX's memory you used:
  12567 strings out of 476025
  203654 string characters out of 5791521
- 1926382 words of memory out of 5000000
+ 1925382 words of memory out of 5000000
  32800 multiletter control sequences out of 15000+600000
  539768 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -701,7 +701,7 @@ e/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/Soft/texli
 ve/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/Soft/texlive/2023/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on conference_poster_6.pdf (1 page, 1207991 bytes).
+Output written on conference_poster_6.pdf (1 page, 1207472 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
