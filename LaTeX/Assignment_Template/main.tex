@@ -175,7 +175,7 @@
 		
 	\end{table}
 	
-	Table~\ref{tab:Summary}给出了最近几年主流的基于深度学习的LLIE方案，并从不同角度对其进行了划分。下图从不同角度对这些方法进行了划分，并列出了所占比例。接下来，将从不同角度对LLIE方法进行了说明。
+	Table~\ref{tab: Summary}给出了最近几年主流的基于深度学习的LLIE方案，并从不同角度对其进行了划分。下图从不同角度对这些方法进行了划分，并列出了所占比例。接下来，将从不同角度对LLIE方法进行了说明。
 	
 	\begin{figure}[htbp] 
 		% read manual to see what [ht] means and for other possible options
@@ -1392,20 +1392,173 @@
 		
 		其中，$\mathcal{L}_k\in\left\{\mathcal{L}_{pix},\mathcal{L}_{feat}\right\}$表示每个独立的损失函数，$g^k(\cdot),\ h^k(\cdot)$分别表示作用于输入与输出的函数，随损失函数的类型变化而变化。$\mathcal{L}_{pix}$表示像素级的损失函数，如$l_1$损失与SSIM损失；$\mathcal{L}_{feat}$表示更高层的感知损失。
 		$\mathcal{L}_{pix}$直接在网络输出与真值之间计算误差信息，此时有$g^{pix}=f\left(x;\theta\right)=\hat{y},h^{pix}=\mathbbm{1}(y)$\footnote{指示函数(indicator function)含义是：当输入为True的时候，输出为1，输入为False的时候，输出为0。}，损失函数定义为：
-		
 		\begin{equation}
 			\begin{aligned}
-			\mathcal{L}_{pix}=\beta\ell_1\left(\hat{y},y\right)+\left(1-\beta\right)\mathcal{L}_{MS-SSIM}\left(\hat{y},y\right)
+				\mathcal{L}_{pix}=\beta\ell_1\left(\hat{y},y\right)+\left(1-\beta\right)\mathcal{L}_{\text{MS-SSIM}}\left(\hat{y},y\right)
+			\end{aligned}
+		\end{equation}
+		\begin{equation}
+			\begin{aligned}
+				\ell_1(\hat{y},y)=\frac{1}{N}\sum_{p=1}^{N}\left|{\hat{y}}_p-y_p\right|
+			\end{aligned}
+		\end{equation}
+		\begin{equation}
+			\begin{aligned}
+				\mathcal{L}_{\text{MS-SSIM}}\left(\hat{y},y\right)=1-\frac{1}{N}\sum_{p=1}^{N}{\text{MS-SSIM}}({\hat{y}}_p,y_p)
+			\end{aligned}
+		\end{equation}
+		\begin{equation}
+			\begin{aligned}
+				\text{SSIM}\left(\hat{y},y\right)=\frac{2\mu_{\hat{y}}\mu_y+C_1}{\mu_{\hat{y}}^2+\mu_y^2+C_1}\cdot\frac{2\sigma_{\hat{y}y}+C_2}{\sigma_{\hat{y}}^2+\sigma_y^2+C_2}=l\left(\hat{y},y\right)\cdot cs\left(\hat{y},y\right)
+			\end{aligned}
+		\end{equation}
+		\begin{equation}
+			\begin{aligned}
+				\text{MS-SSIM}\left(\hat{y},y\right)=\left[l_M\left(\hat{y},y\right)\right]^{\gamma_M}\cdot\prod_{i=1}^{M}\left[{cs}_i\left(\hat{y},y\right)\right]^{\eta_i}
 			\end{aligned}
 		\end{equation}
 		
-		其中，$\beta\in\left[0,1\right]$用于均衡两种损失，可通过Grid Search方式在验证集上进行估计得到；$M$表示尺度数，$\gamma_M，\eta_i$用于调整每项损失的相对重要性，在实验过程中所有参数设置为：$\gamma_M=\eta_i=1$。
-		$\mathcal{L}_{feat}$用于在特征层面衡量两个图像之间的相似性，有助于保持颜色与色彩一致性，此时$g^{feat}=h^{feat}=v^l(\bullet)$，其中$v^l(\bullet)$表示神经网络第l层的激活特征，损失函数定义如下：
-		$$\mathcal{L}_{feat}\left(\hat{y},y\right)=\frac{1}{N}vly,ϕ-vly;ϕ22$$
-		作者实验过程中采用在ImageNet上预训练的VGG16(注：其他AlexNet, ResNet, GoogLeNet亦可)提取特征并进行相似性比较。
-		
-		
+		其中，$\beta\in\left[0,1\right]$用于均衡两种损失，可通过Grid Search方式在验证集上进行估计得到；$M$表示尺度数，$\gamma_M,\eta_i$用于调整每项损失的相对重要性，在实验过程中所有参数设置为：$\gamma_M=\eta_i=1$。
+		$\mathcal{L}_{feat}$用于在特征层面衡量两个图像之间的相似性，有助于保持颜色与色彩一致性，此时$g^{feat}=h^{feat}=v^l(\cdot)$，其中$v^l(\cdot)$表示神经网络第l层的激活特征，损失函数定义如下：
+		\begin{equation}
+			\begin{aligned}
+				\mathcal{L}_{feat}\left(\hat{y},y\right) = \frac{1}{N}{\left\| v^l\left(\hat{y},\phi \right) - v^l \left(y ; \phi\right) \right \|}_{2}^{2}
+			\end{aligned}
+		\end{equation}
 	
+		作者实验过程中采用在ImageNet上预训练的VGG16(注：其他AlexNet, ResNet, Goog-LeNet亦可)提取特征并进行相似性比较。
+		
+		\subsubsection{网络架构}
+		
+		从上图可以看出，作者设计的网络架构包含两个子网络：图像还原子网络与感知损失子网络。
+		
+		图像还原子网络采用了\textbf{带跳过连接的UNet架构}，它具有以下几个优点：
+		(1) 在图像还原与分割任务中，它具有极优的性能；
+		(2) 它可以处理任意分辨率图像；
+		(3) 跳过连接确保了上下文信息的自适应传递，保留了高分辨率细节信息。
+		
+		感知损失子网络采用VGG16的前两个卷积提取特征，这两个特征可以精确的编码图像的风格与内容感知信息。
+		
+		\begin{figure}[htbp] 
+			\centering 
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/a}
+				\captionsetup{font=scriptsize}
+				\label{fig: qualitative_comparison_a}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/b}
+				\captionsetup{font=scriptsize}
+				\label{fig: qualitative_comparison_b}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/c}
+				\captionsetup{font=scriptsize}
+				\label{fig: qualitative_comparison_c}  
+			\end{subfigure}\\
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/d}
+				\captionsetup{font=scriptsize}
+				\label{fig: qualitative_comparison_d}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/e}
+				\captionsetup{font=scriptsize}
+				\label{fig: qualitative_comparison_e}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/f}
+				\label{fig: qualitative_comparison_f}  
+			\end{subfigure}\\    
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/g}
+				\captionsetup{font=scriptsize}
+				\caption{Traditional pipeline}
+				\label{fig:qualitative_comparison_g}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/h}
+				\captionsetup{font=scriptsize}
+				\caption{Chen et al.\cite{chen2018learning}}
+				\label{fig: qualitative_comparison_h}  
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{qualitative_comparison/i}
+				\captionsetup{font=scriptsize}
+				\caption{Our results}
+				\label{fig: qualitative_comparison_i}  
+			\end{subfigure}
+			
+			\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Qualitative comparison of our approach}
+				Qualitative comparison of our approach with the state-of-the-art method\cite{chen2018learning} and the traditional pipeline. (a) Images produced by the conventional pipeline are noisy and contain strong color artifacts. (b) The approach of \cite{chen2018learning} generates images with splotchy textures, color distortions and poorly reconstructed shapes (zoomed-in regions). (c) Our method produces images that are sharp, colorful and noise free.
+			}
+		\end{figure}
+	
+		Fig.\ref{fig: Qualitative comparison of our approach}进一步显示，与最先进的方法\cite{chen2018learning}生成的结果相比，作者的模型生成的结果明显更清晰、去噪更好、更自然、视觉上更愉快。例如，从Fig.\ref{fig: qualitative_comparison_h}中可以看到\cite{chen2018learning}的图像复制品呈现出斑点的纹理（文本、轨道）、颜色扭曲（火车、花、第1行的底部角）和重建不良。
+		
+		\begin{table}[!htbp]
+			\centering
+			\tiny
+			\begin{tabular}{cccccccc} %可以设置表格每列的对齐方式,c表示居中,r表示右对齐,l表示左对齐
+				\toprule
+					
+				& $\ell_{1}$(Chen \textit{et al.}\cite{chen2018learning}) & \text{MS-SSIM} & $\mathcal{L}_{pix}$ & $\mathcal{L}_{feat}$ & $\mathcal{L}_{feat} + \ell_{1}$ &  $\mathcal{L}_{feat} + \mathcal{L}_\text{MS-SSIM}$ & $\mathcal{L}_{final}$ \\
+				
+				\hline
+				
+					Sony subset\cite{chen2018learning} & 29.18 & 29.37 & 29.33 & 27.34 & 29.22 & 29.40 & 29.43\\
+					Fuji subset\cite{chen2018learning} & 27.34 & 27.55 & 27.51 & 23.07 & 27.37 & 27.52 & 27.63\\
+					
+				\bottomrule
+			\end{tabular}
+				\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+				\caption{\label{tab: Ablation study}Ablation study: impact of each individual term of the proposed loss function on the final results. Each term contributes to the overall performance. Results are reported on the test images of SID dataset in terms of mean PSNR.} %表格的标题
+		\end{table}
+		
+		作者所提出的使网络误差最小化的损失函数由三个单独的项($\ell_1, \ \mathcal{L}_\text{MS-SSIM}, \ \mathcal{L}_{feat}$)组成。在这里，作者评估了每个单独的术语及其组合对我们的最终任务的影响。Tab.\ref{tab: Ablation study}总结了作者的结果，其中使用完全相同的参数($\alpha, \ \beta$)设置来比较不同的损失变量。作者的结果表明，每个单独的术语都有助于其方法的最终性能。基于PSNR值在Tab.\ref{tab: Ablation study}和其定性观察，作者得出以下结论：
+		
+		(a) 每个组件有各自的局限性，例如，$\ell_1$收益率丰富多彩的结果但工件，$\mathcal{L}_\text{MS-SSIM}$保留精细图像细节但提供少饱和结果，$\mathcal{L}_{feat}$重建结构，但引入了棋盘工件。
+		
+		(b) $\ell_1, \ \mathcal{L}_\text{MS-SSIM}, \ \mathcal{L}_{feat}$的适当比例组合效果最好。最终的损失函数积累了每个单独标准的互补优势，并避免了它们各自的缺点。所得到的图像是彩色的和无伪影的，同时完地保留了图像的结构和纹理。                  
+		
+		\begin{figure}[htbp] 
+			\centering 
+			\begin{subfigure}{0.22\textwidth}
+				\includegraphics[width=\linewidth]{effect_of_contrast/a}
+				\captionsetup{font=scriptsize}
+				\caption{}
+				\label{fig: Effect_a}
+			\end{subfigure}
+			\begin{subfigure}{0.22\textwidth}
+				\includegraphics[width=\linewidth]{effect_of_contrast/b}
+				\captionsetup{font=scriptsize}
+				\caption{}
+				\label{fig: Effect_b}
+			\end{subfigure}
+			\begin{subfigure}{0.22\textwidth}
+				\includegraphics[width=\linewidth]{effect_of_contrast/c}
+				\captionsetup{font=scriptsize}
+				\caption{}
+				\label{fig: Effect_c}  
+			\end{subfigure}
+			\begin{subfigure}{0.22\textwidth}
+				\includegraphics[width=\linewidth]{effect_of_contrast/d}
+				\captionsetup{font=scriptsize}
+				\caption{}
+				\label{fig: Effect_d}
+			\end{subfigure}
+			
+			\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Effect of contrast improvement procedure}
+				Effect of contrast improvement procedure. (a) Output of our image restoration subnet and its histogram. (b) Inverting the image of (a). (c) Output obtained after applying image dehazing algorithm \cite{he2010single} on image from (b). (d) Final enhanced image obtained by inverting (c). Note that histograms are computed using the lightness component of the images.
+			}
+		\end{figure}
+		
+		受\cite{dong2010fast}的启发，作者采用以下程序来提高我们提出的方法产生的结果的颜色对比。我们观察到，由我们的图像恢复子网产生的输出的直方图大多偏向于黑暗区域，例如，见Fig.\ref{fig: Effect_a}。通过反转图像的强度值，直方图变得类似于一个模糊的图像Fig.\ref{fig: Effect_b}。这说明，通过应用图像去模糊算法\cite{he2010single}，我们可以使图像直方图更加均匀（Fig.\ref{fig: Effect_c}。最后，将图像的强度反转回来，为我们提供了一个明亮、清晰、彩色、没有伪影的新图像，如Fig.\ref{fig: Effect_d}所示。
+		
 	\subsection{End to End Denoising of Dark Burst Images using Recurrent Fully Convolutionaly Networks}
 	
 	作者提出一种递归全卷积网络(Recurrent Fully Convolutional Network, RFCN)用于处理极暗场景下的降噪并提升亮度的问题。该方法以RAW数据作为输入，直接生成RGB数据，它可以同时进行降噪、色彩校正以及增强等任务。该方法取得SOTA性能且具有极好的泛化性能(一种类型相加训练模型不经finetune仍可很好的处理不同相机得到的图片)。
@@ -1867,10 +2020,10 @@
 		\renewcommand{\refname}{References}
 	
 
-	%	\begin{thebibliography}{00}
+	\begin{thebibliography}{00}
 			
-	%		\bibitem{b1}\label{cite:b1}
-	%		W. Wang, C. Wei, W. Yang and J. Liu, "GLADNet: Low-Light Enhancement Network with Global Awareness," 2018 13th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2018), Xi'an, China, 2018, pp. 751-755, DOI: 10.1109/FG.2018.00118.
+	\bibitem{b1}\label{cite:b1}
+		C. Chen, Q. Chen, J. Xu, and V. Koltun. Learning to see in the dark. In CVPR, 2018.
 			
 	%		\bibitem{b2}\label{cite:b2}
 	%		A.\ Mahajan, K.\ Somaraj and M. Sameer, "Adopting Artificial Intelligence Powered ConvNet To Detect Epileptic Seizures," 2020 IEEE-EMBS Conference on Biomedical Engineering and Sciences (IECBES), Langkawi Island, Malaysia, 2021, pp. 427-432, DOI: 10.1109/IECBES48179.2021.9398832.
@@ -1882,7 +2035,7 @@
 			
 
 			
-	%	\end{thebibliography}
+	\end{thebibliography}
 		
 	\bibliographystyle{unsrt}
 	\bibliography{reference}
