@@ -1,0 +1,33 @@
+\contentsline {section}{\numberline {1}文献阅读}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}(综述2021.04)Lighting the darkness in the deep learning era}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}背景}{2}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}介绍}{2}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}细节}{2}{subsubsection.1.2.3}%
+\contentsline {paragraph}{Network Structure}{2}{figure.caption.2}%
+\contentsline {paragraph}{Combination of Deep Model and Retinex Theory}{4}{figure.caption.2}%
+\contentsline {paragraph}{Data Format}{4}{figure.caption.2}%
+\contentsline {paragraph}{Loss Function}{5}{figure.caption.2}%
+\contentsline {paragraph}{Training Datasets}{5}{figure.caption.2}%
+\contentsline {paragraph}{Testing Dataset}{5}{table.caption.3}%
+\contentsline {paragraph}{Benchmarking and Empirical Analysis}{5}{table.caption.4}%
+\contentsline {paragraph}{A New Low-light Image and Video Dataset}{6}{table.caption.4}%
+\contentsline {paragraph}{Online Evaluation Platform}{6}{figure.caption.6}%
+\contentsline {paragraph}{Benchmark Results}{6}{figure.caption.6}%
+\contentsline {paragraph}{Computational Complexity}{11}{table.caption.12}%
+\contentsline {paragraph}{Application-based Evaluation}{11}{table.caption.13}%
+\contentsline {paragraph}{Discussion}{11}{figure.caption.15}%
+\contentsline {paragraph}{Future Research Directions}{12}{figure.caption.15}%
+\contentsline {subparagraph}{Effective Learning Strategies}{12}{figure.caption.15}%
+\contentsline {subparagraph}{Specialized Network Structures}{12}{figure.caption.15}%
+\contentsline {subparagraph}{Loss Function}{12}{figure.caption.15}%
+\contentsline {subparagraph}{Realistic Training Data}{13}{figure.caption.15}%
+\contentsline {subparagraph}{Standard Testing Data}{13}{figure.caption.15}%
+\contentsline {subparagraph}{Task-Specific Evaluation Metrics}{13}{figure.caption.15}%
+\contentsline {subparagraph}{Robust Generalization Capability}{13}{figure.caption.15}%
+\contentsline {subparagraph}{Extension to Low-light Video Enhancement}{14}{figure.caption.15}%
+\contentsline {subparagraph}{Integrating Semantic Information}{14}{figure.caption.15}%
+\contentsline {subsubsection}{\numberline {1.2.4}项目链接}{14}{subsubsection.1.2.4}%
+\contentsline {section}{\numberline {2}个人工作进展}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}按照paper脉络梳理暗弱光技术}{14}{subsection.2.1}%
+\contentsline {section}{\numberline {3}下周工作计划}{18}{section.3}%

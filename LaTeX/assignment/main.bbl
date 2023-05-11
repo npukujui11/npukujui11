@@ -1,0 +1,129 @@
+\begin{thebibliography}{10}
+
+\bibitem{wei2018deep}
+Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
+\newblock Deep retinex decomposition for low-light enhancement.
+\newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
+
+\bibitem{cai2018learning}
+Jianrui Cai, Shuhang Gu, and Lei Zhang.
+\newblock Learning a deep single image contrast enhancer from multi-exposure
+  images.
+\newblock {\em IEEE Transactions on Image Processing}, 27(4):2049--2062, 2018.
+
+\bibitem{jiang2019learning}
+Haiyang Jiang and Yinqiang Zheng.
+\newblock Learning to see moving objects in the dark.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 7324--7333, 2019.
+
+\bibitem{bychkovsky2011learning}
+Vladimir Bychkovsky, Sylvain Paris, Eric Chan, and Fr{\'e}do Durand.
+\newblock Learning photographic global tonal adjustment with a database of
+  input/output image pairs.
+\newblock In {\em CVPR 2011}, pages 97--104. IEEE, 2011.
+
+\bibitem{chen2019seeing}
+Chen Chen, Qifeng Chen, Minh~N Do, and Vladlen Koltun.
+\newblock Seeing motion in the dark.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 3185--3194, 2019.
+
+\bibitem{guo2016lime}
+Xiaojie Guo, Yu~Li, and Haibin Ling.
+\newblock Lime: Low-light image enhancement via illumination map estimation.
+\newblock {\em IEEE Transactions on image processing}, 26(2):982--993, 2016.
+
+\bibitem{wang2013naturalness}
+Shuhang Wang, Jin Zheng, Hai-Miao Hu, and Bo~Li.
+\newblock Naturalness preserved enhancement algorithm for non-uniform
+  illumination images.
+\newblock {\em IEEE transactions on image processing}, 22(9):3538--3548, 2013.
+
+\bibitem{lee2011power}
+Chulwoo Lee, Chul Lee, Young-Yoon Lee, and Chang-Su Kim.
+\newblock Power-constrained contrast enhancement for emissive displays based on
+  histogram equalization.
+\newblock {\em IEEE transactions on image processing}, 21(1):80--93, 2011.
+
+\bibitem{lee2013contrast}
+Chulwoo Lee, Chul Lee, and Chang-Su Kim.
+\newblock Contrast enhancement based on layered difference representation of 2d
+  histograms.
+\newblock {\em IEEE transactions on image processing}, 22(12):5372--5384, 2013.
+
+\bibitem{yu2020bdd100k}
+Fisher Yu, Haofeng Chen, Xin Wang, Wenqi Xian, Yingying Chen, Fangchen Liu,
+  Vashisht Madhavan, and Trevor Darrell.
+\newblock Bdd100k: A diverse driving dataset for heterogeneous multitask
+  learning.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 2636--2645, 2020.
+
+\bibitem{loh2019getting}
+Yuen~Peng Loh and Chee~Seng Chan.
+\newblock Getting to know low-light images with the exclusively dark dataset.
+\newblock {\em Computer Vision and Image Understanding}, 178:30--42, 2019.
+
+\bibitem{yuan2019ug}
+Ye~Yuan, Wenhan Yang, Wenqi Ren, Jiaying Liu, Walter~J Scheirer, and Zhangyang
+  Wang.
+\newblock $\text{UG}^{2+}$ track 2: A collective benchmark effort for
+  evaluating and advancing image understanding in poor visibility environments.
+\newblock {\em arXiv preprint arXiv:1904.04474}, 2019.
+
+\bibitem{howard2017mobilenets}
+Andrew~G Howard, Menglong Zhu, Bo~Chen, Dmitry Kalenichenko, Weijun Wang,
+  Tobias Weyand, Marco Andreetto, and Hartwig Adam.
+\newblock Mobilenets: Efficient convolutional neural networks for mobile vision
+  applications.
+\newblock {\em arXiv preprint arXiv:1704.04861}, 2017.
+
+\bibitem{liu2020improving}
+Jiang-Jiang Liu, Qibin Hou, Ming-Ming Cheng, Changhu Wang, and Jiashi Feng.
+\newblock Improving convolutional networks with self-calibrated convolutions.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 10096--10105, 2020.
+
+\bibitem{liu2018progressive}
+Chenxi Liu, Barret Zoph, Maxim Neumann, Jonathon Shlens, Wei Hua, Li-Jia Li,
+  Li~Fei-Fei, Alan Yuille, Jonathan Huang, and Kevin Murphy.
+\newblock Progressive neural architecture search.
+\newblock In {\em Proceedings of the European conference on computer vision
+  (ECCV)}, pages 19--34, 2018.
+
+\bibitem{liu2019auto}
+Chenxi Liu, Liang-Chieh Chen, Florian Schroff, Hartwig Adam, Wei Hua, Alan~L
+  Yuille, and Li~Fei-Fei.
+\newblock Auto-deeplab: Hierarchical neural architecture search for semantic
+  image segmentation.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 82--92, 2019.
+
+\bibitem{dosovitskiy2020image}
+Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
+  Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg
+  Heigold, Sylvain Gelly, et~al.
+\newblock An image is worth 16x16 words: Transformers for image recognition at
+  scale.
+\newblock {\em arXiv preprint arXiv:2010.11929}, 2020.
+
+\bibitem{chen2021pre}
+Hanting Chen, Yunhe Wang, Tianyu Guo, Chang Xu, Yiping Deng, Zhenhua Liu, Siwei
+  Ma, Chunjing Xu, Chao Xu, and Wen Gao.
+\newblock Pre-trained image processing transformer.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 12299--12310, 2021.
+
+\bibitem{fang2020perceptual}
+Yuming Fang, Hanwei Zhu, Yan Zeng, Kede Ma, and Zhou Wang.
+\newblock Perceptual quality assessment of smartphone photography.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 3677--3686, 2020.
+
+\bibitem{talebi2018nima}
+Hossein Talebi and Peyman Milanfar.
+\newblock Nima: Neural image assessment.
+\newblock {\em IEEE transactions on image processing}, 27(8):3998--4011, 2018.
+
+\end{thebibliography}
