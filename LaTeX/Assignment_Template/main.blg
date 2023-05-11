@@ -4,45 +4,46 @@ The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: reference.bib
 Warning--empty year in GLADNet
-You've used 2 entries,
+Warning--empty publisher in dong2010fast
+You've used 5 entries,
             1791 wiz_defined-function locations,
-            458 strings with 3995 characters,
-and the built_in function-call counts, 766 in all, are:
-= -- 68
-> -- 25
-< -- 2
-+ -- 9
-- -- 7
-* -- 45
-:= -- 102
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 2
+            478 strings with 4520 characters,
+and the built_in function-call counts, 1770 in all, are:
+= -- 165
+> -- 61
+< -- 4
++ -- 22
+- -- 17
+* -- 112
+:= -- 239
+add.period$ -- 16
+call.type$ -- 5
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 42
-empty$ -- 77
-format.name$ -- 7
-if$ -- 186
+cite$ -- 7
+duplicate$ -- 92
+empty$ -- 176
+format.name$ -- 17
+if$ -- 424
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 2
-pop$ -- 13
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 5
+pop$ -- 27
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 32
+skip$ -- 62
 stack$ -- 0
-substring$ -- 60
-swap$ -- 22
-text.length$ -- 2
+substring$ -- 147
+swap$ -- 42
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 7
-width$ -- 3
-write$ -- 23
-(There was 1 warning)
+warning$ -- 2
+while$ -- 18
+width$ -- 6
+write$ -- 56
+(There were 2 warnings)

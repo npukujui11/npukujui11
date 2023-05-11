@@ -43,42 +43,43 @@
 \contentsline {subsection}{\numberline {1.10}Learning to see in the dark}{20}{subsection.1.10}%
 \contentsline {subsection}{\numberline {1.11}Learning Digital Camera Pipeline for Extreme Low Light Imaging}{20}{subsection.1.11}%
 \contentsline {subsubsection}{\numberline {1.11.1}损失函数}{20}{subsubsection.1.11.1}%
-\contentsline {subsection}{\numberline {1.12}End to End Denoising of Dark Burst Images using Recurrent Fully Convolutionaly Networks}{21}{subsection.1.12}%
-\contentsline {subsubsection}{\numberline {1.12.1}损失函数}{21}{subsubsection.1.12.1}%
-\contentsline {subsection}{\numberline {1.13}Deep Burst Noising}{21}{subsection.1.13}%
-\contentsline {subsection}{\numberline {1.14}DeepISP Toward Learning an End to End Image Processing Pipeline}{21}{subsection.1.14}%
-\contentsline {subsubsection}{\numberline {1.14.1}网络架构}{21}{subsubsection.1.14.1}%
-\contentsline {paragraph}{Low Level Stage}{21}{figure.caption.20}%
-\contentsline {paragraph}{High Level Stage}{22}{figure.caption.20}%
-\contentsline {paragraph}{Output}{22}{figure.caption.20}%
-\contentsline {subsubsection}{\numberline {1.14.2}损失函数}{23}{subsubsection.1.14.2}%
-\contentsline {subsection}{\numberline {1.15}Underexposed Photo Enhancement using Deep Illumination Estimation}{23}{subsection.1.15}%
-\contentsline {subsubsection}{\numberline {1.15.1}网络架构}{24}{subsubsection.1.15.1}%
-\contentsline {paragraph}{有效学习}{24}{subsubsection.1.15.1}%
-\contentsline {paragraph}{高效计算}{24}{subsubsection.1.15.1}%
-\contentsline {subsubsection}{\numberline {1.15.2}损失函数}{24}{subsubsection.1.15.2}%
-\contentsline {paragraph}{重建损失}{25}{equation.1.12}%
-\contentsline {paragraph}{平滑损失}{25}{equation.1.13}%
-\contentsline {paragraph}{颜色损失}{25}{equation.1.14}%
-\contentsline {subsection}{\numberline {1.16}Deep Bilateral Learning for Real Time Image Enhancement}{25}{subsection.1.16}%
-\contentsline {subsubsection}{\numberline {1.16.1}网络架构}{26}{subsubsection.1.16.1}%
-\contentsline {paragraph}{低分辨率分支}{26}{subsubsection.1.16.1}%
-\contentsline {paragraph}{高分辨率分支}{27}{subsubsection.1.16.1}%
-\contentsline {paragraph}{重建分支}{27}{equation.1.16}%
-\contentsline {section}{\numberline {2}个人工作进展}{28}{section.2}%
-\contentsline {subsection}{\numberline {2.1}疾病的诊断与AI结合的初步调研}{28}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}甲状腺功能亢进}{28}{subsubsection.2.1.1}%
-\contentsline {paragraph}{诊断}{28}{subsubsection.2.1.1}%
-\contentsline {subparagraph}{病史和体格检查}{28}{subsubsection.2.1.1}%
-\contentsline {subparagraph}{血液检测}{28}{subsubsection.2.1.1}%
-\contentsline {subparagraph}{更进一步的检查}{29}{subsubsection.2.1.1}%
-\contentsline {paragraph}{治疗}{29}{subsubsection.2.1.1}%
-\contentsline {subparagraph}{抗甲状腺药物}{29}{subsubsection.2.1.1}%
-\contentsline {subparagraph}{$\beta $-受体阻滞剂}{30}{subsubsection.2.1.1}%
-\contentsline {subparagraph}{放射性碘疗法}{30}{subsubsection.2.1.1}%
-\contentsline {subparagraph}{甲状腺切除术}{30}{subsubsection.2.1.1}%
-\contentsline {paragraph}{发展}{30}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}癫痫前期诊断---望闻问切}{31}{subsubsection.2.1.2}%
-\contentsline {paragraph}{采用人工智能驱动的ConvNet检测癫痫发作}{31}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}按照paper脉络梳理暗弱光技术}{32}{subsection.2.2}%
-\contentsline {section}{\numberline {3}下周工作计划}{33}{section.3}%
+\contentsline {subsubsection}{\numberline {1.11.2}网络架构}{21}{subsubsection.1.11.2}%
+\contentsline {subsection}{\numberline {1.12}End to End Denoising of Dark Burst Images using Recurrent Fully Convolutionaly Networks}{23}{subsection.1.12}%
+\contentsline {subsubsection}{\numberline {1.12.1}损失函数}{24}{subsubsection.1.12.1}%
+\contentsline {subsection}{\numberline {1.13}Deep Burst Noising}{24}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}DeepISP Toward Learning an End to End Image Processing Pipeline}{24}{subsection.1.14}%
+\contentsline {subsubsection}{\numberline {1.14.1}网络架构}{24}{subsubsection.1.14.1}%
+\contentsline {paragraph}{Low Level Stage}{25}{figure.caption.23}%
+\contentsline {paragraph}{High Level Stage}{25}{figure.caption.23}%
+\contentsline {paragraph}{Output}{25}{figure.caption.23}%
+\contentsline {subsubsection}{\numberline {1.14.2}损失函数}{25}{subsubsection.1.14.2}%
+\contentsline {subsection}{\numberline {1.15}Underexposed Photo Enhancement using Deep Illumination Estimation}{25}{subsection.1.15}%
+\contentsline {subsubsection}{\numberline {1.15.1}网络架构}{26}{subsubsection.1.15.1}%
+\contentsline {paragraph}{有效学习}{27}{subsubsection.1.15.1}%
+\contentsline {paragraph}{高效计算}{27}{subsubsection.1.15.1}%
+\contentsline {subsubsection}{\numberline {1.15.2}损失函数}{27}{subsubsection.1.15.2}%
+\contentsline {paragraph}{重建损失}{27}{equation.1.17}%
+\contentsline {paragraph}{平滑损失}{27}{equation.1.18}%
+\contentsline {paragraph}{颜色损失}{27}{equation.1.19}%
+\contentsline {subsection}{\numberline {1.16}Deep Bilateral Learning for Real Time Image Enhancement}{28}{subsection.1.16}%
+\contentsline {subsubsection}{\numberline {1.16.1}网络架构}{29}{subsubsection.1.16.1}%
+\contentsline {paragraph}{低分辨率分支}{29}{subsubsection.1.16.1}%
+\contentsline {paragraph}{高分辨率分支}{29}{subsubsection.1.16.1}%
+\contentsline {paragraph}{重建分支}{29}{equation.1.21}%
+\contentsline {section}{\numberline {2}个人工作进展}{30}{section.2}%
+\contentsline {subsection}{\numberline {2.1}疾病的诊断与AI结合的初步调研}{30}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}甲状腺功能亢进}{30}{subsubsection.2.1.1}%
+\contentsline {paragraph}{诊断}{30}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{病史和体格检查}{30}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{血液检测}{31}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{更进一步的检查}{31}{subsubsection.2.1.1}%
+\contentsline {paragraph}{治疗}{32}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{抗甲状腺药物}{32}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{$\beta $-受体阻滞剂}{32}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{放射性碘疗法}{32}{subsubsection.2.1.1}%
+\contentsline {subparagraph}{甲状腺切除术}{33}{subsubsection.2.1.1}%
+\contentsline {paragraph}{发展}{33}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}癫痫前期诊断---望闻问切}{33}{subsubsection.2.1.2}%
+\contentsline {paragraph}{采用人工智能驱动的ConvNet检测癫痫发作}{34}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}按照paper脉络梳理暗弱光技术}{35}{subsection.2.2}%
+\contentsline {section}{\numberline {3}下周工作计划}{35}{section.3}%

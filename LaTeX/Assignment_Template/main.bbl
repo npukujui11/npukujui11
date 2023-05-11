@@ -6,6 +6,23 @@ Wenjing Wang, Chen Wei, Wenhan Yang, and Jiaying Liu.
 \newblock In {\em 2018 13th {{IEEE}} International Conference on Automatic Face
   \& Gesture Recognition ({{FG}} 2018)}, pages 751--755.
 
+\bibitem{chen2018learning}
+Chen Chen, Qifeng Chen, Jia Xu, and Vladlen Koltun.
+\newblock Learning to see in the dark.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3291--3300, 2018.
+
+\bibitem{he2010single}
+Kaiming He, Jian Sun, and Xiaoou Tang.
+\newblock Single image haze removal using dark channel prior.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  33(12):2341--2353, 2010.
+
+\bibitem{dong2010fast}
+Xuan Dong, Yi~Pang, and Jiangtao Wen.
+\newblock Fast efficient algorithm for enhancement of low lighting video.
+\newblock In {\em ACM SIGGRAPH 2010 Posters}, pages 1--1. 2010.
+
 \bibitem{ConVNet}
 Arpana Mahajan, Kavitha Somaraj, and Mustafa Sameer.
 \newblock Adopting artificial intelligence powered convnet to detect epileptic
