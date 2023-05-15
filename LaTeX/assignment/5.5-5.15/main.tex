@@ -152,7 +152,7 @@
 			
 			PyTorch实现： L2正则项是通过optimizer优化器的参数 weight\_decay(float, optional) 添加的，用于设置权值衰减率，即正则化中的超参$\lambda$，默认值为0。
 			
-			\lstset{language=python}
+			\lstset{language=python,breaklines=true}
 			\begin{lstlisting}
 				optimizer = torch.optim.SGD(model.parameters(),lr=0.01,weight_decay=0.01)
 			\end{lstlisting}
@@ -176,6 +176,20 @@
 			函数：\textit{torch.nn.SmoothL1Loss}
 			
 			\paragraph{Huber loss}
+			
+			\begin{equation}
+			J_{Huber}(\delta)= \frac{1}{N}\sum_{i=1}^{N}
+				\left\{
+				\begin{aligned}
+					&\frac{1}{2}{\left\|\hat{y}_i - y_i \right\|}_2^{2}, \left\| \hat{y}_i -y_i \right\| < \delta , \\
+					&\delta\left({\left\|\hat{y}_i - y_i \right\|}_1 - \frac{1}{2}\delta \right), \left\| \hat{y}_i -y_i \right\| \geq \delta.
+				\end{aligned}
+				\right.
+			\end{equation}
+	
+			残差比较小时，Huber Loss是二次函数；残差比较大时，Huber Loss是线性函数(残差，即观测值和预测值之间的差值)。与$\mathcal{L}_2$-loss相比，Huber损失对数据中的异常值不那么敏感。使函数二次化的小误差值是多少取决于“超参数”$\delta$，它可以调整。当$\delta=1$时，退化成smooth $\mathcal{L}_1$ Loss。
+	
+			函数：\textit{torch.nn. HuberLoss}
 	
 	\subsection{(综述2021.04)Lighting the darkness in the deep learning era}
 	
@@ -200,10 +214,12 @@
 	
 	\renewcommand{\tablename}{Table}
 	
+	% 在LaTeX中，overfull hbox和overfull vbox的警告是由于badness值超过了tolerance值而产生的1。对于每种字体有一个标准的间距，为了使当前行适应宽度，会改变这些间距，如果badness的值超过了tolerance，就会出现overfull或者underfull的警告
+	
 	\begin{table}[!htbp]
 		\centering
 		\tiny
-		\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+		\resizebox{\columnwidth}{!}{ %按照宽度调整调整表格大小
 		\begin{tabular}{m{0.01cm}|>{\centering\arraybackslash}m{1.45cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{2.6cm}|>{\centering\arraybackslash}m{3.1cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{0.9cm}|>{\centering\arraybackslash}m{1.4cm}|>{\centering\arraybackslash}m{1cm}|}
 			
 			\hline
@@ -1280,39 +1296,39 @@
 	
 	尽管LLIE取得极大的进展，但仍有改善的空间。作者从以下几个方面提出了有价值的参考：	
 		
-		\subparagraph{Effective Learning Strategies}
+		\subparagraph{Effective Learning Strategies} \qquad
 		
 		当前主流的监督学习方法需要大量的成对训练数据，且可能导致特定数据过拟合问题；Zero-shot学习在真实场景具有更强的鲁棒性，且不需要成对训练数据。这意味着：Zero-shot学习是一个极具潜力的研究方向。
 			
-		\subparagraph{Specialized Network Structures}
+		\subparagraph{Specialized Network Structures} \qquad
 		
 		网络结构可以很大程度影响增强性能，之前的LLIE方案大量的采用了UNet架构，然而这种架构是否适合于LLIE仍有待于考证。局部自相似性、高效算子、NAS技术等思想可以考虑引入到LLIE的网络脚骨设计中，此外transformer也许会是一个有意思的研究方向。
 		
-		\subparagraph{Loss Function}
+		\subparagraph{Loss Function} \qquad
 		
 		损失函数约束了输入与GT之间的相关性并驱动网络的优化。在LLIE中，常用损失函数主要是从其他相关任务中借鉴而来，尚未有针对LLIE而设计的特定损失。更适合LLIE的损失函数设计仍有待于开发。
 		
-		\subparagraph{Realistic Training Data}
+		\subparagraph{Realistic Training Data} \qquad
 		
 		尽管已有不少用于LLIE的训练数据，但它们数量、灵活性相对于真实低光比较单一且简单。大尺度的真实LLIE数据收集与生成仍需要进一步研究。
 		
-		\subparagraph{Standard Testing Data}
+		\subparagraph{Standard Testing Data} \qquad
 		
 		目前没有一个可以全面接受的LLIE评估基准。研究员倾向于使用自有测试集，这使得所提方法具有一定倾向性。因此，高质量标准低光图像/视频测试集的构建需要进行构建。
 		
-		\subparagraph{Task-Specific Evaluation Metrics}
+		\subparagraph{Task-Specific Evaluation Metrics} \qquad
 		
 		在某种程度上，常用的度量准则难以很好的反映图像质量。如何评价LLIE增强结果的好坏仍极具挑战，当前IQA要么聚焦于人类视觉感知，要么聚焦机器感知。同时考虑人类视觉感知与机器感知的度量指标有待于开发。
 		
-		\subparagraph{Robust Generalization Capability}
+		\subparagraph{Robust Generalization Capability} \qquad
 		
 		实验结果表明：现有方法在真实场景表现差强人意。这种泛化性能差主要有这样几个因素：合成数据、小尺度训练数据、低效网络结构、不真实的假设、不精确的先验。因此，很有必要探索更好的方式改善LLIE的泛化性能。
 		
-		\subparagraph{Extension to Low-light Video Enhancement}
+		\subparagraph{Extension to Low-light Video Enhancement} \qquad
 		
 		不同于其他low-level领域视频增强(比如视频去模糊、视频降噪、视频超分)的快速发展，低光视频增强鲜少收到关注。低光图像增强的直接应用会导致不令人满意的结果与抖动问题。因此，如何采用近邻帧有效移除视觉抖动并加速推理值得深入研究。
 		
-		\subparagraph{Integrating Semantic Information}
+		\subparagraph{Integrating Semantic Information} \qquad
 		
 		语义信息对于低光增强非常重要，它将引导网络判别不同区域的增处理。如何有效地将语义信息集成到低光增强是一个有前途的方向。
 	
