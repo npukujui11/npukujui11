@@ -89,7 +89,7 @@
 	
 	
 	
-		\subsubsection{Regression loss function}
+		\subsubsection{loss function for CV}
 		
 			\paragraph{$\mathcal{L}_1$-loss}
 		
@@ -201,7 +201,7 @@
 				\end{aligned}
 			\end{equation}
 	
-			\paragraph{perceptual loss}
+			\paragraph{Perceptual loss}
 			
 			感知损失(Perceptual Loss)是一种用于比较两个看起来相似的图像的损失函数，这一损失函数由Johnson et al.\cite{johnson2016perceptual}提出。它用于比较图像之间的高层次差异，如内容和风格差异\footnote{https://deepai.org/machine-learning-glossary-and-terms/perceptual-loss-function}。它已被广泛用作图像合成任务(包括图像超分辨率和风格转换)中的有效损失项。
 			
@@ -210,6 +210,108 @@
 			简而言之，感知损失函数的工作原理是将所有像素之间的所有平方误差相加并取平均值。这与每像素损失函数形成对比，后者对像素之间的所有绝对误差求和\cite{johnson2016perceptual}。
 			
 			作者认为感知损失函数不仅在生成高质量图像方面更准确，而且在优化后也快了三倍。神经网络模型在图像上进行训练，其中感知损失函数基于从已训练网络中提取的高级特征进行优化。
+			
+			\begin{equation}
+				\begin{aligned}
+					\ell_{feat}^{\phi,j} (\hat{y},y) = \frac{1}{C_{j}H_{j}W_{j}}{\left\| \phi_{j}(\hat{y})-\phi_{j}(y)\right\|}_{2}^2
+				\end{aligned}
+				\label{eq: perceptual loss}
+			\end{equation}
+			
+			其中$\hat{y}$为输出图像，$y$为目标图像，$\phi$为损失网络。$\phi_{j}(x)$为处理图像$x$时损失网络$\phi$的第$j$层的激活情况，如果$j$是一个卷积层，那么$\phi_{j}(x)$将是形状$C_{j} \times H_{j} \times W_{j}$的特征映射，特征重建损失是特征表示之间的欧式距离，如eq \ref{eq: perceptual loss}。
+			
+			\begin{figure}[ht] 
+				% read manual to see what [ht] means and for other possible options
+				\centering \includegraphics[width=0.8\columnwidth]{perceptual}
+				\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: perceptual loss} % spaces are big no-no withing labels
+					% things like fig: are optional in the label but it helps
+					% to orient yourself when you have multiple figures,
+					% equations and tables
+					System overview. We train an image transformation network to transform input images into output images. We use a loss network pretrained for image classification to define perceptual loss functions that measure perceptual differences in content and style between images. The loss network remains fixed during the training process.
+				}
+			\end{figure}
+			
+			Fig.\ref{fig: perceptual loss}表示经过训练以将输入图像转换为输出图像的神经网络。用于图像分类的预训练损失网络有助于通知损失函数。预先训练的网络有助于定义测量图像之间内容和风格的感知差异所需的感知损失函数。
+			
+			对于图像数据来说，网络在提取特征的过程中，较浅层通常提取边缘、颜色、亮度等低频信息，而网络较深层则提取一些细节纹理等高频信息，再深一点的网络层则提取一些具有辨别性的关键特征，也就是说，网络层越深提取的特征越抽象越高级。
+			
+			感知损失就是通过一个固定的网络(通常使用预训练的VGG16或者VGG19)，分别以真实图像(Ground Truth)、网络生成结果(Prediciton)作为其输入，得到对应的输出特征：feature\_gt、feature\_pre，然后使用feature\_gt与feature\_pre构造损失(通常为$\mathcal{L}_2$-loss)，逼近真实图像与网络生成结果之间的深层信息，也就是感知信息，相比普通的$\mathcal{L}_2$-loss而言，可以增强输出特征的细节信息\footnote{https://blog.csdn.net/qq\_43665602/article/details/127077484}。
+
+			\paragraph{SSIM loss}
+			
+			SSIM损失函数是一种用于衡量两幅图像之间差距的损失函数。它考虑了亮度、对比度和结构指标，这就考虑了人类视觉感知，一般而言，SSIM得到的结果会比$\mathcal{L}_1$-loss，$\mathcal{L}_2$-loss的结果更有细节\footnote{https://blog.csdn.net/u013289254/article/details/99694412}。
+			
+			每个像素$p$的\text{SSIM}被定义为
+			\begin{equation}
+				\begin{aligned}
+				\text{SSIM}(p) &= \frac{2\mu_{x}\mu_{y}+C_{1}}{\mu_{x}^2+\mu_{y}^2+C_{1}} \cdot \frac{2\sigma_{xy}+C_{2}}{\sigma_{x}^2+\sigma_{y}^{2}+C_{2}} \\
+				&= l(p)\cdot cs(p)
+				\end{aligned}
+				\label{eq: SSIM}
+			\end{equation}
+			其中省略了均值和标准偏差对像素$p$的依赖性，均值和标准差是用标准偏差为$\sigma_G,G_{\sigma_G}$
+			\begin{equation}
+				\begin{aligned}
+					&\varepsilon(p)=1-\text{SSIM}(p): \\  &\mathcal{L}^{\text{SSIM}}(P)=\frac{1}{N}\sum_{p \in P}1-\text{SSIM}(p).
+				\end{aligned}
+				\label{eq: SSIM loss}
+			\end{equation}
+			
+			eq. \ref{eq: SSIM}表明$\text{SSIM}(p)$需要关注像素$p$的邻域，这个领域的大小取决于$G_{\sigma_G}$，网络的卷积性质允许我们将SSIM损失写为
+			
+			\begin{equation}
+			\begin{aligned}
+				\mathcal{L}^{\text{SSIM}}(P)=1-\text{SSIM}(\tilde{p}).
+			\end{aligned}
+			\label{eq: revised_SSIM loss}
+			\end{equation}
+			
+			其中$\tilde{p}$是$P$的中心像素。
+			
+			\paragraph{MS-SSIM loss}
+
+			多尺度结构相似性(MS-SSIM)损失函数是基于多层(图片按照一定规则，由大到小缩放)的SSIM损失函数，相当于考虑了分辨率\footnote{https://blog.csdn.net/u013289254/article/details/99694412}。它是一种更为复杂的SSIM损失函数，可以更好地衡量图像之间的相似性。
+
+			\begin{equation}
+				\begin{aligned}
+					\text{MS-SSIM}(p)=l_{M}^\alpha(p)\cdot \prod_{j=1}^M cs_{j}^{\beta_j}(p)
+				\end{aligned}
+				\label{eq: MS-SSIM}
+			\end{equation}
+
+			其中$M,j$描述的是比例，设$\alpha=\beta_j=1$，对于$j={1,\cdots, M}$类似eq. \ref{eq: revised_SSIM loss}，利用中心像素$\tilde{p}$处计算的损失来近似贴片$P$的损失：
+
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}^{\text{MS-SSIM}}(P)=1-\text{MS-SSIM}(\tilde{p})
+				\end{aligned}
+				\label{eq: MS-SSIM loss}
+			\end{equation}
+			
+			\paragraph{Cross-entropy loss function}
+			
+			交叉熵损失函数是一种常用的分类问题损失函数。在二分类问题中，它的定义如下：
+			
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}(\hat{y},y)=-\left( y\log_{\hat{y}} + (1-y) \log (1-\hat{y}) \right)
+				\end{aligned}
+				\label{eq: Cross-entropy loss}
+			\end{equation}
+			
+			其中，$\hat{y}$表示模型预测的概率值(即分类器输出)，$y$表示样本真实的类别标签。对于正例样本($y=1$)，交叉熵损失函数的值等于$log {\hat{y}}$；对于反例样本($y=0$)，交叉熵损失函数的值等于$\log (1-\hat{y})$。 因此，交叉熵损失函数的目标是最小化模型预测与实际标签之间的差距，从而让模型能够更准确地进行分类。 
+			
+			交叉熵损失函数可以推广到多分类问题中，此时它的表达式略有不同。在多分类问题中，交叉熵损失函数可以写成以下形式： 
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}(\hat{y},y)=-\sum_{i=1}^K y_i \log \hat{y}_i
+				\end{aligned}
+				\label{eq: Cross-entropy loss}
+			\end{equation} 
+			
+			其中，$K$表示类别的数量，$y_i$表示第$i$个类别的真实标签，$\hat{y}_i$表示模型对于第$i$个类别的预测概率值。交叉熵损失函数的目标仍然是最小化预测与实际标签之间的差距，从而让模型能够更准确地进行分类。
 			
 	\subsection{(综述2021.04)Lighting the darkness in the deep learning era}
 	
@@ -256,7 +358,7 @@
 			
 			& Retinex-Net  & SL & multi-scale network & \makecell{$L_1$ loss \\ invariable reflectance loss \\ smoothness loss} & LOL simulated by adjusting histogram & self-selected & - & RGB & TensorFlow & \ \checkmark \\
 			
-			& MBLLEN & SL & multi-branch fusion & SSIM loss perceptual loss region loss & simulated by Gamma Correction \& Poisson Noise & simulated self-selected & \makecell{PSNR SSIM \\ AB VIF \\ LOE TOMI} & RGB & TensorFlow &  \\
+			& MBLLEN & SL & multi-branch fusion & \makecell{SSIM loss \\ perceptual loss \\ region loss} & simulated by Gamma Correction \& Poisson Noise & simulated self-selected & \makecell{PSNR SSIM \\ AB VIF \\ LOE TOMI} & RGB & TensorFlow &  \\
 			
 			& SCIE & SL & frequency decomposition & \makecell{$L_2$ loss \\ $L_1$ loss \\ SSIM loss} & SCIE & SCIE & PSNR FSIM \qquad Runtime FLOPs & RGB & Caffe MATLAB &  \\
 			
@@ -277,7 +379,7 @@
 			
 			& Wang et al. & SL & two subnetworks pointwise Conv & $L_1$ loss & simulated by camera imaging model & IP100 FNF38 MPI LOL NPE & \makecell{PSNR SSIM \\ NIQE} & RGB & Caffe & \checkmark \\
 			
-			& Ren et al. & SL & U-Net like network RNN dilated Conv & $L_2$ loss perceptual loss adversarial loss & MIT-Adobe FiveK with Gamma correction \& Gaussion noise & simulated self-selected DPED & PSNR SSIM Runtime & RGB & Caffe &  \\
+			& Ren et al. & SL & U-Net like network RNN dilated Conv & \makecell{$L_2$ loss \\ perceptual loss \\ adversarial loss} & MIT-Adobe FiveK with Gamma correction \& Gaussion noise & simulated self-selected DPED & PSNR SSIM Runtime & RGB & Caffe &  \\
 			
 			& EnlightenGAN & UL & U-Net like network & \makecell{adversarial loss \\ self feature preserving loss} & unpaired real images & NPE LIME MEF DICM VV BBD-100K ExDARK & User Study NIQE Classification & RGB & PyTorch &  \\
 			
@@ -287,7 +389,7 @@
 			
 			\multirowcell{12}{\makecell{\centering \rotatebox{90}{\textbf{2020}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}}} & Zero-DCE & ZSL & U-Net like network & \makecell{spatial consistency loss \\ exposure control loss \\ color constancy loss \\ illumination smoothness loss} & SICE & SICE NPE LIME MEF DICM VV DARK FACE & \makecell{User Study PI \\ PNSR SSIM \\ MAE Runtime \\ Face detection} & RGB & PyTorch & \\
 			
-			& DRBN & SSL & recursive network & SSIM loss perceptual loss adversarial loss & LOL images selected by MOS & LOL & \makecell{PSNR SSIM \\ SSIM-GC} & RGB & PyTorch & \\
+			& DRBN & SSL & recursive network & \makecell{SSIM loss \\ perceptual loss \\ adversarial loss} & LOL images selected by MOS & LOL & \makecell{PSNR SSIM \\ SSIM-GC} & RGB & PyTorch & \\
 			
 			& Lv et al. & SL & U-Net like network & Huber loss SSIM loss perceptual loss illumination smoothness loss & simulated by a retouching module & LOL SICE DeepUPE & \makecell{User Study PSNR \\ SSIM VIF \\ LOE NIQE \\ \#P Runtime \\ Face detection} & RGB & TensorFlow & \checkmark \\
 			
@@ -1360,281 +1462,9 @@
 			
 	\section{个人工作进展}
 					
-		\subsection{按照paper脉络梳理暗弱光技术}
+		\subsection{梳理损失函数}
 			
-		这周的第一个工作是去梳理暗弱光下图像增强技术，并按照paper发表的顺序制作了发展表格Tab.\ref{tab: Method/code/paper related to LLIE}\footnote{https://github.com/dawnlh/awesome-low-light-image-enhancement}。根据文献资料和研究现状，大概发现以下几个未来可能的发展方向：
-		
-		\begin{table}[!htbp]
-			\centering
-			\tiny
-			\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
-				\begin{tabular}{>{\centering\arraybackslash}m{3 cm}|>{\centering\arraybackslash}m{1.5cm}|c|c|c|c}
-					
-					\hline %添加表格头部粗线
-					
-					% \multirow{2}*{\textbf{Learning}} & \multirow{2}*{\textbf{Mathod}} & \multicolumn{4}{c|}{\textbf{LOL-test}} & \multicolumn{4}{c}{\textbf{MIT-Adobe FiveK-test}} \\
-					
-					\textbf{Method} & \textbf{Year} & \textbf{Pub} & \textbf{Paper} & \textbf{Link} & \textbf{Note}  \\
-					
-					\hline	
-					
-					\multirowcell{77}{Learning-based methods} & 2017 & ArXiv &	MSR-net:Low-light Image Enhancement Using Deep Convolutional Network & pdf	& MSR-net \\
-					& 2017 & ECCV &	Deep Burst Denoising & pdf &	\\
-					& 2017 & VCIP &	LLCNN: A convolutional neural network for low-light image enhancement &	pdf dataset	& LLCNN \\
-					& 2017 & Pattern Recognit. & LLNet: A deep autoencoder approach to natural low-light image enhancement & pdf & LLNet \\
-					& 2017 & ACM Trans. Graph. & Deep bilateral learning for real-time image enhancement & pdf web code & HDRNet \\
-					& 2017 & ICCV & DSLR-Quality Photos on Mobile Devices with Deep Convolutional Networks & pdf & \\
-					& 2018 & BMVC & Deep Retinex Decomposition for Low-Light Enhancement & pdf web code & Retinex-Net \\
-					& 2018 & BMVC &	MBLLEN: Low-light Image/Video Enhancement Using CNNs & pdf web code	& MBLLEN \\
-					& 2018 & Pattern Recognit. Lett. & LightenNet: A Convolutional Neural Network for weakly illuminated image enhancement & pdf & LightenNet \\
-					& 2018 & CVPR & Learning to See in the Dark	& pdf web code dataset & \\
-					& 2018 & IEEE TIP & Learning a Deep Single Image Contrast Enhancer from Multi-Exposure Images & pdf code & SICE \\
-					& 2018 & ACM TOG  & Exposure: A White-Box Photo Post-Processing Framework & pdf code & \\	
-					& 2018 & FG conference & GLADNet: Low-Light Enhancement Network with Global Awareness & pdf web code dataset & GLADNet \\
-					& 2019 & IEEE TIP & DeepISP: Towards Learning an End-to-End Image Processing Pipeline & pdf & DeepISP\\
-					& 2019 & IEEE TIP & Low-Light Image Enhancement via a Deep Hybrid Network & pdf \\
-					& 2019 & IEEE TIP & EnlightenGAN: Deep Light Enhancement without Paired Supervision	code & pdf & EnlightenGAN\\
-					& 2019 & ACM MM & Kindling the Darkness: A Practical Low-light Image Enhancer	& pdf code code+ & KinD\\
-					& 2019 & IEEE Access & A Pipeline Neural Network for Low-Light Image Enhancement	& pdf & \\
-					& 2019 & Neurocomputing & Learning Digital Camera Pipeline for Extreme Low-Light Imaging	& pdf & \\	
-					& 2019 & CVPR &	Underexposed Photo Enhancement Using Deep Illumination Estimation & pdf code & DeepUPE\\
-					& 2019 & ICCV &	Enhancing Low Light Videos by Exploring High Sensitivity Camera Noise & pdf & \\
-					& 2019 & ICIP &	Enhancement of Weakly Illuminated Images by Deep Fusion Networks & pdf & \\
-					& 2019 & ICCP &	A Bit Too Much? High Speed Imaging from Sparse Photon Counts & pdf & \\
-					& 2019 & ICIP &	Llrnet: A Multiscale Subband Learning Approach for Low Light Image Restoration & pdf & Llrnet \\
-					& 2019 & ICIP &	Low-Lightgan: Low-Light Enhancement Via Advanced Generative Adversarial Network With Task-Driven Training & pdf	& Low-Lightgan \\
-					& 2019 & ICME & RDGAN: Retinex Decomposition Based Adversarial Learning for Low-Light Enhancement & code pdf & RDGAN \\
-					& 2019 & ICMEW & Low-Light Image Enhancement with Attention and Multi-level Feature Fusion & pdf	& \\
-					& 2019 & PRCV &	An Effective Network with ConvLSTM for Low-Light Image Enhancement	& pdf & \\
-					& 2019 & VISIGRAPP & End-to-End Denoising of Dark Burst Images Using Recurrent Fully Convolutional Networks & pdf &\\	
-					& 2020 & CVPR &	Zero-Reference Deep Curve Estimation for Low-Light Image Enhancement & pdf web code & Zero-DCE\\
-					& 2020 & CVPR &	Learning to Restore Low-Light Images via Decomposition-and-Enhancement	& pdf &\\
-					& 2020 & CVPR &	From Fidelity to Perceptual Quality: A Semi-Supervised Approach for Low-Light Image Enhancement	& pdf web slides &	DRBN \\
-					& 2020 & CVPR &	DeepLPF: Deep Local Parametric Filters for Image Enhancement & pdf code	& DeepLPF\\
-					& 2020 & IEEE PAMI & Learning Image-adaptive 3D Lookup Tables for High Performance Photo Enhancement in Real-time & pdf code &	Image-Adaptive-3DLUT \\
-					& 2020 & IET Image Proc. & Learning an Adaptive Model for Extreme Low-Light Raw Image Processing & pdf code & \\	
-					& 2020 & ArXiv& Visual Perception Model for Rapid and Adaptive Low-light Image Enhancement	& pdf code & \\
-					& 2020 & ArXiv& Self-supervised Image Enhancement Network: Training with Low Light Images Only	& pdf code & \\	
-					& 2020 & ICPR &	Unsupervised Real-world Low-light Image Enhancement with Decoupled Networks & pdf & \\
-					& 2021 & IJCV &	Attention Guided Low-Light Image Enhancement with a Large Scale Low-Light Simulation Dataset & pdf code & \\	
-					& 2021 & CVPR &	Retinex-Inspired Unrolling with Cooperative Prior Architecture Search for Low-Light Image Enhancement & pdf web code & RUAS\\
-					& 2021 & CVPR &	Deep Denoising of Flash and No-Flash Pairs for Photography in Low-Light Environments & pdf code & \\
-					& 2021 & CVPR &	Extreme Low-Light Environment-Driven Image Denoising over Permanently Shadowed Lunar Regions with a Physical Noise Model & pdf & HORUS\\
-					& 2021 & CVPR &	Learning Temporal Consistency for Low Light Video Enhancement from Single Images & pdf code &\\
-					& 2021 & CVPR &	Nighttime Visibility Enhancement by Increasing the Dynamic Range and Suppression of Light Effects & pdf & \\	
-					& 2021 & ICCV &	Seeing Dynamic Scene in the Dark: A High-Quality Video Dataset with Mechatronic Alignment & pdf code & SDSD \\
-					& 2021 & ICCV &	HDR Video Reconstruction: A Coarse-to-Fine Network and a Real-World Benchmark Dataset	& pdf web code & DeepHDRVideo \\
-					& 2021 & ICCV &	Matching in the Dark: A Dataset for Matching Image Pairs of Low-Light Scenes & pdf web code & MID \\
-					& 2021 & ICCV &	Adaptive Unfolding Total Variation Network for Low-Light Image Enhancement	& pdf code & UTVNet \\
-					& 2021 & ICCV W	& LLVIP: A Visible-Infrared Paired Dataset for Low-Light Vision	& pdf code web & LLVIP \\
-					& 2021 & JVCIR	& R2RNet: Low-Light Image Enhancement via Real-Low to Real-Normal Network	& pdf code & R2RNet \\
-					& 2022 & CVPR &	Toward Fast, Flexible, and Robust Low-Light Image Enhancement & pdf code & SCI \\
-					& 2022 & CVPR &	Deep Color Consistent Network for Low-Light Image Enhancement & pdf & DCC-Net \\
-					& 2022 & CVPR &	URetinex-Net: Retinex-Based Deep Unfolding Network for Low-Light Image Enhancement & pdf code & URetinex-Net \\
-					& 2022 & CVPR &	Day-to-Night Image Synthesis for Training Nighttime Neural ISPs	& pdf code & \\
-					& 2022 & CVPR &	SNR-Aware Low-Light Image Enhancement & pdf code & \\
-					& 2022 & CVPR &	Dancing Under the Stars: Video Denoising in Starlight & pdf & \\
-					& 2022 & CVPR &	Abandoning the Bayer-Filter To See in the Dark	& pdf code & \\
-					& 2022 & ECCV &	Unsupervised Night Image Enhancement: When Layer Decomposition Meets Light-Effects Suppression & pdf code & \\	
-					& 2022 & ECCV &	Deep Fourier-Based Exposure Correction Network with Spatial-Frequency Interaction & pdf code & \\	
-					& 2022 & ECCV &	LEDNet: Joint Low-Light Enhancement and Deblurring in the Dark	& pdf code & LEDNet \\
-					& 2022 & AAAI &	Low-Light Image Enhancement with Normalizing Flow & pdf code web & LLFlow \\
-					& 2022 & AAAI &	DarkVisionNet: Low-Light Imaging via RGB-NIR Fusion with Deep Inconsistency Prior & pdf & DarkVisionNet \\
-					& 2022 & ACM MM	& ChebyLighter: Optimal Curve Estimation for Low-Light Image Enhancement & pdf code & ChebyLighter \\
-					& 2022 & BMCV & You only need 90K parameters to adapt light: a light weight transformer for image enhancement and exposure correction	& pdf code & IAT \\
-					& 2022 & IJCV & Low-Light Image Enhancement via Breaking down the Darkness & pdf code & Bread \\
-					& 2022 & Neurocomputing & Low-Light Image Enhancement with Knowledge Distillation & pdf	& \\
-					& 2022 & Neurocomputing	& LSR: Lightening Super-Resolution Deep Network for Low-Light Image Enhancement	& pdf & LSR \\
-					& 2022 & Pattern Recognit. & Brain-like Retinex: A Biologically Plausible Retinex Algorithm for Low Light Image Enhancement & pdf & \\	
-					& 2022 & Pattern Recognit. & LAE-Net: A Locally-Adaptive Embedding Network for Low-Light Image Enhancement	& pdf & LAE-Net \\
-					& 2022 & Knowl-Based Syst & LE-GAN: Unsupervised Low-Light Image Enhancement Network Using Attention Module and Identity Invariant Loss & pdf & LE-GAN\\
-					& 2022 & Opt. Lasers Eng. & Infrared and Low-Light Visible Image Fusion Based on Hybrid Multiscale Decomposition and Adaptive Light Adjustment & pdf & \\
-					& 2022 & Applied Soft Computing & A predictive intelligence approach for low-light enhancement	& pdf &	\\
-					& 2022 & IEEE TMM & Purifying Low-light Images via Near-Infrared Enlightened Image	& pdf & \\
-					& 2023 & Information Fusion & A Mutually Boosting Dual Sensor Computational Camera for High Quality Dark Videography & pdf code & DCMAN \\
-					& 2023 & Pattern Recognit. & TreEnhance: A tree search method for low-light image enhancement & pdf code & TreEnhance \\
-					& 2023 & AAAI &	Ultra-high-definition low-light image enhancement: A benchmark and transformer-based method & pdf code web & \\	
-					& 2023 & AAAI &	Low-Light Video Enhancement with Synthetic Event Guidance & pdf code	& \\
-					
-					\hline
-					
-					\multirowcell{7}{HE-based methods} & 1990 & IEEE TCE & Contrast limited adaptive histogram equalization: speed and effectiveness	& pdf & CLAHE \\
-					& 2007 & IEEE TCE & Brightness Preserving Dynamic Histogram Equalization for Image Contrast Enhancement & pdf code & BPDHE \\
-					& 2007 & IEEE TCE & A Dynamic Histogram Equalization for Image Contrast Enhancement & pdf & DHE \\
-					& 2007 & IEEE TCE & Fast Image/Video Contrast Enhancement Based on Weighted Thresholded Histogram Equalization & pdf & WTHE \\
-					& 2011 & IEEE TIP & Contextual and Variational Contrast Enhancement & pdf & CVC \\
-					& 2013 & IEEE TIP & Contrast enhancement based on layered difference representation of 2D histograms & pdf web & LDR \\
-					& 2013 & ICASSP	& High efficient contrast enhancement using parametric approximation & pdf & POHE \\
-					
-					\hline
-					
-					\multirowcell{19}{Retinex-based methods} & 1997 & IEEE TIP & Properties and performance of a center/surround retinex & pdf & SSR \\
-					& 1997 & IEEE TIP & A multiscale retinex for bridging the gap between color images and the human observation of scenes & pdf code1 code2 & MSRCR \\
-					& 2013 & SITIS & Adaptive Multiscale Retinex for Image Contrast Enhancement & code pdf & AMSR \\
-					& 2013 & IEEE TIP & Naturalness Preserved Enhancement Algorithm for Non-Uniform Illumination Images & pdf web code & NPE \\
-					& 2015 & IEEE TIP &	A Probabilistic Method for Image Enhancement With Simultaneous Illumination and Reflectance Estimation & pdf code & SRIE \\
-					& 2016 & CVPR & A Weighted Variational Model for Simultaneous Reflectance and Illumination Estimation & pdf code & SRIE \\
-					& 2016 & Signal Processing & fusion-based enhancing method for weakly illuminated images & pdf code & MF \\
-					& 2016 & ACM MM & LIME: A Method for Low-light Image Enhancement & pdf web code & LIME \\
-					& 2017 & IEEE TIP	& LIME: Low-Light Image Enhancement via Illumination Map Estimation	& pdf code1 code2 code3	& LIME \\
-					& 2017 & ICCV	& A Joint Intrinsic-Extrinsic Prior Model for Retinex & pdf web code & JieP \\
-					& 2018 & IEEE TIP	& Structure-Revealing Low-Light Image Enhancement Via Robust Retinex Model & pdf code1 code2 & \\	
-					& 2018 & Symmetry & A Smart System for Low-Light Image Enhancement with Color Constancy and Detail Manipulation in Complex Light Environments & pdf & \\
-					& 2019 & Symmetry	& Fractional-Order Fusion Model for Low-Light Image Enhancement	& pdf & \\	
-					& 2019 & ICIP	& A Hybrid L2 −LP Variational Model For Single Low-Light Image Enhancement With Bright Channel Prior & pdf	&\\
-					& 2019 & IET Image Proc. & Low light image enhancement based on non-uniform illumination prior model & pdf & NIPM\\
-					& 2019 & Comput. Graphics Forum & Dual illumination estimation for robust exposure correction	& pdf code & \\	
-					& 2020 & ic-ETITE	& A comparative analysis of illumination estimation based Image Enhancement techniques & pdf & \\	
-					& 2020 & IEEE TIP & LR3M: Robust Low-Light Enhancement via Low-Rank Regularized Retinex Model & pdf & LR3M \\
-					& 2023 & Vis Comput & Illumination estimation for nature preserving low-light image enhancement & pdf & NPLIE \\ 
-					
-					\hline
-					
-					\multirowcell{7}{Other methods} & 2008 & IET Image Proc. & Fast centre-surround contrast modification & pdf	& \\
-					& 2011 & ICME & Fast efficient algorithm for enhancement of low lighting video & pdf code & \\	
-					& 2017 & ICCVW & A New Low-Light Image Enhancement Algorithm Using Camera Response Model & pdf code & \\	
-					& 2017 & ArXiv & A Bio-Inspired Multi-Exposure Fusion Framework for Low-light Image Enhancement & pdf code & BIMEF \\
-					& 2017 & ICCAIP	& A New Image Contrast Enhancement Algorithm Using Exposure Fusion Framework & pdf web code1 code2 & \\
-					& 2019 & IEEE TIP & Low-Light Image Enhancement via the Absorption Light Scattering Model & pdf & ALSM \\
-					& 2019 & ICIP & Fast Image Enhancement Based on Maximum and Guided Filters & pdf & \\
-					
-					\hline
-					
-				\end{tabular}
-				}
-			\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
-			\caption{\label{tab: Method/code/paper related to LLIE}
-				We have collected a list of resources related to low light image enhancement, including methods/codes/papers, etc. We hope this can help develop new methods and solutions for low light tasks.} %表格的标题
-		\end{table}
-		
-		(1) \textbf{高效的学习策略}。目前的LLIE模型主要采用监督学习，需要大量的配对训练数据，并可能在特定的数据集上过度拟合。尽管一些研究人员试图将无监督学习引入LLIE，但LLIE和这些学习策略之间的内在关系并不清楚，它们在LLIE中的有效性需要进一步改进。
-		
-		(2) \textbf{专项网络结构}。网络结构可以显著影响增强性能。大多数LLIE深度模型采用U-Net或类似U-Net的结构。尽管它们在某些情况下取得了可喜的性能，但仍然缺乏对这种编码器-解码器网络结构是否最适合于LLIE任务的研究。我们可以考虑低照度图像的局部相似性或考虑更有效的操作，如深度可分离卷积层(depthwise separable convolution layer)\cite{howard2017mobilenets}和自校准卷积(self-calibrate)\cite{liu2020improving}来设计更有效的网络结构。可以考虑采用神经结构搜索(NAS)技术\cite{liu2018progressive},\cite{liu2019auto}来获得更有效和高效的LLIE网络结构。将Transformer结构\cite{dosovitskiy2020image}, \cite{chen2021pre}适配于LLIE可能是一个潜在的研究方向\footnote{考虑到非均匀光照、小像素值、噪声抑制和颜色恒定等低照度图像的特点，研究一种更有效的网络结构用于LLIE是有必要的。}。
-		
-		(3) \textbf{消除未知噪声}。 观察现有方法对不同类型手机摄像头拍摄的低照度图像的处理结果，我们可以发现，这些方法不能很好地去除噪声，甚至会放大噪声，尤其是在噪声类型未知的情况下。尽管有些方法在其训练数据中加入了高斯和/或泊松噪声，但这些噪声类型与真实的噪声不同，因此这些方法在真实场景中的表现并不令人满意。去除未知噪声的问题仍未解决。
-		
-		(4) \textbf{纠正不均匀光照}。在真实场景中拍摄的图像通常表现出不均
-		匀的光照。例如，在夜间拍摄的图像既有黑暗区域，也有正常光线，或过度曝光的区域如光源区域。现有的方法倾向于同时提亮黑暗区域和光源区域，这影响了增强结果的视觉质量。实际上我们更希望增强暗部区域，但抑制过度曝光区域。然而，现有的LLIE方法并没有很好地解决这个开放性问题。
-		
-		(5) \textbf{损失函数}。 损失函数约束了输入图像和 ground truth 之间的关系，并驱动了深度网络的优化。在 LLIE 中，常用的损失函数是从相关的视觉任务中借用的。因此，设计更适合于 LLIE的损失函数是需要的。最近的研究表明，有可能使用深度神	经网络来近似人类对图像质量的视觉感知\cite{fang2020perceptual},\cite{talebi2018nima}。这些想法和基本理论可以用来指导低照度增强网络的损失函数的设计。
-		
-		Table.\ref{tab: Paired_training_datases}和Table.\ref{tab: Testing datasets}总共提到十六个数据集，所以第二个工作是相较于上一个礼拜，搜集了更多的数据集以及整理它们的描述，整理后如下表所示。
-		
-		\begin{table}[!htbp]
-			\centering
-			\tiny
-			\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
-				\begin{tabular}{c|>{\centering\arraybackslash}m{5cm}|c|c|c}
-					
-					\hline %添加表格头部粗线
-					
-					% \multirow{2}*{\textbf{Learning}} & \multirow{2}*{\textbf{Mathod}} & \multicolumn{4}{c|}{\textbf{LOL-test}} & \multicolumn{4}{c}{\textbf{MIT-Adobe FiveK-test}} \\
-					
-					\textbf{Dataset} & \textbf{Brief intro} & \textbf{Resource} & \textbf{Paired}  & \textbf{Note}  \\
-					
-					\hline
-					
-					VIP-LowLight &	Eight Natural Images Captured in Very Low-Light Conditions & link\tablefootnote{https://uwaterloo.ca/vision-image-processing-lab/research-demos/vip-lowlight-dataset} & - & - \\
-					
-					\hline
-					
-					ReNOIR & RENOIR - A Dataset for Real Low-Light Image Noise Reduction & link\tablefootnote{https://ani.stat.fsu.edu/~abarbu/Renoir.html} & \checkmark & \makecell{120 low-light scene images, 4 per scene} \\
-					
-					\hline
-					
-					Raw Image Low-Light Object & - & link\tablefootnote{https://wiki.qut.edu.au/display/cyphy/Datasets} & - & - \\
-					
-					\hline
-					
-					SID	& \makecell{Learning to see in the dark; \\
-						light level (outdoor scene 0.2 lux - 5 lux; \\ indoor scene: 0.03 lux - 0.3 lux)} &	link\tablefootnote{http://vladlen.info/publications/learning-see-dark} & \checkmark & \makecell{5094 short and long-exposure image pairs.}\\
-					
-					\hline
-					
-					ExDARK & Getting to Know Low-light Images with The Exclusively Dark Dataset & github\tablefootnote{https://github.com/cs-chan/Exclusively-Dark-Image-Dataset} & \checkmark & \makecell{ExDARK dataset has 7,363 low-light images \\ of 12 object classes in 10 different conditions.}\\
-					
-					\hline
-					
-					MIT-Adobe FiveK & Learning Photographic Global Tonal Adjustment with a Database of Input / Output Image Pairs; (with ~4\% low light images) & link\tablefootnote{https://data.csail.mit.edu/graphics/fivek} & \checkmark & Collected 5,000 photographs taken with SLR cameras \\
-					
-					\hline
-					
-					LRAICE-Dataset & A Learning-to-Rank Approach for Image Color Enhancement & - & - & - \\
-					
-					\hline
-					
-					The 500px Dataset &	Exposure: A White-Box Photo Post-Processing Framework &	- & - & - \\
-					
-					\hline
-					
-					DPED & \makecell{DSLR-quality photos on mobile devices \\ with deep convolutional networks} & link\tablefootnote{http://people.ee.ethz.ch/~ihnatova} & - & \makecell{A large-scale dataset that consists of real photos \\ captured from three different phones \\ and one high-end reflex camera.}\\
-					
-					\hline
-					
-					LOL & Deep Retinex Decomposition for Low-Light Enhancement & link\tablefootnote{https://daooshee.github.io/BMVC2018website} &\checkmark & \makecell{500 low-light/normal-light image pairs, \\ 485 training, 15 testing, \\ indoor scenes, 400x600 resolution.}\\
-					
-					\hline
-					
-					VV-most challenging cases & Busting image enhancement and tone-mapping algorithms: A collection of the most challenging cases; from Vassilios Vonikakis & link\tablefootnote{https://sites.google.com/site/vonikakis/datasets/challenging-dataset-for-enhancement} & \checkmark & - \\
-					
-					\hline
-					
-					VV-Phos & \makecell{A color image database of 15 scenes captured \\ under different illumination conditions; \\ from Vassilios Vonikakis} & link\tablefootnote{http://robotics.pme.duth.gr/phos2.html} & \checkmark & - \\
-					
-					\hline
-					
-					SICE & A large-scale multi-exposure image dataset, which contains 589 elaborately selected high-resolution multi-exposure sequences with 4,413 images & github\tablefootnote{https://github.com/csjcai/SICE} & \checkmark & - \\
-					
-					\hline
-					
-					Extended Yale B & The extended Yale Face Database B contains 16128 images of 28 human subjects under 9 poses and 64 illumination conditions. & link\tablefootnote{http://vision.ucsd.edu/~iskwak/ExtYaleDatabase/ExtYaleB.html} & - & \makecell{2414 frontal-face images, \\ 38 subjects, 192x168 size, \\ varying lighting and expressions.}\\ 
-						
-					\hline
-										
-					the nighttime image dataset & A dataset which contains source images in bad visibility and their enhanced images processed by different enhancement algorithms & link\tablefootnote{http://mlg.idm.pku.edu.cn/} & \checkmark & - \\
-					
-					\hline
-					
-					VE-LOL & A large-scale low-light image dataset serving both low/high-level vision with diversified scenes and contents as well as complex degradation in real scenarios, called Vision Enhancement in the LOw-Light condition (VE-LOL). & link\tablefootnote{https://flyywh.github.io/IJCV2021LowLight\_VELOL/} & \checkmark & - \\
-					
-					\hline
-					
-					SDSD dataset & Seeing Dynamic Scene in the Dark: High-Quality Video Dataset with Mechatronic Alignment & github\tablefootnote{https://github.com/dvlab-research/SDSD} & \checkmark & \makecell{dynamic video pairs, low-light/normal-light, \\ 70 indoor pairs, 80 outdoor pairs.}\\
-					
-					\hline
-					
-					MID & Matching in the Dark: A Dataset for Matching Image Pairs of Low-light Scenes & link\tablefootnote{https://wenzhengchina.github.io/projects/mid/} & \checkmark & \makecell{10584 images in total \\ 54 indoor scenes and 54 outdoor scenes} \\
-					
-					\hline
-					
-					DeepHDRVideo-Dataset & HDR Video Reconstruction: A Coarse-to-fine Network and A Real-world Benchmark Dataset & link\tablefootnote{https://guanyingc.github.io/DeepHDRVideo-Dataset/} & - & - \\
-					
-					\hline
-					
-					LLVIP & LLVIP: A visible-infrared paired dataset for low-light vision & link\tablefootnote{https://bupt-ai-cz.github.io/LLVIP/} & \checkmark & \makecell{visible-infrared paired dataset for low-light vision, \\ 30976 images, 15488 pairs, labeled pedestrians.} \\
-					
-					\hline
-					
-					RELLISUR & RELLISUR: A Real Low-Light Image Super-Resolution Dataset & link\tablefootnote{https://vap.aau.dk/rellisur/} & \checkmark & \makecell{1st real low-light/low-res \\ normal-light/high-res dataset, \\ 850 sequences, 12750 pairs, DSLR camera.}\\
-					
-					\hline
-					
-					LSRW & \makecell{R2RNet: Low-light Image Enhancement \\ via Real-low to Real-normal Network.} & github\tablefootnote{https://github.com/abcdef2000/R2RNet\#dataset} & \checkmark & \makecell{3170 paired images using the Nikon camera and \\ 2480 paired images using the Huawei mobile phone.}\\
-					
-					\hline
-					
-					MCR & A dataset of colored raw and monochrome raw image pairs, captured with the same exposure setting. Totally 498 different scenes, each scene has 1 corresponding RGB and Monochrome ground truth and 8 different exposure color Raw inputs. & \makecell{Google Drive\tablefootnote{https://drive.google.com/file/d/1\_GWW1P1kjVBMFfN9AuaFq29w-kQ31ncd/view?usp=sharing} \\ Baidu Netdisk\tablefootnote{https://pan.baidu.com/s/1b3cmUenebeDT\_8HdLGa9dQ?from=init\&pwd=22cv}} & \checkmark & \makecell{Mono-colored raw \\ A resolution of 1280×1024} \\
-					\hline
-					
-				\end{tabular}
-			}
-			\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
-			\caption{\label{tab: Datasets}
-				Datasets associated with the low-light image enhancement.} %表格的标题
-		\end{table}
-		
-		
-		在这周的工作中，分别对这些数据集的特征进行了整理和分析(见Table.\ref{tab: Datasets})，以便在后续的研究中更好地选择和使用数据集。
+
 		
 	
 	\section{下周工作计划}

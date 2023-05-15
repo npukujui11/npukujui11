@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.3)  15 MAY 2023 19:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  16 MAY 2023 02:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -452,13 +452,16 @@ File: UTF8.bdg 2021/10/16 4.8.5
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/ctex/ctexspa.def
 File: ctexspa.def 2022/07/14 v2.5.10 Space info for CJKpunct (CTEX)
 )
-Package hyperref Info: Option `unicode' set `true' on input line 511.
+
+Package hyperref Warning: Option `driverfallback' has already been used,
+(hyperref)                setting the option has no effect on input line 493.
+
+Package hyperref Info: Option `unicode' set `true' on input line 512.
 \ccwd=\dimen172
 \l__ctex_ccglue_skip=\skip56
 )
 \l__ctex_ziju_dim=\dimen173
-
-(d:/Soft/texlive/2023/texmf-dist/tex/latex/zhnumber/zhnumber.sty
+ (d:/Soft/texlive/2023/texmf-dist/tex/latex/zhnumber/zhnumber.sty
 Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
 \l__zhnum_scale_int=\count295
 \l__zhnum_tmp_int=\count296
@@ -685,7 +688,11 @@ File: UTF8.enc 2021/10/16 4.8.5
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `eq: Cross-entropy loss' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
@@ -770,8 +777,7 @@ LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
-
-(d:/Soft/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (d:/Soft/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
 \scratchdimen=\dimen265
@@ -875,166 +881,173 @@ nicode.sfd}) [1
 ] [2] [3]
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-) [4] [5]
-Overfull \hbox (3.63315pt too wide) in paragraph at lines 314--314
+) [4]
+<perceptual.png, id=268, 642.4pt x 228.855pt>
+File: perceptual.png Graphic file (type png)
+<use perceptual.png>
+Package pdftex.def Info: perceptual.png  used on input line 225.
+(pdftex.def)             Requested size: 375.80544pt x 133.88486pt.
+ [5]
+[6 <./perceptual.png>] [7]
+Overfull \hbox (3.63315pt too wide) in paragraph at lines 416--416
  []|\OT1/cmr/bx/n/6 Learning| 
  []
 
 
-Overfull \hbox (0.65086pt too wide) in paragraph at lines 314--314
+Overfull \hbox (0.65086pt too wide) in paragraph at lines 416--416
  []|\OT1/cmr/bx/n/6 Format| 
  []
 
 
-Overfull \vbox (10.27437pt too high) detected at line 314
+Overfull \vbox (10.27437pt too high) detected at line 416
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--314
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
 |[]
  []
 
 
-Overfull \hbox (3.58232pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.58232pt too wide) in paragraph at lines 416--416
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--314
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
 |[]
  []
 
 
-Overfull \hbox (3.58232pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.58232pt too wide) in paragraph at lines 416--416
 []
  []
 
 
-Overfull \hbox (3.24858pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.24858pt too wide) in paragraph at lines 416--416
  []|\OT1/cmr/m/n/6 Deepexposure| 
  []
 
 
-Overfull \vbox (19.90685pt too high) detected at line 314
+Overfull \vbox (19.90685pt too high) detected at line 416
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--314
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
 |[]
  []
 
 
-Overfull \hbox (3.58232pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.58232pt too wide) in paragraph at lines 416--416
 []
  []
 
 
-Overfull \hbox (3.96173pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.96173pt too wide) in paragraph at lines 416--416
  [] 
  []
 
 
-Overfull \hbox (6.08748pt too wide) in paragraph at lines 314--314
+Overfull \hbox (6.08748pt too wide) in paragraph at lines 416--416
  []|\OT1/cmr/m/n/6 EnlightenGAN| 
  []
 
 
-Overfull \vbox (56.83934pt too high) detected at line 314
+Overfull \vbox (56.83934pt too high) detected at line 416
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--314
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
 |[]
  []
 
 
-Overfull \hbox (3.58232pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.58232pt too wide) in paragraph at lines 416--416
 []
  []
 
 
-Overfull \hbox (3.96173pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.96173pt too wide) in paragraph at lines 416--416
  [] 
  []
 
 
-Overfull \hbox (3.96173pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.96173pt too wide) in paragraph at lines 416--416
  [] 
  []
 
 
-Overfull \hbox (5.33836pt too wide) in paragraph at lines 314--314
+Overfull \hbox (5.33836pt too wide) in paragraph at lines 416--416
  [] 
  []
 
 
-Overfull \hbox (3.93245pt too wide) in paragraph at lines 314--314
+Overfull \hbox (3.93245pt too wide) in paragraph at lines 416--416
  [] 
  []
 
 
-Overfull \hbox (1.25711pt too wide) in paragraph at lines 314--314
+Overfull \hbox (1.25711pt too wide) in paragraph at lines 416--416
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 15.32085pt on input line 319.
+LaTeX Warning: Float too large for page by 23.18091pt on input line 421.
 
-<learning_strategy.png, id=278, 160.34906pt x 132.495pt>
+<learning_strategy.png, id=317, 160.34906pt x 132.495pt>
 File: learning_strategy.png Graphic file (type png)
 <use learning_strategy.png>
-Package pdftex.def Info: learning_strategy.png  used on input line 329.
+Package pdftex.def Info: learning_strategy.png  used on input line 431.
 (pdftex.def)             Requested size: 93.94957pt x 77.63156pt.
-<network_struture.png, id=280, 163.3603pt x 131.74219pt>
+<network_struture.png, id=318, 163.3603pt x 131.74219pt>
 File: network_struture.png Graphic file (type png)
 <use network_struture.png>
-Package pdftex.def Info: network_struture.png  used on input line 335.
+Package pdftex.def Info: network_struture.png  used on input line 437.
 (pdftex.def)             Requested size: 108.04143pt x 87.12901pt.
 
-Overfull \hbox (14.09186pt too wide) in paragraph at lines 335--337
+Overfull \hbox (14.09186pt too wide) in paragraph at lines 437--439
 [][] 
  []
 
-<Retinex_model.png, id=281, 155.83218pt x 131.74219pt>
+<Retinex_model.png, id=319, 155.83218pt x 131.74219pt>
 File: Retinex_model.png Graphic file (type png)
 <use Retinex_model.png>
-Package pdftex.def Info: Retinex_model.png  used on input line 341.
+Package pdftex.def Info: Retinex_model.png  used on input line 443.
 (pdftex.def)             Requested size: 93.94957pt x 79.42584pt.
-<data_format.png, id=282, 161.85469pt x 131.74219pt>
+<data_format.png, id=320, 161.85469pt x 131.74219pt>
 File: data_format.png Graphic file (type png)
 <use data_format.png>
-Package pdftex.def Info: data_format.png  used on input line 347.
+Package pdftex.def Info: data_format.png  used on input line 449.
 (pdftex.def)             Requested size: 93.94957pt x 76.47081pt.
-<loss_function.png, id=283, 158.84344pt x 90.3375pt>
+<loss_function.png, id=321, 158.84344pt x 90.3375pt>
 File: loss_function.png Graphic file (type png)
 <use loss_function.png>
-Package pdftex.def Info: loss_function.png  used on input line 353.
+Package pdftex.def Info: loss_function.png  used on input line 455.
 (pdftex.def)             Requested size: 93.94957pt x 53.43236pt.
-<training_dataset.png, id=284, 158.09062pt x 90.3375pt>
+<training_dataset.png, id=322, 158.09062pt x 90.3375pt>
 File: training_dataset.png Graphic file (type png)
 <use training_dataset.png>
-Package pdftex.def Info: training_dataset.png  used on input line 359.
+Package pdftex.def Info: training_dataset.png  used on input line 461.
 (pdftex.def)             Requested size: 93.94957pt x 53.68599pt.
-<testing_dataset.png, id=285, 158.09062pt x 90.3375pt>
+<testing_dataset.png, id=323, 158.09062pt x 90.3375pt>
 File: testing_dataset.png Graphic file (type png)
 <use testing_dataset.png>
-Package pdftex.def Info: testing_dataset.png  used on input line 365.
+Package pdftex.def Info: testing_dataset.png  used on input line 467.
 (pdftex.def)             Requested size: 93.94957pt x 53.68599pt.
-<evaluation_metric.png, id=286, 164.11313pt x 90.3375pt>
+<evaluation_metric.png, id=324, 164.11313pt x 90.3375pt>
 File: evaluation_metric.png Graphic file (type png)
 <use evaluation_metric.png>
-Package pdftex.def Info: evaluation_metric.png  used on input line 371.
+Package pdftex.def Info: evaluation_metric.png  used on input line 473.
 (pdftex.def)             Requested size: 93.94957pt x 51.7162pt.
-[6 <./learning_strategy.png> <./network_struture.png> <./Retinex_model.png> <./
+[8 <./learning_strategy.png> <./network_struture.png> <./Retinex_model.png> <./
 data_format.png> <./loss_function.png> <./training_dataset.png> <./testing_data
-set.png> <./evaluation_metric.png>] [7] [8]
-<Sample_Loli.png, id=344, 338.01282pt x 236.38312pt>
+set.png> <./evaluation_metric.png>] [9] [10] [11]
+<Sample_Loli.png, id=394, 338.01282pt x 236.38312pt>
 File: Sample_Loli.png Graphic file (type png)
 <use Sample_Loli.png>
-Package pdftex.def Info: Sample_Loli.png  used on input line 566.
+Package pdftex.def Info: Sample_Loli.png  used on input line 668.
 (pdftex.def)             Requested size: 375.80544pt x 262.8212pt.
- [9]
-Overfull \hbox (8.8106pt too wide) in paragraph at lines 578--579
+
+Overfull \hbox (8.8106pt too wide) in paragraph at lines 680--681
 []\C70/zhsong/bx/n/12/4e ^^M \C70/rm/m/n/12/54 ^^L \C70/rm/m/n/12/65 π \C70/rm/
 m/n/12/6c ’ \C70/rm/m/n/12/53 Ô \C70/zhsong/bx/n/12/80 ˝ \C70/rm/m/n/12/91 « \C
 70/rm/m/n/12/75 ( \C70/zhsong/bx/n/12/4e ^^M \C70/rm/m/n/12/54 ^^L \C70/rm/m/n/
@@ -1046,8 +1059,8 @@ A| \OT1/cmr/m/n/12 Theano|\C70/rm/m/n/12/30 ^^A| \OT1/cmr/m/n/12 TensorFlow\C70
 ff ^^L|
  []
 
-
-Overfull \hbox (8.57393pt too wide) in paragraph at lines 582--583
+[12]
+Overfull \hbox (8.57393pt too wide) in paragraph at lines 684--685
 []\C70/zhsong/bx/n/12/4e : \C70/zhsong/bx/n/12/66 Ù \C70/rm/m/n/12/59 } \C70/rm
 /m/n/12/76 Ñ \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/91 œ \C70/zhsong/bx/n/12/4e ^^N
  \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/60 ' \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/6b 
@@ -1059,411 +1072,415 @@ m/n/12/65 π \C70/rm/m/n/12/6c ’|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/96 d \C70
  MIT-Adboe
  []
 
-<LOL-test_dataset/input.png, id=364, 124.96687pt x 83.5622pt>
+<LOL-test_dataset/input.png, id=402, 124.96687pt x 83.5622pt>
 File: LOL-test_dataset/input.png Graphic file (type png)
 <use LOL-test_dataset/input.png>
-Package pdftex.def Info: LOL-test_dataset/input.png  used on input line 587.
+Package pdftex.def Info: LOL-test_dataset/input.png  used on input line 689.
 (pdftex.def)             Requested size: 84.55246pt x 56.53973pt.
-<LOL-test_dataset/LLNet.png, id=365, 124.21407pt x 83.5622pt>
+<LOL-test_dataset/LLNet.png, id=403, 124.21407pt x 83.5622pt>
 File: LOL-test_dataset/LLNet.png Graphic file (type png)
 <use LOL-test_dataset/LLNet.png>
-Package pdftex.def Info: LOL-test_dataset/LLNet.png  used on input line 593.
+Package pdftex.def Info: LOL-test_dataset/LLNet.png  used on input line 695.
 (pdftex.def)             Requested size: 84.55246pt x 56.88145pt.
-<LOL-test_dataset/LightenNet.png, id=366, 124.96687pt x 83.5622pt>
+<LOL-test_dataset/LightenNet.png, id=404, 124.96687pt x 83.5622pt>
 File: LOL-test_dataset/LightenNet.png Graphic file (type png)
 <use LOL-test_dataset/LightenNet.png>
-Package pdftex.def Info: LOL-test_dataset/LightenNet.png  used on input line 59
-9.
+Package pdftex.def Info: LOL-test_dataset/LightenNet.png  used on input line 70
+1.
 (pdftex.def)             Requested size: 84.55246pt x 56.53973pt.
-<LOL-test_dataset/Retinex-Net.png, id=367, 124.96687pt x 83.5622pt>
+<LOL-test_dataset/Retinex-Net.png, id=405, 124.96687pt x 83.5622pt>
 File: LOL-test_dataset/Retinex-Net.png Graphic file (type png)
 <use LOL-test_dataset/Retinex-Net.png>
-Package pdftex.def Info: LOL-test_dataset/Retinex-Net.png  used on input line 6
-05.
+Package pdftex.def Info: LOL-test_dataset/Retinex-Net.png  used on input line 7
+07.
 (pdftex.def)             Requested size: 84.55246pt x 56.53973pt.
-<LOL-test_dataset/MBLLEN.png, id=368, 124.96687pt x 83.5622pt>
+<LOL-test_dataset/MBLLEN.png, id=406, 124.96687pt x 83.5622pt>
 File: LOL-test_dataset/MBLLEN.png Graphic file (type png)
 <use LOL-test_dataset/MBLLEN.png>
-Package pdftex.def Info: LOL-test_dataset/MBLLEN.png  used on input line 611.
+Package pdftex.def Info: LOL-test_dataset/MBLLEN.png  used on input line 713.
 (pdftex.def)             Requested size: 84.55246pt x 56.53973pt.
-<LOL-test_dataset/KinD.png, id=369, 124.96687pt x 84.315pt>
+<LOL-test_dataset/KinD.png, id=407, 124.96687pt x 84.315pt>
 File: LOL-test_dataset/KinD.png Graphic file (type png)
 <use LOL-test_dataset/KinD.png>
-Package pdftex.def Info: LOL-test_dataset/KinD.png  used on input line 617.
+Package pdftex.def Info: LOL-test_dataset/KinD.png  used on input line 719.
 (pdftex.def)             Requested size: 84.55246pt x 57.0491pt.
-<LOL-test_dataset/KinD++.png, id=370, 124.96687pt x 84.315pt>
+<LOL-test_dataset/KinD++.png, id=408, 124.96687pt x 84.315pt>
 File: LOL-test_dataset/KinD++.png Graphic file (type png)
 <use LOL-test_dataset/KinD++.png>
-Package pdftex.def Info: LOL-test_dataset/KinD++.png  used on input line 623.
+Package pdftex.def Info: LOL-test_dataset/KinD++.png  used on input line 725.
 (pdftex.def)             Requested size: 84.55246pt x 57.0491pt.
-<LOL-test_dataset/TBEFN.png, id=371, 124.21407pt x 84.315pt>
+<LOL-test_dataset/TBEFN.png, id=409, 124.21407pt x 84.315pt>
 File: LOL-test_dataset/TBEFN.png Graphic file (type png)
 <use LOL-test_dataset/TBEFN.png>
-Package pdftex.def Info: LOL-test_dataset/TBEFN.png  used on input line 629.
+Package pdftex.def Info: LOL-test_dataset/TBEFN.png  used on input line 731.
 (pdftex.def)             Requested size: 84.55246pt x 57.39389pt.
-<LOL-test_dataset/DSLR.png, id=372, 125.71968pt x 84.315pt>
+<LOL-test_dataset/DSLR.png, id=410, 125.71968pt x 84.315pt>
 File: LOL-test_dataset/DSLR.png Graphic file (type png)
 <use LOL-test_dataset/DSLR.png>
-Package pdftex.def Info: LOL-test_dataset/DSLR.png  used on input line 635.
+Package pdftex.def Info: LOL-test_dataset/DSLR.png  used on input line 737.
 (pdftex.def)             Requested size: 84.55246pt x 56.70558pt.
-<LOL-test_dataset/EnlightenGAN.png, id=373, 124.96687pt x 84.315pt>
+<LOL-test_dataset/EnlightenGAN.png, id=411, 124.96687pt x 84.315pt>
 File: LOL-test_dataset/EnlightenGAN.png Graphic file (type png)
 <use LOL-test_dataset/EnlightenGAN.png>
 Package pdftex.def Info: LOL-test_dataset/EnlightenGAN.png  used on input line 
-641.
+743.
 (pdftex.def)             Requested size: 84.55246pt x 57.0491pt.
-<LOL-test_dataset/DRBN.png, id=374, 124.96687pt x 82.80937pt>
+<LOL-test_dataset/DRBN.png, id=412, 124.96687pt x 82.80937pt>
 File: LOL-test_dataset/DRBN.png Graphic file (type png)
 <use LOL-test_dataset/DRBN.png>
-Package pdftex.def Info: LOL-test_dataset/DRBN.png  used on input line 647.
+Package pdftex.def Info: LOL-test_dataset/DRBN.png  used on input line 749.
 (pdftex.def)             Requested size: 84.55246pt x 56.03036pt.
-<LOL-test_dataset/ExCNet.png, id=375, 124.21407pt x 82.80937pt>
+<LOL-test_dataset/ExCNet.png, id=413, 124.21407pt x 82.80937pt>
 File: LOL-test_dataset/ExCNet.png Graphic file (type png)
 <use LOL-test_dataset/ExCNet.png>
-Package pdftex.def Info: LOL-test_dataset/ExCNet.png  used on input line 653.
+Package pdftex.def Info: LOL-test_dataset/ExCNet.png  used on input line 755.
 (pdftex.def)             Requested size: 84.55246pt x 56.369pt.
-<LOL-test_dataset/Zero-DCE.png, id=376, 124.96687pt x 82.80937pt>
+<LOL-test_dataset/Zero-DCE.png, id=414, 124.96687pt x 82.80937pt>
 File: LOL-test_dataset/Zero-DCE.png Graphic file (type png)
 <use LOL-test_dataset/Zero-DCE.png>
-Package pdftex.def Info: LOL-test_dataset/Zero-DCE.png  used on input line 659.
+Package pdftex.def Info: LOL-test_dataset/Zero-DCE.png  used on input line 761.
 
 (pdftex.def)             Requested size: 84.55246pt x 56.03036pt.
-<LOL-test_dataset/RRDNet.png, id=377, 124.96687pt x 82.80937pt>
+<LOL-test_dataset/RRDNet.png, id=415, 124.96687pt x 82.80937pt>
 File: LOL-test_dataset/RRDNet.png Graphic file (type png)
 <use LOL-test_dataset/RRDNet.png>
-Package pdftex.def Info: LOL-test_dataset/RRDNet.png  used on input line 665.
+Package pdftex.def Info: LOL-test_dataset/RRDNet.png  used on input line 767.
 (pdftex.def)             Requested size: 84.55246pt x 56.03036pt.
-<LOL-test_dataset/GT.png, id=378, 124.21407pt x 82.80937pt>
+<LOL-test_dataset/GT.png, id=416, 124.21407pt x 82.80937pt>
 File: LOL-test_dataset/GT.png Graphic file (type png)
 <use LOL-test_dataset/GT.png>
-Package pdftex.def Info: LOL-test_dataset/GT.png  used on input line 671.
+Package pdftex.def Info: LOL-test_dataset/GT.png  used on input line 773.
 (pdftex.def)             Requested size: 84.55246pt x 56.369pt.
-<MIT-Adobe_FiveK/input.png, id=379, 123.46124pt x 82.80937pt>
+<MIT-Adobe_FiveK/input.png, id=417, 123.46124pt x 82.80937pt>
 File: MIT-Adobe_FiveK/input.png Graphic file (type png)
 <use MIT-Adobe_FiveK/input.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/input.png  used on input line 687.
+Package pdftex.def Info: MIT-Adobe_FiveK/input.png  used on input line 789.
 (pdftex.def)             Requested size: 84.55246pt x 56.71523pt.
-<MIT-Adobe_FiveK/LLNet.png, id=380, 122.70844pt x 82.05656pt>
+<MIT-Adobe_FiveK/LLNet.png, id=418, 122.70844pt x 82.05656pt>
 File: MIT-Adobe_FiveK/LLNet.png Graphic file (type png)
 <use MIT-Adobe_FiveK/LLNet.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/LLNet.png  used on input line 693.
+Package pdftex.def Info: MIT-Adobe_FiveK/LLNet.png  used on input line 795.
 (pdftex.def)             Requested size: 84.55246pt x 56.5427pt.
-<MIT-Adobe_FiveK/LightenNet.png, id=381, 123.46124pt x 82.05656pt>
+<MIT-Adobe_FiveK/LightenNet.png, id=419, 123.46124pt x 82.05656pt>
 File: MIT-Adobe_FiveK/LightenNet.png Graphic file (type png)
 <use MIT-Adobe_FiveK/LightenNet.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/LightenNet.png  used on input line 699
+Package pdftex.def Info: MIT-Adobe_FiveK/LightenNet.png  used on input line 801
 .
 (pdftex.def)             Requested size: 84.55246pt x 56.19963pt.
-<MIT-Adobe_FiveK/Retinex-Net.png, id=382, 122.70844pt x 82.05656pt>
+<MIT-Adobe_FiveK/Retinex-Net.png, id=420, 122.70844pt x 82.05656pt>
 File: MIT-Adobe_FiveK/Retinex-Net.png Graphic file (type png)
 <use MIT-Adobe_FiveK/Retinex-Net.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/Retinex-Net.png  used on input line 70
-5.
+Package pdftex.def Info: MIT-Adobe_FiveK/Retinex-Net.png  used on input line 80
+7.
 (pdftex.def)             Requested size: 84.55246pt x 56.5427pt.
-<MIT-Adobe_FiveK/MBLLEN.png, id=383, 122.70844pt x 82.05656pt>
+<MIT-Adobe_FiveK/MBLLEN.png, id=421, 122.70844pt x 82.05656pt>
 File: MIT-Adobe_FiveK/MBLLEN.png Graphic file (type png)
 <use MIT-Adobe_FiveK/MBLLEN.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/MBLLEN.png  used on input line 711.
+Package pdftex.def Info: MIT-Adobe_FiveK/MBLLEN.png  used on input line 813.
 (pdftex.def)             Requested size: 84.55246pt x 56.5427pt.
-<MIT-Adobe_FiveK/KinD.png, id=384, 122.70844pt x 82.05656pt>
+<MIT-Adobe_FiveK/KinD.png, id=422, 122.70844pt x 82.05656pt>
 File: MIT-Adobe_FiveK/KinD.png Graphic file (type png)
 <use MIT-Adobe_FiveK/KinD.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/KinD.png  used on input line 717.
+Package pdftex.def Info: MIT-Adobe_FiveK/KinD.png  used on input line 819.
 (pdftex.def)             Requested size: 84.55246pt x 56.5427pt.
-<MIT-Adobe_FiveK/KinD++.png, id=385, 122.70844pt x 82.05656pt>
+<MIT-Adobe_FiveK/KinD++.png, id=423, 122.70844pt x 82.05656pt>
 File: MIT-Adobe_FiveK/KinD++.png Graphic file (type png)
 <use MIT-Adobe_FiveK/KinD++.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/KinD++.png  used on input line 723.
+Package pdftex.def Info: MIT-Adobe_FiveK/KinD++.png  used on input line 825.
 (pdftex.def)             Requested size: 84.55246pt x 56.5427pt.
-<MIT-Adobe_FiveK/TBEFN.png, id=386, 123.46124pt x 82.05656pt>
+<MIT-Adobe_FiveK/TBEFN.png, id=424, 123.46124pt x 82.05656pt>
 File: MIT-Adobe_FiveK/TBEFN.png Graphic file (type png)
 <use MIT-Adobe_FiveK/TBEFN.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/TBEFN.png  used on input line 729.
+Package pdftex.def Info: MIT-Adobe_FiveK/TBEFN.png  used on input line 831.
 (pdftex.def)             Requested size: 84.55246pt x 56.19963pt.
-<MIT-Adobe_FiveK/DSLR.png, id=387, 122.70844pt x 82.05656pt>
+<MIT-Adobe_FiveK/DSLR.png, id=425, 122.70844pt x 82.05656pt>
 File: MIT-Adobe_FiveK/DSLR.png Graphic file (type png)
 <use MIT-Adobe_FiveK/DSLR.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/DSLR.png  used on input line 735.
+Package pdftex.def Info: MIT-Adobe_FiveK/DSLR.png  used on input line 837.
 (pdftex.def)             Requested size: 84.55246pt x 56.5427pt.
-<MIT-Adobe_FiveK/EnlightenGAN.png, id=388, 122.70844pt x 82.05656pt>
+<MIT-Adobe_FiveK/EnlightenGAN.png, id=426, 122.70844pt x 82.05656pt>
 File: MIT-Adobe_FiveK/EnlightenGAN.png Graphic file (type png)
 <use MIT-Adobe_FiveK/EnlightenGAN.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/EnlightenGAN.png  used on input line 7
-41.
+Package pdftex.def Info: MIT-Adobe_FiveK/EnlightenGAN.png  used on input line 8
+43.
 (pdftex.def)             Requested size: 84.55246pt x 56.5427pt.
-<MIT-Adobe_FiveK/DRBN.png, id=389, 123.46124pt x 82.80937pt>
+<MIT-Adobe_FiveK/DRBN.png, id=427, 123.46124pt x 82.80937pt>
 File: MIT-Adobe_FiveK/DRBN.png Graphic file (type png)
 <use MIT-Adobe_FiveK/DRBN.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/DRBN.png  used on input line 747.
+Package pdftex.def Info: MIT-Adobe_FiveK/DRBN.png  used on input line 849.
 (pdftex.def)             Requested size: 84.55246pt x 56.71523pt.
-<MIT-Adobe_FiveK/ExCNet.png, id=390, 122.70844pt x 82.80937pt>
+<MIT-Adobe_FiveK/ExCNet.png, id=428, 122.70844pt x 82.80937pt>
 File: MIT-Adobe_FiveK/ExCNet.png Graphic file (type png)
 <use MIT-Adobe_FiveK/ExCNet.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/ExCNet.png  used on input line 753.
+Package pdftex.def Info: MIT-Adobe_FiveK/ExCNet.png  used on input line 855.
 (pdftex.def)             Requested size: 84.55246pt x 57.06143pt.
-<MIT-Adobe_FiveK/Zero-DCE.png, id=391, 123.46124pt x 82.80937pt>
+<MIT-Adobe_FiveK/Zero-DCE.png, id=429, 123.46124pt x 82.80937pt>
 File: MIT-Adobe_FiveK/Zero-DCE.png Graphic file (type png)
 <use MIT-Adobe_FiveK/Zero-DCE.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/Zero-DCE.png  used on input line 759.
+Package pdftex.def Info: MIT-Adobe_FiveK/Zero-DCE.png  used on input line 861.
 (pdftex.def)             Requested size: 84.55246pt x 56.71523pt.
-<MIT-Adobe_FiveK/RRDNet.png, id=392, 122.70844pt x 82.80937pt>
+<MIT-Adobe_FiveK/RRDNet.png, id=430, 122.70844pt x 82.80937pt>
 File: MIT-Adobe_FiveK/RRDNet.png Graphic file (type png)
 <use MIT-Adobe_FiveK/RRDNet.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/RRDNet.png  used on input line 765.
+Package pdftex.def Info: MIT-Adobe_FiveK/RRDNet.png  used on input line 867.
 (pdftex.def)             Requested size: 84.55246pt x 57.06143pt.
-<MIT-Adobe_FiveK/GT.png, id=393, 122.70844pt x 82.80937pt>
+<MIT-Adobe_FiveK/GT.png, id=431, 122.70844pt x 82.80937pt>
 File: MIT-Adobe_FiveK/GT.png Graphic file (type png)
 <use MIT-Adobe_FiveK/GT.png>
-Package pdftex.def Info: MIT-Adobe_FiveK/GT.png  used on input line 771.
+Package pdftex.def Info: MIT-Adobe_FiveK/GT.png  used on input line 873.
 (pdftex.def)             Requested size: 84.55246pt x 57.06143pt.
-<LoLi-Phone-imgT/input.png, id=396, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT/input.png, id=434, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT/input.png Graphic file (type png)
 <use LoLi-Phone-imgT/input.png>
-Package pdftex.def Info: LoLi-Phone-imgT/input.png  used on input line 805.
+Package pdftex.def Info: LoLi-Phone-imgT/input.png  used on input line 907.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT/LLNet.png, id=397, 153.57375pt x 271.76532pt>
+<LoLi-Phone-imgT/LLNet.png, id=435, 153.57375pt x 271.76532pt>
 File: LoLi-Phone-imgT/LLNet.png Graphic file (type png)
 <use LoLi-Phone-imgT/LLNet.png>
-Package pdftex.def Info: LoLi-Phone-imgT/LLNet.png  used on input line 811.
+Package pdftex.def Info: LoLi-Phone-imgT/LLNet.png  used on input line 913.
 (pdftex.def)             Requested size: 60.13144pt x 106.41101pt.
-<LoLi-Phone-imgT/LightenNet.png, id=398, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT/LightenNet.png, id=436, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT/LightenNet.png Graphic file (type png)
 <use LoLi-Phone-imgT/LightenNet.png>
-Package pdftex.def Info: LoLi-Phone-imgT/LightenNet.png  used on input line 817
+Package pdftex.def Info: LoLi-Phone-imgT/LightenNet.png  used on input line 919
 .
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT/Retinex-Net.png, id=399, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT/Retinex-Net.png, id=437, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT/Retinex-Net.png Graphic file (type png)
 <use LoLi-Phone-imgT/Retinex-Net.png>
-Package pdftex.def Info: LoLi-Phone-imgT/Retinex-Net.png  used on input line 82
-3.
+Package pdftex.def Info: LoLi-Phone-imgT/Retinex-Net.png  used on input line 92
+5.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT/MBLLEN.png, id=400, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT/MBLLEN.png, id=438, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT/MBLLEN.png Graphic file (type png)
 <use LoLi-Phone-imgT/MBLLEN.png>
-Package pdftex.def Info: LoLi-Phone-imgT/MBLLEN.png  used on input line 829.
+Package pdftex.def Info: LoLi-Phone-imgT/MBLLEN.png  used on input line 931.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT/KinD.png, id=401, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT/KinD.png, id=439, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT/KinD.png Graphic file (type png)
 <use LoLi-Phone-imgT/KinD.png>
-Package pdftex.def Info: LoLi-Phone-imgT/KinD.png  used on input line 835.
+Package pdftex.def Info: LoLi-Phone-imgT/KinD.png  used on input line 937.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT/KinD++.png, id=402, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT/KinD++.png, id=440, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT/KinD++.png Graphic file (type png)
 <use LoLi-Phone-imgT/KinD++.png>
-Package pdftex.def Info: LoLi-Phone-imgT/KinD++.png  used on input line 841.
+Package pdftex.def Info: LoLi-Phone-imgT/KinD++.png  used on input line 943.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT/TBEFN.png, id=403, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT/TBEFN.png, id=441, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT/TBEFN.png Graphic file (type png)
 <use LoLi-Phone-imgT/TBEFN.png>
-Package pdftex.def Info: LoLi-Phone-imgT/TBEFN.png  used on input line 847.
+Package pdftex.def Info: LoLi-Phone-imgT/TBEFN.png  used on input line 949.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT/DSLR.png, id=404, 153.57375pt x 271.0125pt>
+<LoLi-Phone-imgT/DSLR.png, id=442, 153.57375pt x 271.0125pt>
 File: LoLi-Phone-imgT/DSLR.png Graphic file (type png)
 <use LoLi-Phone-imgT/DSLR.png>
-Package pdftex.def Info: LoLi-Phone-imgT/DSLR.png  used on input line 853.
+Package pdftex.def Info: LoLi-Phone-imgT/DSLR.png  used on input line 955.
 (pdftex.def)             Requested size: 60.13144pt x 106.11624pt.
-<LoLi-Phone-imgT/EnlightenGAN.png, id=405, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT/EnlightenGAN.png, id=443, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT/EnlightenGAN.png Graphic file (type png)
 <use LoLi-Phone-imgT/EnlightenGAN.png>
-Package pdftex.def Info: LoLi-Phone-imgT/EnlightenGAN.png  used on input line 8
-59.
+Package pdftex.def Info: LoLi-Phone-imgT/EnlightenGAN.png  used on input line 9
+61.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT/DRBN.png, id=406, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT/DRBN.png, id=444, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT/DRBN.png Graphic file (type png)
 <use LoLi-Phone-imgT/DRBN.png>
-Package pdftex.def Info: LoLi-Phone-imgT/DRBN.png  used on input line 865.
+Package pdftex.def Info: LoLi-Phone-imgT/DRBN.png  used on input line 967.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT/ExCNet.png, id=407, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT/ExCNet.png, id=445, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT/ExCNet.png Graphic file (type png)
 <use LoLi-Phone-imgT/ExCNet.png>
-Package pdftex.def Info: LoLi-Phone-imgT/ExCNet.png  used on input line 871.
+Package pdftex.def Info: LoLi-Phone-imgT/ExCNet.png  used on input line 973.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT/Zero-DCE.png, id=408, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT/Zero-DCE.png, id=446, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT/Zero-DCE.png Graphic file (type png)
 <use LoLi-Phone-imgT/Zero-DCE.png>
-Package pdftex.def Info: LoLi-Phone-imgT/Zero-DCE.png  used on input line 877.
+Package pdftex.def Info: LoLi-Phone-imgT/Zero-DCE.png  used on input line 979.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT/RRDNet.png, id=409, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT/RRDNet.png, id=447, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT/RRDNet.png Graphic file (type png)
 <use LoLi-Phone-imgT/RRDNet.png>
-Package pdftex.def Info: LoLi-Phone-imgT/RRDNet.png  used on input line 883.
+Package pdftex.def Info: LoLi-Phone-imgT/RRDNet.png  used on input line 985.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT_1/input.png, id=410, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT_1/input.png, id=448, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT_1/input.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/input.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/input.png  used on input line 900.
+Package pdftex.def Info: LoLi-Phone-imgT_1/input.png  used on input line 1002.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT_1/LLNet.png, id=411, 153.57375pt x 271.76532pt>
+<LoLi-Phone-imgT_1/LLNet.png, id=449, 153.57375pt x 271.76532pt>
 File: LoLi-Phone-imgT_1/LLNet.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/LLNet.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/LLNet.png  used on input line 906.
+Package pdftex.def Info: LoLi-Phone-imgT_1/LLNet.png  used on input line 1008.
 (pdftex.def)             Requested size: 60.13144pt x 106.41101pt.
-<LoLi-Phone-imgT_1/LightenNet.png, id=412, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT_1/LightenNet.png, id=450, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT_1/LightenNet.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/LightenNet.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/LightenNet.png  used on input line 9
-12.
+Package pdftex.def Info: LoLi-Phone-imgT_1/LightenNet.png  used on input line 1
+014.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT_1/Retinex-Net.png, id=413, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT_1/Retinex-Net.png, id=451, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT_1/Retinex-Net.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/Retinex-Net.png>
 Package pdftex.def Info: LoLi-Phone-imgT_1/Retinex-Net.png  used on input line 
-918.
+1020.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT_1/MBLLEN.png, id=414, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT_1/MBLLEN.png, id=452, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT_1/MBLLEN.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/MBLLEN.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/MBLLEN.png  used on input line 924.
+Package pdftex.def Info: LoLi-Phone-imgT_1/MBLLEN.png  used on input line 1026.
+
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT_1/KinD.png, id=415, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT_1/KinD.png, id=453, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT_1/KinD.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/KinD.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/KinD.png  used on input line 930.
+Package pdftex.def Info: LoLi-Phone-imgT_1/KinD.png  used on input line 1032.
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT_1/KinD++.png, id=416, 152.82094pt x 271.76532pt>
+<LoLi-Phone-imgT_1/KinD++.png, id=454, 152.82094pt x 271.76532pt>
 File: LoLi-Phone-imgT_1/KinD++.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/KinD++.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/KinD++.png  used on input line 936.
+Package pdftex.def Info: LoLi-Phone-imgT_1/KinD++.png  used on input line 1038.
+
 (pdftex.def)             Requested size: 60.13144pt x 106.92937pt.
-<LoLi-Phone-imgT_1/TBEFN.png, id=417, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT_1/TBEFN.png, id=455, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT_1/TBEFN.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/TBEFN.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/TBEFN.png  used on input line 942.
+Package pdftex.def Info: LoLi-Phone-imgT_1/TBEFN.png  used on input line 1044.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT_1/DSLR.png, id=418, 151.3153pt x 271.0125pt>
+<LoLi-Phone-imgT_1/DSLR.png, id=456, 151.3153pt x 271.0125pt>
 File: LoLi-Phone-imgT_1/DSLR.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/DSLR.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/DSLR.png  used on input line 948.
+Package pdftex.def Info: LoLi-Phone-imgT_1/DSLR.png  used on input line 1050.
 (pdftex.def)             Requested size: 60.13144pt x 107.69592pt.
-<LoLi-Phone-imgT_1/EnlightenGAN.png, id=419, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT_1/EnlightenGAN.png, id=457, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT_1/EnlightenGAN.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/EnlightenGAN.png>
 Package pdftex.def Info: LoLi-Phone-imgT_1/EnlightenGAN.png  used on input line
- 954.
+ 1056.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT_1/DRBN.png, id=420, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT_1/DRBN.png, id=458, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT_1/DRBN.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/DRBN.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/DRBN.png  used on input line 960.
+Package pdftex.def Info: LoLi-Phone-imgT_1/DRBN.png  used on input line 1062.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT_1/ExCNet.png, id=421, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT_1/ExCNet.png, id=459, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT_1/ExCNet.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/ExCNet.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/ExCNet.png  used on input line 966.
+Package pdftex.def Info: LoLi-Phone-imgT_1/ExCNet.png  used on input line 1068.
+
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT_1/Zero-DCE.png, id=422, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT_1/Zero-DCE.png, id=460, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT_1/Zero-DCE.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/Zero-DCE.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/Zero-DCE.png  used on input line 972
-.
+Package pdftex.def Info: LoLi-Phone-imgT_1/Zero-DCE.png  used on input line 107
+4.
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-<LoLi-Phone-imgT_1/RRDNet.png, id=423, 152.82094pt x 271.0125pt>
+<LoLi-Phone-imgT_1/RRDNet.png, id=461, 152.82094pt x 271.0125pt>
 File: LoLi-Phone-imgT_1/RRDNet.png Graphic file (type png)
 <use LoLi-Phone-imgT_1/RRDNet.png>
-Package pdftex.def Info: LoLi-Phone-imgT_1/RRDNet.png  used on input line 978.
+Package pdftex.def Info: LoLi-Phone-imgT_1/RRDNet.png  used on input line 1080.
+
 (pdftex.def)             Requested size: 60.13144pt x 106.63315pt.
-[10] [11 <./Sample_Loli.png (PNG copy)>] [12 <./LOL-test_dataset/input.png (PNG
- copy)> <./LOL-test_dataset/LLNet.png (PNG copy)> <./LOL-test_dataset/LightenNe
-t.png (PNG copy)> <./LOL-test_dataset/Retinex-Net.png (PNG copy)> <./LOL-test_d
-ataset/MBLLEN.png (PNG copy)> <./LOL-test_dataset/KinD.png (PNG copy)> <./LOL-t
-est_dataset/KinD++.png (PNG copy)> <./LOL-test_dataset/TBEFN.png (PNG copy)> <.
-/LOL-test_dataset/DSLR.png (PNG copy)> <./LOL-test_dataset/EnlightenGAN.png (PN
-G copy)> <./LOL-test_dataset/DRBN.png (PNG copy)> <./LOL-test_dataset/ExCNet.pn
-g (PNG copy)> <./LOL-test_dataset/Zero-DCE.png (PNG copy)> <./LOL-test_dataset/
-RRDNet.png (PNG copy)> <./LOL-test_dataset/GT.png (PNG copy)> <./MIT-Adobe_Five
-K/input.png (PNG copy)> <./MIT-Adobe_FiveK/LLNet.png (PNG copy)> <./MIT-Adobe_F
-iveK/LightenNet.png (PNG copy)> <./MIT-Adobe_FiveK/Retinex-Net.png (PNG copy)> 
-<./MIT-Adobe_FiveK/MBLLEN.png (PNG copy)> <./MIT-Adobe_FiveK/KinD.png (PNG copy
-)> <./MIT-Adobe_FiveK/KinD++.png (PNG copy)> <./MIT-Adobe_FiveK/TBEFN.png (PNG 
-copy)> <./MIT-Adobe_FiveK/DSLR.png (PNG copy)> <./MIT-Adobe_FiveK/EnlightenGAN.
-png (PNG copy)> <./MIT-Adobe_FiveK/DRBN.png (PNG copy)> <./MIT-Adobe_FiveK/ExCN
-et.png (PNG copy)> <./MIT-Adobe_FiveK/Zero-DCE.png (PNG copy)> <./MIT-Adobe_Fiv
-eK/RRDNet.png (PNG copy)> <./MIT-Adobe_FiveK/GT.png (PNG copy)>] [13 <./LoLi-Ph
-one-imgT/input.png (PNG copy)> <./LoLi-Phone-imgT/LLNet.png (PNG copy)> <./LoLi
--Phone-imgT/LightenNet.png (PNG copy)> <./LoLi-Phone-imgT/Retinex-Net.png (PNG 
-copy)> <./LoLi-Phone-imgT/MBLLEN.png (PNG copy)> <./LoLi-Phone-imgT/KinD.png (P
-NG copy)> <./LoLi-Phone-imgT/KinD++.png (PNG copy)> <./LoLi-Phone-imgT/TBEFN.pn
-g (PNG copy)> <./LoLi-Phone-imgT/DSLR.png (PNG copy)> <./LoLi-Phone-imgT/Enligh
-tenGAN.png (PNG copy)> <./LoLi-Phone-imgT/DRBN.png (PNG copy)> <./LoLi-Phone-im
-gT/ExCNet.png (PNG copy)> <./LoLi-Phone-imgT/Zero-DCE.png (PNG copy)> <./LoLi-P
-hone-imgT/RRDNet.png (PNG copy)> <./LoLi-Phone-imgT_1/input.png (PNG copy)> <./
-LoLi-Phone-imgT_1/LLNet.png (PNG copy)> <./LoLi-Phone-imgT_1/LightenNet.png (PN
-G copy)> <./LoLi-Phone-imgT_1/Retinex-Net.png (PNG copy)> <./LoLi-Phone-imgT_1/
-MBLLEN.png (PNG copy)> <./LoLi-Phone-imgT_1/KinD.png (PNG copy)> <./LoLi-Phone-
-imgT_1/KinD++.png (PNG copy)> <./LoLi-Phone-imgT_1/TBEFN.png (PNG copy)> <./LoL
-i-Phone-imgT_1/DSLR.png (PNG copy)> <./LoLi-Phone-imgT_1/EnlightenGAN.png (PNG 
-copy)> <./LoLi-Phone-imgT_1/DRBN.png (PNG copy)> <./LoLi-Phone-imgT_1/ExCNet.pn
-g (PNG copy)> <./LoLi-Phone-imgT_1/Zero-DCE.png (PNG copy)> <./LoLi-Phone-imgT_
-1/RRDNet.png (PNG copy)>] [14{d:/Soft/texlive/2023/texmf-dist/fonts/enc/dvips/c
-m-super/cm-super-ts1.enc}]
-<P-R_curves.png, id=461, 754.31813pt x 425.33907pt>
+[13 <./Sample_Loli.png (PNG copy)>] [14 <./LOL-test_dataset/input.png (PNG copy
+)> <./LOL-test_dataset/LLNet.png (PNG copy)> <./LOL-test_dataset/LightenNet.png
+ (PNG copy)> <./LOL-test_dataset/Retinex-Net.png (PNG copy)> <./LOL-test_datase
+t/MBLLEN.png (PNG copy)> <./LOL-test_dataset/KinD.png (PNG copy)> <./LOL-test_d
+ataset/KinD++.png (PNG copy)> <./LOL-test_dataset/TBEFN.png (PNG copy)> <./LOL-
+test_dataset/DSLR.png (PNG copy)> <./LOL-test_dataset/EnlightenGAN.png (PNG cop
+y)> <./LOL-test_dataset/DRBN.png (PNG copy)> <./LOL-test_dataset/ExCNet.png (PN
+G copy)> <./LOL-test_dataset/Zero-DCE.png (PNG copy)> <./LOL-test_dataset/RRDNe
+t.png (PNG copy)> <./LOL-test_dataset/GT.png (PNG copy)> <./MIT-Adobe_FiveK/inp
+ut.png (PNG copy)> <./MIT-Adobe_FiveK/LLNet.png (PNG copy)> <./MIT-Adobe_FiveK/
+LightenNet.png (PNG copy)> <./MIT-Adobe_FiveK/Retinex-Net.png (PNG copy)> <./MI
+T-Adobe_FiveK/MBLLEN.png (PNG copy)> <./MIT-Adobe_FiveK/KinD.png (PNG copy)> <.
+/MIT-Adobe_FiveK/KinD++.png (PNG copy)> <./MIT-Adobe_FiveK/TBEFN.png (PNG copy)
+> <./MIT-Adobe_FiveK/DSLR.png (PNG copy)> <./MIT-Adobe_FiveK/EnlightenGAN.png (
+PNG copy)> <./MIT-Adobe_FiveK/DRBN.png (PNG copy)> <./MIT-Adobe_FiveK/ExCNet.pn
+g (PNG copy)> <./MIT-Adobe_FiveK/Zero-DCE.png (PNG copy)> <./MIT-Adobe_FiveK/RR
+DNet.png (PNG copy)> <./MIT-Adobe_FiveK/GT.png (PNG copy)>] [15 <./LoLi-Phone-i
+mgT/input.png (PNG copy)> <./LoLi-Phone-imgT/LLNet.png (PNG copy)> <./LoLi-Phon
+e-imgT/LightenNet.png (PNG copy)> <./LoLi-Phone-imgT/Retinex-Net.png (PNG copy)
+> <./LoLi-Phone-imgT/MBLLEN.png (PNG copy)> <./LoLi-Phone-imgT/KinD.png (PNG co
+py)> <./LoLi-Phone-imgT/KinD++.png (PNG copy)> <./LoLi-Phone-imgT/TBEFN.png (PN
+G copy)> <./LoLi-Phone-imgT/DSLR.png (PNG copy)> <./LoLi-Phone-imgT/EnlightenGA
+N.png (PNG copy)> <./LoLi-Phone-imgT/DRBN.png (PNG copy)> <./LoLi-Phone-imgT/Ex
+CNet.png (PNG copy)> <./LoLi-Phone-imgT/Zero-DCE.png (PNG copy)> <./LoLi-Phone-
+imgT/RRDNet.png (PNG copy)> <./LoLi-Phone-imgT_1/input.png (PNG copy)> <./LoLi-
+Phone-imgT_1/LLNet.png (PNG copy)> <./LoLi-Phone-imgT_1/LightenNet.png (PNG cop
+y)> <./LoLi-Phone-imgT_1/Retinex-Net.png (PNG copy)> <./LoLi-Phone-imgT_1/MBLLE
+N.png (PNG copy)> <./LoLi-Phone-imgT_1/KinD.png (PNG copy)> <./LoLi-Phone-imgT_
+1/KinD++.png (PNG copy)> <./LoLi-Phone-imgT_1/TBEFN.png (PNG copy)> <./LoLi-Pho
+ne-imgT_1/DSLR.png (PNG copy)> <./LoLi-Phone-imgT_1/EnlightenGAN.png (PNG copy)
+> <./LoLi-Phone-imgT_1/DRBN.png (PNG copy)> <./LoLi-Phone-imgT_1/ExCNet.png (PN
+G copy)> <./LoLi-Phone-imgT_1/Zero-DCE.png (PNG copy)> <./LoLi-Phone-imgT_1/RRD
+Net.png (PNG copy)>] [16{d:/Soft/texlive/2023/texmf-dist/fonts/enc/dvips/cm-sup
+er/cm-super-ts1.enc}]
+<P-R_curves.png, id=494, 754.31813pt x 425.33907pt>
 File: P-R_curves.png Graphic file (type png)
 <use P-R_curves.png>
-Package pdftex.def Info: P-R_curves.png  used on input line 1203.
+Package pdftex.def Info: P-R_curves.png  used on input line 1305.
 (pdftex.def)             Requested size: 375.80544pt x 211.90317pt.
-<DARK_FACE/input.png, id=462, 212.29312pt x 141.52875pt>
+<DARK_FACE/input.png, id=495, 212.29312pt x 141.52875pt>
 File: DARK_FACE/input.png Graphic file (type png)
 <use DARK_FACE/input.png>
-Package pdftex.def Info: DARK_FACE/input.png  used on input line 1217.
+Package pdftex.def Info: DARK_FACE/input.png  used on input line 1319.
 (pdftex.def)             Requested size: 103.34666pt x 68.89833pt.
-<DARK_FACE/LightenNet.png, id=463, 212.29312pt x 141.52875pt>
+<DARK_FACE/LightenNet.png, id=496, 212.29312pt x 141.52875pt>
 File: DARK_FACE/LightenNet.png Graphic file (type png)
 <use DARK_FACE/LightenNet.png>
-Package pdftex.def Info: DARK_FACE/LightenNet.png  used on input line 1223.
+Package pdftex.def Info: DARK_FACE/LightenNet.png  used on input line 1325.
 (pdftex.def)             Requested size: 103.34666pt x 68.89833pt.
-<DARK_FACE/Retinex-Net.png, id=464, 211.54031pt x 141.52875pt>
+<DARK_FACE/Retinex-Net.png, id=497, 211.54031pt x 141.52875pt>
 File: DARK_FACE/Retinex-Net.png Graphic file (type png)
 <use DARK_FACE/Retinex-Net.png>
-Package pdftex.def Info: DARK_FACE/Retinex-Net.png  used on input line 1229.
+Package pdftex.def Info: DARK_FACE/Retinex-Net.png  used on input line 1331.
 (pdftex.def)             Requested size: 103.34666pt x 69.14236pt.
-<DARK_FACE/MBLLEN.png, id=465, 211.54031pt x 141.52875pt>
+<DARK_FACE/MBLLEN.png, id=498, 211.54031pt x 141.52875pt>
 File: DARK_FACE/MBLLEN.png Graphic file (type png)
 <use DARK_FACE/MBLLEN.png>
-Package pdftex.def Info: DARK_FACE/MBLLEN.png  used on input line 1235.
+Package pdftex.def Info: DARK_FACE/MBLLEN.png  used on input line 1337.
 (pdftex.def)             Requested size: 103.34666pt x 69.14236pt.
-<DARK_FACE/KinD++.png, id=466, 212.29312pt x 142.28156pt>
+<DARK_FACE/KinD++.png, id=499, 212.29312pt x 142.28156pt>
 File: DARK_FACE/KinD++.png Graphic file (type png)
 <use DARK_FACE/KinD++.png>
-Package pdftex.def Info: DARK_FACE/KinD++.png  used on input line 1241.
+Package pdftex.def Info: DARK_FACE/KinD++.png  used on input line 1343.
 (pdftex.def)             Requested size: 103.34666pt x 69.26482pt.
-<DARK_FACE/TBEFN.png, id=467, 212.29312pt x 142.28156pt>
+<DARK_FACE/TBEFN.png, id=500, 212.29312pt x 142.28156pt>
 File: DARK_FACE/TBEFN.png Graphic file (type png)
 <use DARK_FACE/TBEFN.png>
-Package pdftex.def Info: DARK_FACE/TBEFN.png  used on input line 1247.
+Package pdftex.def Info: DARK_FACE/TBEFN.png  used on input line 1349.
 (pdftex.def)             Requested size: 103.34666pt x 69.26482pt.
-<DARK_FACE/DSLR.png, id=468, 211.54031pt x 142.28156pt>
+<DARK_FACE/DSLR.png, id=501, 211.54031pt x 142.28156pt>
 File: DARK_FACE/DSLR.png Graphic file (type png)
 <use DARK_FACE/DSLR.png>
-Package pdftex.def Info: DARK_FACE/DSLR.png  used on input line 1253.
+Package pdftex.def Info: DARK_FACE/DSLR.png  used on input line 1355.
 (pdftex.def)             Requested size: 103.34666pt x 69.51015pt.
-<DARK_FACE/EnlightenGAN.png, id=469, 211.54031pt x 142.28156pt>
+<DARK_FACE/EnlightenGAN.png, id=502, 211.54031pt x 142.28156pt>
 File: DARK_FACE/EnlightenGAN.png Graphic file (type png)
 <use DARK_FACE/EnlightenGAN.png>
-Package pdftex.def Info: DARK_FACE/EnlightenGAN.png  used on input line 1259.
+Package pdftex.def Info: DARK_FACE/EnlightenGAN.png  used on input line 1361.
 (pdftex.def)             Requested size: 103.34666pt x 69.51015pt.
-<DARK_FACE/DRBN.png, id=470, 212.29312pt x 140.77594pt>
+<DARK_FACE/DRBN.png, id=503, 212.29312pt x 140.77594pt>
 File: DARK_FACE/DRBN.png Graphic file (type png)
 <use DARK_FACE/DRBN.png>
-Package pdftex.def Info: DARK_FACE/DRBN.png  used on input line 1265.
+Package pdftex.def Info: DARK_FACE/DRBN.png  used on input line 1367.
 (pdftex.def)             Requested size: 103.34666pt x 68.53185pt.
-<DARK_FACE/ExCNet.png, id=471, 212.29312pt x 140.77594pt>
+<DARK_FACE/ExCNet.png, id=504, 212.29312pt x 140.77594pt>
 File: DARK_FACE/ExCNet.png Graphic file (type png)
 <use DARK_FACE/ExCNet.png>
-Package pdftex.def Info: DARK_FACE/ExCNet.png  used on input line 1271.
+Package pdftex.def Info: DARK_FACE/ExCNet.png  used on input line 1373.
 (pdftex.def)             Requested size: 103.34666pt x 68.53185pt.
-<DARK_FACE/Zero-DCE.png, id=472, 211.54031pt x 140.77594pt>
+<DARK_FACE/Zero-DCE.png, id=505, 211.54031pt x 140.77594pt>
 File: DARK_FACE/Zero-DCE.png Graphic file (type png)
 <use DARK_FACE/Zero-DCE.png>
-Package pdftex.def Info: DARK_FACE/Zero-DCE.png  used on input line 1277.
+Package pdftex.def Info: DARK_FACE/Zero-DCE.png  used on input line 1379.
 (pdftex.def)             Requested size: 103.34666pt x 68.77458pt.
-<DARK_FACE/RRDNet.png, id=473, 211.54031pt x 140.77594pt>
+<DARK_FACE/RRDNet.png, id=506, 211.54031pt x 140.77594pt>
 File: DARK_FACE/RRDNet.png Graphic file (type png)
 <use DARK_FACE/RRDNet.png>
-Package pdftex.def Info: DARK_FACE/RRDNet.png  used on input line 1283.
+Package pdftex.def Info: DARK_FACE/RRDNet.png  used on input line 1385.
 (pdftex.def)             Requested size: 103.34666pt x 68.77458pt.
- [15]
-Overfull \hbox (8.57863pt too wide) in paragraph at lines 1321--1322
+ [17]
+Overfull \hbox (8.57863pt too wide) in paragraph at lines 1423--1424
 \C70/rm/m/n/12/98 ò|\C70/rm/m/n/12/ff ^^[| \OT1/cmr/m/n/12 Zero-shot\C70/rm/m/n
 /12/5b f \C70/zhsong/bx/n/12/4e ` \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/77 ^^_ \C7
 0/rm/m/n/12/5b û \C70/rm/m/n/12/57 : \C70/zhsong/bx/n/12/66 o \C70/rm/m/n/12/51
@@ -1476,8 +1493,8 @@ C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/61 ^^O \C70/rm/m/n/12/54 s \C70/rm/m/n/12/77
 @|\C70/rm/m/n/12/ff ^^Z| \OT1/cmr/m/n/12 Zero-
  []
 
-[16 <./P-R_curves.png (PNG copy)>]
-Overfull \hbox (1.67764pt too wide) in paragraph at lines 1329--1330
+[18 <./P-R_curves.png (PNG copy)>]
+Overfull \hbox (1.67764pt too wide) in paragraph at lines 1431--1432
 \C70/rm/m/n/12/65 p \C70/zhsong/bx/n/12/4e ; \C70/rm/m/n/12/89 Å \C70/zhsong/bx
 /n/12/66 / \C70/zhsong/bx/n/12/4e Œ \C70/rm/m/n/12/51 v \C70/zhsong/bx/n/12/4e 
 ÷ \C70/rm/m/n/12/76 ¯ \C70/rm/m/n/12/51 s \C70/zhsong/bx/n/12/4e ˚ \C70/rm/m/n/
@@ -1490,62 +1507,38 @@ m/n/12 LLIE\C70/zhsong/bx/n/12/80 ^^L \C70/rm/m/n/12/8b æ ° \C70/rm/m/n/12/76 Ñ
 /m/n/12/54 ^^H\OT1/cmr/m/n/12 LLIE\C70/rm/m/n/12/76 Ñ
  []
 
-[17 <./DARK_FACE/input.png (PNG copy)> <./DARK_FACE/LightenNet.png (PNG copy)> 
+[19 <./DARK_FACE/input.png (PNG copy)> <./DARK_FACE/LightenNet.png (PNG copy)> 
 <./DARK_FACE/Retinex-Net.png (PNG copy)> <./DARK_FACE/MBLLEN.png (PNG copy)> <.
 /DARK_FACE/KinD++.png (PNG copy)> <./DARK_FACE/TBEFN.png (PNG copy)> <./DARK_FA
 CE/DSLR.png (PNG copy)> <./DARK_FACE/EnlightenGAN.png (PNG copy)> <./DARK_FACE/
 DRBN.png (PNG copy)> <./DARK_FACE/ExCNet.png (PNG copy)> <./DARK_FACE/Zero-DCE.
-png (PNG copy)> <./DARK_FACE/RRDNet.png (PNG copy)>]
-Overfull \hbox (6.05798pt too wide) in paragraph at lines 1512--1513
-\C70/rm/m/n/12/7d "\OT1/cmr/m/n/12 (NAS)\C70/rm/m/n/12/62 Ä \C70/rm/m/n/12/67 /
- \OT1/cmr/m/n/12 [[][]16[][]], [[][]17[][]]\C70/rm/m/n/12/67 e \C70/rm/m/n/12/8
-3 ∑ \C70/rm/m/n/12/5f ó \C70/zhsong/bx/n/12/66 Ù \C70/rm/m/n/12/67 	 \C70/rm/m/
-n/12/65 H \C70/rm/m/n/12/54 å \C70/rm/m/n/12/9a ÿ \C70/rm/m/n/12/65 H \C70/zhso
-ng/bx/n/12/76 Ñ\OT1/cmr/m/n/12 LLIE\C70/rm/m/n/12/7f Q \C70/zhsong/bx/n/12/7e ‹
- ” \C70/rm/m/n/12/67 Ñ|\C70/rm/m/n/12/30 ^^B| \C70/rm/m/n/12/5c ^^F\OT1/cmr/m/n
-/12 Transformer\C70/zhsong/bx/n/12/7e ” \C70/rm/m/n/12/67 Ñ \OT1/cmr/m/n/12 [[]
-[]18[][]], [[][]19[][]]\C70/rm/m/n/12/90 ^^B
- []
+png (PNG copy)> <./DARK_FACE/RRDNet.png (PNG copy)>] [20] (./main.bbl [21]
+[22]) [23] (./main.aux)
 
-[18] [19]
-Overfull \hbox (4.36758pt too wide) in paragraph at lines 1630--1630
- [] 
- []
+LaTeX Warning: There were multiply-defined labels.
 
-[20] [21] (./main.bbl [22] [23] [24]) [25] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EAA8714F3BBFDAE8418C9FC7D654FF33;1467.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: A1284BE9CB59D670B7DBCDFE6DCF52EA;1450
+(rerunfilecheck)             After:  52673C0328A6ADC695464EED5BB34CC2;1385.
  ) 
 Here is how much of TeX's memory you used:
- 21231 strings out of 476025
- 361470 string characters out of 5791521
- 1963382 words of memory out of 5000000
- 40876 multiletter control sequences out of 15000+600000
- 576721 words of font info for 269 fonts, out of 8000000 for 9000
+ 21051 strings out of 476025
+ 358591 string characters out of 5791521
+ 1947382 words of memory out of 5000000
+ 40789 multiletter control sequences out of 15000+600000
+ 560521 words of font info for 209 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,31n,80p,1036b,1229s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
+ 78i,31n,80p,756b,1229s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
 imhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
-/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc
-
-pdfTeX warning: pdflatex.exe (file c:/Windows/Fonts/simsun.ttc): subfont unison
-g22: wrong mapping: character 18 --> 0x2212 --> .notdef
-><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
-mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
-Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
-Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
-ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
-/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windo
-ws/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><
-c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simh
-ei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
-nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
-ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
-c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
-.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
+/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
+.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Font
 s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
 ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
@@ -1557,41 +1550,49 @@ simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
 s/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
 :/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
 n.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
-ts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Win
+ts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Win
 dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
 ><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
-mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
-Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/
+msun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/
+Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/
 Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
 ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
-/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
-ws/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><
-c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/sims
-un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
-nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/So
-ft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Soft/t
-exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/Soft/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><d:/Soft/texlive/20
-23/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/Soft/texlive/2023/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/Soft/texlive/2023/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><d:/Soft/texlive/2023/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/Soft/texlive/2023/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr5.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
-fb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/So
-ft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/Soft/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><d:/Soft/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb><d:/Soft/texliv
-e/2023/texmf-dist/fonts/type1/public/cm-super/sfbx0600.pfb>
-Output written on main.pdf (25 pages, 7561179 bytes).
+/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windo
+ws/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
+c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
+un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
+nts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Wi
+ndows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
+c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
+imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
+/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
+/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
+.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
+ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/Soft/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Soft/texlive/2023/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/Soft/texlive/2023/texmf-dist/font
+s/type1/public/amsfonts/cm/cmbx6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi5.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><d
+:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/Soft
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Soft/texli
+ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Soft/texlive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/Soft/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/Soft/texlive/2023/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msam7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts
+/type1/public/cm-super/sfbx0600.pfb>
+Output written on main.pdf (23 pages, 7571995 bytes).
 PDF statistics:
- 1099 PDF objects out of 1200 (max. 8388607)
- 744 compressed objects within 8 object streams
- 121 named destinations out of 1000 (max. 500000)
- 801 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 973 PDF objects out of 1000 (max. 8388607)
+ 639 compressed objects within 7 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 794 words of extra memory for PDF output out of 10000 (max. 10000000)
 
