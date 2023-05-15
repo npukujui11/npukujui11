@@ -177,6 +177,8 @@
 			
 			\paragraph{Huber loss}
 			
+			$\mathcal{L}_2$-loss但容易受离群点的影响，$\mathcal{L}_1$-loss对离群点更加健壮但是收敛慢，Huber Loss 则是一种将MSE与MAE结合起来，取两者优点的损失函数，也被称作Smooth Mean Absolute Error Loss。其原理很简单，就是在误差接近0时使用$\mathcal{L}_2$-loss，误差较大时使用$\mathcal{L}_1$-loss
+			
 			\begin{equation}
 			J_{Huber}(\delta)= \frac{1}{N}\sum_{i=1}^{N}
 				\left\{
@@ -190,7 +192,25 @@
 			残差比较小时，Huber Loss是二次函数；残差比较大时，Huber Loss是线性函数(残差，即观测值和预测值之间的差值)。与$\mathcal{L}_2$-loss相比，Huber损失对数据中的异常值不那么敏感。使函数二次化的小误差值是多少取决于“超参数”$\delta$，它可以调整。当$\delta=1$时，退化成smooth $\mathcal{L}_1$ Loss。
 	
 			函数：\textit{torch.nn. HuberLoss}
+			
+			\paragraph{log-MSE}
+			
+			\begin{equation}
+				\begin{aligned}
+					J_{log-MSE} = 10\log_{10}\left(\frac{1}{N} \sum_{i=1}^{N} {\| \hat{y}_i - y_i \|}_{2}^2 \right)
+				\end{aligned}
+			\end{equation}
 	
+			\paragraph{perceptual loss}
+			
+			感知损失(Perceptual Loss)是一种用于比较两个看起来相似的图像的损失函数，这一损失函数由Johnson et al.\cite{johnson2016perceptual}提出。它用于比较图像之间的高层次差异，如内容和风格差异\footnote{https://deepai.org/machine-learning-glossary-and-terms/perceptual-loss-function}。它已被广泛用作图像合成任务(包括图像超分辨率和风格转换)中的有效损失项。
+			
+			感知损失函数用于比较两个看起来相似的不同图像，例如同一张照片，但偏移了一个像素。该函数用于比较图像之间的高级差异，例如内容和样式差异。感知损失函数与每像素损失函数非常相似，因为两者都用于训练前馈神经网络以进行图像转换任务。感知损失函数是一个更常用的组件，因为它通常提供有关风格迁移的更准确的结果。
+			
+			简而言之，感知损失函数的工作原理是将所有像素之间的所有平方误差相加并取平均值。这与每像素损失函数形成对比，后者对像素之间的所有绝对误差求和\cite{johnson2016perceptual}。
+			
+			作者认为感知损失函数不仅在生成高质量图像方面更准确，而且在优化后也快了三倍。神经网络模型在图像上进行训练，其中感知损失函数基于从已训练网络中提取的高级特征进行优化。
+			
 	\subsection{(综述2021.04)Lighting the darkness in the deep learning era}
 	
 	\subsubsection{背景}
