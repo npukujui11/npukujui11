@@ -8,7 +8,7 @@
 \usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
 \usepackage{ctex}
 \usepackage{titlesec}
-\usepackage{CJKutf8, CJK}
+%\usepackage{CJKutf8, CJK}
 \usepackage{makecell}                 % 三线表-竖线
 \usepackage{booktabs}                 % 三线表-短细横线
 % \usepackage{natbib}
@@ -60,7 +60,7 @@
 \begin{document}
 	
 	
-	\title{\songti \zihao{4}4月28日-5月5日工作汇报}
+	\title{\songti \zihao{4}5月5日-5月15日工作汇报}
 	\author{\textrm{Ku Jui}}
 	\date{\textrm{May 2023}}
 	\maketitle
@@ -83,7 +83,7 @@
 
 	\subsection{Pre-knowledge}
 	
-	模型中的损失函数是用来衡量模型的预测值和真实值(Ground Truth)之间的差异程度的函数，它可以反映模型的优化方向和性能指标\footnote{https://zhuanlan.zhihu.com/p/375968083}。它是一种衡量模型预测结果与真实结果之间差异的方法，用于指导模型参数的更新。在训练过程中，通过不断最小化损失函数来优化模型参数，使模型能够更好地拟合数据。\footnote{https://zhuanlan.zhihu.com/p/436809988}。因此，需要使用合适的损失函数，当模型在数据集上进行训练时，该函数可以适当地惩罚模型 \footnote{https://zhuanlan.zhihu.com/p/473113939}。
+	模型中的损失函数是用来衡量模型的预测值和真实值(Ground Truth)之间的差异程度的函数，它可以反映模型的优化方向和性能指标\footnote{https://zhuanlan.zhihu.com/p/375968083}。它是一种衡量模型预测结果与真实结果之间差异的方法，用于指导模型参数的更新。在训练过程中，通过不断最小化损失函数来优化模型参数，使模型能够更好地拟合数据\footnote{https://zhuanlan.zhihu.com/p/436809988}。因此，需要使用合适的损失函数，当模型在数据集上进行训练时，该函数可以适当地惩罚模型 \footnote{https://zhuanlan.zhihu.com/p/473113939}。
 	
 	不同的损失函数适用于不同的任务和数据分布，例如回归问题常用的有均方误差损失函数(MSE，也叫做$\mathcal{L}_{2}$损失函数)和$\mathcal{L}_{1}$损失函数，分类问题常用的有交叉熵损失函数(Cross Entropy Loss)等\footnote{https://blog.csdn.net/weixin\_57643648/article/details/122704657}。损失函数的选择会影响模型的收敛速度和精度，因此需要根据具体情况选择合适的损失函数\footnote{https://www.zhihu.com/tardis/zm/art/136047113?source\_id=1005}。
 	
@@ -310,7 +310,7 @@
 				\begin{aligned}
 					\mathcal{L}(\hat{y},y)=-\sum_{i=1}^K y_i \log \hat{y}_i
 				\end{aligned}
-				\label{eq: Cross-entropy loss}
+				\label{eq: revised_Cross-entropy loss}
 			\end{equation} 
 			
 			其中，$K$表示类别的数量，$y_i$表示第$i$个类别的真实标签，$\hat{y}_i$表示模型对于第$i$个类别的预测概率值。交叉熵损失函数的目标仍然是最小化预测与实际标签之间的差距，从而让模型能够更准确地进行分类。
