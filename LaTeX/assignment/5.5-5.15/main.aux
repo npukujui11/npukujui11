@@ -11,8 +11,8 @@
 \fi}
 \global\let\hyper@last\relax 
 \gdef\HyperFirstAtBeginDocument#1{#1}
-\providecommand\HyField@AuxAddToFields[1]{}
-\providecommand\HyField@AuxAddToCoFields[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
 \@writefile{toc}{\contentsline {section}{\numberline {1}文献阅读}{1}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{1}{subsection.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}loss function for CV}{2}{subsubsection.1.1.1}\protected@file@percent }
@@ -66,7 +66,6 @@
 \@writefile{toc}{\contentsline {paragraph}{Network Structure}{10}{figure.caption.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Combination of Deep Model and Retinex Theory}{10}{figure.caption.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Data Format}{10}{figure.caption.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Loss Function}{10}{figure.caption.3}\protected@file@percent }
 \citation{wei2018deep}
 \citation{cai2018learning}
 \citation{jiang2019learning}
@@ -82,6 +81,7 @@
 \citation{loh2019getting}
 \citation{yuan2019ug}
 \citation{jiang2019learning}
+\@writefile{toc}{\contentsline {paragraph}{Loss Function}{11}{figure.caption.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Training Datasets}{11}{figure.caption.3}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces  Summary of paired training datasets. 'Syn' represents Synthetic.\relax }}{11}{table.caption.4}\protected@file@percent }
 \newlabel{tab: Paired_training_datases}{{2}{11}{Summary of paired training datasets. 'Syn' represents Synthetic.\relax }{table.caption.4}{}}
@@ -233,7 +233,6 @@
 \newlabel{fig: P-R_curves}{{8}{18}{The P-R curves of face detection in the dark. \relax }{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {paragraph}{Future Research Directions}{18}{figure.caption.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{Effective Learning Strategies}{18}{figure.caption.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{Specialized Network Structures}{18}{figure.caption.16}\protected@file@percent }
 \newlabel{fig: DARK_FACE_a}{{9a}{19}{input\relax }{figure.caption.16}{}}
 \newlabel{sub@fig: DARK_FACE_a}{{a}{19}{input\relax }{figure.caption.16}{}}
 \newlabel{fig: DARK_FACE_b}{{9b}{19}{LightenNet\relax }{figure.caption.16}{}}
@@ -260,19 +259,27 @@
 \newlabel{sub@fig: DARK_FACE_l}{{l}{19}{RRDNet\relax }{figure.caption.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces   Visual results of different methods on a low-light image sampled from DARK FACE dataset. Better see with zoom in for the bounding boxes of faces. \relax }}{19}{figure.caption.16}\protected@file@percent }
 \newlabel{fig: Visual Result from DARK_FACE dataset}{{9}{19}{Visual results of different methods on a low-light image sampled from DARK FACE dataset. Better see with zoom in for the bounding boxes of faces. \relax }{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {subparagraph}{Specialized Network Structures}{19}{figure.caption.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{Loss Function}{19}{figure.caption.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{Realistic Training Data}{19}{figure.caption.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{Standard Testing Data}{19}{figure.caption.16}\protected@file@percent }
-\citation{fang2020perceptual}
-\citation{talebi2018nima}
+\@writefile{toc}{\contentsline {subparagraph}{Standard Testing Data}{20}{figure.caption.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{Task-Specific Evaluation Metrics}{20}{figure.caption.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{Robust Generalization Capability}{20}{figure.caption.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{Extension to Low-light Video Enhancement}{20}{figure.caption.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{Integrating Semantic Information}{20}{figure.caption.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.4}项目链接}{20}{subsubsection.1.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}个人工作进展}{20}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}梳理损失函数}{20}{subsection.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}下周工作计划}{20}{section.3}\protected@file@percent }
+\citation{10.1145/3343031.3350926}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.4}项目链接}{21}{subsubsection.1.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}个人工作进展}{21}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}梳理损失函数}{21}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}论文代码复现}{21}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{复现KinD代码}{21}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Requirement}{21}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Train}{22}{lstnumber.-2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces   The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment. \relax }}{22}{figure.caption.17}\protected@file@percent }
+\newlabel{fig: network}{{10}{22}{The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment. \relax }{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subparagraph}{Layer Decomposition Net}{22}{figure.caption.17}\protected@file@percent }
+\citation{fang2020perceptual}
+\citation{talebi2018nima}
 \bibstyle{unsrt}
 \bibdata{reference}
 \bibcite{johnson2016perceptual}{1}
@@ -280,6 +287,10 @@
 \bibcite{cai2018learning}{3}
 \bibcite{jiang2019learning}{4}
 \bibcite{bychkovsky2011learning}{5}
+\@writefile{toc}{\contentsline {subparagraph}{Reflectance Restoration Net}{27}{lstnumber.-5.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{Illumination Adjustment Net}{27}{lstnumber.-5.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluation}{27}{lstnumber.-5.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}下周工作计划}{27}{section.3}\protected@file@percent }
 \bibcite{chen2019seeing}{6}
 \bibcite{guo2016lime}{7}
 \bibcite{wang2013naturalness}{8}
@@ -288,12 +299,7 @@
 \bibcite{yu2020bdd100k}{11}
 \bibcite{loh2019getting}{12}
 \bibcite{yuan2019ug}{13}
-\bibcite{howard2017mobilenets}{14}
-\bibcite{liu2020improving}{15}
-\bibcite{liu2018progressive}{16}
-\bibcite{liu2019auto}{17}
-\bibcite{dosovitskiy2020image}{18}
-\bibcite{chen2021pre}{19}
-\bibcite{fang2020perceptual}{20}
-\bibcite{talebi2018nima}{21}
-\gdef \@abspage@last{23}
+\bibcite{10.1145/3343031.3350926}{14}
+\bibcite{fang2020perceptual}{15}
+\bibcite{talebi2018nima}{16}
+\gdef \@abspage@last{29}
