@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  19 MAY 2023 13:17
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  19 MAY 2023 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,10 +877,10 @@ LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
 
 [1
 
-] [2] (d:/Soft/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+] [2] [3] (d:/Soft/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-[3] [4]
+[4]
 File: perceptual.png Graphic file (type bmp)
 <perceptual.png>
  [5] [6]
@@ -988,11 +988,11 @@ Overfull \hbox (1.27156pt too wide) in paragraph at lines 399--399
 
 LaTeX Warning: Float too large for page by 23.18091pt on input line 404.
 
-[7] [8]
+[7] [8] [9] [10]
 File: network.jpg Graphic file (type bmp)
 <network.jpg>
 
-Overfull \hbox (20.60841pt too wide) in paragraph at lines 447--450
+Overfull \hbox (20.60841pt too wide) in paragraph at lines 482--485
 []\TU/SimSun(1)/b/n/12 以 暗 光\TU/lmr/m/n/12 /\TU/SimSun(1)/b/n/12 正 常 光 照 图 像 \T
 U/lmr/m/n/12 ($\OML/cmm/m/it/12 I[]\OT1/cmr/m/n/12 /\OML/cmm/m/it/12 I[]$\TU/lm
 r/m/n/12 ) \TU/SimSun(1)/b/n/12 对 作 为 训 练 样 本，| \TU/lmr/m/n/12 Layer Decomposit
@@ -1000,20 +1000,26 @@ ion Net \TU/SimSun(1)/b/n/12 对 \TU/lmr/m/n/12 ($\OML/cmm/m/it/12 I[]\OT1/cmr/m
 n/12 /\OML/cmm/m/it/12 I[]$\TU/lmr/m/n/12 )
  []
 
-[9] [10] [11] [12] [13] [14] (./main.bbl [15] [16]) [17] (./main.aux)
+[11] [12] [13] [14] [15] (./main.bbl [16] [17]) [18] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B9C6CA1A54701C8EDE67F5138D5CFC5F;848.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 62DC8AE1986F77FD52D8E7915DB16608;1291
+(rerunfilecheck)             After:  1797EE1A3C0A44CFEB99CD52E811CD24;1471.
  ) 
 Here is how much of TeX's memory you used:
- 20601 strings out of 476683
- 421560 string characters out of 5805371
- 2073012 words of memory out of 5000000
- 40503 multiletter control sequences out of 15000+600000
+ 20602 strings out of 476683
+ 421576 string characters out of 5805371
+ 2086012 words of memory out of 5000000
+ 40504 multiletter control sequences out of 15000+600000
  524191 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,31n,97p,783b,1742s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,31n,97p,783b,1744s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (17 pages).
+Output written on main.pdf (18 pages).

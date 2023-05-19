@@ -13,13 +13,20 @@
 \contentsline {paragraph}{Cross-entropy loss function}{7}{equation.1.13}%
 \contentsline {subsubsection}{\numberline {1.1.2}细节}{7}{subsubsection.1.1.2}%
 \contentsline {section}{\numberline {2}个人工作进展}{9}{section.2}%
-\contentsline {subsection}{\numberline {2.1}梳理损失函数}{9}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}论文代码复现}{9}{subsection.2.2}%
-\contentsline {paragraph}{复现KinD代码}{9}{subsection.2.2}%
-\contentsline {paragraph}{Requirement}{9}{subsection.2.2}%
-\contentsline {paragraph}{Train}{9}{lstnumber.-2.3}%
-\contentsline {subparagraph}{Layer Decomposition Net}{10}{figure.caption.3}%
-\contentsline {subparagraph}{Reflectance Restoration Net}{15}{lstnumber.-5.23}%
-\contentsline {subparagraph}{Illumination Adjustment Net}{15}{lstnumber.-5.23}%
-\contentsline {paragraph}{Evaluation}{15}{lstnumber.-5.23}%
-\contentsline {section}{\numberline {3}下周工作计划}{15}{section.3}%
+\contentsline {subsection}{\numberline {2.1}华为杯赛题想法}{9}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}AI交互预测决策规划}{9}{subsubsection.2.1.1}%
+\contentsline {paragraph}{Challenge}{9}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}适用多场景的通用化时序预测算法}{9}{subsubsection.2.1.2}%
+\contentsline {paragraph}{Challenge}{9}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}通过穿戴设备监测高糖发生次数}{10}{subsubsection.2.1.3}%
+\contentsline {paragraph}{Challenge}{10}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}梳理损失函数}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}论文代码复现}{10}{subsection.2.3}%
+\contentsline {paragraph}{复现KinD代码}{10}{subsection.2.3}%
+\contentsline {paragraph}{Requirement}{10}{subsection.2.3}%
+\contentsline {paragraph}{Train}{11}{lstnumber.-2.3}%
+\contentsline {subparagraph}{Layer Decomposition Net}{11}{figure.caption.3}%
+\contentsline {subparagraph}{Reflectance Restoration Net}{16}{lstnumber.-5.23}%
+\contentsline {subparagraph}{Illumination Adjustment Net}{16}{lstnumber.-5.23}%
+\contentsline {paragraph}{Evaluation}{16}{lstnumber.-5.23}%
+\contentsline {section}{\numberline {3}下周工作计划}{16}{section.3}%
