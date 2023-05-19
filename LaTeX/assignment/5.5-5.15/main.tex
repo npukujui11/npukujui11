@@ -60,7 +60,7 @@
 \begin{document}
 	
 	
-	\title{\songti \zihao{4}5月5日-5月15日工作汇报}
+	\title{\songti \zihao{4}5月16日-5月23日工作汇报}
 	\author{\textrm{Ku Jui}}
 	\date{\textrm{May 2023}}
 	\maketitle
@@ -120,13 +120,13 @@
 			
 			平方意味着较大的误差比较小的误差会产生更大的惩罚，所以$\mathcal{L}_2-loss$的收敛速度要比$\mathcal{L}_1-loss$要快得多。但是，$\mathcal{L}_2-loss$对异常点更敏感，鲁棒性差于$\mathcal{L}_1-loss$。
 			
-			$\mathcal{L}_1-loss$损失函数相比于L2损失函数的鲁棒性更好。因为以$\mathcal{L}_2-loss$范数将误差平方化(如果误差大于1，则误差会放大很多)，模型的误差会比以$\mathcal{L}_1-loss$范数大的多，因此模型会对这种类型的样本更加敏感，这就需要调整模型来最小化误差。但是很大可能这种类型的样本是一个异常值，模型就需要调整以适应这种异常值，那么就导致训练模型的方向偏离目标了\footnote{https://zhuanlan.zhihu.com/p/137073968}。
+			$\mathcal{L}_1-loss$损失函数相比于$\mathcal{L}_2-loss$损失函数的鲁棒性更好。因为以$\mathcal{L}_2-loss$范数将误差平方化(如果误差大于1，则误差会放大很多)，模型的误差会比以$\mathcal{L}_1-loss$范数大的多，因此模型会对这种类型的样本更加敏感，这就需要调整模型来最小化误差。但是很大可能这种类型的样本是一个异常值，模型就需要调整以适应这种异常值，那么就导致训练模型的方向偏离目标了\footnote{https://zhuanlan.zhihu.com/p/137073968}。
 			
 			对于大多数回归问题，一般是使用$\mathcal{L}_2-loss$而不是$\mathcal{L}_1-loss$。
 			
 			函数: \textit{torch.nn.MSELoss}
 			
-			\paragraph{loss正则化}
+			\paragraph{Regularization of the $\mathcal{L}_1$ and $\mathcal{L}_2$ loss functions}
 			
 			正则化的基本思想是通过在损失函数中加入额外信息，以便防止过拟合和提高模型泛化性能。无论哪一种正则化方式，基本思想都是希望通过限制权重的大小，使得模型不能任意拟合训练数据中的随机噪声，正则化实际是在损失函数中加入刻画模型复杂程度的指标\footnote{https://blog.csdn.net/weixin\_41960890/article/details/104891561}。
 			
@@ -152,14 +152,14 @@
 			
 			正则化之所以能够降低过拟合的原因在于，正则化是结构风险最小化的一种策略实现。给损失函数加上正则化项，能使得新得到的优化目标函数$h = f + normal$ ，需要在$f$和$normal$中做一个权衡(trade-off)，如果还像原来只优化$f$的情况下，那可能得到一组解比较复杂，使得正则项$normal$比较大，那么$h$就不是最优的，因此可以看出加正则项能让解更加简单，符合奥卡姆剃刀理论，同时也比较符合在偏差和方差(方差表示模型的复杂度)分析中，通过降低模型复杂度，得到更小的泛化误差，降低过拟合程度\footnote{https://zhuanlan.zhihu.com/p/35356992}。
 			
-			PyTorch实现： L2正则项是通过optimizer优化器的参数 weight\_decay(float, optional) 添加的，用于设置权值衰减率，即正则化中的超参$\lambda$，默认值为0。
+			PyTorch实现： $\mathcal{L}_2$正则项是通过optimizer优化器的参数 weight\_decay(float, optional) 添加的，用于设置权值衰减率，即正则化中的超参$\lambda$，默认值为0。
 			
 			\lstset{language=python,breaklines=true}
 			\begin{lstlisting}
 				optimizer = torch.optim.SGD(model.parameters(),lr=0.01,weight_decay=0.01)
 			\end{lstlisting}
 
-			\paragraph{Smooth $\mathcal{L}_1$ loss}
+			\paragraph{Smooth $\mathcal{L}_1$ loss function}
 	
 			Smooth $\mathcal{L}_1$损失函数是由Girshick R在Fast R-CNN中提出的，主要用在目标检测中防止梯度爆炸。它是一个分段函数，在$\left[-1,1\right]$之间是$\mathcal{L}_2$损失，其他区间就是$\mathcal{L}_1$损失。这样即解决了$\mathcal{L}_1$损失在0处不可导的问题，也解决了$\mathcal{L}_2$损失在异常点处梯度爆炸的问题\footnote{https://zhuanlan.zhihu.com/p/261059231}。
 			
@@ -177,7 +177,7 @@
 	
 			函数：\textit{torch.nn.SmoothL1Loss}
 			
-			\paragraph{Huber loss}
+			\paragraph{Huber loss function}
 			
 			$\mathcal{L}_2$-loss但容易受离群点的影响，$\mathcal{L}_1$-loss对离群点更加健壮但是收敛慢，Huber Loss 则是一种将MSE与MAE结合起来，取两者优点的损失函数，也被称作Smooth Mean Absolute Error Loss。其原理很简单，就是在误差接近0时使用$\mathcal{L}_2$-loss，误差较大时使用$\mathcal{L}_1$-loss
 			
@@ -203,7 +203,7 @@
 				\end{aligned}
 			\end{equation}
 	
-			\paragraph{Perceptual loss}
+			\paragraph{Perceptual loss function}
 			
 			感知损失(Perceptual Loss)是一种用于比较两个看起来相似的图像的损失函数，这一损失函数由Johnson et al.\cite{johnson2016perceptual}提出。它用于比较图像之间的高层次差异，如内容和风格差异\footnote{https://deepai.org/machine-learning-glossary-and-terms/perceptual-loss-function}。它已被广泛用作图像合成任务(包括图像超分辨率和风格转换)中的有效损失项。
 			
@@ -241,7 +241,7 @@
 			
 			感知损失就是通过一个固定的网络(通常使用预训练的VGG16或者VGG19)，分别以真实图像(Ground Truth)、网络生成结果(Prediciton)作为其输入，得到对应的输出特征：feature\_gt、feature\_pre，然后使用feature\_gt与feature\_pre构造损失(通常为$\mathcal{L}_2$-loss)，逼近真实图像与网络生成结果之间的深层信息，也就是感知信息，相比普通的$\mathcal{L}_2$-loss而言，可以增强输出特征的细节信息\footnote{https://blog.csdn.net/qq\_43665602/article/details/127077484}。
 
-			\paragraph{SSIM loss}
+			\paragraph{SSIM loss function}
 			
 			SSIM损失函数是一种用于衡量两幅图像之间差距的损失函数。它考虑了亮度、对比度和结构指标，这就考虑了人类视觉感知，一般而言，SSIM得到的结果会比$\mathcal{L}_1$-loss，$\mathcal{L}_2$-loss的结果更有细节\footnote{https://blog.csdn.net/u013289254/article/details/99694412}。
 			
@@ -272,7 +272,7 @@
 			
 			其中$\tilde{p}$是$P$的中心像素。
 			
-			\paragraph{MS-SSIM loss}
+			\paragraph{MS-SSIM loss function}
 
 			多尺度结构相似性(MS-SSIM)损失函数是基于多层(图片按照一定规则，由大到小缩放)的SSIM损失函数，相当于考虑了分辨率\footnote{https://blog.csdn.net/u013289254/article/details/99694412}。它是一种更为复杂的SSIM损失函数，可以更好地衡量图像之间的相似性。
 
@@ -315,6 +315,8 @@
 			
 			其中，$K$表示类别的数量，$y_i$表示第$i$个类别的真实标签，$\hat{y}_i$表示模型对于第$i$个类别的预测概率值。交叉熵损失函数的目标仍然是最小化预测与实际标签之间的差距，从而让模型能够更准确地进行分类。
 	
+			\paragraph{Adversarial loss function}
+			
 	\subsubsection{细节}
 	
 	\renewcommand{\tablename}{Table}
@@ -451,7 +453,7 @@
 	
 		\subsection{论文代码复现}
 		
-		\paragraph{复现KinD代码}
+		\subsubsection{复现KinD代码}
 		
 		KinD\footnote{https://github.com/zhangyhuaee/KinD}采用的是类U-Net网络，且对比使用了多种损失函数，采用的数据集相对较少，且环境配置相对简单，具体见Tab. \ref{tab: Summary}。同时，KinD\cite{10.1145/3343031.3350926}目前引用数量为543，采用的网络架构较为经典，即Retinex-based的思想。
 		
