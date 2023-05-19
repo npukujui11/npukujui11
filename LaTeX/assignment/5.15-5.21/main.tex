@@ -1,0 +1,1761 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{ctex}
+\usepackage{titlesec}
+%\usepackage{CJKutf8, CJK}
+\usepackage{makecell}                 % 三线表-竖线
+\usepackage{booktabs}                 % 三线表-短细横线
+% \usepackage{natbib}
+\usepackage{graphicx}				  % 表格单元格逆时针
+\usepackage{multirow}				  % 合并单元格
+\usepackage{array}
+\usepackage{amssymb}				  % 勾
+\usepackage{amsmath}
+\usepackage{longtable}                % 导入 longtable 宏包，表格自动换行
+\usepackage{caption}
+\usepackage{subcaption}               % 设置子图
+\usepackage{color}					  % 文本颜色包
+\usepackage{xcolor}
+\usepackage{bbm}					  % 输入指示函数
+\usepackage{tablefootnote}			  % 表格注释
+\usepackage{pythonhighlight}
+
+\usepackage{listings}                 % 导入代码块
+\usepackage{xcolor}
+\lstset{
+	numbers=left, 
+	tabsize=1,
+	columns=flexible, 
+	numberstyle=  \small, 
+	keywordstyle= \color{ blue!70},
+	commentstyle= \color{red!50!green!50!blue!50}, 
+	frame=shadowbox, % 阴影效果
+	rulesepcolor= \color{ red!20!green!20!blue!20} ,
+	escapeinside=``, % 英文分号中可写入中文
+	xleftmargin=2em,
+	xrightmargin=2em, 
+	aboveskip=1em,
+} 
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+%++++++++++++++++++++++++++++++++++++++++
+\titleformat{\section}{\Large\bfseries\songti}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\songti}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\songti}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\small\bfseries\songti}{\paragraph}{1em}{}
+\titleformat{\subparagraph}{\footnotesize\bfseries\songti}{\subparagraph}{1em}{}
+
+\begin{document}
+	
+	
+	\title{\songti \zihao{4}5月5日-5月15日工作汇报}
+	\author{\textrm{Ku Jui}}
+	\date{\textrm{May 2023}}
+	\maketitle
+	
+	\renewcommand{\figurename}{Figure} % 可以重新定义abstract，因为ctex会覆盖thebibliography
+% 	\begin{abstract}
+%		In this experiment we studied a very important physical effect by measuring the
+%		dependence of a quantity $V$ of the quantity $X$ for two different sample
+%		temperatures.  Our experimental measurements confirmed the quadratic dependence
+%		$V = kX^2$ predicted by Someone's first law. The value of the mystery parameter
+%		$k = 15.4\pm 0.5$~s was extracted from the fit. This value is
+%		not consistent with the theoretically predicted $k_{theory}=17.34$~s. We attribute %this
+%		discrepancy to low efficiency of our $V$-detector.
+%	\end{abstract}
+	\renewcommand{\contentsname}{Contents}
+	
+	\tableofcontents  % 自动生成目录
+	
+	\section{文献阅读}
+
+	\subsection{Pre-knowledge}
+	
+	模型中的损失函数是用来衡量模型的预测值和真实值(Ground Truth)之间的差异程度的函数，它可以反映模型的优化方向和性能指标\footnote{https://zhuanlan.zhihu.com/p/375968083}。它是一种衡量模型预测结果与真实结果之间差异的方法，用于指导模型参数的更新。在训练过程中，通过不断最小化损失函数来优化模型参数，使模型能够更好地拟合数据\footnote{https://zhuanlan.zhihu.com/p/436809988}。因此，需要使用合适的损失函数，当模型在数据集上进行训练时，该函数可以适当地惩罚模型 \footnote{https://zhuanlan.zhihu.com/p/473113939}。
+	
+	不同的损失函数适用于不同的任务和数据分布，例如回归问题常用的有均方误差损失函数(MSE，也叫做$\mathcal{L}_{2}$损失函数)和$\mathcal{L}_{1}$损失函数，分类问题常用的有交叉熵损失函数(Cross Entropy Loss)等\footnote{https://blog.csdn.net/weixin\_57643648/article/details/122704657}。损失函数的选择会影响模型的收敛速度和精度，因此需要根据具体情况选择合适的损失函数\footnote{https://www.zhihu.com/tardis/zm/art/136047113?source\_id=1005}。
+	
+	目前常用的损失函数是从相关视觉任务中借用的，但这些损失函数可能并不完全适用于低照度图像增强LLIE。因此，需要设计更适合 LLIE 的损失函数，以更好地驱动深度网络的优化。这可以通过研究人类对图像质量的视觉感知来实现，使用深度神经网络来近似人类视觉感知，并将这些理论应用于损失函数的设计。损失函数可以分为两个大类：回归问题和分类问题。
+	
+	
+	
+		\subsubsection{loss function for CV}
+		
+			\paragraph{$\mathcal{L}_1$-loss}
+		
+			平均绝对误差(MAE)损失，也称$\mathcal{L}_1$范数损失，计算实际值和预测值之间绝对差之和的平均值。
+			
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}_1 = \frac{1}{N} \sum_{i=1}^{N} {\| \hat{y}_i - y_i \|}_{1}
+				\end{aligned}
+			\end{equation}
+		
+			适用于回归问题，MAE loss对异常值更具鲁棒性，尤其是当目标变量的分布有离群值时(小值或大值与平均值相差很大)。
+			
+			函数：\textit{torch.nn.L1Loss}
+			
+			\paragraph{$\mathcal{L}_2$-loss}
+			
+			均方误差(MSE)损失，也称为$\mathcal{L}_2$范数损失，计算实际值和预测值之间平方差的平均值\footnote{https://blog.csdn.net/yanyuxiangtoday/article/details/119788949}。
+			
+			\begin{equation}
+			\begin{aligned}
+				\mathcal{L}_1 = \frac{1}{N} \sum_{i=1}^{N} {\| \hat{y}_i - y_i \|}_{2}^2
+			\end{aligned}
+			\end{equation}
+			
+			
+			平方意味着较大的误差比较小的误差会产生更大的惩罚，所以$\mathcal{L}_2-loss$的收敛速度要比$\mathcal{L}_1-loss$要快得多。但是，$\mathcal{L}_2-loss$对异常点更敏感，鲁棒性差于$\mathcal{L}_1-loss$。
+			
+			$\mathcal{L}_1-loss$损失函数相比于L2损失函数的鲁棒性更好。因为以$\mathcal{L}_2-loss$范数将误差平方化(如果误差大于1，则误差会放大很多)，模型的误差会比以$\mathcal{L}_1-loss$范数大的多，因此模型会对这种类型的样本更加敏感，这就需要调整模型来最小化误差。但是很大可能这种类型的样本是一个异常值，模型就需要调整以适应这种异常值，那么就导致训练模型的方向偏离目标了\footnote{https://zhuanlan.zhihu.com/p/137073968}。
+			
+			对于大多数回归问题，一般是使用$\mathcal{L}_2-loss$而不是$\mathcal{L}_1-loss$。
+			
+			函数: \textit{torch.nn.MSELoss}
+			
+			\paragraph{loss正则化}
+			
+			正则化的基本思想是通过在损失函数中加入额外信息，以便防止过拟合和提高模型泛化性能。无论哪一种正则化方式，基本思想都是希望通过限制权重的大小，使得模型不能任意拟合训练数据中的随机噪声，正则化实际是在损失函数中加入刻画模型复杂程度的指标\footnote{https://blog.csdn.net/weixin\_41960890/article/details/104891561}。
+			
+			对应的L1正则损失函数:
+			
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}_{norm1} = \mathcal{L}_{1}{\left(\hat{y},y\right)} + \lambda \sum_{\omega}{\| \omega \|}_1
+				\end{aligned}
+			\end{equation}
+			
+			对应的L2正则损失函数：
+			
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}_{norm2} = \mathcal{L}_{2}{\left(\hat{y},y\right)} + \lambda \sum_{\omega}{\| \omega \|}^2_2
+				\end{aligned}
+			\end{equation}
+			
+			假设$\mathcal{L}_{1}{\left(\hat{y},y\right)}$和$\mathcal{L}_{2}{\left(\hat{y},y\right)}$是未加正则项的损失，$\lambda$是一个超参，用于控制正则化项的大小，惩罚项$\omega$用于惩罚大的权重，隐式地减少自由参数的数量。
+			
+			正则化是如何降低过拟合现象的？
+			
+			正则化之所以能够降低过拟合的原因在于，正则化是结构风险最小化的一种策略实现。给损失函数加上正则化项，能使得新得到的优化目标函数$h = f + normal$ ，需要在$f$和$normal$中做一个权衡(trade-off)，如果还像原来只优化$f$的情况下，那可能得到一组解比较复杂，使得正则项$normal$比较大，那么$h$就不是最优的，因此可以看出加正则项能让解更加简单，符合奥卡姆剃刀理论，同时也比较符合在偏差和方差(方差表示模型的复杂度)分析中，通过降低模型复杂度，得到更小的泛化误差，降低过拟合程度\footnote{https://zhuanlan.zhihu.com/p/35356992}。
+			
+			PyTorch实现： L2正则项是通过optimizer优化器的参数 weight\_decay(float, optional) 添加的，用于设置权值衰减率，即正则化中的超参$\lambda$，默认值为0。
+			
+			\lstset{language=python,breaklines=true}
+			\begin{lstlisting}
+				optimizer = torch.optim.SGD(model.parameters(),lr=0.01,weight_decay=0.01)
+			\end{lstlisting}
+
+			\paragraph{Smooth $\mathcal{L}_1$ loss}
+	
+			Smooth $\mathcal{L}_1$损失函数是由Girshick R在Fast R-CNN中提出的，主要用在目标检测中防止梯度爆炸。它是一个分段函数，在$\left[-1,1\right]$之间是$\mathcal{L}_2$损失，其他区间就是$\mathcal{L}_1$损失。这样即解决了$\mathcal{L}_1$损失在0处不可导的问题，也解决了$\mathcal{L}_2$损失在异常点处梯度爆炸的问题\footnote{https://zhuanlan.zhihu.com/p/261059231}。
+			
+			\begin{equation}
+				\text{smooth} \ \mathcal{L}_1 \ \text{loss} = \frac{1}{N}\sum_{i=1}^{N}
+				\left\{
+				\begin{aligned}
+					&\frac{{\|\hat{y}_i - y_i \|}_2^{2}}{2\beta}, \| \hat{y}_i -y_i \| < \beta , \\
+					&{\|\hat{y}_i - y_i \|}_1 - \frac{1}{2}\beta, \| \hat{y}_i -y_i \| \geq \beta.
+				\end{aligned}
+				\right.
+			\end{equation}		
+	
+			一般取$\beta=1$。smooth $\mathcal{L}_1$和$\mathcal{L}_1$-loss函数的区别在于， smooth $\mathcal{L}_1$在0点附近使用$\mathcal{L}_2$使得它更加平滑, 它同时拥有$\mathcal{L}_2$-loss和$\mathcal{L}_1$-loss的部分优点。
+	
+			函数：\textit{torch.nn.SmoothL1Loss}
+			
+			\paragraph{Huber loss}
+			
+			$\mathcal{L}_2$-loss但容易受离群点的影响，$\mathcal{L}_1$-loss对离群点更加健壮但是收敛慢，Huber Loss 则是一种将MSE与MAE结合起来，取两者优点的损失函数，也被称作Smooth Mean Absolute Error Loss。其原理很简单，就是在误差接近0时使用$\mathcal{L}_2$-loss，误差较大时使用$\mathcal{L}_1$-loss
+			
+			\begin{equation}
+			J_{Huber}(\delta)= \frac{1}{N}\sum_{i=1}^{N}
+				\left\{
+				\begin{aligned}
+					&\frac{1}{2}{\left\|\hat{y}_i - y_i \right\|}_2^{2}, \left\| \hat{y}_i -y_i \right\| < \delta , \\
+					&\delta\left({\left\|\hat{y}_i - y_i \right\|}_1 - \frac{1}{2}\delta \right), \left\| \hat{y}_i -y_i \right\| \geq \delta.
+				\end{aligned}
+				\right.
+			\end{equation}
+	
+			残差比较小时，Huber Loss是二次函数；残差比较大时，Huber Loss是线性函数(残差，即观测值和预测值之间的差值)。与$\mathcal{L}_2$-loss相比，Huber损失对数据中的异常值不那么敏感。使函数二次化的小误差值是多少取决于“超参数”$\delta$，它可以调整。当$\delta=1$时，退化成smooth $\mathcal{L}_1$ Loss。
+	
+			函数：\textit{torch.nn.HuberLoss}
+			
+			\paragraph{log-MSE}
+			
+			\begin{equation}
+				\begin{aligned}
+					J_{log-MSE} = 10\log_{10}\left(\frac{1}{N} \sum_{i=1}^{N} {\| \hat{y}_i - y_i \|}_{2}^2 \right)
+				\end{aligned}
+			\end{equation}
+	
+			\paragraph{Perceptual loss}
+			
+			感知损失(Perceptual Loss)是一种用于比较两个看起来相似的图像的损失函数，这一损失函数由Johnson et al.\cite{johnson2016perceptual}提出。它用于比较图像之间的高层次差异，如内容和风格差异\footnote{https://deepai.org/machine-learning-glossary-and-terms/perceptual-loss-function}。它已被广泛用作图像合成任务(包括图像超分辨率和风格转换)中的有效损失项。
+			
+			感知损失函数用于比较两个看起来相似的不同图像，例如同一张照片，但偏移了一个像素。该函数用于比较图像之间的高级差异，例如内容和样式差异。感知损失函数与每像素损失函数非常相似，因为两者都用于训练前馈神经网络以进行图像转换任务。感知损失函数是一个更常用的组件，因为它通常提供有关风格迁移的更准确的结果。
+			
+			简而言之，感知损失函数的工作原理是将所有像素之间的所有平方误差相加并取平均值。这与每像素损失函数形成对比，后者对像素之间的所有绝对误差求和\cite{johnson2016perceptual}。
+			
+			作者认为感知损失函数不仅在生成高质量图像方面更准确，而且在优化后也快了三倍。神经网络模型在图像上进行训练，其中感知损失函数基于从已训练网络中提取的高级特征进行优化。
+			
+			\begin{equation}
+				\begin{aligned}
+					\ell_{feat}^{\phi,j} (\hat{y},y) = \frac{1}{C_{j}H_{j}W_{j}}{\left\| \phi_{j}(\hat{y})-\phi_{j}(y)\right\|}_{2}^2
+				\end{aligned}
+				\label{eq: perceptual loss}
+			\end{equation}
+			
+			其中$\hat{y}$为输出图像，$y$为目标图像，$\phi$为损失网络。$\phi_{j}(x)$为处理图像$x$时损失网络$\phi$的第$j$层的激活情况，如果$j$是一个卷积层，那么$\phi_{j}(x)$将是形状$C_{j} \times H_{j} \times W_{j}$的特征映射，特征重建损失是特征表示之间的欧式距离，如eq \ref{eq: perceptual loss}。
+			
+			\begin{figure}[ht] 
+				% read manual to see what [ht] means and for other possible options
+				\centering \includegraphics[width=0.8\columnwidth]{perceptual}
+				\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: perceptual loss} % spaces are big no-no withing labels
+					% things like fig: are optional in the label but it helps
+					% to orient yourself when you have multiple figures,
+					% equations and tables
+					System overview. We train an image transformation network to transform input images into output images. We use a loss network pretrained for image classification to define perceptual loss functions that measure perceptual differences in content and style between images. The loss network remains fixed during the training process.
+				}
+			\end{figure}
+			
+			Fig.\ref{fig: perceptual loss}表示经过训练以将输入图像转换为输出图像的神经网络。用于图像分类的预训练损失网络有助于通知损失函数。预先训练的网络有助于定义测量图像之间内容和风格的感知差异所需的感知损失函数。
+			
+			对于图像数据来说，网络在提取特征的过程中，较浅层通常提取边缘、颜色、亮度等低频信息，而网络较深层则提取一些细节纹理等高频信息，再深一点的网络层则提取一些具有辨别性的关键特征，也就是说，网络层越深提取的特征越抽象越高级。
+			
+			感知损失就是通过一个固定的网络(通常使用预训练的VGG16或者VGG19)，分别以真实图像(Ground Truth)、网络生成结果(Prediciton)作为其输入，得到对应的输出特征：feature\_gt、feature\_pre，然后使用feature\_gt与feature\_pre构造损失(通常为$\mathcal{L}_2$-loss)，逼近真实图像与网络生成结果之间的深层信息，也就是感知信息，相比普通的$\mathcal{L}_2$-loss而言，可以增强输出特征的细节信息\footnote{https://blog.csdn.net/qq\_43665602/article/details/127077484}。
+
+			\paragraph{SSIM loss}
+			
+			SSIM损失函数是一种用于衡量两幅图像之间差距的损失函数。它考虑了亮度、对比度和结构指标，这就考虑了人类视觉感知，一般而言，SSIM得到的结果会比$\mathcal{L}_1$-loss，$\mathcal{L}_2$-loss的结果更有细节\footnote{https://blog.csdn.net/u013289254/article/details/99694412}。
+			
+			每个像素$p$的\text{SSIM}被定义为
+			\begin{equation}
+				\begin{aligned}
+				\text{SSIM}(p) &= \frac{2\mu_{x}\mu_{y}+C_{1}}{\mu_{x}^2+\mu_{y}^2+C_{1}} \cdot \frac{2\sigma_{xy}+C_{2}}{\sigma_{x}^2+\sigma_{y}^{2}+C_{2}} \\
+				&= l(p)\cdot cs(p)
+				\end{aligned}
+				\label{eq: SSIM}
+			\end{equation}
+			其中省略了均值和标准偏差对像素$p$的依赖性，均值和标准差是用标准偏差为$\sigma_G,G_{\sigma_G}$
+			\begin{equation}
+				\begin{aligned}
+					&\varepsilon(p)=1-\text{SSIM}(p): \\  &\mathcal{L}^{\text{SSIM}}(P)=\frac{1}{N}\sum_{p \in P}1-\text{SSIM}(p).
+				\end{aligned}
+				\label{eq: SSIM loss}
+			\end{equation}
+			
+			eq. \ref{eq: SSIM}表明$\text{SSIM}(p)$需要关注像素$p$的邻域，这个领域的大小取决于$G_{\sigma_G}$，网络的卷积性质允许我们将SSIM损失写为
+			
+			\begin{equation}
+			\begin{aligned}
+				\mathcal{L}^{\text{SSIM}}(P)=1-\text{SSIM}(\tilde{p}).
+			\end{aligned}
+			\label{eq: revised_SSIM loss}
+			\end{equation}
+			
+			其中$\tilde{p}$是$P$的中心像素。
+			
+			\paragraph{MS-SSIM loss}
+
+			多尺度结构相似性(MS-SSIM)损失函数是基于多层(图片按照一定规则，由大到小缩放)的SSIM损失函数，相当于考虑了分辨率\footnote{https://blog.csdn.net/u013289254/article/details/99694412}。它是一种更为复杂的SSIM损失函数，可以更好地衡量图像之间的相似性。
+
+			\begin{equation}
+				\begin{aligned}
+					\text{MS-SSIM}(p)=l_{M}^\alpha(p)\cdot \prod_{j=1}^M cs_{j}^{\beta_j}(p)
+				\end{aligned}
+				\label{eq: MS-SSIM}
+			\end{equation}
+
+			其中$M,j$描述的是比例，设$\alpha=\beta_j=1$，对于$j={1,\cdots, M}$类似eq. \ref{eq: revised_SSIM loss}，利用中心像素$\tilde{p}$处计算的损失来近似贴片$P$的损失：
+
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}^{\text{MS-SSIM}}(P)=1-\text{MS-SSIM}(\tilde{p})
+				\end{aligned}
+				\label{eq: MS-SSIM loss}
+			\end{equation}
+			
+			\paragraph{Cross-entropy loss function}
+			
+			交叉熵损失函数是一种常用的分类问题损失函数。在二分类问题中，它的定义如下：
+			
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}(\hat{y},y)=-\left( y\log_{\hat{y}} + (1-y) \log (1-\hat{y}) \right)
+				\end{aligned}
+				\label{eq: Cross-entropy loss}
+			\end{equation}
+			
+			其中，$\hat{y}$表示模型预测的概率值(即分类器输出)，$y$表示样本真实的类别标签。对于正例样本($y=1$)，交叉熵损失函数的值等于$log {\hat{y}}$；对于反例样本($y=0$)，交叉熵损失函数的值等于$\log (1-\hat{y})$。 因此，交叉熵损失函数的目标是最小化模型预测与实际标签之间的差距，从而让模型能够更准确地进行分类。 
+			
+			交叉熵损失函数可以推广到多分类问题中，此时它的表达式略有不同。在多分类问题中，交叉熵损失函数可以写成以下形式： 
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}(\hat{y},y)=-\sum_{i=1}^K y_i \log \hat{y}_i
+				\end{aligned}
+				\label{eq: revised_Cross-entropy loss}
+			\end{equation} 
+			
+			其中，$K$表示类别的数量，$y_i$表示第$i$个类别的真实标签，$\hat{y}_i$表示模型对于第$i$个类别的预测概率值。交叉熵损失函数的目标仍然是最小化预测与实际标签之间的差距，从而让模型能够更准确地进行分类。
+			
+	\subsection{(综述2021.04)Lighting the darkness in the deep learning era}
+	
+	\subsubsection{背景}
+	
+	该领域的近期进展主要由深度学习方法(包含不同学习策略、网络架构、损失函数、训练数据等)主导。
+	
+	\subsubsection{介绍}
+	
+	这篇文章从低光图像增强的数据集、网络架构、损失函数、学习机制等不同角度对其进行了系统性的综述；
+	
+	(1) 为评估不同方法的泛化性与鲁棒性还提出了一个大尺度低光图像数据集；
+	
+	(2) 这篇文章首个系统而全面的对基于深度学习的LLIE方法进行了综述；
+	
+	(3) 这篇文章提出一个包含不同收集在不同亮度条件下锁舌的大尺度低光图像/视频数据集并用于评估现有方法的泛化性能；
+	
+	(4) 这篇文章提供了一个包含多种主流LLE方法的在线平台，它可以让用户以更友好交互方式重现不同方法的效果。
+	
+	
+	\subsubsection{细节}
+	
+	\renewcommand{\tablename}{Table}
+	
+	% 在LaTeX中，overfull hbox和overfull vbox的警告是由于badness值超过了tolerance值而产生的1。对于每种字体有一个标准的间距，为了使当前行适应宽度，会改变这些间距，如果badness的值超过了tolerance，就会出现overfull或者underfull的警告
+	
+	\begin{table}[!htbp]
+		\centering
+		\tiny
+		\resizebox{\columnwidth}{!}{ %按照宽度调整调整表格大小
+		\begin{tabular}{m{0.01cm}|>{\centering\arraybackslash}m{1.45cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{2.6cm}|>{\centering\arraybackslash}m{3.1cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{0.9cm}|>{\centering\arraybackslash}m{1.4cm}|>{\centering\arraybackslash}m{1cm}|}
+			
+			\hline
+			
+			& \textbf{Method} & \textbf{Learning} & \textbf{Network Structure} & \textbf{Loss Function} & \textbf{Training Data} & \textbf{Testing Data} & \makecell{\textbf{Evaluation Metric}} & \textbf{Format} & \textbf{Platform} & \textbf{Retinex} \\
+			
+			\hline
+			
+			\multirowcell{1}{\makecell{\centering \rotatebox{90}{\textbf{2017}}}} & LLNet & SL & SSDA &  SRR loss & simulated by Gamma Correction \& Gaussian Noise & simulated self-selected & PSNR SSIM & RGB & Theano &  \\
+			
+			\hline
+			
+			\multirowcell{6}{\makecell{\centering \rotatebox{90}{\textbf{2018}}}} & LightenNet & SL &  four layers & $L_2$ loss & simulated by random illumination values & simulated self-selected & \makecell{PSNR MAE \\ SSIM User Study} & RGB & Caffe MATLAB & \checkmark \\
+			
+			& Retinex-Net  & SL & multi-scale network & \makecell{$L_1$ loss \\ invariable reflectance loss \\ smoothness loss} & LOL simulated by adjusting histogram & self-selected & - & RGB & TensorFlow & \ \checkmark \\
+			
+			& MBLLEN & SL & multi-branch fusion & \makecell{SSIM loss \\ perceptual loss \\ region loss} & simulated by Gamma Correction \& Poisson Noise & simulated self-selected & \makecell{PSNR SSIM \\ AB VIF \\ LOE TOMI} & RGB & TensorFlow &  \\
+			
+			& SCIE & SL & frequency decomposition & \makecell{$L_2$ loss \\ $L_1$ loss \\ SSIM loss} & SCIE & SCIE & PSNR FSIM \qquad Runtime FLOPs & RGB & Caffe MATLAB &  \\
+			
+			& Chen et al. & SL & U-Net & $L_1$ loss & SID & SID & PSNR SSIM & Raw & TensorFlow &  \\
+			
+			& Deepexposure & RL & policy network GAN & deterministic policy gradient adversarial loss & MIT-Adobe FiveK & MIT-Adobe FiveK & PSNR SSIM & Raw & TensorFlow &  \\
+			
+			\hline
+			
+			\multirowcell{8}{\makecell{\centering \rotatebox{90}{\textbf{2019}\qquad\qquad \qquad\qquad\qquad}}} & Chen et al. & SL & siamese network & $L_1$ loss self-consistency loss & DRV & DRV & \makecell{PSNR SSIM \\ MAE} & Raw & TensorFlow &  \\
+
+			
+			& Jiang and Zheng & SL & 3D U-Net & \makecell{$L_1$ loss} & SMOID & SMOID & \makecell{PSNR SSIM \\ MSE} & Raw & TensorFlow &  \\
+			
+			& DeepUPE & SL & illumination map & \makecell{$L_1$ loss \\ smoothness loss \\ color loss} & retouched image pairs & MIT-Adobe FiveK & \makecell{PSNR SSIM \\ User Study} & RGB & TensorFlow & \checkmark \\
+			
+			& KinD & SL & three subnetworks U-Net & \makecell{reflectance similarity loss \\ illumination smoothness loss \\ mutual consistency loss \\ $L_1$ loss \\ $L_2$ loss \\ SSIM loss \\ texture similarity loss \\ illumination adjustment loss} & LOL & LOL LIME NPE MEF & \makecell{PSNR SSIM \\ LOE NIQE} & RGB & TensorFlow & \checkmark \\
+			
+			& Wang et al. & SL & two subnetworks pointwise Conv & $L_1$ loss & simulated by camera imaging model & IP100 FNF38 MPI LOL NPE & \makecell{PSNR SSIM \\ NIQE} & RGB & Caffe & \checkmark \\
+			
+			& Ren et al. & SL & U-Net like network RNN dilated Conv & \makecell{$L_2$ loss \\ perceptual loss \\ adversarial loss} & MIT-Adobe FiveK with Gamma correction \& Gaussion noise & simulated self-selected DPED & PSNR SSIM Runtime & RGB & Caffe &  \\
+			
+			& EnlightenGAN & UL & U-Net like network & \makecell{adversarial loss \\ self feature preserving loss} & unpaired real images & NPE LIME MEF DICM VV BBD-100K ExDARK & User Study NIQE Classification & RGB & PyTorch &  \\
+			
+			& ExCNet. & ZSL & fully connected layers & energy minimization loss & real images & $IE_{ps}D$ & \makecell{User Study \\ CDIQA LOD} & RGB & PyTorch &  \\
+			
+			\hline
+			
+			\multirowcell{12}{\makecell{\centering \rotatebox{90}{\textbf{2020}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}}} & Zero-DCE & ZSL & U-Net like network & \makecell{spatial consistency loss \\ exposure control loss \\ color constancy loss \\ illumination smoothness loss} & SICE & SICE NPE LIME MEF DICM VV DARK FACE & \makecell{User Study PI \\ PNSR SSIM \\ MAE Runtime \\ Face detection} & RGB & PyTorch & \\
+			
+			& DRBN & SSL & recursive network & \makecell{SSIM loss \\ perceptual loss \\ adversarial loss} & LOL images selected by MOS & LOL & \makecell{PSNR SSIM \\ SSIM-GC} & RGB & PyTorch & \\
+			
+			& Lv et al. & SL & U-Net like network & Huber loss SSIM loss perceptual loss illumination smoothness loss & simulated by a retouching module & LOL SICE DeepUPE & \makecell{User Study PSNR \\ SSIM VIF \\ LOE NIQE \\ \#P Runtime \\ Face detection} & RGB & TensorFlow & \checkmark \\
+			
+			& Fan et al. & SL & four subnetworks U-Net like network feature modulation & \makecell{mutual smoothness loss \\ reconstruction loss \\ illumination smoothness loss \\ cross entropy loss \\ consistency loss \\ SSIM loss \\ gradient loss \\ ratio learning loss} & \makecell{simulated by \\ illumination adjustment,\\ slight color distortion,\\ and noise simulation} & simulated self-selected & \makecell{PSNR SSIM \\ NIQE} & RGB & - & \checkmark \\
+			
+			& Xu et al. & SL & \makecell{frequency decomposition \\ U-Net like network} & \makecell{$L_2$ loss \\ perceptual loss} & SID in RGB & \makecell{SID in RGB \\ self-selected} & PSNR SSIM & RGB & PyTorch & \\
+			
+			& EEMEFN & SL & \makecell{U-Net like network \\ edge detection network} & \makecell{$L_1$ loss \\ weighted cross-entropy loss} & SID & SID & PSNR SSIM & Raw & \makecell{TensorFlow \\ PaddlePaddle} & \\
+			
+			& DLN & SL & residual learning interactive factor back projection network & \makecell{SSIM loss \\ total variation loss} & simulated by illumination adjustment, slight color distortion, and noise simulation & simulated LOL & \makecell{User Study PSNR \\ SSIM NIQE} & RGB & PyTorch & \\
+			
+			& LPNet & SL & pyramid network & \makecell{$L_1$ loss \\ perceptual loss \\ luminance loss} & \makecell{LOL SID in RGB \\ MIT-Adobe FiveK} & \makecell{LOL SID in RGB \\ MIT-Adobe FiveK \\ MEF NPE DICM VV} & \makecell{PSNR SSIM \\ NIQE \#P \\ FLOPs Runtime} & RGB & PyTorch & \\
+			
+			& SIDGAN & SL & U-Net & CycleGAN loss & SIDGAN & SIDGAN & PSNR SSIM TPSNR TSSIM ATWE & Raw & TensorFlow & \\
+			
+			& RRDNet & ZSL & three subnetworks & \makecell{retinex reconstruction loss \\ texture enhancement loss \\ noise estimation loss} & - & \makecell{NPE LIME \\ MEF DICM} & NIQE CPCQI & RGB & PyTorch & \checkmark \\
+			
+			& TBEFN & SL & \makecell{three stages \\ U-Net like network} & \makecell{SSIM loss \\ perceptual loss \\ smoothness loss}& SCIE LOL & SCIE LOL DICM MEF NPE VV & \makecell{PSNR SSIM \\ NIQE Runtime \\ \#P FLOPs} & RGB & TensorFlow & \checkmark \\ 
+			
+			& DSLR & SL & \makecell{Laplacian pyramid \\ U-Net like network} & \makecell{$L_2$ loss \\ Laplacian loss \\ color loss} & MIT-Adobe FiveK & MIT-Adobe FiveK self-selected & \makecell{PSNR SSIM \\ NIQMC NIQE \\ BTMQI CaHDC} & RGB & PyTorch & \\
+			
+			\hline
+		\end{tabular}
+		}
+		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{\label{tab: Summary}
+		Summary of essential characteristics of representative deep learning-based methods, including learning strategies, network structures, loss functions, training datasets, testing datasets, evaluation metrics, data formats of input, and whether the models are Retinex-based or not. "simulated" means the testing data are simulated by the same approach as the synthetic training data. "self-selected" stands for the real-world images selected by the authors. "\#P" represents the number of trainable parameters. "-" means this item is not available or not indicated in the paper.} %表格的标题
+		
+	\end{table}
+	
+	Table~\ref{tab: Summary}给出了最近几年主流的基于深度学习的LLIE方案，并从不同角度对其进行了划分。下图从不同角度对这些方法进行了划分，并列出了所占比例。接下来，将从不同角度对LLIE方法进行了说明。
+	
+	\begin{figure}[htbp] 
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		% \includegraphics[width=0.8\columnwidth]{GLADNet}
+		
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{learning_strategy}
+			\captionsetup{font=scriptsize}
+			\caption{learning strategy}
+			\label{fig:subfig_a}
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=1.15\linewidth]{network_struture}
+			\captionsetup{font=scriptsize}
+			\caption{network structure}
+			\label{fig:subfig_b}
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{Retinex_model}
+			\captionsetup{font=scriptsize}
+			\caption{Retinex model}
+			\label{fig:subfig_c}	
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{data_format}
+			\captionsetup{font=scriptsize}
+			\caption{data format}
+			\label{fig:subfig_d}
+		\end{subfigure}\\
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{loss_function}
+			\captionsetup{font=scriptsize}
+			\caption{loss function}
+			\label{fig:subfig_e}
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{training_dataset}
+			\captionsetup{font=scriptsize}
+			\caption{training dataset}
+			\label{fig:subfig_f}	
+		\end{subfigure}	
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{testing_dataset}
+			\captionsetup{font=scriptsize}
+			\caption{testing dataset}
+			\label{fig:subfig_g}
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{evaluation_metric}
+			\captionsetup{font=scriptsize}
+			\caption{evaluation metric}
+			\label{fig:subfig_h}	
+		\end{subfigure}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Statictic Analysis} % spaces are big no-no withing labels
+			% things like fig: are optional in the label but it helps
+			% to orient yourself when you have multiple figures,
+			% equations and tables
+			A statictic analysis of deep learning-based LLIE methods, including learning strategy, network characteristic, Retinex model, data format, loss function, training dataset, testing dataset, and evaluation metric. Better to see with zoom.
+		}
+	\end{figure}
+	
+	
+	\paragraph{Network Structure} \qquad
+	
+	从Fig.\ref{fig:subfig_b}可以看来，UNet及类UNet架构占据LLIE的65\%。这是因为：UNet可以有效的集成多尺度特征并同时采用低级与高级特征。这种特性对于取得令人满意的地低光增强非常重要。
+	尽管如此，有这样几个问题可能被当前的LLIE网络结构忽略了：
+	
+	(1) 经过多个卷积层处理后，由于比较小的像素值，极低光图像的梯度可能会在梯度反向传统过程中消失，这可能会导致模型性能并影响网络的收敛；
+	
+	(2) UNet中的跳过连接可能会引入噪声和冗余特征到最后的结果。如何有效的滤除噪声并同时集成低级与高级特征应该仔细考虑；
+	
+	(3) 尽管针对LLIE提出了部分设计和成分，但它们往往是从其他相关low-level中修改而来。在设计网络时，低光图像的特征同样应当考虑在内。
+	
+	
+	\paragraph{Combination of Deep Model and Retinex Theory} \qquad
+	
+	从Fig.\ref{fig:subfig_c}可以看到：近三分之一的方法采用了深度学习+Retinex组合的方式进行设计，采用不同的子网络估计Retinex的不同成分，并估计亮度以引导网络的学习。尽管这种组合可以在深度学习与Retinex之间进行很好的桥接，但可能同时引入各自的弱点到最终的模型：
+	
+	(1) Retinex的理想假设可能会影响最终的结果；
+	
+	(2) 深度学习的过拟合可能仍存在；
+	
+	当组合深度学习与Retinex设计网络时，如何从两者中“取其精华去其糟粕”应该慎重考虑。
+	
+	
+	\paragraph{Data Format} \qquad
+	
+	正如Fig.\ref{fig:subfig_d}所示，RAW数据是大多数据方法的首选。尽管RAW数据会受限于特定的传感器，但其包含更多的色域以及更高的动态范围。因此，基于RAW数据的深度模型可以重建更清晰的细节、高对比度，具有更好的色彩信息，同时降低了噪声和伪影问题。
+	
+	尽管如此，由于智能手机的便捷采集性，RGB形式的图像也被不少方法采用并作为输入。在未来的研究中，RAW数据到RGB格式的平滑变化将更有助于LLIE的研究。
+	
+	
+	\paragraph{Loss Function} \qquad
+	
+	从Fig.\ref{fig:subfig_e}可以看到：LLIE常采用的损失函数为L1, L2, SSIM，感知损失，平滑损失等。除此之外，按照不同的需求，颜色损失、曝光损失、对抗损失同样也得到了应用。
+	
+	\paragraph{Training Datasets} \qquad
+	
+	从Fig.\ref{fig:subfig_f}可以看到：不同的成对训练数据被提出并用于LLIE方案的训练。这些数据包含真实数据与合成数据，相关信息见Table \ref{tab: Paired_training_datases}。
+	
+	\begin{table}[!htbp]
+		\centering
+		\tiny
+		%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{>{\centering\arraybackslash}m{2.5cm}|c|c|c|c}
+				
+				\hline
+				
+				\textbf{Name} & \textbf{Number} & \textbf{Format} & \textbf{Real/Syn} & \textbf{Video} \\
+				
+				\hline
+				
+				Gamma Correction & $+\infty$ & RGB & Syn & \\
+				
+				Random Illumination & $+\infty$ & RGB & Syn & \\
+				
+				\hline
+				
+				LOL\cite{wei2018deep} & 500 & RGB & Real & \\
+				
+				SCIE\cite{cai2018learning} & 4,413 & RGB & Real & \\
+				
+				VE-LOL-L\cite{jiang2019learning} & 2,500 & RGB & Real+Syn & \\
+				
+				MIT-Adobe FiveK\cite{bychkovsky2011learning} & 5,000 & Raw & Real & \\
+				
+				SID\cite{wei2018deep} & 5,094 & Raw & Real & \\
+				
+				DRV\cite{chen2019seeing} & 202 & Raw & Real & \checkmark  \\
+				
+				SMOID\cite{jiang2019learning} & 179 & Raw & Real & \checkmark  \\
+				
+				\hline
+				
+			\end{tabular}
+			%}
+		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{\label{tab: Paired_training_datases}
+			Summary of paired training datasets. 'Syn' represents Synthetic.} %表格的标题
+		
+	\end{table}
+	
+	\paragraph{Testing Dataset} \qquad
+	
+	除了上述训练数据集外，还有一些测试数据集，相关信息如Table \ref{tab: Testing datasets}所示。
+	
+		\begin{table}[!htbp]
+		\centering
+		\tiny
+		%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{>{\centering\arraybackslash}m{2.5cm}|c|c|c|c}
+				
+				\hline
+				
+				\textbf{Name} & \textbf{Number} & \textbf{Format} & \textbf{Application} & \textbf{Video} \\
+				
+				\hline
+				
+				LIME\cite{guo2016lime} & 10 & RGB & &  \\ 
+				NPE\cite{wang2013naturalness}  & 84 & RGB & &  \\ 
+				MEF\cite{lee2011power}  & 17 & RGB & &  \\
+				DICM\cite{lee2013contrast} & 64 & RGB & &  \\
+			 $\text{VV}^{2}$& 24 & RGB & &  \\
+			 
+			 	\hline
+			 	
+				BBD-100K\cite{yu2020bdd100k} & 10,000 & RGB & \checkmark & \checkmark \\
+				ExDARK\cite{loh2019getting} & 7,363 & RGB & \checkmark & \\ 
+				DARK FACE\cite{yuan2019ug} & 6,000 & RGB & \checkmark & \\
+				VE-LOL-H\cite{jiang2019learning} & 10,940 & RGB & \checkmark & \\
+				
+				\hline
+				
+			\end{tabular}
+			%}
+		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{\label{tab: Testing datasets}
+			Summary of testing datasets.} %表格的标题
+		
+		\end{table}
+	
+	\paragraph{Benchmarking and Empirical Analysis} \qquad
+	
+	在这部分内容中，我们将对现有基于深度学习的LLIE方法进行分析并突出存在的关键挑战。为方便分析，我们提出了一个大尺度低光图像/视频数据以验证不同深度学习方法的性能。除此之外，我们开发了首个在线平台，它包含多种深度学习LLIE方法，用户能够以更友好的交互方式重建不同方法的效果。作者对比的方法有13种，它们分别是：
+	
+	(1) 监督学习方案：LLNet、LightenNet、Retinex-Net、MBLLEN、KinD、KinD++、TBEFN、DSLR；
+	
+	(2) 无监督方案：EnlightenGAN；
+	
+	(3)	半监督方案：DRBN；
+	
+	(4)	Zero-shot方案：ExCNet、Zero-DCE、RRDNet。
+	
+	
+	\paragraph{A New Low-light Image and Video Dataset} \qquad
+	
+	作者提出一个大尺度低光图像/视频数据集LoLi-Phone，以进行不同LLIE方案系统而详细的验证对比。LoLi-Phone是目前为止最大的真实低光图像数据。数据与采集设备信息见Table \ref{tab: LoLi-Phone dataset}与Figure 4。
+	
+		\begin{table}[!htbp]
+		\centering
+		\tiny
+		%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{>{\centering\arraybackslash}m{2.5cm}|c|c|c}
+				
+				\hline
+				
+				\textbf{Phone's Brand} & \textbf{\#Video} & \textbf{\#Image} & \textbf{Resolution} \\
+				
+				\hline
+				
+				iPhone 6s   		& 4 & 1,029	& 1920×1080 \\
+				iPhone 7 	 		& 13& 6,081 & 1920×1080 \\
+				iPhone7 Plus		& 2 & 900   & 1920×1080 \\
+				iPhone8 Plus 		& 1 & 489   & 1280×720  \\
+				iPhone 11   		& 7 & 2,200 & 1920×1080 \\
+				iPhone 11 Pro 		& 17& 7,739 & 1920×1080 \\
+				iPhone XS 	 		& 11& 2,470 & 1920×1080 \\
+				iPhone XR 			& 16& 4,997 & 1920×1080 \\
+				iPhone SE 			& 1 & 455   & 1920×1080 \\
+				Xiaomi Mi 9	 		& 2 & 1,145 & 1920×1080 \\
+				Xiaomi Mi Mix 3     & 6 & 2,972 & 1920×1080 \\
+				Pixel 3   			& 4 & 1,311 & 1920×1080 \\
+				Pixel 4   			& 3 & 1,1923& 1920×1080 \\
+				Oppo R17 			& 6 & 2,126 & 1920×1080 \\
+				Vivo Nex 	 		& 12& 4,097 & 1280×720  \\
+				LG M322      		& 2 & 761   & 1920×1080 \\
+				OnePlus 5T   		& 1 & 293   & 1920×1080 \\
+				Huawei Mate 20 Pro 	& 12& 4,160 & 1920×1080 \\
+				
+				\hline
+				
+			\end{tabular}
+			%}
+		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{\label{tab: LoLi-Phone dataset}
+			Summary of LoLi-Phone dataset. LoLi-Phone dataset contains 120 videos (55,148 images) taken by 18 different mobile phones' cameras. "\#Video" and "\#Image" represent the number of videos and images, respectively.} %表格的标题
+		
+	\end{table}
+	
+	\begin{figure}[ht] 
+		% read manual to see what [ht] means and for other possible options
+		\centering \includegraphics[width=0.8\columnwidth]{Sample_Loli}
+		\caption{
+			\label{fig:Sample_Loli} % spaces are big no-no withing labels
+			% things like fig: are optional in the label but it helps
+			% to orient yourself when you have multiple figures,
+			% equations and tables
+			Several images sampled from the proposed LoLiPhone dataset. The images and videos are taken by different devices under diverse lighting conditions and scenes.
+		}
+	\end{figure}
+	
+	\paragraph{Online Evaluation Platform} \qquad
+	
+	不同方法可能采用不同的深度学习框架，比如Caffe、Theano、TensorFlow以及Pytorch，因此，不同的方法依赖于不同的配置、GPU版本以及硬件信息。这样复杂的需求对于研究员极度不友好，尤其对于出入门者，甚至没有GPU资源的研究员。为缓解该问题，我们开发了在线LLIE平台，称之为LoLi-Platform\footnote{http://mc.nankai.edu.cn/ll/}。
+	
+	\paragraph{Benchmark Results} \qquad
+	
+	为更好的定量与定性对比不同的方法，除了LoLi-Phone外，作者还在LOL与MIT-Adboe FiveK数据集上进行了对比。
+	
+	\begin{figure}[htbp] 
+		\centering 
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/input}
+			\captionsetup{font=scriptsize}
+			\caption{input}
+			\label{fig: LOL-test_a}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/LLNet}
+			\captionsetup{font=scriptsize}
+			\caption{LLNet}
+			\label{fig: LOL-test_b}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/LightenNet}
+			\captionsetup{font=scriptsize}
+			\caption{LightenNet}
+			\label{fig: LOL-test_c}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/Retinex-Net}
+			\captionsetup{font=scriptsize}
+			\caption{Retinex-Net}
+			\label{fig: LOL-test_d}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/MBLLEN}
+			\captionsetup{font=scriptsize}
+			\caption{MBLLEN}
+			\label{fig: LOL-test_e}
+		\end{subfigure}\\
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/KinD}
+			\captionsetup{font=scriptsize}
+			\caption{KinD}
+			\label{fig: LOL-test_f}  
+		\end{subfigure}    
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/KinD++}
+			\captionsetup{font=scriptsize}
+			\caption{KinD++}
+			\label{fig: LOL-test_g}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/TBEFN}
+			\captionsetup{font=scriptsize}
+			\caption{TBEFN}
+			\label{fig: LOL-test_h}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/DSLR}
+			\captionsetup{font=scriptsize}
+			\caption{DSLR}
+			\label{fig: LOL-test_i}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/EnlightenGAN}
+			\captionsetup{font=scriptsize}
+			\caption{EnlightenGAN}
+			\label{fig: LOL-test_j}  
+		\end{subfigure}\\
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/DRBN}
+			\captionsetup{font=scriptsize}
+			\caption{DRBN}
+			\label{fig: LOL-test_k}  
+		\end{subfigure}    
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/ExCNet}
+			\captionsetup{font=scriptsize}
+			\caption{ExCNet}
+			\label{fig: LOL-test_l}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/Zero-DCE}
+			\captionsetup{font=scriptsize}
+			\caption{Zero-DCE}
+			\label{fig: LOL-test_m}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/RRDNet}
+			\captionsetup{font=scriptsize}
+			\caption{RRDNet}
+			\label{fig: LOL-test_n}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{LOL-test_dataset/GT}
+			\captionsetup{font=scriptsize}
+			\caption{GT}
+			\label{fig: LOL-test_o}  
+		\end{subfigure}
+		
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Visual Result from LOL-test dataset}
+			Visual results of different methods on a low-light image sampled from LOL-test dataset.
+		}
+	\end{figure}
+	
+	\begin{figure}[htbp] 
+		\centering 
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/input}
+			\captionsetup{font=scriptsize}
+			\caption{input}
+			\label{fig: MIT-Adobe_FiveK_a}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/LLNet}
+			\captionsetup{font=scriptsize}
+			\caption{LLNet}
+			\label{fig: MIT-Adobe_FiveK_b}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/LightenNet}
+			\captionsetup{font=scriptsize}
+			\caption{LightenNet}
+			\label{fig: MIT-Adobe_FiveK_c}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/Retinex-Net}
+			\captionsetup{font=scriptsize}
+			\caption{Retinex-Net}
+			\label{fig: MIT-Adobe_FiveK_d}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/MBLLEN}
+			\captionsetup{font=scriptsize}
+			\caption{MBLLEN}
+			\label{fig: MIT-Adobe_FiveK_e}
+		\end{subfigure}\\
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/KinD}
+			\captionsetup{font=scriptsize}
+			\caption{KinD}
+			\label{fig: MIT-Adobe_FiveK_f}  
+		\end{subfigure}    
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/KinD++}
+			\captionsetup{font=scriptsize}
+			\caption{KinD++}
+			\label{fig: MIT-Adobe_FiveK_g}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/TBEFN}
+			\captionsetup{font=scriptsize}
+			\caption{TBEFN}
+			\label{fig: MIT-Adobe_FiveK_h}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/DSLR}
+			\captionsetup{font=scriptsize}
+			\caption{DSLR}
+			\label{fig: MIT-Adobe_FiveK_i}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/EnlightenGAN}
+			\captionsetup{font=scriptsize}
+			\caption{EnlightenGAN}
+			\label{fig: MIT-Adobe_FiveK_j}  
+		\end{subfigure}\\
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/DRBN}
+			\captionsetup{font=scriptsize}
+			\caption{DRBN}
+			\label{fig: MIT-Adobe_FiveK_k}  
+		\end{subfigure}    
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/ExCNet}
+			\captionsetup{font=scriptsize}
+			\caption{ExCNet}
+			\label{fig: MIT-Adobe_FiveK_l}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/Zero-DCE}
+			\captionsetup{font=scriptsize}
+			\caption{Zero-DCE}
+			\label{fig: MIT-Adobe_FiveK_m}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/RRDNet}
+			\captionsetup{font=scriptsize}
+			\caption{RRDNet}
+			\label{fig: MIT-Adobe_FiveK_n}  
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{MIT-Adobe_FiveK/GT}
+			\captionsetup{font=scriptsize}
+			\caption{GT}
+			\label{fig: MIT-Adobe_FiveK_o}  
+		\end{subfigure}
+		
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Visual Result from MIT-Adobe FiveK dataset}
+			Visual results of different methods on a low-light image sampled from MIT-Adobe FiveK-test dataset.
+		}
+	\end{figure}
+	
+	Fig.\ref{fig: Visual Result from LOL-test dataset}和Fig.\ref{fig: Visual Result from MIT-Adobe FiveK dataset}对比了不同方法在LOL与FiveK数据上的效果对比，可以看到：
+	
+	在LOL测试数据集上有以下几点发现：
+	
+	(1) 所有方法均提升了输入图像的亮度和对比，但没有一个能成功进行色彩重建；
+	
+	(2) LLNet产生了比较的结果；
+	
+	(3) LightenNet、RRDNet生成欠曝结果，而MBLLEN、ExCNet则生成过曝结果；
+	
+	(4) KinD、KinD++、TBEFN、DSLR、EnlightenGAN、DRBN则引入明显的伪影；
+	
+	在FiveK数据集上有以下几点发现：
+	
+	(1) LLNet、KinD++、TBEFN、RRDNet生成了过曝结果；
+	
+	(2) Retinex-Net、KinD++、RRDNet生成了伪影，同时又模糊问题。
+	
+	\begin{figure}[htbp] 
+		\centering 
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/input}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_a}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/LLNet}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_b}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/LightenNet}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_c}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/Retinex-Net}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_d}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/MBLLEN}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_e}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/KinD}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_f}  
+		\end{subfigure}    
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/KinD++}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_g}
+		\end{subfigure}\\
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/TBEFN}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_h}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/DSLR}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_i}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/EnlightenGAN}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_j}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/DRBN}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_k}  
+		\end{subfigure}    
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/ExCNet}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_l}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/Zero-DCE}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_m}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT/RRDNet}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_n}  
+		\end{subfigure}\\
+		
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Visual Result from LoLi-Phone-imgT dataset}
+			Visual results of different methods on a low-light image sampled from LoLi-Phone-imgT dataset. (a) input (b) LLNet (c) LightenNet (d) Retinex-Net (e) MBLLEN  (f) KinD  (g) KinD++  (h) TBEFN  (i) DSLR  (j) EnlightenGAN  (k) DRBN  (l) ExCNet  (m) Zero-DCE  (n) RRDNet 
+		}
+	\end{figure}
+	
+	
+	\begin{figure}[htbp] 
+		\centering 
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/input}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_a}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/LLNet}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_b}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/LightenNet}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_c}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/Retinex-Net}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_d}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/MBLLEN}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_e}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/KinD}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_f}  
+		\end{subfigure}    
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/KinD++}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_g}
+		\end{subfigure}\\
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/TBEFN}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_h}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/DSLR}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_i}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/EnlightenGAN}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_j}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/DRBN}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_k}  
+		\end{subfigure}    
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/ExCNet}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_l}
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/Zero-DCE}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_m}  
+		\end{subfigure}
+		\begin{subfigure}{0.128\textwidth}
+			\includegraphics[width=\linewidth]{LoLi-Phone-imgT_1/RRDNet}
+			\captionsetup{font=scriptsize}
+			\caption{}
+			\label{fig: LoLi-Phone-imgT_1_n}  
+		\end{subfigure}\\
+		
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Visual Result from LoLi-Phone-imgT_1 dataset}
+			Visual results of different methods on a low-light image sampled from LoLi-Phone-imgT dataset. (a) input (b) LLNet (c) LightenNet (d) Retinex-Net (e) MBLLEN  (f) KinD  (g) KinD++  (h) TBEFN  (i) DSLR  (j) EnlightenGAN  (k) DRBN  (l) ExCNet  (m) Zero-DCE  (n) RRDNet 
+		}
+	\end{figure}
+	
+	Fig.\ref{fig: Visual Result from LoLi-Phone-imgT dataset} 和Fig.\ref{fig: Visual Result from LoLi-Phone-imgT_1 dataset}给出了LoLi-Phone数据集上的效果对比，可以看到：
+	
+	对于Fig.\ref{fig: Visual Result from LoLi-Phone-imgT dataset}有以下几点发现：
+	
+	(1) 所有方法均无法有效改进亮度并移除噪声；
+	
+	(2) Retinex-Net、MBLLEN、DRBN生成了明显伪影；
+	
+	对于和Fig.\ref{fig: Visual Result from LoLi-Phone-imgT_1 dataset}有以下几点发现：
+	
+	(1) 所有方法均增强了输入图像的亮度；
+	
+	(2) 仅有MBLLEN、RRDNet取得视觉友好的增强效果，且无色片、伪影以及欠/过曝问题。
+	
+	
+	\begin{table}[!htbp]
+		\centering
+		\tiny
+		\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2.5cm}|c|c|c|c|c|c|c|c}
+				
+				\hline %添加表格头部粗线
+				
+				% \multirow{2}*{\textbf{Learning}} & \multirow{2}*{\textbf{Mathod}} & \multicolumn{4}{c|}{\textbf{LOL-test}} & \multicolumn{4}{c}{\textbf{MIT-Adobe FiveK-test}} \\
+				
+				\multirowcell{2}{\centering\textbf{Learning}} & \multirowcell{2}{\textbf{Method}} & \multicolumn{4}{c|}{\makecell{\textbf{LOL-test}}} & \multicolumn{4}{c}{\makecell{\textbf{MIT-Adobe FiveK-test}}} \\
+				
+				\cline{3-10}
+				
+				
+				& 		 & \textbf{MSE↓}  & \textbf{PSNR↑} & \textbf{SSIM↑} & \textbf{LPIPS↓} & \textbf{MSE↓}  & \textbf{PSNR↑}  & \textbf{SSIM↑} & \textbf{LPIPS↓} \\
+				
+				\hline
+				
+				& input & 12.613& 7.773 & 0.181 & 0.560  & 1.670 & 17.824 & 0.779 & 0.148  \\
+				
+				\hline	
+				
+				\multirowcell{8}{SL} & LLNet & 1.290 & 17.959& 0.713 & 0.360  & 4.465 & 12.177 & 0.645 & 0.292 \\
+				& LightenNet & 7.614 & 10.301& 0.402 & 0.394  & 4.127 & 13.579 & 0.744 & 0.166 \\
+				& Retinex-Net& 1.651 & 16.774& 0.462 & 0.474  & 4.406 & 12.310 & 0.671 & 0.239 \\
+				& MBLLEN 	 & 1.444 & 17.902& 0.715 & 0.247  &	1.296 & 19.781 & 0.825 & 0.108 \\
+				& KinD 		 & 1.431 & 17.648& 0.779 & 0.175  & 2.675 & 14.535 & 0.741 & 0.177 \\
+				& KinD++     & 1.298 & 17.752& 0.760 & 0.198  & 7.582 & 9.732  & 0.568 & 0.336 \\
+				& TBEFN 	 & 1.764 & 17.351& 0.786 & 0.210  & 3.865 & 12.769 & 0.704 & 0.178 \\
+				& DSLR 		 & 3.536 & 15.050& 0.597 & 0.337  & 1.925 & 16.632 & 0.782 & 0.167 \\
+				
+				\hline
+				
+				UL & EnlightenGAN & 1.998 & 17.483& 0.677 & 0.322  & 3.628 & 13.260 & 0.745 & 0.170 \\
+				
+				\hline
+				
+				SSL  & DRBN       & 2.359 & 15.125& 0.472 & 0.316  & 3.314 & 13.355 & 0.378 & 0.281 \\ 
+				
+				\hline
+				
+				\multirowcell{3}{ZSL} & ExCNet&2.292 & 15.783& 0.515 & 0.373  & 2.927 & 13.978 & 0.710 0.187   \\
+				& Zero-DCE 	 & 3.282 & 14.861& 0.589 & 0.335  & 3.476 & 13.199 & 0.709 0.203   \\
+				& RRDNet     & 6.313 & 11.392& 0.468 & 0.361  & 7.057 & 10.135 & 0.620 0.303   \\
+				
+				
+				\hline
+				
+			\end{tabular}
+		}
+		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{\label{tab: Quantitative Comparisons on LOL-test and MIT-Adobe FiveK-test testing datasets}
+			Quantitative comparisons on LOL-test and MIT-Adobe FiveK-test testing datasets in terms of MSE (×103), PSNR (in dB), SSIM, and LPIPS. The best result is in red whereas the second and third best results are in blue and purple under each case, respectively.} %表格的标题
+		
+	\end{table}
+	
+	\begin{table}[!htbp]
+		\centering
+		\tiny
+		% \resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2.5cm}|c|c|c|c}
+				
+				\hline %添加表格头部粗线
+				
+				% \multirow{2}*{\textbf{Learning}} & \multirow{2}*{\textbf{Mathod}} & \multicolumn{4}{c|}{\textbf{LOL-test}} & \multicolumn{4}{c}{\textbf{MIT-Adobe FiveK-test}} \\
+				
+				\multirowcell{2}{\centering\textbf{Learning}} & \multirowcell{2}{\textbf{Method}} & \multicolumn{4}{c}{\makecell{\textbf{LoLi-Phone-imgT}}}  \\
+				
+				\cline{3-6}
+				
+				
+				& 		 & \textbf{NIQE↓}  & \textbf{LOE↓} & \textbf{PI↓} & \textbf{SPAQ↑} \\
+				
+				\hline
+				
+				& input & 6.99 & \textcolor{red}{0.00} & 5.86 & 44.45 \\
+				
+				\hline	
+				
+				\multirowcell{8}{SL} & LLNet & 5.86  & \textcolor{blue}{5.86}   & 5.66 & 40.56   \\
+				& LightenNet & 5.34  & 952.33 & 4.58 & 45.74   \\
+				& Retinex-Net& 5.01  & 790.21 & \textcolor{red}{3.48} & \textcolor{red}{50.95}   \\
+				& MBLLEN 	 & 5.08  & 220.63 & 4.27 & 42.50   \\
+				& KinD 		 & 4.97  & 405.88 & 4.37 & 44.79   \\
+				& KinD++     & \textcolor{red}{4.73}  & 681.97 & \textcolor{blue}{3.99} & \textcolor{blue}{46.89}   \\
+				& TBEFN 	 & 4.81  & 552.91 & 4.30 & 44.14   \\
+				& DSLR 		 & \textcolor{blue}{4.77}  & 447.98 & 4.31 & 41.08   \\
+				
+				\hline
+				
+				UL & EnlightenGAN & \textcolor{red}{4.79}  & 821.87 & \textcolor{red}{4.19} & 45.48   \\
+				
+				\hline
+				
+				SSL  & DRBN       & 5.80  & 885.75 & 5.54 & 42.74   \\ 
+				
+				\hline
+				
+				\multirowcell{3}{ZSL}& ExCNet& 5.55 & 723.56 & 4.38 & 46.74   \\
+				& Zero-DCE& 5.82 & 307.09 & 4.76 & \textcolor{red}{46.85}   \\
+				& RRDNet  & 5.97 & \textcolor{red}{142.89} & 4.84 & 45.31   \\
+				
+				
+				\hline
+				
+			\end{tabular}
+			% }
+		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{\label{tab: Quantitative comparisons on LoLi-Phone-imgT dataset}
+			Quantitative comparisons on LoLi-Phone-imgT dataset in terms of NIQE, LOE, PI, and SPAQ. The best result is in red whereas the second and third best results are in blue and purple under each case, respectively.} %表格的标题
+		
+	\end{table}
+	
+	Table \ref{tab: Quantitative Comparisons on LOL-test and MIT-Adobe FiveK-test testing datasets}给出了不同方法在LOL与FiveK数据上的定量指标对比，可以看到：
+	
+	
+	(1) 有监督方案具有更高的指标；
+	
+	(2) LLNet在LOL-test数据上取得了最佳MSE与PSNR；
+	
+	(3) TBEFN在LOL-test数据上取得了最佳SSIM指标；
+	
+	(4) KinD在LOL-test数据上取得了最佳LPIPS指标；	
+	
+	(5)对于FiveK-test数据，MBLLEN取得了全面性的指标优先。
+	
+	
+	Table \ref{tab: Quantitative comparisons on LoLi-Phone-imgT dataset}对比了不同方法在LoLi-Phone-imgT数据上的指标对比，可以看到：
+	
+	(1) Retinex-Net、KinD++、EnlightenGAN具有相对更佳的性能；
+	
+	(2) Retinex-Net取得了最佳PI与SPAQ指标，然而从视觉效果上看，它仍存在伪影和色偏问题；
+	
+	(3) KinD++取得了最佳NIQE指标。
+	
+	\paragraph{Computational Complexity} \qquad
+	
+	\begin{table}[!htbp]
+		\centering
+		\tiny
+		% \resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{2.5cm}|c|c|c|c}
+				
+				\hline %添加表格头部粗线
+				
+				% \multirow{2}*{\textbf{Learning}} & \multirow{2}*{\textbf{Mathod}} & \multicolumn{4}{c|}{\textbf{LOL-test}} & \multicolumn{4}{c}{\textbf{MIT-Adobe FiveK-test}} \\
+				
+				\textbf{Learning} & \textbf{Method} & \textbf{RunTime↓} & \textbf{\#Parameters↓} & \textbf{FLOPs↓} & \textbf{Platform} \\
+				
+				\hline	
+				
+				\multirowcell{8}{SL} & LLNet & 36.270 & 17.908 & 4124.177 & Theano   \\
+				& LightenNet & - & \textcolor{red}{0.030} & \textcolor{red}{30.540} & MATLAB   \\
+				& Retinex-Net& 0.120 & 0.555 & 587.470 & TensorFlow  \\
+				& MBLLEN 	 & 13.995 & \textcolor{purple}{0.450} & 301.120 & TensorFlow   \\
+				& KinD 		 & 0.148 & 8.160 & 574.954 & TensorFlow   \\
+				& KinD++     & 1.068 & 8.275 & 12238.026 & TensorFlow   \\
+				& TBEFN 	 & \textcolor{purple}{0.050} &  0.486 & 108.532 & TensorFlow   \\
+				& DSLR 		 & 0.074 &14.931 & \textcolor{purple}{96.683} & PyTorch   \\
+				
+				\hline
+				
+				UL & EnlightenGAN & \textcolor{blue}{0.008} & 8.637 & 273.240 & PyTorch   \\
+				
+				\hline
+				
+				SSL  & DRBN       & 0.878 & 0.577 & 196.359 & PyTorch   \\ 
+				
+				\hline
+				
+				\multirowcell{3}{ZSL}& ExCNet& 23.280 & 8.274 & - & PyTorch   \\
+				& Zero-DCE& \textcolor{red}{0.003} & \textcolor{blue}{0.079} & \textcolor{blue}{84.990} & PyTorch   \\
+				& RRDNet  & 167.260 & 0.128 & - & PyTorch   \\
+				
+				
+				\hline
+				
+			\end{tabular}
+			% }
+		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{\label{tab: Quantitative comparisons of computational complexity}
+			Quantitative comparisons of computational complexity in terms of runtime (in second), number of trainable parameters (\#Parameters) (in M), and FLOPs (in G). The best result is in \textcolor{red}{red} whereas the second and third best results are in \textcolor{blue}{blue} and \textcolor{purple}{purple} under each case, respectively. ‘-’ indicates the result is not available.} %表格的标题
+	\end{table}
+	
+	Table \ref{tab: Quantitative comparisons of computational complexity}对比了不同方法的计算复杂度、参数量以及耗时对比。从中可以看到：
+	
+	(1) Zero-DCE具有最快的推理速度；相反，ExCNet与RRDNet具有最长的推理耗时；
+	
+	(2) LightenNet具有最少的可学习参数量；相反，LLNet与KinD++的计算量分别高达
+	4124.18G与12238.03G。
+	
+	
+	\paragraph{Application-based Evaluation} \qquad
+	
+	\begin{figure}[ht] 
+		% read manual to see what [ht] means and for other possible options
+		\centering \includegraphics[width=0.8\columnwidth]{P-R_curves}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: P-R_curves} % spaces are big no-no withing labels
+			% things like fig: are optional in the label but it helps
+			% to orient yourself when you have multiple figures,
+			% equations and tables
+			The P-R curves of face detection in the dark.
+		}
+	\end{figure}
+	
+		\begin{figure}[htbp] 
+		\centering 
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/input}
+			\captionsetup{font=scriptsize}
+			\caption{input}
+			\label{fig: DARK_FACE_a}
+		\end{subfigure}
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/LightenNet}
+			\captionsetup{font=scriptsize}
+			\caption{LightenNet}
+			\label{fig: DARK_FACE_b}
+		\end{subfigure}
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/Retinex-Net}
+			\captionsetup{font=scriptsize}
+			\caption{Retinex-Net}
+			\label{fig: DARK_FACE_c}
+		\end{subfigure}
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/MBLLEN}
+			\captionsetup{font=scriptsize}
+			\caption{MBLLEN}
+			\label{fig: DARK_FACE_d}
+		\end{subfigure}\\ 
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/KinD++}
+			\captionsetup{font=scriptsize}
+			\caption{KinD++}
+			\label{fig: DARK_FACE_e}
+		\end{subfigure}
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/TBEFN}
+			\captionsetup{font=scriptsize}
+			\caption{TBEFN}
+			\label{fig: DARK_FACE_f}  
+		\end{subfigure}
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/DSLR}
+			\captionsetup{font=scriptsize}
+			\caption{DSLR}
+			\label{fig: DARK_FACE_g}  
+		\end{subfigure}
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/EnlightenGAN}
+			\captionsetup{font=scriptsize}
+			\caption{EnlightenGAN}
+			\label{fig: DARK_FACE_h}  
+		\end{subfigure}\\
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/DRBN}
+			\captionsetup{font=scriptsize}
+			\caption{DRBN}
+			\label{fig:DARK_FACE_i}  
+		\end{subfigure}    
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/ExCNet}
+			\captionsetup{font=scriptsize}
+			\caption{ExCNet}
+			\label{fig: DARK_FACE_j}
+		\end{subfigure}
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/Zero-DCE}
+			\captionsetup{font=scriptsize}
+			\caption{Zero-DCE}
+			\label{fig: DARK_FACE_k}  
+		\end{subfigure}
+		\begin{subfigure}{0.22\textwidth}
+			\includegraphics[width=\linewidth]{DARK_FACE/RRDNet}
+			\captionsetup{font=scriptsize}
+			\caption{RRDNet}
+			\label{fig: DARK_FACE_l}  
+		\end{subfigure}
+		
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Visual Result from DARK_FACE dataset}
+			Visual results of different methods on a low-light image sampled from DARK FACE dataset. Better see with zoom in for the bounding boxes of faces.
+		}
+	\end{figure}
+	
+	Fig.\ref{fig: P-R_curves}与Fig.\ref{fig: Visual Result from DARK_FACE dataset}给出了任务相关的质量评价与视觉效果对比。可以看到：\textbf{所有方案均可以改善低光场景下的人脸检测}。
+	
+	\paragraph{Discussion} \qquad
+	
+	从上述实验结果，我们可以得到以下几点有意思发现与洞见：
+	
+	(1) 在不同测试集、不同评估准则上，不同方法的性能变大非常大。在全参考IQA评估+通用测试数据上，MBLLEN、KinD++、DSLR表象更佳；在真实低光场景，Retinex-Net、KinD++去更好的无参考IQA得分；TBEFN具有更好的时序一致性；当考虑计算效率时，Zero-DCE表现最为突出；从人脸检测角度看，TBEFN、Retinex-Net、Zero-DCE排前三。总而言之，Retinex-Net、Zero-DCE、DSLR最大多数场景的更佳选择。
+	
+	(2) 大多数方法在面对LoLi-Phone时出现失败现象，也就是说现有方案的泛化性能需要进一步改善。
+	
+	(3) 从学习策略来看，监督学习可以取得更佳性能，但需要高计算资源与成对数据；相反，在真实场景，zero-shot学习更令人期待。
+	
+	(4) 在视觉效果与量化IQA指标方面存在明显的gap，也就是说：好的视觉效果并不总是具有好的IQA得分。
+	
+	(5)基于深度学习的LLIE方法有助于低光人脸检测性能提升。
+	
+	
+	
+	
+	\paragraph{Future Research Directions}
+	
+	尽管LLIE取得极大的进展，但仍有改善的空间。作者从以下几个方面提出了有价值的参考：	
+		
+		\subparagraph{Effective Learning Strategies} \qquad
+		
+		当前主流的监督学习方法需要大量的成对训练数据，且可能导致特定数据过拟合问题；Zero-shot学习在真实场景具有更强的鲁棒性，且不需要成对训练数据。这意味着：Zero-shot学习是一个极具潜力的研究方向。
+			
+		\subparagraph{Specialized Network Structures} \qquad
+		
+		网络结构可以很大程度影响增强性能，之前的LLIE方案大量的采用了UNet架构，然而这种架构是否适合于LLIE仍有待于考证。局部自相似性、高效算子、NAS技术等思想可以考虑引入到LLIE的网络脚骨设计中，此外transformer也许会是一个有意思的研究方向。
+		
+		\subparagraph{Loss Function} \qquad
+		
+		损失函数约束了输入与GT之间的相关性并驱动网络的优化。在LLIE中，常用损失函数主要是从其他相关任务中借鉴而来，尚未有针对LLIE而设计的特定损失。更适合LLIE的损失函数设计仍有待于开发。
+		
+		\subparagraph{Realistic Training Data} \qquad
+		
+		尽管已有不少用于LLIE的训练数据，但它们数量、灵活性相对于真实低光比较单一且简单。大尺度的真实LLIE数据收集与生成仍需要进一步研究。
+		
+		\subparagraph{Standard Testing Data} \qquad
+		
+		目前没有一个可以全面接受的LLIE评估基准。研究员倾向于使用自有测试集，这使得所提方法具有一定倾向性。因此，高质量标准低光图像/视频测试集的构建需要进行构建。
+		
+		\subparagraph{Task-Specific Evaluation Metrics} \qquad
+		
+		在某种程度上，常用的度量准则难以很好的反映图像质量。如何评价LLIE增强结果的好坏仍极具挑战，当前IQA要么聚焦于人类视觉感知，要么聚焦机器感知。同时考虑人类视觉感知与机器感知的度量指标有待于开发。
+		
+		\subparagraph{Robust Generalization Capability} \qquad
+		
+		实验结果表明：现有方法在真实场景表现差强人意。这种泛化性能差主要有这样几个因素：合成数据、小尺度训练数据、低效网络结构、不真实的假设、不精确的先验。因此，很有必要探索更好的方式改善LLIE的泛化性能。
+		
+		\subparagraph{Extension to Low-light Video Enhancement} \qquad
+		
+		不同于其他low-level领域视频增强(比如视频去模糊、视频降噪、视频超分)的快速发展，低光视频增强鲜少收到关注。低光图像增强的直接应用会导致不令人满意的结果与抖动问题。因此，如何采用近邻帧有效移除视觉抖动并加速推理值得深入研究。
+		
+		\subparagraph{Integrating Semantic Information} \qquad
+		
+		语义信息对于低光增强非常重要，它将引导网络判别不同区域的增处理。如何有效地将语义信息集成到低光增强是一个有前途的方向。
+	
+	
+	\subsubsection{项目链接}
+	
+	该综述所提出的数据集以及在线平台可以作为进一步研究的参考资源，并促进该领域的进一步发展。所提平台与所收集的算法、数据集、评估准则等等均已公开到GitHub\footnote{https://github.com/Li-Chongyi/Lighting-the-Darkness-in-the-Deep-Learning-Era-Open.
+	}。
+			
+	\section{个人工作进展}
+					
+		\subsection{梳理损失函数}
+			
+		梳理了一些常见的损失函数，如$\mathcal{L}_1$-loss, $\mathcal{L}_2$-loss, Smooth $\mathcal{L}_1$ loss, Huber loss, Perceptual loss等一些在上周的paper梳理过程中，梳理出来的一些损失函数的原理及相关功能。不难发现，这些损失函数在原理上存在很大的共通性，也有详细的论文说明这些函数的原理和工作机制。但进一步的梳理仍然是必要的，许多损失函数是从其他图像处理任务中借用过来的，而在LLIE任务中，更好的损失函数或许有待发现。还有一些不同网络架构下的损失函数待梳理，比如adversarial loss、region loss、reflectance loss、consistency loss、color loss、 Laplacian loss等。
+		
+	
+		\subsection{论文代码复现}
+		
+		\paragraph{复现KinD代码}
+		
+		KinD\footnote{https://github.com/zhangyhuaee/KinD}采用的是类U-Net网络，且对比使用了多种损失函数，采用的数据集相对较少，且环境配置相对简单，具体见Tab. \ref{tab: Summary}。同时，KinD\cite{10.1145/3343031.3350926}目前引用数量为543，采用的网络架构较为经典，即Retinex-based的思想。
+		
+		\paragraph{Requirement}
+		
+		\lstset{language=python,breaklines=true}
+		\begin{lstlisting}
+			Python
+			Tensorflow >= 1.10.0
+			numpy, PIL
+		\end{lstlisting}
+		
+		\paragraph{Train}
+		
+		KinD Network分为三部分(Fig. \ref{fig: network})：(1)图像分解网络：Layer Decomposition Net;(2)反射分量纠正网络：Reflectance Restoration Net;(3)光照分量纠正网络：Illumination Adjustment Net。
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering \includegraphics[width=0.8\columnwidth]{network}
+			\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: network} % spaces are big no-no withing labels
+				% things like fig: are optional in the label but it helps
+				% to orient yourself when you have multiple figures,
+				% equations and tables
+				The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment.
+			}
+		\end{figure}
+		
+		以暗光/正常光照图像($I_{low}/I_{high}$)对作为训练样本，Layer Decomposition Net对($I_{low}/I_{high}$)依次进行分解，得到光照分量$L_{low}$、$L_{high}$和反射分量$R_{low}$、$R_{high}$。再通过Reflectance Restoration Net和Illumination Adjustment Net得到
+		$\tilde{R}_{low}$和$\tilde{L}_{low}$
+		。
+		
+			\subparagraph{Layer Decomposition Net}
+			
+			Layer Decomposition Net有两个分支，一个分支用于预测反射分量，另一个分支用于预测光照分量，反射分量分支以五层Unet网络为主要网络结构，后接一个卷积层和Sigmoid层。光照分量分支由三个卷积层构成，其中还利用了反射分量分支中的特征图，具体细节可参考论文。
+			
+			Layer Decomposition Net对($I_l / I_h$)依次进行分解，得到光照分量$L_l$、$L_h$和反射分量$R_l$、$R_h$。
+			
+			从Fig. \ref{fig: network}可以看出，KinD的损失函数主要由三部分损失构成，它们分别是层分解部分损失、反射重建部分损失以及亮度调整部分损失。
+			
+			层分解(Layer Decomposition Net)部分损失定义如下：
+			
+			\begin{equation}
+				\mathcal{L}^{LD}=\mathcal{L}_{rec}^{LD}+0.01\mathcal{L}_{rs}^{LD}+0.15\mathcal{L}_{is}^{LD}+0.2\mathcal{L}_{mc}^{LD}
+			\end{equation}
+			
+			其中，$\mathcal{L}_{rs}^{LD}=\left\|R_l-R_h\right\|1$表示反射相似性损失(Reflectance Similarity)，即短曝光与长曝光图形的反射图应该是相同的；$$\mathcal{L}_{is}^{LD}=\left\| \frac{\nabla L_{l}}{\max(\left| \nabla I_{l} \right|,\varepsilon)} \right\|_{1} + \left\| {\frac{\nabla L_{h}}{\max (\left| \nabla I_{h} \right| ,\varepsilon)}}\right\|_{1}$$表示亮度平滑损失约束(Illumination Smoothness)，它度量了亮度图与输入图像之间的相对结构，边缘区域惩罚较小，平滑区域惩罚较大；$\mathcal{L}_{mc}^{LD}={\left\|M\circ\exp(-c\cdot M)\right \|}_{1}, M=\nabla \mathcal{L}_{l}+\nabla \mathcal{L}_{h}$表示相互一致性约束(Mutual Consistency)，它意味着强边缘得以保留，弱边缘被抑制；$\mathcal{L}_{rec}^{LD}={\left \| I_l-R_t \circ \mathcal{L}_l\right\|}_{1} + {\left \| I_h-R_h \circ \mathcal{L}_h\right\|}_{1}$表示重建损失(Reconstruction Error)。
+			反射部分损失定义如下：
+			\begin{equation}
+				\mathcal{L}^{RR}:={\left\| \hat{R}-R_{h} \right\|}^{2}_{2} - SSIM(\hat{R},R_{h}) + {\left\|\nabla\hat{R}-\nabla R_{h} \right\|}^{2}_{2}
+			\end{equation}
+			亮度调整部分损失定义如下：
+			\begin{equation}
+				\mathcal{L}^{IA}:={\left\| \hat{L}-L_{t} \right\|}^{2}_{2} + {\left\| \left|\nabla\hat{L}\right|-\nabla L_{t} \right\|}^{2}_{2}
+			\end{equation}
+			
+			
+			\lstset{language=python,breaklines=true}
+			\begin{lstlisting}
+				# 设置一些训练所需的参数
+				batch_size = 10
+				patch_size = 48
+				
+				# 创建一个TensorFlow会话
+				sess = tf.Session()
+				
+				# 定义输入的占位符，这些占位符用于接收低分辨率和高分辨率的输入图像。
+				input_low = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low')
+				input_high = tf.placeholder(tf.float32, [None, None, None, 3], name='input_high')
+				
+				# 使用定义的模型构建计算图,DecomNet_simple是一个分解网络模型，它接受输入图像并输出反射和亮度组件
+				[R_low, I_low] = DecomNet_simple(input_low)
+				[R_high, I_high] = DecomNet_simple(input_high)
+				
+				# 将反射和亮度组件拼接起来形成输出图像
+				# 这一步操作将反射和亮度组件进行通道拼接，以生成输出图像。
+				I_low_3 = tf.concat([I_low, I_low, I_low], axis=3)
+				I_high_3 = tf.concat([I_high, I_high, I_high], axis=3)
+				output_R_low = R_low
+				output_R_high = R_high
+				output_I_low = I_low_3
+				output_I_high = I_high_3
+				
+				# 定义损失函数
+				
+				def mutual_i_loss(input_I_low, input_I_high):
+				# 互信息损失函数的定义
+				...
+				
+				def mutual_i_input_loss(input_I_low, input_im):
+				# 输入互信息损失函数的定义
+				...
+				
+				recon_loss_low = tf.reduce_mean(tf.abs(R_low * I_low_3 - input_low))
+				recon_loss_high = tf.reduce_mean(tf.abs(R_high * I_high_3 - input_high))
+				equal_R_loss = tf.reduce_mean(tf.abs(R_low - R_high))
+				i_mutual_loss = mutual_i_loss(I_low, I_high)
+				i_input_mutual_loss_high = mutual_i_input_loss(I_high, input_high)
+				i_input_mutual_loss_low = mutual_i_input_loss(I_low, input_low)
+				
+				loss_Decom = 1*recon_loss_high + 1*recon_loss_low + 0.01*equal_R_loss + 0.2*i_mutual_loss + 0.15*i_input_mutual_loss_high + 0.15*i_input_mutual_loss_low
+				
+				# recon_loss_low 和 recon_loss_high 是重构损失，用于衡量输出图像与输入图像之间的差异。
+				# equal_R_loss 是反射一致性损失，用于衡量两个不同尺度下的反射分量之间的一致性。
+				# i_mutual_loss 是亮度互信息损失，用于鼓励亮度分量之间的一致性。
+				# i_input_mutual_loss_high 和 i_input_mutual_loss_low 是输入亮度与反射之间的互信息损失，用于鼓励输入图像与反射分量之间的一致性。
+			\end{lstlisting}
+			
+			最后定义优化器和训练操作
+			
+			\lstset{language=python,breaklines=true}
+			\begin{lstlisting}
+				# 我们使用 Adam 优化器来最小化损失函数，其中只更新 DecomNet 模型的可训练变量。
+				lr = tf.placeholder(tf.float32, name='learning_rate')
+				optimizer = tf.train.AdamOptimizer(learning_rate=lr, name='AdamOptimizer')
+				var_Decom = [var for var in tf.trainable_variables() if 'DecomNet' in var.name]
+				train_op_Decom = optimizer.minimize(loss_Decom, var_list=var_Decom)
+				sess.run(tf.global_variables_initializer())
+				saver_Decom = tf.train.Saver(var_list=var_Decom)
+				
+				# 加载数据集
+				# 这里使用 glob 函数获取训练集的低分辨率和高分辨率图像的文件名，并进行排序。
+				train_low_data = []
+				train_high_data = []
+				train_low_data_names = glob('./LOLdataset/our485/low/*.png') 
+				train_low_data_names.sort()
+				train_high_data_names = glob('./LOLdataset/our485/high/*.png') 
+				train_high_data_names.sort()
+				
+				# 定义了一些辅助变量和文件夹路径
+				# epoch 表示训练的总轮数，learning_rate 表示学习率，sample_dir 是保存样本图像的文件夹路径，checkpoint_dir 是保存模型检查点的文件夹路径。
+				epoch = 2000
+				learning_rate = 0.0001
+				sample_dir = './Decom_net_train/'
+				checkpoint_dir = './checkpoint/decom_net_train/'
+				
+			\end{lstlisting}
+			
+			最后开始训练循环
+			
+			\lstset{language=python,breaklines=true}
+			\begin{lstlisting}
+				for epoch in range(start_epoch, epoch):
+				for batch_id in range(start_step, numBatch):
+				# 获取一个批次的训练数据
+				...
+	
+				# 执行训练操作，计算损失
+				_, loss = sess.run([train_op, train_loss], feed_dict={input_low: batch_input_low, input_high: batch_input_high, lr: learning_rate})
+	
+				# 打印训练进度和损失
+				print("%s Epoch: [%2d] [%4d/%4d] time: %4.4f, loss: %.6f" % (train_phase, epoch + 1, batch_id + 1, numBatch, time.time() - start_time, loss))
+	
+				# 每隔100个批次保存模型和样本图像
+				if (epoch + 1) % 100 == 0:
+					print('Saving sample images...')
+					sample_results = sess.run([output_R_low, output_R_high, output_I_low, output_I_high], feed_dict={input_low: sample_input_low, input_high: sample_input_high})
+					save_images(sample_results, [batch_size, 1], sample_dir + 'train_%d.png' % (epoch + 1))
+				
+					print('Saving model...')
+					saver.save(sess, checkpoint_dir + 'model.ckpt', global_step=epoch + 1)
+				
+				# 每隔500个批次降低学习率
+				if (epoch + 1) % 500 == 0:
+					learning_rate /= 10
+			\end{lstlisting}
+			
+			在每个 epoch 的训练过程中，当遍历完一个批次后，计算并打印损失值。
+			
+			当达到一定条件时，例如每隔 100 个批次，保存模型和样本图像。首先，我用当前模型对一部分样本进行推断，并将结果保存为图像文件。然后，保存模型的检查点，以便在需要时恢复模型。
+			
+			另外，每隔 500 个批次，将学习率除以 10，以实现学习率的衰减。
+		
+			\subparagraph{Reflectance Restoration Net}
+		
+			\subparagraph{Illumination Adjustment Net}
+		
+			\paragraph{Evaluation}
+		
+%		\begin{python}
+
+			
+%		\end{python}
+
+		
+	\section{下周工作计划}
+
+	(1) 继续复现并详细分析KinD的项目代码，目前架构中的三个结构(Fig. \ref{fig: network})只完成其中一个结构(Layer Decomposition Net)的训练和代码分析，因此，下周工作计划是分析和复现后续两个结构的代码。
+
+	(2) 继续整理各类损失函数的区别。按照Table\ref{tab: Summary}中整理的不同文献所采用的损失函数，弄清楚各类损失函数的作用。详细阅读\cite{fang2020perceptual},\cite{talebi2018nima}，再看看在损失函数方面有没有更好的想法。
+	
+	
+%	\section{Analysis}
+	
+%	In this section you will need to show your experimental results. Use tables and
+%	graphs when it is possible. Table~\ref{tbl:bins} is an example.
+	
+%	\begin{table}[ht]
+%		\begin{center}
+%			\caption{Every table needs a caption.}
+%			\label{tbl:bins} % spaces are big no-no withing labels
+%			\begin{tabular}{|ccc|} 
+%				\hline
+%				\multicolumn{1}{|c}{$x$ (m)} & \multicolumn{1}{c|}{$V$ (V)} & \multicolumn{1}{c|}{$V$ (V)} \\
+%				\hline
+%				0.0044151 &   0.0030871 &   0.0030871\\
+%				0.0021633 &   0.0021343 &   0.0030871\\
+%				0.0003600 &   0.0018642 &   0.0030871\\
+%				0.0023831 &   0.0013287 &   0.0030871\\
+%				\hline
+%			\end{tabular}
+%		\end{center}
+%	\end{table}
+%	
+%	Analysis of equation~\ref{eq:aperp} shows ...
+%	
+%	Note: this section can be integrated with the previous one as long as you
+%	address the issue. Here explain how you determine uncertainties for different
+%	measured values. Suppose that in the experiment you make a series of
+%	measurements of a resistance of the wire $R$ for different applied voltages
+%	$V$, then you calculate the temperature from the resistance using a known
+%	equation and make a plot  temperature vs. voltage squared. Again suppose that
+%	this dependence is expected to be linear~\cite{Cyr}, and the proportionality coefficient
+%	is extracted from the graph. Then what you need to explain is that for the
+%	resistance and the voltage the uncertainties are instrumental (since each
+%	measurements in done only once), and they are $\dots$. Then give an equation
+%	for calculating the uncertainty of the temperature from the resistance
+%	uncertainty. Finally explain how the uncertainty of the slop of the graph was
+%	found (computer fitting, graphical method, \emph{etc}.)
+%	
+%	If in the process of data analysis you found any noticeable systematic
+%	error(s), you have to explain them in this section of the report.
+%	
+%	It is also recommended to plot the data graphically to efficiently illustrate
+%	any points of discussion. For example, it is easy to conclude that the
+%	experiment and theory match each other rather well if you look at
+%	Fig.~\ref{fig:samplesetup} and Fig.~\ref{fig:exp_plots}.
+%	
+%	\begin{figure}[ht] 
+%		\centering
+%		\includegraphics[width=0.5\columnwidth]{sr_squeezing_vs_detuning}
+%		
+%		% some figures do not need to be too wide
+%		\caption{
+%			\label{fig:exp_plots}  
+%			Every plot must have axes labeled.
+%		}
+%	\end{figure}
+	
+	
+%	\section{Conclusions}
+%	Here you briefly summarize your findings.
+	
+	%++++++++++++++++++++++++++++++++++++++++
+	% References section will be created automatically 
+	% with inclusion of "thebibliography" environment
+	% as it shown below. See text starting with line
+	% \begin{thebibliography}{99}
+		% Note: with this approach it is YOUR responsibility to put them in order
+		% of appearance.
+		
+		\renewcommand{\refname}{References}
+	
+
+	%	\begin{thebibliography}{00}
+			
+	%		\bibitem{b1}\label{cite:b1}
+	%		W. Wang, C. Wei, W. Yang and J. Liu, "GLADNet: Low-Light Enhancement Network with Global Awareness," 2018 13th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2018), Xi'an, China, 2018, pp. 751-755, DOI: 10.1109/FG.2018.00118.
+			
+	%		\bibitem{b2}\label{cite:b2}
+	%		A.\ Mahajan, K.\ Somaraj and M. Sameer, "Adopting Artificial Intelligence Powered ConvNet To Detect Epileptic Seizures," 2020 IEEE-EMBS Conference on Biomedical Engineering and Sciences (IECBES), Langkawi Island, Malaysia, 2021, pp. 427-432, DOI: 10.1109/IECBES48179.2021.9398832.
+			
+	%		\bibitem{Cyr}
+	%		N.\ Cyr, M.\ T$\hat{e}$tu, and M.\ Breton,
+			% "All-optical microwave frequency standard: a proposal,"
+	%		IEEE Trans.\ Instrum.\ Meas.\ \textbf{42}, 640 (1993).
+			
+
+			
+	%	\end{thebibliography}
+		
+	\bibliographystyle{unsrt}
+	\bibliography{reference}
+	
+		
+	\end{document}

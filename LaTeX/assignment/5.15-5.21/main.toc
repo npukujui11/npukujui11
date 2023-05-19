@@ -1,0 +1,52 @@
+\contentsline {section}{\numberline {1}文献阅读}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}loss function for CV}{2}{subsubsection.1.1.1}%
+\contentsline {paragraph}{$\mathcal {L}_1$-loss}{2}{subsubsection.1.1.1}%
+\contentsline {paragraph}{$\mathcal {L}_2$-loss}{2}{equation.1.1}%
+\contentsline {paragraph}{loss正则化}{3}{equation.1.2}%
+\contentsline {paragraph}{Smooth $\mathcal {L}_1$ loss}{4}{lstnumber.-1.1}%
+\contentsline {paragraph}{Huber loss}{4}{equation.1.5}%
+\contentsline {paragraph}{log-MSE}{5}{equation.1.6}%
+\contentsline {paragraph}{Perceptual loss}{5}{equation.1.7}%
+\contentsline {paragraph}{SSIM loss}{6}{figure.caption.1}%
+\contentsline {paragraph}{MS-SSIM loss}{7}{equation.1.11}%
+\contentsline {paragraph}{Cross-entropy loss function}{7}{equation.1.13}%
+\contentsline {subsection}{\numberline {1.2}(综述2021.04)Lighting the darkness in the deep learning era}{8}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}背景}{8}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}介绍}{8}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}细节}{8}{subsubsection.1.2.3}%
+\contentsline {paragraph}{Network Structure}{10}{figure.caption.3}%
+\contentsline {paragraph}{Combination of Deep Model and Retinex Theory}{10}{figure.caption.3}%
+\contentsline {paragraph}{Data Format}{10}{figure.caption.3}%
+\contentsline {paragraph}{Loss Function}{11}{figure.caption.3}%
+\contentsline {paragraph}{Training Datasets}{11}{figure.caption.3}%
+\contentsline {paragraph}{Testing Dataset}{11}{table.caption.4}%
+\contentsline {paragraph}{Benchmarking and Empirical Analysis}{11}{table.caption.5}%
+\contentsline {paragraph}{A New Low-light Image and Video Dataset}{12}{table.caption.5}%
+\contentsline {paragraph}{Online Evaluation Platform}{12}{figure.caption.7}%
+\contentsline {paragraph}{Benchmark Results}{13}{figure.caption.7}%
+\contentsline {paragraph}{Computational Complexity}{17}{table.caption.13}%
+\contentsline {paragraph}{Application-based Evaluation}{17}{table.caption.14}%
+\contentsline {paragraph}{Discussion}{17}{figure.caption.16}%
+\contentsline {paragraph}{Future Research Directions}{18}{figure.caption.16}%
+\contentsline {subparagraph}{Effective Learning Strategies}{18}{figure.caption.16}%
+\contentsline {subparagraph}{Specialized Network Structures}{19}{figure.caption.16}%
+\contentsline {subparagraph}{Loss Function}{19}{figure.caption.16}%
+\contentsline {subparagraph}{Realistic Training Data}{19}{figure.caption.16}%
+\contentsline {subparagraph}{Standard Testing Data}{20}{figure.caption.16}%
+\contentsline {subparagraph}{Task-Specific Evaluation Metrics}{20}{figure.caption.16}%
+\contentsline {subparagraph}{Robust Generalization Capability}{20}{figure.caption.16}%
+\contentsline {subparagraph}{Extension to Low-light Video Enhancement}{20}{figure.caption.16}%
+\contentsline {subparagraph}{Integrating Semantic Information}{20}{figure.caption.16}%
+\contentsline {subsubsection}{\numberline {1.2.4}项目链接}{21}{subsubsection.1.2.4}%
+\contentsline {section}{\numberline {2}个人工作进展}{21}{section.2}%
+\contentsline {subsection}{\numberline {2.1}梳理损失函数}{21}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}论文代码复现}{21}{subsection.2.2}%
+\contentsline {paragraph}{复现KinD代码}{21}{subsection.2.2}%
+\contentsline {paragraph}{Requirement}{21}{subsection.2.2}%
+\contentsline {paragraph}{Train}{22}{lstnumber.-2.3}%
+\contentsline {subparagraph}{Layer Decomposition Net}{22}{figure.caption.17}%
+\contentsline {subparagraph}{Reflectance Restoration Net}{27}{lstnumber.-5.23}%
+\contentsline {subparagraph}{Illumination Adjustment Net}{27}{lstnumber.-5.23}%
+\contentsline {paragraph}{Evaluation}{27}{lstnumber.-5.23}%
+\contentsline {section}{\numberline {3}下周工作计划}{27}{section.3}%
