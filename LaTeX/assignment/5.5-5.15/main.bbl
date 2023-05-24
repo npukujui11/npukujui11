@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{johnson2016perceptual}
 Justin Johnson, Alexandre Alahi, and Li~Fei-Fei.
@@ -6,78 +6,6 @@ Justin Johnson, Alexandre Alahi, and Li~Fei-Fei.
 \newblock In {\em Computer Vision--ECCV 2016: 14th European Conference,
   Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part II 14},
   pages 694--711. Springer, 2016.
-
-\bibitem{wei2018deep}
-Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
-\newblock Deep retinex decomposition for low-light enhancement.
-\newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
-
-\bibitem{cai2018learning}
-Jianrui Cai, Shuhang Gu, and Lei Zhang.
-\newblock Learning a deep single image contrast enhancer from multi-exposure
-  images.
-\newblock {\em IEEE Transactions on Image Processing}, 27(4):2049--2062, 2018.
-
-\bibitem{jiang2019learning}
-Haiyang Jiang and Yinqiang Zheng.
-\newblock Learning to see moving objects in the dark.
-\newblock In {\em Proceedings of the IEEE/CVF International Conference on
-  Computer Vision}, pages 7324--7333, 2019.
-
-\bibitem{bychkovsky2011learning}
-Vladimir Bychkovsky, Sylvain Paris, Eric Chan, and Fr{\'e}do Durand.
-\newblock Learning photographic global tonal adjustment with a database of
-  input/output image pairs.
-\newblock In {\em CVPR 2011}, pages 97--104. IEEE, 2011.
-
-\bibitem{chen2019seeing}
-Chen Chen, Qifeng Chen, Minh~N Do, and Vladlen Koltun.
-\newblock Seeing motion in the dark.
-\newblock In {\em Proceedings of the IEEE/CVF International Conference on
-  Computer Vision}, pages 3185--3194, 2019.
-
-\bibitem{guo2016lime}
-Xiaojie Guo, Yu~Li, and Haibin Ling.
-\newblock Lime: Low-light image enhancement via illumination map estimation.
-\newblock {\em IEEE Transactions on image processing}, 26(2):982--993, 2016.
-
-\bibitem{wang2013naturalness}
-Shuhang Wang, Jin Zheng, Hai-Miao Hu, and Bo~Li.
-\newblock Naturalness preserved enhancement algorithm for non-uniform
-  illumination images.
-\newblock {\em IEEE transactions on image processing}, 22(9):3538--3548, 2013.
-
-\bibitem{lee2011power}
-Chulwoo Lee, Chul Lee, Young-Yoon Lee, and Chang-Su Kim.
-\newblock Power-constrained contrast enhancement for emissive displays based on
-  histogram equalization.
-\newblock {\em IEEE transactions on image processing}, 21(1):80--93, 2011.
-
-\bibitem{lee2013contrast}
-Chulwoo Lee, Chul Lee, and Chang-Su Kim.
-\newblock Contrast enhancement based on layered difference representation of 2d
-  histograms.
-\newblock {\em IEEE transactions on image processing}, 22(12):5372--5384, 2013.
-
-\bibitem{yu2020bdd100k}
-Fisher Yu, Haofeng Chen, Xin Wang, Wenqi Xian, Yingying Chen, Fangchen Liu,
-  Vashisht Madhavan, and Trevor Darrell.
-\newblock Bdd100k: A diverse driving dataset for heterogeneous multitask
-  learning.
-\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
-  pattern recognition}, pages 2636--2645, 2020.
-
-\bibitem{loh2019getting}
-Yuen~Peng Loh and Chee~Seng Chan.
-\newblock Getting to know low-light images with the exclusively dark dataset.
-\newblock {\em Computer Vision and Image Understanding}, 178:30--42, 2019.
-
-\bibitem{yuan2019ug}
-Ye~Yuan, Wenhan Yang, Wenqi Ren, Jiaying Liu, Walter~J Scheirer, and Zhangyang
-  Wang.
-\newblock $\text{UG}^{2+}$ track 2: A collective benchmark effort for
-  evaluating and advancing image understanding in poor visibility environments.
-\newblock {\em arXiv preprint arXiv:1904.04474}, 2019.
 
 \bibitem{10.1145/3343031.3350926}
 Yonghua Zhang, Jiawan Zhang, and Xiaojie Guo.
