@@ -12,22 +12,22 @@
 \contentsline {paragraph}{MS-SSIM loss function}{7}{equation.1.11}%
 \contentsline {paragraph}{Cross-entropy loss function}{7}{equation.1.13}%
 \contentsline {paragraph}{Adversarial loss function}{8}{equation.1.15}%
-\contentsline {subsubsection}{\numberline {1.1.2}细节}{8}{subsubsection.1.1.2}%
-\contentsline {section}{\numberline {2}个人工作进展}{8}{section.2}%
-\contentsline {subsection}{\numberline {2.1}华为杯赛题想法}{8}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}AI交互预测决策规划}{8}{subsubsection.2.1.1}%
-\contentsline {paragraph}{Challenge}{8}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}适用多场景的通用化时序预测算法}{10}{subsubsection.2.1.2}%
-\contentsline {paragraph}{Challenge}{10}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}通过穿戴设备监测高糖发生次数}{10}{subsubsection.2.1.3}%
-\contentsline {paragraph}{Challenge}{10}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}梳理损失函数}{10}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}论文代码复现}{10}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}复现KinD代码}{10}{subsubsection.2.3.1}%
-\contentsline {paragraph}{Requirement}{11}{subsubsection.2.3.1}%
-\contentsline {paragraph}{Train}{11}{lstnumber.-2.3}%
-\contentsline {subparagraph}{Layer Decomposition Net}{11}{figure.caption.3}%
-\contentsline {subparagraph}{Reflectance Restoration Net}{16}{lstnumber.-5.23}%
-\contentsline {subparagraph}{Illumination Adjustment Net}{16}{lstnumber.-5.23}%
-\contentsline {paragraph}{Evaluation}{16}{lstnumber.-5.23}%
-\contentsline {section}{\numberline {3}下周工作计划}{16}{section.3}%
+\contentsline {subsubsection}{\numberline {1.1.2}细节}{10}{subsubsection.1.1.2}%
+\contentsline {section}{\numberline {2}个人工作进展}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}华为杯赛题想法}{10}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}AI交互预测决策规划}{10}{subsubsection.2.1.1}%
+\contentsline {paragraph}{Challenge}{10}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}适用多场景的通用化时序预测算法}{11}{subsubsection.2.1.2}%
+\contentsline {paragraph}{Challenge}{11}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}通过穿戴设备监测高糖发生次数}{11}{subsubsection.2.1.3}%
+\contentsline {paragraph}{Challenge}{11}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}梳理损失函数}{11}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}论文代码复现}{12}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}复现KinD代码}{12}{subsubsection.2.3.1}%
+\contentsline {paragraph}{Requirement}{12}{subsubsection.2.3.1}%
+\contentsline {paragraph}{Train}{12}{lstnumber.-2.3}%
+\contentsline {subparagraph}{Layer Decomposition Net}{13}{figure.caption.5}%
+\contentsline {subparagraph}{Reflectance Restoration Net}{17}{lstnumber.-5.23}%
+\contentsline {subparagraph}{Illumination Adjustment Net}{17}{lstnumber.-5.23}%
+\contentsline {paragraph}{Evaluation}{17}{lstnumber.-5.23}%
+\contentsline {section}{\numberline {3}下周工作计划}{17}{section.3}%
