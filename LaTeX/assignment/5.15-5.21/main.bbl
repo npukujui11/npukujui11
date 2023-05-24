@@ -7,6 +7,11 @@ Justin Johnson, Alexandre Alahi, and Li~Fei-Fei.
   Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part II 14},
   pages 694--711. Springer, 2016.
 
+\bibitem{lv2018mbllen}
+Feifan Lv, Feng Lu, Jianhua Wu, and Chongsoon Lim.
+\newblock Mbllen: Low-light image/video enhancement using cnns.
+\newblock In {\em BMVC}, volume 220, page~4, 2018.
+
 \bibitem{10.1145/3343031.3350926}
 Yonghua Zhang, Jiawan Zhang, and Xiaojie Guo.
 \newblock Kindling the darkness: A practical low-light image enhancer.

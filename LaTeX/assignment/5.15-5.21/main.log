@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  24 MAY 2023 13:42
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  24 MAY 2023 22:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -890,116 +890,123 @@ File: D_optimization.png Graphic file (type bmp)
 <D_optimization.png>
 File: G_optimization.png Graphic file (type bmp)
 <G_optimization.png>
+ [8]
+Overfull \hbox (25.97954pt too wide) detected at line 394
+[][][][][]
+ []
 
-Overfull \hbox (3.53326pt too wide) in paragraph at lines 463--463
+File: proposed_loss_function.png Graphic file (type bmp)
+<proposed_loss_function.png>
+[9]
+Overfull \hbox (3.53326pt too wide) in paragraph at lines 502--502
  []|\TU/lmr/bx/n/6 Learning| 
  []
 
 
-Overfull \hbox (0.6607pt too wide) in paragraph at lines 463--463
+Overfull \hbox (0.6607pt too wide) in paragraph at lines 502--502
  []|\TU/lmr/bx/n/6 Format| 
  []
 
 
-Overfull \vbox (10.28603pt too high) detected at line 463
+Overfull \vbox (10.28603pt too high) detected at line 502
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--463
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
 |[]
  []
 
 
-Overfull \hbox (3.83165pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.83165pt too wide) in paragraph at lines 502--502
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--463
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
 |[]
  []
 
 
-Overfull \hbox (3.74765pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.74765pt too wide) in paragraph at lines 502--502
 []
  []
 
 
-Overfull \hbox (3.2396pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.2396pt too wide) in paragraph at lines 502--502
  []|\TU/lmr/m/n/6 Deepexposure| 
  []
 
 
-Overfull \vbox (6.58598pt too high) detected at line 463
+Overfull \vbox (6.58598pt too high) detected at line 502
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--463
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
 |[]
  []
 
 
-Overfull \hbox (3.74765pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.74765pt too wide) in paragraph at lines 502--502
 []
  []
 
 
-Overfull \hbox (3.96231pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.96231pt too wide) in paragraph at lines 502--502
  [] 
  []
 
 
-Overfull \hbox (6.0896pt too wide) in paragraph at lines 463--463
+Overfull \hbox (6.0896pt too wide) in paragraph at lines 502--502
  []|\TU/lmr/m/n/6 EnlightenGAN| 
  []
 
 
-Overfull \vbox (30.18596pt too high) detected at line 463
+Overfull \vbox (30.18596pt too high) detected at line 502
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--463
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
 |[]
  []
 
 
-Overfull \hbox (3.74765pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.74765pt too wide) in paragraph at lines 502--502
 []
  []
 
 
-Overfull \hbox (3.96231pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.96231pt too wide) in paragraph at lines 502--502
  [] 
  []
 
 
-Overfull \hbox (3.96231pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.96231pt too wide) in paragraph at lines 502--502
  [] 
  []
 
 
-Overfull \hbox (5.33069pt too wide) in paragraph at lines 463--463
+Overfull \hbox (5.33069pt too wide) in paragraph at lines 502--502
  [] 
  []
 
 
-Overfull \hbox (3.94234pt too wide) in paragraph at lines 463--463
+Overfull \hbox (3.94234pt too wide) in paragraph at lines 502--502
  [] 
  []
 
 
-Overfull \hbox (1.27156pt too wide) in paragraph at lines 463--463
+Overfull \hbox (1.27156pt too wide) in paragraph at lines 502--502
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 23.18091pt on input line 468.
+LaTeX Warning: Float too large for page by 23.18091pt on input line 507.
 
-[8] [9] [10] [11]
+[10] [11] [12] [13]
 File: network.jpg Graphic file (type bmp)
 <network.jpg>
 
-Overfull \hbox (20.60841pt too wide) in paragraph at lines 548--551
+Overfull \hbox (20.60841pt too wide) in paragraph at lines 594--596
 []\TU/SimSun(1)/b/n/12 以 暗 光\TU/lmr/m/n/12 /\TU/SimSun(1)/b/n/12 正 常 光 照 图 像 \T
 U/lmr/m/n/12 ($\OML/cmm/m/it/12 I[]\OT1/cmr/m/n/12 /\OML/cmm/m/it/12 I[]$\TU/lm
 r/m/n/12 ) \TU/SimSun(1)/b/n/12 对 作 为 训 练 样 本，| \TU/lmr/m/n/12 Layer Decomposit
@@ -1007,7 +1014,7 @@ ion Net \TU/SimSun(1)/b/n/12 对 \TU/lmr/m/n/12 ($\OML/cmm/m/it/12 I[]\OT1/cmr/m
 n/12 /\OML/cmm/m/it/12 I[]$\TU/lmr/m/n/12 )
  []
 
-[12] [13] [14] [15] [16] (./main.bbl [17]) [18] (./main.aux)
+[14] [15] [16] [17] [18] (./main.bbl [19]) [20] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1015,12 +1022,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: BD80E3366A9914394A73CB212F5E83AA;1591.
  ) 
 Here is how much of TeX's memory you used:
- 20657 strings out of 476683
- 422938 string characters out of 5805371
+ 20710 strings out of 476683
+ 425540 string characters out of 5805371
  2093012 words of memory out of 5000000
- 40559 multiletter control sequences out of 15000+600000
+ 40612 multiletter control sequences out of 15000+600000
  524191 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,31n,97p,781b,1744s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (18 pages).
+Output written on main.pdf (20 pages).
