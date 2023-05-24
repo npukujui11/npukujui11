@@ -549,8 +549,6 @@
 	
 	\subsection{梳理损失函数}
 	
-	梳理了一些常见的损失函数，如$\mathcal{L}_1$-loss, $\mathcal{L}_2$-loss, Smooth $\mathcal{L}_1$ loss, Huber loss, Perceptual loss等一些在上周的paper梳理过程中，梳理出来的一些损失函数的原理及相关功能。不难发现，这些损失函数在原理上存在很大的共通性，也有详细的论文说明这些函数的原理和工作机制。但进一步的梳理仍然是必要的，许多损失函数是从其他图像处理任务中借用过来的，而在LLIE任务中，更好的损失函数或许有待发现。还有一些不同网络架构下的损失函数待梳理，比如adversarial loss、region loss、reflectance loss、consistency loss、color loss、 Laplacian loss等。
-	
 	这一周的工作主要是接着梳理上一周未梳理完成的损失函数
 	
 	1)梳理adversarial loss损失函数，借此并了解了一下GAN的原理和过程。
@@ -559,192 +557,201 @@
 	
 	3)了解到Reflectance loss损失函数并非特定的一类损失函数，常见的具体的Reflectance loss包括:均方误差(MSE)、结构相似性指数(Structural Similarity)、梯度差异损失(Gradient Difference Loss)、感知损失(Perceptual Loss),具体的Reflectance loss方法往往根据具体任务和需求进行选择和组合，以提高图像增强算法的效果和性能。
 	
-	\subsection{论文代码复现}
+	下周进一步梳理后续剩余的三个损失函数consistency loss、color loss、 Laplacian loss。
 	
-	\subsubsection{复现KinD代码}
+	
+	\subsection{复现KinD代码}
 	
 	KinD\footnote{https://github.com/zhangyhuaee/KinD}采用的是类U-Net网络，且对比使用了多种损失函数，采用的数据集相对较少，且环境配置相对简单，具体见Tab. \ref{tab: Summary}。同时，KinD\cite{10.1145/3343031.3350926}目前引用数量为543，采用的网络架构较为经典，即Retinex-based的思想。
 	
-	\paragraph{Requirement}
+		\subsubsection{Requirement}
 	
-	\lstset{language=python,breaklines=true}
-	\begin{lstlisting}
-		Python
-		Tensorflow >= 1.10.0
-		numpy, PIL
-	\end{lstlisting}
+		\lstset{language=python,breaklines=true}
+		\begin{lstlisting}
+			Python
+			Tensorflow >= 1.10.0
+			numpy, PIL
+		\end{lstlisting}
 	
-	\paragraph{Train}
+		\subsubsection{Train}
 	
-	KinD Network分为三部分(Fig. \ref{fig: network})：(1)图像分解网络：Layer Decomposition Net;(2)反射分量纠正网络：Reflectance Restoration Net;(3)光照分量纠正网络：Illumination Adjustment Net。
+			KinD Network分为三部分(Fig. \ref{fig: network})：(1)图像分解网络：Layer Decomposition Net;(2)反射分量纠正网络：Reflectance Restoration Net;(3)光照分量纠正网络：Illumination Adjustment Net。
 	
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering \includegraphics[width=0.8\columnwidth]{network}
-		\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: network} % spaces are big no-no withing labels
-			% things like fig: are optional in the label but it helps
-			% to orient yourself when you have multiple figures,
-			% equations and tables
-			The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment.
-		}
-	\end{figure}
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering \includegraphics[width=0.8\columnwidth]{network}
+			\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: network} % spaces are big no-no withing labels
+				% things like fig: are optional in the label but it helps
+				% to orient yourself when you have multiple figures,
+				% equations and tables
+				The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment.
+			}
+		\end{figure}
 	
-	以暗光/正常光照图像($I_{low}/I_{high}$)对作为训练样本，Layer Decomposition Net对($I_{low}/I_{high}$)依次进行分解，得到光照分量$L_{low}$、$L_{high}$和反射分量$R_{low}$、$R_{high}$。再通过Reflectance Restoration Net和Illumination Adjustment Net得到$\tilde{R}_{low}$和$\tilde{L}_{low}$
+		以暗光/正常光照图像($I_{low}/I_{high}$)对作为训练样本，Layer Decomposition Net对($I_{low}/I_{high}$)依次进行分解，得到光照分量$L_{low}$、$L_{high}$和反射分量$R_{low}$、$R_{high}$。再通过Reflectance Restoration Net和Illumination Adjustment Net得到$\tilde{R}_{low}$和$\tilde{L}_{low}$
 	。
 	
-	\subparagraph{Layer Decomposition Net}
-	
-	Layer Decomposition Net有两个分支，一个分支用于预测反射分量，另一个分支用于预测光照分量，反射分量分支以五层Unet网络为主要网络结构，后接一个卷积层和Sigmoid层。光照分量分支由三个卷积层构成，其中还利用了反射分量分支中的特征图，具体细节可参考论文。
-	
-	Layer Decomposition Net对($I_l / I_h$)依次进行分解，得到光照分量$L_l$、$L_h$和反射分量$R_l$、$R_h$。
-	
-	从Fig. \ref{fig: network}可以看出，KinD的损失函数主要由三部分损失构成，它们分别是层分解部分损失、反射重建部分损失以及亮度调整部分损失。
-	
-	层分解(Layer Decomposition Net)部分损失定义如下：
-	
-	\begin{equation}
-		\mathcal{L}^{LD}=\mathcal{L}_{rec}^{LD}+0.01\mathcal{L}_{rs}^{LD}+0.15\mathcal{L}_{is}^{LD}+0.2\mathcal{L}_{mc}^{LD}
-	\end{equation}
-	
-	其中，$\mathcal{L}_{rs}^{LD}=\left\|R_l-R_h\right\|1$表示反射相似性损失(Reflectance Similarity)，即短曝光与长曝光图形的反射图应该是相同的；$$\mathcal{L}_{is}^{LD}=\left\| \frac{\nabla L_{l}}{\max(\left| \nabla I_{l} \right|,\varepsilon)} \right\|_{1} + \left\| {\frac{\nabla L_{h}}{\max (\left| \nabla I_{h} \right| ,\varepsilon)}}\right\|_{1}$$表示亮度平滑损失约束(Illumination Smoothness)，它度量了亮度图与输入图像之间的相对结构，边缘区域惩罚较小，平滑区域惩罚较大；$\mathcal{L}_{mc}^{LD}={\left\|M\circ\exp(-c\cdot M)\right \|}_{1}, M=\nabla \mathcal{L}_{l}+\nabla \mathcal{L}_{h}$表示相互一致性约束(Mutual Consistency)，它意味着强边缘得以保留，弱边缘被抑制；$\mathcal{L}_{rec}^{LD}={\left \| I_l-R_t \circ \mathcal{L}_l\right\|}_{1} + {\left \| I_h-R_h \circ \mathcal{L}_h\right\|}_{1}$表示重建损失(Reconstruction Error)。
-	反射部分损失定义如下：
-	\begin{equation}
-		\mathcal{L}^{RR}:={\left\| \hat{R}-R_{h} \right\|}^{2}_{2} - SSIM(\hat{R},R_{h}) + {\left\|\nabla\hat{R}-\nabla R_{h} \right\|}^{2}_{2}
-	\end{equation}
-	亮度调整部分损失定义如下：
-	\begin{equation}
-		\mathcal{L}^{IA}:={\left\| \hat{L}-L_{t} \right\|}^{2}_{2} + {\left\| \left|\nabla\hat{L}\right|-\nabla L_{t} \right\|}^{2}_{2}
-	\end{equation}
-	
-	
-	\lstset{language=python,breaklines=true}
-	\begin{lstlisting}
-		# 设置一些训练所需的参数
-		batch_size = 10
-		patch_size = 48
+			\paragraph{Layer Decomposition Net}
 		
-		# 创建一个TensorFlow会话
-		sess = tf.Session()
+				Layer Decomposition Net有两个分支，一个分支用于预测反射分量，另一个分支用于预测光照分量，反射分量分支以五层Unet网络为主要网络结构，后接一个卷积层和Sigmoid层。光照分量分支由三个卷积层构成，其中还利用了反射分量分支中的特征图，具体细节可参考论文。
+				
+				Layer Decomposition Net对($I_l / I_h$)依次进行分解，得到光照分量$L_l$、$L_h$和反射分量$R_l$、$R_h$。
+				
+				从Fig. \ref{fig: network}可以看出，KinD的损失函数主要由三部分损失构成，它们分别是层分解部分损失、反射重建部分损失以及亮度调整部分损失。
+				
+				层分解(Layer Decomposition Net)部分损失定义如下：
 		
-		# 定义输入的占位符，这些占位符用于接收低分辨率和高分辨率的输入图像。
-		input_low = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low')
-		input_high = tf.placeholder(tf.float32, [None, None, None, 3], name='input_high')
+			\begin{equation}
+				\mathcal{L}^{LD}=\mathcal{L}_{rec}^{LD}+0.01\mathcal{L}_{rs}^{LD}+0.15\mathcal{L}_{is}^{LD}+0.2\mathcal{L}_{mc}^{LD}
+			\end{equation}
+			
+			其中，$\mathcal{L}_{rs}^{LD}=\left\|R_l-R_h\right\|1$表示反射相似性损失(Reflectance Similarity)，即短曝光与长曝光图形的反射图应该是相同的；$$\mathcal{L}_{is}^{LD}=\left\| \frac{\nabla L_{l}}{\max(\left| \nabla I_{l} \right|,\varepsilon)} \right\|_{1} + \left\| {\frac{\nabla L_{h}}{\max (\left| \nabla I_{h} \right| ,\varepsilon)}}\right\|_{1}$$表示亮度平滑损失约束(Illumination Smoothness)，它度量了亮度图与输入图像之间的相对结构，边缘区域惩罚较小，平滑区域惩罚较大；$\mathcal{L}_{mc}^{LD}={\left\|M\circ\exp(-c\cdot M)\right \|}_{1}, M=\nabla \mathcal{L}_{l}+\nabla \mathcal{L}_{h}$表示相互一致性约束(Mutual Consistency)，它意味着强边缘得以保留，弱边缘被抑制；$\mathcal{L}_{rec}^{LD}={\left \| I_l-R_t \circ \mathcal{L}_l\right\|}_{1} + {\left \| I_h-R_h \circ \mathcal{L}_h\right\|}_{1}$表示重建损失(Reconstruction Error)。
+			
+			亮度调整部分损失定义如下：
+			\begin{equation}
+				\mathcal{L}^{IA}:={\left\| \hat{L}-L_{t} \right\|}^{2}_{2} + {\left\| \left|\nabla\hat{L}\right|-\nabla L_{t} \right\|}^{2}_{2}
+			\end{equation}
+			
+			Layer Decomposition Net复现代码如下
+			
+			\lstset{language=python,breaklines=true}
+			\begin{lstlisting}
+				# 设置一些训练所需的参数
+				batch_size = 10
+				patch_size = 48
+				
+				# 创建一个TensorFlow会话
+				sess = tf.Session()
+				
+				# 定义输入的占位符，这些占位符用于接收低分辨率和高分辨率的输入图像。
+				input_low = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low')
+				input_high = tf.placeholder(tf.float32, [None, None, None, 3], name='input_high')
+				
+				# 使用定义的模型构建计算图,DecomNet_simple是一个分解网络模型，它接受输入图像并输出反射和亮度组件
+				[R_low, I_low] = DecomNet_simple(input_low)
+				[R_high, I_high] = DecomNet_simple(input_high)
+				
+				# 将反射和亮度组件拼接起来形成输出图像
+				# 这一步操作将反射和亮度组件进行通道拼接，以生成输出图像。
+				I_low_3 = tf.concat([I_low, I_low, I_low], axis=3)
+				I_high_3 = tf.concat([I_high, I_high, I_high], axis=3)
+				output_R_low = R_low
+				output_R_high = R_high
+				output_I_low = I_low_3
+				output_I_high = I_high_3
+				
+				# 定义损失函数
+				
+				def mutual_i_loss(input_I_low, input_I_high):
+				# 互信息损失函数的定义
+				...
+				
+				def mutual_i_input_loss(input_I_low, input_im):
+				# 输入互信息损失函数的定义
+				...
+				
+				recon_loss_low = tf.reduce_mean(tf.abs(R_low * I_low_3 - input_low))
+				recon_loss_high = tf.reduce_mean(tf.abs(R_high * I_high_3 - input_high))
+				equal_R_loss = tf.reduce_mean(tf.abs(R_low - R_high))
+				i_mutual_loss = mutual_i_loss(I_low, I_high)
+				i_input_mutual_loss_high = mutual_i_input_loss(I_high, input_high)
+				i_input_mutual_loss_low = mutual_i_input_loss(I_low, input_low)
+				
+				loss_Decom = 1*recon_loss_high + 1*recon_loss_low + 0.01*equal_R_loss + 0.2*i_mutual_loss + 0.15*i_input_mutual_loss_high + 0.15*i_input_mutual_loss_low
+				
+				# recon_loss_low 和 recon_loss_high 是重构损失，用于衡量输出图像与输入图像之间的差异。
+				# equal_R_loss 是反射一致性损失，用于衡量两个不同尺度下的反射分量之间的一致性。
+				# i_mutual_loss 是亮度互信息损失，用于鼓励亮度分量之间的一致性。
+				# i_input_mutual_loss_high 和 i_input_mutual_loss_low 是输入亮度与反射之间的互信息损失，用于鼓励输入图像与反射分量之间的一致性。
+			\end{lstlisting}
+			
+				最后定义优化器和训练操作
+			
+			\lstset{language=python,breaklines=true}
+			\begin{lstlisting}
+				# 我们使用 Adam 优化器来最小化损失函数，其中只更新 DecomNet 模型的可训练变量。
+				lr = tf.placeholder(tf.float32, name='learning_rate')
+				optimizer = tf.train.AdamOptimizer(learning_rate=lr, name='AdamOptimizer')
+				var_Decom = [var for var in tf.trainable_variables() if 'DecomNet' in var.name]
+				train_op_Decom = optimizer.minimize(loss_Decom, var_list=var_Decom)
+				sess.run(tf.global_variables_initializer())
+				saver_Decom = tf.train.Saver(var_list=var_Decom)
+				
+				# 加载数据集
+				# 这里使用 glob 函数获取训练集的低分辨率和高分辨率图像的文件名，并进行排序。
+				train_low_data = []
+				train_high_data = []
+				train_low_data_names = glob('./LOLdataset/our485/low/*.png') 
+				train_low_data_names.sort()
+				train_high_data_names = glob('./LOLdataset/our485/high/*.png') 
+				train_high_data_names.sort()
+				
+				# 定义了一些辅助变量和文件夹路径
+				# epoch 表示训练的总轮数，learning_rate 表示学习率，sample_dir 是保存样本图像的文件夹路径，checkpoint_dir 是保存模型检查点的文件夹路径。
+				epoch = 2000
+				learning_rate = 0.0001
+				sample_dir = './Decom_net_train/'
+				checkpoint_dir = './checkpoint/decom_net_train/'
+				
+			\end{lstlisting}
+			
+				最后开始训练循环
+			
+			\lstset{language=python,breaklines=true}
+			\begin{lstlisting}
+				for epoch in range(start_epoch, epoch):
+				for batch_id in range(start_step, numBatch):
+				# 获取一个批次的训练数据
+				...
+				
+				# 执行训练操作，计算损失
+				_, loss = sess.run([train_op, train_loss], feed_dict={input_low: batch_input_low, input_high: batch_input_high, lr: learning_rate})
+				
+				# 打印训练进度和损失
+				print("%s Epoch: [%2d] [%4d/%4d] time: %4.4f, loss: %.6f" % (train_phase, epoch + 1, batch_id + 1, numBatch, time.time() - start_time, loss))
+				
+				# 每隔100个批次保存模型和样本图像
+				if (epoch + 1) % 100 == 0:
+				print('Saving sample images...')
+				sample_results = sess.run([output_R_low, output_R_high, output_I_low, output_I_high], feed_dict={input_low: sample_input_low, input_high: sample_input_high})
+				save_images(sample_results, [batch_size, 1], sample_dir + 'train_%d.png' % (epoch + 1))
+				
+				print('Saving model...')
+				saver.save(sess, checkpoint_dir + 'model.ckpt', global_step=epoch + 1)
+				
+				# 每隔500个批次降低学习率
+				if (epoch + 1) % 500 == 0:
+				learning_rate /= 10
+			\end{lstlisting}
+			
+				在每个 epoch 的训练过程中，当遍历完一个批次后，计算并打印损失值。
+				
+				当达到一定条件时，例如每隔 100 个批次，保存模型和样本图像。首先，我用当前模型对一部分样本进行推断，并将结果保存为图像文件。然后，保存模型的检查点，以便在需要时恢复模型。
+				
+				另外，每隔 500 个批次，将学习率除以 10，以实现学习率的衰减。
 		
-		# 使用定义的模型构建计算图,DecomNet_simple是一个分解网络模型，它接受输入图像并输出反射和亮度组件
-		[R_low, I_low] = DecomNet_simple(input_low)
-		[R_high, I_high] = DecomNet_simple(input_high)
+			\paragraph{Reflectance Restoration Net}
+			
+				作者认为来自低光图像的反射率图比来自明亮光图像的反射率图更容易受到退化的干扰。利用更清晰的反射率作为混乱反射率的参考(非正式的地面实况)。对于寻找Restoration函数，目标简单定义如Eq. \ref{eq: Restoration loss}
+				\begin{equation}
+					\mathcal{L}^{RR}:={\left\| \hat{R}-R_{h} \right\|}^{2}_{2} - SSIM(\hat{R},R_{h}) + {\left\|\nabla\hat{R}-\nabla R_{h} \right\|}^{2}_{2}
+					\label{eq: Restoration loss}
+				\end{equation}
+				
+				Reflectance Restoration Net复现代码如下
+				
+
+				
+			\paragraph{Illumination Adjustment Net}
 		
-		# 将反射和亮度组件拼接起来形成输出图像
-		# 这一步操作将反射和亮度组件进行通道拼接，以生成输出图像。
-		I_low_3 = tf.concat([I_low, I_low, I_low], axis=3)
-		I_high_3 = tf.concat([I_high, I_high, I_high], axis=3)
-		output_R_low = R_low
-		output_R_high = R_high
-		output_I_low = I_low_3
-		output_I_high = I_high_3
+		\paragraph{Evaluation}
 		
-		# 定义损失函数
-		
-		def mutual_i_loss(input_I_low, input_I_high):
-		# 互信息损失函数的定义
-		...
-		
-		def mutual_i_input_loss(input_I_low, input_im):
-		# 输入互信息损失函数的定义
-		...
-		
-		recon_loss_low = tf.reduce_mean(tf.abs(R_low * I_low_3 - input_low))
-		recon_loss_high = tf.reduce_mean(tf.abs(R_high * I_high_3 - input_high))
-		equal_R_loss = tf.reduce_mean(tf.abs(R_low - R_high))
-		i_mutual_loss = mutual_i_loss(I_low, I_high)
-		i_input_mutual_loss_high = mutual_i_input_loss(I_high, input_high)
-		i_input_mutual_loss_low = mutual_i_input_loss(I_low, input_low)
-		
-		loss_Decom = 1*recon_loss_high + 1*recon_loss_low + 0.01*equal_R_loss + 0.2*i_mutual_loss + 0.15*i_input_mutual_loss_high + 0.15*i_input_mutual_loss_low
-		
-		# recon_loss_low 和 recon_loss_high 是重构损失，用于衡量输出图像与输入图像之间的差异。
-		# equal_R_loss 是反射一致性损失，用于衡量两个不同尺度下的反射分量之间的一致性。
-		# i_mutual_loss 是亮度互信息损失，用于鼓励亮度分量之间的一致性。
-		# i_input_mutual_loss_high 和 i_input_mutual_loss_low 是输入亮度与反射之间的互信息损失，用于鼓励输入图像与反射分量之间的一致性。
-	\end{lstlisting}
-	
-	最后定义优化器和训练操作
-	
-	\lstset{language=python,breaklines=true}
-	\begin{lstlisting}
-		# 我们使用 Adam 优化器来最小化损失函数，其中只更新 DecomNet 模型的可训练变量。
-		lr = tf.placeholder(tf.float32, name='learning_rate')
-		optimizer = tf.train.AdamOptimizer(learning_rate=lr, name='AdamOptimizer')
-		var_Decom = [var for var in tf.trainable_variables() if 'DecomNet' in var.name]
-		train_op_Decom = optimizer.minimize(loss_Decom, var_list=var_Decom)
-		sess.run(tf.global_variables_initializer())
-		saver_Decom = tf.train.Saver(var_list=var_Decom)
-		
-		# 加载数据集
-		# 这里使用 glob 函数获取训练集的低分辨率和高分辨率图像的文件名，并进行排序。
-		train_low_data = []
-		train_high_data = []
-		train_low_data_names = glob('./LOLdataset/our485/low/*.png') 
-		train_low_data_names.sort()
-		train_high_data_names = glob('./LOLdataset/our485/high/*.png') 
-		train_high_data_names.sort()
-		
-		# 定义了一些辅助变量和文件夹路径
-		# epoch 表示训练的总轮数，learning_rate 表示学习率，sample_dir 是保存样本图像的文件夹路径，checkpoint_dir 是保存模型检查点的文件夹路径。
-		epoch = 2000
-		learning_rate = 0.0001
-		sample_dir = './Decom_net_train/'
-		checkpoint_dir = './checkpoint/decom_net_train/'
-		
-	\end{lstlisting}
-	
-	最后开始训练循环
-	
-	\lstset{language=python,breaklines=true}
-	\begin{lstlisting}
-		for epoch in range(start_epoch, epoch):
-		for batch_id in range(start_step, numBatch):
-		# 获取一个批次的训练数据
-		...
-		
-		# 执行训练操作，计算损失
-		_, loss = sess.run([train_op, train_loss], feed_dict={input_low: batch_input_low, input_high: batch_input_high, lr: learning_rate})
-		
-		# 打印训练进度和损失
-		print("%s Epoch: [%2d] [%4d/%4d] time: %4.4f, loss: %.6f" % (train_phase, epoch + 1, batch_id + 1, numBatch, time.time() - start_time, loss))
-		
-		# 每隔100个批次保存模型和样本图像
-		if (epoch + 1) % 100 == 0:
-		print('Saving sample images...')
-		sample_results = sess.run([output_R_low, output_R_high, output_I_low, output_I_high], feed_dict={input_low: sample_input_low, input_high: sample_input_high})
-		save_images(sample_results, [batch_size, 1], sample_dir + 'train_%d.png' % (epoch + 1))
-		
-		print('Saving model...')
-		saver.save(sess, checkpoint_dir + 'model.ckpt', global_step=epoch + 1)
-		
-		# 每隔500个批次降低学习率
-		if (epoch + 1) % 500 == 0:
-		learning_rate /= 10
-	\end{lstlisting}
-	
-	在每个 epoch 的训练过程中，当遍历完一个批次后，计算并打印损失值。
-	
-	当达到一定条件时，例如每隔 100 个批次，保存模型和样本图像。首先，我用当前模型对一部分样本进行推断，并将结果保存为图像文件。然后，保存模型的检查点，以便在需要时恢复模型。
-	
-	另外，每隔 500 个批次，将学习率除以 10，以实现学习率的衰减。
-	
-	\subparagraph{Reflectance Restoration Net}
-	
-	\subparagraph{Illumination Adjustment Net}
-	
-	\paragraph{Evaluation}
-	
-	%		\begin{python}
-		
-		
-		%		\end{python}
+		%		\begin{python}
+			
+			
+			%		\end{python}
 	
 	
 	\section{下周工作计划}
