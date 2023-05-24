@@ -510,43 +510,6 @@
 	
 	\section{个人工作进展}
 	
-	\subsection{华为杯赛题想法}
-	
-	\subsubsection{AI交互预测决策规划}
-	
-	\paragraph{Challenge}
-	基于数据驱动的方法来实现安全可靠的预测决策规划算法，往往会涉及以下挑战：
-	
-	1. AI模型建模拓扑和交通参与者：为了有效地建模城区场景中的拓扑结构和交通参与者，需要设计适合的模型来表示道路网络、车辆、非机动车和行人等元素，并捕捉它们之间的关系。
-	
-	2. 考虑交互和自车类人安全性：在设计AI模型时，需要充分考虑自车与其他交通参与者的交互作用，以及确保自车行为符合人类驾驶员的安全性标准。模型的输出应该满足预测、决策和规划的一致性和时序稳定性，而不仅仅是对自车进行无交互的开环预测。
-	
-	3. 有效性和安全性的证明：传统的开环平均指标难以有效证明AI模型的有效性。在闭环仿真器中测试时，由于仿真环境与真实环境存在行为差异，模型的有效性和安全性需要寻找高效的证明方法。
-	
-	4. 捕捉场景差异特征：数据驱动的方法需要AI模型能够捕捉到不同场景的差异特征，学习到场景特定的行为模式，而不仅仅是学习平均行为。这样可以使模型更加准确地预测和规划针对不同场景的行为。
-	
-	5. 有效应用和看护算法：经过数据驱动后的AI模型需要与有效的应用程序和监控算法结合，以实现更安全智能的自动驾驶。这意味着需要设计相应的决策算法和监控机制，确保自动驾驶系统的安全性和可靠性。
-	
-	以上是基于数据驱动的安全可靠预测决策规划算法所面临的挑战。解决这些挑战需要综合考虑模型设计、仿真测试、数据采集和处理、决策算法等多个方面，并进行深入的研究和创新。
-	
-	\subsubsection{适用多场景的通用化时序预测算法}
-	
-	\paragraph{Challenge}
-	
-	将人工智能技术应用于时序预测任务时，面临以下主要挑战：
-	
-	数据的多样性和平衡性：云计算中的数据具有丰富的来源、庞大的规模和迥异的特性。为了设计通用的时序预测算法，需要提出并论证数据多样性和平衡性的指标，并根据这些指标进行数据收集，以避免算法过度拟合于特定数据集。
-	
-	应对序列多样性：针对具有序列多样性的数据集，设计通用化的时序预测算法是一个挑战。这些算法需要处理不同长度、趋势性、周期性和采样粒度的时间序列，并在所有序列上都能给出较好的预测结果。
-	
-	为了应对这些挑战，可以基于对数据特征的分析选择合适的算法类型，也可以利用神经网络等机器学习模型的强大表达能力，通过单个模型实现通用化预测的目的。需要进行深入研究和创新，不断改进和优化算法，以提高时序预测的准确性和适应性。
-	
-	\subsubsection{通过穿戴设备监测高糖发生次数}
-	
-	\paragraph{Challenge}
-	
-	
-	
 	\subsection{梳理损失函数}
 	
 	这一周的工作主要是接着梳理上一周未梳理完成的损失函数
@@ -566,12 +529,11 @@
 	
 		\subsubsection{Requirement}
 	
-		\lstset{language=python,breaklines=true}
-		\begin{lstlisting}
-			Python
-			Tensorflow >= 1.10.0
-			numpy, PIL
-		\end{lstlisting}
+		\begin{python}
+		Python
+		Tensorflow >= 1.10.0
+		numpy, PIL
+		\end{python}
 	
 		\subsubsection{Train}
 	
@@ -608,99 +570,90 @@
 			\end{equation}
 			
 			其中，$\mathcal{L}_{rs}^{LD}=\left\|R_l-R_h\right\|1$表示反射相似性损失(Reflectance Similarity)，即短曝光与长曝光图形的反射图应该是相同的；$$\mathcal{L}_{is}^{LD}=\left\| \frac{\nabla L_{l}}{\max(\left| \nabla I_{l} \right|,\varepsilon)} \right\|_{1} + \left\| {\frac{\nabla L_{h}}{\max (\left| \nabla I_{h} \right| ,\varepsilon)}}\right\|_{1}$$表示亮度平滑损失约束(Illumination Smoothness)，它度量了亮度图与输入图像之间的相对结构，边缘区域惩罚较小，平滑区域惩罚较大；$\mathcal{L}_{mc}^{LD}={\left\|M\circ\exp(-c\cdot M)\right \|}_{1}, M=\nabla \mathcal{L}_{l}+\nabla \mathcal{L}_{h}$表示相互一致性约束(Mutual Consistency)，它意味着强边缘得以保留，弱边缘被抑制；$\mathcal{L}_{rec}^{LD}={\left \| I_l-R_t \circ \mathcal{L}_l\right\|}_{1} + {\left \| I_h-R_h \circ \mathcal{L}_h\right\|}_{1}$表示重建损失(Reconstruction Error)。
-			
-			亮度调整部分损失定义如下：
-			\begin{equation}
-				\mathcal{L}^{IA}:={\left\| \hat{L}-L_{t} \right\|}^{2}_{2} + {\left\| \left|\nabla\hat{L}\right|-\nabla L_{t} \right\|}^{2}_{2}
-			\end{equation}
-			
+		
 			Layer Decomposition Net复现代码如下
+			\begin{python}
+			# 设置一些训练所需的参数
+			batch_size = 10
+			patch_size = 48
+				
+			# 创建一个TensorFlow会话
+			sess = tf.Session()
+				
+			# 定义输入的占位符，这些占位符用于接收低分辨率和高分辨率的输入图像。
+			input_low = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low')
+			input_high = tf.placeholder(tf.float32, [None, None, None, 3], name='input_high')
+				
+			# 使用定义的模型构建计算图,DecomNet_simple是一个分解网络模型，它接受输入图像并输出反射和亮度组件
+			[R_low, I_low] = DecomNet_simple(input_low)
+			[R_high, I_high] = DecomNet_simple(input_high)
+				
+			# 将反射和亮度组件拼接起来形成输出图像
+			# 这一步操作将反射和亮度组件进行通道拼接，以生成输出图像。
+			I_low_3 = tf.concat([I_low, I_low, I_low], axis=3)
+			I_high_3 = tf.concat([I_high, I_high, I_high], axis=3)
+			output_R_low = R_low
+			output_R_high = R_high
+			output_I_low = I_low_3
+			output_I_high = I_high_3
+				
+			# 定义损失函数
+				
+			def mutual_i_loss(input_I_low, input_I_high):
 			
-			\lstset{language=python,breaklines=true}
-			\begin{lstlisting}
-				# 设置一些训练所需的参数
-				batch_size = 10
-				patch_size = 48
-				
-				# 创建一个TensorFlow会话
-				sess = tf.Session()
-				
-				# 定义输入的占位符，这些占位符用于接收低分辨率和高分辨率的输入图像。
-				input_low = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low')
-				input_high = tf.placeholder(tf.float32, [None, None, None, 3], name='input_high')
-				
-				# 使用定义的模型构建计算图,DecomNet_simple是一个分解网络模型，它接受输入图像并输出反射和亮度组件
-				[R_low, I_low] = DecomNet_simple(input_low)
-				[R_high, I_high] = DecomNet_simple(input_high)
-				
-				# 将反射和亮度组件拼接起来形成输出图像
-				# 这一步操作将反射和亮度组件进行通道拼接，以生成输出图像。
-				I_low_3 = tf.concat([I_low, I_low, I_low], axis=3)
-				I_high_3 = tf.concat([I_high, I_high, I_high], axis=3)
-				output_R_low = R_low
-				output_R_high = R_high
-				output_I_low = I_low_3
-				output_I_high = I_high_3
-				
-				# 定义损失函数
-				
-				def mutual_i_loss(input_I_low, input_I_high):
-				# 互信息损失函数的定义
+			# 互信息损失函数的定义
 				...
 				
-				def mutual_i_input_loss(input_I_low, input_im):
-				# 输入互信息损失函数的定义
-				...
+			def mutual_i_input_loss(input_I_low, input_im):
+			# 输入互信息损失函数的定义
+			...
 				
-				recon_loss_low = tf.reduce_mean(tf.abs(R_low * I_low_3 - input_low))
-				recon_loss_high = tf.reduce_mean(tf.abs(R_high * I_high_3 - input_high))
-				equal_R_loss = tf.reduce_mean(tf.abs(R_low - R_high))
-				i_mutual_loss = mutual_i_loss(I_low, I_high)
-				i_input_mutual_loss_high = mutual_i_input_loss(I_high, input_high)
-				i_input_mutual_loss_low = mutual_i_input_loss(I_low, input_low)
+			recon_loss_low = tf.reduce_mean(tf.abs(R_low * I_low_3 - input_low))
+			recon_loss_high = tf.reduce_mean(tf.abs(R_high * I_high_3 - input_high))
+			equal_R_loss = tf.reduce_mean(tf.abs(R_low - R_high))
+			i_mutual_loss = mutual_i_loss(I_low, I_high)
+			i_input_mutual_loss_high = mutual_i_input_loss(I_high, input_high)
+			i_input_mutual_loss_low = mutual_i_input_loss(I_low, input_low)
 				
-				loss_Decom = 1*recon_loss_high + 1*recon_loss_low + 0.01*equal_R_loss + 0.2*i_mutual_loss + 0.15*i_input_mutual_loss_high + 0.15*i_input_mutual_loss_low
+			loss_Decom = 1*recon_loss_high + 1*recon_loss_low + 0.01*equal_R_loss + 0.2*i_mutual_loss + 0.15*i_input_mutual_loss_high + 0.15*i_input_mutual_loss_low
 				
-				# recon_loss_low 和 recon_loss_high 是重构损失，用于衡量输出图像与输入图像之间的差异。
-				# equal_R_loss 是反射一致性损失，用于衡量两个不同尺度下的反射分量之间的一致性。
-				# i_mutual_loss 是亮度互信息损失，用于鼓励亮度分量之间的一致性。
-				# i_input_mutual_loss_high 和 i_input_mutual_loss_low 是输入亮度与反射之间的互信息损失，用于鼓励输入图像与反射分量之间的一致性。
-			\end{lstlisting}
+			# recon_loss_low 和 recon_loss_high 是重构损失，用于衡量输出图像与输入图像之间的差异。
+			# equal_R_loss 是反射一致性损失，用于衡量两个不同尺度下的反射分量之间的一致性。
+			# i_mutual_loss 是亮度互信息损失，用于鼓励亮度分量之间的一致性。
+			# i_input_mutual_loss_high 和 i_input_mutual_loss_low 是输入亮度与反射之间的互信息损失，用于鼓励输入图像与反射分量之间的一致性。
+			\end{python}
 			
-				最后定义优化器和训练操作
+			最后定义优化器和训练操作
 			
-			\lstset{language=python,breaklines=true}
-			\begin{lstlisting}
-				# 我们使用 Adam 优化器来最小化损失函数，其中只更新 DecomNet 模型的可训练变量。
-				lr = tf.placeholder(tf.float32, name='learning_rate')
-				optimizer = tf.train.AdamOptimizer(learning_rate=lr, name='AdamOptimizer')
-				var_Decom = [var for var in tf.trainable_variables() if 'DecomNet' in var.name]
-				train_op_Decom = optimizer.minimize(loss_Decom, var_list=var_Decom)
-				sess.run(tf.global_variables_initializer())
-				saver_Decom = tf.train.Saver(var_list=var_Decom)
+			\begin{python}
+			# 我们使用 Adam 优化器来最小化损失函数，其中只更新 DecomNet 模型的可训练变量。
+			lr = tf.placeholder(tf.float32, name='learning_rate')
+			optimizer = tf.train.AdamOptimizer(learning_rate=lr, name='AdamOptimizer')
+			var_Decom = [var for var in tf.trainable_variables() if 'DecomNet' in var.name]
+			train_op_Decom = optimizer.minimize(loss_Decom, var_list=var_Decom)
+			sess.run(tf.global_variables_initializer())
+			saver_Decom = tf.train.Saver(var_list=var_Decom)
 				
-				# 加载数据集
-				# 这里使用 glob 函数获取训练集的低分辨率和高分辨率图像的文件名，并进行排序。
-				train_low_data = []
-				train_high_data = []
-				train_low_data_names = glob('./LOLdataset/our485/low/*.png') 
-				train_low_data_names.sort()
-				train_high_data_names = glob('./LOLdataset/our485/high/*.png') 
-				train_high_data_names.sort()
-				
-				# 定义了一些辅助变量和文件夹路径
-				# epoch 表示训练的总轮数，learning_rate 表示学习率，sample_dir 是保存样本图像的文件夹路径，checkpoint_dir 是保存模型检查点的文件夹路径。
-				epoch = 2000
-				learning_rate = 0.0001
-				sample_dir = './Decom_net_train/'
-				checkpoint_dir = './checkpoint/decom_net_train/'
-				
-			\end{lstlisting}
+			# 加载数据集
+			# 这里使用 glob 函数获取训练集的低分辨率和高分辨率图像的文件名，并进行排序。
+			train_low_data = []
+			train_high_data = []
+			train_low_data_names = glob('./LOLdataset/our485/low/*.png') 
+			train_low_data_names.sort()
+			train_high_data_names = glob('./LOLdataset/our485/high/*.png') 
+			train_high_data_names.sort()
+			
+			# 定义了一些辅助变量和文件夹路径
+			# epoch 表示训练的总轮数，learning_rate 表示学习率，sample_dir 是保存样本图像的文件夹路径，checkpoint_dir 是保存模型检查点的文件夹路径。
+			epoch = 2000
+			learning_rate = 0.0001
+			sample_dir = './Decom_net_train/'
+			checkpoint_dir = './checkpoint/decom_net_train/'
+			\end{python}
 			
 				最后开始训练循环
 			
-			\lstset{language=python,breaklines=true}
-			\begin{lstlisting}
+			\begin{python}
 				for epoch in range(start_epoch, epoch):
 				for batch_id in range(start_step, numBatch):
 				# 获取一个批次的训练数据
@@ -724,7 +677,7 @@
 				# 每隔500个批次降低学习率
 				if (epoch + 1) % 500 == 0:
 				learning_rate /= 10
-			\end{lstlisting}
+			\end{python}
 			
 				在每个 epoch 的训练过程中，当遍历完一个批次后，计算并打印损失值。
 				
@@ -742,10 +695,198 @@
 				
 				Reflectance Restoration Net复现代码如下
 				
+				\begin{python}
+				# 定义一些超参数
+				batch_size = 4
+				patch_size = 384
+					
+				# 创建 TensorFlow 会话并配置 GPU 使用
+				config = tf.ConfigProto()
+				config.gpu_options.allow_growth = True
+				sess=tf.Session(config=config)
+					
+				# 定义输入占位符
+				input_decom = tf.placeholder(tf.float32, [None, None, None, 3], name='input_decom')
+				input_low_r = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low_r')
+				input_low_i = tf.placeholder(tf.float32, [None, None, None, 1], name='input_low_i')
+				input_high_r = tf.placeholder(tf.float32, [None, None, None, 3], name='input_high_r')
+					
+				# 构建模型的图结构
+				[R_decom, I_decom] = DecomNet_simple(input_decom)
+				decom_output_R = R_decom
+				decom_output_I = I_decom
+				output_r = Restoration_net(input_low_r, input_low_i)
+				\end{python}
+				
+				loss\_restoration = loss\_square + loss\_ssim + loss\_grad：这一行代码定义了总的损失函数 loss\_restoration，它是由三个部分的损失函数相加而成。loss\_square 是图像修复前后像素差的平方和的均值，用来衡量修复后图像与原始图像的像素差异。loss\_ssim 是结构相似性损失，用来衡量修复后图像与原始图像的结构相似性。loss\_grad 是梯度损失，用来衡量修复后图像与原始图像的梯度差异。通过将这三个损失函数相加，可以综合考虑图像修复的像素准确性、结构相似性和梯度一致性。
+				
+				\begin{python}
+				# 定义损失函数
+				def grad_loss(input_r_low, input_r_high):
+					input_r_low_gray = tf.image.rgb_to_grayscale(input_r_low)
+					input_r_high_gray = tf.image.rgb_to_grayscale(input_r_high)
+					x_loss = tf.square(gradient(input_r_low_gray, 'x') - gradient(input_r_high_gray, 'x'))
+					y_loss = tf.square(gradient(input_r_low_gray, 'y') - gradient(input_r_high_gray, 'y'))
+					grad_loss_all = tf.reduce_mean(x_loss + y_loss)
+					return grad_loss_all
+					
+				def ssim_loss(output_r, input_high_r):
+					output_r_1 = output_r[:,:,:,0:1]
+					input_high_r_1 = input_high_r[:,:,:,0:1]
+					ssim_r_1 = tf_ssim(output_r_1, input_high_r_1)
+					output_r_2 = output_r[:,:,:,1:2]
+					input_high_r_2 = input_high_r[:,:,:,1:2]						ssim_r_2 = tf_ssim(output_r_2, input_high_r_2)
+					output_r_3 = output_r[:,:,:,2:3]
+					input_high_r_3 = input_high_r[:,:,:,2:3]
+					ssim_r_3 = tf_ssim(output_r_3, input_high_r_3)
+					ssim_r = (ssim_r_1 + ssim_r_2 + ssim_r_3)/3.0
+					loss_ssim1 = 1-ssim_r
+					return loss_ssim1
+					
+				loss_square = tf.reduce_mean(tf.square(output_r  - input_high_r))
+				loss_ssim = ssim_loss(output_r, input_high_r)			
+				loss_grad = grad_loss(output_r, input_high_r)
+				loss_restoration = loss_square + loss_grad + loss_ssim
+				\end{python}
 
+				lr = tf.placeholder(tf.float32, name='learning\_rate')：这一行代码创建了一个占位符lr，用于传入学习率。占位符是在TensorFlow中用于表示在运行时提供数据的节点。在训练过程中，可以通过向lr传递不同的学习率值来控制模型的学习速度。
+				
+				\begin{python}
+				# 定义优化器和训练操作
+				lr = tf.placeholder(tf.float32, name='learning_rate')
+				optimizer = tf.train.AdamOptimizer(lr)
+				train_op = optimizer.minimize(loss_restoration)
+				
+				# 初始化变量并创建模型保存器
+				sess.run(tf.global_variables_initializer())
+				saver=tf.train.Saver(max_to_keep=50)
+					
+				# 定义一些训练过程中需要使用的函数和变量
+				train_dataset = glob('./data/train/*')
+				steps_per_epoch = len(train_dataset) // batch_size
+				global_step = 0
+				learning_rate = 0.0001
+				\end{python}
+				
+				最后开始训练循环，for epoch in range(20): 这个循环用于控制训练的迭代次数，每个迭代称为一个 epoch。在每个 epoch 中，数据集被随机打乱，以增加数据的随机性。这样，整个训练过程会逐步优化模型参数，以达到更好的图像修复效果。
+				
+				第2行代码使用 random.shuffle 函数随机打乱训练数据集的顺序，以增加数据的随机性。
+				
+				第3行使用嵌套循环用于遍历每epoch 中的小批量数据。steps\_per\_epoch 是每个 epoch 中的步骤数量，通过将训练数据集的大小除以批量大小得到。
+				
+				第5行代码调用了 load\_data 函数，从训练数据集中加载一批数据。train\_dataset[] 表示取出当前批次的训练数据，patch\_size 是图像块的大小。
+
+				第7行代码通过调用 sess.run 函数执行了一次训练操作和损失函数的计算，并将结果赋值给变量 loss\_value、loss\_square\_value、loss\_ssim\_value 和 loss\_grad\_value。
+				
+				\begin{python}
+				for epoch in range(20):
+					random.shuffle(train_dataset)
+				for batch_id in range(steps_per_epoch):
+					start_time = time.time()					
+					input_low_r_data, input_low_i_data, input_high_r_data = load_data(train_dataset[batch_id*batch_size:(batch_id+1)*batch_size], patch_size)
+					
+					_, loss_value, loss_square_value, loss_ssim_value, loss_grad_value = sess.run([train_op, loss_restoration, loss_square, loss_ssim, loss_grad], feed_dict={input_low_r: input_low_r_data, input_low_i: input_low_i_data, input_high_r: input_high_r_data, lr: learning_rate})
+					
+					duration = time.time() - start_time
+					
+					global_step += 1
+					
+					if batch_id % 100 == 0:
+						print('Epoch {:d}/{:d} Batch {:d}/{:d} loss = {:.6f}, loss_square = {:.6f}, loss_ssim = {:.6f}, loss_grad = {:.6f}, time = {:.2f}s'.format(epoch + 1, 20, batch_id + 1, steps_per_epoch, loss_value, loss_square_value, loss_ssim_value, loss_grad_value, duration))
+				\end{python}
+				
+				通过这段代码不难看出，其实现了一个图像训练模型的过程，包括了数据预处理、模型构建、损失函数定义、优化器设置以及训练过程的迭代。它使用了 TensorFlow 框架和一些自定义的模块和函数来完成图像修复任务的训练。
+				
 				
 			\paragraph{Illumination Adjustment Net}
 		
+				由于不存在用于图像的地面实况光照级别。因此，为了满足不同的需求，需要一种机制来灵活地将一种光照条件转换为另一种光照条件。数据集中是成对的照明图。虽然不知道之间的确切关系，但是可以大致计算强度的元素级比率$\alpha(L_t / L_s)$。这个比例可以作为指标来训练一个调整函数从一个光照条件$L_s$到另一个标准$L_t$，如果调整光照的水平更高,则$\alpha>1$,否则$\alpha \le 1$。在测试阶段,$\alpha$可以由用户指定。该网络是轻量级的，包含3个conv层(2个conv+ReLu和1个conv)和1个Sigmoid层。我们注意到指标$\alpha$是作为输入的一部分扩展到一个特性映射上。(代码中是把这个比值扩展成一个常数通道与输入图像合并变成4通道)。光照分量的纠正与反射分量纠正类似，这里同样使用高光照图光照分量$L_t$，作为真值约束训练，网络预测得到的纠正后反射分量为$\tilde{L}$，等式Eq. \ref{Illumination Adjustment loss}是照明调节网的损失函数\footnote{https://blog.csdn.net/xspyzm/article/details/106162581}。
+				\begin{equation}
+					\mathcal{L}^{IA}:={\left\| \hat{L}-L_{t} \right\|}^{2}_{2} + {\left\| \left|\nabla\hat{L}\right|-\nabla L_{t} \right\|}^{2}_{2}
+					\label{Illumination Adjustment loss}
+				\end{equation}
+			
+			\begin{python}
+			# 设置一些训练相关的参数
+			batch_size = 10
+			patch_size = 48
+			
+			# 创建TensorFlow会话
+			sess = tf.Session()
+			
+			# 定义输入占位符
+			input_decom = tf.placeholder(tf.float32, [None, None, None, 3], name='input_decom')
+			input_low_i = tf.placeholder(tf.float32, [None, None, None, 1], name='input_low_i')
+			input_low_i_ratio = tf.placeholder(tf.float32, [None, None, None, 1], name='input_low_i_ratio')
+			input_high_i = tf.placeholder(tf.float32, [None, None, None, 1], name='input_high_i')
+			\end{python}
+		
+			下面的代码构建了图像处理的模型。首先通过DecomNet\_simple函数构建了一个分解网络模型，将输入的图像分解为反射分量和光照分量，分别保存在decom\_output\_R和decom\_output\_I中。然后通过Illumination\_adjust\_net函数构建了一个光照调整网络模型，用于调整输入的光照分量，保存在output\_i中。
+			
+			\begin{python}
+			# 构建模型
+			[R_decom, I_decom] = DecomNet_simple(input_decom)
+			decom_output_R = R_decom
+			decom_output_I = I_decom
+			output_i = Illumination_adjust_net(input_low_i, input_low_i_ratio)
+			\end{python}
+			
+			下列的代码定义了损失函数。grad\_loss函数计算输入的两个图像的梯度差异，并计算梯度差异的平均值。loss\_grad表示光照分量的梯度损失，loss\_square表示光照分量的均方差损失，而loss\_adjust是将梯度损失和均方差损失相加得到的总体损失。
+			
+			\begin{python}
+			# 定义损失函数
+			def grad_loss(input_i_low, input_i_high):
+				x_loss = tf.square(gradient(input_i_low, 'x') - gradient(input_i_high, 'x'))
+				y_loss = tf.square(gradient(input_i_low, 'y') - gradient(input_i_high, 'y'))
+				grad_loss_all = tf.reduce_mean(x_loss + y_loss)
+				return grad_loss_all
+			
+			loss_grad = grad_loss(output_i, input_high_i)
+			loss_square = tf.reduce_mean(tf.square(output_i  - input_high_i))
+			loss_adjust =  loss_square + loss_grad
+			\end{python}
+			
+			这些代码定义了一个Adam优化器，并使用它最小化总体损失loss\_adjust。train\_vars表示可训练的变量，这些变量将会在训练过程中更新。
+			
+			\begin{python}
+			# 定义优化器和训练操作
+			train_vars = tf.trainable_variables()
+			train_op_adjust = tf.train.AdamOptimizer(learning_rate=0.0001).minimize(loss_adjust, var_list=train_vars)
+			\end{python}
+			
+			这行代码使用glob函数加载训练数据的文件路径。'./data/train/*.png'表示加载./data/train/路径下所有以.png结尾的文件。
+			
+			\begin{python}
+			# 初始化变量
+			sess.run(tf.global_variables_initializer())
+			
+			# 加载训练数据
+			train_data = glob('./data/train/*.png')
+			\end{python}
+		
+			这段代码中的循环用于进行训练。外层循环是30个训练轮次(epochs)，内层循环根据批大小将训练数据分成小批次进行训练。首先通过get\_image函数加载批次的图像文件，并将它们转换为浮点数类型的数组。然后将图像数组归一化到[0, 1]的范围。接下来，将归一化后的低光照图像和差值图像分别作为输入的低光照图像和高光照图像。将它们扩展维度，以匹配占位符的形状。然后执行训练操作train\_op\_adjust，并获取损失函数的值。
+		
+			\begin{python}
+			# 开始训练过程
+			for ep in range(30):
+				for idx in range(len(train_data)//batch_size):
+					batch_files = train_data[idx*batch_size:(idx+1)*batch_size]
+					batch = [get_image(batch_file) for batch_file in batch_files]
+					batch_images = np.array(batch).astype(np.float32)
+					batch_low_images = batch_images / 255.0
+					batch_high_images = batch_images - batch_low_images
+					batch_low_images = np.expand_dims(batch_low_images[:,:,:,0], axis=3)
+					batch_high_images = np.expand_dims(batch_high_images[:,:,:,0], axis=3)
+					batch_low_images_ratio = np.expand_dims(batch_low_images[:,:,:,0]/255.0, axis=3)
+					_, loss_adjust_value, loss_grad_value, loss_square_value = sess.run([train_op_adjust, loss_adjust, loss_grad, loss_square], feed_dict={input_decom: batch_images, input_low_i: batch_low_images, input_low_i_ratio: batch_low_images_ratio, input_high_i: batch_high_images})
+					
+			# 打印训练过程中的损失值,`\%2d`表示打印整数，占用两位字符的宽度；`\%.4f`表示打印浮点数，保留四位小数		
+			print("Epoch: [%2d], step: [%2d], loss_adjust: [%.4f], loss_grad: [%.4f],loss_square: [%.4f]" % (ep+1, idx+1, loss_adjust_value, loss_grad_value, loss_square_value))
+			
+			# 保存模型
+			saver.save(sess, "./model/model.ckpt")
+			\end{python}
+			
 		\paragraph{Evaluation}
 		
 		%		\begin{python}
@@ -756,9 +897,13 @@
 	
 	\section{下周工作计划}
 	
-	(1) 继续复现并详细分析KinD的项目代码，目前架构中的三个结构(Fig. \ref{fig: network})只完成其中一个结构(Layer Decomposition Net)的训练和代码分析，因此，下周工作计划是分析和复现后续两个结构的代码。
+	(1) 继续复现并详细分析KinD的项目代码，目前架构中的三个结构(Fig. \ref{fig: network})完成其中的训练和代码分析，因此，下周工作计划是尝试去评估模型，其中的model.py还没仔细去看，只是把训练的过程实施了一遍。
 	
-	(2) 继续整理各类损失函数的区别。按照Table\ref{tab: Summary}中整理的不同文献所采用的损失函数，弄清楚各类损失函数的作用。详细阅读\cite{fang2020perceptual},\cite{talebi2018nima}，再看看在损失函数方面有没有更好的想法。
+	(2) 继续整理各类损失函数的区别。按照Table\ref{tab: Summary}中整理的不同文献所采用的损失函数，弄清楚各类损失函数的作用。
+	
+	(3) 试着更加在说明代码的时候让文档更加规范化，感觉目前的格式有些随意。
+	
+	(4) 本周删去了关于“华为杯”的思考，这一章节，下一周关于第二个挑战可能会按照Paper\cite{9796836}更多的提出自己的思考。
 	
 	
 	%	\section{Analysis}

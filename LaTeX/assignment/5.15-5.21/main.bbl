@@ -19,15 +19,12 @@ Yonghua Zhang, Jiawan Zhang, and Xiaojie Guo.
   Multimedia}, MM '19, page 1632–1640, New York, NY, USA, 2019. Association
   for Computing Machinery.
 
-\bibitem{fang2020perceptual}
-Yuming Fang, Hanwei Zhu, Yan Zeng, Kede Ma, and Zhou Wang.
-\newblock Perceptual quality assessment of smartphone photography.
-\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
-  Pattern Recognition}, pages 3677--3686, 2020.
-
-\bibitem{talebi2018nima}
-Hossein Talebi and Peyman Milanfar.
-\newblock Nima: Neural image assessment.
-\newblock {\em IEEE transactions on image processing}, 27(8):3998--4011, 2018.
+\bibitem{9796836}
+Liang Dai, Wenchao Chen, Yanwei Liu, Antonios Argyriou, Chang Liu, Tao Lin,
+  Penghui Wang, Zhen Xu, and Bo~Chen.
+\newblock Switching gaussian mixture variational rnn for anomaly detection of
+  diverse cdn websites.
+\newblock In {\em IEEE INFOCOM 2022 - IEEE Conference on Computer
+  Communications}, pages 300--309, 2022.
 
 \end{thebibliography}
