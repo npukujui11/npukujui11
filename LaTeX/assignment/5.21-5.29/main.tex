@@ -418,7 +418,21 @@
 	
 	通过引入Reflectance loss作为训练目标，去雾模型可以学习到更准确的雾霾分布和反射率信息，从而生成更清晰的去雾图像。这有助于提高图像去雾算法的性能和质量。
 	
-	\paragraph{consistency loss function}
+	\paragraph{Consistency loss function}
+	
+	Consistency loss function是一种在机器学习中使用的损失函数，用于提高模型的一致性。它主要用于半监督学习或自监督学习任务中，其中存在一些带有标签的数据（有目标变量的输入-输出对）和一些没有标签的数据（只有输入）。区别于全监督学习，半监督学习针对训练集标记不完整的情况：仅仅部分数据具有标签，然而大量数据是没有标签的。因此，目前半监督学习的关键问题在于如何充分地挖掘没有标签数据的价值。主流的半监督学习方法有下面几种\footnote{https://blog.csdn.net/JYZhang\_CVML/article/details/106817709}:
+	
+	(1) \textbf{自训练方法(Self-Training)}。这是一种很直观的思路：既然大量数据是没有标签的，那么能否对这些数据生成一些伪标签(Pseuo Labels)，对这些伪标签数据的训练从而利用原始的无标签数据。
+	
+	(2) \textbf{基于对抗学习的方法(Adversarial-Learning-based)}。这类方法基于一种假设，无标签数据(unlabeled data)通常具有和有标签数据(labeled data)在某种程度上类似的潜在标签。所以很自然地，可以采用GAN的图像模拟思路来进行对有标签数据进行类似于无标签数据的数据增强，进而利用无标签数据的潜在知识(latent knowledge)。
+	
+	(3) \textbf{基于一致性的方法(Consistency-based)}。 这类方法的核心思路在于一致性损失函数Consistency loss function，对于进过扰动的无标签数据，模型应该对其做出一致性的预测——可以理解成一种利用无标签数据进行网络正则化的方法。
+	
+	一致性损失函数的基本思想是，在模型对相似输入的处理应该具有一致性。它通过对输入进行一些变换或扰动，然后要求模型在这些变换后仍然能够产生相似的输出。如果模型能够在不同的变换下产生一致的输出，那么我们可以认为模型具有一定的鲁棒性和泛化能力。
+	
+	具体来说，一致性损失函数可以定义为模型在原始输入和变换后输入上的输出之间的差异。常见的一致性损失函数包括均方差损失、平均绝对误差损失、KL散度等。通过最小化一致性损失函数，模型被迫保持对输入的一致性响应，从而提高模型的泛化能力。
+	
+	需要注意的是，一致性损失函数的具体形式和应用取决于具体的任务和模型架构。它通常与其他损失函数（如分类损失函数或重构损失函数）结合使用，以共同训练模型。
 	
 	\paragraph{color loss function}
 	
@@ -460,7 +474,7 @@
 				
 				\hline
 				
-				\multirowcell{8}{\makecell{\centering \rotatebox{90}{\textbf{2019}\qquad\qquad \qquad\qquad\qquad}}} & Chen et al. & SL & siamese network & $L_1$ loss self-consistency loss & DRV & DRV & \makecell{PSNR SSIM \\ MAE} & Raw & TensorFlow &  \\
+				\multirowcell{8}{\makecell{\centering \rotatebox{90}{\textbf{2019}\qquad\qquad \qquad\qquad\qquad}}} & Chen et al. & SL & siamese network & \makecell{$L_1$ loss \\ self-consistency loss} & DRV & DRV & \makecell{PSNR SSIM \\ MAE} & Raw & TensorFlow &  \\
 				
 				
 				& Jiang and Zheng & SL & 3D U-Net & \makecell{$L_1$ loss} & SMOID & SMOID & \makecell{PSNR SSIM \\ MSE} & Raw & TensorFlow &  \\
@@ -483,7 +497,7 @@
 				
 				& DRBN & SSL & recursive network & \makecell{SSIM loss \\ perceptual loss \\ adversarial loss} & LOL images selected by MOS & LOL & \makecell{PSNR SSIM \\ SSIM-GC} & RGB & PyTorch & \\
 				
-				& Lv et al. & SL & U-Net like network & Huber loss SSIM loss perceptual loss illumination smoothness loss & simulated by a retouching module & LOL SICE DeepUPE & \makecell{User Study PSNR \\ SSIM VIF \\ LOE NIQE \\ \#P Runtime \\ Face detection} & RGB & TensorFlow & \checkmark \\
+				& Lv et al. & SL & U-Net like network & \makecell{Huber loss \\ SSIM loss \\ perceptual loss \\ illumination smoothness loss} & simulated by a retouching module & LOL SICE DeepUPE & \makecell{User Study PSNR \\ SSIM VIF \\ LOE NIQE \\ \#P Runtime \\ Face detection} & RGB & TensorFlow & \checkmark \\
 				
 				& Fan et al. & SL & four subnetworks U-Net like network feature modulation & \makecell{mutual smoothness loss \\ reconstruction loss \\ illumination smoothness loss \\ cross entropy loss \\ consistency loss \\ SSIM loss \\ gradient loss \\ ratio learning loss} & \makecell{simulated by \\ illumination adjustment,\\ slight color distortion,\\ and noise simulation} & simulated self-selected & \makecell{PSNR SSIM \\ NIQE} & RGB & - & \checkmark \\
 				

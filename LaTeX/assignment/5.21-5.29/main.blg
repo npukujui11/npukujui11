@@ -3,46 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: reference.bib
-Warning--can't use both volume and number fields in lv2018mbllen
-You've used 4 entries,
+You've used 3 entries,
             1791 wiz_defined-function locations,
-            474 strings with 4513 characters,
-and the built_in function-call counts, 1554 in all, are:
-= -- 144
-> -- 65
-< -- 5
-+ -- 23
-- -- 19
-* -- 89
-:= -- 208
-add.period$ -- 14
-call.type$ -- 4
-change.case$ -- 4
+            467 strings with 4378 characters,
+and the built_in function-call counts, 1293 in all, are:
+= -- 127
+> -- 51
+< -- 3
++ -- 18
+- -- 15
+* -- 69
+:= -- 170
+add.period$ -- 11
+call.type$ -- 3
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 92
-empty$ -- 139
-format.name$ -- 19
-if$ -- 385
+cite$ -- 3
+duplicate$ -- 77
+empty$ -- 112
+format.name$ -- 15
+if$ -- 324
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 4
-pop$ -- 21
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 3
+pop$ -- 16
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 72
+skip$ -- 65
 stack$ -- 0
-substring$ -- 84
-swap$ -- 53
-text.length$ -- 5
+substring$ -- 82
+swap$ -- 46
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 11
-width$ -- 5
-write$ -- 51
-(There was 1 warning)
+warning$ -- 0
+while$ -- 9
+width$ -- 4
+write$ -- 39
