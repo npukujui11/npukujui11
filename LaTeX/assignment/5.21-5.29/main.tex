@@ -568,7 +568,17 @@
 	
 	\subsubsection{Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites}
 	
+	\paragraph{Known problems}
 	
+	问题一：单个网站在不同时间段的非平稳依赖（The Non-stationary Dependencies）会降低深度异常检测模型的性
+	能:
+	
+	由于用户的正常行为或CDN的调度等，相应的KPI通常表现出非平稳的时间特征，不应将其归类为服务失败或
+	退化。但是，这些类型的预期模式很难被目前的方法捕获，这会使得目前的模型在CDN KPI异常检测方面的表
+	现性能很差。
+	
+	从Figure1(a)和Figure1(d)可以明显看出，工作日和周末的用户请求行为是不同的。前一个网站显示了在周末相
+	对于工作日的用户请求激增，而后一个数据显示了相反的情况。
 	
 	\section{个人工作进展}
 	
