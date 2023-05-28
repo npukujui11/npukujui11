@@ -458,6 +458,22 @@
 	
 	\paragraph{Laplacian loss function}
 	
+	拉普拉斯损失(Laplacian loss)是一种在计算机视觉任务中常用的损失函数，用于促进图像的平滑性。它通常用于图像生成、图像修复或图像去噪等任务中。其形式上一般定义为Eq. \ref{eq: Laplacian loss}。从形式上看，Laplacian loss function主要工作是在$\mathcal{L}_1$-loss的基础上乘了一个$2$的幂次项，并且将多层的结果相加。
+	
+	Laplacian loss的基本思想是鼓励生成的图像具有平滑的变化，以减少图像中的噪点或锐利边缘。它利用图像的拉普拉斯金字塔来比较生成图像和真实图像之间的结构差异。拉普拉斯金字塔\cite{burt1987laplacian}最初是为紧凑的图像表示而设计的，具有简单的操作，即缩小和扩展。许多研究人员试图将拉普拉斯金字塔应用于广泛的计算机视觉任务，例如纹理分析和合成。拉普拉斯金字塔具有线性可逆过程来重建原始输入而不损失任何信息以精确地细化局部细节的性质。Ghiasi等人\cite{ghiasi2016laplacian}提出了基于拉普拉斯金字塔的细化过程，以增强语义分割的低分辨率估计结果的局部细节。
+	\begin{equation}
+		\begin{aligned}
+			\mathcal{L}_l = \sum 2^{i-1} {\| \mathcal{L}^i(\hat{\alpha}) - \mathcal{L}^i(\alpha) \|}_1 
+		\end{aligned}
+		\label{eq: Laplacian loss}
+	\end{equation}
+	
+	具体来说，Laplacian loss首先通过将生成图像和真实图像分别构建成拉普拉斯金字塔。拉普拉斯金字塔是一种多尺度表示，其中每个级别表示了原始图像与其上一级别平滑版本之间的细节差异。然后，Laplacian loss计算两个图像金字塔之间的差异，通过比较它们在每个级别上的像素差异来量化结构上的差异。
+	
+	通过最小化Laplacian loss，生成的图像被鼓励具有更平滑的结构，从而减少图像中的噪点和锐利边缘。
+	
+	需要注意的是，具体的Laplacian loss的实现方式可能因任务而异。在某些情况下，可以使用像素级别的差异或特征级别的差异作为损失度量。此外，Laplacian loss通常与其他损失函数（如像素级别的差异、感知损失或对抗损失）结合使用，以共同训练生成模型。
+	
 	\subsubsection{细节}
 	
 	\renewcommand{\tablename}{Table}
