@@ -122,7 +122,7 @@
 	
 	$\mathcal{L}_1-loss$损失函数相比于$\mathcal{L}_2-loss$损失函数的鲁棒性更好。因为以$\mathcal{L}_2-loss$范数将误差平方化(如果误差大于1，则误差会放大很多)，模型的误差会比以$\mathcal{L}_1-loss$范数大的多，因此模型会对这种类型的样本更加敏感，这就需要调整模型来最小化误差。但是很大可能这种类型的样本是一个异常值，模型就需要调整以适应这种异常值，那么就导致训练模型的方向偏离目标了\footnote{https://zhuanlan.zhihu.com/p/137073968}。
 	
-	对于大多数回归问题，一般是使用$\mathcal{L}_2-loss$而不是$\mathcal{L}_1-loss$。
+	对于大多数回归问题，一般是使用$\mathcal{L}_2-loss$而不是$\mathcal{L}_1-loss$，$\mathcal{L}_2-loss$在LLIE中，具有的相当很有效的恢复效果，但是由于平方项，它通常会产生模糊的恢复结果，如\cite{tatarchenko2016multi}所述，平方项为相对较小的误差提供了较低的梯度。。
 	
 	函数: \textit{torch.nn.MSELoss}
 	
@@ -436,7 +436,25 @@
 	
 	\paragraph{Color loss function}
 	
-	针对于颜色恢复设计的loss，将RGB三通道看做三维向量，计算增强图像与ground truth之间的余弦距离：
+	\begin{equation}
+		\begin{aligned}
+			\mathcal{L}_c^{i} = \sum_{p} \angle \left( (\mathcal{F}(I_i))_{p}, (\tilde{I}_i)_p \right)
+		\end{aligned}
+		\label{eq: color loss}
+	\end{equation}
+	
+	Lim\cite{9264763}基于余弦相似性基于\cite{8953588}中提出的损失函数color-loss进行了改进，针对于颜色恢复设计的损失函数，将RGB三通道看做三维向量，计算增强图像与GT之间的余弦距离(见Eq. \ref{eq: color loss}),因为在reconstruction loss中使用了$\mathcal{L}_2$-loss,但是$\mathcal{L}_2$-loss只是数值上测量色差，不能保证颜色向量的方向是相同的，可能导致颜色mismatch,所以使用了夹角的loss,Lim\cite{9264763}修改之后,见Eq. \ref{eq: Improved color loss}。
+	\begin{equation}
+		\begin{aligned}
+			\mathcal{L}_c = \sum_{k=1}^{3} \left( 1- \frac{1}{H_k \times W_k} \sum_{i \in (H_k, W_k)} \frac{\tilde{I}_k(i) \cdot I_k^{*}(i)}{{\| \tilde{I}_k(i) \|^2} {\| I_k^{*}(i) \|^2}} \right)
+		\end{aligned}
+		\label{eq: Improved color loss}
+	\end{equation}
+	
+	其中$H_k$和$W_k$分别是第k个拉普拉斯金字塔级别(Laplacian pyramid level)中的增强结果的高度和宽度。$\tilde{I}_k(i)$表示像素位置，$\cdot$表示内积。颜色越接近，颜色损失$L_c$就越接近于零。通过在恢复过程中考虑颜色向量的方向，能够成功地将增强结果的颜色属性恢复为与地面实况相似。
+	
+	文章描述该方法是通过模糊输入图像与GT的纹理、内容，仅仅保存图像的颜色信息实现图像颜色的校正。实现过程比较简单，首先构建一个高斯模糊核，然后利用高斯模糊核作为卷积核对图像进行卷积运算，得到模糊后的图像；然后计算输入图像与GT的MSE作为损失函数。(pytorch实现\footnote{https://blog.csdn.net/ztzi321/article/details/101424448})
+
 	
 	\paragraph{Laplacian loss function}
 	
