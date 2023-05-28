@@ -566,7 +566,7 @@
 	
 	\subsection{Paper reading}
 	
-	\subsubsection{Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites}
+	\subsubsection{Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites\cite{dai2022switching}}
 	
 	\paragraph{Known problems}
 	
@@ -737,6 +737,10 @@
 	
 	从数学角度看，图像的高斯模糊过程就是图像与正态分布做卷积，在二维卷积里面，一个正方形高斯核的值中间高、四周边缘低，大致呈一个“圆形”，拉普拉斯金字塔与高斯金字塔相反，是个倒着的金字塔，也就是图片尺度逐级变大，但是这个并不是单纯把图像放大，它要计算 [原图像] 和 [下采样、上采样后图像] 两者差值，得到的结果尺度逐渐变大，形成一个金字塔。高斯金字塔下采样过程中丢失的信息在上采样后并不能完全恢复，丢失信息的情况依然存在，如果直观把原图和下采样、上采样后的图片进行对比，会发现后者仍然模糊，此时用前者减去后者得到的新图像，形成的就是拉普拉斯金字塔。这个相减的过程，能够更突出显示图像的像素信息，因为高斯核属于低通滤波，图像经过这个操作后得到的结果更加平滑，边界信息相比原图没那么明显（因为图像中高频的边缘部分都被过滤），而原图这些边界信息较为明显，至于非边界部分信号变化不大，因此相减后得到的图像更关注边界的信息，或者说对高频信号更为敏感。
 
+	4) 阅读文献《Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites》,作者提出了一种适用于多元CDN kpi的开关高斯混合变分递归神经网络(SGmVRNN)。具体来说，SGmVRNN引入了变分循环结构和分配其潜在变量到混合高斯分布模型复杂KPI时间序列和捕获各种结构和动态特征，而在下一步它包含一个转换机制来描述这些多样性，从而学习丰富的KPI表示。
+	
+	为了进行有效的推理，作者提出了一种向上-向下的自编码推理方法，该方法结合了自下而上的似然值和参数的上下先验信息，以实现精确的后验逼近。在真实世界数据上进行的大量实验表明，根据来自不同网站的CDN kpi上的f1分数，SGmVRNN的性能显著优于最先进的方法。
+	
 	
 	
 	\subsection{复现KinD代码}
@@ -750,6 +754,151 @@
 		Tensorflow >= 1.10.0
 		numpy, PIL
 		\end{python}
+	
+		\subsubsection{Model}
+		
+		\paragraph{lrelu}
+		
+		\begin{python}
+			def lrelu(x, trainbable=None):
+				return tf.maximum(x*0.2,x)
+		\end{python}
+
+		lrelu函数实现了带有泄露的线性整流单元(Leaky ReLU)，其作用是在神经网络中引入非线性变换。
+		
+		线性整流单元(ReLU)是一种常用的激活函数，对于输入$x$，当$x$大于等于零时，输出为$x$，当$x$小于零时，输出为零。这种函数在训练神经网络时具有很好的性质，但是在某些情况下，当输入为负值时，导数为零会导致梯度消失的问题。
+		
+		为了解决这个问题，Leaky ReLU 引入了一个小的负斜率，在输入为负值时，输出为输入乘以一个小的斜率。公式表示如下：
+		
+		$ lrelu(x) = max(x * alpha, x) $
+		
+		\subparagraph{input}
+		
+		其中，x是输入，alpha是小的斜率（一般取很小的正数，如0.2），max函数选择两者中的较大值作为输出。
+		
+		\subparagraph{function}
+		
+		Leaky ReLU 通过引入负斜率，保留了负值的信息，从而解决了梯度消失问题，并且具有更好的收敛性和表达能力。
+		
+		在给定的代码中，lrelu函数接受输入x和一个可选的参数trainable（默认为None），并返回x乘以斜率0.2和x中的较大值作为输出。该函数可以作为激活函数在神经网络的层中使用，引入非线性变换，增加网络的表达能力。
+		
+		\paragraph{upsample\_and\_concat}
+		
+		\begin{python}
+			def upsample_and_concat(x1, x2, output_channels, in_channels, scope_name, trainable=True):
+			with tf.variable_scope(scope_name, reuse=tf.AUTO_REUSE) as scope:
+			pool_size = 2
+			deconv_filter = tf.get_variable('weights', [pool_size, pool_size, output_channels, in_channels], trainable= True)
+			deconv = tf.nn.conv2d_transpose(x1, deconv_filter, tf.shape(x2) , strides=[1, pool_size, pool_size, 1], name=scope_name)
+			
+			deconv_output =  tf.concat([deconv, x2],3)
+			deconv_output.set_shape([None, None, None, output_channels*2])
+			
+			return deconv_output
+		\end{python}
+		
+		函数的作用是将两个特征图进行上采样和拼接操作。在图像处理中，上采样是指将特征图的尺寸扩大，通常使用插值等方法来实现。而拼接操作则是将两个特征图在通道维度进行连接。
+		
+		这个函数常用于 U-Net 等图像分割和生成网络中，用于实现特征图的跳跃连接，从而传递低层次的细节信息到高层次的特征图中，提升模型性能和图像质量。
+		
+		\subparagraph{input} 
+		
+			x1：第一个输入特征图。
+			
+			x2：第二个输入特征图。
+			
+			output\_channels：输出特征图的通道数。
+			
+			in\_channels：输入特征图的通道数。
+			
+			scope\_name：变量作用域的名称。
+			
+			trainable：是否可训练的布尔值，默认为 True。
+		
+		\subparagraph{function}
+		
+		在给定的变量作用域下，创建一个名为 'weights' 的变量，它是一个大小为 [pool\_size, pool\_size, output\_channels, in\_channels] 的可训练的卷积核。
+		
+		使用 tf.nn.conv2d\_transpose 函数对 x1 进行转置卷积操作（也称为反卷积），使用创建的卷积核 deconv\_filter，步长为 [1, pool\_size, pool\_size, 1]，以获得上采样后的特征图 deconv。
+		
+		将 deconv 和 x2 进行通道维度上的拼接，通过 tf.concat 函数将它们在通道维度上连接起来，得到 deconv\_output。
+		
+		设置 deconv\_output 的形状为 [None, None, None, output\_channels*2]，其中 None 表示该维度的大小可以根据输入的形状自动推断。
+		
+		返回拼接后的特征图 deconv\_output。	
+		
+		\paragraph{DecomNet\_simple}
+		
+		\begin{python}
+		def DecomNet_simple(input):
+			with tf.variable_scope('DecomNet', reuse=tf.AUTO_REUSE):
+				conv1=slim.conv2d(input,32,[3,3], rate=1, activation_fn=lrelu,scope='g_conv1_1')
+				pool1=slim.max_pool2d(conv1, [2, 2], stride = 2, padding='SAME' )
+				conv2=slim.conv2d(pool1,64,[3,3], rate=1, activation_fn=lrelu,scope='g_conv2_1')
+				pool2=slim.max_pool2d(conv2, [2, 2], stride = 2, padding='SAME' )
+				conv3=slim.conv2d(pool2,128,[3,3], rate=1, activation_fn=lrelu,scope='g_conv3_1')
+				up8 =  upsample_and_concat( conv3, conv2, 64, 128 , 'g_up_1')
+				conv8=slim.conv2d(up8,  64,[3,3], rate=1, activation_fn=lrelu,scope='g_conv8_1')
+				up9 =  upsample_and_concat( conv8, conv1, 32, 64 , 'g_up_2')
+				conv9=slim.conv2d(up9,  32,[3,3], rate=1, activation_fn=lrelu,scope='g_conv9_1')
+				# Here, we use 1*1 kernel to replace the 3*3 ones in the paper to get better results.
+				conv10=slim.conv2d(conv9,3,[1,1], rate=1, activation_fn=None, scope='g_conv10')
+				R_out = tf.sigmoid(conv10)
+				
+				l_conv2=slim.conv2d(conv1,32,[3,3], rate=1, activation_fn=lrelu,scope='l_conv1_2')
+				l_conv3=tf.concat([l_conv2, conv9],3)
+				# Here, we use 1*1 kernel to replace the 3*3 ones in the paper to get better results.
+				l_conv4=slim.conv2d(l_conv3,1,[1,1], rate=1, activation_fn=None,scope='l_conv1_4')
+				L_out = tf.sigmoid(l_conv4)
+				
+				return R_out, L_out
+		\end{python}
+	
+		函数是一个图像分解网络(Image Decomposition Network)的简化版本。它的主要作用是将输入的图像分解为反射分量(Reflection component)和照明分量(Illumination component)两部分。
+		
+		函数接受一个输入图像作为参数，并在TensorFlow的变量作用域'DecomNet'下构建网络。该网络包含一系列的卷积、池化和上采样操作，以及一些连接操作和卷积层。
+	
+		\paragraph{input}
+		
+		input（一个张量，作为输入图像）。
+		
+		\paragraph{function}
+		
+		实现图像的分解网络。
+		
+		具体地，DecomNet\_simple 函数的网络结构如下：
+		
+		1. 输入图像经过第一层卷积层 conv1，输出通道数为 32，卷积核大小为 3x3，使用 Leaky ReLU 激活函数。
+		
+		2. 经过池化层 pool1，进行最大池化，池化窗口大小为 2x2，步长为 2。
+		
+		3. 经过第二层卷积层 conv2，输出通道数为 64，卷积核大小为 3x3，使用 Leaky ReLU 激活函数。
+		
+		4. 经过池化层 pool2，进行最大池化，池化窗口大小为 2x2，步长为 2。
+		
+		5. 经过第三层卷积层 conv3，输出通道数为 128，卷积核大小为 3x3，使用 Leaky ReLU 激活函数。
+		
+		6. 调用 upsample\_and\_concat 函数，将 conv3 和 conv2 进行上采样并连接起来，输出通道数为 64。
+		
+		7. 经过第八层卷积层 conv8，输出通道数为 64，卷积核大小为 3x3，使用 Leaky ReLU 激活函数。
+		
+		8. 调用 upsample\_and\_concat 函数，将 conv8 和 conv1 进行上采样并连接起来，输出通道数为 32。
+		
+		9. 经过第九层卷积层 conv9，输出通道数为 32，卷积核大小为 3x3，使用 Leaky ReLU 激活函数。
+		
+		10. 经过最后一层卷积层 conv10，输出通道数为 3，卷积核大小为 1x1，不使用激活函数。该层用于生成反射分量（Reflection component）。
+		
+		11. 使用 sigmoid 函数对 conv10 的输出进行映射，得到反射分量 R\_out。
+		
+		12. 经过第一层卷积层 l\_conv2，输出通道数为 32，卷积核大小为 3x3，使用 Leaky ReLU 激活函数。
+		
+		13. 将 l\_conv2 和 conv9 进行连接操作，得到连接特征图 l\_conv3。
+		
+		14. 经过一层卷积层 l\_conv4，输出通道数为 1，卷积核大小为 1x1，不使用激活函数。该层用于生成照明分量（Illumination component）。
+		
+		15. 使用 sigmoid 函数对 l\_conv4 的输出进行映射，得到照明分量 L\_out。
+		
+		最终，DecomNet\_simple 函数返回反射分量 R\_out 和照明分量 L\_out。这个函数的目标是将输入图像分解为反射分量和照明分量，以便进一步进行图像修复或图像增强等后续处理。
 	
 		\subsubsection{Train}
 	
@@ -1105,7 +1254,7 @@
 			saver.save(sess, "./model/model.ckpt")
 			\end{python}
 			
-		\paragraph{Evaluation}
+		\subsubsection{Evaluation}
 		
 		%		\begin{python}
 			
