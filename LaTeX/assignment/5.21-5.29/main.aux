@@ -89,6 +89,7 @@
 \@writefile{toc}{\contentsline {paragraph}{Challenge}{14}{figure.caption.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Author Work}{14}{figure.caption.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Proposed Method}{14}{figure.caption.5}\protected@file@percent }
+\citation{dai2022switching}
 \newlabel{fig: Prior}{{6a}{15}{Prior\relax }{figure.caption.6}{}}
 \newlabel{sub@fig: Prior}{{a}{15}{Prior\relax }{figure.caption.6}{}}
 \newlabel{fig: Generation}{{6b}{15}{Generation\relax }{figure.caption.6}{}}
@@ -102,38 +103,31 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   Graphical illustration of each operation of the SGmVRNN: (a) conditional prior of latent variables $z_{t;n}$ and $c_{t;n}$; (b) generation process of $x_{t;n}$; (c) inference of the variational distribution of $z_{t;n}$ and $c_{t;n}$; (d) updating the hidden units of the RNN recurrently; (e) overall operations of the SGmVRNN. Note that circles denote stochastic variables while diamond-shaped units are used for deterministic variables, and shaded nodes denote observed variables. \relax }}{15}{figure.caption.6}\protected@file@percent }
 \newlabel{fig: Switching Mechanism}{{6}{15}{Graphical illustration of each operation of the SGmVRNN: (a) conditional prior of latent variables $z_{t;n}$ and $c_{t;n}$; (b) generation process of $x_{t;n}$; (c) inference of the variational distribution of $z_{t;n}$ and $c_{t;n}$; (d) updating the hidden units of the RNN recurrently; (e) overall operations of the SGmVRNN. Note that circles denote stochastic variables while diamond-shaped units are used for deterministic variables, and shaded nodes denote observed variables. \relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}个人工作进展}{15}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}梳理损失函数}{15}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}关于“华为杯”的一点思考}{15}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}适用多场景的通用化时序预测算法}{15}{subsubsection.2.1.1}\protected@file@percent }
 \citation{10.1145/3343031.3350926}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}复现KinD代码}{16}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Requirement}{16}{subsubsection.2.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Model}{17}{subsubsection.2.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{lrelu}{17}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}梳理损失函数}{16}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}复现KinD代码}{17}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Requirement}{17}{subsubsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Model}{17}{subsubsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{lrelu}{17}{subsubsection.2.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{input}{17}{lstnumber.-3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{function}{17}{lstnumber.-3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{upsample\_and\_concat}{17}{lstnumber.-3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{function}{18}{lstnumber.-3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{upsample\_and\_concat}{18}{lstnumber.-3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{input}{18}{lstnumber.-4.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{function}{18}{lstnumber.-4.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{function}{19}{lstnumber.-4.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{DecomNet\_simple}{19}{lstnumber.-4.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{input}{20}{lstnumber.-5.23}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{function}{20}{lstnumber.-5.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Train}{21}{subsubsection.2.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment. \relax }}{21}{figure.caption.7}\protected@file@percent }
-\newlabel{fig: network}{{7}{21}{The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment. \relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Layer Decomposition Net}{21}{figure.caption.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Reflectance Restoration Net}{25}{lstnumber.-8.24}\protected@file@percent }
-\newlabel{eq: Restoration loss}{{23}{25}{Reflectance Restoration Net}{equation.2.23}{}}
-\@writefile{toc}{\contentsline {paragraph}{Illumination Adjustment Net}{29}{lstnumber.-12.15}\protected@file@percent }
-\newlabel{Illumination Adjustment loss}{{24}{29}{Illumination Adjustment Net}{equation.2.24}{}}
 \bibstyle{unsrt}
 \bibdata{reference}
 \bibcite{dai2022switching}{1}
 \bibcite{tatarchenko2016multi}{2}
+\@writefile{toc}{\contentsline {section}{\numberline {3}下周工作计划}{21}{section.3}\protected@file@percent }
 \bibcite{johnson2016perceptual}{3}
 \bibcite{9264763}{4}
 \bibcite{8953588}{5}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Evaluation}{32}{subsubsection.2.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}下周工作计划}{32}{section.3}\protected@file@percent }
 \bibcite{burt1987laplacian}{6}
 \bibcite{ghiasi2016laplacian}{7}
 \bibcite{10.1145/3343031.3350926}{8}
-\gdef \@abspage@last{33}
+\gdef \@abspage@last{22}

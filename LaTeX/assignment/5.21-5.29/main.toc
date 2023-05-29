@@ -24,22 +24,19 @@
 \contentsline {paragraph}{Author Work}{14}{figure.caption.5}%
 \contentsline {paragraph}{Proposed Method}{14}{figure.caption.5}%
 \contentsline {section}{\numberline {2}个人工作进展}{15}{section.2}%
-\contentsline {subsection}{\numberline {2.1}梳理损失函数}{15}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}复现KinD代码}{16}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Requirement}{16}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Model}{17}{subsubsection.2.2.2}%
-\contentsline {paragraph}{lrelu}{17}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.1}关于“华为杯”的一点思考}{15}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}适用多场景的通用化时序预测算法}{15}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}梳理损失函数}{16}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}复现KinD代码}{17}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Requirement}{17}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Model}{17}{subsubsection.2.3.2}%
+\contentsline {paragraph}{lrelu}{17}{subsubsection.2.3.2}%
 \contentsline {subparagraph}{input}{17}{lstnumber.-3.3}%
-\contentsline {subparagraph}{function}{17}{lstnumber.-3.3}%
-\contentsline {paragraph}{upsample\_and\_concat}{17}{lstnumber.-3.3}%
+\contentsline {subparagraph}{function}{18}{lstnumber.-3.3}%
+\contentsline {paragraph}{upsample\_and\_concat}{18}{lstnumber.-3.3}%
 \contentsline {subparagraph}{input}{18}{lstnumber.-4.11}%
-\contentsline {subparagraph}{function}{18}{lstnumber.-4.11}%
+\contentsline {subparagraph}{function}{19}{lstnumber.-4.11}%
 \contentsline {paragraph}{DecomNet\_simple}{19}{lstnumber.-4.11}%
 \contentsline {paragraph}{input}{20}{lstnumber.-5.23}%
 \contentsline {paragraph}{function}{20}{lstnumber.-5.23}%
-\contentsline {subsubsection}{\numberline {2.2.3}Train}{21}{subsubsection.2.2.3}%
-\contentsline {paragraph}{Layer Decomposition Net}{21}{figure.caption.7}%
-\contentsline {paragraph}{Reflectance Restoration Net}{25}{lstnumber.-8.24}%
-\contentsline {paragraph}{Illumination Adjustment Net}{29}{lstnumber.-12.15}%
-\contentsline {subsubsection}{\numberline {2.2.4}Evaluation}{32}{subsubsection.2.2.4}%
-\contentsline {section}{\numberline {3}下周工作计划}{32}{section.3}%
+\contentsline {section}{\numberline {3}下周工作计划}{21}{section.3}%
