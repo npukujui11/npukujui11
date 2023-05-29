@@ -14,12 +14,12 @@
 \providecommand*\HyPL@Entry[1]{}
 \citation{dai2022switching}
 \HyPL@Entry{0<</S/D>>}
-\@writefile{toc}{\contentsline {section}{\numberline {1}文献阅读}{2}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{2}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}文献阅读}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{1}{subsection.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}loss function for CV}{2}{subsubsection.1.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{$\mathcal  {L}_1$-loss}{2}{subsubsection.1.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{$\mathcal  {L}_2$-loss}{2}{equation.1.1}\protected@file@percent }
 \citation{tatarchenko2016multi}
-\@writefile{toc}{\contentsline {paragraph}{$\mathcal  {L}_2$-loss}{3}{equation.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Regularization of the $\mathcal  {L}_1$ and $\mathcal  {L}_2$ loss functions}{3}{equation.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Smooth $\mathcal  {L}_1$ loss function}{4}{lstnumber.-1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Huber loss function}{4}{equation.1.5}\protected@file@percent }
@@ -33,19 +33,19 @@
 \newlabel{fig: perceptual loss}{{1}{6}{System overview. We train an image transformation network to transform input images into output images. We use a loss network pretrained for image classification to define perceptual loss functions that measure perceptual differences in content and style between images. The loss network remains fixed during the training process. \relax }{figure.caption.1}{}}
 \@writefile{toc}{\contentsline {paragraph}{SSIM loss function}{6}{figure.caption.1}\protected@file@percent }
 \newlabel{eq: SSIM}{{9}{6}{SSIM loss function}{equation.1.9}{}}
-\newlabel{eq: SSIM loss}{{10}{7}{SSIM loss function}{equation.1.10}{}}
+\newlabel{eq: SSIM loss}{{10}{6}{SSIM loss function}{equation.1.10}{}}
 \newlabel{eq: revised_SSIM loss}{{11}{7}{SSIM loss function}{equation.1.11}{}}
 \@writefile{toc}{\contentsline {paragraph}{MS-SSIM loss function}{7}{equation.1.11}\protected@file@percent }
 \newlabel{eq: MS-SSIM}{{12}{7}{MS-SSIM loss function}{equation.1.12}{}}
 \newlabel{eq: MS-SSIM loss}{{13}{7}{MS-SSIM loss function}{equation.1.13}{}}
 \@writefile{toc}{\contentsline {paragraph}{Cross-entropy loss function}{7}{equation.1.13}\protected@file@percent }
 \newlabel{eq: Cross-entropy loss}{{14}{7}{Cross-entropy loss function}{equation.1.14}{}}
-\newlabel{eq: revised_Cross-entropy loss}{{15}{8}{Cross-entropy loss function}{equation.1.15}{}}
+\newlabel{eq: revised_Cross-entropy loss}{{15}{7}{Cross-entropy loss function}{equation.1.15}{}}
 \@writefile{toc}{\contentsline {paragraph}{Adversarial loss function}{8}{equation.1.15}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   Computational flow and structure of the GAN. \relax }}{8}{figure.caption.2}\protected@file@percent }
 \newlabel{fig: GAN_architecture}{{2}{8}{Computational flow and structure of the GAN. \relax }{figure.caption.2}{}}
 \newlabel{eq: Adversarial loss_another}{{16}{8}{Adversarial loss function}{equation.1.16}{}}
-\newlabel{eq: Adversarial loss}{{17}{9}{Adversarial loss function}{equation.1.17}{}}
+\newlabel{eq: Adversarial loss}{{17}{8}{Adversarial loss function}{equation.1.17}{}}
 \newlabel{fig: D_optimization}{{3a}{9}{D的优化过程\relax }{figure.caption.3}{}}
 \newlabel{sub@fig: D_optimization}{{a}{9}{D的优化过程\relax }{figure.caption.3}{}}
 \newlabel{fig: G_optimization}{{3b}{9}{G的优化过程\relax }{figure.caption.3}{}}
@@ -63,82 +63,77 @@
 \citation{9264763}
 \@writefile{toc}{\contentsline {paragraph}{Color loss function}{11}{figure.caption.4}\protected@file@percent }
 \newlabel{eq: color loss}{{19}{11}{Color loss function}{equation.1.19}{}}
+\newlabel{eq: Improved color loss}{{20}{11}{Color loss function}{equation.1.20}{}}
 \citation{burt1987laplacian}
 \citation{ghiasi2016laplacian}
-\newlabel{eq: Improved color loss}{{20}{12}{Color loss function}{equation.1.20}{}}
+\citation{dai2022switching}
 \@writefile{toc}{\contentsline {paragraph}{Laplacian loss function}{12}{equation.1.20}\protected@file@percent }
 \newlabel{eq: Laplacian loss}{{21}{12}{Laplacian loss function}{equation.1.21}{}}
-\citation{dai2022switching}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.2}细节}{13}{subsubsection.1.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Paper reading}{13}{subsection.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites\cite  {dai2022switching}}{13}{subsubsection.1.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Known problems}{13}{subsubsection.1.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  Summary of essential characteristics of representative deep learning-based methods, including learning strategies, network structures, loss functions, training datasets, testing datasets, evaluation metrics, data formats of input, and whether the models are Retinex-based or not. "simulated" means the testing data are simulated by the same approach as the synthetic training data. "self-selected" stands for the real-world images selected by the authors. "\#P" represents the number of trainable parameters. "-" means this item is not available or not indicated in the paper.\relax }}{14}{table.caption.5}\protected@file@percent }
-\newlabel{tab: Summary}{{1}{14}{Summary of essential characteristics of representative deep learning-based methods, including learning strategies, network structures, loss functions, training datasets, testing datasets, evaluation metrics, data formats of input, and whether the models are Retinex-based or not. "simulated" means the testing data are simulated by the same approach as the synthetic training data. "self-selected" stands for the real-world images selected by the authors. "\#P" represents the number of trainable parameters. "-" means this item is not available or not indicated in the paper.\relax }{table.caption.5}{}}
-\newlabel{fig: cdn_kpi_a}{{5a}{15}{\relax }{figure.caption.6}{}}
-\newlabel{sub@fig: cdn_kpi_a}{{a}{15}{\relax }{figure.caption.6}{}}
-\newlabel{fig: cdn_kpi_b}{{5b}{15}{\relax }{figure.caption.6}{}}
-\newlabel{sub@fig: cdn_kpi_b}{{b}{15}{\relax }{figure.caption.6}{}}
-\newlabel{fig: cdn_kpi_c}{{5c}{15}{\relax }{figure.caption.6}{}}
-\newlabel{sub@fig: cdn_kpi_c}{{c}{15}{\relax }{figure.caption.6}{}}
-\newlabel{fig: cdn_kpi_d}{{5d}{15}{\relax }{figure.caption.6}{}}
-\newlabel{sub@fig: cdn_kpi_d}{{d}{15}{\relax }{figure.caption.6}{}}
-\newlabel{fig: cdn_kpi_e}{{5e}{15}{\relax }{figure.caption.6}{}}
-\newlabel{sub@fig: cdn_kpi_e}{{e}{15}{\relax }{figure.caption.6}{}}
-\newlabel{fig: cdn_kpi_f}{{5f}{15}{\relax }{figure.caption.6}{}}
-\newlabel{sub@fig: cdn_kpi_f}{{f}{15}{\relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   2-weeks real world typical multivariate CDN KPIs of 6-websites. Periods in light blue show the change points in KPIs; Regions highlighted \relax }}{15}{figure.caption.6}\protected@file@percent }
-\newlabel{fig: CDN_KPI}{{5}{15}{2-weeks real world typical multivariate CDN KPIs of 6-websites. Periods in light blue show the change points in KPIs; Regions highlighted \relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{Challenge}{15}{figure.caption.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Author Work}{15}{figure.caption.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Proposed Method}{16}{figure.caption.6}\protected@file@percent }
-\newlabel{fig: Prior}{{6a}{16}{Prior\relax }{figure.caption.7}{}}
-\newlabel{sub@fig: Prior}{{a}{16}{Prior\relax }{figure.caption.7}{}}
-\newlabel{fig: Generation}{{6b}{16}{Generation\relax }{figure.caption.7}{}}
-\newlabel{sub@fig: Generation}{{b}{16}{Generation\relax }{figure.caption.7}{}}
-\newlabel{fig: Inference}{{6c}{16}{Inference\relax }{figure.caption.7}{}}
-\newlabel{sub@fig: Inference}{{c}{16}{Inference\relax }{figure.caption.7}{}}
-\newlabel{fig: Recurrent}{{6d}{16}{Recurrent\relax }{figure.caption.7}{}}
-\newlabel{sub@fig: Recurrent}{{d}{16}{Recurrent\relax }{figure.caption.7}{}}
-\newlabel{fig: Overall}{{6e}{16}{Overall\relax }{figure.caption.7}{}}
-\newlabel{sub@fig: Overall}{{e}{16}{Overall\relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   Graphical illustration of each operation of the SGmVRNN: (a) conditional prior of latent variables $z_{t;n}$ and $c_{t;n}$; (b) generation process of $x_{t;n}$; (c) inference of the variational distribution of $z_{t;n}$ and $c_{t;n}$; (d) updating the hidden units of the RNN recurrently; (e) overall operations of the SGmVRNN. Note that circles denote stochastic variables while diamond-shaped units are used for deterministic variables, and shaded nodes denote observed variables. \relax }}{16}{figure.caption.7}\protected@file@percent }
-\newlabel{fig: Switching Mechanism}{{6}{16}{Graphical illustration of each operation of the SGmVRNN: (a) conditional prior of latent variables $z_{t;n}$ and $c_{t;n}$; (b) generation process of $x_{t;n}$; (c) inference of the variational distribution of $z_{t;n}$ and $c_{t;n}$; (d) updating the hidden units of the RNN recurrently; (e) overall operations of the SGmVRNN. Note that circles denote stochastic variables while diamond-shaped units are used for deterministic variables, and shaded nodes denote observed variables. \relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}个人工作进展}{17}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}梳理损失函数}{17}{subsection.2.1}\protected@file@percent }
+\newlabel{fig: cdn_kpi_a}{{5a}{13}{\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: cdn_kpi_a}{{a}{13}{\relax }{figure.caption.5}{}}
+\newlabel{fig: cdn_kpi_b}{{5b}{13}{\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: cdn_kpi_b}{{b}{13}{\relax }{figure.caption.5}{}}
+\newlabel{fig: cdn_kpi_c}{{5c}{13}{\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: cdn_kpi_c}{{c}{13}{\relax }{figure.caption.5}{}}
+\newlabel{fig: cdn_kpi_d}{{5d}{13}{\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: cdn_kpi_d}{{d}{13}{\relax }{figure.caption.5}{}}
+\newlabel{fig: cdn_kpi_e}{{5e}{13}{\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: cdn_kpi_e}{{e}{13}{\relax }{figure.caption.5}{}}
+\newlabel{fig: cdn_kpi_f}{{5f}{13}{\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: cdn_kpi_f}{{f}{13}{\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   2-weeks real world typical multivariate CDN KPIs of 6-websites. Periods in light blue show the change points in KPIs; Regions highlighted \relax }}{13}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: CDN_KPI}{{5}{13}{2-weeks real world typical multivariate CDN KPIs of 6-websites. Periods in light blue show the change points in KPIs; Regions highlighted \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Challenge}{14}{figure.caption.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Author Work}{14}{figure.caption.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Proposed Method}{14}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: Prior}{{6a}{15}{Prior\relax }{figure.caption.6}{}}
+\newlabel{sub@fig: Prior}{{a}{15}{Prior\relax }{figure.caption.6}{}}
+\newlabel{fig: Generation}{{6b}{15}{Generation\relax }{figure.caption.6}{}}
+\newlabel{sub@fig: Generation}{{b}{15}{Generation\relax }{figure.caption.6}{}}
+\newlabel{fig: Inference}{{6c}{15}{Inference\relax }{figure.caption.6}{}}
+\newlabel{sub@fig: Inference}{{c}{15}{Inference\relax }{figure.caption.6}{}}
+\newlabel{fig: Recurrent}{{6d}{15}{Recurrent\relax }{figure.caption.6}{}}
+\newlabel{sub@fig: Recurrent}{{d}{15}{Recurrent\relax }{figure.caption.6}{}}
+\newlabel{fig: Overall}{{6e}{15}{Overall\relax }{figure.caption.6}{}}
+\newlabel{sub@fig: Overall}{{e}{15}{Overall\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   Graphical illustration of each operation of the SGmVRNN: (a) conditional prior of latent variables $z_{t;n}$ and $c_{t;n}$; (b) generation process of $x_{t;n}$; (c) inference of the variational distribution of $z_{t;n}$ and $c_{t;n}$; (d) updating the hidden units of the RNN recurrently; (e) overall operations of the SGmVRNN. Note that circles denote stochastic variables while diamond-shaped units are used for deterministic variables, and shaded nodes denote observed variables. \relax }}{15}{figure.caption.6}\protected@file@percent }
+\newlabel{fig: Switching Mechanism}{{6}{15}{Graphical illustration of each operation of the SGmVRNN: (a) conditional prior of latent variables $z_{t;n}$ and $c_{t;n}$; (b) generation process of $x_{t;n}$; (c) inference of the variational distribution of $z_{t;n}$ and $c_{t;n}$; (d) updating the hidden units of the RNN recurrently; (e) overall operations of the SGmVRNN. Note that circles denote stochastic variables while diamond-shaped units are used for deterministic variables, and shaded nodes denote observed variables. \relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}个人工作进展}{15}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}梳理损失函数}{15}{subsection.2.1}\protected@file@percent }
 \citation{10.1145/3343031.3350926}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}复现KinD代码}{18}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Requirement}{18}{subsubsection.2.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Model}{18}{subsubsection.2.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{lrelu}{18}{subsubsection.2.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{input}{18}{lstnumber.-3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{function}{19}{lstnumber.-3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{upsample\_and\_concat}{19}{lstnumber.-3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{input}{19}{lstnumber.-4.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{function}{20}{lstnumber.-4.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{DecomNet\_simple}{20}{lstnumber.-4.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{input}{21}{lstnumber.-5.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{function}{21}{lstnumber.-5.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Train}{22}{subsubsection.2.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Layer Decomposition Net}{22}{figure.caption.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment. \relax }}{23}{figure.caption.8}\protected@file@percent }
-\newlabel{fig: network}{{7}{23}{The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment. \relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {paragraph}{Reflectance Restoration Net}{27}{lstnumber.-8.24}\protected@file@percent }
-\newlabel{eq: Restoration loss}{{23}{27}{Reflectance Restoration Net}{equation.2.23}{}}
-\@writefile{toc}{\contentsline {paragraph}{Illumination Adjustment Net}{30}{lstnumber.-12.15}\protected@file@percent }
-\newlabel{Illumination Adjustment loss}{{24}{30}{Illumination Adjustment Net}{equation.2.24}{}}
-\citation{9796836}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}复现KinD代码}{16}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Requirement}{16}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Model}{17}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{lrelu}{17}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{input}{17}{lstnumber.-3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{function}{17}{lstnumber.-3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{upsample\_and\_concat}{17}{lstnumber.-3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{input}{18}{lstnumber.-4.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{function}{18}{lstnumber.-4.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{DecomNet\_simple}{19}{lstnumber.-4.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{input}{20}{lstnumber.-5.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{function}{20}{lstnumber.-5.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Train}{21}{subsubsection.2.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment. \relax }}{21}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: network}{{7}{21}{The architecture of our KinD network. Two branches correspond to the reflectance and illumination, respectively. From the perspective of functionality, it also can be divided into three modules, including layer decomposition, reflectance restoration, and illumination adjustment. \relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Layer Decomposition Net}{21}{figure.caption.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Reflectance Restoration Net}{25}{lstnumber.-8.24}\protected@file@percent }
+\newlabel{eq: Restoration loss}{{23}{25}{Reflectance Restoration Net}{equation.2.23}{}}
+\@writefile{toc}{\contentsline {paragraph}{Illumination Adjustment Net}{29}{lstnumber.-12.15}\protected@file@percent }
+\newlabel{Illumination Adjustment loss}{{24}{29}{Illumination Adjustment Net}{equation.2.24}{}}
 \bibstyle{unsrt}
 \bibdata{reference}
-\bibcite{tatarchenko2016multi}{1}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Evaluation}{33}{subsubsection.2.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}下周工作计划}{33}{section.3}\protected@file@percent }
-\bibcite{johnson2016perceptual}{2}
-\bibcite{9264763}{3}
-\bibcite{8953588}{4}
-\bibcite{burt1987laplacian}{5}
-\bibcite{ghiasi2016laplacian}{6}
-\bibcite{dai2022switching}{7}
+\bibcite{dai2022switching}{1}
+\bibcite{tatarchenko2016multi}{2}
+\bibcite{johnson2016perceptual}{3}
+\bibcite{9264763}{4}
+\bibcite{8953588}{5}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Evaluation}{32}{subsubsection.2.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}下周工作计划}{32}{section.3}\protected@file@percent }
+\bibcite{burt1987laplacian}{6}
+\bibcite{ghiasi2016laplacian}{7}
 \bibcite{10.1145/3343031.3350926}{8}
-\bibcite{9796836}{9}
-\gdef \@abspage@last{35}
+\gdef \@abspage@last{33}

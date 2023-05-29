@@ -1,8 +1,8 @@
-\contentsline {section}{\numberline {1}文献阅读}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{2}{subsection.1.1}%
+\contentsline {section}{\numberline {1}文献阅读}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{1}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}loss function for CV}{2}{subsubsection.1.1.1}%
 \contentsline {paragraph}{$\mathcal {L}_1$-loss}{2}{subsubsection.1.1.1}%
-\contentsline {paragraph}{$\mathcal {L}_2$-loss}{3}{equation.1.1}%
+\contentsline {paragraph}{$\mathcal {L}_2$-loss}{2}{equation.1.1}%
 \contentsline {paragraph}{Regularization of the $\mathcal {L}_1$ and $\mathcal {L}_2$ loss functions}{3}{equation.1.2}%
 \contentsline {paragraph}{Smooth $\mathcal {L}_1$ loss function}{4}{lstnumber.-1.1}%
 \contentsline {paragraph}{Huber loss function}{4}{equation.1.5}%
@@ -17,30 +17,29 @@
 \contentsline {paragraph}{Consistency loss function}{10}{figure.caption.4}%
 \contentsline {paragraph}{Color loss function}{11}{figure.caption.4}%
 \contentsline {paragraph}{Laplacian loss function}{12}{equation.1.20}%
-\contentsline {subsubsection}{\numberline {1.1.2}细节}{13}{subsubsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.2}Paper reading}{13}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites\cite {dai2022switching}}{13}{subsubsection.1.2.1}%
 \contentsline {paragraph}{Known problems}{13}{subsubsection.1.2.1}%
-\contentsline {paragraph}{Challenge}{15}{figure.caption.6}%
-\contentsline {paragraph}{Author Work}{15}{figure.caption.6}%
-\contentsline {paragraph}{Proposed Method}{16}{figure.caption.6}%
-\contentsline {section}{\numberline {2}个人工作进展}{17}{section.2}%
-\contentsline {subsection}{\numberline {2.1}梳理损失函数}{17}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}复现KinD代码}{18}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Requirement}{18}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Model}{18}{subsubsection.2.2.2}%
-\contentsline {paragraph}{lrelu}{18}{subsubsection.2.2.2}%
-\contentsline {subparagraph}{input}{18}{lstnumber.-3.3}%
-\contentsline {subparagraph}{function}{19}{lstnumber.-3.3}%
-\contentsline {paragraph}{upsample\_and\_concat}{19}{lstnumber.-3.3}%
-\contentsline {subparagraph}{input}{19}{lstnumber.-4.11}%
-\contentsline {subparagraph}{function}{20}{lstnumber.-4.11}%
-\contentsline {paragraph}{DecomNet\_simple}{20}{lstnumber.-4.11}%
-\contentsline {paragraph}{input}{21}{lstnumber.-5.23}%
-\contentsline {paragraph}{function}{21}{lstnumber.-5.23}%
-\contentsline {subsubsection}{\numberline {2.2.3}Train}{22}{subsubsection.2.2.3}%
-\contentsline {paragraph}{Layer Decomposition Net}{22}{figure.caption.8}%
-\contentsline {paragraph}{Reflectance Restoration Net}{27}{lstnumber.-8.24}%
-\contentsline {paragraph}{Illumination Adjustment Net}{30}{lstnumber.-12.15}%
-\contentsline {subsubsection}{\numberline {2.2.4}Evaluation}{33}{subsubsection.2.2.4}%
-\contentsline {section}{\numberline {3}下周工作计划}{33}{section.3}%
+\contentsline {paragraph}{Challenge}{14}{figure.caption.5}%
+\contentsline {paragraph}{Author Work}{14}{figure.caption.5}%
+\contentsline {paragraph}{Proposed Method}{14}{figure.caption.5}%
+\contentsline {section}{\numberline {2}个人工作进展}{15}{section.2}%
+\contentsline {subsection}{\numberline {2.1}梳理损失函数}{15}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}复现KinD代码}{16}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Requirement}{16}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Model}{17}{subsubsection.2.2.2}%
+\contentsline {paragraph}{lrelu}{17}{subsubsection.2.2.2}%
+\contentsline {subparagraph}{input}{17}{lstnumber.-3.3}%
+\contentsline {subparagraph}{function}{17}{lstnumber.-3.3}%
+\contentsline {paragraph}{upsample\_and\_concat}{17}{lstnumber.-3.3}%
+\contentsline {subparagraph}{input}{18}{lstnumber.-4.11}%
+\contentsline {subparagraph}{function}{18}{lstnumber.-4.11}%
+\contentsline {paragraph}{DecomNet\_simple}{19}{lstnumber.-4.11}%
+\contentsline {paragraph}{input}{20}{lstnumber.-5.23}%
+\contentsline {paragraph}{function}{20}{lstnumber.-5.23}%
+\contentsline {subsubsection}{\numberline {2.2.3}Train}{21}{subsubsection.2.2.3}%
+\contentsline {paragraph}{Layer Decomposition Net}{21}{figure.caption.7}%
+\contentsline {paragraph}{Reflectance Restoration Net}{25}{lstnumber.-8.24}%
+\contentsline {paragraph}{Illumination Adjustment Net}{29}{lstnumber.-12.15}%
+\contentsline {subsubsection}{\numberline {2.2.4}Evaluation}{32}{subsubsection.2.2.4}%
+\contentsline {section}{\numberline {3}下周工作计划}{32}{section.3}%
