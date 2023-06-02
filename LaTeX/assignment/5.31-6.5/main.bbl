@@ -1,0 +1,58 @@
+\begin{thebibliography}{1}
+
+\bibitem{dai2022switching}
+Liang Dai, Wenchao Chen, Yanwei Liu, Antonios Argyriou, Chang Liu, Tao Lin,
+  Penghui Wang, Zhen Xu, and Bo~Chen.
+\newblock Switching gaussian mixture variational rnn for anomaly detection of
+  diverse cdn websites.
+\newblock In {\em IEEE INFOCOM 2022-IEEE Conference on Computer
+  Communications}, pages 300--309. IEEE, 2022.
+
+\bibitem{tatarchenko2016multi}
+Maxim Tatarchenko, Alexey Dosovitskiy, and Thomas Brox.
+\newblock Multi-view 3d models from single images with a convolutional network.
+\newblock In {\em Computer Vision--ECCV 2016: 14th European Conference,
+  Amsterdam, The Netherlands, October 11--14, 2016, Proceedings, Part VII 14},
+  pages 322--337. Springer, 2016.
+
+\bibitem{johnson2016perceptual}
+Justin Johnson, Alexandre Alahi, and Li~Fei-Fei.
+\newblock Perceptual losses for real-time style transfer and super-resolution.
+\newblock In {\em Computer Vision--ECCV 2016: 14th European Conference,
+  Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part II 14},
+  pages 694--711. Springer, 2016.
+
+\bibitem{9264763}
+Seokjae Lim and Wonjun Kim.
+\newblock Dslr: Deep stacked laplacian restorer for low-light image
+  enhancement.
+\newblock {\em IEEE Transactions on Multimedia}, 23:4272--4284, 2021.
+
+\bibitem{8953588}
+Ruixing Wang, Qing Zhang, Chi-Wing Fu, Xiaoyong Shen, Wei-Shi Zheng, and Jiaya
+  Jia.
+\newblock Underexposed photo enhancement using deep illumination estimation.
+\newblock In {\em 2019 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 6842--6850, 2019.
+
+\bibitem{burt1987laplacian}
+Peter~J Burt and Edward~H Adelson.
+\newblock The laplacian pyramid as a compact image code.
+\newblock In {\em Readings in computer vision}, pages 671--679. Elsevier, 1987.
+
+\bibitem{ghiasi2016laplacian}
+Golnaz Ghiasi and Charless~C Fowlkes.
+\newblock Laplacian pyramid reconstruction and refinement for semantic
+  segmentation.
+\newblock In {\em Computer Vision--ECCV 2016: 14th European Conference,
+  Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part III 14},
+  pages 519--534. Springer, 2016.
+
+\bibitem{10.1145/3343031.3350926}
+Yonghua Zhang, Jiawan Zhang, and Xiaojie Guo.
+\newblock Kindling the darkness: A practical low-light image enhancer.
+\newblock In {\em Proceedings of the 27th ACM International Conference on
+  Multimedia}, MM '19, page 1632–1640, New York, NY, USA, 2019. Association
+  for Computing Machinery.
+
+\end{thebibliography}

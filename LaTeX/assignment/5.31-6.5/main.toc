@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}文献阅读}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Pre-knowledge}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Paper reading}{1}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites\cite {dai2022switching}}{1}{subsubsection.1.2.1}%
+\contentsline {paragraph}{Known problems}{1}{subsubsection.1.2.1}%
+\contentsline {paragraph}{Challenge}{3}{figure.caption.1}%
+\contentsline {paragraph}{Author Work}{3}{figure.caption.1}%
+\contentsline {paragraph}{Proposed Method}{3}{figure.caption.1}%
+\contentsline {section}{\numberline {2}个人工作进展}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}关于“华为杯”的一点思考}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}适用多场景的通用化时序预测算法}{4}{subsubsection.2.1.1}%
+\contentsline {section}{\numberline {3}下周工作计划}{4}{section.3}%
