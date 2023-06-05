@@ -60,7 +60,7 @@
 \begin{document}
 	
 	
-	\title{\songti \zihao{4}5月21日-5月29日工作汇报}
+	\title{\songti \zihao{4}5月30日-6月5日工作汇报}
 	\author{\textrm{Ku Jui}}
 	\date{\textrm{May 2023}}
 	\maketitle
@@ -79,9 +79,261 @@
 	\renewcommand{\tablename}{Table}
 	\tableofcontents  % 自动生成目录
 	
-	\section{文献阅读}
+	\section{资料调研}
 	
-	\subsection{Pre-knowledge}
+		\subsection{局限性}
+	
+			现有的方法仍有很大的改进空间，例如如何在提高亮度的同时消除产生的噪声，如何避免颜色失真现象等。一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势。
+			
+			例如，在LOL数据集（目前应用最广泛的数据集）下URetinexNet具有十分卓越的性能，因为其在PSNR、SSIM、MSE指标上目前排名第一，但是URetineNet在SCIE数据集下，MBLLEN方法在PSNR、SSIM、MSE指标中排名第一。
+			
+			\begin{figure}[htbp] 
+				% read manual to see what [ht] means and for other possible options
+				\centering 
+				% \includegraphics[width=0.8\columnwidth]{GLADNet}
+				\begin{subfigure}{0.19\textwidth}
+					\includegraphics[width=\linewidth]{VE-LOL-L/input}
+					\captionsetup{font=scriptsize}
+					\caption{input \\ \quad }
+					\label{fig: input}
+				\end{subfigure}
+				\begin{subfigure}{0.19\textwidth}
+					\includegraphics[width=\linewidth]{VE-LOL-L/RetinexNet}
+					\captionsetup{font=scriptsize}
+					\caption{RetinexNet \\ (2017)}
+					\label{fig: LLNet}	
+				\end{subfigure}
+				\begin{subfigure}{0.19\textwidth}
+					\includegraphics[width=\linewidth]{VE-LOL-L/RetinexNet}
+					\captionsetup{font=scriptsize}
+					\caption{RetinexNet \\ (2018)}
+					\label{fig: RetinexNet}	
+				\end{subfigure}
+				\begin{subfigure}{0.19\textwidth}
+					\includegraphics[width=\linewidth]{VE-LOL-L/MBLLEN}
+					\captionsetup{font=scriptsize}
+					\caption{MBLLEN \\ (2018)}
+					\label{fig: MBLLEN}	
+				\end{subfigure}
+				\begin{subfigure}{0.19\textwidth}
+					\includegraphics[width=\linewidth]{VE-LOL-L/URetinexNet}
+					\captionsetup{font=scriptsize}
+					\caption{URetinexNet \\ (2022)}
+					\label{fig: URetinexNet}	
+				\end{subfigure}
+				\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: VE-LOL-L Visual} % spaces are big no-no withing labels
+						% things like fig: are optional in the label but it helps
+						% to orient yourself when you have multiple figures,
+						% equations and tables
+						Visual results of different algorithms on low-illumination images sampled from the VE-LOL-L dataset.
+				}
+			\end{figure}
+			
+			Fig. \ref{fig: VE-LOL-L Visual}显示了作为一个室内图像的VE-LOL-L数据集的增强效果。很明显，Fig. \ref{fig: RetinexNet}和Fig. \ref{fig: MBLLEN}是红色的，但Fig. \ref{fig: LLNet}和Fig. \ref{fig: URetinexNet}呈现的颜色更为橙色。同样，Fig. \ref{fig: RetinexNet}显示的图像中桌面物品的颜色偏差也很大，且图像的整体颜色不一致。
+			
+			\subsubsection{Retinex}
+	
+			与直接端到端网络学习的结果相比，基于深度学习和Retinex理论的方法有时具有更好的增强效果。
+			
+			Retinex模型方法将低照度图像分解为照度图像和反射图像，通过特定的算法减少甚至消除入射图像的影响，保留物体本质的反射特性图像。然而，该算法也存在一定的局限性。以反射贴图作为增强结果，会导致细节丢失、颜色失真等问题。此外，由于反射图大量噪声产生，该模型忽略了噪声。反射映射本身的计算是一个不适定问题，只能通过近似估计来计算。
+			
+			\subsubsection{评价指标}
+			
+			PSNR、MSE、SSIM和IE是比较经典的、流行的图像评价指标，但这些指标还远未达到人类视觉感知的评价能力。同时，虽然这些评价指标可以评价图像质量，但它们不能表达低照度增强图像与实际图像之间的关系。因此，在低照度图像增强的评价指标中，在实现人类视觉效果与机器感知之间的平衡还有相当的局限性。
+			
+			但是，主观视觉效果较好的增强算法在客观评价中并没有取得良好的效果，这正是目标评价指标需要改进的地方。
+			
+			同时，现有的客观评价指标用于其他研究领域，如图像除雾、除雨、降噪等。这些指标不是为微光图像增强而设计的，这些评价指标远未达到人类的自然感知效果。
+			
+			\subsubsection{数据集}
+			
+			LOL和LE-LOL-L数据集的测试图像的客观评价指标值比SCIE和LIME数据集更适合人类视觉效果。用成对数据集训练的算法将得到更明显的增强效果。从数据中可以看出，基于监督学习的方法比其他方法更能取得更好的效果。
+			
+			然而，无监督学习、Zero-Shot学习和半监督学习是当前的发展趋势，主要是因为在低光照环境下很难获得成对的图像。与其他方法相比，基于完全监督学习的方法泛化能力较低，适用性较差。此外，无监督学习方法可以通过设计适当的损失函数和网络结构，引入更多反映环境特征的先验知识。
+			
+			
+	
+		\subsection{客观评价指标}
+		
+		图像的客观评价指标很多，不同角度的评价标准也不尽相同。每种评价标准都有其相应的优缺点。到目前为止，还没有明确设计用于微光图像增强的评估指标。现有的图像质量评价方法可分为完全参考评价指标和无参考评价指标。
+	
+			\paragraph{完全参考指标}
+			
+			完全参考评价指标需要有一个完整的参考图像（即原始图像或专家标注的高质量图像）作为参照。通过将待评价的图像与参考图像进行比较，计算它们之间的差异来评估图像的质量。常见的完全参考评价指标包括：均方误差（Mean Square Error，MSE）、峰值信噪比（Peak Signal-to-Noise Ratio，PSNR）、结构相似性指数（Structural Similarity Index，SSIM）
+			
+			\paragraph{无参考评价指标}
+			
+			无参考评价指标不需要参考图像，仅通过待评价图像自身的特征来评估图像质量。这些指标主要基于图像的统计特性、信息熵等，无需外部参考信息。常见的无参考评价指标包括：1) 图像清晰度评估：通过图像的锐度、对比度等特征来评估图像的清晰度和质量。2) 图像亮度评估：基于图像的亮度直方图、灰度均值等特征，评估图像的亮度质量。3) 图像块失真评估：通过比较图像中局部块之间的差异，来评估图像的块状失真程度。
+			
+			Table \ref{tab: quality evaluation index} 列出了最新的几个经典关键的质量评价指标。
+		
+		
+			\begin{table}[!htbp]
+				\centering
+				\tiny
+				%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+					\begin{tabular}{cc}
+						
+						\toprule
+						
+						\textbf{Abbreviation} & \textbf{Full-/Non-Reference} \\
+						
+						\hline
+						
+						MSE (Mean Square Error) & Full-Reference \\
+						MAE (Mean Absolute Error) & Full-Reference \\
+						SNR (Signal to Noise Ratio) & Full-Reference \\
+						PSNR (Peak-Signal to Noise Ratio) & Full-Reference \\
+						LPIPS (Learned Perceptual Image Patch Similarity) & Full-Reference \\
+						IFC (Information Fidelity Criterion) & Full-Reference \\
+						VIF (Visual Information Fidelity) & Full-Reference \\
+						SSIM (Structural Similarity Index) & Full-Reference \\
+						IE (Information Entropy) & Non-Reference \\
+						NIQE (Natural Image Quality Evaluator) & Non-Reference \\
+						LOE (Lightness Order Error) & Full-Reference \\
+						PI (Perceptual Index) & Non-Reference \\
+						MUSIQ (Multi-scale Image Quality Transformer) & Non-Reference \\
+						NIMA (Neural Image Assessment) & Non-Reference \\
+						SPAQ (Smartphone Photography Attribute and Quality) & Non-Reference \\
+						
+						\bottomrule
+						
+					\end{tabular}
+					%}
+				\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+				\caption{\label{tab: quality evaluation index}
+					Abstract of objective quality evaluation index of the image.} %表格的标题
+				
+			\end{table}
+		
+			\subsubsection{峰值信噪比 (Peak-Signal to Noise Ratio, PSNR)}
+		
+			峰值信噪比（PSNR）是应用最广泛的指标之一。单位为dB。它用于测量两个图像之间的差异。如压缩图像与原始图像、压缩图像质量评估、恢复图像与实际图像、恢复算法性能评估等。PSNR值越高，失真越小。PSNR的公式为Eq: \ref{eq: PSNR}
+			
+			\begin{equation}
+				\begin{aligned}
+					PSNR = 10 \times \log \frac{{MaxValue}^2}{MSE}
+				\end{aligned}
+				\label{eq: PSNR}
+			\end{equation}
+			
+			其中MSE是两个图像的均方误差；MaxValue是图像像素的最大值。
+			
+			\subsubsection{结构相似性 (Structural Similarity, SSIM)}
+			
+			结构相似性（SSIM）是参考图像质量评价中应用最广泛的标准。SSIM用于突出值范围为0–1的两幅图像之间的亮度、对比度和结构相似性；越接近1，两个图像就越相似。假设x和y是两个输入图像，SSIM的公式为Eq: \ref{eq: SSIM}
+	
+			\begin{equation}
+				\begin{aligned}
+					SSIM = {\left[ l(x,y) \right]}^{\alpha} {\left[C(x,y)\right]}^\beta {\left[S(x,y)\right]}^\gamma
+				\end{aligned}
+				\label{eq: SSIM}
+			\end{equation}
+	
+			其中，$l(x,y)$是亮度比较，$C(x,y)$是对比度比较，$S(x,y)$是结构比较。$\alpha, \beta, \gamma$大于$0$，用于调节三部分比重。$l(x, y)$、$C(x, y)$和$S(x, y)$分别为Eq.\ref{eq: l(x，y)}, Eq.\ref{eq: C(x，y)}, Eq.\ref{eq: (x, y)}
+			
+			\begin{equation}
+				\begin{aligned}
+					l(x,y)=\frac{2\mu_x \mu_y + c_1}{\mu x^2 + \mu y^2 + c_1}
+				\end{aligned}
+				\label{eq: l(x，y)}
+			\end{equation}
+			
+			\begin{equation}
+				\begin{aligned}
+					C(x,y) = \frac{2\sigma_{xy}+c_2}{\sigma_x^2 + \sigma_ y^2 + c^2}
+				\end{aligned}
+				\label{eq: C(x，y)}
+			\end{equation}
+			
+			\begin{equation}
+				\begin{aligned}
+					(x, y) = \frac{\sigma_{xy} + c_3}{\sigma_{x}\sigma_{y} + c_3}
+				\end{aligned}
+				\label{eq: (x, y)}
+			\end{equation}
+			
+			其中$\mu_x$和$\mu_y$表示两幅图像的平均值，$\sigma_x$和$sigma_y$分别表示两幅图的标准差。$\sigma_xy$表示两个图像的协方差。$c_1$、$c_2$和$c_3$是常数，以避免分母为0。
+			
+			\subsubsection{均方误差 (Mean Square Error, MSE)}
+			
+			均方误差（MSE）也是衡量图像质量最常用的指标之一。它是指估计值与真实值之间的平方差的期望值。在图像处理算法中，它是被处理后的图像像素值与原始像素值之间的平方差的平均值。MSE表达式如Eq.\ref{eq: MSE}
+			
+			\begin{equation}
+				\begin{aligned}
+					MSE = \frac{1}{M \times N} \sum_{i=1}^{M} \sum_{N}^{j=1}{\left[ g(x,y) - \hat{g}(x,y) \right]}^2
+				\end{aligned}
+				\label{eq: MSE}
+			\end{equation}
+			
+			其中，$M$是图像的高度，$N$是图像的宽度。$g(x,y)$和$\hat{g}(x,y)$分别表示原始图像和增强图像。MSE的值越小，图像质量越好。
+			
+			
+			\subsubsection{信息熵 (Information Entropy, IE)}
+			
+			信息熵（IE）反映了图像所携带的信息量。信息熵越大，图像信息越丰富，质量越好。IE用于比较不同图像中信息内容的差异。例如，在同一区域拍摄的图像也会由于额外的拍摄时间而具有不同的信息内容。IE表达式Eq.\ref{eq: IE}
+			
+			\begin{equation}
+				\begin{aligned}
+					H = -\sum_{i=0}^{M} p(k)\log_{2}p(k)
+				\end{aligned}
+				\label{eq: IE}
+			\end{equation}
+			
+			其中$p(k)$是灰度级$k$的概率密度，$M$是最大灰度级
+			
+			\subsubsection{标准偏差 (Standard Deviation, STD)}
+			
+			标准差（STD），也称为标准差，表示每个数据项与平均值的平均距离。STD也是方差的平方根。STD可以反映数据集的分散程度。与图像相比，STD反映了插图与平均值之间的分散程度，是特定范围内图像对比度的衡量标准。标准偏差越大，图像中包含的信息越多，视觉效果越好。STD的表达式Eq.\ref{eq: STD}
+			
+			\begin{equation}
+				\begin{aligned}
+					STD = \sqrt{\frac{\sum_{i=1}^{M} \sum_{j=1}^{N} f(i,j)\left( f(i,j)-\delta \right)^{2}}{M \times N}}
+				\end{aligned}
+				\label{eq: STD}
+			\end{equation}
+			
+			其中$M$是图像的高度，$N$是图像的宽度，$f(i, j)$表示图像的$(i, j)$处的像素的灰度值。$\delta$表示图像的平均灰度值，其表达式为Eq.\ref{eq: delta}
+			
+			\begin{equation}
+				\begin{aligned}
+					\delta = \frac{1}{M \times N} \sum_{i=1}^{M} \sum_{j=1}^{N} f(i,j)
+				\end{aligned}
+				\label{eq: delta}
+			\end{equation}
+			
+			\subsubsection{亮度顺序误差 (Lightness Order Error, LOE)}
+			
+			亮度顺序误差（LOE）是图像亮度的顺序差异，并且通过评估图像在邻域中的亮度的顺序变化过程来评估图像的照度变化。LOE反映了图像的自然保持能力。较小的值表示图像具有更好的亮度顺序并且看起来更自然。表达式为Eq.\ref{eq: LOE}
+			
+			\begin{equation}
+				\begin{aligned}
+					RD(i,j) = \sum_{x}^{M} \sum_{y}^{N} U\left( L(i,j), L(x,y) \right) \oplus U\left( L_{e}(i,j), L(x,y) \right) 
+				\end{aligned}
+				\label{eq: LOE}
+			\end{equation}
+			
+			式中，$M$是图像的高度，$N$是图像的宽度，而$\oplus$是XOR算子，$L(i, j)$和$L_{e}(x, y)$分别表示三个颜色通道中的最大值。LOE的值越小，图像保持的亮度顺序越好。
+			
+		\subsection{主观评价指标}
+		
+		\subsubsection{差分平均意见分数 (Differential Mean Opinion Score, MOS)}
+		
+		差分平均意见得分（MOS）或差分平均看法得分（DMOS）。其中，MOS是应用最广泛的主观IQA方法。不同的人在原始图像和增强图像之间进行主观比较，以获得MOS分数，最后获得平均分数。MOS评分范围从1到5，评分越高表示主观增强越好。MOS评分公式为Eq.\ref{MOS}
+		
+		\begin{equation}
+			\begin{aligned}
+				MOS = \frac{\sum_{n=1}^{N} R_{n}} {N}
+			\end{aligned}
+			\label{eq: MOS}
+		\end{equation}
+		
+		其中$R$表示评价者对图像的满意度得分的数量，$N$表示评价者的总数。
+		
+%	\subsection{Pre-knowledge}
+	
 	
 %	模型中的损失函数是用来衡量模型的预测值和真实值(Ground Truth)之间的差异程度的函数，它可以反映模型的优化方向和性能指标\footnote{https://zhuanlan.zhihu.com/p/375968083}。它是一种衡量模型预测结果与真实结果之间差异的方法，用于指导模型参数的更新。在训练过程中，通过不断最小化损失函数来优化模型参数，使模型能够更好地拟合数据\footnote{https://zhuanlan.zhihu.com/p/436809988}。因此，需要使用合适的损失函数，当模型在数据集上进行训练时，该函数可以适当地惩罚模型 \footnote{https://zhuanlan.zhihu.com/p/473113939}。
 %	
@@ -562,172 +814,183 @@
 %	
 %	Table~\ref{tab: Summary}给出了最近几年主流的基于深度学习的LLIE方案，并从不同角度对其进行了划分。
 	
-	\subsection{Paper reading}
-	
-	\subsubsection{Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites\cite{dai2022switching}}
-	
-	\paragraph{Known problems}
-	
-	\textbf{问题一}：单个网站在不同时间段的非平稳依赖（The Non-stationary Dependencies）会降低深度异常检测模型的性能:
-	
-	由于用户的正常行为或CDN的调度等，相应的KPI通常表现出非平稳的时间特征，不应将其归类为服务失败或退化。但是，这些类型的预期模式很难被目前的方法捕获，这会使得目前的模型在CDN KPI异常检测方面的表现性能很差。
-	
-	从Fig. \ref{fig: cdn_kpi_a}和Fig. \ref{fig: cdn_kpi_d}可以明显看出，工作日和周末的用户请求行为是不同的。前一个网站显示了在周末相对于工作日的用户请求激增，而后一个数据显示了相反的情况。
-	
-	\begin{figure}[htbp] 
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		% \includegraphics[width=0.8\columnwidth]{GLADNet}
-		
-		\begin{subfigure}{0.2\textwidth}
-			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_a}
-			\captionsetup{font=scriptsize}
-			\caption{}
-			\label{fig: cdn_kpi_a}
-		\end{subfigure}
-		\begin{subfigure}{0.2\textwidth}
-			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_b}
-			\captionsetup{font=scriptsize}
-			\caption{}
-			\label{fig: cdn_kpi_b}
-		\end{subfigure}
-		\begin{subfigure}{0.2\textwidth}
-			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_c}
-			\captionsetup{font=scriptsize}
-			\caption{}
-			\label{fig: cdn_kpi_c}	
-		\end{subfigure}\\
-		\begin{subfigure}{0.2\textwidth}
-			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_d}
-			\captionsetup{font=scriptsize}
-			\caption{}
-			\label{fig: cdn_kpi_d}
-		\end{subfigure}
-		\begin{subfigure}{0.2\textwidth}
-			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_e}
-			\captionsetup{font=scriptsize}
-			\caption{}
-			\label{fig: cdn_kpi_e}
-		\end{subfigure}
-		\begin{subfigure}{0.2\textwidth}
-			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_f}
-			\captionsetup{font=scriptsize}
-			\caption{}
-			\label{fig: cdn_kpi_f}	
-		\end{subfigure}	
-		\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: CDN_KPI} % spaces are big no-no withing labels
-			% things like fig: are optional in the label but it helps
-			% to orient yourself when you have multiple figures,
-			% equations and tables
-			2-weeks real world typical multivariate CDN KPIs of 6-websites. Periods in light blue show the change points in KPIs; Regions highlighted
-		}
-	\end{figure}
-	
-	\textbf{问题二}：不同的网站在CDN KPI中表现出不同的特征，但其中又有一些相似特征。这使得现有的单个深度异常检测
-	模型无法良好的捕捉这种动态复杂性。
-	
-	Fig. \ref{fig: cdn_kpi_b}是另一种典型情况，即部分用户被CDN的调度中心调度到另一组边缘节点上；所以，KPI的变化时刻，发生在这段时间内。Fig. \ref{fig: cdn_kpi_a}中的视频点播网站的KPI通常与Fig. \ref{fig: cdn_kpi_e}中的直播网站有很大的不同。
-	
-	因为一般商业CDN会为数百甚至数千个网站提供服务，这些网站会因为服务类型和用户的请求行为的不同而表现出不同的特征，因此可以观察到不同网站的KPI在空间和时间特征上的变化。
-	
-	\textbf{问题三}：资源浪费
-	
-	为了对多个网站进行有效的异常检测，现有的深度异常检测方法通常为每个网站训练一个单独的模型，从而存在为每个网站训练和维护大量的单独模型的问题，不仅消耗巨大的计算和存储资源，但也增加了模型维护的成本。
-	
-	例如，Fig. \ref{fig: cdn_kpi_c}和Fig. \ref{fig: cdn_kpi_f}显示出相似的特征，但它们属于不同网站的KPI。在这种情况下，为每个网站训练一个单独的模型完全是浪费。
-	
-	\paragraph{Challenge}
-	
-	现有的许多深度学习方法，模型学习正常情况下的网络KPI，以构建并训练模型，从而应用于无监督的网络KPI异常检测，即深度异常检测。
-	
-	CDN KPI数据存在的问题:
-	
-	(1) CDN下具有多个节点，每个节点网络KPI曲线的多样性，即KPI曲线表现为周期型的，有稳定型的，也有不稳定
-	型的。
-	
-	(2) CDN下往往具备大量的节点网络，这些网络的异常种类多，核心网网元数据多，故障发生的类型也多种多样，
-	导致了异常种类也多种多样，即KPI之间呈现出非平稳的顺序关系。
-	
-	\paragraph{Author Work}
-	
-	(1) 表征不同的复杂KPI时间序列结构和动态特征；
-	
-	(2) 基于以上问题，现有的深度学习方法非常难以表示和识别CDN网下节点网络的异常，因此作者提出了一种方法，一种适用于多变量CDN KPI的切换高斯混合变分循环神经网络(SGmVRN)。
-		
-		1. SGmVRNN引入变分循环结构，并将其潜在变量分配到混合高斯分布中，以对复杂的KPI时间序列进行建模并捕捉其中的不同结构和动态特征，而在下一步中，它结合了一种切换机制来表征这些多样性，从而学习更丰富的KPI表示。
-		
-		2. 为了有效的推理，我们开发了一种向上向下的自动编码推理方法，它结合了参数的自下而上的似然性和自下而上的先验信息，以实现准确的后验近似。
-	
-	(3) 结果：通过SGmVRNN方法构造出来的模型应用到不同网站的CDN KPI异常识别，SGmVRNN模型的平衡F分数明显高于目前最优秀的模型。
-	
-	\paragraph{Proposed Method}
-	
-	SGmVRNN：将概率混合和切换机制融合到VRNN中，它将概率混合和切换机制融合到VRNN中，从而有效地模拟单个网站的多元CDN KPI相邻时间步之间的非平稳时间依赖性，以及不同网站之间的动态特性。
-		
-		SGmVRNN特点：能够在不同的时间学习不同的结构特征，并捕捉它们之间的各种时间依赖性，以表征不同CDN网站的多元KPI中的复杂结构和动态特征。
-		
-		\begin{figure}[htbp] 
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			% \includegraphics[width=0.8\columnwidth]{GLADNet}
-			
-			\begin{subfigure}{0.19\textwidth}
-				\includegraphics[width=\linewidth]{Switching/Prior}
-				\captionsetup{font=scriptsize}
-				\caption{Prior}
-				\label{fig: Prior}
-			\end{subfigure}
-			\begin{subfigure}{0.19\textwidth}
-				\includegraphics[width=\linewidth]{Switching/Generation}
-				\captionsetup{font=scriptsize}
-				\caption{Generation}
-				\label{fig: Generation}
-			\end{subfigure}
-			\begin{subfigure}{0.19\textwidth}
-				\includegraphics[width=\linewidth]{Switching/Inference}
-				\captionsetup{font=scriptsize}
-				\caption{Inference}
-				\label{fig: Inference}	
-			\end{subfigure}
-			\begin{subfigure}{0.19\textwidth}
-				\includegraphics[width=\linewidth]{Switching/Recurrent}
-				\captionsetup{font=scriptsize}
-				\caption{Recurrent}
-				\label{fig: Recurrent}
-			\end{subfigure}
-			\begin{subfigure}{0.19\textwidth}
-				\includegraphics[width=\linewidth]{Switching/Overall}
-				\captionsetup{font=scriptsize}
-				\caption{Overall}
-				\label{fig: Overall}
-			\end{subfigure}
-			\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Switching Mechanism} % spaces are big no-no withing labels
-				% things like fig: are optional in the label but it helps
-				% to orient yourself when you have multiple figures,
-				% equations and tables
-				Graphical illustration of each operation of the SGmVRNN: (a) conditional prior of latent variables $z_{t;n}$ and $c_{t;n}$; (b) generation process of $x_{t;n}$; (c) inference of the variational distribution of $z_{t;n}$ and $c_{t;n}$; (d) updating the hidden units of the RNN recurrently; (e) overall operations of the SGmVRNN. Note that circles denote stochastic variables while diamond-shaped units are used for deterministic variables, and shaded nodes denote observed variables.
-			}
-		\end{figure}
-		
-	如何解决主要挑战？
-	
-	将切换机制(见Fig. \ref{fig: Switching Mechanism})与混合模型相结合，SGmVRNN可以利用切换机制对电流输入的刻画和多种时间变化的传输提供足够的表示能力，从而解决第一个问题。
-	
-	利用混合高斯分布潜变量很好地处理多样化的网站，从而解决第二个问题。
+%	\subsection{Paper reading}
+%	
+%	\subsubsection{Switching gaussian mixture variational rnn for anomaly detection of diverse cdn websites\cite{dai2022switching}}
+%	
+%	\paragraph{Known problems}
+%	
+%	\textbf{问题一}：单个网站在不同时间段的非平稳依赖（The Non-stationary Dependencies）会降低深度异常检测模型的性能:
+%	
+%	由于用户的正常行为或CDN的调度等，相应的KPI通常表现出非平稳的时间特征，不应将其归类为服务失败或退化。但是，这些类型的预期模式很难被目前的方法捕获，这会使得目前的模型在CDN KPI异常检测方面的表现性能很差。
+%	
+%	从Fig. \ref{fig: cdn_kpi_a}和Fig. \ref{fig: cdn_kpi_d}可以明显看出，工作日和周末的用户请求行为是不同的。前一个网站显示了在周末相对于工作日的用户请求激增，而后一个数据显示了相反的情况。
+%	
+%	\begin{figure}[htbp] 
+%		% read manual to see what [ht] means and for other possible options
+%		\centering 
+%		% \includegraphics[width=0.8\columnwidth]{GLADNet}
+%		
+%		\begin{subfigure}{0.2\textwidth}
+%			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_a}
+%			\captionsetup{font=scriptsize}
+%			\caption{}
+%			\label{fig: cdn_kpi_a}
+%		\end{subfigure}
+%		\begin{subfigure}{0.2\textwidth}
+%			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_b}
+%			\captionsetup{font=scriptsize}
+%			\caption{}
+%			\label{fig: cdn_kpi_b}
+%		\end{subfigure}
+%		\begin{subfigure}{0.2\textwidth}
+%			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_c}
+%			\captionsetup{font=scriptsize}
+%			\caption{}
+%			\label{fig: cdn_kpi_c}	
+%		\end{subfigure}\\
+%		\begin{subfigure}{0.2\textwidth}
+%			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_d}
+%			\captionsetup{font=scriptsize}
+%			\caption{}
+%			\label{fig: cdn_kpi_d}
+%		\end{subfigure}
+%		\begin{subfigure}{0.2\textwidth}
+%			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_e}
+%			\captionsetup{font=scriptsize}
+%			\caption{}
+%			\label{fig: cdn_kpi_e}
+%		\end{subfigure}
+%		\begin{subfigure}{0.2\textwidth}
+%			\includegraphics[width=\linewidth]{CDN_KPI/cdn_kpi_f}
+%			\captionsetup{font=scriptsize}
+%			\caption{}
+%			\label{fig: cdn_kpi_f}	
+%		\end{subfigure}	
+%		\captionsetup{font=scriptsize}
+%		\caption{
+%			\label{fig: CDN_KPI} % spaces are big no-no withing labels
+%			% things like fig: are optional in the label but it helps
+%			% to orient yourself when you have multiple figures,
+%			% equations and tables
+%			2-weeks real world typical multivariate CDN KPIs of 6-websites. Periods in light blue show the change points in KPIs; Regions highlighted
+%		}
+%	\end{figure}
+%	
+%	\textbf{问题二}：不同的网站在CDN KPI中表现出不同的特征，但其中又有一些相似特征。这使得现有的单个深度异常检测
+%	模型无法良好的捕捉这种动态复杂性。
+%	
+%	Fig. \ref{fig: cdn_kpi_b}是另一种典型情况，即部分用户被CDN的调度中心调度到另一组边缘节点上；所以，KPI的变化时刻，发生在这段时间内。Fig. \ref{fig: cdn_kpi_a}中的视频点播网站的KPI通常与Fig. \ref{fig: cdn_kpi_e}中的直播网站有很大的不同。
+%	
+%	因为一般商业CDN会为数百甚至数千个网站提供服务，这些网站会因为服务类型和用户的请求行为的不同而表现出不同的特征，因此可以观察到不同网站的KPI在空间和时间特征上的变化。
+%	
+%	\textbf{问题三}：资源浪费
+%	
+%	为了对多个网站进行有效的异常检测，现有的深度异常检测方法通常为每个网站训练一个单独的模型，从而存在为每个网站训练和维护大量的单独模型的问题，不仅消耗巨大的计算和存储资源，但也增加了模型维护的成本。
+%	
+%	例如，Fig. \ref{fig: cdn_kpi_c}和Fig. \ref{fig: cdn_kpi_f}显示出相似的特征，但它们属于不同网站的KPI。在这种情况下，为每个网站训练一个单独的模型完全是浪费。
+%	
+%	\paragraph{Challenge}
+%	
+%	现有的许多深度学习方法，模型学习正常情况下的网络KPI，以构建并训练模型，从而应用于无监督的网络KPI异常检测，即深度异常检测。
+%	
+%	CDN KPI数据存在的问题:
+%	
+%	(1) CDN下具有多个节点，每个节点网络KPI曲线的多样性，即KPI曲线表现为周期型的，有稳定型的，也有不稳定
+%	型的。
+%	
+%	(2) CDN下往往具备大量的节点网络，这些网络的异常种类多，核心网网元数据多，故障发生的类型也多种多样，
+%	导致了异常种类也多种多样，即KPI之间呈现出非平稳的顺序关系。
+%	
+%	\paragraph{Author Work}
+%	
+%	(1) 表征不同的复杂KPI时间序列结构和动态特征；
+%	
+%	(2) 基于以上问题，现有的深度学习方法非常难以表示和识别CDN网下节点网络的异常，因此作者提出了一种方法，一种适用于多变量CDN KPI的切换高斯混合变分循环神经网络(SGmVRN)。
+%		
+%		1. SGmVRNN引入变分循环结构，并将其潜在变量分配到混合高斯分布中，以对复杂的KPI时间序列进行建模并捕捉其中的不同结构和动态特征，而在下一步中，它结合了一种切换机制来表征这些多样性，从而学习更丰富的KPI表示。
+%		
+%		2. 为了有效的推理，我们开发了一种向上向下的自动编码推理方法，它结合了参数的自下而上的似然性和自下而上的先验信息，以实现准确的后验近似。
+%	
+%	(3) 结果：通过SGmVRNN方法构造出来的模型应用到不同网站的CDN KPI异常识别，SGmVRNN模型的平衡F分数明显高于目前最优秀的模型。
+%	
+%	\paragraph{Proposed Method}
+%	
+%	SGmVRNN：将概率混合和切换机制融合到VRNN中，它将概率混合和切换机制融合到VRNN中，从而有效地模拟单个网站的多元CDN KPI相邻时间步之间的非平稳时间依赖性，以及不同网站之间的动态特性。
+%		
+%		SGmVRNN特点：能够在不同的时间学习不同的结构特征，并捕捉它们之间的各种时间依赖性，以表征不同CDN网站的多元KPI中的复杂结构和动态特征。
+%		
+%		\begin{figure}[htbp] 
+%			% read manual to see what [ht] means and for other possible options
+%			\centering 
+%			% \includegraphics[width=0.8\columnwidth]{GLADNet}
+%			
+%			\begin{subfigure}{0.19\textwidth}
+%				\includegraphics[width=\linewidth]{Switching/Prior}
+%				\captionsetup{font=scriptsize}
+%				\caption{Prior}
+%				\label{fig: Prior}
+%			\end{subfigure}
+%			\begin{subfigure}{0.19\textwidth}
+%				\includegraphics[width=\linewidth]{Switching/Generation}
+%				\captionsetup{font=scriptsize}
+%				\caption{Generation}
+%				\label{fig: Generation}
+%			\end{subfigure}
+%			\begin{subfigure}{0.19\textwidth}
+%				\includegraphics[width=\linewidth]{Switching/Inference}
+%				\captionsetup{font=scriptsize}
+%				\caption{Inference}
+%				\label{fig: Inference}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.19\textwidth}
+%				\includegraphics[width=\linewidth]{Switching/Recurrent}
+%				\captionsetup{font=scriptsize}
+%				\caption{Recurrent}
+%				\label{fig: Recurrent}
+%			\end{subfigure}
+%			\begin{subfigure}{0.19\textwidth}
+%				\includegraphics[width=\linewidth]{Switching/Overall}
+%				\captionsetup{font=scriptsize}
+%				\caption{Overall}
+%				\label{fig: Overall}
+%			\end{subfigure}
+%			\captionsetup{font=scriptsize}
+%			\caption{
+%				\label{fig: Switching Mechanism} % spaces are big no-no withing labels
+%				% things like fig: are optional in the label but it helps
+%				% to orient yourself when you have multiple figures,
+%				% equations and tables
+%				Graphical illustration of each operation of the SGmVRNN: (a) conditional prior of latent variables $z_{t;n}$ and $c_{t;n}$; (b) generation process of $x_{t;n}$; (c) inference of the variational distribution of $z_{t;n}$ and $c_{t;n}$; (d) updating the hidden units of the RNN recurrently; (e) overall operations of the SGmVRNN. Note that circles denote stochastic variables while diamond-shaped units are used for deterministic variables, and shaded nodes denote observed variables.
+%			}
+%		\end{figure}
+%		
+%	如何解决主要挑战？
+%	
+%	将切换机制(见Fig. \ref{fig: Switching Mechanism})与混合模型相结合，SGmVRNN可以利用切换机制对电流输入的刻画和多种时间变化的传输提供足够的表示能力，从而解决第一个问题。
+%	
+%	利用混合高斯分布潜变量很好地处理多样化的网站，从而解决第二个问题。
 	
 	\section{个人工作进展}
 	
-	\subsection{关于“华为杯”的一点思考}
+%	\subsection{关于“华为杯”的一点思考}
+%	
+%	\subsubsection{适用多场景的通用化时序预测算法}
+%	
+%	\cite{dai2022switching}中提出的方法SGmVRNN在可以表征复杂数据，面对拥有序列多样性的数据集（题目中提到数据可能具有不同长度、趋势性、周期性、采样粒度），作者提出了可以把潜在变量(latent variable)分配到混合高斯分布中，从而可以对复杂的时间序列进行建模。切换机制似乎可以较好的满足通用化这样一种需求。
+%	
+%	作者引入切换机制是为了解决CDN网络下非平稳的时间依赖性以及不同网站的KPI特征，题目描述中针对的是云计算的场景，如资源的消耗序列、用户的行为序列、机房传感器的读数序列，对不同的场景设计不同的算法，显然不太现实。二者可能具有类通性。
 	
-	\subsubsection{适用多场景的通用化时序预测算法}
+	\subsection{思考}
 	
-	\cite{dai2022switching}中提出的方法SGmVRNN在可以表征复杂数据，面对拥有序列多样性的数据集（题目中提到数据可能具有不同长度、趋势性、周期性、采样粒度），作者提出了可以把潜在变量(latent variable)分配到混合高斯分布中，从而可以对复杂的时间序列进行建模。切换机制似乎可以较好的满足通用化这样一种需求。
+	具有融合和模型框架的算法往往具有更好的泛化能力，并且无监督学习方法比有监督学习方法更稳健。
 	
-	作者引入切换机制是为了解决CDN网络下非平稳的时间依赖性以及不同网站的KPI特征，题目描述中针对的是云计算的场景，如资源的消耗序列、用户的行为序列、机房传感器的读数序列，对不同的场景设计不同的算法，显然不太现实。二者可能具有类通性。
+	低照度图像增强算法的目的是为更高级别的视觉任务做准备。因此，当前的研究旨在制定通用的低照度图像增强算法，以服务于更高级别的视觉任务，所以低照度图像增强算法的速度应该尽可能的快，这样可以使得应用在高帧率的低照度视频增强上成为一种可能。
+	
+	无监督学习方法上述方法有两个限制。首先，数据集中的成对图片是有限的。其次，在成对数据集上的训练模型会导致过拟合问题。
+	
+	目前在有监督学习这方面的热点是结合Transformer方法，这一类方法是一种全监督和训练模式，属于超轻量级网络。这一类方法的性能比较好，一般特征往往体现在速度的提升上。。
+	
 	
 %	\subsection{梳理损失函数}
 %	
@@ -1267,10 +1530,9 @@
 	
 	\section{下周工作计划}
 	
-	(1) 继续复现、分析KinD的项目代码，目前架构中的三个结构，从model.py中读取到了5个函数lrelu、upsample\_and\_concat、DecomNet\_simple、Restoration\_net、Illumination\_adjust\_net，目前主要看了前三个函数，文档中有对应说明，下周计划把后面两个函数补完，看看能不能加上图，同时梳理下每一层的功能。
+	(1) 无监督学习方法上述方法有两个限制。首先，数据集中的成对图片是有限的。其次，在成对数据集上的训练模型会导致过拟合问题。目前已有的解决方案是采用启发性学习方法，另一种是采用深度GAN，结合注意力机制捕获全局/局部的特征。
 	
-	(2) 想要去了解一下“为什么高斯核用于图像模糊，拉普拉斯核用于图像锐化”的数学原理。
-	
+	(2) 目前提升速度的方法，主要是采用有监督的学习方法，在这个领域内，改进前人方法，结合Transformer优点的方法成为主流。先去了解Transformer。
 	
 	%	\section{Analysis}
 	
