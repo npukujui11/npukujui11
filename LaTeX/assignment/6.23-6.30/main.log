@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  30 JUN 2023 12:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  30 JUN 2023 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -980,7 +980,7 @@ ntion on
  []
 
 [6]
-Overfull \hbox (10.63776pt too wide) in paragraph at lines 283--284
+Overfull \hbox (10.63776pt too wide) in paragraph at lines 281--282
 \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/59 ^^Z 4 \C70/rm/m/n/12/6c è \C70/rm/m/n/12/
 61 ^^O \C70/rm/m/n/12/52 ›|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/56 à \C70/rm/m
 /n/12/6b d|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/4f \ \C70/rm/m/n/12/80 ^^E \C7
@@ -992,34 +992,40 @@ n/12/6b e \C70/rm/m/n/12/76 ø \C70/rm/m/n/12/4f < \C70/rm/m/n/12/60 ' \C70/rm/m
 /rm/m/n/12/53 ë \C70/rm/m/n/12/50 Z \OT1/cmtt/m/n/12 height-axis
  []
 
-
-LaTeX Warning: Reference `fig: Axis-based Transformer Block & Dual Gated Feed-f
-orward Network(GDFN)' on page 7 undefined on input line 288.
-
+<picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GDFN).j
+pg, id=288, 1273.75874pt x 293.59688pt>
+File: picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GD
+FN).jpg Graphic file (type jpg)
+<use picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GDF
+N).jpg>
+Package pdftex.def Info: picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed
+-forward_Network(GDFN).jpg  used on input line 291.
+(pdftex.def)             Requested size: 469.75502pt x 108.27522pt.
 [7 <./picture/LLFormer_architecture.jpg>]
-<picture/Cross-layer_Attention_Fusion_Block.jpg, id=295, 1274.26062pt x 360.848
+<picture/Cross-layer_Attention_Fusion_Block.jpg, id=298, 1274.26062pt x 360.848
 13pt>
 File: picture/Cross-layer_Attention_Fusion_Block.jpg Graphic file (type jpg)
 <use picture/Cross-layer_Attention_Fusion_Block.jpg>
 Package pdftex.def Info: picture/Cross-layer_Attention_Fusion_Block.jpg  used o
-n input line 314.
+n input line 326.
 (pdftex.def)             Requested size: 469.75502pt x 133.02167pt.
-<picture/Results_on_UHD-LOL.png, id=300, 688.07062pt x 288.57813pt>
+ [8 <./picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(G
+DFN).jpg> <./picture/Cross-layer_Attention_Fusion_Block.jpg>]
+<picture/Results_on_UHD-LOL.png, id=312, 688.07062pt x 288.57813pt>
 File: picture/Results_on_UHD-LOL.png Graphic file (type png)
 <use picture/Results_on_UHD-LOL.png>
-Package pdftex.def Info: picture/Results_on_UHD-LOL.png  used on input line 342
+Package pdftex.def Info: picture/Results_on_UHD-LOL.png  used on input line 354
 .
 (pdftex.def)             Requested size: 469.75502pt x 197.01431pt.
-<picture/Results_on_LOL_and_MIT-Adobe_FiveK.png, id=302, 677.53125pt x 315.1775
+<picture/Results_on_LOL_and_MIT-Adobe_FiveK.png, id=314, 677.53125pt x 315.1775
 pt>
 File: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png Graphic file (type png)
 <use picture/Results_on_LOL_and_MIT-Adobe_FiveK.png>
 Package pdftex.def Info: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png  used o
-n input line 357.
+n input line 369.
 (pdftex.def)             Requested size: 469.75502pt x 218.53073pt.
- [8 <./picture/Cross-layer_Attention_Fusion_Block.jpg>] [9 <./picture/Results_o
-n_UHD-LOL.png> <./picture/Results_on_LOL_and_MIT-Adobe_FiveK.png>]
-Overfull \hbox (6.05927pt too wide) in paragraph at lines 384--385
+
+Overfull \hbox (6.05927pt too wide) in paragraph at lines 396--397
 \C70/rm/m/n/12/4f ^^Z \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/98 † \C70/rm/m/n/12/57
  ß \C70/rm/m/n/12/5d î \C70/rm/m/n/12/5f ^^B|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n
 /12/76 î \C70/rm/m/n/12/52 M \C70/rm/m/n/12/5d ò \C70/rm/m/n/12/7e Ï \C70/rm/m/
@@ -1031,14 +1037,11 @@ OT1/cmr/m/n/12 ViT|\C70/rm/m/n/12/ff ^^L| \OT1/cmr/m/n/12 DeiT|\C70/rm/m/n/12/f
 f ^^L| \OT1/cmr/m/n/12 Swin|\C70/rm/m/n/12/ff ^^L|
  []
 
-(./main.bbl
+(./main.bbl [9 <./picture/Results_on_UHD-LOL.png>]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [10] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
+) [10 <./picture/Results_on_LOL_and_MIT-Adobe_FiveK.png>] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1046,10 +1049,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 9B10FD964F02AA5570B8A1CBF4BD9C03;1606.
  ) 
 Here is how much of TeX's memory you used:
- 19407 strings out of 476025
- 324204 string characters out of 5791521
+ 19421 strings out of 476025
+ 325311 string characters out of 5791521
  1869382 words of memory out of 5000000
- 39230 multiletter control sequences out of 15000+600000
+ 39242 multiletter control sequences out of 15000+600000
  558357 words of font info for 201 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,10n,80p,789b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1103,10 +1106,10 @@ mr8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
 d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><d:/S
 oft/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (10 pages, 1915627 bytes).
+Output written on main.pdf (10 pages, 2287262 bytes).
 PDF statistics:
- 705 PDF objects out of 1000 (max. 8388607)
- 481 compressed objects within 5 object streams
- 36 named destinations out of 1000 (max. 500000)
- 415 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 711 PDF objects out of 1000 (max. 8388607)
+ 486 compressed objects within 5 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 420 words of extra memory for PDF output out of 10000 (max. 10000000)
 

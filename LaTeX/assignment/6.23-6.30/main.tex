@@ -276,8 +276,6 @@
 		\item {(3)} 添加了cross-layer attention。
 	\end{itemize}
 	
-	
-	
 	\paragraph{Axis-based Transformer Block}
 	
 	\textbf{Transformer}在图像修复中应用的难点在于计算复杂度高，在$Q$和$K$计算相似性时，对于输入为$(C,H,W)$的特征需要进行$(C,H,W) \times (C,H,W)$的矩阵运算。论文使用基于轴的多头注意力，因此，作者分为两个步骤，第一步相似性计算的是$H \times H$，叫做 \texttt{height-axis attention} 。第二步相似性计算的是 $W \times W$，叫做 \texttt{width-axis attention} 。(这里可以对比 Restormer，只是在C这个维度计算相似性)。。
@@ -286,6 +284,20 @@
 	
 	在Restormer中，FFN有两个分支，其中有一个分支上使用GELU激活对另一个分支添加门控。
 	在该文中，如图Fig.\ref{fig: Axis-based Transformer Block & Dual Gated Feed-forward Network(GDFN)}c，作者在FFN中引入双门控机制，提出双门控前馈网络 DGFN 来捕获特征中的更重要的信息。FFN两个分支都使用 GELU 激活，再互相给另外一个分支添加门控增强非线性建模能力。
+	
+	\begin{figure}[htbp]
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		\includegraphics[width=\columnwidth]{picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GDFN)}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Axis-based Transformer Block & Dual Gated Feed-forward Network(GDFN)} % spaces are big no-no withing labels
+			% things like fig: are optional in the label but it helps
+			% to orient yourself when you have multiple figures,
+			% equations and tables
+			The architecture of our Axis-based Multi-head Self-Attention and Dual Gated Feed-Forward Network. From left to right, the components are Height Axis Multi-head Attention, Width Axis Multi-head Attention, and Dual Gated Feed-Forward Network.
+		}
+	\end{figure}
 	
 	\begin{equation}
 		\begin{aligned}
