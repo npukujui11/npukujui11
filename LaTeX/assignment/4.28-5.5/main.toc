@@ -25,7 +25,7 @@
 \contentsline {subparagraph}{Standard Testing Data}{13}{figure.caption.15}%
 \contentsline {subparagraph}{Task-Specific Evaluation Metrics}{13}{figure.caption.15}%
 \contentsline {subparagraph}{Robust Generalization Capability}{13}{figure.caption.15}%
-\contentsline {subparagraph}{Extension to Low-light Video Enhancement}{14}{figure.caption.15}%
+\contentsline {subparagraph}{Extension to Low-light Video Enhancement}{13}{figure.caption.15}%
 \contentsline {subparagraph}{Integrating Semantic Information}{14}{figure.caption.15}%
 \contentsline {subsubsection}{\numberline {1.2.4}项目链接}{14}{subsubsection.1.2.4}%
 \contentsline {section}{\numberline {2}个人工作进展}{14}{section.2}%
