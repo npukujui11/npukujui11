@@ -274,11 +274,51 @@
 	
 	\paragraph{Batch normalization}
 	
-	Batch normalization是在神经网络层之间而非在原始数据中完成的标准化方法，其主要思想是：\textbf{在每一层的每一批数据上进行归一化。}
+	Batch normalization是在神经网络层之间而非在原始数据中完成的标准化方法，其主要思想是：\textbf{在每一层的每一批数据上进行归一化。}它是按照小批量而不是完整数据集完成的。它可以加快训练速度并使用更高的学习率，使学习变得容易。
+	
+	可以将Batch normalization的归一化公式定义为： 
+	
+	\begin{equation}
+		\begin{aligned}
+			z^{N} = \left( \frac{z-m_{z}}{s_{z}} \right)
+		\end{aligned}
+		\label{eq: Batch normalization}
+	\end{equation}
+	其中$m_z$是神经元输出的平均值和$s_z$神经元输出的标准差。
 	
 	我们可能会对输入数据进行归一化，但是经过该网络层的作用后，我们的的数据已经不再是归一化的了。随着这种情况的发展，数据的偏差越来越大，我的反向传播需要考虑到这些大的偏差，这就迫使我们只能使用较小的学习率来防止梯度消失或者梯度爆炸。
 	
-	Batch Normalization的具体做法就是对每一小批数据，在批这个方向上做归一化。如下图所示：
+	
+	Batch normalization的具体做法就是对每一小批数据，在批这个方向上做归一化。如下图所示：
+	
+	具体Batch normalization是如何应用的？
+	
+	\begin{figure}[htbp]
+		\centering 
+		\includegraphics[width=0.8\columnwidth]{picture/neural-network}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Neural Network} 
+			A conventional feedforward neural network.
+		}
+	\end{figure}
+	
+	在Fig.\ref{fig: Neural Network}中展示了一个常规的前馈神经网络，其中$x_i$是输入、$z$是神经元的输出、$a$是激活函数的输出、$y$是整个网络的输出。
+	
+	Batch normalization的好处是：
+	
+	\begin{itemize}
+		\item {}
+		
+		\textbf{深度神经网络可以训练得更快：}虽然由于前向传播过程中的额外归一化计算和反向传播过程中需要训练的额外超参数，每次训练迭代都会变慢，但它应该收敛得更快；因此，训练总体上应该更快。	
+		
+		\item {}
+		\textbf{更高的学习率：}梯度下降通常需要较小的学习率才能使网络收敛。随着网络变得更深，梯度在反向传播过程中变得更小，因此需要更多的迭代。使用批量归一化可以提高学习率，从而提高训练速度。
+		
+		\item {}
+		\textbf{更容易初始化权重：}权重初始化可能很困难，特别是在创建更深的网络时。批量归一化降低了对初始起始重量的敏感性。
+		
+	\end{itemize}
 	
 	
 	\section{Paper reading}
