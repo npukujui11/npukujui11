@@ -195,7 +195,7 @@
 	
 	\textbf{context-attention}是encoder和decoder之间的attention。
 	
-	从Fig.\ref{fig: Transformer_attention}看出，Transformer中的attention机制可以被描述为，通过确定$Q$和$K$之间的相似程度来选择$V$，
+	从Fig.\ref{fig: Transformer_attention}(left)看出，Transformer中的attention机制可以被描述为，通过确定$Q$和$K$之间的相似程度来选择$V$，
 	\begin{equation}
 		\begin{aligned}
 			\textbf{Attention}(Q,K,V)=\text{softmax}(\frac{QK^\top}{\sqrt{d_k}})V
@@ -203,11 +203,9 @@
 		\label{eq: Transformer_attention}
 	\end{equation}
 	
-	其中，$d_k$表示的是$K$的维度。
-	
-	为什么需要加上这个缩放因子呢？论文里给出了解释：对于$d_k$很大的时候，点积得到的结果维度很大，使得结果处于softmax函数梯度很小的区域。
-	
-	我们知道，梯度很小的情况，这对反向传播不利。为了克服这个负面影响，除以一个缩放因子，可以一定程度上减缓这种情况。
+	其中，$d_k$表示的是$K$的维度。\footnote{\textbf{为什么需要加上这个缩放因子$d_k$呢？}论文里给出了解释：对于$d_k$很大的时候，点积得到的结果维度很大，使得结果处于softmax函数梯度很小的区域。
+		
+	我们知道，梯度很小的情况，这对反向传播不利。为了克服这个负面影响，除以一个缩放因子，可以一定程度上减缓这种情况。}
 	
 	$K, Q, V$具体指代什么？
 	\begin{itemize}
@@ -221,18 +219,18 @@
 
 		\item {}
 		
-			在encoder-decoder attention中，Q来自于decoder的上一层的输出，K和V来自于encoder的输出，K和V是一样的。
+			在encoder-decoder attention中，$Q$来自于decoder的上一层的输出，$K$和$V$来自于encoder的输出，$K$和$V$是一样的。
 			
 		\item {}
 			
-			Q、K、V三者的维度一样，即 $d_q=d_k=d_v$。
+			$Q$、$K$、$V$三者的维度一样，即 $d_q=d_k=d_v$。
 	\end{itemize}
 	
 	\paragraph{Multi-head attention}
 	
 	什么是\textbf{multi-head attention}？
 	
-	如Fig.\ref{fig: Transformer_attention}所示，作者发现将$Q,K,V$通过一个线性映射之后，分成 $h$ 份，对每一份进行 \textbf{scaled dot-product attention} 效果更好。然后，把各个部分的结果合并起来，再次经过线性映射，得到最终的输出。超参数 $h$ 表示的是 heads 数量。
+	如Fig.\ref{fig: Transformer_attention}(right)所示，作者发现将$Q,K,V$通过一个线性映射之后，分成 $h$ 份，对每一份进行 \textbf{scaled dot-product attention} 效果更好。然后，把各个部分的结果合并起来，再次经过线性映射，得到最终的输出。超参数 $h$ 表示的是 heads 数量\footnote{论文中的数量默认是8}。
 	
 	\begin{equation}
 		\begin{aligned}
@@ -241,6 +239,47 @@
 		\end{aligned}
 		\label{eq: Multi-head attention}
 	\end{equation}
+	
+	\subsubsection{Layer normalization}
+	
+	\begin{itemize}
+		\item {} Normalization 有很多种，但是它们都有一个共同的目的，那就是把输入转化成均值为 0 方差为 1 的数据。
+		
+		\item {} Normalization 是一种用于标准化数据的预处理技术\footnote{例如，假设我们有汽车租赁服务。首先，我们希望根据竞争对手的数据预测每辆车的合理价格。每辆车有两个特征：车龄和总行驶公里数。它们的范围可能非常不同，从 0 到 30 年不等，而距离可能从 0 到数十万公里。我们不希望特征在范围上存在这些差异，因为具有较高范围的值可能会使我们的模型产生偏差，从而赋予它们夸大的重要性。
+		
+		有两种主要方法可以标准化数据。最直接的方法是将其缩放到 0 到 1 的范围：
+		
+		\begin{equation}
+			\begin{aligned}
+				x_{normalized} = \frac{x-m}{x_{max}-x_{min}}
+			\end{aligned}
+			\label{eq: normalized_1}
+		\end{equation}
+		
+		$x$是要标准化的数据点、$m$是数据集的平均值、$x_{max}$是最高值、$x_{min}$是最小值。该技术通常用于数据的输入。大范围的非标准化数据点可能会导致神经网络不稳定。相对较大的输入可能会级联到各层，从而导致梯度爆炸等问题。
+		
+		用于标准化数据的另一种技术是使用以下公式强制数据点的平均值为 0，标准差为 1：
+		
+		\begin{equation}
+			\begin{aligned}
+				x_{normalized} = \frac{x-m}{s}
+			\end{aligned}
+			\label{eq: normalized_2}
+		\end{equation}
+		
+		$x$ 是要标准化的数据点、$m$是数据集的平均值、$s$是数据集的标准差。经过Eq.\ref{eq: normalized_2}后，每个数据点都模仿标准正态分布。拥有正态分布的所有特征，它们不会有偏差，因此，我们的模型会学得更好。
+		}。换句话说，在同一范围内具有不同的数据源。在训练之前不对数据进行标准化可能会导致我们的网络出现问题，从而使训练变得更加困难并降低其学习速度。
+	\end{itemize}
+	
+	
+	\paragraph{Batch normalization}
+	
+	Batch Normalization的主要思想是：\textbf{在每一层的每一批数据上进行归一化。}
+	
+	我们可能会对输入数据进行归一化，但是经过该网络层的作用后，我们的的数据已经不再是归一化的了。随着这种情况的发展，数据的偏差越来越大，我的反向传播需要考虑到这些大的偏差，这就迫使我们只能使用较小的学习率来防止梯度消失或者梯度爆炸。
+	
+	Batch Normalization的具体做法就是对每一小批数据，在批这个方向上做归一化。如下图所示：
+	
 	
 	\section{Paper reading}
 	
