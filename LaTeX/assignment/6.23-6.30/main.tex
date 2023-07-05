@@ -262,12 +262,12 @@
 		
 		\begin{equation}
 			\begin{aligned}
-				x_{normalized} = \frac{x-m}{s}
+				x_{normalized} = \frac{x-\mu}{\sigma}
 			\end{aligned}
 			\label{eq: normalized_2}
 		\end{equation}
 		
-		$x$ 是要标准化的数据点、$m$是数据集的平均值、$s$是数据集的标准差。经过Eq.\ref{eq: normalized_2}后，每个数据点都模仿标准正态分布。拥有正态分布的所有特征，它们不会有偏差，因此，我们的模型会学得更好。
+		$x$ 是要标准化的数据点、$\mu$是数据集的平均值、$\sigma$是数据集的标准差。经过Eq.\ref{eq: normalized_2}后，每个数据点都模仿标准正态分布。拥有正态分布的所有特征，它们不会有偏差，因此，我们的模型会学得更好。
 		}。换句话说，在同一范围内具有不同的数据源。在训练之前不对数据进行标准化可能会导致我们的网络出现问题，从而使训练变得更加困难并降低其学习速度。
 	\end{itemize}
 	
@@ -280,16 +280,26 @@
 	
 	\begin{equation}
 		\begin{aligned}
-			z^{N} = \left( \frac{z-m_{z}}{s_{z}} \right)
+			z^{N} = \left( \frac{z-\mu_{z}}{\sigma_{z}} \right)
 		\end{aligned}
 		\label{eq: Batch normalization}
 	\end{equation}
-	其中$m_z$是神经元输出的平均值和$s_z$神经元输出的标准差。
+	其中$\mu_z$是神经元输出的平均值和$\sigma_z$神经元输出的标准差。
 	
 	我们可能会对输入数据进行归一化，但是经过该网络层的作用后，我们的的数据已经不再是归一化的了。随着这种情况的发展，数据的偏差越来越大，我的反向传播需要考虑到这些大的偏差，这就迫使我们只能使用较小的学习率来防止梯度消失或者梯度爆炸。
 	
 	
 	Batch normalization的具体做法就是对每一小批数据，在批这个方向上做归一化。如下图所示：
+	
+	\begin{figure}[htbp]
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		\includegraphics[width=0.6\columnwidth]{picture/batch_normalization}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: batch_normlization} (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel.
+		}
+	\end{figure}
 	
 	具体Batch normalization是如何应用的？
 	
@@ -304,6 +314,29 @@
 	\end{figure}
 	
 	在Fig.\ref{fig: Neural Network}中展示了一个常规的前馈神经网络，其中$x_i$是输入、$z$是神经元的输出、$a$是激活函数的输出、$y$是整个网络的输出。
+	
+	通常，没有Batch normalization的神经元将按Eq.\ref{eq: cell output}计算。
+	
+	\begin{equation}
+		\begin{aligned}
+			& z = g \left( w,x \right) + b \\
+			& a = f(z) \\
+		\end{aligned}
+		\label{eq: cell output}
+	\end{equation}
+	
+	$g()$是神经元的线性变换，$w$是神经元的权重，$b$是神经元的偏置，$f()$是激活函数。该模型学习参数$w$和$b$。添加Batch normalization之后，按Eq.\ref{eq: cell output(BN)}计算
+	
+	\begin{equation}
+		\begin{aligned}
+			& z = g \left( w,x \right)\\
+			& z^N = \left(\frac{z-\mu_z}{\sqrt{\sigma_z^2 + \epsilon}}\right) \cdot \gamma + \beta \\
+			& a = f(z^N) 
+		\end{aligned}
+		\label{eq: cell output(BN)}
+	\end{equation}
+	
+	$z^N$是Batch normalization的输出，$\mu_z$是神经元输出的均值，$\sigma_z$是神经元输出的标准差，$\epsilon$是一个小的随机噪声（为了稳定性）。$\gamma$为尺度参数，$\beta$为位移参数，这两个参数可以从每一个epoch和其他参数（神经元权重）中学习得到\footnote{当我们在层上应用Batch normalization时，我们限制输入服从正态分布，这最终将限制网络的学习性能。为了解决这个问题，一般乘以尺度参数$\gamma$，并添加位移参数$\beta$。}。
 	
 	Batch normalization的好处是：
 	

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  4 JUL 2023 23:02
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  5 JUL 2023 17:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,17 +884,20 @@ File: picture/Transfromer_architecture.jpg Graphic file (type bmp)
 File: picture/Transfromer_attention.jpg Graphic file (type bmp)
 <picture/Transfromer_attention.jpg>
  [4] [5]
+File: picture/batch_normalization.png Graphic file (type bmp)
+<picture/batch_normalization.png>
 File: picture/neural-network.png Graphic file (type bmp)
 <picture/neural-network.png>
+ [6]
 File: picture/LLFormer_architecture.jpg Graphic file (type bmp)
 <picture/LLFormer_architecture.jpg>
 
-Underfull \hbox (badness 1874) in paragraph at lines 345--345
-[]\TU/lmr/m/n/7 Figure 4: |[] \TU/lmr/bx/n/7 LLFormer architecture\TU/lmr/m/n/7
+Underfull \hbox (badness 1874) in paragraph at lines 378--378
+[]\TU/lmr/m/n/7 Figure 5: |[] \TU/lmr/bx/n/7 LLFormer architecture\TU/lmr/m/n/7
  . The core design of LLFormer includes an [][][][][][] and a
  []
 
-[6]
+[7]
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -918,14 +921,13 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [7]
 File: picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GD
 FN).jpg Graphic file (type bmp)
 <picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GDFN).j
 pg>
+ [8]
 File: picture/Cross-layer_Attention_Fusion_Block.jpg Graphic file (type bmp)
 <picture/Cross-layer_Attention_Fusion_Block.jpg>
- [8]
 File: picture/Results_on_UHD-LOL.png Graphic file (type bmp)
 <picture/Results_on_UHD-LOL.png>
 File: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png Graphic file (type bmp)
@@ -933,13 +935,13 @@ File: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png Graphic file (type bmp)
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 459.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 492.
 
-(./main.bbl
+[9] [10] (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [9] [10] (./main.aux)
+) [11] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -950,12 +952,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 19438947B38B4CF816CD68FF0F3DE064;1772.
  ) 
 Here is how much of TeX's memory you used:
- 20580 strings out of 476683
- 432410 string characters out of 5805371
+ 20610 strings out of 476683
+ 433669 string characters out of 5805371
  1871012 words of memory out of 5000000
- 40459 multiletter control sequences out of 15000+600000
+ 40488 multiletter control sequences out of 15000+600000
  521009 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,10n,97p,789b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (10 pages).
+Output written on main.pdf (11 pages).
