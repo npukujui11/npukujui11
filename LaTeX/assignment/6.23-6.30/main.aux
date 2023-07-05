@@ -11,8 +11,8 @@
 \fi}
 \global\let\hyper@last\relax 
 \gdef\HyperFirstAtBeginDocument#1{#1}
-\providecommand*\HyPL@Entry[1]{}
-\HyPL@Entry{0<</S/D>>}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Pre-Knowledge}{1}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Transformer}{1}{subsection.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}Idea}{2}{subsubsection.1.1.1}\protected@file@percent }
@@ -35,8 +35,8 @@
 \newlabel{eq: normalized_1}{{4}{5}{}{equation.1.4}{}}
 \newlabel{eq: normalized_2}{{5}{5}{}{equation.1.5}{}}
 \newlabel{eq: Batch normalization}{{6}{6}{Batch normalization}{equation.1.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel. \relax }}{6}{figure.caption.3}\protected@file@percent }
-\newlabel{fig: batch_normlization}{{3}{6}{(left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel. \relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   For a given layer, the mean during BN will be 1X. Each training data gets this mean subtracted from it and divided by $\sqrt  {(var + \epsilon )}$ and then shifted and scaled. To find the mean and var, we use all the examples in the training batch. \relax }}{6}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: Batch_normlization}{{3}{6}{For a given layer, the mean during BN will be 1X. Each training data gets this mean subtracted from it and divided by $\sqrt {(var + \epsilon )}$ and then shifted and scaled. To find the mean and var, we use all the examples in the training batch. \relax }{figure.caption.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   A conventional feedforward neural network. \relax }}{6}{figure.caption.4}\protected@file@percent }
 \newlabel{fig: Neural Network}{{4}{6}{A conventional feedforward neural network. \relax }{figure.caption.4}{}}
 \newlabel{eq: cell output}{{7}{7}{Batch normalization}{equation.1.7}{}}
