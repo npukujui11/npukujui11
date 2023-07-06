@@ -359,7 +359,7 @@
 	
 	\begin{equation}
 		\begin{aligned}
-			LN = \left(\frac{z_i-\mu_L}{\sqrt{\sigma_L^2 + \epsilon}}\right) \cdot \gamma + \beta 
+			\text{LN} = \left(\frac{z_i-\mu_L}{\sqrt{\sigma_L^2 + \epsilon}}\right) \cdot \gamma + \beta 
 		\end{aligned}
 		\label{eq: Layer normalization}
 	\end{equation}
@@ -384,7 +384,7 @@
 	
 	\paragraph{Padding mask}
 	
-	因为每个批次输入序列长度是不一样的，因此我们需要对不同长度的序列进行对齐，具体来说，就是给在较短的序列后面填充 0。因为这些填充的位置其实是没有意义的，Attention 机制不应该把注意力放在这些位置上，所以具体的做法是，把这些位置的值加上一个非常大的负数(负无穷)，这样经过 softmax 后这些位置的概率就会接近0，不会影响 Attention 的结果。
+	因为每个批次输入序列长度是不一样的，因此我们需要对不同长度的序列进行对齐，具体来说，就是给在较短的序列后面填充 0。因为这些填充的位置其实是没有意义的，Attention 机制不应该把注意力放在这些位置上，所以具体的做法是，把这些位置的值加上一个非常大的负数(负无穷)，这样经过 softmax 后这些位置的概率就会接近 0，不会影响 Attention 的结果。
 	
 	\paragraph{Sequence mask}
 	
@@ -403,6 +403,29 @@
 	\subsubsection{Positional encoding}
 
 	Transformer 摒弃了之前机器翻译任务中常用的 RNN 结构，使得并行性更好。RNN的这一结构天生考虑了词语的先后顺序关系。当 Transformer 模型不使用 RNN 结构时，它就要想办法通过其它机制把位置信息传输到 encoder ，否则可能会出现“所有词语都对了，但是无法组成有意义的语句”的情况。为了解决这个问题，论文使用了 Positional Encoding 对序列中词语出现的位置进行了编码。
+	
+	在具体实现时，采用正余弦函数来表示Positional encoding
+	
+	\begin{equation}
+		\begin{aligned}
+			& \text{PE}\left(pos, 2i\right) = \sin \left(pos/10000^{2i/d_{model}}\right) \\
+			& \text{PE}\left(pos, 2i+1\right) = \cos \left(pos/10000^{2i/d_{model}}\right)
+		\end{aligned}
+		\label{eq: Positional encoding}
+	\end{equation}
+	
+	其中， $pos$ 是指词语在序列中的位置，$d_{model}$\footnote{论文中默认维度是512}是模型的维度，该公式的意思是：给定词语的位置 $pos$ ，就可以把它编码成$d_{model}$维的向量。可以看出，在偶数位置，使用正弦编码，在奇数位置，使用余弦编码。\footnote{正弦函数能够表达相对位置信息，主要数学依据见Eq.\ref{eq: Sum-to-product identities}	
+		
+	\begin{equation}
+		\begin{aligned}
+			& \sin \left(\alpha + \beta \right) = \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+			& \cos \left(\alpha + \beta \right) = \cos \alpha \cos \beta - \sin \alpha \sin \beta
+		\end{aligned}
+		\label{eq: Sum-to-product identities}
+	\end{equation}
+	Eq.\ref{eq: Sum-to-product identities}表明，对于词汇之间的位置偏移 k, $\text{PE}(pos + k)$可以表示为$\text{PE}(pos)$和$\text{PE}(k)$的组合形式，即具备表达相对位置的功能。
+	}
+		
 	
 	\section{Paper reading}
 	
