@@ -458,7 +458,30 @@
 	
 	深度学习 word2vec 中有 CBOW 和 Skip-gram 两种神经网络框架可用于训练并得到参数, 参数迭代更新后得到的就是每个字的词向量。
 	
-
+	\subsubsection{Position-wise Feed-Forward network}
+	
+	除了注意力子层之外，编码器和解码器中的每个层都包含一个完全连接的前馈网络，该网络单独且相同地应用于每个位置。它由两个线性变换组成，中间有一个ReLU激活\footnote{$ReLU: \ f\left(x\right) = \max \left(0,x\right)$}。
+	
+	\begin{equation}
+		\begin{aligned}
+			\text{FFN}(x) = \max \left(0,xW_1+b_1\right)W_2 + b_2
+		\end{aligned}
+		\label{eq: Position-wise Feed-Forward network}
+	\end{equation}
+	
+	其中，$W_1$和$W_2$的大小均是 $d_{model} \times d_{ff}$\footnote{$d_{ff}$少则2040，多则4096。全连接层一直是神经网络中的参数量大户，Transformer也不例外。}。
+	
+	Transformer中的FFN全称是 Position-wise Feed-Forward network，重点在于 Position-wise ，区别于普通的全连接网络，这里 FFN 的输入是序列中每个位置上的元素，而不是整个序列，所以每个元素完全可以独立计算，最极端节省内存的做法是遍历序列，每次只取一个元素得到 FFN 的结果，但是这样做时间消耗太大，“分段”的含义就是做下折中，将序列分成 $N$ 段，也就是 $N$ 个子序列，每次读取一个子序列进行 FFN 计算，最后将 $N$ 份的结果拼接，如Eq.\ref{eq: Position-wise Feed-Forward network}所示。
+	
+	\begin{equation}
+		\begin{aligned}
+			Y = [Y_1;Y_2;\ldots;Y_N] = [X_1 + \text{FFN}(X_1);X_2 + \text{FFN}(X_2); \ldots; X_N + \text{FFN}(X_N)]
+		\end{aligned}
+		\label{eq: Position-wise Feed-Forward network}
+	\end{equation}
+	
+	分段 FFN 只是一种计算上的技巧，计算结果和原始 FFN 完全一致，所以不会影响到模型效果，好处是不需要一次性将整个序列$\left(batch\_size , L, d_{model}\right)$读入内存，劣势是会增加额外的时间开销。
+	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                                                %% 
