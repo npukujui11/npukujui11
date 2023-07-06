@@ -426,6 +426,47 @@
 	Eq.\ref{eq: Sum-to-product identities}表明，对于词汇之间的位置偏移 k, $\text{PE}(pos + k)$可以表示为$\text{PE}(pos)$和$\text{PE}(k)$的组合形式，即具备表达相对位置的功能。
 	}
 		
+	\subsubsection{Work embedding}
+	
+	Word embedding 是将 word 看作最小的一个单元，将文本空间中的某个 word ，通过一定的方法，映射或者说嵌入(embedding)到另一个数值向量空间。Word embedding的输入是原始文本中的一组不重叠的词汇，将它们放到一个字典里面，例如：["cat","eat","apple"]，就可以作为一个输入。
+	
+	Word embedding 的输出就是每个 word 的向量表示，变成一个矩阵，如Fig.\ref{fig: word embedding}所示，通过一个4维向量来表示单词。对于这个二维浮点矩阵，里面的权重都是可以训练的参数，Word embedding 的过程就是如何去构建这个矩阵\footnote{论文中 word embedding 矩阵是一个$\texttt{vocab\_size} \times \texttt{embedding\_size}$的二维张量。在论文中，其中\texttt{vocab\_size}是词典的大小，\texttt{embedding\_size}是词嵌入的维度大小，论文中维度大小是512。}。
+	
+	\begin{figure}[htbp]
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		\includegraphics[width=1.0\columnwidth]{picture/word_embedding}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: word embedding}Word embedding.
+		}
+	\end{figure}
+	
+	Word embedding 的优点是可以将每一单词映射到一个低维、稠密的实数向量上，向量的每一维代表单词的潜在特征，且该特征能够捕捉到有用的语法和语义属性。词嵌入的最大优势在于我们可以相对快速、有效地根据向量间的距离（比如余弦距离）判断单词的相似性，原因在于语义或语法相似的单词拥有相似的向量表示（见Fig.\ref{fig: word embeding 2d}）。词嵌入的构建主要依赖于神经网络模型，神经网络能够非常灵活地以线性组合方式表示任意 n-gram 词组，且参数以线性速度増长，相对于基于矩阵和聚类的分布表示，词向量能够捕捉到更多复杂、有用的语义信息。
+	
+	深度学习 word2vec 是 Google 的一款将词表征为实数值向量的高效工具, 其利用深度学习的思想, 通过训练把对文本内容的处理简化为 k 维向量空间中的向量运算, 而向量空间上的相似度可以用来表示文本语义上的相似度。在实际应用场景中,  word2vec 可以用于计算词的相似度、文档的相似度等, 也可以用来对文档进行情感分析等。
+	
+	\begin{figure}[htbp]
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		\includegraphics[width=0.5\columnwidth]{picture/word-embeding-2d}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: word embeding 2d}Embedding Later, words with similar meanings will be similar in vector space, and naturally have the effect after clustering, which is a kind of unsupervised learning.
+		}
+	\end{figure}
+	
+	深度学习 word2vec 中有 CBOW 和 Skip-gram 两种神经网络框架可用于训练并得到参数, 参数迭代更新后得到的就是每个字的词向量。
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                                                %% 
+%%								          Paper reading                                           %%
+%%                                                                                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
 	
 	\section{Paper reading}
 	
