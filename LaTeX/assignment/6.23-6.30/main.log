@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  6 JUL 2023 00:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  6 JUL 2023 10:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -865,7 +865,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./main.toc
-LaTeX Font Info:    Trying to load font information for C70+rm on input line 20
+LaTeX Font Info:    Trying to load font information for C70+rm on input line 21
 .
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/ctex/fd/c70rm.fd
@@ -946,20 +946,27 @@ m/n/10/79 ^ \C70/rm/m/n/10/7e Ï \C70/rm/m/n/10/51 C \C70/rm/m/n/10/76 „ \C70/rm
 $\OML/cmm/m/it/10 b$|\C70/rm/m/n/10/30 ^^B|
  []
 
-<picture/LLFormer_architecture.jpg, id=329, 1146.78438pt x 492.84125pt>
+<picture/layer_normalization.png, id=331, 551.05875pt x 412.54124pt>
+File: picture/layer_normalization.png Graphic file (type png)
+<use picture/layer_normalization.png>
+Package pdftex.def Info: picture/layer_normalization.png  used on input line 37
+4.
+(pdftex.def)             Requested size: 281.85587pt x 211.01643pt.
+[7]
+<picture/LLFormer_architecture.jpg, id=349, 1146.78438pt x 492.84125pt>
 File: picture/LLFormer_architecture.jpg Graphic file (type jpg)
 <use picture/LLFormer_architecture.jpg>
 Package pdftex.def Info: picture/LLFormer_architecture.jpg  used on input line 
-370.
+394.
 (pdftex.def)             Requested size: 469.75502pt x 201.8782pt.
 
-Underfull \hbox (badness 2111) in paragraph at lines 378--378
-[]\OT1/cmr/m/n/7 Figure 5: |[] \OT1/cmr/bx/n/7 LL-Former ar-chi-tec-ture\OT1/cm
+Underfull \hbox (badness 2111) in paragraph at lines 402--402
+[]\OT1/cmr/m/n/7 Figure 6: |[] \OT1/cmr/bx/n/7 LL-Former ar-chi-tec-ture\OT1/cm
 r/m/n/7 . The core de-sign of LL-Former in-cludes an [][][][][][] and a
  []
 
-[7]
-Overfull \hbox (20.61804pt too wide) in paragraph at lines 393--394
+
+Overfull \hbox (20.61804pt too wide) in paragraph at lines 417--418
 []\OT1/cmr/bx/n/10 Transformer\C70/rm/m/n/10/57 ( \C70/rm/m/n/10/56 þ \C70/rm/m
 /n/10/50 Ï \C70/rm/m/n/10/4f î \C70/rm/m/n/10/59 ^^M \C70/rm/m/n/10/4e - \C70/r
 m/m/n/10/5e ” \C70/rm/m/n/10/75 ( \C70/rm/m/n/10/76 „ \C70/rm/m/n/10/96 ¾ \C70/
@@ -973,44 +980,45 @@ Q$\C70/rm/m/n/10/54 Œ$\OML/cmm/m/it/10 K$\C70/rm/m/n/10/8b ¡ \C70/rm/m/n/10/7b
 0 C; H; W\OT1/cmr/m/n/10 )$\C70/rm/m/n/10/76 „
  []
 
+[8 <./picture/layer_normalization.png>]
 <picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GDFN).j
-pg, id=347, 1273.75874pt x 293.59688pt>
+pg, id=359, 1273.75874pt x 293.59688pt>
 File: picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GD
 FN).jpg Graphic file (type jpg)
 <use picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GDF
 N).jpg>
 Package pdftex.def Info: picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed
--forward_Network(GDFN).jpg  used on input line 403.
+-forward_Network(GDFN).jpg  used on input line 427.
 (pdftex.def)             Requested size: 469.75502pt x 108.27522pt.
-[8 <./picture/LLFormer_architecture.jpg>]
-<picture/Cross-layer_Attention_Fusion_Block.jpg, id=356, 1274.26062pt x 360.848
+ [9 <./picture/LLFormer_architecture.jpg> <./picture/Axis_based_Transformer_Blo
+ck_&_Dual_Gated_Feed-forward_Network(GDFN).jpg>]
+<picture/Cross-layer_Attention_Fusion_Block.jpg, id=366, 1274.26062pt x 360.848
 13pt>
 File: picture/Cross-layer_Attention_Fusion_Block.jpg Graphic file (type jpg)
 <use picture/Cross-layer_Attention_Fusion_Block.jpg>
 Package pdftex.def Info: picture/Cross-layer_Attention_Fusion_Block.jpg  used o
-n input line 438.
+n input line 462.
 (pdftex.def)             Requested size: 469.75502pt x 133.02167pt.
-<picture/Results_on_UHD-LOL.png, id=360, 688.07062pt x 288.57813pt>
+<picture/Results_on_UHD-LOL.png, id=370, 688.07062pt x 288.57813pt>
 File: picture/Results_on_UHD-LOL.png Graphic file (type png)
 <use picture/Results_on_UHD-LOL.png>
-Package pdftex.def Info: picture/Results_on_UHD-LOL.png  used on input line 466
+Package pdftex.def Info: picture/Results_on_UHD-LOL.png  used on input line 490
 .
 (pdftex.def)             Requested size: 469.75502pt x 197.01431pt.
-<picture/Results_on_LOL_and_MIT-Adobe_FiveK.png, id=361, 677.53125pt x 315.1775
+<picture/Results_on_LOL_and_MIT-Adobe_FiveK.png, id=371, 677.53125pt x 315.1775
 pt>
 File: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png Graphic file (type png)
 <use picture/Results_on_LOL_and_MIT-Adobe_FiveK.png>
 Package pdftex.def Info: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png  used o
-n input line 481.
+n input line 505.
 (pdftex.def)             Requested size: 469.75502pt x 218.53073pt.
- [9 <./picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(G
-DFN).jpg> <./picture/Cross-layer_Attention_Fusion_Block.jpg>] [10 <./picture/Re
-sults_on_UHD-LOL.png> <./picture/Results_on_LOL_and_MIT-Adobe_FiveK.png>] (./ma
-in.bbl
+ [10 <./picture/Cross-layer_Attention_Fusion_Block.jpg>] [11 <./picture/Results
+_on_UHD-LOL.png> <./picture/Results_on_LOL_and_MIT-Adobe_FiveK.png>]
+(./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [11] (./main.aux)
+) [12] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1018,13 +1026,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 19438947B38B4CF816CD68FF0F3DE064;1772.
  ) 
 Here is how much of TeX's memory you used:
- 19765 strings out of 476025
- 331438 string characters out of 5791521
+ 19786 strings out of 476025
+ 332000 string characters out of 5791521
  1884382 words of memory out of 5000000
- 39478 multiletter control sequences out of 15000+600000
+ 39495 multiletter control sequences out of 15000+600000
  578178 words of font info for 274 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,10n,80p,789b,539s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 78i,10n,80p,789b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
 imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows
 /Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
@@ -1087,10 +1095,10 @@ pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
 d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/So
 ft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/Soft/t
 exlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (11 pages, 2498298 bytes).
+Output written on main.pdf (12 pages, 2546269 bytes).
 PDF statistics:
- 835 PDF objects out of 1000 (max. 8388607)
- 576 compressed objects within 6 object streams
- 50 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 846 PDF objects out of 1000 (max. 8388607)
+ 585 compressed objects within 6 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 447 words of extra memory for PDF output out of 10000 (max. 10000000)
 

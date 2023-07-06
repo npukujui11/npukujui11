@@ -330,13 +330,13 @@
 	\begin{equation}
 		\begin{aligned}
 			& z = g \left( w,x \right)\\
-			& z^N = \left(\frac{z-\mu_z}{\sqrt{\sigma_z^2 + \epsilon}}\right) \cdot \gamma + \beta \\
-			& a = f(z^N) 
+			& BN(z_i) = \left(\frac{z_i-\mu_B}{\sqrt{\sigma_B^2 + \epsilon}}\right) \cdot \gamma + \beta \\
+			& a = f(BN(z_i)) 
 		\end{aligned}
 		\label{eq: cell output(BN)}
 	\end{equation}
 	
-	$z^N$是Batch normalization的输出，$\mu_z$是神经元输出的均值，$\sigma_z$是神经元输出的标准差，$\epsilon$是一个小的随机噪声（为了稳定性）。$\gamma$为尺度参数，$\beta$为位移参数，这两个参数可以从每一个epoch和其他参数（神经元权重）中学习得到\footnote{当我们在层上应用Batch normalization时，我们限制输入服从正态分布，这最终将限制网络的学习性能。为了解决这个问题，一般乘以尺度参数$\gamma$，并添加位移参数$\beta$。}。
+	$z_i$是Batch normalization的输出，$\mu_B$是神经元输出的均值，$\sigma_B$是神经元输出的标准差，$\epsilon$是一个小的随机噪声（为了稳定性）。$\gamma$为尺度参数，$\beta$为位移参数，这两个参数可以从每一个epoch和其他参数（神经元权重）中学习得到\footnote{当我们在层上应用Batch normalization时，我们限制输入服从正态分布，这最终将限制网络的学习性能。为了解决这个问题，一般乘以尺度参数$\gamma$，并添加位移参数$\beta$。}。
 	
 	Batch normalization的好处是：
 	
@@ -353,6 +353,30 @@
 		
 	\end{itemize}
 	
+	\paragraph{Layer normalization}
+	
+	Layer normalization在许多方面与 BN 是类似的，如Eq.\ref{eq: Layer normalization}，但是Layer normalization一般多用于循环架构中，如RNN结构。
+	
+	\begin{equation}
+		\begin{aligned}
+			LN = \left(\frac{z_i-\mu_L}{\sqrt{\sigma_L^2 + \epsilon}}\right) \cdot \gamma + \beta 
+		\end{aligned}
+		\label{eq: Layer normalization}
+	\end{equation}
+	
+	从Eq.\ref{eq: Layer normalization}中可以看出，Layer normalization作用于每层的每一个样本，其计算特定训练点的特定层的均值和方差。
+	
+	Layer normalization与 BN 有点不同， LN独立计算每层每个样本的均值和方差，然后使用这些计算值进行 LN 运算(Eq.\ref{eq: Layer normalization})。Layer normalization的过程如Fig.\ref{fig: Layer_normlization}所示，其在每个样本上计算均值和方差，而不是像BN在每个批次上计算均值和方差。
+	
+	\begin{figure}[htbp]
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		\includegraphics[width=0.6\columnwidth]{picture/layer_normalization}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Layer_normlization} For a given layer, the mean during LN will be NX1. We compute the mean and var for every single sample for each layer independently and then do the LN operations using those computed values.
+		}
+	\end{figure}
 	
 	\section{Paper reading}
 	
