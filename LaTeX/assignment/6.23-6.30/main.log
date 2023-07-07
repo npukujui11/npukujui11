@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  7 JUL 2023 11:08
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  7 JUL 2023 11:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -930,7 +930,7 @@ File: picture/word-embeding-2d.png Graphic file (type bmp)
 File: picture/LLFormer_architecture.jpg Graphic file (type bmp)
 <picture/LLFormer_architecture.jpg>
 
-Underfull \hbox (badness 1874) in paragraph at lines 538--538
+Underfull \hbox (badness 1874) in paragraph at lines 542--542
 []\TU/lmr/m/n/7 Figure 9: |[] \TU/lmr/bx/n/7 LLFormer architecture\TU/lmr/m/n/7
  . The core design of LLFormer includes an [][][][][][] and a
  []
@@ -940,9 +940,9 @@ File: picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GD
 FN).jpg Graphic file (type bmp)
 <picture/Axis_based_Transformer_Block_&_Dual_Gated_Feed-forward_Network(GDFN).j
 pg>
- [13]
 File: picture/Cross-layer_Attention_Fusion_Block.jpg Graphic file (type bmp)
 <picture/Cross-layer_Attention_Fusion_Block.jpg>
+ [13]
 File: picture/Results_on_UHD-LOL.png Graphic file (type bmp)
 <picture/Results_on_UHD-LOL.png>
 File: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png Graphic file (type bmp)
@@ -950,7 +950,7 @@ File: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png Graphic file (type bmp)
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 652.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 656.
 
 [14] [15] (./main.bbl
 
@@ -967,10 +967,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D081B4B710C279E861FFA6562FC9654C;2411.
  ) 
 Here is how much of TeX's memory you used:
- 20754 strings out of 476683
- 439777 string characters out of 5805371
- 1875012 words of memory out of 5000000
- 40624 multiletter control sequences out of 15000+600000
+ 20766 strings out of 476683
+ 440517 string characters out of 5805371
+ 1874012 words of memory out of 5000000
+ 40636 multiletter control sequences out of 15000+600000
  521033 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,10n,97p,790b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s

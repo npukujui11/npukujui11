@@ -263,6 +263,10 @@
 	
 	其中，$W_i^Q \in \mathbb{R}^{d_{model} \times d_q}$, $W_i^K \in \mathbb{R}^{d_{model} \times d_k}$, $W_i^V \in \mathbb{R}^{d_{model} \times d_v}$, $W^O \in \mathbb{R}^{hd_v \times d_{model}}$
 	
+	为什么要\textbf{multi-head attention}？
+	
+	Self-attention机制解决了传统序列模型再编码过程中都需要顺序进行的弊端（仅仅需要对原始输入进行几次矩阵变换便能够得到最终包含有不同位置注意力信息的编码向量），但Self-attention也存在缺陷：\textbf{模型在对当前位置的信息进行编码时，会过度的将注意力集中于自身的位置}，因此作者提出了通过多头注意力机制来解决这一问题。同时，使用多头注意力机制还能够给予注意力层的输出包含有不同子空间中的编码表示信息，从而增强模型的表达能力。
+	
 	\subsubsection{Layer normalization}
 	
 	\begin{itemize}
@@ -651,12 +655,18 @@
 	
 	\section{个人工作进展}
 	
+	\textcolor{red}{完成了对 Transformer 原始模型的介绍，了解核心模块自注意力机制和多头注意力机制，以及对 Transformer 的创新点有了比较系统的了解。}
+	
 	\subsection{思考}
 	
 	\begin{itemize}
 		\item [(1)] 以后的工作中如果有涉及可以尝试使用双门控来增强局部信息的提取能力，在有依据的情况下可以将注意力计算分解为多步，通过多步计算来控制计算量。
 		
 		\item [(2)] Self-attention Module 到底在 CV 能做什么？
+		
+		\textcolor{red}{本质上，Multi-head attention 机制就是分解成多个Self-attention机制，self-attention的特点在于无视词(token)之间的距离直接计算依赖关系，从而能够学习到序列的内部结构}
+		
+		\item [(3)] \textcolor{red}{}
 		
 	\end{itemize}
 
