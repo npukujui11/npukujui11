@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  7 JUL 2023 13:14
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  7 JUL 2023 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -952,11 +952,11 @@ File: picture/Results_on_LOL_and_MIT-Adobe_FiveK.png Graphic file (type bmp)
 LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
 (Font)              using `TU/SimSun(1)/m/n' instead on input line 656.
 
-[14] [15] (./main.bbl [16]
+[14] [15] (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [17] (./main.aux)
+) [16] [17] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
