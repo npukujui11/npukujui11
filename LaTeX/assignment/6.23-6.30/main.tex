@@ -655,16 +655,38 @@
 	
 	\section{个人工作进展}
 	
-	\textcolor{red}{完成了对 Transformer 原始模型的介绍，了解核心模块自注意力机制和多头注意力机制，以及对 Transformer 的创新点有了比较系统的了解。}
+	\textcolor{red}{完成了对 Transformer 原始模型的介绍，了解核心模块自注意力机制和多头注意力机制，以及对 Transformer 模型的创新点有了比较系统的了解。}
 	
 	\subsection{思考}
 	
 	\begin{itemize}
 		\item [(1)] 以后的工作中如果有涉及可以尝试使用双门控来增强局部信息的提取能力，在有依据的情况下可以将注意力计算分解为多步，通过多步计算来控制计算量。
 		
-		\item [(2)] Self-attention Module 到底在 CV 能做什么？
+		\item [(2)] Self-attention Module 到底在 CV 中能做什么？
 		
-		\textcolor{red}{本质上，Multi-head attention 机制就是分解成多个Self-attention机制，self-attention的特点在于无视词(token)之间的距离直接计算依赖关系，从而能够学习到序列的内部结构}
+		\textcolor{red}{本质上，Multi-head attention 机制就是分解成多个Self-attention机制，self-attention的特点在于无视词(token)之间的距离直接计算依赖关系，从而能够学习到序列的内部结构。基于这种能力，往CV方面拓展，主要体现在以下几个方面：}
+		
+		\textcolor{red}{\textbf{图像分类}：通过在卷积神经网络（CNN）中引入self-attention模块，可以帮助模型更好地捕捉图像中的重要区域和特征，提升图像分类的性能。Self-attention模块能够自动学习图像中不同位置之间的关联性，并为不同区域分配不同的注意力权重。}
+		
+		\textcolor{red}{\textbf{目标检测和定位}：在目标检测任务中，self-attention模块可以在不同尺度的特征图上应用，以更准确地定位和识别目标对象。它可以自动聚焦于目标对象的重要特征，并对背景区域进行抑制，从而提高检测和定位的准确性。}
+		
+		\textcolor{red}{\textbf{图像分割}：在语义分割和实例分割任务中，self-attention模块可以增强模型对图像中的局部和全局上下文信息的感知能力。通过学习像素之间的关系和相互作用，self-attention模块能够更好地理解图像的结构和语义，并生成更精确的分割结果。}
+		
+		\textcolor{red}{\textbf{图像生成}：在图像生成任务中，self-attention模块可以帮助生成更细节丰富、更真实的图像。通过对生成器的不同位置应用self-attention，模型可以更好地捕捉全局和局部之间的关联性，从而提高生成图像的质量和一致性。}
+		
+		\textcolor{red}{当涉及到计算机视觉(CV)中的 Transformer 模型时，以下三个方面需要考虑，尽管已经取得了一些进展，但仍然存在挑战：}
+		
+		\begin{itemize}
+			\item {}
+			\textcolor{red}{\textbf{计算效率}：目前 Transformer 模型在计算效率方面仍无法与 CNN 相媲美。由于图像和视频的信息量远大于文本数据，传统的 Transformer 模型在 CV 领域仍面临较高的计算开销。为了更好地适应 CV 数据，需要进一步研究和改进 CV 专用的 Transformer 结构。这是一个研究热点领域，预计未来会有更多相关工作涌现。}
+			
+			\item {}
+			\textcolor{red}{\textbf{应用设配}：除了对基础网络结构的改进外，进一步推动 Transformer 在 CV 领域的发展还需要在各个 CV 下游任务中取得成功。这意味着不仅仅是将 Transformer 替换 CNN 的骨干网络，还需要对 Transformer 进行更多应用适配。此外，还需要针对 CV 任务对 Transformer 进行专门的改进，以展示 Transformer 相较于 CNN 的优势之处。}
+			
+			\item {}
+			\textcolor{red}{\textbf{关键任务的突破}:尽管 Transformer 在许多 CV 任务上取得了成功，但仍有一些任务尚未完全克服。例如，在视频领域中，仍存在一些挑战，如人脸识别、识别和检测任务的准确率仍有提升空间。克服这些难题需要更深入的研究和创新。}
+		\end{itemize}	
+		
 		
 		\item [(3)] \textcolor{red}{}
 		
