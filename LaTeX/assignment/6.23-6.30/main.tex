@@ -222,8 +222,7 @@
 		
 		\item {}
 		
-		Value($V$)：Value表示被查询信息的向量。值向量用于根据注意力权重加权求和的方式来生成最终的上下文表示。
-		
+		Value($V$)：Value表示被查询信息的向量。值向量用于根据注意力权重加权求和的方式来生成最终的上下文表示。	
 	\end{itemize}
 			
 	在 Transformer 中，自注意力机制通过将查询向量与所有的键向量进行点积运算，然后将结果经过 softmax 归一化，得到注意力权重。这些注意力权重与对应的值向量进行加权求和，得到最终的上下文表示。
@@ -252,15 +251,17 @@
 	
 	什么是\textbf{multi-head attention}？
 	
-	如Fig.\ref{fig: Transformer_attention}(right)所示，作者发现将$Q,K,V$通过一个线性映射之后，分成 $h$ 份，对每一份进行 \textbf{scaled dot-product attention} 效果更好。然后，把各个部分的结果合并起来，再次经过线性映射，得到最终的输出。超参数 $h$ 表示的是 heads 数量\footnote{论文中的数量默认是8}。
+	如Fig.\ref{fig: Transformer_attention}(right)所示，作者发现将$Q,K,V$通过一个线性映射之后，分成 $h$ 份，对每一份进行 \textbf{scaled dot-product attention} 效果更好(其实就是将原始的输入序列进行多组的自注意力处理过程，然后再将每一组自注意力的结果拼接起来进行线性变换得到的输出结果。)然后，把各个部分的结果合并起来，再次经过线性映射，得到最终的输出。超参数 $h$ 表示的是 heads 数量\footnote{论文中的数量默认是8}。
 	
 	\begin{equation}
 		\begin{aligned}
 			& \textbf{MultiHead}(Q,K,V)=\textbf{Concat}(\textbf{head}_{1},\ldots,\textbf{head}_{h})W^{O}, \\
-			& \textbf{head}_{i} = \textbf{Attention}(QW_i^Q,KW_i^K,VW_i^V)
+			& \textbf{where head}_{i} = \textbf{Attention}(QW_i^Q,KW_i^K,VW_i^V)
 		\end{aligned}
 		\label{eq: Multi-head attention}
 	\end{equation}
+	
+	其中，$W_i^Q \in \mathbb{R}^{d_{model} \times d_q}$, $W_i^K \in \mathbb{R}^{d_{model} \times d_k}$, $W_i^V \in \mathbb{R}^{d_{model} \times d_v}$, $W^O \in \mathbb{R}^{hd_v \times d_{model}}$
 	
 	\subsubsection{Layer normalization}
 	
