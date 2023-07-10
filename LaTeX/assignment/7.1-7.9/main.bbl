@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock {\em Advances in neural information processing systems}, 30, 2017.
+
+\bibitem{wang2022ultrahighdefinition}
+Tao Wang, Kaihao Zhang, Tianrun Shen, Wenhan Luo, Bjorn Stenger, and Tong Lu.
+\newblock Ultra-high-definition low-light image enhancement: A benchmark and
+  transformer-based method, 2022.
+
+\end{thebibliography}
