@@ -15,10 +15,12 @@ Hugo Touvron, Matthieu Cord, Matthijs Douze, Francisco Massa, Alexandre
 \newblock In {\em International conference on machine learning}, pages
   10347--10357. PMLR, 2021.
 
-\bibitem{wang2022ultrahighdefinition}
-Tao Wang, Kaihao Zhang, Tianrun Shen, Wenhan Luo, Bjorn Stenger, and Tong Lu.
-\newblock Ultra-high-definition low-light image enhancement: A benchmark and
-  transformer-based method, 2022.
+\bibitem{li2023embedding}
+Chongyi Li, Chun-Le Guo, Man Zhou, Zhexin Liang, Shangchen Zhou, Ruicheng Feng,
+  and Chen~Change Loy.
+\newblock Embedding fourier for ultra-high-definition low-light image
+  enhancement.
+\newblock {\em arXiv preprint arXiv:2302.11831}, 2023.
 
 \bibitem{kolesnikov2020big}
 Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Joan Puigcerver, Jessica Yung,
@@ -33,12 +35,5 @@ Qizhe Xie, Minh-Thang Luong, Eduard Hovy, and Quoc~V Le.
 \newblock Self-training with noisy student improves imagenet classification.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
   pattern recognition}, pages 10687--10698, 2020.
-
-\bibitem{li2023embedding}
-Chongyi Li, Chun-Le Guo, Man Zhou, Zhexin Liang, Shangchen Zhou, Ruicheng Feng,
-  and Chen~Change Loy.
-\newblock Embedding fourier for ultra-high-definition low-light image
-  enhancement.
-\newblock {\em arXiv preprint arXiv:2302.11831}, 2023.
 
 \end{thebibliography}
