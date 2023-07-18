@@ -68,7 +68,7 @@
 \begin{document}
 	
 	
-	\title{\songti \zihao{4}7月1日-7月9日工作汇报}
+	\title{\songti \zihao{4}7月10日-7月16日工作汇报}
 	\author{\textrm{Ku Jui}}
 	\date{\textrm{July 2023}}
 	\maketitle
@@ -89,9 +89,21 @@
 	
 	\section{Pre-Knowledge}
 		
-	\subsection{Transformer \cite{vaswani2017attention}}
+	\subsection{Vision Tramsformer \cite{dosovitskiy2021image}}
 	
-	在Attention引入以前，seq2seq模型处理机器翻译task最大的问题就是由于对于长距离的信息不能有效的提取和记忆，导致了信息的大量丢失。即使在引入Attention之后，也会因为对关系的捕捉不足，而出现翻译效果不理想。因为在这样的翻译任务中，需要发现的关系有三种：
+	之前的算法大都是保持CNN整体结构不变，在CNN中增加attention模块或者使用attention模块替换CNN中的某些部分。ViT算法中，作者提出没有必要总是依赖于CNN，仅仅使用Transformer结构也能够在图像分类任务中表现很好。
+	
+	受到NLP领域中Transformer成功应用的启发，ViT算法中尝试将标准的Transformer结构直接应用于图像，并对整个图像分类流程进行最少的修改。具体来讲，ViT算法中，会将整幅图像拆分成小图像块，然后把这些小图像块的线性嵌入序列作为Transformer的输入送入网络，然后使用监督学习的方式进行图像分类的训练。ViT算法的整体结构如 图1 所示。
+	
+	\begin{figure}[htbp]
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		\includegraphics[width=0.8\columnwidth]{picture/Vision-Transformer-architecture}
+		%\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Vision Transformer} The Vision Transformer - model architecture.
+		}
+	\end{figure}
 	
 	\begin{itemize}
 		\item [(1)]
@@ -793,7 +805,7 @@
 			
 			%	\end{thebibliography}
 		
-		\bibliographystyle{unsrt}
+		%\bibliographystyle{unsrt}
 		\bibliography{reference}
 		
 		

@@ -13,87 +13,60 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{vaswani2017attention}
-\citation{wang2022ultrahighdefinition}
-\citation{vaswani2017attention}
+\citation{dosovitskiy2021image}
+\citation{touvron2021training}
+\citation{li2023embedding}
+\citation{dosovitskiy2021image}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Pre-Knowledge}{1}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Transformer \cite  {vaswani2017attention}}{1}{subsection.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}Idea}{2}{subsubsection.1.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.2}Architecture}{2}{subsubsection.1.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Encoder}{2}{figure.caption.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Decoder}{2}{figure.caption.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   The Transformer - model architecture. \relax }}{3}{figure.caption.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Vision Transformer \cite  {dosovitskiy2021image}}{1}{subsection.1.1}\protected@file@percent }
+\citation{kolesnikov2020big}
+\citation{xie2020self}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   The Vision Transformer - model architecture. \relax }}{2}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig: Transformer}{{1}{3}{The Transformer - model architecture. \relax }{figure.caption.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.3}Attention Mechanism}{4}{subsubsection.1.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Scaled dot-product attention}{4}{subsubsection.1.1.3}\protected@file@percent }
-\newlabel{eq: multiplicative attention}{{1}{4}{Scaled dot-product attention}{equation.1.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel. \relax }}{4}{figure.caption.2}\protected@file@percent }
-\newlabel{fig: Transformer_attention}{{2}{4}{(left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel. \relax }{figure.caption.2}{}}
-\newlabel{eq: Transformer_attention}{{2}{4}{Scaled dot-product attention}{equation.1.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Multi-head attention}{5}{equation.1.2}\protected@file@percent }
-\newlabel{eq: Multi-head attention}{{3}{5}{Multi-head attention}{equation.1.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.4}Layer normalization}{6}{subsubsection.1.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Batch normalization}{6}{equation.1.5}\protected@file@percent }
-\newlabel{eq: Batch normalization}{{6}{6}{Batch normalization}{equation.1.6}{}}
-\newlabel{eq: normalized_1}{{4}{6}{}{equation.1.4}{}}
-\newlabel{eq: normalized_2}{{5}{6}{}{equation.1.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   For a given layer, the mean during BN will be 1X. Each training data gets this mean subtracted from it and divided by $\sqrt  {(var + \epsilon )}$ and then shifted and scaled. To find the mean and var, we use all the examples in the training batch. \relax }}{7}{figure.caption.3}\protected@file@percent }
-\newlabel{fig: Batch_normlization}{{3}{7}{For a given layer, the mean during BN will be 1X. Each training data gets this mean subtracted from it and divided by $\sqrt {(var + \epsilon )}$ and then shifted and scaled. To find the mean and var, we use all the examples in the training batch. \relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   A conventional feedforward neural network. \relax }}{7}{figure.caption.4}\protected@file@percent }
-\newlabel{fig: Neural Network}{{4}{7}{A conventional feedforward neural network. \relax }{figure.caption.4}{}}
-\newlabel{eq: cell output}{{7}{8}{Batch normalization}{equation.1.7}{}}
-\newlabel{eq: cell output(BN)}{{8}{8}{Batch normalization}{equation.1.8}{}}
-\@writefile{toc}{\contentsline {paragraph}{Layer normalization}{8}{equation.1.8}\protected@file@percent }
-\newlabel{eq: Layer normalization}{{9}{8}{Layer normalization}{equation.1.9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.5}Mask}{8}{subsubsection.1.1.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   For a given layer, the mean during LN will be NX1. We compute the mean and var for every single sample for each layer independently and then do the LN operations using those computed values. \relax }}{9}{figure.caption.5}\protected@file@percent }
-\newlabel{fig: Layer_normlization}{{5}{9}{For a given layer, the mean during LN will be NX1. We compute the mean and var for every single sample for each layer independently and then do the LN operations using those computed values. \relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {paragraph}{Padding mask}{9}{subsubsection.1.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Sequence mask}{9}{subsubsection.1.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.6}Positional encoding}{9}{subsubsection.1.1.6}\protected@file@percent }
-\newlabel{eq: Positional encoding}{{10}{9}{Positional encoding}{equation.1.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces  Sequence mask. \relax }}{10}{figure.caption.6}\protected@file@percent }
-\newlabel{fig: subsequent mask}{{6}{10}{Sequence mask. \relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.7}Work embedding}{10}{subsubsection.1.1.7}\protected@file@percent }
-\newlabel{eq: Sum-to-product identities}{{11}{10}{}{equation.1.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Word embedding. \relax }}{11}{figure.caption.7}\protected@file@percent }
-\newlabel{fig: word embedding}{{7}{11}{Word embedding. \relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces  Embedding Later, words with similar meanings will be similar in vector space, and naturally have the effect after clustering, which is a kind of unsupervised learning. \relax }}{11}{figure.caption.8}\protected@file@percent }
-\newlabel{fig: word embeding 2d}{{8}{11}{Embedding Later, words with similar meanings will be similar in vector space, and naturally have the effect after clustering, which is a kind of unsupervised learning. \relax }{figure.caption.8}{}}
-\citation{wang2022ultrahighdefinition}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.8}Position-wise Feed-Forward network}{12}{subsubsection.1.1.8}\protected@file@percent }
-\newlabel{eq: Position-wise Feed-Forward network}{{12}{12}{Position-wise Feed-Forward network}{equation.1.12}{}}
-\newlabel{eq: Position-wise Feed-Forward network}{{13}{12}{Position-wise Feed-Forward network}{equation.1.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Paper reading}{12}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Ultra-High-Definition Low-Light Image Enhancement \cite  {wang2022ultrahighdefinition}}{12}{subsection.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Introduce}{12}{subsubsection.2.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Innovation}{12}{subsubsection.2.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces   \textbf  {LLFormer architecture}. The core design of LLFormer includes an \colorbox {yellow}{axis-based transformer block} and a \colorbox {yellow}{cross-layer attention fusion block}. In the former, \colorbox {yellow}{axis-based multi-head self-attention} performs self-attention on the height and width axis across the channel dimension sequentially to reduce the computational complexity, and a \colorbox {yellow}{dual gated feed-forward network} employs a gated mechanism to focus more on useful features. The cross-layer attention fusion block learns the attention weights of features in different layers when fusing them. \relax }}{13}{figure.caption.9}\protected@file@percent }
-\newlabel{fig: LLFormer architecture}{{9}{13}{\textbf {LLFormer architecture}. The core design of LLFormer includes an \colorbox {yellow}{axis-based transformer block} and a \colorbox {yellow}{cross-layer attention fusion block}. In the former, \colorbox {yellow}{axis-based multi-head self-attention} performs self-attention on the height and width axis across the channel dimension sequentially to reduce the computational complexity, and a \colorbox {yellow}{dual gated feed-forward network} employs a gated mechanism to focus more on useful features. The cross-layer attention fusion block learns the attention weights of features in different layers when fusing them. \relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{Axis-based Transformer Block}{13}{subsubsection.2.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Dual Gated Feed-forward Network(DGFN)}{13}{subsubsection.2.1.2}\protected@file@percent }
-\newlabel{eq: FFN}{{14}{13}{Dual Gated Feed-forward Network(DGFN)}{equation.2.14}{}}
-\newlabel{eq: DGFN}{{15}{13}{Dual Gated Feed-forward Network(DGFN)}{equation.2.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces   The architecture of our Axis-based Multi-head Self-Attention and Dual Gated Feed-Forward Network. From left to right, the components are Height Axis Multi-head Attention, Width Axis Multi-head Attention, and Dual Gated Feed-Forward Network. \relax }}{14}{figure.caption.10}\protected@file@percent }
-\newlabel{fig: Axis-based Transformer Block & Dual Gated Feed-forward Network(GDFN)}{{10}{14}{The architecture of our Axis-based Multi-head Self-Attention and Dual Gated Feed-Forward Network. From left to right, the components are Height Axis Multi-head Attention, Width Axis Multi-head Attention, and Dual Gated Feed-Forward Network. \relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{Cross-layer Attention Fusion Block}{14}{equation.2.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces   The architecture of the proposed Cross-layer Attention Fusion Block. This block efficiently integrates features from different layers with a layer correlation attention matrix. \relax }}{14}{figure.caption.11}\protected@file@percent }
-\newlabel{fig: Cross-layer_Attention_Fusion_Block}{{11}{14}{The architecture of the proposed Cross-layer Attention Fusion Block. This block efficiently integrates features from different layers with a layer correlation attention matrix. \relax }{figure.caption.11}{}}
-\newlabel{eq: DGFN}{{16}{14}{Cross-layer Attention Fusion Block}{equation.2.16}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Result}{14}{subsubsection.2.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}个人工作进展}{14}{section.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces   Benchmarking study on the UHD-LOL4K and UHD-LOL8K subsets. $\dag  $; $\ddag  $; $\S  $;$\triangle $ and ? indicate the traditional methods, supervised CNN-based methods, unsupervised CNN-based methods, zero-shot methods and transformer-based methods. The top three results are marked in red, blue and purple, respectively. Input \relax }}{15}{figure.caption.12}\protected@file@percent }
-\newlabel{fig: result_in_UHD-LOL}{{12}{15}{Benchmarking study on the UHD-LOL4K and UHD-LOL8K subsets. $\dag $; $\ddag $; $\S $;$\triangle $ and ? indicate the traditional methods, supervised CNN-based methods, unsupervised CNN-based methods, zero-shot methods and transformer-based methods. The top three results are marked in red, blue and purple, respectively. Input \relax }{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces   Comparison results on LOL and MIT-Adobe FiveK datasets in terms of PSNR, SSIM, LPIPS and MAE. The top three results are marked in red, blue and purple, respectively. Same as (Zamir et al. 2020), we consider images from expert C for the MIT-Adobe FiveK dataset. \relax }}{15}{figure.caption.13}\protected@file@percent }
-\newlabel{fig: result_in_LOL_and_MIT}{{13}{15}{Comparison results on LOL and MIT-Adobe FiveK datasets in terms of PSNR, SSIM, LPIPS and MAE. The top three results are marked in red, blue and purple, respectively. Same as (Zamir et al. 2020), we consider images from expert C for the MIT-Adobe FiveK dataset. \relax }{figure.caption.13}{}}
+\newlabel{fig: Vision Transformer}{{1}{2}{The Vision Transformer - model architecture. \relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   The comparison of the ViT model precision . \relax }}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: ViT precision}{{2}{2}{The comparison of the ViT model precision . \relax }{figure.caption.2}{}}
+\citation{touvron2021training}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}图像分块嵌入}{3}{subsubsection.1.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Data-efficient Image Transformer\cite  {touvron2021training}}{3}{subsection.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   Throughput and accuracy on Imagenet of our method (no external training data). The throughput is measured as the number of images processed per second on a V100 GPU. DeiT-B is identical to ViT-B, but with training adapted to a data-starving regime. It is learned in a few days on one machine. The symbol ⚗ refers to models trained with our transformer-specific distillation. See Table 5 for details and more models. \relax }}{4}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: DeiT accuracy}{{3}{4}{Throughput and accuracy on Imagenet of our method (no external training data). The throughput is measured as the number of images processed per second on a V100 GPU. DeiT-B is identical to ViT-B, but with training adapted to a data-starving regime. It is learned in a few days on one machine. The symbol ⚗ refers to models trained with our transformer-specific distillation. See Table 5 for details and more models. \relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}Network optimization method}{4}{subsubsection.1.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Distilling learning}{4}{subsubsection.1.2.1}\protected@file@percent }
+\newlabel{eq: distillation}{{1}{4}{Distilling learning}{equation.1.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Network structure}{4}{equation.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Our distillation procedure: we simply include a new distillation token. It interacts with the class and patch tokens through the self-attention layers. This distillation token is employed in a similar fashion as the class token, except that on output of the network its objective is to reproduce the (hard) label predicted by the teacher, instead of true label. Both the class and distillation tokens input to the transformers are learned by back-propagation. \relax }}{5}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: DeiT-network-structure}{{4}{5}{Our distillation procedure: we simply include a new distillation token. It interacts with the class and patch tokens through the self-attention layers. This distillation token is employed in a similar fashion as the class token, except that on output of the network its objective is to reproduce the (hard) label predicted by the teacher, instead of true label. Both the class and distillation tokens input to the transformers are learned by back-propagation. \relax }{figure.caption.4}{}}
+\citation{li2023embedding}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Paper reading}{6}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement \cite  {li2023embedding}}{6}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Why?}{6}{subsubsection.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Contribution}{6}{subsubsection.2.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Approach}{7}{subsubsection.2.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   Motivations. We observed that (a) luminance and noise can be ‘decomposed’ to a certain extent in the Fourier domain and (b) HR image and its LR versions share similar amplitude patterns. The amplitude and phase are produced by Fast Fourier Transform (FFT) and the compositional images are obtained by Inverse FFT(IFFT). For visualization, we show the amplitude and phase in imagery format with common transformations. Lines of the same color indicate a set of FFT/IFFT transforms. The red triangles mark the similar pattern (obviously different from the gray one). Zoom in for the details and noise. We show more examples and analysis in the Appendix. \relax }}{7}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: Motivations}{{5}{7}{Motivations. We observed that (a) luminance and noise can be ‘decomposed’ to a certain extent in the Fourier domain and (b) HR image and its LR versions share similar amplitude patterns. The amplitude and phase are produced by Fast Fourier Transform (FFT) and the compositional images are obtained by Inverse FFT(IFFT). For visualization, we show the amplitude and phase in imagery format with common transformations. Lines of the same color indicate a set of FFT/IFFT transforms. The red triangles mark the similar pattern (obviously different from the gray one). Zoom in for the details and noise. We show more examples and analysis in the Appendix. \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}Architecture}{7}{subsubsection.2.1.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   \textbf  {Overview of UHDFour.} Our approach consists of an LRNet and an HRDNet. The LRNet is an encoder-decoder network that produces 8 $\times $ downsampled result $\hat  {y}_{8}$ and the refined amplitude $A_{r}$ and phase $P_{r}$ features. We omit the skip connections for brevity. The HRNet contains an Adjustment Block and the upsampling operation, producing the final result $\hat  {y}$. Most computation is conducted in the LRNet. \relax }}{7}{figure.caption.6}\protected@file@percent }
+\newlabel{fig: UHDFour architecture}{{6}{7}{\textbf {Overview of UHDFour.} Our approach consists of an LRNet and an HRDNet. The LRNet is an encoder-decoder network that produces 8 $\times $ downsampled result $\hat {y}_{8}$ and the refined amplitude $A_{r}$ and phase $P_{r}$ features. We omit the skip connections for brevity. The HRNet contains an Adjustment Block and the upsampling operation, producing the final result $\hat {y}$. Most computation is conducted in the LRNet. \relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   Structures of the FouSpa Block (a) and Adjustment Block (b). \relax }}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: FouSpa and Adjustment}{{7}{8}{Structures of the FouSpa Block (a) and Adjustment Block (b). \relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}UHD-LL Dataset}{8}{subsubsection.2.1.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces   Samples from the proposed UHD-LL dataset. \relax }}{9}{figure.caption.8}\protected@file@percent }
+\newlabel{fig: UHD-LL}{{8}{9}{Samples from the proposed UHD-LL dataset. \relax }{figure.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  Comparison between classic LLIE datasets and our UHD-LL dataset. ‘Number’: the number of paired images. ‘Resolution’: the average resolution of the dataset. ‘Noise’: low-light images contain noise. ‘Real’: both low-light images and GT are acquired in real scenes.\relax }}{9}{table.caption.9}\protected@file@percent }
+\newlabel{tab: Datasets comparison}{{1}{9}{Comparison between classic LLIE datasets and our UHD-LL dataset. ‘Number’: the number of paired images. ‘Resolution’: the average resolution of the dataset. ‘Noise’: low-light images contain noise. ‘Real’: both low-light images and GT are acquired in real scenes.\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}个人工作进展}{9}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}思考}{9}{subsection.3.1}\protected@file@percent }
 \bibstyle{unsrt}
 \bibdata{reference}
-\bibcite{vaswani2017attention}{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}思考}{16}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}下周工作计划}{16}{section.4}\protected@file@percent }
-\bibcite{wang2022ultrahighdefinition}{2}
-\newlabel{LastPage}{{}{17}{}{page.17}{}}
-\xdef\lastpage@lastpage{17}
-\xdef\lastpage@lastpageHy{17}
-\gdef \@abspage@last{17}
+\bibcite{dosovitskiy2021image}{1}
+\bibcite{touvron2021training}{2}
+\bibcite{wang2022ultrahighdefinition}{3}
+\bibcite{kolesnikov2020big}{4}
+\bibcite{xie2020self}{5}
+\bibcite{li2023embedding}{6}
+\@writefile{toc}{\contentsline {section}{\numberline {4}下周工作计划}{10}{section.4}\protected@file@percent }
+\newlabel{LastPage}{{}{10}{}{page.10}{}}
+\xdef\lastpage@lastpage{10}
+\xdef\lastpage@lastpageHy{10}
+\gdef \@abspage@last{10}
