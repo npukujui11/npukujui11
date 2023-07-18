@@ -144,7 +144,7 @@
 	
 	ViT中具体实现方式为：将 $H \times W \times C$ 的图像，变为一个 $N \times \left( P^2 * C \right)$ 的序列。这个序列可以看作是一系列展平的图像块，也就是将图像切分成小块后，再将其展平。该序列中一共包含了 $N = \frac{HW}{P^2}$ 个图像块，每个图像块的维度则是 $\left(P^2 * C\right)$。其中 $P$ 是图像块的大小， $C$ 是通道数量。经过如上变换，就可以将 $N$ 视为sequence的长度了。
 
-	但是，此时每个图像块的维度是 $\left(P^2 * C\right)$ ，而我们实际需要的向量维度是 $D$，因此我们还需要对图像块进行 Embedding。Embedding 的方式相对简单，只需要对每个 $\left(P^2 * C\right)$ 的图像块做一个线性变换，将维度压缩为 $D$ 即可。
+	但是，此时每个图像块的维度是 $\left(P^2 * C\right)$ ，而实际需要的向量维度是 $D$，因此还需要对图像块进行 Embedding。Embedding 的方式相对简单，只需要对每个 $\left(P^2 * C\right)$ 的图像块做一个线性变换，将维度压缩为 $D$ 即可。
 	
 	上述对图像进行分块以及 Embedding 的具体方式如Fig.\ref{fig: Vision Transformer}所示。
 	
@@ -205,7 +205,7 @@
 		}
 	\end{figure}
 	
-	通过对比Fig.\ref{fig: DeiT-network-structure}与Fig.\ref{fig: Vision Transformer}中ViT的网络结构可以发现，DeiT 与 ViT 的主要差异在于引入 distillation token，顾名思义，其主要用于网络训练中的蒸馏学习。Distillation token 与 class token 很像，其在 self-attention layers 中会跟 class token 以及图像 patch 不断交互。而 distillation token 与 class token 唯一的区别在于，class token 的目标是跟真实的 label 一致，而 distillation token 是要跟蒸馏学习中教师网络预测的 label 一致。这个 distillation token 允许我们的模型从教师网络的输出中学习，就像在常规的蒸馏中一样，同时也作为一种对 class token 的补充。
+	通过对比Fig.\ref{fig: DeiT-network-structure}与Fig.\ref{fig: Vision Transformer}中ViT的网络结构可以发现，DeiT 与 ViT 的主要差异在于引入 distillation token，顾名思义，其主要用于网络训练中的蒸馏学习。Distillation token 与 class token 很像，其在 self-attention layers 中会跟 class token 以及图像 patch 不断交互。而 distillation token 与 class token 唯一的区别在于，class token 的目标是跟真实的 label 一致，而 distillation token 是要跟蒸馏学习中教师网络预测的 label 一致。这个 distillation token 允许模型从教师网络的输出中学习，就像在常规的蒸馏中一样，同时也作为一种对 class token 的补充。
 	
 	由于具有了 distillation token，因此在损失函数方面，DeiT 相较于 ViT 也有了一定的改变：
 	
@@ -258,7 +258,7 @@
 		\item {}
 			(1) 提出了一种 UHD LLIE 的新解决方案，灵感来自于在傅里叶域中观察到的独特特征。与现有的LLIE方法相比，所提出的框架在解决超高清环境下亮度增强和噪声去除的联合任务方面表现出了卓越的有效性和效率。
 		\item {}
-			(2) 我们贡献了第一个超高清 LLIE 数据集，该数据集包含 2150 对 4K 超高清低噪声/正常清晰数据，涵盖了不同的噪声和黑暗级别和场景。
+			(2) 贡献了第一个超高清 LLIE 数据集，该数据集包含 2150 对 4K 超高清低噪声/正常清晰数据，涵盖了不同的噪声和黑暗级别和场景。
 		\item {}
 			(3) 对现有的 UHD 数据 LLIE 方法进行了系统分析
 	\end{itemize}
