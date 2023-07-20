@@ -1,0 +1,71 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{dosovitskiy2021image}
+\citation{touvron2021training}
+\citation{li2023embedding}
+\citation{dosovitskiy2021image}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Pre-Knowledge}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Vision Transformer \cite  {dosovitskiy2021image}}{1}{subsection.1.1}\protected@file@percent }
+\citation{kolesnikov2020big}
+\citation{xie2020self}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   The Vision Transformer - model architecture. \relax }}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig: Vision Transformer}{{1}{2}{The Vision Transformer - model architecture. \relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   The comparison of the ViT model precision . \relax }}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: ViT precision}{{2}{2}{The comparison of the ViT model precision . \relax }{figure.caption.2}{}}
+\citation{touvron2021training}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}图像分块嵌入}{3}{subsubsection.1.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Data-efficient Image Transformer\cite  {touvron2021training}}{3}{subsection.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   Throughput and accuracy on Imagenet of our method (no external training data). The throughput is measured as the number of images processed per second on a V100 GPU. DeiT-B is identical to ViT-B, but with training adapted to a data-starving regime. It is learned in a few days on one machine. The symbol ⚗ refers to models trained with our transformer-specific distillation. See Table 5 for details and more models. \relax }}{4}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: DeiT accuracy}{{3}{4}{Throughput and accuracy on Imagenet of our method (no external training data). The throughput is measured as the number of images processed per second on a V100 GPU. DeiT-B is identical to ViT-B, but with training adapted to a data-starving regime. It is learned in a few days on one machine. The symbol ⚗ refers to models trained with our transformer-specific distillation. See Table 5 for details and more models. \relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}Network optimization method}{4}{subsubsection.1.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Distilling learning}{4}{subsubsection.1.2.1}\protected@file@percent }
+\newlabel{eq: distillation}{{1}{4}{Distilling learning}{equation.1.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Network structure}{4}{equation.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Our distillation procedure: we simply include a new distillation token. It interacts with the class and patch tokens through the self-attention layers. This distillation token is employed in a similar fashion as the class token, except that on output of the network its objective is to reproduce the (hard) label predicted by the teacher, instead of true label. Both the class and distillation tokens input to the transformers are learned by back-propagation. \relax }}{5}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: DeiT-network-structure}{{4}{5}{Our distillation procedure: we simply include a new distillation token. It interacts with the class and patch tokens through the self-attention layers. This distillation token is employed in a similar fashion as the class token, except that on output of the network its objective is to reproduce the (hard) label predicted by the teacher, instead of true label. Both the class and distillation tokens input to the transformers are learned by back-propagation. \relax }{figure.caption.4}{}}
+\citation{li2023embedding}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Paper reading}{6}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement \cite  {li2023embedding}}{6}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Why?}{6}{subsubsection.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Contribution}{6}{subsubsection.2.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Approach}{7}{subsubsection.2.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   Motivations. We observed that (a) luminance and noise can be ‘decomposed’ to a certain extent in the Fourier domain and (b) HR image and its LR versions share similar amplitude patterns. The amplitude and phase are produced by Fast Fourier Transform (FFT) and the compositional images are obtained by Inverse FFT(IFFT). For visualization, we show the amplitude and phase in imagery format with common transformations. Lines of the same color indicate a set of FFT/IFFT transforms. The red triangles mark the similar pattern (obviously different from the gray one). Zoom in for the details and noise. We show more examples and analysis in the Appendix. \relax }}{7}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: Motivations}{{5}{7}{Motivations. We observed that (a) luminance and noise can be ‘decomposed’ to a certain extent in the Fourier domain and (b) HR image and its LR versions share similar amplitude patterns. The amplitude and phase are produced by Fast Fourier Transform (FFT) and the compositional images are obtained by Inverse FFT(IFFT). For visualization, we show the amplitude and phase in imagery format with common transformations. Lines of the same color indicate a set of FFT/IFFT transforms. The red triangles mark the similar pattern (obviously different from the gray one). Zoom in for the details and noise. We show more examples and analysis in the Appendix. \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}Architecture}{7}{subsubsection.2.1.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   \textbf  {Overview of UHDFour.} Our approach consists of an LRNet and an HRDNet. The LRNet is an encoder-decoder network that produces 8 $\times $ downsampled result $\hat  {y}_{8}$ and the refined amplitude $A_{r}$ and phase $P_{r}$ features. We omit the skip connections for brevity. The HRNet contains an Adjustment Block and the upsampling operation, producing the final result $\hat  {y}$. Most computation is conducted in the LRNet. \relax }}{7}{figure.caption.6}\protected@file@percent }
+\newlabel{fig: UHDFour architecture}{{6}{7}{\textbf {Overview of UHDFour.} Our approach consists of an LRNet and an HRDNet. The LRNet is an encoder-decoder network that produces 8 $\times $ downsampled result $\hat {y}_{8}$ and the refined amplitude $A_{r}$ and phase $P_{r}$ features. We omit the skip connections for brevity. The HRNet contains an Adjustment Block and the upsampling operation, producing the final result $\hat {y}$. Most computation is conducted in the LRNet. \relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   Structures of the FouSpa Block (a) and Adjustment Block (b). \relax }}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: FouSpa and Adjustment}{{7}{8}{Structures of the FouSpa Block (a) and Adjustment Block (b). \relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}UHD-LL Dataset}{8}{subsubsection.2.1.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces   Samples from the proposed UHD-LL dataset. \relax }}{9}{figure.caption.8}\protected@file@percent }
+\newlabel{fig: UHD-LL}{{8}{9}{Samples from the proposed UHD-LL dataset. \relax }{figure.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  Comparison between classic LLIE datasets and our UHD-LL dataset. ‘Number’: the number of paired images. ‘Resolution’: the average resolution of the dataset. ‘Noise’: low-light images contain noise. ‘Real’: both low-light images and GT are acquired in real scenes.\relax }}{9}{table.caption.9}\protected@file@percent }
+\newlabel{tab: Datasets comparison}{{1}{9}{Comparison between classic LLIE datasets and our UHD-LL dataset. ‘Number’: the number of paired images. ‘Resolution’: the average resolution of the dataset. ‘Noise’: low-light images contain noise. ‘Real’: both low-light images and GT are acquired in real scenes.\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}个人工作进展}{9}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}思考}{9}{subsection.3.1}\protected@file@percent }
+\bibstyle{unsrt}
+\bibdata{reference}
+\bibcite{dosovitskiy2021image}{1}
+\bibcite{touvron2021training}{2}
+\bibcite{li2023embedding}{3}
+\bibcite{kolesnikov2020big}{4}
+\bibcite{xie2020self}{5}
+\@writefile{toc}{\contentsline {section}{\numberline {4}下周工作计划}{10}{section.4}\protected@file@percent }
+\newlabel{LastPage}{{}{10}{}{page.10}{}}
+\xdef\lastpage@lastpage{10}
+\xdef\lastpage@lastpageHy{10}
+\gdef \@abspage@last{10}
