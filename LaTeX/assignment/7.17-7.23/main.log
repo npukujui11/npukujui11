@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  5 AUG 2023 23:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  23 AUG 2023 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -904,22 +904,70 @@ TeX and DVIPDFMx (CTEX)
 nicode.sfd}) [1
 
 ]
-<picture/Vision-Transformer-architecture.png, id=227, 1199.48125pt x 603.25375p
-t>
-File: picture/Vision-Transformer-architecture.png Graphic file (type png)
-<use picture/Vision-Transformer-architecture.png>
-Package pdftex.def Info: picture/Vision-Transformer-architecture.png  used on i
-nput line 106.
-(pdftex.def)             Requested size: 375.80544pt x 189.00418pt.
-<picture/The ViT model precision.png, id=236, 1010.77625pt x 314.17375pt>
+<picture/LR.jpg, id=224, 140.525pt x 141.52875pt>
+File: picture/LR.jpg Graphic file (type jpg)
+<use picture/LR.jpg>
+Package pdftex.def Info: picture/LR.jpg  used on input line 107.
+(pdftex.def)             Requested size: 70.46037pt x 70.96288pt.
+<picture/linear.jpg, id=225, 140.525pt x 145.54375pt>
+File: picture/linear.jpg Graphic file (type jpg)
+<use picture/linear.jpg>
+Package pdftex.def Info: picture/linear.jpg  used on input line 112.
+(pdftex.def)             Requested size: 70.46037pt x 72.976pt.
+<picture/B-spline.jpg, id=226, 140.525pt x 145.54375pt>
+File: picture/B-spline.jpg Graphic file (type jpg)
+<use picture/B-spline.jpg>
+Package pdftex.def Info: picture/B-spline.jpg  used on input line 117.
+(pdftex.def)             Requested size: 70.46037pt x 72.976pt.
+<picture/3D-MRI-CNN.jpg, id=227, 140.525pt x 145.04187pt>
+File: picture/3D-MRI-CNN.jpg Graphic file (type jpg)
+<use picture/3D-MRI-CNN.jpg>
+Package pdftex.def Info: picture/3D-MRI-CNN.jpg  used on input line 122.
+(pdftex.def)             Requested size: 70.46037pt x 72.72435pt.
+<picture/GT-HR.jpg, id=228, 141.02687pt x 143.03438pt>
+File: picture/GT-HR.jpg Graphic file (type jpg)
+<use picture/GT-HR.jpg>
+Package pdftex.def Info: picture/GT-HR.jpg  used on input line 127.
+(pdftex.def)             Requested size: 70.46037pt x 71.46461pt.
+<picture/rain.jpg, id=240, 300.62312pt x 300.62312pt>
+File: picture/rain.jpg Graphic file (type jpg)
+<use picture/rain.jpg>
+Package pdftex.def Info: picture/rain.jpg  used on input line 148.
+(pdftex.def)             Requested size: 187.89914pt x 187.90274pt.
+<picture/people.jpg, id=241, 300.62312pt x 300.62312pt>
+File: picture/people.jpg Graphic file (type jpg)
+<use picture/people.jpg>
+Package pdftex.def Info: picture/people.jpg  used on input line 153.
+(pdftex.def)             Requested size: 187.89914pt x 187.90274pt.
+<picture/rain1.jpg, id=242, 414.04688pt x 300.62312pt>
+File: picture/rain1.jpg Graphic file (type jpg)
+<use picture/rain1.jpg>
+Package pdftex.def Info: picture/rain1.jpg  used on input line 158.
+(pdftex.def)             Requested size: 187.89914pt x 136.43051pt.
+<picture/people1.jpg, id=243, 414.54875pt x 300.62312pt>
+File: picture/people1.jpg Graphic file (type jpg)
+<use picture/people1.jpg>
+Package pdftex.def Info: picture/people1.jpg  used on input line 164.
+(pdftex.def)             Requested size: 187.89914pt x 136.26079pt.
+ [2{d:/Soft/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} 
+<./picture/LR.jpg> <./picture/linear.jpg> <./picture/B-spline.jpg> <./picture/3
+D-MRI-CNN.jpg> <./picture/GT-HR.jpg>] [3 <./picture/rain.jpg> <./picture/people
+.jpg> <./picture/rain1.jpg> <./picture/people1.jpg>]
+
+LaTeX Warning: Citation `kolesnikov2020big' on page 4 undefined on input line 1
+92.
+
+
+LaTeX Warning: Citation `xie2020self' on page 4 undefined on input line 192.
+
+<picture/The ViT model precision.png, id=291, 1010.77625pt x 314.17375pt>
 File: picture/The ViT model precision.png Graphic file (type png)
 <use picture/The ViT model precision.png>
 Package pdftex.def Info: picture/The ViT model precision.png  used on input lin
-e 136.
+e 198.
 (pdftex.def)             Requested size: 375.80544pt x 116.80814pt.
- [2{d:/Soft/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} 
-<./picture/Vision-Transformer-architecture.png>]
-Overfull \hbox (11.74622pt too wide) in paragraph at lines 148--149
+
+Overfull \hbox (11.74622pt too wide) in paragraph at lines 210--211
 []\C70/zhsong/bx/n/10/57 (\OT1/cmr/m/n/10 Transformer\C70/rm/m/n/10/7e ” \C70/r
 m/m/n/10/67 Ñ \C70/rm/m/n/10/4e -|\C70/rm/m/n/10/ff ^^L| \C70/rm/m/n/10/8f ì \C
 70/zhsong/bx/n/10/51 e \C70/rm/m/n/10/97 ^^@ \C70/rm/m/n/10/89 Å \C70/rm/m/n/10
@@ -933,91 +981,92 @@ C70/rm/m/n/10/4e :$\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N; D\OT1/cmr/m/n/10 )$|\C7
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 156.
+LaTeX Warning: Reference `fig: Vision Transformer' on page 4 undefined on input
+ line 216.
 
-[3 <./picture/The ViT model precision.png>]
-<picture/Accuracy.jpg, id=296, 671.00688pt x 631.35875pt>
+[4 <./picture/The ViT model precision.png>]
+<picture/Accuracy.jpg, id=322, 671.00688pt x 631.35875pt>
 File: picture/Accuracy.jpg Graphic file (type jpg)
 <use picture/Accuracy.jpg>
-Package pdftex.def Info: picture/Accuracy.jpg  used on input line 175.
+Package pdftex.def Info: picture/Accuracy.jpg  used on input line 237.
 (pdftex.def)             Requested size: 234.8775pt x 220.99814pt.
- [4 <./picture/Accuracy.jpg>]
-<picture/DeiT-network-structure.jpg, id=313, 247.92625pt x 321.2pt>
+<picture/DeiT-network-structure.jpg, id=326, 247.92625pt x 321.2pt>
 File: picture/DeiT-network-structure.jpg Graphic file (type jpg)
 <use picture/DeiT-network-structure.jpg>
 Package pdftex.def Info: picture/DeiT-network-structure.jpg  used on input line
- 206.
+ 268.
 (pdftex.def)             Requested size: 234.8775pt x 304.29527pt.
 
-[5 <./picture/DeiT-network-structure.jpg>]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 239.
+LaTeX Warning: Reference `fig: Vision Transformer' on page 5 undefined on input
+ line 275.
 
-[6]
-<picture/Motivations.jpg, id=336, 458.21187pt x 127.97812pt>
+[5] [6 <./picture/Accuracy.jpg>] [7 <./picture/DeiT-network-structure.jpg>]
+<picture/Motivations.jpg, id=353, 458.21187pt x 127.97812pt>
 File: picture/Motivations.jpg Graphic file (type jpg)
 <use picture/Motivations.jpg>
-Package pdftex.def Info: picture/Motivations.jpg  used on input line 276.
+Package pdftex.def Info: picture/Motivations.jpg  used on input line 338.
 (pdftex.def)             Requested size: 375.80544pt x 104.96616pt.
-<picture/UHDFour-architecture.jpg, id=339, 451.18562pt x 118.4425pt>
+<picture/UHDFour-architecture.jpg, id=356, 451.18562pt x 118.4425pt>
 File: picture/UHDFour-architecture.jpg Graphic file (type jpg)
 <use picture/UHDFour-architecture.jpg>
-Package pdftex.def Info: picture/UHDFour-architecture.jpg  used on input line 2
-90.
+Package pdftex.def Info: picture/UHDFour-architecture.jpg  used on input line 3
+52.
 (pdftex.def)             Requested size: 375.80544pt x 98.65965pt.
- [7 <./picture/Motivations.jpg>]
-<picture/FouSpa-and-Adjustment.jpg, id=353, 362.35374pt x 136.00812pt>
+
+[8] [9 <./picture/Motivations.jpg> <./picture/UHDFour-architecture.jpg>]
+<picture/FouSpa-and-Adjustment.jpg, id=371, 362.35374pt x 136.00812pt>
 File: picture/FouSpa-and-Adjustment.jpg Graphic file (type jpg)
 <use picture/FouSpa-and-Adjustment.jpg>
 Package pdftex.def Info: picture/FouSpa-and-Adjustment.jpg  used on input line 
-308.
+370.
 (pdftex.def)             Requested size: 375.80544pt x 141.05908pt.
-<picture/Dataset.jpg, id=356, 387.4475pt x 223.83624pt>
+<picture/Dataset.jpg, id=374, 387.4475pt x 223.83624pt>
 File: picture/Dataset.jpg Graphic file (type jpg)
 <use picture/Dataset.jpg>
-Package pdftex.def Info: picture/Dataset.jpg  used on input line 326.
+Package pdftex.def Info: picture/Dataset.jpg  used on input line 388.
 (pdftex.def)             Requested size: 234.8775pt x 135.69629pt.
- [8 <./picture/UHDFour-architecture.jpg> <./picture/FouSpa-and-Adjustment.jpg>]
- [9 <./picture/Dataset.jpg>] (./main.bbl)
-[10] 
+
+[10 <./picture/FouSpa-and-Adjustment.jpg>] [11 <./picture/Dataset.jpg>]
+(./main.bbl) [12] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AD759D76F0909B33F16AA3BBD4F0CFB4;2387.
+(rerunfilecheck)             Checksum: DB3E90DE448DE74D90BE76E3E5EA0E48;2164.
  ) 
 Here is how much of TeX's memory you used:
- 20024 strings out of 476025
- 335278 string characters out of 5791521
- 1883382 words of memory out of 5000000
- 39773 multiletter control sequences out of 15000+600000
- 570563 words of font info for 247 fonts, out of 8000000 for 9000
+ 20272 strings out of 476025
+ 339672 string characters out of 5791521
+ 1897382 words of memory out of 5000000
+ 39978 multiletter control sequences out of 15000+600000
+ 578432 words of font info for 276 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,16n,80p,1232b,539s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 78i,16n,80p,1232b,610s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
+imsun.ttc
 
 pdfTeX warning: pdflatex.exe (file c:/Windows/Fonts/simsun.ttc): subfont unison
 g26: wrong mapping: character 151 --> 0x2697 --> .notdef
 ><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
-msun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/
-Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
-Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.
-ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts
-/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
-ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
-c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
-un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
+msun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/
+Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/
+Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
+ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts
+/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windo
+ws/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><
+c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simh
+ei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
 nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
-ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.tt
-f><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
-imhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
-/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
-.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
-s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
+ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
+c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
+imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
+/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
+/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
+.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Font
+s/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Wind
 ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
 sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
@@ -1026,41 +1075,46 @@ indows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.t
 tc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/
 simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
 s/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
-:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhe
-i.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
-ts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Win
-dows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf
-><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
-msun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/
-Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/
-Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
-ttc><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/
-Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><d:/Soft/
-texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/Soft/texl
-ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/Soft/texlive/
-2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><d:/Soft/texlive/2023/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:/Soft/texlive/2023/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/Soft/texlive/2023/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/Soft/texlive/2023/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr5.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.p
-fb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d
-:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/Sof
-t/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/Soft/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><d:/Soft/texlive
-/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/Soft/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/Soft/texli
-ve/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><d:/Soft/texlive/20
-23/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (10 pages, 1874269 bytes).
+:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
+n.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
+ts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Win
+dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
+><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
+mhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/
+Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
+Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.
+ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
+/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
+ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
+c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/Soft/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Soft/texlive/2023/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/Soft/texlive/2023/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/Soft/texlive/2023/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi5.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5
+.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Sof
+t/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><d:/Soft/texlive/20
+23/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Soft/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/Soft/texlive/2023/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/Soft/texlive/2023/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmtt8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/
+public/cm-super/sfrm0800.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1000.pfb>
+Output written on main.pdf (12 pages, 2054777 bytes).
 PDF statistics:
- 785 PDF objects out of 1000 (max. 8388607)
- 536 compressed objects within 6 object streams
+ 827 PDF objects out of 1000 (max. 8388607)
+ 557 compressed objects within 6 object streams
  46 named destinations out of 1000 (max. 500000)
- 465 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 513 words of extra memory for PDF output out of 10000 (max. 10000000)
 

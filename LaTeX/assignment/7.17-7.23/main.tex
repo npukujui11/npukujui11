@@ -97,21 +97,81 @@
 	
 	\textbf{遥感成像领域。}卫星遥感具有持续时间长、覆盖面积广、实时性强、不受地城限制等优点，被广泛应用于环境监测、灾害预警与救授、资源开发、地域变化分析等领域。然而，在使用卫星和无人机进行遥感图像采集的过程中，受大气扰动、光照条件、成像系统的物理极限以及卫星、无人机等平台震颤等因素彤响，釆集得到的图像包含各类降质问题，增加了后续处理的难度，制约了遥感图像的应用。低质图像重建技术能够对遥感图像进行分辨率增强，移除图像中的降质因素，从而提升遥感图像的质量，便于后续分析与处理。
 	
-	\textbf{医学影像成像领域。}近几十年来，医学影像技术取得了迅速的发展。X射线、CT、超声、核磁共振等技术在临床上得到了广泛应用。其中，核磁共振的成像原理是利用共振效应，从人体中获取电磁信号，并根据这些信号绘制出人体信息。但是，核磁共振图像的成像分辨率受到许多因素的制约，比如信噪比、患者进行图像扫描时的舒适程度、硬件条件、扫描时间等。因此，扫描得到的图像可能出现分辨率不足的问题。同时，仅对人体的一个断层进行扫描，并不能获得所有信息。通过低质医学图像的复原重建技术，可以根据采集到的多张低分辨率扫描图像重建出高分辨率图像，从而恢复出完整的组织细节，为医生提供更好的诊断依据。
+	\textbf{医学影像成像领域。}近几十年来，医学影像技术取得了迅速的发展。X射线、CT、超声、核磁共振等技术在临床上得到了广泛应用。其中，核磁共振的成像原理是利用共振效应，从人体中获取电磁信号，并根据这些信号绘制出人体信息。但是，核磁共振图像的成像分辨率受到许多因素的制约，比如信噪比、患者进行图像扫描时的舒适程度、硬件条件、扫描时间等。因此，扫描得到的图像可能出现分辨率不足的问题。同时，仅对人体的一个断层进行扫描，并不能获得所有信息。通过低质医学图像的复原重建技术，可以根据采集到的多张低分辨率扫描图像重建出高分辨率图像，从而恢复出完整的组织细节，为医生提供更好的诊断依据。如Fig. \ref{fig: Super resolution reconstruction}所示，超分辨率重建填补了核磁共振扫描图像中的细节。
 	
-	\textbf{消费电子领域。}
-	
-	
-	\begin{figure}[htbp]
+	    \begin{figure}[htbp] 
 		% read manual to see what [ht] means and for other possible options
 		\centering 
-		\includegraphics[width=0.8\columnwidth]{picture/Vision-Transformer-architecture}
-		%\captionsetup{font=scriptsize}
+		
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/LR}
+			\captionsetup{font=scriptsize}
+			\label{fig:LR input}
+		\end{subfigure}
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/linear}
+			\captionsetup{font=scriptsize}
+			\label{fig: Linear}
+		\end{subfigure}
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/B-spline}
+			\captionsetup{font=scriptsize}
+			\label{fig: B-spline}	
+		\end{subfigure}
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/3D-MRI-CNN}
+			\captionsetup{font=scriptsize}
+			\label{fig: 3D MRI CNN}
+		\end{subfigure}
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/GT-HR}
+			\captionsetup{font=scriptsize}
+			\label{fig: GT HR}
+		\end{subfigure}
+		\captionsetup{font=scriptsize}
 		\caption{
-			\label{fig: Vision Transformer} The Vision Transformer - model architecture.
+			\label{fig: Super resolution reconstruction}
+			超分辨率重建在核磁共振成像中的应用 \cite{McDonagh_2017}
 		}
-	\end{figure}
+	    \end{figure}
 	
+	\textbf{消费电子领域。}近十年来，新兴多媒体应用快速发展，低质图像、视频重建技术在消费电子领城的应用呈现井喷之势，例如老照片的划痕和折痕去除、污渍或空白区域填充、视频中遮挡物的移除、黑白老照片的彩色化、数字照相机内的自动光照调整和噪声去除、相机内针对拍摄时延以及抖动的去模糊复原等。随着高清电视(high drtniion tolerision， HDTV)的大规模推广使用以及虚拟现实技术实用化的发展，一方面，现有的视顿播放片源仅有少部分能生满足高清电视的播放要求，另一方面，现有的带宽资源很难在分辨率上满足沉浸式体验的需求。因此，一个有效的解决途径是在客户端通过低质视频重建技术复原解码出高清图像，或根据多个视角的低分辨率图像，融合得到高清图像，并移除其他降质因素的影响。
+	
+	\textbf{室外监控领域。}随着智慧城市的不断发展，室外监控逐渐覆盖公共生活的方方面面。然而，由于室外拍摄环境较为复杂，监控视频会受到各种各样降质因素的影响，比如雨天拍摄的视频中雨点对背景的遮挡、大雾天气下能见度的降低、低光照环境下大量物体信号的丢失、雨雾环境下大量物体细节的丢失等。这些因素对后续的人工分析和计算机视觉应用造成了障得。而使用低质图像、视频重建技术对这些因素进行移除，能够提升图像、视频的能见度，增强高频细节，便于后续处理与分析。如Fig.\ref{fig: Rainy image marks}所示，对雨天图像进行雨痕去除，能够提升图像的视觉质量，并使图像识别结果变得正确。
+	
+		\begin{figure}[htbp] 
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		% \includegraphics[width=0.8\columnwidth]{GLADNet}
+		
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=\linewidth]{picture/rain}
+			\captionsetup{font=scriptsize}
+			\label{fig:rain}
+		\end{subfigure}
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=\linewidth]{picture/people}
+			\captionsetup{font=scriptsize}
+			\label{fig:people}
+		\end{subfigure}\\
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=\linewidth]{picture/rain1}
+			\captionsetup{font=scriptsize}
+			\caption{有雨图像输入}
+			\label{fig:rain1}	
+		\end{subfigure}
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=\linewidth]{picture/people1}
+			\captionsetup{font=scriptsize}
+			\caption{去雨结果}
+			\label{fig:people1}
+		\end{subfigure}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Rainy image marks}
+			雨天图像雨痕去除结果 \cite{yang2017deep}
+		}
+	    \end{figure}
 	
 	该算法在中等规模（例如ImageNet）以及大规模（例如ImageNet-21K、JFT-300M）数据集上进行了实验验证，发现：
 	
@@ -155,7 +215,7 @@
 	
 	上述对图像进行分块以及 Embedding 的具体方式如Fig.\ref{fig: Vision Transformer}所示。
 	
-	\subsection{Data-efficient Image Transformer\cite{touvron2021training}}
+	\subsection{Follow-up specific work}
 	
 	ViT 算法要想要获得一个较好的指标，需要先使用 JFT-300 或者 ImageNet-21K 这样的超大规模数据集进行预训练\footnote{JFT-300 和 ImageNet-21K 是两个大规模的图像数据集，一般用于图像分类。
 	\begin{itemize}
@@ -238,7 +298,7 @@
 	
 	\section{Paper reading}
 	
-	\subsection{Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement \cite{li2023embedding}}
+	\subsection{Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement}
 	
 	本文\footnote{Submitted on 23 Feb 2023}重点研究了图像恢复中最具挑战性的任务之一，即微光图像增强(LLIE)，该任务需要联合增强亮度并去除传感器和昏暗环境引起的固有噪声，并通过要求在超高清状态下进行高效处理来提高难度。
 	该文提出了UHD LLIE的新解决方案，灵感来自于在傅里叶域中观察到的独特特征。

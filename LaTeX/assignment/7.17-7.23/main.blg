@@ -3,44 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: reference.bib
-You've used 5 entries,
+Warning--I didn't find a database entry for "kolesnikov2020big"
+Warning--I didn't find a database entry for "xie2020self"
+You've used 2 entries,
             1791 wiz_defined-function locations,
-            472 strings with 4941 characters,
-and the built_in function-call counts, 1895 in all, are:
-= -- 159
-> -- 118
-< -- 3
-+ -- 41
-- -- 36
-* -- 128
-:= -- 281
-add.period$ -- 16
-call.type$ -- 5
-change.case$ -- 5
+            458 strings with 4036 characters,
+and the built_in function-call counts, 659 in all, are:
+= -- 50
+> -- 46
+< -- 1
++ -- 16
+- -- 14
+* -- 45
+:= -- 106
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 84
-empty$ -- 159
-format.name$ -- 36
-if$ -- 437
+cite$ -- 2
+duplicate$ -- 27
+empty$ -- 57
+format.name$ -- 14
+if$ -- 148
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 4
-newline$ -- 27
-num.names$ -- 5
-pop$ -- 28
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 12
+num.names$ -- 2
+pop$ -- 13
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 63
+skip$ -- 18
 stack$ -- 0
-substring$ -- 128
-swap$ -- 43
-text.length$ -- 3
+substring$ -- 32
+swap$ -- 11
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 14
-width$ -- 6
-write$ -- 55
+while$ -- 5
+width$ -- 3
+write$ -- 22
+(There were 2 warnings)
