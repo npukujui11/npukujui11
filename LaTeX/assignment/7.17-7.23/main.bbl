@@ -13,4 +13,19 @@ Wenhan Yang, Robby~T. Tan, Jiashi Feng, Jiaying Liu, Zongming Guo, and
   Shuicheng Yan.
 \newblock Deep joint rain detection and removal from a single image, 2017.
 
+\bibitem{Lv2018MBLLEN}
+Jianhua~Wu Feifan~Lv, Feng~Lu and Chongsoon Lim.
+\newblock Mbllen: Low-light image/video enhancement using cnns.
+\newblock {\em British Machine Vision Conference}, 2018.
+
+\bibitem{chen2018learning}
+Chen Chen, Qifeng Chen, Jia Xu, and Vladlen Koltun.
+\newblock Learning to see in the dark, 2018.
+
+\bibitem{4767851}
+John Canny.
+\newblock A computational approach to edge detection.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  PAMI-8(6):679--698, 1986.
+
 \end{thebibliography}
