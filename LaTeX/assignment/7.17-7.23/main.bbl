@@ -13,6 +13,12 @@ Wenhan Yang, Robby~T. Tan, Jiashi Feng, Jiaying Liu, Zongming Guo, and
   Shuicheng Yan.
 \newblock Deep joint rain detection and removal from a single image, 2017.
 
+\bibitem{10.1145/1836845.1836920}
+Xuan Dong, Yi~(Amy) Pang, and Jiangtao~(Gene) Wen.
+\newblock Fast efficient algorithm for enhancement of low lighting video.
+\newblock In {\em ACM SIGGRAPH 2010 Posters}, SIGGRAPH '10, New York, NY, USA,
+  2010. Association for Computing Machinery.
+
 \bibitem{Lv2018MBLLEN}
 Jianhua~Wu Feifan~Lv, Feng~Lu and Chongsoon Lim.
 \newblock Mbllen: Low-light image/video enhancement using cnns.

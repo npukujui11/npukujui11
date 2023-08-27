@@ -230,9 +230,66 @@
 		
 		其中， $r_k$ 表示第 $k$ 级灰度值，$n_k$表示图像中第 $k$ 级灰度值所对应的像素个数，$n$ 表示图像中的所有像素总数。显然，有 $\sum_{k} P(r_k)=1$。直方图均衡化是指存在一个变换函数 $s=T(r), 0 \leqslant r \leqslant 1$，能够将灰度级 $r$ 转化为灰度级 $s$。$T(r)$满足以下两个条件： 首先，$T(r)$ 在区间 $[0, 1]$ 上为单射函数且单调递增； 其次， $T(r) \in [0, 1]$ 。$T(r)$ 是单射函数保证了直方图均衡化存在反变换，而其单调递增的性质保证了变化后的图像与原图像之间存在保序性，以防变换后图像发生黑白颠倒。
 		
+		这样，一幅图像的灰度即视为 $[0,1]$ 上的随机变量，用 $p_r(r)$ 和 $p_s(s)$ 表示随机变量 $r$ 与 $s$的概率密度函数，那么，直方图均衡化即将 $T(r)$ 表示如下: $$s = T(r) = \int_{0}^{r} p_r(w) \mathrm{d}w$$ 可以证得，通过 $T(r)$ 的转化，有 $p_s(s) = 1$ ，即转换后的像素值在 $[0, 1]$ 上均匀分布。这时基于直方图变换的保序性，有 $$\int_{0}^{n} p_r(r) \mathrm{d}r = \int_{0}^{T(n)} p_s(s) \mathrm{d}s$$ 从而有： $$\frac{\mathrm{d}s}{\mathrm{d}r} = \frac{\mathrm{d}T(r)}{\mathrm{d}r} = p_r(r)$$ 代入上式，可得： $$p_s(s) = 1$$ 
+		
+		直方图均衡化的方法非常快速有效，并且是一个可逆操作，但缺点在于其不加选择地处理数据，可能增加背景噪声的对比度，同时降低有用的图像内容的对比度，导致视觉效果欠佳。此外，该方法也无法适用于复杂多变的低光照场景。
+		
 		\subsection{基于图像反相的方法}
 		
+		\begin{figure}[htbp] 
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			% \includegraphics[width=0.8\columnwidth]{GLADNet}
+			
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/LL input}
+				\captionsetup{font=scriptsize}
+				\label{fig: LL input}
+			\end{subfigure}
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/Inversed}
+				\captionsetup{font=scriptsize}
+				\label{fig: Inversed}
+			\end{subfigure}
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/marked image}
+				\captionsetup{font=scriptsize}
+				\label{fig: marked image}	
+			\end{subfigure}
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/de-haze}
+				\captionsetup{font=scriptsize}
+				\label{fig: de-haze}
+			\end{subfigure}
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/Final output}
+				\captionsetup{font=scriptsize}
+				\label{fig: Final output}
+			\end{subfigure}
+			\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Image Inverse}
+				(a) low lighting video input I. (b) inverted result R from input I. (c) marked image: pixels with low intensity in at least one
+				color (RGB) channel are in green. (d) de-haze output J using equation (7). (e) final output E after inverting image J.
+			}
+		\end{figure}
+		
+		基于图像反相的方法\cite{10.1145/1836845.1836920}利用低光照图像的反相\footnote{图像反相 (Image reverse phase) 就是图像的颜色色相反转。以前照相机的底片就是打印后的照片的反相。比如黑变白，蓝变黄、红变绿。对灰度级范围为 $[0 , L-1]$ 的一幅图像进行反转的操作为：$s = L - 1 - r$ 其中$r$和$s$分别代表处理前后的像素值。使用这种方式反转一幅图像的灰度级，可得到等效的照片底片。这种类型的处理特别适用于增强嵌入在一幅图像的暗区域中的白色和灰色细节，特别是当黑色面积在尺寸上占主导地位时}与有雾图像的相似性，通过对低光照图像反相进行去雾后再次进行反相，得到最终的低光照增强效果。在图像反相中，对于动态范围为 $[ 0, 255]$ 的图像，其反相图像 $\mathbf{R}$ 为： 
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{R}^c (x) = 255 - \mathbf{I}^c(x)
+			\end{aligned}
+			\label{eq: Image Reverse}
+		\end{equation}
+		
+		其中，$c$ 为 \textbf{RGB} 颜色通道。大多数有雾图像符合暗通道先验，其特点是对于背景及天空等区域，\textbf{RGB} 3个通道的像素值都很高，而其他区域至少有一个通道的像素值较低，作者发现低光照图像的反相也具有同样特点。如Fig. \ref{fig: Image Inverse}
+		
+		基于图像反相的方法虽然运算速度很快，但需要基于低光照图像反相与有雾图像相似这一前提，而改前提始终是统计意义上的，无法得出二者之间更本质的联系，因而限制了这一方法的继续发展。由于没有考虑低光照图像的结构信息，因此该类方法还常常导致增强结构出现明显的黑边。
+		
 		\subsection{Retinex模型}
+		
+		
 	
 	\section{Modern Low-Light Image Enhancement Method}
 		
@@ -533,38 +590,41 @@
 %		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
 %	\end{table}
 	
-	\section{Unity VR 开发计划}
+	\part{Unity VR 开发计划}
 	
-	\subsection{环境配置}
-	
-	\begin{itemize}
-		\item [(1)] 
-		Unity 2019.4.28f1c1 及以上版本。
-		
-		\item [(2)]
-		采用 Unity 3D 引擎，采用 Open XR 和 Steam VR 拓展包\footnote{Unity 3D 支持创建 3D 和 2D 游戏以及其他交互式内容。Unity VR 则是 Unity 3D 的一个扩展，它支持开发虚拟现实（VR）应用程序。Unity VR 提供了一系列工具和功能，可以帮助开发人员创建沉浸式的 VR 体验。}。
-	\end{itemize}
+		\section{环境配置}
 
-	\subsection{开发计划}
-	
-		\subsubsection{模拟海洋水系统}
-	
-		构建海洋水系统，该水系统可有模拟波浪和泡沫效果，可以实现水体运动，模拟浮力，且需能够同时渲染多个摄像机（VR 开发）。同时，该水系统可以模拟光传输，包括反射、折射、散射、焦散近似、阴影。此外，光散射和波浪衰减也需要实现。
-		
 		\begin{itemize}
 			\item [(1)] 
-			在 Unity VR 开发中，使用 Shader Graph 和 Particle System 等工具来构建一个具有不同天气和波浪的海洋水系统。一种常用的方法是使用 Unity 的 Shader Graph 来创建一个动态的海洋水面材质，在 Shader Graph 中定义不同的参数，例如波浪高度、波浪速度和波浪方向等，然后使用脚本来动态控制这些参数，以实现不同天气下海洋水面的变化。
-		
+			Unity 2019.4.28f1c1 及以上版本。
+			
 			\item [(2)]
-			Unity 商店中有许多现成的插件和资源包，可以帮助您快速实现海洋水系统。但存在一个很大的问题，\textcolor{red}{很多 packages 不支持同时渲染多个摄像机，这说明这些包往往不适应 VR 项目，因此需要对这些 Assets 进行移植。} 所以，这里关注的重点可以在如何移植上，或是如何让该包支持渲染多摄像机。 
+			采用 Unity 3D 引擎，采用 Open XR 和 Steam VR 拓展包\footnote{Unity 3D 支持创建 3D 和 2D 游戏以及其他交互式内容。Unity VR 则是 Unity 3D 的一个扩展，它支持开发虚拟现实（VR）应用程序。Unity VR 提供了一系列工具和功能，可以帮助开发人员创建沉浸式的 VR 体验。}。
 		\end{itemize}
+
+		\section{开发计划}
+	
+			\subsection{模拟海洋水系统}
+	
+			构建海洋水系统，该水系统可有模拟波浪和泡沫效果，可以实现水体运动，模拟浮力，且需能够同时渲染多个摄像机（VR 开发）。同时，该水系统可以模拟光传输，包括反射、折射、散射、焦散近似、阴影。此外，光散射和波浪衰减也需要实现。
+		
+			\begin{itemize}
+				\item [(1)] 
+				在 Unity VR 开发中，使用 Shader Graph 和 Particle System 等工具来构建一个具有不同天气和波浪的海洋水系统。一种常用的方法是使用 Unity 的 Shader Graph 来创建一个动态的海洋水面材质，在 Shader Graph 中定义不同的参数，例如波浪高度、波浪速度和波浪方向等，然后使用脚本来动态控制这些参数，以实现不同天气下海洋水面的变化。
+			
+				\item [(2)]
+				Unity 商店中有许多现成的插件和资源包，可以帮助快速实现海洋水系统。但存在一个很大的问题，\textcolor{red}{很多 packages 不支持同时渲染多个摄像机，这说明这些包往往不适配 VR 项目，因此需要对这些 Package中的 Assets 进行移植。} 所以，这里关注的重点可以在如何移植上，或如何让该包支持渲染多摄像机。如 Crest 实现了上述绝大部分的功能，但是不支持同时渲染多个摄像机。此外，很多海洋水系统资源包对于高级水模拟项目，并不能简单的即插即用，需要技术设置和配置\footnote{Crest 是一个功能丰富的海洋，针对 PC 和游戏机平台 以及 Unity 2019.4.8 及以上版本}。
+				
+				\item [(3)]
+				完成上述两个步骤之后，后续的开发目标为增加更多风浪和船只航行状态，提高模拟器的真实性和准确性。
+			\end{itemize}
+	
+			\subsection{船只模型}
+		
+			可以考虑使用原来项目的船只模型。
 	
 	
-	\section{下周工作计划}
-	
-	(1) 使用百度的paddlepaddle库复现ViT和DeiT。
-	
-	(2) 了解Swin Transformer。
+
 	%	\section{Analysis}
 	
 	%	In this section you will need to show your experimental results. Use tables and
