@@ -68,9 +68,9 @@
 \begin{document}
 	
 	
-	\title{\songti \zihao{4}7月17日-7月23日工作汇报}
+	\title{\songti \zihao{4}8月22日-8月29日工作汇报}
 	\author{\textrm{Ku Jui}}
-	\date{\textrm{July 2023}}
+	\date{\textrm{August 2023}}
 	\maketitle
 	
 	\renewcommand{\figurename}{Figure} % 可以重新定义abstract，因为ctex会覆盖thebibliography
@@ -87,145 +87,375 @@
 	\renewcommand{\tablename}{Table}
 	\tableofcontents  % 自动生成目录
 	
-	\section{Pre-Knowledge}
+	\part{Pre-Knowledge}
 	
-	\subsection{Application scenarios}
+	\section{Application scenarios}
 	
 	在硬件条件不变的情况下，给定降质图像或恶劣天气下拍摄的图像，研究生成高质量、高分辨率、无噪声图像的超分辨率等增强方法，在实际应用中非常有意义。基于软件技术的图像复原增强技术得到了广泛研究，其通过引入外部信息、加入先验、基于大数据集进行学习等方式，将输入的低分辨率图像或带噪图的高频细节复原，产生接近降质前理想高分辨率的无噪图。低质图像重建在安防监控、遥感成像、医学影响成像、消费电子以及室外监控等领域得到广泛应用。
 	
-	\textbf{安防监控领域。}视频监控设备作为安防系统的输人终端，提供了最基础的案件复原、实时监控的素材，在案情预防、分析和侦破等方面发挥着非常重要的作用。然而，实际场景的监控视频质量却往往与侦查机关的案件侦察办理需求之间存在差距。一方面，实地部署的摄像头硬件的成像条件有限；另一方面，为了控制存储空间和传输成本，监控视频往往使用较低的码率进行压缩存储，导致视频中很多细节的丢失。许多对破案有意义的视频信息，在压缩存储和传输的过程中遭到丢失。这时利用低质图像、视频复原技术，能够将低质量的监控视频增强为高质量的目标视烦，便于进一步进行人工分析或后续的自动识别；也可通过对感兴趣区域进行跟踪和放大，对人脸、行人或车牌等进行识别。
+		\subsection{安防监控领域}
+		
+		视频监控设备作为安防系统的输人终端，提供了最基础的案件复原、实时监控的素材，在案情预防、分析和侦破等方面发挥着非常重要的作用。然而，实际场景的监控视频质量却往往与侦查机关的案件侦察办理需求之间存在差距。一方面，实地部署的摄像头硬件的成像条件有限；另一方面，为了控制存储空间和传输成本，监控视频往往使用较低的码率进行压缩存储，导致视频中很多细节的丢失。许多对破案有意义的视频信息，在压缩存储和传输的过程中遭到丢失。这时利用低质图像、视频复原技术，能够将低质量的监控视频增强为高质量的目标视烦，便于进一步进行人工分析或后续的自动识别；也可通过对感兴趣区域进行跟踪和放大，对人脸、行人或车牌等进行识别。
+		
+		\subsection{遥感成像领域}
+		
+		卫星遥感具有持续时间长、覆盖面积广、实时性强、不受地城限制等优点，被广泛应用于环境监测、灾害预警与救授、资源开发、地域变化分析等领域。然而，在使用卫星和无人机进行遥感图像采集的过程中，受大气扰动、光照条件、成像系统的物理极限以及卫星、无人机等平台震颤等因素彤响，釆集得到的图像包含各类降质问题，增加了后续处理的难度，制约了遥感图像的应用。低质图像重建技术能够对遥感图像进行分辨率增强，移除图像中的降质因素，从而提升遥感图像的质量，便于后续分析与处理。
+		
+		\subsection{医学影像成像领域}
+		
+		近几十年来，医学影像技术取得了迅速的发展。X射线、CT、超声、核磁共振等技术在临床上得到了广泛应用。其中，核磁共振的成像原理是利用共振效应，从人体中获取电磁信号，并根据这些信号绘制出人体信息。但是，核磁共振图像的成像分辨率受到许多因素的制约，比如信噪比、患者进行图像扫描时的舒适程度、硬件条件、扫描时间等。因此，扫描得到的图像可能出现分辨率不足的问题。同时，仅对人体的一个断层进行扫描，并不能获得所有信息。通过低质医学图像的复原重建技术，可以根据采集到的多张低分辨率扫描图像重建出高分辨率图像，从而恢复出完整的组织细节，为医生提供更好的诊断依据。如Fig. \ref{fig: Super resolution reconstruction}所示，超分辨率重建填补了核磁共振扫描图像中的细节。
 	
-	\textbf{遥感成像领域。}卫星遥感具有持续时间长、覆盖面积广、实时性强、不受地城限制等优点，被广泛应用于环境监测、灾害预警与救授、资源开发、地域变化分析等领域。然而，在使用卫星和无人机进行遥感图像采集的过程中，受大气扰动、光照条件、成像系统的物理极限以及卫星、无人机等平台震颤等因素彤响，釆集得到的图像包含各类降质问题，增加了后续处理的难度，制约了遥感图像的应用。低质图像重建技术能够对遥感图像进行分辨率增强，移除图像中的降质因素，从而提升遥感图像的质量，便于后续分析与处理。
-	
-	\textbf{医学影像成像领域。}近几十年来，医学影像技术取得了迅速的发展。X射线、CT、超声、核磁共振等技术在临床上得到了广泛应用。其中，核磁共振的成像原理是利用共振效应，从人体中获取电磁信号，并根据这些信号绘制出人体信息。但是，核磁共振图像的成像分辨率受到许多因素的制约，比如信噪比、患者进行图像扫描时的舒适程度、硬件条件、扫描时间等。因此，扫描得到的图像可能出现分辨率不足的问题。同时，仅对人体的一个断层进行扫描，并不能获得所有信息。通过低质医学图像的复原重建技术，可以根据采集到的多张低分辨率扫描图像重建出高分辨率图像，从而恢复出完整的组织细节，为医生提供更好的诊断依据。
-	
-	\textbf{消费电子领域。}
-	
-	
-	\begin{figure}[htbp]
+	    \begin{figure}[htbp] 
 		% read manual to see what [ht] means and for other possible options
 		\centering 
-		\includegraphics[width=0.8\columnwidth]{picture/Vision-Transformer-architecture}
-		%\captionsetup{font=scriptsize}
+		
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/LR}
+			\captionsetup{font=scriptsize}
+			\label{fig:LR input}
+		\end{subfigure}
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/linear}
+			\captionsetup{font=scriptsize}
+			\label{fig: Linear}
+		\end{subfigure}
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/B-spline}
+			\captionsetup{font=scriptsize}
+			\label{fig: B-spline}	
+		\end{subfigure}
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/3D-MRI-CNN}
+			\captionsetup{font=scriptsize}
+			\label{fig: 3D MRI CNN}
+		\end{subfigure}
+		\begin{subfigure}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{picture/GT-HR}
+			\captionsetup{font=scriptsize}
+			\label{fig: GT HR}
+		\end{subfigure}
+		\captionsetup{font=scriptsize}
 		\caption{
-			\label{fig: Vision Transformer} The Vision Transformer - model architecture.
+			\label{fig: Super resolution reconstruction}
+			超分辨率重建在核磁共振成像中的应用 \cite{McDonagh_2017}
 		}
-	\end{figure}
+	    \end{figure}
 	
+		\subsection{消费电子领域}
+		
+		近十年来，新兴多媒体应用快速发展，低质图像、视频重建技术在消费电子领城的应用呈现井喷之势，例如老照片的划痕和折痕去除、污渍或空白区域填充、视频中遮挡物的移除、黑白老照片的彩色化、数字照相机内的自动光照调整和噪声去除、相机内针对拍摄时延以及抖动的去模糊复原等。随着高清电视(high drtniion tolerision， HDTV)的大规模推广使用以及虚拟现实技术实用化的发展，一方面，现有的视顿播放片源仅有少部分能生满足高清电视的播放要求，另一方面，现有的带宽资源很难在分辨率上满足沉浸式体验的需求。因此，一个有效的解决途径是在客户端通过低质视频重建技术复原解码出高清图像，或根据多个视角的低分辨率图像，融合得到高清图像，并移除其他降质因素的影响。
 	
-	该算法在中等规模（例如ImageNet）以及大规模（例如ImageNet-21K、JFT-300M）数据集上进行了实验验证，发现：
+		\subsection{室外监控领域}
+		
+		随着智慧城市的不断发展，室外监控逐渐覆盖公共生活的方方面面。然而，由于室外拍摄环境较为复杂，监控视频会受到各种各样降质因素的影响，比如雨天拍摄的视频中雨点对背景的遮挡、大雾天气下能见度的降低、低光照环境下大量物体信号的丢失、雨雾环境下大量物体细节的丢失等。这些因素对后续的人工分析和计算机视觉应用造成了障得。而使用低质图像、视频重建技术对这些因素进行移除，能够提升图像、视频的能见度，增强高频细节，便于后续处理与分析。如Fig. \ref{fig: Rainy image marks}所示，对雨天图像进行雨痕去除，能够提升图像的视觉质量，并使图像识别结果变得正确。
 	
-	\begin{itemize}
-		\item {}
-			Tranformer相较于CNN结构，缺少一定的平移不变性和局部感知性，因此在数据量不充分时，很难达到同等的效果。具体表现为使用中等规模的ImageNet训练的Tranformer会比ResNet在精度上低几个百分点。
-		\item {}
-			当有大量的训练样本时，结果则会发生改变。使用大规模数据集进行预训练后，再使用迁移学习的方式应用到其他数据集上，可以达到或超越SOTA水平。
-	\end{itemize}
-	
-	Fig.\ref{fig: ViT precision}展示了使用大规模数据集预训练后的 ViT 算法，迁移到其他小规模数据集进行训练，与使用 CNN 结构的SOTA算法\footnote{BiT 与 Noisy Student 均为2020年提出的 SOTA 算法。
-		\begin{itemize}
-			\item {}
-				BiT算法\cite{kolesnikov2020big}：使用大规模数据集 JFT-300M 对 \texttt{ResNet} 结构进行预训练，其中，作者发现模型越大，预训练效果越好，最终指标最高的为4倍宽、152层深的$\texttt{ResNet}152\times 4$。
-			\item {}
-				Noisy Student 算法\cite{xie2020self}：使用知识蒸馏的技术，基于 \texttt{EfficientNet} 结构，利用未标签数据，提高训练精度。
-		\end{itemize}	
-	}精度对比。
-	
-	
-	\begin{figure}[htbp]
+		\begin{figure}[htbp] 
 		% read manual to see what [ht] means and for other possible options
 		\centering 
-		\includegraphics[width=0.8\columnwidth]{picture/The ViT model precision}
-		%\captionsetup{font=scriptsize}
+		% \includegraphics[width=0.8\columnwidth]{GLADNet}
+		
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=\linewidth]{picture/rain}
+			\captionsetup{font=scriptsize}
+			\label{fig:rain}
+		\end{subfigure}
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=\linewidth]{picture/people}
+			\captionsetup{font=scriptsize}
+			\label{fig:people}
+		\end{subfigure}\\
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=\linewidth]{picture/rain1}
+			\captionsetup{font=scriptsize}
+			\caption{有雨图像输入}
+			\label{fig:rain1}	
+		\end{subfigure}
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=\linewidth]{picture/people1}
+			\captionsetup{font=scriptsize}
+			\caption{去雨结果}
+			\label{fig:people1}
+		\end{subfigure}
+		\captionsetup{font=scriptsize}
 		\caption{
-			\label{fig: ViT precision} The comparison of the ViT model precision .
+			\label{fig: Rainy image marks}
+			雨天图像雨痕去除结果 \cite{yang2017deep}
 		}
-	\end{figure}
+	    \end{figure}
 	
-	
-	Fig.\ref{fig: ViT precision}中前3列为不同尺度的ViT模型，使用不同的大规模数据集进行预训练，并迁移到各个子任务上的结果。第4列为BiT算法基于JFT-300M数据集预训练后，迁移到各个子任务的结果。第5列为2020年提出的半监督算法 Noisy Student 在 ImageNet 和 ImageNet ReaL 数据集上的结果。
-	
-	\subsubsection{图像分块嵌入}
-	
-	在Transformer结构中，输入需要是一个二维的矩阵，矩阵的形状可以表示为$(N,D)$，其中 $N$ 是sequence的长度，而 $D$ 是 sequence 中每个向量的维度。因此，在ViT算法中，首先需要设法将 $H \times W \times C$ 的三维图像转化为 $\left( N,D \right)$ 的二维输入。
-	
-	ViT中具体实现方式为：将 $H \times W \times C$ 的图像，变为一个 $N \times \left( P^2 * C \right)$ 的序列。这个序列可以看作是一系列展平的图像块，也就是将图像切分成小块后，再将其展平。该序列中一共包含了 $N = \frac{HW}{P^2}$ 个图像块，每个图像块的维度则是 $\left(P^2 * C\right)$。其中 $P$ 是图像块的大小， $C$ 是通道数量。经过如上变换，就可以将 $N$ 视为sequence的长度了。
 
-	但是，此时每个图像块的维度是 $\left(P^2 * C\right)$ ，而实际需要的向量维度是 $D$，因此还需要对图像块进行 Embedding。Embedding 的方式相对简单，只需要对每个 $\left(P^2 * C\right)$ 的图像块做一个线性变换，将维度压缩为 $D$ 即可。
+%	\begin{itemize}
+%		\item {}
+%			Tranformer相较于CNN结构，缺少一定的平移不变性和局部感知性，因此在数据量不充分时，很难达到同等的效果。具体表现为使用中等规模的ImageNet训练的Tranformer会比ResNet在精度上低几个百分点。
+%		\item {}
+%			当有大量的训练样本时，结果则会发生改变。使用大规模数据集进行预训练后，再使用迁移学习的方式应用到其他数据集上，可以达到或超越SOTA水平。
+%	\end{itemize}
+%	
+%
+%	\begin{itemize}
+%		\item {}
+%			BiT算法\cite{kolesnikov2020big}：使用大规模数据集 JFT-300M 对 \texttt{ResNet} 结构进行预训练，其中，作者发现模型越大，预训练效果越好，最终指标最高的为4倍宽、152层深的$\texttt{ResNet}152\times 4$。
+%		\item {}
+%			Noisy Student 算法\cite{xie2020self}：使用知识蒸馏的技术，基于 \texttt{EfficientNet} 结构，利用未标签数据，提高训练精度。
+%	\end{itemize}	
+
+	\section{Traditional Low-Light Image Enhancement Method}
 	
-	上述对图像进行分块以及 Embedding 的具体方式如Fig.\ref{fig: Vision Transformer}所示。
+	根据传统方法的图像低光照增强算法通常利用单张图像自身的性质进行图像增强。根据基于的先验不同，可以分为基于直方图的方法、基于图像反相的方法和基于Retinex模型的方法3类。
 	
-	\subsection{Data-efficient Image Transformer\cite{touvron2021training}}
 	
-	ViT 算法要想要获得一个较好的指标，需要先使用 JFT-300 或者 ImageNet-21K 这样的超大规模数据集进行预训练\footnote{JFT-300 和 ImageNet-21K 是两个大规模的图像数据集，一般用于图像分类。
-	\begin{itemize}
-		\item {}
-		JFT-300是一个巨大的图像数据集，包含约 300 亿张图像，是一个真实世界场景的多模态数据集，包含图像和文本数据。
-		\item {}
-		ImageNet-21K 是 ImageNet 数据集的扩展版本，它包含约 2.1 万个类别（21,841个类别），而传统的 ImageNet 数据集只包含 1000 个类别。
-	\end{itemize}
-	}，然后再迁移到其他中等或较小规模的数据集上。而当不使用像 JFT-300 这样的巨大的数据集时，效果比 CNN 模型差，这反映出 Transformer 结构在 CV 领域的一个局限性。对于大多数的研究者而言，使用如此大规模的数据集意味着需要很昂贵的计算资源，一旦无法获取到这些计算资源，就不能使用这么大规模的数据集进行预训练，就无法复现出算法应有的效果。所以，出于这个动机，作者针对 ViT 算法进行了改进，提出了Data-efficient Image Transformer(DeiT)。
+		\subsection{基于直方图的方法}
+		
+		基于直方图的方法主要考虑直方图均衡化，通过对直方图\footnote{直方图统计图像每个灰度级的出现频率，其横坐标表示灰度级，纵坐标表示像素值为该灰度级下像素的频率。}的分布进行约束，改善图像的亮度分布。直方图描述了图像灰度级\footnote{图像灰度(image grayscale)：把白色与黑色之间按对数关系分为若干等级，称为灰度。灰度分为256阶。用灰度表示的图像称作灰度图。}的分布情况，显示了图像的灰度范围和每个灰度级的出现频率。摄影师也常利用直方图判断整幅图像的明暗程度、对比度等图像特征，以便完成相应的后期处理。
+		
+        \begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/Histogram equalization}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Histogram equalization} 
+				直方图均衡化示意图
+			}
+		\end{figure}
+		
+		如Fig. \ref{fig: Histogram equalization}所示，直方图均衡化重新调整图像的直方图分布，一方面增加了图像的全局对比度，另一方面使得亮度在整个图像的分布更加均匀。考虑一张包含L个灰度级的图像，其直方图可以表示为：
+		
+		\begin{equation}
+			\begin{aligned}
+				P(r_k) = \frac{n_k}{n}, k=0, 1, 2, \cdots, L-1
+			\end{aligned}
+			\label{eq: Histogram}
+		\end{equation}
+		
+		其中， $r_k$ 表示第 $k$ 级灰度值，$n_k$表示图像中第 $k$ 级灰度值所对应的像素个数，$n$ 表示图像中的所有像素总数。显然，有 $\sum_{k} P(r_k)=1$。直方图均衡化是指存在一个变换函数 $s=T(r), 0 \leqslant r \leqslant 1$，能够将灰度级 $r$ 转化为灰度级 $s$。$T(r)$满足以下两个条件： 首先，$T(r)$ 在区间 $[0, 1]$ 上为单射函数且单调递增； 其次， $T(r) \in [0, 1]$ 。$T(r)$ 是单射函数保证了直方图均衡化存在反变换，而其单调递增的性质保证了变化后的图像与原图像之间存在保序性，以防变换后图像发生黑白颠倒。
+		
+		这样，一幅图像的灰度即视为 $[0,1]$ 上的随机变量，用 $p_r(r)$ 和 $p_s(s)$ 表示随机变量 $r$ 与 $s$的概率密度函数，那么，直方图均衡化即将 $T(r)$ 表示如下: $$s = T(r) = \int_{0}^{r} p_r(w) \mathrm{d}w$$ 可以证得，通过 $T(r)$ 的转化，有 $p_s(s) = 1$ ，即转换后的像素值在 $[0, 1]$ 上均匀分布。这时基于直方图变换的保序性，有 $$\int_{0}^{n} p_r(r) \mathrm{d}r = \int_{0}^{T(n)} p_s(s) \mathrm{d}s$$ 从而有： $$\frac{\mathrm{d}s}{\mathrm{d}r} = \frac{\mathrm{d}T(r)}{\mathrm{d}r} = p_r(r)$$ 代入上式，可得： $$p_s(s) = 1$$ 
+		
+		直方图均衡化的方法非常快速有效，并且是一个可逆操作，但缺点在于其不加选择地处理数据，可能增加背景噪声的对比度，同时降低有用的图像内容的对比度，导致视觉效果欠佳。此外，该方法也无法适用于复杂多变的低光照场景。
+		
+		\subsection{基于图像反相的方法}
+		
+		\begin{figure}[htbp] 
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			% \includegraphics[width=0.8\columnwidth]{GLADNet}
+			
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/LL input}
+				\captionsetup{font=scriptsize}
+				\label{fig: LL input}
+			\end{subfigure}
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/Inversed}
+				\captionsetup{font=scriptsize}
+				\label{fig: Inversed}
+			\end{subfigure}
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/marked image}
+				\captionsetup{font=scriptsize}
+				\label{fig: marked image}	
+			\end{subfigure}
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/de-haze}
+				\captionsetup{font=scriptsize}
+				\label{fig: de-haze}
+			\end{subfigure}
+			\begin{subfigure}{0.18\textwidth}
+				\includegraphics[width=\linewidth]{picture/Final output}
+				\captionsetup{font=scriptsize}
+				\label{fig: Final output}
+			\end{subfigure}
+			\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Image Inverse}
+				(a) low lighting video input I. (b) inverted result R from input I. (c) marked image: pixels with low intensity in at least one
+				color (RGB) channel are in green. (d) de-haze output J using equation (7). (e) final output E after inverting image J.
+			}
+		\end{figure}
+		
+		基于图像反相的方法\cite{10.1145/1836845.1836920}利用低光照图像的反相\footnote{图像反相 (Image reverse phase) 就是图像的颜色色相反转。以前照相机的底片就是打印后的照片的反相。比如黑变白，蓝变黄、红变绿。对灰度级范围为 $[0 , L-1]$ 的一幅图像进行反转的操作为：$s = L - 1 - r$ 其中$r$和$s$分别代表处理前后的像素值。使用这种方式反转一幅图像的灰度级，可得到等效的照片底片。这种类型的处理特别适用于增强嵌入在一幅图像的暗区域中的白色和灰色细节，特别是当黑色面积在尺寸上占主导地位时}与有雾图像的相似性，通过对低光照图像反相进行去雾后再次进行反相，得到最终的低光照增强效果。在图像反相中，对于动态范围为 $[ 0, 255]$ 的图像，其反相图像 $\mathbf{R}$ 为： 
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{R}^c (x) = 255 - \mathbf{I}^c(x)
+			\end{aligned}
+			\label{eq: Image Reverse}
+		\end{equation}
+		
+		其中，$c$ 为 \textbf{RGB} 颜色通道。大多数有雾图像符合暗通道先验，其特点是对于背景及天空等区域，\textbf{RGB} 3个通道的像素值都很高，而其他区域至少有一个通道的像素值较低，作者发现低光照图像的反相也具有同样特点。如Fig. \ref{fig: Image Inverse}所示。
+		
+		基于图像反相的方法虽然运算速度很快，但需要基于低光照图像反相与有雾图像相似这一前提，而改前提始终是统计意义上的，无法得出二者之间更本质的联系，因而限制了这一方法的继续发展。由于没有考虑低光照图像的结构信息，因此该类方法还常常导致增强结构出现明显的黑边。
+		
+		\subsection{Retinex模型}
+		
+		Retinex 是最重要的低光照增强算法工具。该模型描述了人类视觉对亮度和色彩感知的一致性，认为人类视觉系统的感知取决于环境的照明雨物体表面对照射光的反射。基于 Retinex 模型这一人类视觉模型发展出了相应的用于图像处理的模型，该类模型认为一张图像 $\mathbf{S}$ 可以表示为光源的空间分布 $\mathbf{I}$ 与物体与场景的反射，或着说物体与场景的本质图 $\mathbf{R}$ 在每个像素位置上的乘积，即：
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{S} = \mathbf{I} \circ \mathbf{R}
+			\end{aligned}
+			\label{eq: Retinex}
+		\end{equation}
+		此处 $\circ$ 表示阿达马乘积，即两个矩阵对应位置的元素相乘。对于每张图像都可以完成这样的拆解。
+		
+		基于上诉模型发展出一种基于单尺度 Retinex (single-scale Retinex, SSR) 的图像增强算法\cite{557356}，有：
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{r} = \log \mathbf{R} = \log \frac{\mathbf{S}}{\mathbf{I}}
+			\end{aligned}
+			\label{eq: SSR}
+		\end{equation}
 	
-	在 DeiT 中，作者在 ViT 的基础上改进了训练策略，并使用了蒸馏学习的方式，只需要在 ImageNet 上进行训练，就可以得到一个有竞争力的 Transformer 模型，而且在单台计算机上，训练时间一般不到3天即可。
+		考虑到光滑平滑性，通过计算像素点与周围区域的关系，可将光照 $\mathbf{I}$ 估计为 $\mathbf{I} = \mathbf{G} \otimes \mathbf{S}$，其中 $\otimes$ 表示卷积运算， $\mathbf{G}$ 表示高斯中心环绕函数。记 $\lambda$ 为平衡系数，$c$ 为高斯环绕尺度，则 $\mathbf{G}$ 可表示为 $\mathbf{G}(x, y) = \lambda \mathit{e}^{-\frac{x^2+y^2}{\mathit{e}^2}}$，其满足 $\iint \mathbf{G}(x,y) \mathrm{d}\mathbf{x}\mathrm{d}\mathbf{y}$。因此，本质图 $\mathbf{R}$ 可表示为：
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{R} = \log \mathbf{S} - \log \mathbf{G} \otimes \mathbf{S}
+			\end{aligned}
+			\label{eq: R}
+		\end{equation}
+		并可将该本质图 $\mathbf{R}$ 作为直接增强的输出。
+		
+		基于多尺度 Retinex (multi-scale Retinex, MSR) 的图像增强算法是对 $\mathbf{SSR}$ 算法的改进。该算法引入多个具有不同环绕尺度的高斯中心环绕函数，以期更加准确地估计图像的光照。记 $K$ 为高斯中心环绕函数的个数，MSR 算法可表示为：
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{r} = \sum_{k=1}^K w_k {\log \mathbf{S} - \log [\mathbf{G}_k \otimes \mathbf{S}] }
+			\end{aligned}
+			\label{eq: MSR}
+		\end{equation}
+		
+		当 $K=1$ 时，MSR 算法退化为 SSR 算法。为了兼顾多个尺度，通常取 $K=3$，且 $w_1=w_2=w_3=\frac{1}{3}$。
+		
+		在此之后，出现了去多基于 Retinex 模型进行光照增强的传统方法。各种方法的着眼点都集中在如何更准确地估计图像的光照图以及本质图的分解问题上。其中\cite{7782813}中提出了一种新的光照估计分解方法，旨在求解如下最优化问题：
+		
+		\begin{equation}
+			\begin{aligned}
+				\min_I \| \hat{\mathbf{I}} - \mathbf{I} \|_F^2 + \alpha \| \mathbf{W} \circ \nabla\mathbf{I} \|_1
+			\end{aligned}
+			\label{eq: Optimisation}
+		\end{equation}
+		
+		其中，$\hat{\mathbf{I}} = \max \mathbf{L}^c (x) \ (c \in {R,\ G,\ B})$ 为利用基于去雾的低光照图像增强算法定义的初始光照估计，$\alpha$ 为平衡系数， $\nabla$ 表示图像梯度， $W$ 为权重矩阵。对于权重矩阵，考虑相对全变分(relative total variation, RTV) 模型， 将权重矩阵设计为：
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{W}(x) = \sum_{y \in \Omega (x)} \frac{\mathbf{G}(x,y)}{\left|\sum_{y\in \Omega (x)} \mathbf{G}(x, y) \circ \nabla \hat{\mathbf{I}}(y) \right| + \varepsilon}
+			\end{aligned}
+			\label{eq: Weight}
+		\end{equation}
+		
+		其中，$\mathbf{G}(x,y)$ 为高斯环绕函数，$y \in \Omega$ 表示 $y$ 在 $x$ 的一个领域内。最终通过对 $I$ 进行估计求得 $R$， 并同 SSR、MSR 方法一样，以本质图 $\mathbf{R}$ 作为最终增强结果，从而取得不错的图像增强效果。 
+	\section{Modern Low-Light Image Enhancement Method}
+		
+		\subsection{Deep Learning for Low-Light Image Enhancement}
+		
+		现在的基于神经网络的低光照图像增强问题的工作主要为 LLNet。
+		LLNet\cite{lore2016llnet}首先将神经网络引入低光照图像增强问题中。该方法的网络结构主要由自编码器组成，包括一个编码器和一个解码器，如Fig. \ref{fig: Module Structure}所示。使用随机幂律（伽马）变换\footnote{幂律变换 (Power Law Transformation)（也称为伽马变换 (Gamma Transformation)）是一种常用的灰度变换，它是一种简单的图像增强算法。幂律变换的一般表达式为：$$s = cr^\gamma$$，其中 $r$ 为灰度图像的输入值（原来的灰度值），取值范围为 $[0,1]$。$s$ 为经过幂律变换后的灰度输出值。$c$ 为灰度缩放系数，通常取 $1$。 $\gamma$ 为幂律因子大小，控制了整个变换的缩放程度。
+		
+		当 $\gamma$ 取值 $[0,1]$ 时，可以将图像较暗的灰度值映射到更大的灰度值，同时较亮部分变化较小；$\gamma$ 取值 $[1, + \infty]$ 时，可以将较亮部分映射到更低的亮度，而更暗的部分变化较小。}并添加白噪声，合成一个成对的低光照图像与正常光照图像数据集。其网络结构有两种版本： S-LLNet 包括两个自编码器，如Fig. \ref{fig: S-LLNet}所示，其中第1个自编码器用于调整图像的亮度与对比度，仅使用不带噪声的合成低光照图像训练，第2个自编码器用于去噪，仅使用合成的噪声图像进行训练；LLNet 则将两个网络融合成一个网络，如Fig. \ref{fig: LLNet}所示，使用带噪声的低光照图像训练，同时完成去噪和低光照图像增强任务。
+		
+		 \begin{figure}[htbp] 
+		 	% read manual to see what [ht] means and for other possible options
+		 	\centering 
+		 	% \includegraphics[width=0.8\columnwidth]{GLADNet}
+		 	
+		 	\begin{subfigure}{0.45\textwidth}
+		 		\includegraphics[width=\linewidth]{picture/Module Structure}
+		 		\captionsetup{font=scriptsize}
+		 		\caption{Module Structure}
+		 		\label{fig: Module Structure}
+		 	\end{subfigure}
+		 	\begin{subfigure}{0.18\textwidth}
+		 		\includegraphics[width=\linewidth]{picture/LLNet}
+		 		\captionsetup{font=scriptsize}
+		 		\caption{LLNet}
+		 		\label{fig: LLNet}
+		 	\end{subfigure}
+		 	\begin{subfigure}{0.175\textwidth}
+		 		\includegraphics[width=\linewidth]{picture/S-LLNet}
+		 		\captionsetup{font=scriptsize}
+		 		\caption{S-LLNet}
+		 		\label{fig: S-LLNet}	
+		 	\end{subfigure}
+		 	\captionsetup{font=scriptsize}
+		 	\caption{
+		 		\label{fig: LLNet Architecture}
+		 		LLNet结构示意图
+		 	}
+		 \end{figure}
+		
 	
-	如Fig.\ref{fig: DeiT accuracy}所示是DeiT在ImageNet 数据集\footnote{ImageNet 是一个大规模的图像数据集，由斯坦福大学创建。该数据集是计算机视觉中最受欢迎和广泛使用的数据集之一，对于图像分类、目标检测和图像识别等任务都有重要的影响。ImageNet 包含了数百万张高分辨率图像，来自几千个不同的类别。}上与之前 ViT 以及 CNN 算法中的 EfficientNet 的精度对比。其中Fig.\ref{fig: DeiT accuracy}的指标均为在 ImageNet 数据集上进行训练和评估的结果。其中，Ours(Deit) 为使用与 ViT 完全一致的网络结构，但是改进了训练策略；而 Ours⚗(DeiT⚗) 则是在 DeiT 的基础上继续使用了蒸馏学习的方式进行改进。可以看到，ViT 算法在这种中等规模的数据集上，指标\footnote{top-1 accuracy表示模型预测的结果与真实标签匹配的比例，其中“top-1”表示只考虑模型预测的第一个最有可能的类别。}远不如 CNN 网络 EfficientNet，而通过改变训练策略，使用蒸馏学习，网络结构与 ViT 基本一致的 DeiT 性能有了很大的提升，超过了 EfficientNet。
+		\subsection{Low-Light Image Enhancement based on the Retinex Model}
+		
+		-
 	
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=0.5
-		\columnwidth]{picture/Accuracy}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: DeiT accuracy} Throughput and accuracy on Imagenet of our method (no external training data). The throughput is measured as the number of images processed per second on a V100 GPU. DeiT-B is identical to ViT-B, but with training adapted to a data-starving regime. It is learned in a few days on one machine. The symbol ⚗ refers to models trained with our transformer-specific distillation. See Table 5 for details and more models.
-		}
-	\end{figure}
+	\section{Image Super Resolution}
 	
-	\subsubsection{Network optimization method}
+		\subsection{Image Super-resolution Problem Definition}
+		
+		-
+		
+		\subsection{Super-resolution Convolutional Neural Network Reconstruction}
+		
+		-
+		
+		\subsection{Very Deep Super Resolution, VDSR}
+		
+		-
+		
+		\subsection{Fast Super-resolution Reconstruction}
+		
+		-
+		
+		\subsection{Super-resolution Generative Adversarial Networks}
+		
+		-
 	
-	\paragraph{Distilling learning}
+	\section{Follow-up specific work}
 	
-	蒸馏分为两种，分别是软蒸馏（soft distillation）和硬蒸馏（hard distillation）。软蒸馏就是将学生网络的输出结果与教师网络的 softmax 输出结果取 KL Loss；而硬蒸馏就是将学生网络的输出结果与教师网络的标签取交叉熵损失，公式分别如下所示。在 DeiT 中，分别对网络使用了两种蒸馏策略进行对比实验，最终选择了硬蒸馏方式。
+		\subsection{方向一}
+		
+		Retinex-Net 在测试图像时会造成颜色失真，这可能是由于网络无法同时兼顾如亮度\footnote{图像的亮度是指图像像素的大小，像素值越大，图像在该像素点越明亮，否则越暗。对于灰度图像来说，每个像素点只有 1 个分量，且在 $0 \sim 255$ 之间，0 表示黑色，最暗，255 表示白色，最亮。}、对比度\footnote{图像的对比度是指一幅图像中明暗区域最亮的白和最暗的黑之间不同亮度层级的测量，即一幅图像灰度反差的大小，通俗一点来说就是最大亮度与最小亮度之比，如 Michelson 对比度被定义为：$$C_M = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}$$}，伪影\footnote{伪影(Artifacts)，是指原本被拍摄物体并不存在而在图像上却出现各种形态的影像。在图像处理后，尤其在合成图片中，表现为不自然的、能让人看出是人为处理过的痕迹、区域、瑕疵等。成像系统做图片重建时会产生一些伪影问题，产生这种现象的原因主要是由于图像处理的不精确或者信息缺失。部分现象展示如Fig. \ref{fig: Ringing Artifacts}。
+		
+		}等各种因素造成的。同时它只局限于对低光照图像的处理并没有扩展到视频等领域。
+		(2018年)模型MBLLEN\cite{Lv2018MBLLEN}适用性相对于Retinex-Net模型适用性更加广阔，对低光视频改善也有不错的效果，其提出了多分支低光增强网络，它可以兼顾如亮度、对比度，伪影等，其核心思想是提取不同层次的丰富特征，这样可以通过子网进行增强，最后通过多分支融合输出图像。
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=0.5\columnwidth]{picture/Artifacts}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Ringing Artifacts} 
+				边界伪影。
+			}
+		\end{figure}
+		
+		\begin{itemize}
+			\item{}
+			单分支或简单神经网络不能同时进行亮度、对比度增强和伪影去除、降噪等多功能需求；
+			\item{}
+			由于图像和视频承载着丰富而详细的真实的场景信息，真实的系统严重依赖于输入它们的质量。特别地，它们可能在高质量输入数据的情况下表示良好，但在其他情况下表现不佳。一种典型的情况是使用在照明不良的环境中捕获的图像。当相机在捕获期间不能接收足够的光时，将在暗区域中存在信息丢失和意外噪声。
+		\end{itemize}
 	
-	\begin{equation}
-		\begin{aligned}
-			& L_{global}^{SoftDistill} = \left(1-\lambda\right) \text{L}_{CE}\left(\psi(Z_s), y\right) + \lambda \tau^2 \text{KL}\left(\psi(Z_s/\tau), \psi(Z_t/\tau)\right) \\
-			& L_{global}^{HardDistill} = \frac{1}{2} \text{L}_{CE}\left(\psi(Z_s), y\right) + \frac{1}{2} \text{L}_{CE}\left(\psi(Z_s),y_t\right)
-		\end{aligned}
-		\label{eq: distillation}
-	\end{equation}
+		因此可以\textbf {\color{red}{仔细研究其特征提取模块(FEM)}加以改进用于图像融合的特征提取当中，其融合方法也可以改进，用于其他领域作为最后的图像重建阶段。多分支的思想也可以作为一个模块用于其他方法中。}
+		
+		\paragraph{Plan}
+		
+		\begin{itemize}
+			\item[ 1)]
+			复现MBLLEN源码，研究其特征提取模块(FEM)。数据集部分可以使用MBLLEN论文中提供的数据集。
+			\item[ 2)]
+			理解图像特征融合\footnote{图像特征融合(Image feature fusion)是指将图像中提取出的特征进行组合。它的目的是把从图像中提取的特征，合并成一个比输入特征更具有判别能力的特征。特征融合方法是模式识别领域的一种重要的方法，计算机视觉领域的图像识别问题作为一种特殊的模式分类问题，仍然存在很多的挑战，特征融合方法能够综合利用多种图像特征，实现多特征的优势互补，获得更加鲁棒和准确性的识别结果}的方式，以及了解如何实现图像特征融合。
+		\end{itemize}
 	
-	Eq.\ref{eq: distillation}中，$y_t = argmax_{c} Z_t(c)$.这里的硬标签也可以通过标签平滑技术 (Label smoothing) 转换成软标签，其中真值对应的标签被认为具有 $1-\epsilon$ 的概率，剩余的 $\epsilon$ 则由剩余的类别共享。$\epsilon$ 是一个超参数，这里取0.1。
+		\subsection{方向二}
 	
-	\paragraph{Network structure}
+		
 	
-	DeiT 算法相较于 ViT 算法，在网络结构上的优化方式，如Fig.\ref{fig: DeiT-network-structure}所示。
-	
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=0.5
-		\columnwidth]{picture/DeiT-network-structure}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: DeiT-network-structure} Our distillation procedure: we simply include a new distillation token. It interacts with the class and patch tokens through the self-attention layers. This distillation token is employed in a similar fashion as the class token, except that on output of the network its objective is to reproduce the (hard) label predicted by the teacher, instead of true label. Both the class and distillation tokens input to the transformers are learned by back-propagation.
-		}
-	\end{figure}
-	
-	通过对比Fig.\ref{fig: DeiT-network-structure}与Fig.\ref{fig: Vision Transformer}中ViT的网络结构可以发现，DeiT 与 ViT 的主要差异在于引入 distillation token，顾名思义，其主要用于网络训练中的蒸馏学习。Distillation token 与 class token 很像，其在 self-attention layers 中会跟 class token 以及图像 patch 不断交互。而 distillation token 与 class token 唯一的区别在于，class token 的目标是跟真实的 label 一致，而 distillation token 是要跟蒸馏学习中教师网络预测的 label 一致。这个 distillation token 允许模型从教师网络的输出中学习，就像在常规的蒸馏中一样，同时也作为一种对 class token 的补充。
-	
-	由于具有了 distillation token，因此在损失函数方面，DeiT 相较于 ViT 也有了一定的改变：
-	
-	\begin{itemize}
-		\item{}
-			在 ViT 算法中，模型的最终输出是使用 class token 进行 softmax 计算，获取预测结果属于各个类别的概率分布。此时，损失函数的计算方式与传统的多分类任务一致，直接使用交叉熵损失即可。
-		\item{}
-			在 DeiT 算法中，由于使用了蒸馏学习方法，因此在交叉熵损失的基础上，还需要加上一个蒸馏损失。
-	\end{itemize}
-	
-	论文中进行了实验，发现了一个有趣的现象，class token 和 distillation token 是朝着不同的方向收敛的，在开始时，这两个 token 计算余弦相似度只有0.006。随着网络层数的增加，直到最后一层，这两个 token 的余弦相似度变为了0.93。也就可以认为是相似但是不相同的两个 token。
-	
-	同时，网络为了验证 distillation token 的确给模型添加了某些有益信息，论文中也进行了实验。作者将 distillation token 替换为一个简单的 class token，然后发现，即便这两个 class token 分别进行独立的随机初始化，它们最终也是会随机地收敛到一个几乎一摸一样的结果（余弦相似度为0.999），同时最终性能没有明显提升。网络既会输出 class token 的结果，也会输出 distillation token 的结果，在最终预测时，将两者的 softmax 结果进行相加，即可简单地得到算法的最终预测结果。
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -236,153 +466,268 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 
 	
-	\section{Paper reading}
+	\part{Paper Reading}
 	
-	\subsection{Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement \cite{li2023embedding}}
+	\section{LLIE}
 	
-	本文\footnote{Submitted on 23 Feb 2023}重点研究了图像恢复中最具挑战性的任务之一，即微光图像增强(LLIE)，该任务需要联合增强亮度并去除传感器和昏暗环境引起的固有噪声，并通过要求在超高清状态下进行高效处理来提高难度。
-	该文提出了UHD LLIE的新解决方案，灵感来自于在傅里叶域中观察到的独特特征。
-	
-	\subsubsection{Why?}
-	
-	近年来，随着先进成像传感器和显示器的出现，超高清(UHD)成像技术得到了快速发展。虽然超高清成像提供了广泛的应用，并使图像质量有了显著的不同，但额外的像素也对现有图像处理算法的效率提出了挑战。
-	尽管微光图像增强(LLIE)取得了显著进展，但现有方法，在用于处理真实世界的UHD低光图像时显示出明显的缺点。主要有如下四点原因：
-	
-	\begin{itemize}
-		\item {}
-			(1) 大多数方法只关注亮度增强，无法去除噪声;
-		\item {}
-			(2) 一些方法在空间域中同时增强亮度和去噪，导致增强次优;
-		\item {}
-			(3) 现有方法主要在低分辨率(LR)数据上进行训练，导致与高分辨率(HR)输入不兼容;
-		\item {}
-			(4) 部分研究采用重结构，因此在处理超高清图像时效率低下。
-	\end{itemize}
+		\subsection{(2023.4)Learning Semantic-Aware Knowledge Guidance for Low-Light Image Enhancement}
+		\paragraph{(CVPR 2023)arXiv:2304.07039v1} [未提供数据集]
 		
-	\subsubsection{Contribution}
+			\subsubsection{Research Background}
+			
+			本文是一个低光照图像增强(LLIE)的工作，现有方法通常是全局均匀地改进低光照图像，而没有考虑不同区域的语义信息\footnote{语义信息(Semantic information)指有意义的数据提供的信息,也指能够消除事物不确定性的有一定意义的信息。}，忽略了语义信息的重要性。本文认为如果没有语义先验，图像增强的结果会偏离区域的原始颜色，因此本文考虑将语义信息引入到低光照图像增强中，提出了一种新颖的语义感知知识引导框架 (SKF)，该框架可以帮助低光照图像增强模型学习封装在语义分割模型中的丰富的先验。
+		
+			\subsubsection{Contribution}
+	
+			\begin{itemize}
+				\item [(1)]
+				提出了一个\textbf{语义感知的知识引导框架 (SKF)}，通过保持颜色一致性并提高图像质量来提高现有方法的性能。
+				\item [(2)]
+				提出了三个关键技术来利用语义知识库 (SKB) 提供的语义先验：语义感知嵌入 (SE) 模块、语义引导颜色直方图 (SCH) 损失和语义引导对抗 (SA) 损失。
+			\end{itemize}
+		
+		
+			\subsubsection{Approach}
+			
+			总的来说，本文的 SKF 利用语义先验从两个方面改进了增强过程：
+			
+			\begin{itemize}
+				\item [(1)]
+				在特征方面，多尺度语义感知嵌入模块实现了语义特征与图像特征在表示空间中的跨模态交互。即该模块实现了语义特征与图像特征在表示空间中的跨模态交互。这意味着该模块能够将语义信息与图像特征进行融合，从而更好地理解图像中的内容。
+				\item [(2)]
+				在损失方面，将语义分割结果引入颜色直方图损失和对抗性损失的计算作为指导。
+			\end{itemize}
+			
+			\subsubsection{Future}
+			
+			大量实验表明本文的SKF取得了更好的性能，但本文方法在处理未知类别时改进有限。因此后续工作可以尝试提高SKB识别未知实例的能力，探索SKF在其他低级视觉任务\footnote{低级视觉任务（Low-level vision tasks）是指计算机视觉领域中一类基础的图像处理任务。这些任务通常涉及对图像的基本处理，例如图像去噪、图像增强、图像超分辨率、图像去模糊等。低级视觉任务通常不涉及对图像内容的理解，而是着重于改善图像的质量，使其更适合人类观看或用于进一步的计算机视觉处理。}中的潜力。
+	
+		\subsection{Learning a Simple Low-Light Image Enhancer From Paired Low-Light Instances}
+		\paragraph{(CVPR 2023)} [LOLv1、SCIE]
+			
+			\subsubsection{Research Background}
+			
+			目前大多数的 LLIE 算法使用单个输入图像和几个手工制作的先验来调整照明。但是，单个弱光图像中信息有限和人工先验适应性差，无法揭示图像细节，作者建议利用成对的弱光实例来训练 LLIE 网络。
+	
+			\subsubsection{Contribution}
+			
+			\begin{itemize}
+				\item [(1)]
+				对于配对的低光照实例，作者提出了一种新的基于学习的 LLIE 方法，称为 PairLIE。
+				\item [(2)]
+				获取成对的低光图像将使成像过程复杂化，因为它需要处理两幅图像之间的错位。作者对此提出一种解决方案，(作者描述为可以对同一个场景进行不同的曝光)对一张暗图做类似Neighbor2Neighbor\footnote{Neighbor2Neighbor是一种用于图像生成的深度学习方法。它基于生成对抗网络（GAN）的原理，通过训练一个生成器和一个判别器来实现图像生成。在Neighbor2Neighbor方法中，生成器通过对图像进行类似于邻域采样的操作来生成新的图像，而判别器则负责判断生成的图像是否真实。}的采样操作得到两张图片来获得。该解决方案可以减少对手工制作的先验的需求，提高网络的适应性。
+			\end{itemize}
+	
+			\subsubsection{Approach}
+			
+			PairLIE 的核心观点是\textbf{充分利用配对低光图像的先验}。作者考虑利用 Retinex 理论\footnote{Retinex 模型的基本思想是将图像表示为反射分量和光照分量的乘积，如下式$$I = L \cdot R$$，其中图像 $I$ 分解为照度 $L$ 和反射率 $R$，$\cdot$ 表示元素乘法。反射分量表示物体本身的颜色，而光照分量表示物体所处环境中的光照条件。通过分离这两个分量，Retinex 模型能够对图像进行增强，使其在低光照条件下仍然能够清晰地显示物体的颜色。}和深度学习将弱光图像分解为照度和反射率分量。
+			
+			\begin{itemize}
+				\item [(1)]
+				首先，因为两个弱光输入共享同样的内容，所以估计的反射率分量预计是一致的。
+				\item [(2)]
+				其次，放弃直接在原低光图像中进行 Retinex 分解，本文采用一个简单的自监督机制去除不合适的特征，对优化后的图像进行 Retinex 分解。
+			\end{itemize}
+					
+			这可以避免次优估计\footnote{在 Retinex 模型中，次优估计通常用于估计图像的光照分量，以便更好地分离图像的反射分量和光照分量。}，因为 Retinex 模型在弱光建模中有局限性。
+			
+			在较少的先验约束和更简单的网络下，所提出的 PairLIE 在公共 LLIE 数据集中实现了具有竞争力的性能。
+		
+			\subsubsection{Future}
+			
+			\begin{itemize}
+				\item [(1)]
+				既然可以在同一个场景下获取两张照片，是否可以通过分别获取明暗场景下的照片，进行先验学习（这里感觉有一些本末倒置）。通过 Neighbor2Nerghbor 这样的采样方式获取的图片来进行训练，但是并未给出这种方式训练的实验结果
+				\item [(2)]
+				PairLIE 中的 P-Net 利用 Retinex 模型损失来对图片进行去噪，该方法可以加以利用。
+			\end{itemize}
+		
+		\subsection{Low-Light Image Enhancement via Structure Modeling and Guidance}
+		\paragraph{(CVPR 2023)} [LOL-real、LOL-synthetic、SID] [未提供代码]
+		
+			\subsubsection{Research Background}
+			
+			\begin{itemize}
+				\item [(1)]
+				现有低光照图像增强方法忽视了在低光照区域结构信息\footnote{结构信息(Structural information)指图像中物体的形状、边缘、纹理等信息，它能够帮助我们更好地理解图像中物体的形态。}建模对增强的作用从而导致增强效果不理想，比如细节模糊。
+				\item [(2)]
+				虽然有些方法提出利用边缘结构信息\footnote{边缘结构信息（Edge structure information）是指图像中物体边缘的形状、方向和纹理等信息。}去增强，但是他们经常不能得到理想的边缘结构信息引文低光照的影响。
+			\end{itemize}
+			
+			\subsubsection{Contribution}
+			
+			\begin{figure}[htbp] 
+				% read manual to see what [ht] means and for other possible options
+				\centering 
+				% \includegraphics[width=0.8\columnwidth]{GLADNet}
+				
+				\begin{subfigure}{0.25\textwidth}
+					\includegraphics[width=\linewidth]{picture/Input}
+					\captionsetup{font=scriptsize}
+					\caption{Input}
+					\label{fig: Input}
+				\end{subfigure}
+				\begin{subfigure}{0.25\textwidth}
+					\includegraphics[width=\linewidth]{picture/Structure of (a)}
+					\captionsetup{font=scriptsize}
+					\caption{Structure of (a)}
+					\label{fig: Structure of (a)}
+				\end{subfigure}
+				\begin{subfigure}{0.25\textwidth}
+					\includegraphics[width=\linewidth]{picture/SNR (CVPR 2022)}
+					\captionsetup{font=scriptsize}
+					\caption{SNR (CVPR 2022)}
+					\label{fig: SNR (CVPR 2022)}	
+				\end{subfigure} \\
+				\begin{subfigure}{0.25\textwidth}
+					\includegraphics[width=\linewidth]{picture/Structure Modeling}
+					\captionsetup{font=scriptsize}
+					\caption{Structure Modeling}
+					\label{fig: Structure Modeling}
+				\end{subfigure}
+				\begin{subfigure}{0.25\textwidth}
+					\includegraphics[width=\linewidth]{picture/Ours}
+					\captionsetup{font=scriptsize}
+					\caption{Ours}
+					\label{fig: Ours}
+				\end{subfigure}
+				\begin{subfigure}{0.25\textwidth}
+					\includegraphics[width=\linewidth]{picture/Ground Truth}
+					\captionsetup{font=scriptsize}
+					\caption{Ground Truth}
+					\label{fig: Ground Truth}
+				\end{subfigure}
+				
+				\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: Structural Information}
+					A challenging low-light frame (a), from SID-sRGB\cite{chen2018learning},
+					enhanced by a SOTA method (c) and our method (e). Our method
+					can synthesize the structure map (d) from the input image, leading
+					to clearer details, more distinct contrast, and more vivid color. Although
+					(c) has high PSNR as 28.17, its SSIM is low as 0.75. Ours
+					achieves high scores for both dB and SSIM, as 28.60dB and 0.80.
+				}
+			\end{figure}
+			
+			论文提出了一种基于GAN Loss的模型去对结构信息建模，通过获得的结构信息指导增强。如Fig. \ref{fig: Structural Information}，低光照图片中很难提取到好的结构信息，论文中提出的方法提取到的结构信息会好很多，并且用于指导图像增强也取得更好的效果。
+			
+			\subsubsection{Approach}
+			
+			\begin{itemize}
+				\item [(1)]
+				首先，通过一个简单的 U-Net 去对外观建模，可以理解成先简单地学习到一个正常光照的 coarse version。其中，损失函数为一个重建损失加感知损失。
+				\item [(2)]
+				对于结构信息建模部分，借鉴了GAN prior \cite{4767851}的思路，但是不用预训练的 GAN 模型。这里设计到一个结构特征的提取 Structure-Aware Feature Extractor (SAFE)\footnote{SAFE 通过空间变化的操作从黑暗图像及其梯度中提取结构感知的特征（采用自适应的长期和短程计算)，提取的结构感知张量输入解码器部分以生成所需的结构映射。。} 
+				\item [(3)]
+				为了利用得到的结构图来提高外观，本文设计了一个结构导向增强模块 Structure-Guided Enhancement Module（SGEM模块） 初始外观建模结果。在 SGEM 中，根据结构映射生成空间自适应核和归一化参数。然后，对 SGEM 解码器的每一层的特征进行空间全处理$y-$自适应卷积和归一化。虽然 SGEM 的整体架构采用了一个简单的 U-Net 的形式，但它可以有效地增强原始的外观。
+			\end{itemize}
+			
+			\subsubsection{Future}
+			-
+			
+		\subsection{You Do Not Need Additional Priors or Regularizers in Retinex-Based Low-Light Image Enhancement}
+		\paragraph{(CVPR 2023)} [未提供数据集]
+			
+			\subsubsection{Research Background}
+			
+			之前的工作通过引入一些额外的先验或正则化器来解决低光照增强，但这些手工设计良好的正则化函数很难应用于所有函数，约束过多的联合优化也导致了自适应性和效率的缺失。因此，以前的基于 Retinex 的方法经常会产生非自然的图像。
+			
+			\subsubsection{Contribution}
+			
+			\begin{itemize}
+				\item [(1)]
+				本文提出了一种对比学习方法和一种自知识蒸馏的方法用于 Retinex 分解。
+				\item [(2)]
+				引入了一种新的对比学习损失函数，其中考虑了一些低质量的负样本。
+				\item [(3)]
+				在此基础上，提出了一种自我知识提炼的渐进式学习策略，使学生能够更有效地学习教师的知识。
+			\end{itemize}
 
-	\begin{itemize}
-		\item {}
-			(1) 提出了一种 UHD LLIE 的新解决方案，灵感来自于在傅里叶域中观察到的独特特征。与现有的LLIE方法相比，所提出的框架在解决超高清环境下亮度增强和噪声去除的联合任务方面表现出了卓越的有效性和效率。
-		\item {}
-			(2) 贡献了第一个超高清 LLIE 数据集，该数据集包含 2150 对 4K 超高清低噪声/正常清晰数据，涵盖了不同的噪声和黑暗级别和场景。
-		\item {}
-			(3) 对现有的 UHD 数据 LLIE 方法进行了系统分析
-	\end{itemize}
-	
-	\subsubsection{Approach}
-	
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=0.8\columnwidth]{picture/Motivations}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: Motivations} Motivations. We observed that (a) luminance and noise can be ‘decomposed’ to a certain extent in the Fourier domain and (b) HR image and its LR versions share similar amplitude patterns. The amplitude and phase are produced by Fast Fourier Transform (FFT) and the compositional images are obtained by Inverse FFT(IFFT). For visualization, we show the amplitude and phase in imagery format with common transformations. Lines of the same color indicate a set of FFT/IFFT transforms. The red triangles mark the similar pattern (obviously different from the gray one). Zoom in for the details and noise. We show more examples and analysis in the Appendix.
-		}
-	\end{figure}
-	
-	如Fig.\ref{fig: Motivations}(a)所示，将低光噪声(low-noise)图像的振幅与其对应的正常光清晰(normal-clear)图像的振幅交换，生成正常光噪声(normal-noise)图像和低光清晰(low-clear)图像。结果表明，在傅里叶域中，亮度和噪声都能得到一定程度的分解。特别是，大多数亮度信息表示为振幅和噪声是分阶段显示的。这启发作者在傅里叶域中分别处理亮度和噪声。如Fig.\ref{fig: Motivations}(b)所示，HR正常清晰图像及其LR版本的振幅模式与相应的HR低噪声图像相似而不同。
-	
-	\subsubsection{Architecture}
+			\subsubsection{Approach}
+			
+			\begin{itemize}
+				\item [(1)]
+				本文提出的 Regularizer-free 的 Retinex 分解和合成网络 (RFR) 可以在没有额外的先验或正则化器的情况下进行训练。作者认为手工设计的 Retinex 先验总归不太准确，因此要抛弃手工设计的先验，所以缩减了目标函数。但是，如果使用缩减的 Retinex 公式直接训练，会导致 R 分量的估计可能无效，因为只要对所有的图片都预测一个相同的 R 分量即可。为此引入对比学习\footnote{对比学习 (Contrastive learning) 是一种无监督学习方法，它通过比较不同数据之间的相似性和差异性来学习数据的表示。其中，模型被训练来区分来自同一类别的数据和来自不同类别的数据，从而学习到能够区分不同类别的数据表示。以上，对比学习被用来监督 R 分量的估计，以确保模型能够对不同图像预测出不同的 R 分量。}来监督 R 分量的估计\footnote{具体过程：对一张输入的暗图 $I_{l_i}$}，其对应的亮图 $I_{n_i}$ 作为 positive sample，不对应的亮图 $I_{n_k}$ 作为 negative sample。同时，为了避免数据集上可能出现相同或者相似场景， $I_{n_k}$ 和 $I_{n_i}$ 之间的 $ \text{SSIM}_{\omega_{i,k}}$ 来进行归一化。
+				\item [(2)]
+				作为对对比学习的补充，文章还提出了另一种训练方式（独立于前面的对比学习，也就是说要么用对比学习要么用自蒸馏学习）。利用亮图的R分量估计特征来蒸馏暗图的 R 分量估计特征（其实如果用的是同一个网络的话是可以不看做自蒸馏的，但是文章用的是两个相同结构不同参数的网络，一个作为教师网络学习亮图的 R 分量估计特征，一个作为学生网络学习暗图的 R 分量估计特征，这就和蒸馏学习的流程一摸一样了）\footnote{自蒸馏学习 (Self-distillation) 和蒸馏学习 (Distillation learning) 都是一种用于模型压缩的方法，它们通过将一个大型模型的知识迁移到一个小型模型中来实现模型压缩。
+					
+				蒸馏学习通常指使用一个大型的教师模型来指导一个小型的学生模型的训练。在这种方法中，教师模型首先被训练好，然后它的输出被用作学生模型的训练目标。通过这种方式，学生模型能够从教师模型中学习到知识，从而达到压缩模型的目的。
+				
+				自蒸馏学习则是一种特殊的蒸馏学习方法，它不需要额外的教师模型，而是直接使用学生模型自身作为教师。在这种方法中，学生模型首先被训练好，然后它自身的输出被用作训练目标。通过这种方式，学生模型能够从自身中学习到知识，从而达到压缩模型的目的。}
+				
+			\end{itemize}
+			
+			\subsubsection{Future}
+			
+			本文利用自蒸馏和对比学习来提供额外监督是个很不错的方法，文章根据暗图增强任务进行了适应性的调整，取得的效果也很好，实验充分。后续可以把这类的方法应用到监督学习方法中。
 		
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=0.8\columnwidth]{picture/UHDFour-architecture}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: UHDFour architecture} \textbf{Overview of UHDFour.} Our approach consists of an LRNet and an HRDNet. The LRNet is an encoder-decoder network that produces 8 $\times$ downsampled result $\hat{y}_{8}$ and the refined amplitude $A_{r}$ and phase $P_{r}$ features. We omit the skip connections for brevity. The HRNet contains an Adjustment Block and the upsampling operation, producing the final result $\hat{y}$. Most computation is conducted in the LRNet.
-		}
-	\end{figure}
+%	\begin{table}[!htbp]
+%		\centering
+%		\small
+%		\caption{\label{tab: Datasets comparison}
+%			Comparison between classic LLIE datasets
+%			and our UHD-LL dataset. ‘Number’: the number of
+%			paired images. ‘Resolution’: the average resolution of the
+%			dataset. ‘Noise’: low-light images contain noise. ‘Real’:
+%			both low-light images and GT are acquired in real scenes.} %表格的标题
+%		%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+%			\begin{tabular}{>{\centering\arraybackslash}m{2.6cm}|c|c|c|c}
+%				
+%				\hline
+%				
+%				\textbf{Dataset} & \textbf{Number} & \textbf{Resolution} & \textbf{Noise} & \textbf{Real} \\
+%				
+%				\hline
+%				
+%				SID(RAW) & 5094 & \makecell{4240 $\times$ 2832 \\ 6000 $\times$ 4000} & \checkmark & \checkmark \\ 
+%				MIT-Adobe FiveK & 5000 & 4000 $\times$ 2500 &  &  \\ 
+%				Exposure-Errors  & 24000 & 1000 $\times$ 900 &  &  \\
+%				LOL & 500/789 & 600 $\times$ 400 & \checkmark & \checkmark \\
+%				\textbf{UHD-LL(Ours)} & \textbf{2150} & \textbf{3840 $\times$ 2160} & \checkmark & \checkmark \\
+%				
+%				\hline
+%				
+%			\end{tabular}
+%			%}
+%		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+%	\end{table}
 	
-	UHDFour 旨在将 UHD 低噪声输入图像 $x \in \mathbb{R}^{H \times W \times C}$ 映射到其对应的正常清除版本 $y \in \mathbb{R}^{H \times W \times C}$，其中$H, W, \text{and} C$分别表示高度、宽度和通道。Fig.\ref{fig: UHDFour architecture}显示了 UHDFour 的架构图， UHDFour 主要由 LRNet 和 HRNet 组成的。
+	\part{Unity VR 开发计划}
 	
-	LRNet 的输入首先由 Conv 层嵌入到特征层中。为了降低计算复杂度，通过双线性插值将特征采样到原始分辨率的 1/8 。然后，LR 特征经过一个编码器-解码器网络，该网络包含四个 FouSpa block，带有两个 2 $\times$ downsample和两个2 $\times$ upsample操作，获得输出特征。输出特征分别输入到 FFT 得到细化的振幅 $A_r$ 和相位$P_r$特征，并通过 Conv 层估计 LR 法向清晰图像 $\hat{y}_8 \in \mathbb{R}^{\frac{H}{8} \times \frac{W}{8} \times C}$。
-	
-	LRNet 的输出与输入相结合，被馈送到 HRNet 。具体来说，首先通过 PixelUnshuffle $\left(8 \times \downarrow\right)$ 将输入 $x$ 重塑为 $x_{pu} \in \mathbb{R}^{H \times W \times C \times 64}$ ，以保留原始信息，然后馈送给一个 Adjustment Block 。通过细化的振幅$A_r$和相位$P_r$特征，调整块产生调整后的特征，这些特征通过Pixelshuffle $\left(8 \times \downarrow\right)$ 重新塑造为输入$x$的原始高度和宽度。最后，通过双线性插值将估计得到的 LR 法线清除图像$\hat{y}_8$调整为原始输入$x$的大小，并与上采样特征相结合，估计出最终的 HR 法线清除图像 $\hat{y}$。
-		
-	FouSpa Block 和 Adjustment Block 见Fig.\ref{fig: FouSpa and Adjustment}
-	
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=0.8\columnwidth]{picture/FouSpa-and-Adjustment}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: FouSpa and Adjustment} Structures of the FouSpa Block (a) and Adjustment Block (b).
-		}
-	\end{figure}
-	
-	已知可知亮度和噪声可以在傅里叶域中分解。因此，作者设计了 FouSpa 块，在傅里叶域并行实现振幅和相位增强，在空间域并行实现特征增强。如Fig.\ref{fig: FouSpa and Adjustment}(a)所示，输入特征分为傅里叶和空间分支。在傅里叶分支中，首先使用FFT来获得振幅分量($A$)和相位分量($P$)。这两个组件分别被$1 \times 1$内核提供给两个 Conv 层。然后，通过 IFFT 将它们转换回空间域，并将它们与半实例归一化 $(HIN)$单元增强的空间特征连接起来。连接的特征被进一步馈送到 Conv 层，然后以残差方式与输入特征结合。
-	
-	Adjustment Block 是HRNet的主要结构，具有轻量化的特点。如Fig.\ref{fig: FouSpa and Adjustment}(b)所示，Adjustment Block 与 FouSpa Block 具有类似的结构。不同的是，在傅里叶分支中，利用从 LRNet 获得的细化的振幅 $A_r$ 特征，使用空间特征变换(SFT)通过简单的仿射变换来调制输入 $x_{pu}$ 的振幅特征。注意，由于相位的周期性，无法对其进行调制。
-	
-	\subsubsection{UHD-LL Dataset}
-	
-	作者收集了一个真正的低噪声/正常清除成对图像数据集，其中包含 2150 对以8bit sRGB格式保存的 4K UHD 数据。图5中显示了几个示例。
+		\section{环境配置}
 
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=0.5\columnwidth]{picture/Dataset}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: UHD-LL} Samples from the proposed UHD-LL
-			dataset.
-		}
-	\end{figure}
-	
-	作者将 UHD-LL 数据集分为两部分：2000对用于训练，115对用于测试。训练和测试分区在它们的场景和数据中是独占的。作者还确保了训练和测试分割之间像素强度分布的一致性。UHD-LL 数据集与现有的配对微光图像数据集之间的比较如Tab.\ref{tab: Datasets comparison}所示。LOL数据集(两个版本:LOL-v1: 500张图片;LOL-v2: 789张图像)与UHD-LL数据集最相关，因为两者都专注于带有噪声的真实微光图像。LOL-v2包含LOL-v1的所有图像。与LOL数据集相比，UHD-LL数据集具有更广泛的集合，其中考虑了来自丰富类型场景的不同黑暗和噪音水平。
-	
-	\begin{table}[!htbp]
-		\centering
-		\small
-		\caption{\label{tab: Datasets comparison}
-			Comparison between classic LLIE datasets
-			and our UHD-LL dataset. ‘Number’: the number of
-			paired images. ‘Resolution’: the average resolution of the
-			dataset. ‘Noise’: low-light images contain noise. ‘Real’:
-			both low-light images and GT are acquired in real scenes.} %表格的标题
-		%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
-			\begin{tabular}{>{\centering\arraybackslash}m{2.6cm}|c|c|c|c}
-				
-				\hline
-				
-				\textbf{Dataset} & \textbf{Number} & \textbf{Resolution} & \textbf{Noise} & \textbf{Real} \\
-				
-				\hline
-				
-				SID(RAW) & 5094 & \makecell{4240 $\times$ 2832 \\ 6000 $\times$ 4000} & \checkmark & \checkmark \\ 
-				MIT-Adobe FiveK & 5000 & 4000 $\times$ 2500 &  &  \\ 
-				Exposure-Errors  & 24000 & 1000 $\times$ 900 &  &  \\
-				LOL & 500/789 & 600 $\times$ 400 & \checkmark & \checkmark \\
-				\textbf{UHD-LL(Ours)} & \textbf{2150} & \textbf{3840 $\times$ 2160} & \checkmark & \checkmark \\
-				
-				\hline
-				
-			\end{tabular}
-			%}
-		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
-	\end{table}
-	
-	\section{个人工作进展}
-	
-	\subsection{思考}
-	
-	\begin{itemize}
-		\item [(1)] 目前很大一部分工作还是把 Transformer 和现有的 CNN 工作结合在一起，如 ViT 其实也是有 Hybrid Architecture (将由 ResNet 提取的特征图馈入 ViT 而非原始图像)。而对于检测和分割这类问题，CNN 方法相对已经非常成熟，难以用 Transformer 一下子完全替换掉。目前绝大部分的工作大都是 CNN 和 Transformer 的混合体，这其中有速度和效果的双重考虑。另外，也要考虑到 如果输入较大分辨率的图像，Transformer 的计算量会很大，所以 ViT 的输入并不是 Pixel，而是小 Patch。
-		
-		\item [(2)] 目前的工作已经证明：一个三层神经网络可以逼近任何一个非线性函数，前提是参数足够大，而且更重要的是找到一个好的训练方法。
-		
-	\end{itemize}
+		\begin{itemize}
+			\item [(1)] 
+			Unity 2019.4.28f1c1 及以上版本。
+			
+			\item [(2)]
+			采用 Unity 3D 引擎，采用 Open XR 和 Steam VR 拓展包\footnote{Unity 3D 支持创建 3D 和 2D 游戏以及其他交互式内容。Unity VR 则是 Unity 3D 的一个扩展，它支持开发虚拟现实（VR）应用程序。Unity VR 提供了一系列工具和功能，可以帮助开发人员创建沉浸式的 VR 体验。}。
+		\end{itemize}
 
+		\section{开发计划}
 	
-	\section{下周工作计划}
+			\subsection{模拟海洋水系统}
 	
-	(1) 使用百度的paddlepaddle库复现ViT和DeiT。
+			构建海洋水系统，该水系统可有模拟波浪和泡沫效果，可以实现水体运动，模拟浮力，且需能够同时渲染多个摄像机（VR 开发）。同时，该水系统可以模拟光传输，包括反射、折射、散射、焦散近似、阴影。此外，光散射和波浪衰减也需要实现。
+		
+			\begin{itemize}
+				\item [(1)] 
+				在 Unity VR 开发中，使用 Shader Graph 和 Particle System 等工具来构建一个具有不同天气和波浪的海洋水系统。一种常用的方法是使用 Unity 的 Shader Graph 来创建一个动态的海洋水面材质，在 Shader Graph 中定义不同的参数，例如波浪高度、波浪速度和波浪方向等，然后使用脚本来动态控制这些参数，以实现不同天气下海洋水面的变化。
+			
+				\item [(2)]
+				Unity 商店中有许多现成的插件和资源包，可以帮助快速实现海洋水系统。但存在一个很大的问题，\textcolor{red}{很多 packages 不支持同时渲染多个摄像机，这说明这些包往往不适配 VR 项目，因此需要对这些 Package中的 Assets 进行移植。} 所以，这里关注的重点可以在如何移植上，或如何让该包支持渲染多摄像机。如 Crest 实现了上述绝大部分的功能，但是不支持同时渲染多个摄像机。此外，很多海洋水系统资源包对于高级水模拟项目，并不能简单的即插即用，需要技术设置和配置\footnote{Crest 是一个功能丰富的海洋，针对 PC 和游戏机平台 以及 Unity 2019.4.8 及以上版本}。
+				
+				\item [(3)]
+				完成上述两个步骤之后，后续的开发目标为增加更多风浪和船只航行状态，提高模拟器的真实性和准确性。
+			\end{itemize}
 	
-	(2) 了解Swin Transformer。
+			\subsection{船只模型}
+		
+			可以考虑使用原来项目的船只模型。
+	
+	
+
 	%	\section{Analysis}
 	
 	%	In this section you will need to show your experimental results. Use tables and

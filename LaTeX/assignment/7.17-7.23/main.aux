@@ -13,57 +13,154 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{touvron2021training}
-\citation{li2023embedding}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Pre-Knowledge}{1}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Application scenarios}{1}{subsection.1.1}\protected@file@percent }
-\citation{kolesnikov2020big}
-\citation{xie2020self}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   The Vision Transformer - model architecture. \relax }}{2}{figure.caption.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {part}{I\hspace  {1em}Pre-Knowledge}{2}{part.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Application scenarios}{2}{section.1}\protected@file@percent }
+\citation{McDonagh_2017}
+\citation{McDonagh_2017}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}安防监控领域}{3}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}遥感成像领域}{3}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}医学影像成像领域}{3}{subsection.1.3}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig: Vision Transformer}{{1}{2}{The Vision Transformer - model architecture. \relax }{figure.caption.1}{}}
-\citation{touvron2021training}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   The comparison of the ViT model precision . \relax }}{3}{figure.caption.2}\protected@file@percent }
-\newlabel{fig: ViT precision}{{2}{3}{The comparison of the ViT model precision . \relax }{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}图像分块嵌入}{3}{subsubsection.1.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Data-efficient Image Transformer\cite  {touvron2021training}}{3}{subsection.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   Throughput and accuracy on Imagenet of our method (no external training data). The throughput is measured as the number of images processed per second on a V100 GPU. DeiT-B is identical to ViT-B, but with training adapted to a data-starving regime. It is learned in a few days on one machine. The symbol ⚗ refers to models trained with our transformer-specific distillation. See Table 5 for details and more models. \relax }}{4}{figure.caption.3}\protected@file@percent }
-\newlabel{fig: DeiT accuracy}{{3}{4}{Throughput and accuracy on Imagenet of our method (no external training data). The throughput is measured as the number of images processed per second on a V100 GPU. DeiT-B is identical to ViT-B, but with training adapted to a data-starving regime. It is learned in a few days on one machine. The symbol ⚗ refers to models trained with our transformer-specific distillation. See Table 5 for details and more models. \relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}Network optimization method}{4}{subsubsection.1.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Distilling learning}{4}{subsubsection.1.2.1}\protected@file@percent }
-\newlabel{eq: distillation}{{1}{5}{Distilling learning}{equation.1.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Network structure}{5}{equation.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Our distillation procedure: we simply include a new distillation token. It interacts with the class and patch tokens through the self-attention layers. This distillation token is employed in a similar fashion as the class token, except that on output of the network its objective is to reproduce the (hard) label predicted by the teacher, instead of true label. Both the class and distillation tokens input to the transformers are learned by back-propagation. \relax }}{5}{figure.caption.4}\protected@file@percent }
-\newlabel{fig: DeiT-network-structure}{{4}{5}{Our distillation procedure: we simply include a new distillation token. It interacts with the class and patch tokens through the self-attention layers. This distillation token is employed in a similar fashion as the class token, except that on output of the network its objective is to reproduce the (hard) label predicted by the teacher, instead of true label. Both the class and distillation tokens input to the transformers are learned by back-propagation. \relax }{figure.caption.4}{}}
-\citation{li2023embedding}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Paper reading}{6}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement \cite  {li2023embedding}}{6}{subsection.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Why?}{6}{subsubsection.2.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Contribution}{7}{subsubsection.2.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Approach}{7}{subsubsection.2.1.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   Motivations. We observed that (a) luminance and noise can be ‘decomposed’ to a certain extent in the Fourier domain and (b) HR image and its LR versions share similar amplitude patterns. The amplitude and phase are produced by Fast Fourier Transform (FFT) and the compositional images are obtained by Inverse FFT(IFFT). For visualization, we show the amplitude and phase in imagery format with common transformations. Lines of the same color indicate a set of FFT/IFFT transforms. The red triangles mark the similar pattern (obviously different from the gray one). Zoom in for the details and noise. We show more examples and analysis in the Appendix. \relax }}{7}{figure.caption.5}\protected@file@percent }
-\newlabel{fig: Motivations}{{5}{7}{Motivations. We observed that (a) luminance and noise can be ‘decomposed’ to a certain extent in the Fourier domain and (b) HR image and its LR versions share similar amplitude patterns. The amplitude and phase are produced by Fast Fourier Transform (FFT) and the compositional images are obtained by Inverse FFT(IFFT). For visualization, we show the amplitude and phase in imagery format with common transformations. Lines of the same color indicate a set of FFT/IFFT transforms. The red triangles mark the similar pattern (obviously different from the gray one). Zoom in for the details and noise. We show more examples and analysis in the Appendix. \relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}Architecture}{7}{subsubsection.2.1.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   \textbf  {Overview of UHDFour.} Our approach consists of an LRNet and an HRDNet. The LRNet is an encoder-decoder network that produces 8 $\times $ downsampled result $\hat  {y}_{8}$ and the refined amplitude $A_{r}$ and phase $P_{r}$ features. We omit the skip connections for brevity. The HRNet contains an Adjustment Block and the upsampling operation, producing the final result $\hat  {y}$. Most computation is conducted in the LRNet. \relax }}{8}{figure.caption.6}\protected@file@percent }
-\newlabel{fig: UHDFour architecture}{{6}{8}{\textbf {Overview of UHDFour.} Our approach consists of an LRNet and an HRDNet. The LRNet is an encoder-decoder network that produces 8 $\times $ downsampled result $\hat {y}_{8}$ and the refined amplitude $A_{r}$ and phase $P_{r}$ features. We omit the skip connections for brevity. The HRNet contains an Adjustment Block and the upsampling operation, producing the final result $\hat {y}$. Most computation is conducted in the LRNet. \relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   Structures of the FouSpa Block (a) and Adjustment Block (b). \relax }}{8}{figure.caption.7}\protected@file@percent }
-\newlabel{fig: FouSpa and Adjustment}{{7}{8}{Structures of the FouSpa Block (a) and Adjustment Block (b). \relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}UHD-LL Dataset}{9}{subsubsection.2.1.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces   Samples from the proposed UHD-LL dataset. \relax }}{9}{figure.caption.8}\protected@file@percent }
-\newlabel{fig: UHD-LL}{{8}{9}{Samples from the proposed UHD-LL dataset. \relax }{figure.caption.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  Comparison between classic LLIE datasets and our UHD-LL dataset. ‘Number’: the number of paired images. ‘Resolution’: the average resolution of the dataset. ‘Noise’: low-light images contain noise. ‘Real’: both low-light images and GT are acquired in real scenes.\relax }}{9}{table.caption.9}\protected@file@percent }
-\newlabel{tab: Datasets comparison}{{1}{9}{Comparison between classic LLIE datasets and our UHD-LL dataset. ‘Number’: the number of paired images. ‘Resolution’: the average resolution of the dataset. ‘Noise’: low-light images contain noise. ‘Real’: both low-light images and GT are acquired in real scenes.\relax }{table.caption.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}个人工作进展}{9}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}思考}{9}{subsection.3.1}\protected@file@percent }
+\newlabel{fig:LR input}{{\caption@xref {fig:LR input}{ on input line 115}}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{sub@fig:LR input}{{}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{fig: Linear}{{\caption@xref {fig: Linear}{ on input line 120}}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{sub@fig: Linear}{{}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{fig: B-spline}{{\caption@xref {fig: B-spline}{ on input line 125}}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{sub@fig: B-spline}{{}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{fig: 3D MRI CNN}{{\caption@xref {fig: 3D MRI CNN}{ on input line 130}}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{sub@fig: 3D MRI CNN}{{}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{fig: GT HR}{{\caption@xref {fig: GT HR}{ on input line 135}}{3}{医学影像成像领域}{figure.caption.1}{}}
+\newlabel{sub@fig: GT HR}{{}{3}{医学影像成像领域}{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   超分辨率重建在核磁共振成像中的应用 \cite  {McDonagh_2017} \relax }}{3}{figure.caption.1}\protected@file@percent }
+\newlabel{fig: Super resolution reconstruction}{{1}{3}{超分辨率重建在核磁共振成像中的应用 \cite {McDonagh_2017} \relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}消费电子领域}{3}{subsection.1.4}\protected@file@percent }
+\citation{yang2017deep}
+\citation{yang2017deep}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5}室外监控领域}{4}{subsection.1.5}\protected@file@percent }
+\newlabel{fig:rain}{{\caption@xref {fig:rain}{ on input line 160}}{4}{室外监控领域}{figure.caption.2}{}}
+\newlabel{sub@fig:rain}{{}{4}{室外监控领域}{figure.caption.2}{}}
+\newlabel{fig:people}{{\caption@xref {fig:people}{ on input line 165}}{4}{室外监控领域}{figure.caption.2}{}}
+\newlabel{sub@fig:people}{{}{4}{室外监控领域}{figure.caption.2}{}}
+\newlabel{fig:rain1}{{2a}{4}{有雨图像输入\relax }{figure.caption.2}{}}
+\newlabel{sub@fig:rain1}{{a}{4}{有雨图像输入\relax }{figure.caption.2}{}}
+\newlabel{fig:people1}{{2b}{4}{去雨结果\relax }{figure.caption.2}{}}
+\newlabel{sub@fig:people1}{{b}{4}{去雨结果\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   雨天图像雨痕去除结果 \cite  {yang2017deep} \relax }}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: Rainy image marks}{{2}{4}{雨天图像雨痕去除结果 \cite {yang2017deep} \relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Traditional Low-Light Image Enhancement Method}{5}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}基于直方图的方法}{5}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   直方图均衡化示意图 \relax }}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: Histogram equalization}{{3}{5}{直方图均衡化示意图 \relax }{figure.caption.3}{}}
+\newlabel{eq: Histogram}{{1}{5}{基于直方图的方法}{equation.2.1}{}}
+\citation{10.1145/1836845.1836920}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}基于图像反相的方法}{6}{subsection.2.2}\protected@file@percent }
+\newlabel{fig: LL input}{{\caption@xref {fig: LL input}{ on input line 247}}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{sub@fig: LL input}{{}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{fig: Inversed}{{\caption@xref {fig: Inversed}{ on input line 252}}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{sub@fig: Inversed}{{}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{fig: marked image}{{\caption@xref {fig: marked image}{ on input line 257}}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{sub@fig: marked image}{{}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{fig: de-haze}{{\caption@xref {fig: de-haze}{ on input line 262}}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{sub@fig: de-haze}{{}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{fig: Final output}{{\caption@xref {fig: Final output}{ on input line 267}}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\newlabel{sub@fig: Final output}{{}{6}{基于图像反相的方法}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   (a) low lighting video input I. (b) inverted result R from input I. (c) marked image: pixels with low intensity in at least one color (RGB) channel are in green. (d) de-haze output J using equation (7). (e) final output E after inverting image J. \relax }}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: Image Inverse}{{4}{6}{(a) low lighting video input I. (b) inverted result R from input I. (c) marked image: pixels with low intensity in at least one color (RGB) channel are in green. (d) de-haze output J using equation (7). (e) final output E after inverting image J. \relax }{figure.caption.4}{}}
+\newlabel{eq: Image Reverse}{{2}{6}{基于图像反相的方法}{equation.2.2}{}}
+\citation{557356}
+\citation{7782813}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Retinex模型}{7}{subsection.2.3}\protected@file@percent }
+\newlabel{eq: Retinex}{{3}{7}{Retinex模型}{equation.2.3}{}}
+\newlabel{eq: SSR}{{4}{7}{Retinex模型}{equation.2.4}{}}
+\newlabel{eq: R}{{5}{7}{Retinex模型}{equation.2.5}{}}
+\newlabel{eq: MSR}{{6}{7}{Retinex模型}{equation.2.6}{}}
+\newlabel{eq: Optimisation}{{7}{7}{Retinex模型}{equation.2.7}{}}
+\newlabel{eq: Weight}{{8}{7}{Retinex模型}{equation.2.8}{}}
+\citation{lore2016llnet}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Modern Low-Light Image Enhancement Method}{8}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Deep Learning for Low-Light Image Enhancement}{8}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Low-Light Image Enhancement based on the Retinex Model}{8}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Image Super Resolution}{8}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Image Super-resolution Problem Definition}{8}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Super-resolution Convolutional Neural Network Reconstruction}{8}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Very Deep Super Resolution, VDSR}{8}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Fast Super-resolution Reconstruction}{8}{subsection.4.4}\protected@file@percent }
+\newlabel{fig: Module Structure}{{5a}{9}{Module Structure\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: Module Structure}{{a}{9}{Module Structure\relax }{figure.caption.5}{}}
+\newlabel{fig: LLNet}{{5b}{9}{LLNet\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: LLNet}{{b}{9}{LLNet\relax }{figure.caption.5}{}}
+\newlabel{fig: S-LLNet}{{5c}{9}{S-LLNet\relax }{figure.caption.5}{}}
+\newlabel{sub@fig: S-LLNet}{{c}{9}{S-LLNet\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   LLNet结构示意图 \relax }}{9}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: LLNet Architecture}{{5}{9}{LLNet结构示意图 \relax }{figure.caption.5}{}}
+\citation{Lv2018MBLLEN}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Super-resolution Generative Adversarial Networks}{10}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Follow-up specific work}{10}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}方向一}{10}{subsection.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   边界伪影。 \relax }}{10}{figure.caption.6}\protected@file@percent }
+\newlabel{fig: Ringing Artifacts}{{6}{10}{边界伪影。 \relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Plan}{11}{figure.caption.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}方向二}{11}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Paper Reading}{11}{part.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}LLIE}{11}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}(2023.4)Learning Semantic-Aware Knowledge Guidance for Low-Light Image Enhancement}{11}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(CVPR 2023)arXiv:2304.07039v1}{11}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Research Background}{11}{subsubsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Contribution}{11}{subsubsection.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3}Approach}{12}{subsubsection.6.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.4}Future}{12}{subsubsection.6.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Learning a Simple Low-Light Image Enhancer From Paired Low-Light Instances}{12}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(CVPR 2023)}{12}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Research Background}{12}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2}Contribution}{12}{subsubsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.3}Approach}{12}{subsubsection.6.2.3}\protected@file@percent }
+\citation{chen2018learning}
+\citation{chen2018learning}
+\citation{4767851}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.4}Future}{13}{subsubsection.6.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Low-Light Image Enhancement via Structure Modeling and Guidance}{13}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(CVPR 2023)}{13}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.1}Research Background}{13}{subsubsection.6.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.2}Contribution}{13}{subsubsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.3}Approach}{13}{subsubsection.6.3.3}\protected@file@percent }
+\newlabel{fig: Input}{{7a}{14}{Input\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: Input}{{a}{14}{Input\relax }{figure.caption.7}{}}
+\newlabel{fig: Structure of (a)}{{7b}{14}{Structure of (a)\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: Structure of (a)}{{b}{14}{Structure of (a)\relax }{figure.caption.7}{}}
+\newlabel{fig: SNR (CVPR 2022)}{{7c}{14}{SNR (CVPR 2022)\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: SNR (CVPR 2022)}{{c}{14}{SNR (CVPR 2022)\relax }{figure.caption.7}{}}
+\newlabel{fig: Structure Modeling}{{7d}{14}{Structure Modeling\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: Structure Modeling}{{d}{14}{Structure Modeling\relax }{figure.caption.7}{}}
+\newlabel{fig: Ours}{{7e}{14}{Ours\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: Ours}{{e}{14}{Ours\relax }{figure.caption.7}{}}
+\newlabel{fig: Ground Truth}{{7f}{14}{Ground Truth\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: Ground Truth}{{f}{14}{Ground Truth\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   A challenging low-light frame (a), from SID-sRGB\cite  {chen2018learning}, enhanced by a SOTA method (c) and our method (e). Our method can synthesize the structure map (d) from the input image, leading to clearer details, more distinct contrast, and more vivid color. Although (c) has high PSNR as 28.17, its SSIM is low as 0.75. Ours achieves high scores for both dB and SSIM, as 28.60dB and 0.80. \relax }}{14}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: Structural Information}{{7}{14}{A challenging low-light frame (a), from SID-sRGB\cite {chen2018learning}, enhanced by a SOTA method (c) and our method (e). Our method can synthesize the structure map (d) from the input image, leading to clearer details, more distinct contrast, and more vivid color. Although (c) has high PSNR as 28.17, its SSIM is low as 0.75. Ours achieves high scores for both dB and SSIM, as 28.60dB and 0.80. \relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.4}Future}{14}{subsubsection.6.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}You Do Not Need Additional Priors or Regularizers in Retinex-Based Low-Light Image Enhancement}{14}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(CVPR 2023)}{14}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.1}Research Background}{14}{subsubsection.6.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.2}Contribution}{15}{subsubsection.6.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.3}Approach}{15}{subsubsection.6.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.4}Future}{15}{subsubsection.6.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {part}{III\hspace  {1em}Unity VR 开发计划}{15}{part.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}环境配置}{15}{section.7}\protected@file@percent }
 \bibstyle{unsrt}
 \bibdata{reference}
-\bibcite{dosovitskiy2021image}{1}
-\bibcite{touvron2021training}{2}
-\bibcite{li2023embedding}{3}
-\bibcite{kolesnikov2020big}{4}
-\bibcite{xie2020self}{5}
-\@writefile{toc}{\contentsline {section}{\numberline {4}下周工作计划}{10}{section.4}\protected@file@percent }
-\newlabel{LastPage}{{}{10}{}{page.10}{}}
-\xdef\lastpage@lastpage{10}
-\xdef\lastpage@lastpageHy{10}
-\gdef \@abspage@last{10}
+\bibcite{McDonagh_2017}{1}
+\bibcite{yang2017deep}{2}
+\bibcite{10.1145/1836845.1836920}{3}
+\bibcite{557356}{4}
+\@writefile{toc}{\contentsline {section}{\numberline {8}开发计划}{16}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}模拟海洋水系统}{16}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}船只模型}{16}{subsection.8.2}\protected@file@percent }
+\bibcite{7782813}{5}
+\bibcite{lore2016llnet}{6}
+\bibcite{Lv2018MBLLEN}{7}
+\bibcite{chen2018learning}{8}
+\bibcite{4767851}{9}
+\newlabel{LastPage}{{}{17}{}{page.17}{}}
+\xdef\lastpage@lastpage{17}
+\xdef\lastpage@lastpageHy{17}
+\gdef \@abspage@last{17}
