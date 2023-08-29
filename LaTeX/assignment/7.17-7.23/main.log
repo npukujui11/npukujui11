@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  27 AUG 2023 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  29 AUG 2023 08:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,8 +987,25 @@ File: picture/Final output.jpg Graphic file (type jpg)
 Package pdftex.def Info: picture/Final output.jpg  used on input line 265.
 (pdftex.def)             Requested size: 84.55246pt x 73.12053pt.
  [6 <./picture/LL input.jpg> <./picture/Inversed.jpg> <./picture/marked image.j
-pg> <./picture/de-haze.jpg> <./picture/Final output.jpg>]
-Overfull \hbox (15.78673pt too wide) in paragraph at lines 316--320
+pg> <./picture/de-haze.jpg> <./picture/Final output.jpg>] [7]
+<picture/Module Structure.jpg, id=519, 297.11pt x 442.15187pt>
+File: picture/Module Structure.jpg Graphic file (type jpg)
+<use picture/Module Structure.jpg>
+Package pdftex.def Info: picture/Module Structure.jpg  used on input line 366.
+(pdftex.def)             Requested size: 211.38832pt x 314.59795pt.
+<picture/LLNet.jpg, id=520, 123.96312pt x 440.64626pt>
+File: picture/LLNet.jpg Graphic file (type jpg)
+<use picture/LLNet.jpg>
+Package pdftex.def Info: picture/LLNet.jpg  used on input line 372.
+(pdftex.def)             Requested size: 84.55246pt x 300.55663pt.
+<picture/S-LLNet.jpg, id=521, 123.96312pt x 437.635pt>
+File: picture/S-LLNet.jpg Graphic file (type jpg)
+<use picture/S-LLNet.jpg>
+Package pdftex.def Info: picture/S-LLNet.jpg  used on input line 378.
+(pdftex.def)             Requested size: 82.20856pt x 290.22896pt.
+ [8] [9 <./picture/Module Structure.jpg> <./picture/LLNet.jpg> <./picture/S-LLN
+et.jpg>]
+Overfull \hbox (15.78673pt too wide) in paragraph at lines 421--425
 \C70/rm/m/n/10/5f q[][][][][]\C70/rm/m/n/10/7b I \C70/rm/m/n/10/54 ^^D \C70/rm/
 m/n/10/79 Í \C70/rm/m/n/10/56 à \C70/rm/m/n/10/7d   \C70/rm/m/n/10/90   \C70/rm
 /m/n/10/62 ^^P \C70/rm/m/n/10/76 „|\C70/rm/m/n/10/30 ^^B| \C70/rm/m/n/10/54 ^^L
@@ -1003,63 +1020,64 @@ n/10/5c U \C70/rm/m/n/10/52 0 \C70/rm/m/n/10/89 Æ \C70/rm/m/n/10/98 ‘ \C70/rm/m
 m/m/n/10/57 ‹\OT1/cmr/m/n/10 MBLLEN
  []
 
-<picture/Artifacts.png, id=498, 705.3552pt x 365.6862pt>
+<picture/Artifacts.png, id=539, 705.3552pt x 365.6862pt>
 File: picture/Artifacts.png Graphic file (type png)
 <use picture/Artifacts.png>
-Package pdftex.def Info: picture/Artifacts.png  used on input line 324.
+Package pdftex.def Info: picture/Artifacts.png  used on input line 429.
 (pdftex.def)             Requested size: 234.8775pt x 121.77048pt.
-[7{d:/Soft/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-[8 <./picture/Artifacts.png>] [9] [10]
-<picture/Input.jpg, id=578, 251.43938pt x 251.43938pt>
+[10{d:/Soft/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} 
+<./picture/Artifacts.png>] [11] [12]
+<picture/Input.jpg, id=611, 251.43938pt x 251.43938pt>
 File: picture/Input.jpg Graphic file (type jpg)
 <use picture/Input.jpg>
-Package pdftex.def Info: picture/Input.jpg  used on input line 460.
+Package pdftex.def Info: picture/Input.jpg  used on input line 565.
 (pdftex.def)             Requested size: 117.43875pt x 117.43604pt.
-<picture/Structure of (a).jpg, id=579, 251.94125pt x 251.43938pt>
+<picture/Structure of (a).jpg, id=612, 251.94125pt x 251.43938pt>
 File: picture/Structure of (a).jpg Graphic file (type jpg)
 <use picture/Structure of (a).jpg>
-Package pdftex.def Info: picture/Structure of (a).jpg  used on input line 466.
+Package pdftex.def Info: picture/Structure of (a).jpg  used on input line 571.
 (pdftex.def)             Requested size: 117.43875pt x 117.20584pt.
-<picture/SNR (CVPR 2022).jpg, id=580, 248.93pt x 249.43187pt>
+<picture/SNR (CVPR 2022).jpg, id=613, 248.93pt x 249.43187pt>
 File: picture/SNR (CVPR 2022).jpg Graphic file (type jpg)
 <use picture/SNR (CVPR 2022).jpg>
-Package pdftex.def Info: picture/SNR (CVPR 2022).jpg  used on input line 472.
+Package pdftex.def Info: picture/SNR (CVPR 2022).jpg  used on input line 577.
 (pdftex.def)             Requested size: 117.43875pt x 117.6783pt.
-<picture/Structure Modeling.jpg, id=581, 248.93pt x 248.93pt>
+<picture/Structure Modeling.jpg, id=614, 248.93pt x 248.93pt>
 File: picture/Structure Modeling.jpg Graphic file (type jpg)
 <use picture/Structure Modeling.jpg>
-Package pdftex.def Info: picture/Structure Modeling.jpg  used on input line 478
+Package pdftex.def Info: picture/Structure Modeling.jpg  used on input line 583
 .
 (pdftex.def)             Requested size: 117.43875pt x 117.44151pt.
-<picture/Ours.jpg, id=582, 248.93pt x 248.93pt>
+<picture/Ours.jpg, id=615, 248.93pt x 248.93pt>
 File: picture/Ours.jpg Graphic file (type jpg)
 <use picture/Ours.jpg>
-Package pdftex.def Info: picture/Ours.jpg  used on input line 484.
+Package pdftex.def Info: picture/Ours.jpg  used on input line 589.
 (pdftex.def)             Requested size: 117.43875pt x 117.44151pt.
-<picture/Ground Truth.jpg, id=583, 248.93pt x 248.93pt>
+<picture/Ground Truth.jpg, id=616, 248.93pt x 248.93pt>
 File: picture/Ground Truth.jpg Graphic file (type jpg)
 <use picture/Ground Truth.jpg>
-Package pdftex.def Info: picture/Ground Truth.jpg  used on input line 490.
+Package pdftex.def Info: picture/Ground Truth.jpg  used on input line 595.
 (pdftex.def)             Requested size: 117.43875pt x 117.44151pt.
- [11] [12 <./picture/Input.jpg> <./picture/Structure of (a).jpg> <./picture/SNR
+ [13] [14 <./picture/Input.jpg> <./picture/Structure of (a).jpg> <./picture/SNR
  (CVPR 2022).jpg> <./picture/Structure Modeling.jpg> <./picture/Ours.jpg> <./pi
-cture/Ground Truth.jpg>] [13] (./main.bbl [14]) [15] 
+cture/Ground Truth.jpg>] [15] (./main.bbl
+[16]) [17] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 78E9BEE7E93AA038D38B072FE0805AF6;8925.
  ) 
 Here is how much of TeX's memory you used:
- 20714 strings out of 476025
- 347904 string characters out of 5791521
+ 20814 strings out of 476025
+ 349833 string characters out of 5791521
  1889382 words of memory out of 5000000
- 40286 multiletter control sequences out of 15000+600000
- 595403 words of font info for 337 fonts, out of 8000000 for 9000
+ 40366 multiletter control sequences out of 15000+600000
+ 597342 words of font info for 343 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,12n,80p,1313b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
-/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:
+imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows
+/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
 /Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
 .ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Font
 s/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Wind
@@ -1111,19 +1129,22 @@ ic/amsfonts/cm/cmmi6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmmi7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmmi8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
-d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Sof
-t/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texl
-ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><d:/Soft/texlive/20
-23/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Soft/texlive/2023/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/Soft/texlive/2023/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/Soft/texlive/2023/texmf-dist
-/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/Soft/texlive/2023/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (15 pages, 2580005 bytes).
+.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/Sof
+t/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Soft/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texlive/20
+23/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><d:/Soft/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Soft/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/Soft/texlive/2023/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/pub
+lic/amsfonts/symbols/msam10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1000.pfb>
+Output written on main.pdf (17 pages, 2821533 bytes).
 PDF statistics:
- 1100 PDF objects out of 1200 (max. 8388607)
- 811 compressed objects within 9 object streams
- 100 named destinations out of 1000 (max. 500000)
- 823 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1147 PDF objects out of 1200 (max. 8388607)
+ 847 compressed objects within 9 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 838 words of extra memory for PDF output out of 10000 (max. 10000000)
 
