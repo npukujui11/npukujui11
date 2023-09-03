@@ -1,55 +1,24 @@
-\contentsline {part}{I\hspace {1em}Pre-Knowledge}{2}{part.1}%
-\contentsline {section}{\numberline {1}Application scenarios}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}安防监控领域}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}遥感成像领域}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}医学影像成像领域}{3}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}消费电子领域}{3}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}室外监控领域}{4}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Traditional Low-Light Image Enhancement Method}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}基于直方图的方法}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}基于图像反相的方法}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Retinex模型}{7}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Modern Low-Light Image Enhancement Method}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Deep Learning for Low-Light Image Enhancement}{8}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Low-Light Image Enhancement based on the Retinex Model}{8}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Image Super Resolution}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Image Super-resolution Problem Definition}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Super-resolution Convolutional Neural Network Reconstruction}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Very Deep Super Resolution, VDSR}{8}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Fast Super-resolution Reconstruction}{8}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Super-resolution Generative Adversarial Networks}{10}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Follow-up specific work}{10}{section.5}%
-\contentsline {subsection}{\numberline {5.1}方向一}{10}{subsection.5.1}%
-\contentsline {paragraph}{Plan}{11}{figure.caption.6}%
-\contentsline {subsection}{\numberline {5.2}方向二}{11}{subsection.5.2}%
-\contentsline {part}{II\hspace {1em}Paper Reading}{11}{part.2}%
-\contentsline {section}{\numberline {6}LLIE}{11}{section.6}%
-\contentsline {subsection}{\numberline {6.1}(2023.4)Learning Semantic-Aware Knowledge Guidance for Low-Light Image Enhancement}{11}{subsection.6.1}%
-\contentsline {paragraph}{(CVPR 2023)arXiv:2304.07039v1}{11}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Research Background}{11}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Contribution}{11}{subsubsection.6.1.2}%
-\contentsline {subsubsection}{\numberline {6.1.3}Approach}{12}{subsubsection.6.1.3}%
-\contentsline {subsubsection}{\numberline {6.1.4}Future}{12}{subsubsection.6.1.4}%
-\contentsline {subsection}{\numberline {6.2}Learning a Simple Low-Light Image Enhancer From Paired Low-Light Instances}{12}{subsection.6.2}%
-\contentsline {paragraph}{(CVPR 2023)}{12}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Research Background}{12}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Contribution}{12}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Approach}{12}{subsubsection.6.2.3}%
-\contentsline {subsubsection}{\numberline {6.2.4}Future}{13}{subsubsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.3}Low-Light Image Enhancement via Structure Modeling and Guidance}{13}{subsection.6.3}%
-\contentsline {paragraph}{(CVPR 2023)}{13}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {6.3.1}Research Background}{13}{subsubsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.2}Contribution}{13}{subsubsection.6.3.2}%
-\contentsline {subsubsection}{\numberline {6.3.3}Approach}{13}{subsubsection.6.3.3}%
-\contentsline {subsubsection}{\numberline {6.3.4}Future}{14}{subsubsection.6.3.4}%
-\contentsline {subsection}{\numberline {6.4}You Do Not Need Additional Priors or Regularizers in Retinex-Based Low-Light Image Enhancement}{14}{subsection.6.4}%
-\contentsline {paragraph}{(CVPR 2023)}{14}{subsection.6.4}%
-\contentsline {subsubsection}{\numberline {6.4.1}Research Background}{14}{subsubsection.6.4.1}%
-\contentsline {subsubsection}{\numberline {6.4.2}Contribution}{15}{subsubsection.6.4.2}%
-\contentsline {subsubsection}{\numberline {6.4.3}Approach}{15}{subsubsection.6.4.3}%
-\contentsline {subsubsection}{\numberline {6.4.4}Future}{15}{subsubsection.6.4.4}%
-\contentsline {part}{III\hspace {1em}Unity VR 开发计划}{15}{part.3}%
-\contentsline {section}{\numberline {7}环境配置}{15}{section.7}%
-\contentsline {section}{\numberline {8}开发计划}{16}{section.8}%
-\contentsline {subsection}{\numberline {8.1}模拟海洋水系统}{16}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}船只模型}{16}{subsection.8.2}%
+\contentsline {part}{I\hspace {1em}Pre-Knowledge}{1}{part.1}%
+\contentsline {part}{II\hspace {1em}Paper Reading}{2}{part.2}%
+\contentsline {part}{III\hspace {1em}Unity VR 开发计划}{2}{part.3}%
+\contentsline {section}{\numberline {1}环境配置}{2}{section.1}%
+\contentsline {section}{\numberline {2}项目需求}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}主菜单界面开发}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Play}{2}{subsubsection.2.1.1}%
+\contentsline {paragraph}{Free roaming}{3}{figure.caption.2}%
+\contentsline {paragraph}{Campaign}{3}{figure.caption.2}%
+\contentsline {paragraph}{Single mission}{3}{figure.caption.2}%
+\contentsline {paragraph}{Multiplayer}{3}{figure.caption.2}%
+\contentsline {paragraph}{Load saved mission}{3}{figure.caption.2}%
+\contentsline {subsubsection}{\numberline {2.1.2}Options}{3}{subsubsection.2.1.2}%
+\contentsline {paragraph}{Controls}{3}{subsubsection.2.1.2}%
+\contentsline {paragraph}{Graphics}{4}{figure.caption.4}%
+\contentsline {paragraph}{Sound}{4}{figure.caption.5}%
+\contentsline {subsubsection}{\numberline {2.1.3}Quit}{5}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Credits}{5}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Rewards}{5}{subsubsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.2}游戏模式}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Free roaming}{5}{subsubsection.2.2.1}%
+\contentsline {paragraph}{船只模型自定义}{5}{subsubsection.2.2.1}%
+\contentsline {paragraph}{环境自定义}{6}{figure.caption.7}%
+\contentsline {paragraph}{天气自定义}{6}{figure.caption.9}%
