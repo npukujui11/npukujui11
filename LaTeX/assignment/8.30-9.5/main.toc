@@ -1,0 +1,31 @@
+\contentsline {part}{I\hspace {1em}Pre-Knowledge}{2}{part.1}%
+\contentsline {part}{II\hspace {1em}Paper Reading}{2}{part.2}%
+\contentsline {section}{\numberline {1}LLIE}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}(2023.1)Illumination estimation for nature preserving low-light image enhancement}{2}{subsection.1.1}%
+\contentsline {paragraph}{低光图像增强中保留自然光的照度估计}{2}{subsection.1.1}%
+\contentsline {paragraph}{(The Visual Computer 3区) doi: 10.1007/s00371-023-02770-9}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Research Background}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Contribution}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Approach}{3}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Future}{3}{subsubsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.2}(2023.7)Division Gets Better: Learning Brightness-Aware and Detail-Sensitive Representations for Low-Light Image Enhancement}{3}{subsection.1.2}%
+\contentsline {paragraph}{分割可以变得更好：学习亮度感知和细节敏感的表示为低光图像增强}{3}{subsection.1.2}%
+\contentsline {paragraph}{(CVPR 2023) doi: 10.48550/arXiv.2307.09104}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Research Background}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Contribution}{3}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Approach}{4}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Future}{4}{subsubsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.3}(2023.3)Advanced RetinexNet: A fully convolutional network for low-light image enhancement}{4}{subsection.1.3}%
+\contentsline {paragraph}{Advanced RetinexNet：用于弱光图像增强的全卷积网络}{4}{subsection.1.3}%
+\contentsline {paragraph}{(Signal Processing: Image Communication 二区) doi: 10.1016/j.image.2022.116916}{4}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Research Background}{4}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Contribution}{6}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Approach}{6}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Future}{7}{subsubsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.4}(2023.1)LightingNet: An Integrated Learning Method for Low-Light Image Enhancement}{7}{subsection.1.4}%
+\contentsline {paragraph}{LightingNet：一种用于弱光图像增强的集成学习方法}{7}{subsection.1.4}%
+\contentsline {paragraph}{(IEEE Transactions on Computational Imaging 二区) doi: 10.1109/TCI.2023.3240087}{7}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Research Background}{7}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Contribution}{7}{subsubsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.3}Approach}{7}{subsubsection.1.4.3}%
+\contentsline {subsubsection}{\numberline {1.4.4}Future}{8}{subsubsection.1.4.4}%
