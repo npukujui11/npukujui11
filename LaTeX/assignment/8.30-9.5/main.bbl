@@ -1,3 +1,16 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{rana2021edge}
+Deepanshu Rana, Kanishk~Jayant Lal, and Anil~Singh Parihar.
+\newblock Edge guided low-light image enhancement.
+\newblock In {\em 2021 5th International Conference on Intelligent Computing
+  and Control Systems (ICICCS)}, pages 871--877. IEEE, 2021.
+
+\bibitem{zhu2020eemefn}
+Minfeng Zhu, Pingbo Pan, Wei Chen, and Yi~Yang.
+\newblock Eemefn: Low-light image enhancement via edge-enhanced multi-exposure
+  fusion network.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~34, pages 13106--13113, 2020.
 
 \end{thebibliography}
