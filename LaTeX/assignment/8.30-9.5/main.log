@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  5 SEP 2023 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  7 SEP 2023 14:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -716,11 +716,7 @@ File: UTF8.enc 2021/10/16 4.8.5
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-(./main.aux
-
-LaTeX Warning: Label `fig: Weather' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
@@ -805,7 +801,8 @@ LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
 LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
- (d:/Soft/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(d:/Soft/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
 \scratchdimen=\dimen265
@@ -888,8 +885,8 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./main.toc
-LaTeX Font Info:    Trying to load font information for C70+rm on input line 25
-.
+LaTeX Font Info:    Trying to load font information for C70+rm on input line 2.
+
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/ctex/fd/c70rm.fd
 File: c70rm.fd 2022/07/14 v2.5.10 Chinese font definition (CTEX)
@@ -905,316 +902,316 @@ nicode.sfd}) [1
 \openout4 = `main.toc'.
 
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 115.
- [2]
-Overfull \hbox (17.04364pt too wide) in paragraph at lines 153--153
+quanjiao) on input line 94.
+<picture/LLIE/MBLLEN Architecture.jpg, id=191, 793.96625pt x 320.19624pt>
+File: picture/LLIE/MBLLEN Architecture.jpg Graphic file (type jpg)
+<use picture/LLIE/MBLLEN Architecture.jpg>
+Package pdftex.def Info: picture/LLIE/MBLLEN Architecture.jpg  used on input li
+ne 99.
+(pdftex.def)             Requested size: 469.75502pt x 189.45157pt.
+<picture/LLIE/Overview.jpg, id=223, 1339.0025pt x 627.84563pt>
+File: picture/LLIE/Overview.jpg Graphic file (type jpg)
+<use picture/LLIE/Overview.jpg>
+Package pdftex.def Info: picture/LLIE/Overview.jpg  used on input line 125.
+(pdftex.def)             Requested size: 469.75502pt x 220.26659pt.
+ [2 <./picture/LLIE/MBLLEN Architecture.jpg>] [3 <./picture/LLIE/Overview.jpg>]
+ [4]
+Overfull \hbox (17.04364pt too wide) in paragraph at lines 195--195
 |[]\OT1/cmr/bx/n/12 (2023.7)Division Gets Bet-ter: Learn-ing Brightness-Aware a
 nd Detail-Sensitive
  []
 
 Package CJKpunct Info: use punctuation spaces for family 'zhsong' with punctsty
-le (quanjiao) on input line 155.
-<picture/LLIE/Division Gets Better/RGB-low light1.jpg, id=305, 128.48pt x 84.81
+le (quanjiao) on input line 197.
+<picture/LLIE/Division Gets Better/RGB-low light1.jpg, id=346, 128.48pt x 84.81
 688pt>
 File: picture/LLIE/Division Gets Better/RGB-low light1.jpg Graphic file (type j
 pg)
 <use picture/LLIE/Division Gets Better/RGB-low light1.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/RGB-low light1.jpg  
-used on input line 171.
+used on input line 213.
 (pdftex.def)             Requested size: 51.67332pt x 34.1125pt.
-<picture/LLIE/Division Gets Better/R1.jpg, id=306, 168.63pt x 111.91812pt>
+<picture/LLIE/Division Gets Better/R1.jpg, id=347, 168.63pt x 111.91812pt>
 File: picture/LLIE/Division Gets Better/R1.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/R1.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/R1.jpg  used on inpu
-t line 176.
+t line 218.
 (pdftex.def)             Requested size: 51.67332pt x 34.29465pt.
-<picture/LLIE/Division Gets Better/G1.jpg, id=307, 191.71625pt x 127.47626pt>
+<picture/LLIE/Division Gets Better/G1.jpg, id=348, 191.71625pt x 127.47626pt>
 File: picture/LLIE/Division Gets Better/G1.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/G1.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/G1.jpg  used on inpu
-t line 181.
+t line 223.
 (pdftex.def)             Requested size: 51.67332pt x 34.35873pt.
-<picture/LLIE/Division Gets Better/B1.jpg, id=308, 192.21812pt x 127.47626pt>
+<picture/LLIE/Division Gets Better/B1.jpg, id=349, 192.21812pt x 127.47626pt>
 File: picture/LLIE/Division Gets Better/B1.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/B1.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/B1.jpg  used on inpu
-t line 186.
+t line 228.
 (pdftex.def)             Requested size: 51.67332pt x 34.26927pt.
-<picture/LLIE/Division Gets Better/Y1.jpg, id=309, 192.21812pt x 127.47626pt>
+<picture/LLIE/Division Gets Better/Y1.jpg, id=350, 192.21812pt x 127.47626pt>
 File: picture/LLIE/Division Gets Better/Y1.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Y1.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Y1.jpg  used on inpu
-t line 191.
+t line 233.
 (pdftex.def)             Requested size: 51.67332pt x 34.26927pt.
-<picture/LLIE/Division Gets Better/Cb1.jpg, id=310, 192.21812pt x 127.47626pt>
+<picture/LLIE/Division Gets Better/Cb1.jpg, id=351, 192.21812pt x 127.47626pt>
 File: picture/LLIE/Division Gets Better/Cb1.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Cb1.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Cb1.jpg  used on inp
-ut line 196.
+ut line 238.
 (pdftex.def)             Requested size: 51.67332pt x 34.26927pt.
-<picture/LLIE/Division Gets Better/Cr1.jpg, id=311, 191.21437pt x 127.47626pt>
+<picture/LLIE/Division Gets Better/Cr1.jpg, id=352, 191.21437pt x 127.47626pt>
 File: picture/LLIE/Division Gets Better/Cr1.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Cr1.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Cr1.jpg  used on inp
-ut line 201.
+ut line 243.
 (pdftex.def)             Requested size: 51.67332pt x 34.44821pt.
-<picture/LLIE/Division Gets Better/Ours1.jpg, id=312, 192.21812pt x 125.97063pt
+<picture/LLIE/Division Gets Better/Ours1.jpg, id=353, 192.21812pt x 125.97063pt
 >
 File: picture/LLIE/Division Gets Better/Ours1.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Ours1.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Ours1.jpg  used on i
-nput line 206.
+nput line 248.
 (pdftex.def)             Requested size: 51.67332pt x 33.8645pt.
-<picture/LLIE/Division Gets Better/RGB-low light2.jpg, id=313, 192.21812pt x 14
+<picture/LLIE/Division Gets Better/RGB-low light2.jpg, id=354, 192.21812pt x 14
 4.03813pt>
 File: picture/LLIE/Division Gets Better/RGB-low light2.jpg Graphic file (type j
 pg)
 <use picture/LLIE/Division Gets Better/RGB-low light2.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/RGB-low light2.jpg  
-used on input line 212.
+used on input line 254.
 (pdftex.def)             Requested size: 51.67332pt x 38.72157pt.
-<picture/LLIE/Division Gets Better/R2.jpg, id=314, 192.21812pt x 144.03813pt>
+<picture/LLIE/Division Gets Better/R2.jpg, id=355, 192.21812pt x 144.03813pt>
 File: picture/LLIE/Division Gets Better/R2.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/R2.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/R2.jpg  used on inpu
-t line 217.
+t line 259.
 (pdftex.def)             Requested size: 51.67332pt x 38.72157pt.
-<picture/LLIE/Division Gets Better/G2.jpg, id=315, 191.71625pt x 144.03813pt>
+<picture/LLIE/Division Gets Better/G2.jpg, id=356, 191.71625pt x 144.03813pt>
 File: picture/LLIE/Division Gets Better/G2.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/G2.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/G2.jpg  used on inpu
-t line 222.
+t line 264.
 (pdftex.def)             Requested size: 51.67332pt x 38.82268pt.
-<picture/LLIE/Division Gets Better/B2.jpg, id=316, 192.21812pt x 144.03813pt>
+<picture/LLIE/Division Gets Better/B2.jpg, id=357, 192.21812pt x 144.03813pt>
 File: picture/LLIE/Division Gets Better/B2.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/B2.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/B2.jpg  used on inpu
-t line 227.
+t line 269.
 (pdftex.def)             Requested size: 51.67332pt x 38.72157pt.
-<picture/LLIE/Division Gets Better/Y2.jpg, id=317, 192.21812pt x 144.03813pt>
+<picture/LLIE/Division Gets Better/Y2.jpg, id=358, 192.21812pt x 144.03813pt>
 File: picture/LLIE/Division Gets Better/Y2.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Y2.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Y2.jpg  used on inpu
-t line 232.
+t line 274.
 (pdftex.def)             Requested size: 51.67332pt x 38.72157pt.
-<picture/LLIE/Division Gets Better/Cb2.jpg, id=318, 192.21812pt x 144.03813pt>
+<picture/LLIE/Division Gets Better/Cb2.jpg, id=359, 192.21812pt x 144.03813pt>
 File: picture/LLIE/Division Gets Better/Cb2.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Cb2.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Cb2.jpg  used on inp
-ut line 237.
+ut line 279.
 (pdftex.def)             Requested size: 51.67332pt x 38.72157pt.
-<picture/LLIE/Division Gets Better/Cr2.jpg, id=319, 191.21437pt x 144.03813pt>
+<picture/LLIE/Division Gets Better/Cr2.jpg, id=360, 191.21437pt x 144.03813pt>
 File: picture/LLIE/Division Gets Better/Cr2.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Cr2.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Cr2.jpg  used on inp
-ut line 242.
+ut line 284.
 (pdftex.def)             Requested size: 51.67332pt x 38.92377pt.
-<picture/LLIE/Division Gets Better/Ours2.jpg, id=320, 192.21812pt x 144.03813pt
+<picture/LLIE/Division Gets Better/Ours2.jpg, id=361, 192.21812pt x 144.03813pt
 >
 File: picture/LLIE/Division Gets Better/Ours2.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Ours2.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Ours2.jpg  used on i
-nput line 247.
+nput line 289.
 (pdftex.def)             Requested size: 51.67332pt x 38.72157pt.
-<picture/LLIE/Division Gets Better/RGB-low light3.jpg, id=321, 192.21812pt x 12
+<picture/LLIE/Division Gets Better/RGB-low light3.jpg, id=362, 192.21812pt x 12
 7.97812pt>
 File: picture/LLIE/Division Gets Better/RGB-low light3.jpg Graphic file (type j
 pg)
 <use picture/LLIE/Division Gets Better/RGB-low light3.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/RGB-low light3.jpg  
-used on input line 253.
+used on input line 295.
 (pdftex.def)             Requested size: 51.67332pt x 34.40417pt.
-<picture/LLIE/Division Gets Better/R3.jpg, id=322, 192.21812pt x 127.97812pt>
+<picture/LLIE/Division Gets Better/R3.jpg, id=363, 192.21812pt x 127.97812pt>
 File: picture/LLIE/Division Gets Better/R3.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/R3.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/R3.jpg  used on inpu
-t line 259.
+t line 301.
 (pdftex.def)             Requested size: 51.67332pt x 34.40417pt.
-<picture/LLIE/Division Gets Better/G3.jpg, id=323, 191.71625pt x 127.97812pt>
+<picture/LLIE/Division Gets Better/G3.jpg, id=364, 191.71625pt x 127.97812pt>
 File: picture/LLIE/Division Gets Better/G3.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/G3.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/G3.jpg  used on inpu
-t line 265.
+t line 307.
 (pdftex.def)             Requested size: 51.67332pt x 34.494pt.
-<picture/LLIE/Division Gets Better/B3.jpg, id=324, 192.21812pt x 127.97812pt>
+<picture/LLIE/Division Gets Better/B3.jpg, id=365, 192.21812pt x 127.97812pt>
 File: picture/LLIE/Division Gets Better/B3.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/B3.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/B3.jpg  used on inpu
-t line 271.
+t line 313.
 (pdftex.def)             Requested size: 51.67332pt x 34.40417pt.
-<picture/LLIE/Division Gets Better/Y3.jpg, id=325, 192.72pt x 127.97812pt>
+<picture/LLIE/Division Gets Better/Y3.jpg, id=366, 192.72pt x 127.97812pt>
 File: picture/LLIE/Division Gets Better/Y3.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Y3.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Y3.jpg  used on inpu
-t line 277.
+t line 319.
 (pdftex.def)             Requested size: 51.67332pt x 34.31435pt.
-<picture/LLIE/Division Gets Better/Cb3.jpg, id=326, 192.21812pt x 127.97812pt>
+<picture/LLIE/Division Gets Better/Cb3.jpg, id=367, 192.21812pt x 127.97812pt>
 File: picture/LLIE/Division Gets Better/Cb3.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Cb3.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Cb3.jpg  used on inp
-ut line 283.
+ut line 325.
 (pdftex.def)             Requested size: 51.67332pt x 34.40417pt.
-<picture/LLIE/Division Gets Better/Cr3.jpg, id=327, 191.21437pt x 127.97812pt>
+<picture/LLIE/Division Gets Better/Cr3.jpg, id=368, 191.21437pt x 127.97812pt>
 File: picture/LLIE/Division Gets Better/Cr3.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Cr3.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Cr3.jpg  used on inp
-ut line 289.
+ut line 331.
 (pdftex.def)             Requested size: 51.67332pt x 34.58383pt.
-<picture/LLIE/Division Gets Better/Ours3.jpg, id=328, 192.21812pt x 126.97438pt
+<picture/LLIE/Division Gets Better/Ours3.jpg, id=369, 192.21812pt x 126.97438pt
 >
 File: picture/LLIE/Division Gets Better/Ours3.jpg Graphic file (type jpg)
 <use picture/LLIE/Division Gets Better/Ours3.jpg>
 Package pdftex.def Info: picture/LLIE/Division Gets Better/Ours3.jpg  used on i
-nput line 295.
+nput line 337.
 (pdftex.def)             Requested size: 51.67332pt x 34.13434pt.
-[3]
-<picture/LLIE/LCDBNet.jpg, id=349, 1405.25pt x 769.37437pt>
+[5 <./picture/LLIE/Division Gets Better/RGB-low light1.jpg> <./picture/LLIE/Div
+ision Gets Better/R1.jpg> <./picture/LLIE/Division Gets Better/G1.jpg> <./pictu
+re/LLIE/Division Gets Better/B1.jpg> <./picture/LLIE/Division Gets Better/Y1.jp
+g> <./picture/LLIE/Division Gets Better/Cb1.jpg> <./picture/LLIE/Division Gets 
+Better/Cr1.jpg> <./picture/LLIE/Division Gets Better/Ours1.jpg> <./picture/LLIE
+/Division Gets Better/RGB-low light2.jpg> <./picture/LLIE/Division Gets Better/
+R2.jpg> <./picture/LLIE/Division Gets Better/G2.jpg> <./picture/LLIE/Division G
+ets Better/B2.jpg> <./picture/LLIE/Division Gets Better/Y2.jpg> <./picture/LLIE
+/Division Gets Better/Cb2.jpg> <./picture/LLIE/Division Gets Better/Cr2.jpg> <.
+/picture/LLIE/Division Gets Better/Ours2.jpg> <./picture/LLIE/Division Gets Bet
+ter/RGB-low light3.jpg> <./picture/LLIE/Division Gets Better/R3.jpg> <./picture
+/LLIE/Division Gets Better/G3.jpg> <./picture/LLIE/Division Gets Better/B3.jpg>
+ <./picture/LLIE/Division Gets Better/Y3.jpg> <./picture/LLIE/Division Gets Bet
+ter/Cb3.jpg> <./picture/LLIE/Division Gets Better/Cr3.jpg> <./picture/LLIE/Divi
+sion Gets Better/Ours3.jpg>]
+<picture/LLIE/LCDBNet.jpg, id=380, 1405.25pt x 769.37437pt>
 File: picture/LLIE/LCDBNet.jpg Graphic file (type jpg)
 <use picture/LLIE/LCDBNet.jpg>
-Package pdftex.def Info: picture/LLIE/LCDBNet.jpg  used on input line 340.
+Package pdftex.def Info: picture/LLIE/LCDBNet.jpg  used on input line 382.
 (pdftex.def)             Requested size: 469.75502pt x 257.19318pt.
-<picture/LLIE/Input1.jpg, id=351, 241.40187pt x 181.17688pt>
+<picture/LLIE/Input1.jpg, id=382, 241.40187pt x 181.17688pt>
 File: picture/LLIE/Input1.jpg Graphic file (type jpg)
 <use picture/LLIE/Input1.jpg>
-Package pdftex.def Info: picture/LLIE/Input1.jpg  used on input line 370.
+Package pdftex.def Info: picture/LLIE/Input1.jpg  used on input line 412.
 (pdftex.def)             Requested size: 112.74377pt x 84.6168pt.
-<picture/LLIE/LLME1.jpg, id=352, 240.39813pt x 181.17688pt>
+<picture/LLIE/LLME1.jpg, id=383, 240.39813pt x 181.17688pt>
 File: picture/LLIE/LLME1.jpg Graphic file (type jpg)
 <use picture/LLIE/LLME1.jpg>
-Package pdftex.def Info: picture/LLIE/LLME1.jpg  used on input line 375.
+Package pdftex.def Info: picture/LLIE/LLME1.jpg  used on input line 417.
 (pdftex.def)             Requested size: 112.74377pt x 84.97067pt.
-<picture/LLIE/SRIE1.jpg, id=353, 239.89626pt x 181.17688pt>
+<picture/LLIE/SRIE1.jpg, id=384, 239.89626pt x 181.17688pt>
 File: picture/LLIE/SRIE1.jpg Graphic file (type jpg)
 <use picture/LLIE/SRIE1.jpg>
-Package pdftex.def Info: picture/LLIE/SRIE1.jpg  used on input line 380.
+Package pdftex.def Info: picture/LLIE/SRIE1.jpg  used on input line 422.
 (pdftex.def)             Requested size: 112.74377pt x 85.1476pt.
-<picture/LLIE/Our1.jpg, id=354, 240.39813pt x 181.17688pt>
+<picture/LLIE/Our1.jpg, id=385, 240.39813pt x 181.17688pt>
 File: picture/LLIE/Our1.jpg Graphic file (type jpg)
 <use picture/LLIE/Our1.jpg>
-Package pdftex.def Info: picture/LLIE/Our1.jpg  used on input line 385.
+Package pdftex.def Info: picture/LLIE/Our1.jpg  used on input line 427.
 (pdftex.def)             Requested size: 112.74377pt x 84.97067pt.
-<picture/LLIE/Input2.jpg, id=355, 241.40187pt x 180.675pt>
+<picture/LLIE/Input2.jpg, id=386, 241.40187pt x 180.675pt>
 File: picture/LLIE/Input2.jpg Graphic file (type jpg)
 <use picture/LLIE/Input2.jpg>
-Package pdftex.def Info: picture/LLIE/Input2.jpg  used on input line 391.
+Package pdftex.def Info: picture/LLIE/Input2.jpg  used on input line 433.
 (pdftex.def)             Requested size: 112.74377pt x 84.38242pt.
-<picture/LLIE/LLME2.jpg, id=356, 239.89626pt x 180.675pt>
+<picture/LLIE/LLME2.jpg, id=387, 239.89626pt x 180.675pt>
 File: picture/LLIE/LLME2.jpg Graphic file (type jpg)
 <use picture/LLIE/LLME2.jpg>
-Package pdftex.def Info: picture/LLIE/LLME2.jpg  used on input line 397.
+Package pdftex.def Info: picture/LLIE/LLME2.jpg  used on input line 439.
 (pdftex.def)             Requested size: 112.74377pt x 84.91173pt.
-<picture/LLIE/SRIE2.jpg, id=357, 239.89626pt x 180.675pt>
+<picture/LLIE/SRIE2.jpg, id=388, 239.89626pt x 180.675pt>
 File: picture/LLIE/SRIE2.jpg Graphic file (type jpg)
 <use picture/LLIE/SRIE2.jpg>
-Package pdftex.def Info: picture/LLIE/SRIE2.jpg  used on input line 403.
+Package pdftex.def Info: picture/LLIE/SRIE2.jpg  used on input line 445.
 (pdftex.def)             Requested size: 112.74377pt x 84.91173pt.
-<picture/LLIE/Our2.jpg, id=358, 240.39813pt x 180.675pt>
+<picture/LLIE/Our2.jpg, id=389, 240.39813pt x 180.675pt>
 File: picture/LLIE/Our2.jpg Graphic file (type jpg)
 <use picture/LLIE/Our2.jpg>
-Package pdftex.def Info: picture/LLIE/Our2.jpg  used on input line 409.
+Package pdftex.def Info: picture/LLIE/Our2.jpg  used on input line 451.
 (pdftex.def)             Requested size: 112.74377pt x 84.73529pt.
- [4 <./picture/LLIE/Division Gets Better/RGB-low light1.jpg> <./picture/LLIE/Di
-vision Gets Better/R1.jpg> <./picture/LLIE/Division Gets Better/G1.jpg> <./pict
-ure/LLIE/Division Gets Better/B1.jpg> <./picture/LLIE/Division Gets Better/Y1.j
-pg> <./picture/LLIE/Division Gets Better/Cb1.jpg> <./picture/LLIE/Division Gets
- Better/Cr1.jpg> <./picture/LLIE/Division Gets Better/Ours1.jpg> <./picture/LLI
-E/Division Gets Better/RGB-low light2.jpg> <./picture/LLIE/Division Gets Better
-/R2.jpg> <./picture/LLIE/Division Gets Better/G2.jpg> <./picture/LLIE/Division 
-Gets Better/B2.jpg> <./picture/LLIE/Division Gets Better/Y2.jpg> <./picture/LLI
-E/Division Gets Better/Cb2.jpg> <./picture/LLIE/Division Gets Better/Cr2.jpg> <
-./picture/LLIE/Division Gets Better/Ours2.jpg> <./picture/LLIE/Division Gets Be
-tter/RGB-low light3.jpg> <./picture/LLIE/Division Gets Better/R3.jpg> <./pictur
-e/LLIE/Division Gets Better/G3.jpg> <./picture/LLIE/Division Gets Better/B3.jpg
-> <./picture/LLIE/Division Gets Better/Y3.jpg> <./picture/LLIE/Division Gets Be
-tter/Cb3.jpg> <./picture/LLIE/Division Gets Better/Cr3.jpg> <./picture/LLIE/Div
-ision Gets Better/Ours3.jpg>] [5 <./picture/LLIE/LCDBNet.jpg> <./picture/LLIE/I
-nput1.jpg> <./picture/LLIE/LLME1.jpg> <./picture/LLIE/SRIE1.jpg> <./picture/LLI
-E/Our1.jpg> <./picture/LLIE/Input2.jpg> <./picture/LLIE/LLME2.jpg> <./picture/L
-LIE/SRIE2.jpg> <./picture/LLIE/Our2.jpg>]
-<picture/LLIE/Advanced RetinexNet.jpg, id=372, 1129.72063pt x 312.66812pt>
+ [6 <./picture/LLIE/LCDBNet.jpg>]
+<picture/LLIE/Advanced RetinexNet.jpg, id=396, 1129.72063pt x 312.66812pt>
 File: picture/LLIE/Advanced RetinexNet.jpg Graphic file (type jpg)
 <use picture/LLIE/Advanced RetinexNet.jpg>
 Package pdftex.def Info: picture/LLIE/Advanced RetinexNet.jpg  used on input li
-ne 441.
+ne 483.
 (pdftex.def)             Requested size: 469.75502pt x 130.01248pt.
-<picture/LLIE/Decom-Net.jpg, id=376, 983.675pt x 444.15938pt>
+<picture/LLIE/Decom-Net.jpg, id=400, 983.675pt x 444.15938pt>
 File: picture/LLIE/Decom-Net.jpg Graphic file (type jpg)
 <use picture/LLIE/Decom-Net.jpg>
-Package pdftex.def Info: picture/LLIE/Decom-Net.jpg  used on input line 454.
+Package pdftex.def Info: picture/LLIE/Decom-Net.jpg  used on input line 496.
 (pdftex.def)             Requested size: 375.80544pt x 169.68369pt.
-<picture/LLIE/Enhance-Net.jpg, id=377, 1424.32124pt x 354.82562pt>
+<picture/LLIE/Enhance-Net.jpg, id=401, 1424.32124pt x 354.82562pt>
 File: picture/LLIE/Enhance-Net.jpg Graphic file (type jpg)
 <use picture/LLIE/Enhance-Net.jpg>
-Package pdftex.def Info: picture/LLIE/Enhance-Net.jpg  used on input line 466.
+Package pdftex.def Info: picture/LLIE/Enhance-Net.jpg  used on input line 508.
 (pdftex.def)             Requested size: 469.75502pt x 117.02242pt.
- [6 <./picture/LLIE/Advanced RetinexNet.jpg> <./picture/LLIE/Decom-Net.jpg>] (.
-/main.bbl [7 <./picture/LLIE/Enhance-Net.jpg>]
+ [7 <./picture/LLIE/Input1.jpg> <./picture/LLIE/LLME1.jpg> <./picture/LLIE/SRIE
+1.jpg> <./picture/LLIE/Our1.jpg> <./picture/LLIE/Input2.jpg> <./picture/LLIE/LL
+ME2.jpg> <./picture/LLIE/SRIE2.jpg> <./picture/LLIE/Our2.jpg>] [8 <./picture/LL
+IE/Advanced RetinexNet.jpg> <./picture/LLIE/Decom-Net.jpg> <./picture/LLIE/Enha
+nce-Net.jpg>]
+Overfull \hbox (6.21402pt too wide) in paragraph at lines 548--549
+[]\C70/rm/m/n/10/67 „ \C70/rm/m/n/10/5e ú \C70/rm/m/n/10/4e † \C70/rm/m/n/10/51
+ w \C70/rm/m/n/10/67 	 \C70/rm/m/n/10/51 h \C70/rm/m/n/10/5c : \C70/rm/m/n/10/5
+b ø \C70/rm/m/n/10/7e Ó \C70/rm/m/n/10/67 „ \C70/rm/m/n/10/76 „\OT1/cmr/m/n/10 
+VIT\C70/rm/m/n/10/5f 1 \C70/rm/m/n/10/51 I \C70/rm/m/n/10/58 ž \C70/rm/m/n/10/5
+f : \C70/rm/m/n/10/5b P \C70/rm/m/n/10/7f Q \C70/rm/m/n/10/7e Ü|\C70/rm/m/n/10/
+ff ^^L| \C70/rm/m/n/10/5e v \C70/rm/m/n/10/8b ¾ ¡ \C70/rm/m/n/10/4e † \C70/rm/m
+/n/10/75 ( \C70/rm/m/n/10/4e Ž \OT1/cmr/m/n/10 ViT \C70/rm/m/n/10/5f 1 \C70/rm/
+m/n/10/51 I \C70/rm/m/n/10/58 ž \C70/rm/m/n/10/5f : \C70/rm/m/n/10/5b P \C70/rm
+/m/n/10/7f Q \C70/rm/m/n/10/7e Ü \C70/rm/m/n/10/76 „ \C70/rm/m/n/10/65 9 \C70/r
+m/m/n/10/8f Û \OT1/cmr/m/n/10 PDTA(paired
+ []
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
+<picture/LLIE/LightingNet/LightingNet.jpg, id=417, 809.52437pt x 381.425pt>
+File: picture/LLIE/LightingNet/LightingNet.jpg Graphic file (type jpg)
+<use picture/LLIE/LightingNet/LightingNet.jpg>
+Package pdftex.def Info: picture/LLIE/LightingNet/LightingNet.jpg  used on inpu
+t line 564.
+(pdftex.def)             Requested size: 469.75502pt x 221.33722pt.
+[9] [10 <./picture/LLIE/LightingNet/LightingNet.jpg>]
+<picture/LLIE/Proposed Bread framework.jpg, id=433, 838.63312pt x 290.58563pt>
+File: picture/LLIE/Proposed Bread framework.jpg Graphic file (type jpg)
+<use picture/LLIE/Proposed Bread framework.jpg>
+Package pdftex.def Info: picture/LLIE/Proposed Bread framework.jpg  used on inp
+ut line 616.
+(pdftex.def)             Requested size: 469.75502pt x 162.76674pt.
+<picture/LLIE/U-shaped.jpg, id=434, 407.02063pt x 138.5175pt>
+File: picture/LLIE/U-shaped.jpg Graphic file (type jpg)
+<use picture/LLIE/U-shaped.jpg>
+Package pdftex.def Info: picture/LLIE/U-shaped.jpg  used on input line 627.
+(pdftex.def)             Requested size: 469.75502pt x 159.873pt.
+ (./main.bbl [11 <./picture/LLIE/Proposed Bread framework.jpg> <./picture/LLIE/
+U-shaped.jpg>]) [12]
 
-) [8] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: D0EE118C18DCAEFB9B924EB668FB280E;4604
-(rerunfilecheck)             After:  F67EC45BA5B9445F457DD79987CDB058;4553.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 5C54637A670F34E8C95596D2D5168FDE;5621.
  ) 
 Here is how much of TeX's memory you used:
- 20414 strings out of 476025
- 353123 string characters out of 5791521
- 1884382 words of memory out of 5000000
- 40157 multiletter control sequences out of 15000+600000
- 569182 words of font info for 241 fonts, out of 8000000 for 9000
+ 20548 strings out of 476025
+ 356468 string characters out of 5791521
+ 1883382 words of memory out of 5000000
+ 40264 multiletter control sequences out of 15000+600000
+ 572768 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,13n,80p,1981b,558s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsubsection.2.2.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.2.1.5} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.2.1.4} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.2.1.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.2.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.2.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{part.3} has been referenced but does not exist, rep
-laced by a fixed one
-
+ 78i,12n,80p,1979b,573s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
+imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
+/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
+/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
+.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
+ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
 sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
 onts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/W
@@ -1233,31 +1230,29 @@ Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
 ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
 /simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
 ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
-c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
-un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
+c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simh
+ei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
 nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
-ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
-c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows
-/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
-/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
-.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
-s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
-ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/Soft/texlive/2023/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Soft/texlive/2023/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/Soft/texlive/2023/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><d
-:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (8 pages, 2816912 bytes).
+ndows/Fonts/simsun.ttc><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:
+/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/Soft
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/Soft/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/Soft/texlive/2
+023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/Soft/texlive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Soft/texlive/2023/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texlive/2023/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (12 pages, 4285126 bytes).
 PDF statistics:
- 697 PDF objects out of 1000 (max. 8388607)
- 476 compressed objects within 5 object streams
- 52 named destinations out of 1000 (max. 500000)
- 685 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 764 PDF objects out of 1000 (max. 8388607)
+ 520 compressed objects within 6 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 742 words of extra memory for PDF output out of 10000 (max. 10000000)
 

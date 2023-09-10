@@ -89,8 +89,50 @@
 	
 	\part{Pre-Knowledge}	
 
+	\section{方向一}
 	
+		FEM 特征提取模块调研结果。
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/MBLLEN Architecture}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: MBLLEN Architecture} 
+				The proposed network with feature extraction module (FEM), enhancement module (EM) and fusion module (FM). The output image is produced via feature fusion.
+			}
+		\end{figure}
+
+	\section{方向二}
 	
+		边缘检测\footnote{人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要}：
+		
+		\begin{itemize}
+			\item[(1)] 
+			手工设计各种滤波器来生成边缘图。
+			
+			\item[(2)]
+			根据人类设计的特征使用数据驱动模型来预测边缘（随机决策森林来学习边缘斑块）
+			
+			\item[(3)]
+			深度学习方法从原始数据中学习复杂的特征表示端到端边缘检测模型。
+		\end{itemize}	
+	
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/Overview}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Overview} 
+				The overview of our framework with explicit appearance modeling $\mathcal{A}$, structure modeling $\mathcal{S}$, and SGEM $\mathcal{E}$. The supervision for $I_a$ and $\widehat{I}$ is the normal-light image $\bar{I}$, and for $I_s$ is the edge $\bar{I}_s$ extracted from $\bar{I}$. The overall framework can be trained end-to-end.
+			}
+		\end{figure}
+		
+		\cite{rana2021edge}与\cite{zhu2020eemefn}在暗区域中加入敏感边缘先验可以降低优化外观重构时的不适定程度。
+
+		这个边缘检测的思想目前的文献调研显示只集中在边缘检测和外观指导图像恢复，没有考虑和图像的色彩结合，以及恢复出来的图像还是有明显噪点。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                                                %% 
@@ -355,7 +397,7 @@
 			
 		\paragraph{Advanced RetinexNet：用于弱光图像增强的全卷积网络}
 			
-		\paragraph{(Signal Processing: Image Communication 二区) doi: 10.1016/j.image.2022.116916}
+		\paragraph{(Signal Processing: Image Communication 2区) doi: 10.1016/j.image.2022.116916}
 			
 			\subsubsection{Research Background}
 				
@@ -490,17 +532,42 @@
 		
 		\paragraph{LightingNet：一种用于弱光图像增强的集成学习方法}
 		
-		\paragraph{(IEEE Transactions on Computational Imaging 二区) doi: 10.1109/TCI.2023.3240087}
+		\paragraph{(IEEE Transactions on Computational Imaging 2区) doi: 10.1109/TCI.2023.3240087}
 		
 			\subsubsection{Research Background}
 			
 			大多数基于 Retinex 的深度学习方法在弱光增强任务中表现出了更强的性能。然而，大多数深度学习方法再增强过程中仍然无法平衡噪声控制和增亮精度。大多数现有的弱光图像增强方法中存在的噪声、色差和细节失真等问题，为此，作者提出了一种集成学习方法 (LightingNet) 用于弱光图像增强。
 			
 			\subsubsection{Contribution}
-			
+
+			\begin{itemize}
+				\item[(1)] 
+				提出了一种基于集成学习的弱光增强生成对抗网络(LightingNet)，该网络由 ViT 弱光增强子网络和基于学习迁移的互补学习子网络组成。ViT 弱光增强子网络提供当前数据的细粒度高级信息，互补学习子网络提供具有鲁棒性的全局信息。
+				
+				\item[(2)]
+				构建了具有全尺寸结构的VIT弱光增强子网络，并设计了用于 ViT 弱光增强子网络的改进 PDTA(paired deconv transposed self-attention) 自关注模块。
+
+				\item[(3)]
+				作者验证了基于传统卷积网络的学习迁移与 ViT 结合再弱光增强任务上的可行性。将 Res2Net 的编码器部分相结合，构建互补学习子网络。
+				
+				\item[(4)]
+				大量的实验证实了所提出的LightingNet在主观和客观评价方面的有效性
+			\end{itemize}	
+
 			\subsubsection{Approach}
 			
-			LighingNet 由两个核心部分组成：
+			LighingNet 由两个核心部分组成，如 Fig. \ref{fig: LightingNet}：
+			
+			\begin{figure}[htbp]
+				% read manual to see what [ht] means and for other possible options
+				\centering 
+				\includegraphics[width=\columnwidth]{picture/LLIE/LightingNet/LightingNet}
+				%\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: LightingNet} 
+					Architecture of the proposed LightingNet.
+				}
+			\end{figure}
 			
 			\begin{itemize}
 				\item[(1)] 
@@ -514,6 +581,68 @@
 			
 			-
 		
+		\subsection{(2022.10)Low-light Image Enhancement via Breaking Down the Darkness}
+		
+		\paragraph{通过破坏黑暗来进行低光图像增强}
+		
+		\paragraph{(International Journal of Computer Vision 2区) doi: 10.1007/s11263-022-01667-9}
+		
+			\subsubsection{Research Background}
+			
+			弱光图像增强不仅仅是光的调整问题，由于拍摄设备的能力有限，还存在隐藏在黑暗中的噪点爆发和色彩失真等问题。由于传感器的质量有限，退化 $E$ 总是驻留在图像中，Retinex 模型为：$$I = R \circ L + E$$，经过代数变换可以得到 $$I = (R \circ \tilde{E}) \circ L$$，其中 $\tilde{E} = \frac{E}{L}$，从中不难看出，随着光的增强，退化 $E$ 会被放大。
+			
+			此外，在低光条件下，传感器(CCD 或 CMOS)对不同光谱的光子不足敏感且非线性，即使光照和噪声处理得当，也会导致颜色失真。
+			
+			作者认为，一个合格 LLIE 算法应该能够就够纠正昏暗的光线、噪声和颜色失真等高度纠缠的问题。
+			
+			\subsubsection{Contribution}
+			
+			作者的主要贡献如下：
+			
+			\begin{itemize}
+				\item[(1)] 
+				通过分解黑暗 (Bread)， 开发了一种有效的弱光图像增强框架，如Fig .\ref{fig: Bread}，以解耦噪声和颜色失真的纠缠，进一步减轻复杂退化的低光增强的困难。
+				
+				\item[(2)]
+				作者提出了一种有效的光照引导下的噪声合成策略，显著提高了纹理中放大噪声和空间相关噪声的抑制质量。
+				
+				\item[(3)]
+				为了解决光增强图像的颜色失真问题，作者设计了一种新的颜色适应网络，该网络可以根据给定的纹理适当地处理颜色。
+			\end{itemize}	
+			
+			\begin{figure}[htbp]
+				% read manual to see what [ht] means and for other possible options
+				\centering 
+				\includegraphics[width=\columnwidth]{picture/LLIE/Proposed Bread framework}
+				%\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: Bread} 
+					The overall network architecture of our proposed Bread framework
+				}
+			\end{figure}
+			
+			\begin{figure}[htbp]
+				% read manual to see what [ht] means and for other possible options
+				\centering 
+				\includegraphics[width=\columnwidth]{picture/LLIE/U-shaped}
+				%\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: U-shaped} 
+					The U-shaped architecture of our sub-networks, including IAN, ANSN, NFM, and CAN
+				}
+			\end{figure}
+			
+			\subsubsection{Approach}
+			
+			作者从分而治之的角度处理黑暗中的复杂退化。假设可以将图像分解为纹理(连同噪声主体)和颜色分量，则可以具体执行去噪、色彩校正以及调光等操作。
+			
+			通过纹理-颜色分离，可以单独处理纹理和颜色分量的退化，即关注纹理中的噪声问题和对应的颜色失真问题。
+			
+			通过这样的分而治之原理，训练深度网络的原始搜索空间将在很大程度上(指数级)缩减为更小的子网络，这些子网络可以以单个和并行的方式进行训练，从而减轻了联合调优超参数的负担。
+			
+			\subsubsection{Future}
+			
+			-
 %	\begin{table}[!htbp]
 %		\centering
 %		\small
@@ -545,6 +674,8 @@
 %		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
 %	\end{table}
 	
+
+
 %	\part{Unity VR 开发计划}
 %
 %		\section{项目需求}
