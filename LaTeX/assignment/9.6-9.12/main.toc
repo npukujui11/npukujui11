@@ -1,0 +1,34 @@
+\contentsline {part}{I\hspace {1em}Pre-Knowledge}{1}{part.1}%
+\contentsline {section}{\numberline {1}边缘检测基础理论}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}边缘检测分类}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}基于搜索的边缘检测方法}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}基于零穿越的边缘检测方法}{2}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}算子比较}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}方向}{4}{section.2}%
+\contentsline {part}{II\hspace {1em}Paper Reading}{4}{part.2}%
+\contentsline {section}{\numberline {3}LLIE}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}(2020.4)EEMEFN: Low-Light Image Enhancement via Edge-Enhanced Multi-Exposure Fusion Network}{5}{subsection.3.1}%
+\contentsline {paragraph}{EEMEFN：基于边缘增强多曝光融合网络的弱光图像增强}{5}{subsection.3.1}%
+\contentsline {paragraph}{(AAAI 2020) doi: doi.org/10.1609/aaai.v34i07.7013}{5}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Research Background}{5}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Contribution}{6}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Approach}{6}{subsubsection.3.1.3}%
+\contentsline {paragraph}{Multi-Exposure Fusion}{6}{figure.caption.5}%
+\contentsline {paragraph}{Edge Enhancement}{8}{equation.3.2}%
+\contentsline {subparagraph}{Detection}{8}{equation.3.2}%
+\contentsline {subparagraph}{Enhancement}{8}{equation.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.4}Future}{8}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}(2021.5)Edge guided low-light image enhancement}{8}{subsection.3.2}%
+\contentsline {paragraph}{边缘引导的低光图像增强 }{8}{subsection.3.2}%
+\contentsline {paragraph}{(2021 5th International Conference on Intelligent Computing and Control Systems (ICICCS)) doi: 10.1109/ICICCS51141.2021.9432150}{8}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Research Background}{8}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Contribution}{9}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Approach}{9}{subsubsection.3.2.3}%
+\contentsline {paragraph}{EdgeNet}{9}{subsubsection.3.2.3}%
+\contentsline {paragraph}{EnhanceNet}{9}{figure.caption.7}%
+\contentsline {subsubsection}{\numberline {3.2.4}Future}{11}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}(2019.15)Visual Cross-Image Fusion Using Deep Neural Networks for Image Edge Detection}{11}{subsection.3.3}%
+\contentsline {paragraph}{利用深度神经网络进行图像边缘检测}{11}{subsection.3.3}%
+\contentsline {paragraph}{(IEEE Access 2区) doi: 10.1109/ACCESS.2019.2914151}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Research Background}{11}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Contribution}{12}{subsubsection.3.3.2}%
