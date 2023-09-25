@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  25 SEP 2023 14:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  25 SEP 2023 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1049,10 +1049,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 8B5BAFC7ABB71762D37176D2D76E709C;1025.
  ) 
 Here is how much of TeX's memory you used:
- 19807 strings out of 476025
- 334673 string characters out of 5791521
+ 19808 strings out of 476025
+ 334692 string characters out of 5791521
  1884382 words of memory out of 5000000
- 39606 multiletter control sequences out of 15000+600000
+ 39607 multiletter control sequences out of 15000+600000
  562357 words of font info for 216 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,12n,80p,710b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1098,7 +1098,7 @@ oft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/Soft/te
 xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Soft/texlive/
 2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texlive/2023/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on main.pdf (6 pages, 41429190 bytes).
+Output written on main.pdf (6 pages, 41429403 bytes).
 PDF statistics:
  609 PDF objects out of 1000 (max. 8388607)
  402 compressed objects within 5 object streams
