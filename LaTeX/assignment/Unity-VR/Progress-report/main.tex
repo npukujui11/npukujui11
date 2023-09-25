@@ -87,15 +87,13 @@
 	\renewcommand{\tablename}{Table}
 	\tableofcontents  % 自动生成目录
 	
-
 	\section{项目需求}
-	
+		
 		\subsection{船只模型自定义}
 		
 		\begin{figure}[htbp]
 			% read manual to see what [ht] means and for other possible options
-			\centering				
-			\includegraphics[width=0.7\columnwidth]{picture/Select a ship}
+			\centering				\includegraphics[width=\columnwidth]{picture/Select a ship}
 			%\captionsetup{font=scriptsize}
 			\caption{
 				\label{fig: Select a ship} 
@@ -103,11 +101,11 @@
 			}	
 		\end{figure}
 		
-		玩家可以在游戏中自由选择不同类型的船只，每种船只都具有独特的特性，包括转向半径、平稳程度、马力、大小等方面的明显差异。当玩家进行船只选择时，所选的船只模型会直接显示在主界面上，使玩家能够直观地了解其外观和特点。游戏至少提供两种不同的船只类别供玩家选择，以增加游戏的多样性。如 Fig. \ref{fig: Select a ship}所示。
-	
+		玩家可以进行船只选择，不同的船只会有区别，如转向半径、平稳程度、马力、船只大小等会有明显区别。并且进行选择时，该船只会出现在主界面上，玩家可以直观的看到所选择的船只模型，如 Fig. \ref{fig: Select a ship}所示，且\textbf{至少有两个船只类别}。
+		
 		\subsection{天气系统功能实现}
-	
-		前期开发需要\textbf{实现两种海面天气，如 Snow storm 和 Wind 天气}，如 Fig. \ref{fig: Snow storm}和 Fig. \ref{fig: Wind}所示。
+		
+		前期开发需要\textbf{实现两种海面天气，如 Hail 和 Storm 天气}，如 Fig. \ref{fig: Hail}和 Fig. \ref{fig: Storm}所示。
 		
 		\begin{figure}[htbp] 
 			% read manual to see what [ht] means and for other possible options
@@ -175,15 +173,13 @@
 			}
 		\end{figure}
 		
-		在 \textbf{暴风雪 (Snow storm) 海况}下（见 Fig. \ref{fig: Snow storm1}），玩家将体验到逼真的海浪效果，海面会展现出明显的波涛汹涌，船只会随着海浪的起伏而摇摆。此外，游戏界面还会呈现下雪的景象，雪花飘落在天空中，增添了寒冷的氛围，同时也降低了能见度。玩家将感受到浓雾和大浪带来的挑战。
+		其中 \textbf{Storm} 海况下（强风、大浪、降水），海面需要实现\textbf{明显且逼真}的波涛汹涌效果，船只随着海浪的涌动而剧烈摇晃，天空阴云密布，下暴雨；在 \textbf{Hail} 海况下，海面白色浪花更加明显，海水波动效果明显，能见度低，远处阴云密布，下冰雹。
 		
-		在 \textbf{风浪 (Wind) 海况}下（见 Fig. \ref{fig: Wind1}），海面上的白色浪花更加明显，海水波动更加明显，玩家能够清晰看到远处的景象。天空中有阴云密布，增加了紧张氛围。此外，玩家还会听到风声，增加了听觉上的真实感。这种海况下，玩家需要应对更具挑战性的环境条件。
+		\subsection{操作视角自定义}
 		
-		\subsection{操作视角}
+		玩家在操纵船只时，可以选择不同的操作视角，主要有两种游戏视角，分别为 orbit(航线视角), helmsman(舵手视角)， 如Fig. \ref{fig: View}所示。
 		
-		玩家在操纵船只时，可以选择不同的操作视角，主要有两个游戏视角，分别为 orbit(航线视角), helmsman(舵手视角)， 如Fig. \ref{fig: View}所示。
-		
-		\begin{figure}[b] 
+		\begin{figure}[htbp] 
 			% read manual to see what [ht] means and for other possible options
 			\centering 
 			% \includegraphics[width=0.8\columnwidth]{GLADNet}
@@ -205,6 +201,26 @@
 				\label{fig: View}						
 				2种不同的操控视角。
 			}
+		\end{figure}
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering				\includegraphics[width=\columnwidth]{picture/Hail}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Hail1} 
+				Hail海况
+			}	
+		\end{figure}
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering				\includegraphics[width=\columnwidth]{picture/Storm}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Storm1} 
+				Storm海况
+			}	
 		\end{figure}
 		
 		\subsection{VR沉浸式体验装置}
@@ -229,27 +245,94 @@
 			
 		\end{itemize}	
 		
-		\begin{figure}[htbp]
-			% read manual to see what [ht] means and for other possible options
-			\centering				
-			\includegraphics[width=\columnwidth]{picture/Snow storm}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Snow storm1} 
-				Snow storm 海况
-			}	
-		\end{figure}
+	\section{开发进度}
+	
+		开发项目演示视频见\footnote{https://github.com/npukujui11/npukujui11/tree/Unity-VR/LaTeX/assignment/Unity-VR/Progress-report/video}
+	
+		\subsection{场景开发进度}
 		
-		\begin{figure}[htbp]
+		目前已经开发了三种不同的天气场景，分别是雾天 (Foggy) 、下雨天 (Rainy)和冰雹天气 (Hail)，见 Fig .\ref{fig: Third-person perspective another-IP}, Fig .\ref{fig: Third-person perspective another rain-IP}, Fig .\ref{fig: Third-person perspective another hail-IP}。
+		
+		\begin{figure}[htbp] 
 			% read manual to see what [ht] means and for other possible options
-			\centering				
-			\includegraphics[width=\columnwidth]{picture/Wind}
-			%\captionsetup{font=scriptsize}
+			\centering 
+			% \includegraphics[width=0.8\columnwidth]{GLADNet}
+			
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/Third-person perspective another-IP}
+				\captionsetup{font=scriptsize}
+				\caption{Foggy}
+				\label{fig: Third-person perspective another-IP}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/Third-person perspective another rain-IP}
+				\captionsetup{font=scriptsize}
+				\caption{Rainy}
+				\label{fig: Third-person perspective another rain-IP}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/Third-person perspective another hail-IP}
+				\captionsetup{font=scriptsize}
+				\caption{Hail}
+				\label{fig: Third-person perspective another hail-IP}	
+			\end{subfigure}\\
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/First-person perspective Hail-IP}
+				\captionsetup{font=scriptsize}
+				\caption{First-person Hail}
+				\label{fig: First-person perspective Hail-IP}	
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/First-person perspective rain-IP}
+				\captionsetup{font=scriptsize}
+				\caption{First-person Rain}
+				\label{fig: First-person perspective rain-IP}	
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/First-person perspective-IP}
+				\captionsetup{font=scriptsize}
+				\caption{First-person Speedboat}
+				\label{fig: First-person perspective-IP}	
+			\end{subfigure}\\
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/Third-person perspective rain-IP}
+				\captionsetup{font=scriptsize}
+				\caption{Third-person Speedboat}
+				\label{fig: Third-person perspective rain-IP}	
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/Third-person perspective-IP}
+				\captionsetup{font=scriptsize}
+				\caption{Foggy Speedboat}
+				\label{fig: Third-person perspective-IP}	
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/Main menu-IP}
+				\captionsetup{font=scriptsize}
+				\caption{Main menu}
+				\label{fig: Main menu-IP}	
+			\end{subfigure}
+			
+			\captionsetup{font=scriptsize}
 			\caption{
-				\label{fig: Wind1} 
-				Wind 海况
-			}	
+				\label{fig: Scene}						
+			}
 		\end{figure}
+	
+		\subsection{视角开发进度}
+		
+		玩家通过手柄摇杆按钮可以控制船只前进和后退，以及转向行驶，如 Fig. \ref{fig: First-person perspective rain-IP} 所示。
+		
+		玩家开船可以选择不同的船只视角，如 Fig. \ref{fig: Third-person perspective another hail-IP} 和 Fig .\ref{fig: First-person perspective Hail-IP} 所示。
+		
+		\subsection{船只模型}
+		
+		目前选择了两种船只模型，见 Fig. \ref{fig: Third-person perspective another-IP} 和 Fig. \ref{fig: Third-person perspective-IP}
+		
+		\subsection{未来开发计划}
+		
+		基于构建 VR 沉浸式体验装置的需求，计划通过添加游戏控制器震动反馈作为对气缸控制的前期调研，以期解决目前气缸无序运动的问题。同时计划在 VR 游戏中构建更合理的海洋水系统，以期构建更多样化的天气场景。		
+		
 
 	%	\section{Analysis}
 	

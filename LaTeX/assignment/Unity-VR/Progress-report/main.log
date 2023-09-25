@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  24 SEP 2023 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  25 SEP 2023 14:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,58 +897,76 @@ File: c70rm.fd 2022/07/14 v2.5.10 Chinese font definition (CTEX)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
-<picture/Select a ship.jpg, id=56, 14.8487pt x 7.1681pt>
+<picture/Select a ship.jpg, id=84, 14.8487pt x 7.1681pt>
 File: picture/Select a ship.jpg Graphic file (type jpg)
 <use picture/Select a ship.jpg>
-Package pdftex.def Info: picture/Select a ship.jpg  used on input line 98.
-(pdftex.def)             Requested size: 328.82707pt x 158.7912pt.
+Package pdftex.def Info: picture/Select a ship.jpg  used on input line 96.
+(pdftex.def)             Requested size: 469.75502pt x 226.84558pt.
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 103.
-<picture/Clear sky.png, id=85, 1927.2pt x 1084.05pt>
+quanjiao) on input line 101.
+<picture/Clear sky.png, id=103, 1927.2pt x 1084.05pt>
 File: picture/Clear sky.png Graphic file (type png)
 <use picture/Clear sky.png>
-Package pdftex.def Info: picture/Clear sky.png  used on input line 118.
+Package pdftex.def Info: picture/Clear sky.png  used on input line 116.
 (pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
-<picture/Drizzle.png, id=86, 1927.2pt x 1084.05pt>
+<picture/Drizzle.png, id=104, 1927.2pt x 1084.05pt>
 File: picture/Drizzle.png Graphic file (type png)
 <use picture/Drizzle.png>
-Package pdftex.def Info: picture/Drizzle.png  used on input line 124.
+Package pdftex.def Info: picture/Drizzle.png  used on input line 122.
 (pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
-<picture/Foggy.png, id=87, 1927.2pt x 1084.05pt>
+<picture/Foggy.png, id=105, 1927.2pt x 1084.05pt>
 File: picture/Foggy.png Graphic file (type png)
 <use picture/Foggy.png>
-Package pdftex.def Info: picture/Foggy.png  used on input line 130.
+Package pdftex.def Info: picture/Foggy.png  used on input line 128.
 (pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
-<picture/Hail.png, id=88, 1927.2pt x 1084.05pt>
+<picture/Hail.png, id=106, 1927.2pt x 1084.05pt>
 File: picture/Hail.png Graphic file (type png)
 <use picture/Hail.png>
-Package pdftex.def Info: picture/Hail.png  used on input line 136.
+Package pdftex.def Info: picture/Hail.png  used on input line 134.
 (pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
-<picture/Light snow.png, id=89, 1927.2pt x 1084.05pt>
+<picture/Light snow.png, id=107, 1927.2pt x 1084.05pt>
 File: picture/Light snow.png Graphic file (type png)
 <use picture/Light snow.png>
-Package pdftex.def Info: picture/Light snow.png  used on input line 142.
+Package pdftex.def Info: picture/Light snow.png  used on input line 140.
 (pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
-<picture/Rainy.png, id=90, 1927.2pt x 1084.05pt>
+<picture/Rainy.png, id=108, 1927.2pt x 1084.05pt>
 File: picture/Rainy.png Graphic file (type png)
 <use picture/Rainy.png>
-Package pdftex.def Info: picture/Rainy.png  used on input line 148.
+Package pdftex.def Info: picture/Rainy.png  used on input line 146.
 (pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
-<picture/Snow storm.jpg, id=91, 3854.4pt x 2168.1pt>
+<picture/Snow storm.jpg, id=109, 3854.4pt x 2168.1pt>
 File: picture/Snow storm.jpg Graphic file (type jpg)
 <use picture/Snow storm.jpg>
-Package pdftex.def Info: picture/Snow storm.jpg  used on input line 154.
+Package pdftex.def Info: picture/Snow storm.jpg  used on input line 152.
 (pdftex.def)             Requested size: 140.92793pt x 79.26567pt.
-<picture/Storm.jpg, id=92, 3854.4pt x 2168.1pt>
+<picture/Storm.jpg, id=110, 3854.4pt x 2168.1pt>
 File: picture/Storm.jpg Graphic file (type jpg)
 <use picture/Storm.jpg>
-Package pdftex.def Info: picture/Storm.jpg  used on input line 160.
+Package pdftex.def Info: picture/Storm.jpg  used on input line 158.
 (pdftex.def)             Requested size: 140.92793pt x 79.26567pt.
-<picture/Wind.jpg, id=93, 3854.4pt x 2168.1pt>
+<picture/Wind.jpg, id=111, 3854.4pt x 2168.1pt>
 File: picture/Wind.jpg Graphic file (type jpg)
 <use picture/Wind.jpg>
-Package pdftex.def Info: picture/Wind.jpg  used on input line 166.
+Package pdftex.def Info: picture/Wind.jpg  used on input line 164.
 (pdftex.def)             Requested size: 140.92793pt x 79.26567pt.
+<picture/orbit.png, id=116, 1927.2pt x 1084.05pt>
+File: picture/orbit.png Graphic file (type png)
+<use picture/orbit.png>
+Package pdftex.def Info: picture/orbit.png  used on input line 188.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+<picture/helmsman.png, id=117, 1927.2pt x 1084.05pt>
+File: picture/helmsman.png Graphic file (type png)
+<use picture/helmsman.png>
+Package pdftex.def Info: picture/helmsman.png  used on input line 194.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+File: picture/Hail.png Graphic file (type png)
+<use picture/Hail.png>
+Package pdftex.def Info: picture/Hail.png  used on input line 208.
+(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
+File: picture/Storm.jpg Graphic file (type jpg)
+<use picture/Storm.jpg>
+Package pdftex.def Info: picture/Storm.jpg  used on input line 218.
+(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex
 File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdf
@@ -956,86 +974,134 @@ TeX and DVIPDFMx (CTEX)
 {d:/Soft/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{UGBK.sfd}{U
 nicode.sfd}) [1
 
- <./picture/Select a ship.jpg>]
-<picture/orbit.png, id=178, 1927.2pt x 1084.05pt>
-File: picture/orbit.png Graphic file (type png)
-<use picture/orbit.png>
-Package pdftex.def Info: picture/orbit.png  used on input line 192.
+] [2 <./picture/Select a ship.jpg> <./picture/Clear sky.png> <./picture/Drizzle
+.png> <./picture/Foggy.png> <./picture/Hail.png> <./picture/Light snow.png> <./
+picture/Rainy.png> <./picture/Snow storm.jpg> <./picture/Storm.jpg> <./picture/
+Wind.jpg>] [3 <./picture/orbit.png> <./picture/helmsman.png>]
+[4]
+<picture/Third-person perspective another-IP.jpg, id=256, 1284.8pt x 722.7pt>
+File: picture/Third-person perspective another-IP.jpg Graphic file (type jpg)
+<use picture/Third-person perspective another-IP.jpg>
+Package pdftex.def Info: picture/Third-person perspective another-IP.jpg  used 
+on input line 262.
 (pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
-<picture/helmsman.png, id=179, 1927.2pt x 1084.05pt>
-File: picture/helmsman.png Graphic file (type png)
-<use picture/helmsman.png>
-Package pdftex.def Info: picture/helmsman.png  used on input line 198.
+<picture/Third-person perspective another rain-IP.jpg, id=257, 1284.8pt x 722.7
+pt>
+File: picture/Third-person perspective another rain-IP.jpg Graphic file (type j
+pg)
+<use picture/Third-person perspective another rain-IP.jpg>
+Package pdftex.def Info: picture/Third-person perspective another rain-IP.jpg  
+used on input line 268.
 (pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
- [2 <./picture/Clear sky.png> <./picture/Drizzle.png> <./picture/Foggy.png> <./
-picture/Hail.png> <./picture/Light snow.png> <./picture/Rainy.png> <./picture/S
-now storm.jpg> <./picture/Storm.jpg> <./picture/Wind.jpg> <./picture/orbit.png>
- <./picture/helmsman.png>]
-File: picture/Snow storm.jpg Graphic file (type jpg)
-<use picture/Snow storm.jpg>
-Package pdftex.def Info: picture/Snow storm.jpg  used on input line 235.
-(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
-File: picture/Wind.jpg Graphic file (type jpg)
-<use picture/Wind.jpg>
-Package pdftex.def Info: picture/Wind.jpg  used on input line 246.
-(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
+<picture/Third-person perspective another hail-IP.jpg, id=258, 1284.8pt x 722.7
+pt>
+File: picture/Third-person perspective another hail-IP.jpg Graphic file (type j
+pg)
+<use picture/Third-person perspective another hail-IP.jpg>
+Package pdftex.def Info: picture/Third-person perspective another hail-IP.jpg  
+used on input line 274.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+<picture/First-person perspective Hail-IP.jpg, id=259, 1284.8pt x 722.7pt>
+File: picture/First-person perspective Hail-IP.jpg Graphic file (type jpg)
+<use picture/First-person perspective Hail-IP.jpg>
+Package pdftex.def Info: picture/First-person perspective Hail-IP.jpg  used on 
+input line 280.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+<picture/First-person perspective rain-IP.jpg, id=260, 1284.8pt x 722.7pt>
+File: picture/First-person perspective rain-IP.jpg Graphic file (type jpg)
+<use picture/First-person perspective rain-IP.jpg>
+Package pdftex.def Info: picture/First-person perspective rain-IP.jpg  used on 
+input line 286.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+<picture/First-person perspective-IP.jpg, id=261, 1284.8pt x 722.7pt>
+File: picture/First-person perspective-IP.jpg Graphic file (type jpg)
+<use picture/First-person perspective-IP.jpg>
+Package pdftex.def Info: picture/First-person perspective-IP.jpg  used on input
+ line 292.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+<picture/Third-person perspective rain-IP.jpg, id=262, 1284.8pt x 722.7pt>
+File: picture/Third-person perspective rain-IP.jpg Graphic file (type jpg)
+<use picture/Third-person perspective rain-IP.jpg>
+Package pdftex.def Info: picture/Third-person perspective rain-IP.jpg  used on 
+input line 298.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+<picture/Third-person perspective-IP.jpg, id=263, 1284.8pt x 722.7pt>
+File: picture/Third-person perspective-IP.jpg Graphic file (type jpg)
+<use picture/Third-person perspective-IP.jpg>
+Package pdftex.def Info: picture/Third-person perspective-IP.jpg  used on input
+ line 304.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+<picture/Main menu-IP.jpg, id=264, 1284.8pt x 722.7pt>
+File: picture/Main menu-IP.jpg Graphic file (type jpg)
+<use picture/Main menu-IP.jpg>
+Package pdftex.def Info: picture/Main menu-IP.jpg  used on input line 310.
+(pdftex.def)             Requested size: 140.92793pt x 79.26566pt.
+ [5 <./picture/Third-person perspective another-IP.jpg> <./picture/Third-person
+ perspective another rain-IP.jpg> <./picture/Third-person perspective another h
+ail-IP.jpg> <./picture/First-person perspective Hail-IP.jpg> <./picture/First-p
+erson perspective rain-IP.jpg> <./picture/First-person perspective-IP.jpg> <./p
+icture/Third-person perspective rain-IP.jpg> <./picture/Third-person perspectiv
+e-IP.jpg> <./picture/Main menu-IP.jpg>] [6]
 
-[3] [4] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CD3934668C2D9A1D2F2209E3B356A2BD;521.
+(rerunfilecheck)             Checksum: 8B5BAFC7ABB71762D37176D2D76E709C;1025.
  ) 
 Here is how much of TeX's memory you used:
- 19610 strings out of 476025
- 327404 string characters out of 5791521
- 1873382 words of memory out of 5000000
- 39448 multiletter control sequences out of 15000+600000
- 558307 words of font info for 201 fonts, out of 8000000 for 9000
+ 19807 strings out of 476025
+ 334673 string characters out of 5791521
+ 1884382 words of memory out of 5000000
+ 39606 multiletter control sequences out of 15000+600000
+ 562357 words of font info for 216 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,12n,80p,710b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
 imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
+/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
 /Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
-.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
 s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
 ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
-<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/sim
-hei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/F
+<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
+sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
 onts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/W
-indows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.t
-tf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/
-simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
-s/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
-:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
-n.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
+indows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.t
+tf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/
+simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Window
+s/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c
+:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhe
+i.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
 ts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Win
 dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
 ><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
 msun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/
 Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/
-Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
-ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
-/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
+Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.
+ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts
+/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
 ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
 c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
 un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
 nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
-ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.tt
-f><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:
-/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Sof
-t/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/Soft/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/Soft/texlive
-/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/Soft/texlive/2023
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Soft/texlive/2023/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on main.pdf (4 pages, 39722904 bytes).
+ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
+c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
+imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows
+/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
+/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
+.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+s/simsun.ttc><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12
+.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+<d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/S
+oft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/Soft/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Soft/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on main.pdf (6 pages, 41429190 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 15 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 609 PDF objects out of 1000 (max. 8388607)
+ 402 compressed objects within 5 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 442 words of extra memory for PDF output out of 10000 (max. 10000000)
 
