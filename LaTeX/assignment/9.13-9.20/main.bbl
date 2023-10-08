@@ -1,16 +1,16 @@
 \begin{thebibliography}{10}
 
-\bibitem{ramachandran2019stand}
-Prajit Ramachandran, Niki Parmar, Ashish Vaswani, Irwan Bello, Anselm Levskaya,
-  and Jon Shlens.
-\newblock Stand-alone self-attention in vision models.
-\newblock {\em Advances in neural information processing systems}, 32, 2019.
-
 \bibitem{woo2018cbam}
 Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
 \newblock Cbam: Convolutional block attention module.
 \newblock In {\em Proceedings of the European conference on computer vision
   (ECCV)}, pages 3--19, 2018.
+
+\bibitem{ramachandran2019stand}
+Prajit Ramachandran, Niki Parmar, Ashish Vaswani, Irwan Bello, Anselm Levskaya,
+  and Jon Shlens.
+\newblock Stand-alone self-attention in vision models.
+\newblock {\em Advances in neural information processing systems}, 32, 2019.
 
 \bibitem{chen2018learning}
 Chen Chen, Qifeng Chen, Jia Xu, and Vladlen Koltun.

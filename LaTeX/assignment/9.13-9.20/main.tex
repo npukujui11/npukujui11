@@ -103,30 +103,43 @@
 			\item[(3)]
 			深度学习方法从原始数据中学习复杂的特征表示端到端边缘检测模型。
 		\end{itemize}	
-	
-		\begin{figure}[htbp]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=\columnwidth]{picture/LLIE/Overview}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Overview} 
-				The overview of our framework with explicit appearance modeling $\mathcal{A}$, structure modeling $\mathcal{S}$, and SGEM $\mathcal{E}$. The supervision for $I_a$ and $\widehat{I}$ is the normal-light image $\bar{I}$, and for $I_s$ is the edge $\bar{I}_s$ extracted from $\bar{I}$. The overall framework can be trained end-to-end.
-			}
-		\end{figure}
 		
 		\cite{rana2021edge}与\cite{zhu2020eemefn}在暗区域中加入敏感边缘先验可以降低优化外观重构时的不适定程度。
 
 		这个边缘检测的思想目前的文献调研显示只集中在边缘检测和外观指导图像恢复，没有考虑和图像的色彩结合，以及恢复出来的图像还是有明显噪点。
 		
-		\textbf{问题}：目前的文献调研结果显示，采用边缘检测思想指导恢复的模型，通常采用边缘图 + 初步恢复的图 Concat 之后采用单个增强网络进行恢复。该弱光图像恢复效果往往取决于最后增强网络的设计或是“初步恢复的图”中所包含的特征与真实图片特征的相似度。目前采用的初步恢复方法，一种是通过多曝光方法来获取不同曝光度下的图片，进而结合恢复网络进行初步恢复。第二种是直接通过网络进行一个弱恢复，结果具有噪点、伪影，同时色彩与真实图片存在较多差异。对于增强网络的设计，目前的方法主要采用StyleGAN和U-Net，采用 Concat 方式或是把边缘图分块当作卷积核的方式进行指导恢复。此外，获取边缘图的方式不同，一般采用边缘网络获取边缘图，Canny 和 Sobel 用作对比实验，亦或者是辅助边缘网络以提高边缘网络的准确度。
+		\subsection{问题} 
 		
-		\textbf{创新想法}：采用不同的边缘图获取方法（需要调研），尝试基于 VGG 的方法构建一个边缘图，采用 Canny 参考对比方法。主要的恢复思路为采用边缘图 + 初步恢复的图 + 原图 Y/CB/Cr的通道信息\footnote{Y通道代表的是亮度信息 (Luma)，也就是图像的明暗信息; Cb 和 Cr 通道则代表的是色度信息 (Chroma)，也就是图像的色彩信息。Cb 通道表示的是蓝色分量与亮度的差值，Cr 通道表示的是红色分量与亮度的差值。}。对于初步恢复的图，采用一种复合型 CNN + Transformer 网络以获取弱光图像的长距离和短距离特征，以期从弱光图像中获取更多的图像特征，然后进行特定的特征融合后，获得初步恢复的图。增强网络部分暂时没有想法。
+		目前的文献研究表明，在弱光环境下的图像恢复中，采用边缘检测思想来引导弱光图像恢复过程的方法，一般的策略是将边缘图与初步恢复的图像进行串联，然后通过单一的增强网络来实现最终的图像恢复。恢复结果的质量往往受到最后的增强网络设计和初步恢复图像所包含特征与真实图像特征之间的相似度的影响。
 		
+		初步恢复的方法目前主要包括两种：一种是利用多曝光技术获得具有不同曝光度的图像，然后结合恢复网络进行初步恢复；另一种则是直接通过神经网络进行弱恢复，但由于噪声和伪影的存在，以及色彩与真实图像之间的差异，结果通常并不理想。
+		
+		在增强网络的设计方面，主要采用了两种主要架构：StyleGAN 和 U-Net。这些网络通常通过串联操作或将边缘图像的分块作为卷积核的方式来引导图像恢复过程。
+		
+		此外，获得边缘图的方法也各不相同，一般采用边缘检测网络来生成边缘图。Canny 和 Sobel 算子通常被用作对比实验，也有一些研究采用辅助边缘网络以提高边缘图生成的准确性。这些方法在弱光图像恢复研究中都具有一定的学术和实际应用价值。
+		
+		\subsection{创新想法}
+		
+		在目前的研究中，我们探索了不同的边缘图生成方法，并引入了基于 VGG 网络的方法，同时采用 Canny 边缘检测作为参考对比方法。我们的主要目标是设计一种综合恢复策略，结合了以下几个关键元素：边缘图、初步恢复图以及原始图像的 Y/Cb/Cr 通道信息。
+		
+		在初步恢复图的生成方面，我们采用了一种复合型卷积神经网络 CNN 与 Transformer 网络的混合模型，见 Fig.\ref{fig: First Architecture}。这一模型旨在从弱光图像中提取长距离和短距离特征，以更全面地捕捉图像的信息。通过特定的特征融合策略，我们期望能够得到初步恢复的图像。
+		
+		至于增强网络的设计，我们目前尚未确定具体的方法。然而，我们的研究侧重于构建一个整体恢复框架，该框架利用边缘图、初步恢复图和通道信息的融合，以提高弱光图像的质量。我们将继续探索合适的增强网络结构，以进一步提升恢复结果的性能。这一研究旨在为弱光图像恢复领域提供新的理论和方法，以改善图像质量并拓展应用领域。
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/First architecture}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: First Architecture} 
+				Low-Lighting 图像恢复网络，其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal{F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal{F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal{F}_3$ 经过与 U-Net 输出的特征图 $\mathcal{F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复
+			}
+		\end{figure}
 		
 		\paragraph{Attention in CV}
 		
-		在计算机视觉领域，研究人员使用了不同类型的注意力机制，目的是使模型聚焦于图像本身。这大致分为两种类型：一种是基于通道的注意力机制，即 Squeeze-and-Excite。另一个是基于空间的注意力机制。然而，研究发现这些类型有三个局限性：
+		在计算机视觉领域，研究人员使用了不同类型的注意力机制，目的是使模型聚焦于图像本身。这大致分为两种类型：一种是基于通道的注意力机制，即 Squeeze-and-Excite。另一个是基于空间的注意力机制\cite{woo2018cbam}。然而，研究发现这些类型有三个局限性：
 		
 		\begin{itemize}
 			\item[(1)] 
@@ -663,7 +676,86 @@
 			
 			-
 
+		\subsection{(2018.3)CBAM: Convolutional Block Attention Module}
+		
+		\paragraph{CBAM：卷积块注意模块}
+		
+		\paragraph{(ECCV 2018)}
 
+		\subsubsection{Research Background}
+
+		-
+		
+		\subsubsection{Contribution}
+		
+		作者提出了卷积块的注意力模块 (Convolutional Block Attention Module)，简称 CBAM，该模块是一个简单高效的前向卷积神经网络注意力模块。给定一张特征图，CBAM 沿着通道 (channel) 和空间 (spatial) 两个单独的维度依次推断注意力图，然后将注意力图和输入特征图相乘，进行自适应特征细化。因为 CBAM 是一个轻量级的通用模块，可以无缝的集成到任何 CNN 架构中，几乎对效率，算力没有影响，能够实现端到端的训练。
+		
+		作者的主要贡献有以下三方面：
+		
+		\begin{itemize}
+			\item[(1)] 
+			作者提出了一个简单而有效的注意力模块 (CBAM)，可以广泛应用于提高 CNN 的表征能力;
+			
+			\item[(2)]
+			作者通过广泛的消融研究验证了注意力模块的有效性;
+			
+			\item[(3)]
+			作者插入了轻量级模块，并验证了各种网络的性能在多个基准测试(ImageNet-1K, MS COCO 和 VOC 2007)上得到了极大的提高。
+			
+		\end{itemize}	
+		
+		\subsubsection{Approach}
+		
+		在该论文中，作者研究了网络架构中的注意力，注意力不仅要告诉我们重点关注哪里，还要提高关注点的表示。 目标是通过使用注意机制来增加表现力，关注重要特征并抑制不必要的特征。为了强调空间和通道这两个维度上的有意义特征，作者依次应用通道和空间注意模块，来分别在通道和空间维度上学习关注什么、在哪里关注。此外，通过了解要强调或抑制的信息也有助于网络内的信息流动。
+		主要网络架构也很简单，一个是通道注意力模块，另一个是空间注意力模块，CBAM 就是先后集成了通道注意力模块和空间注意力模块。
+		
+		Convolutional Block Attention Module (CBAM) 表示卷积模块的注意力机制模块，是一种结合了空间 (spatial) 和通道 (channel) 的注意力机制模块（见Fig. \ref{fig: CBAM-overview}）。
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=0.7\columnwidth]{picture/LLIE/CBAM/CBAM-overview}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: CBAM-overview} 
+				\textbf{The overview of CBAM.} The module has two sequential sub-modules:
+				channel and spatial. The intermediate feature map is adaptively refined through
+				our module (CBAM) at every convolutional block of deep networks.
+			}
+		\end{figure}
+		
+		CBAM 的过程为：给定一个中间特征图，属性为高$H$，宽$W$，维度$C$，作为输入，$\mathbf{F} \in \mathbb{R}^{C \times H \times W}$，CBAM 依次得到一个一维的通道注意力图 $M_c$和一个二维的空间注意力图 $M_s$，整个流程可以概括为： 
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{F}^{\prime} = \mathbf{M_c}(\mathbf{F}) \otimes \mathbf{F}, \\
+				\mathbf{F}^{\prime\prime} = \mathbf{M_s}(\mathbf{F}^{\prime}) \otimes \mathbf{F}^{\prime}
+			\end{aligned}
+			\label{eq: CBAM}
+		\end{equation}
+		
+		其中，$\otimes$ 表示对应元素相乘操作。
+		
+		\paragraph{Channel Attention Module}
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=0.7\columnwidth]{picture/LLIE/CBAM/Attention Module}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Attention Module} 
+				\textbf{Diagram of each attention sub-module.} As illustrated, the channel sub-module utilizes both max-pooling outputs and average-pooling outputs with a shared network; the spatial sub-module utilizes similar two outputs that are pooled along the channel axis and forward them to a convolution layer.
+			}
+		\end{figure}
+		
+		通道注意力机制是将特征图在空间维度上进行压缩，得到一个一维矢量后再进行操作。在空间维度上进行压缩时，不仅考虑到了平均值池化(Average Pooling)还考虑了最大值池化(Max Pooling)。平均池化和最大池化可用来聚合特征映射的空间信息，送到一个共享网络，压缩输入特征图的空间维数，逐元素求和合并，以产生通道注意力图。单就一张图来说，通道注意力，关注的是这张图上哪些内容是有重要作用的。平均值池化对特征图上的每一个像素点都有反馈，而最大值池化在进行梯度反向传播计算时，只有特征图中响应最大的地方有梯度的反馈。通道注意力机制可以表达为：
+		
+		\paragraph{Spatial Attention Module}
+		
+		\subsubsection{Future}
+		
+		-
 		
 		\renewcommand{\refname}{References}
 		

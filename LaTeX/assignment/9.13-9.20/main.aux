@@ -17,11 +17,11 @@
 \citation{zhu2020eemefn}
 \@writefile{toc}{\contentsline {part}{I\hspace  {1em}Pre-Knowledge}{2}{part.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {1}方向}{2}{section.1}\protected@file@percent }
+\citation{woo2018cbam}
 \citation{ramachandran2019stand}
 \citation{woo2018cbam}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   The overview of our framework with explicit appearance modeling $\mathcal  {A}$, structure modeling $\mathcal  {S}$, and SGEM $\mathcal  {E}$. The supervision for $I_a$ and $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle I$}\mathaccent "0362{I}$ is the normal-light image $\bar  {I}$, and for $I_s$ is the edge $\bar  {I}_s$ extracted from $\bar  {I}$. The overall framework can be trained end-to-end. \relax }}{3}{figure.caption.1}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig: Overview}{{1}{3}{The overview of our framework with explicit appearance modeling $\mathcal {A}$, structure modeling $\mathcal {S}$, and SGEM $\mathcal {E}$. The supervision for $I_a$ and $\widehat {I}$ is the normal-light image $\bar {I}$, and for $I_s$ is the edge $\bar {I}_s$ extracted from $\bar {I}$. The overall framework can be trained end-to-end. \relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}问题}{3}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}创新想法}{3}{subsection.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Attention in CV}{3}{figure.caption.1}\protected@file@percent }
 \citation{chen2018learning}
 \citation{chen2018learning,zamir2021learning}
@@ -32,95 +32,112 @@
 \citation{meng2020gia}
 \citation{chen2018learning,meng2020gia,zamir2021learning}
 \citation{zhou2018unet++,zhou2019unet++}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   Low-Lighting 图像恢复网络，其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal  {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal  {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal  {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal  {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复 \relax }}{4}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig: First Architecture}{{1}{4}{Low-Lighting 图像恢复网络，其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复 \relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{U-Net for LLIE}{4}{figure.caption.1}\protected@file@percent }
 \citation{yang2021locally,zhang2020attention}
 \citation{li2018multi,zamir2020learning}
 \citation{li2020visual}
 \citation{xu2020learning}
-\@writefile{toc}{\contentsline {paragraph}{U-Net for LLIE}{4}{figure.caption.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{CNN for LLIE}{4}{figure.caption.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Paper Reading}{4}{part.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CNN for LLIE}{5}{figure.caption.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Paper Reading}{5}{part.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}LLIE}{5}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}(2023.1)LAE-Net: A locally-adaptive embedding network for low-light image enhancement}{5}{subsection.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{LAE-Net：一种用于弱光图像增强的局部自适应嵌入网络}{5}{subsection.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{(Pattern Recognition 2023 1区) doi: 10.1016/j.patcog.2022.109039}{5}{subsection.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Research Background}{5}{subsubsection.2.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Contribution}{5}{subsubsection.2.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Approach}{5}{subsubsection.2.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Approach}{6}{subsubsection.2.1.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}Future}{6}{subsubsection.2.1.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}(2023.1)LACN: A lightweight attention-guided ConvNeXt network for low-light image enhancement}{6}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{LACN：采用一种轻量级的注意力引导的对流网络来增强弱光图像}{6}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{(Engineering Applications of Artificial Intelligence 2区) doi: 10.1016/j.engappai.2022.105632}{6}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Research Background}{6}{subsubsection.2.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Contribution}{6}{subsubsection.2.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   Model structure of LACN. The brief process is to first perform shallow feature extraction on the image, then send it to ACM to extract features, enter ACM again after passing SKAM, moreover send the features extracted twice by ACM and shallow features into FFM, and finally carry out feature reconstruction to get an enhanced image. \relax }}{6}{figure.caption.2}\protected@file@percent }
-\newlabel{fig: LACN model structure}{{2}{6}{Model structure of LACN. The brief process is to first perform shallow feature extraction on the image, then send it to ACM to extract features, enter ACM again after passing SKAM, moreover send the features extracted twice by ACM and shallow features into FFM, and finally carry out feature reconstruction to get an enhanced image. \relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Approach}{6}{subsubsection.2.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   Model structure of LACN. The brief process is to first perform shallow feature extraction on the image, then send it to ACM to extract features, enter ACM again after passing SKAM, moreover send the features extracted twice by ACM and shallow features into FFM, and finally carry out feature reconstruction to get an enhanced image. \relax }}{7}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: LACN model structure}{{2}{7}{Model structure of LACN. The brief process is to first perform shallow feature extraction on the image, then send it to ACM to extract features, enter ACM again after passing SKAM, moreover send the features extracted twice by ACM and shallow features into FFM, and finally carry out feature reconstruction to get an enhanced image. \relax }{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   Structure of feature fusion module. \relax }}{7}{figure.caption.3}\protected@file@percent }
 \newlabel{fig: FFM structure}{{3}{7}{Structure of feature fusion module. \relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Approach}{7}{subsubsection.2.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Future}{7}{subsubsection.2.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}(2019.4)Low-Light Image Enhancement via a Deep Hybrid Network}{7}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{基于深度混合网络的弱光图像增强}{7}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{(IEEE Transactions on Image Processing 1区) doi: 10.1109/TIP.2019.2910412}{7}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Research Background}{7}{subsubsection.2.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Contribution}{7}{subsubsection.2.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Proposed low-light image enhancement architecture. Our model consists of two streams, the top content stream is a residual encoder-decoder which aims to restore most of the scene. The bottom edge stream focuses on the salient edge prediction via spatially variant RNNs. To construct communications between two streams, we bridge two networks during the up-sampling stage. In addition to the MSE loss function, we also adopt the perceptual and adversarial losses to further improve the visual quality. \relax }}{8}{figure.caption.4}\protected@file@percent }
-\newlabel{fig: DHN Architecture}{{4}{8}{Proposed low-light image enhancement architecture. Our model consists of two streams, the top content stream is a residual encoder-decoder which aims to restore most of the scene. The bottom edge stream focuses on the salient edge prediction via spatially variant RNNs. To construct communications between two streams, we bridge two networks during the up-sampling stage. In addition to the MSE loss function, we also adopt the perceptual and adversarial losses to further improve the visual quality. \relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Future}{8}{subsubsection.2.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}(2019.4)Low-Light Image Enhancement via a Deep Hybrid Network}{8}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{基于深度混合网络的弱光图像增强}{8}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(IEEE Transactions on Image Processing 1区) doi: 10.1109/TIP.2019.2910412}{8}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Research Background}{8}{subsubsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Contribution}{8}{subsubsection.2.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Approach}{8}{subsubsection.2.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Proposed low-light image enhancement architecture. Our model consists of two streams, the top content stream is a residual encoder-decoder which aims to restore most of the scene. The bottom edge stream focuses on the salient edge prediction via spatially variant RNNs. To construct communications between two streams, we bridge two networks during the up-sampling stage. In addition to the MSE loss function, we also adopt the perceptual and adversarial losses to further improve the visual quality. \relax }}{9}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: DHN Architecture}{{4}{9}{Proposed low-light image enhancement architecture. Our model consists of two streams, the top content stream is a residual encoder-decoder which aims to restore most of the scene. The bottom edge stream focuses on the salient edge prediction via spatially variant RNNs. To construct communications between two streams, we bridge two networks during the up-sampling stage. In addition to the MSE loss function, we also adopt the perceptual and adversarial losses to further improve the visual quality. \relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {paragraph}{Edge Stream}{9}{subsubsection.2.3.3}\protected@file@percent }
 \newlabel{eq: max and avg}{{1}{9}{Edge Stream}{equation.2.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}Future}{9}{subsubsection.2.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}(2023.5)A Fusion-Based and Multi-Layer Method for Low Light Image Enhancement}{9}{subsection.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{基于深度混合网络的弱光图像增强}{9}{subsection.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{(ICASSP 2023) doi: 10.1109/ICASSP49357.2023.10096454}{9}{subsection.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Research Background}{9}{subsubsection.2.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Contribution}{9}{subsubsection.2.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   Image decomposition and enhancement using the multi-layer model. \relax }}{10}{figure.caption.5}\protected@file@percent }
-\newlabel{fig: decomposition and enhancement}{{5}{10}{Image decomposition and enhancement using the multi-layer model. \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}(2023.5)A Fusion-Based and Multi-Layer Method for Low Light Image Enhancement}{10}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{基于深度混合网络的弱光图像增强}{10}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(ICASSP 2023) doi: 10.1109/ICASSP49357.2023.10096454}{10}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Research Background}{10}{subsubsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Contribution}{10}{subsubsection.2.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}Approach}{10}{subsubsection.2.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.4}Future}{10}{subsubsection.2.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   Image decomposition and enhancement using the multi-layer model. \relax }}{11}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: decomposition and enhancement}{{5}{11}{Image decomposition and enhancement using the multi-layer model. \relax }{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}(2023.5)A Fusion-Based and Multi-Layer Method for Low Light Image Enhancement}{11}{subsection.2.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{基于模拟多曝光融合的弱光图像增强}{11}{subsection.2.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{(Journal of Physics: Conference Series 4区) doi: 10.1088/1742-6596/2478/6/062022}{11}{subsection.2.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}Research Background}{11}{subsubsection.2.5.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}Contribution}{11}{subsubsection.2.5.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.3}Approach}{11}{subsubsection.2.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.4}Future}{11}{subsubsection.2.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}(2023.3)Fusion-Based Low-Light Image Enhancement}{11}{subsection.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{基于模拟多曝光融合的弱光图像增强}{11}{subsection.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{(International Conference on Multimedia Modeling C类) doi: 10.1088/1742-6596/2478/6/062022}{11}{subsection.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.1}Research Background}{11}{subsubsection.2.6.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   Schematic diagram of the simulated exposure sequence generation method. For the sake of observation, $I_{subk}$ are the enhanced results of $I_{input-subk}$. \relax }}{12}{figure.caption.6}\protected@file@percent }
 \newlabel{fig: Schematic diagram}{{6}{12}{Schematic diagram of the simulated exposure sequence generation method. For the sake of observation, $I_{subk}$ are the enhanced results of $I_{input-subk}$. \relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.2}Contribution}{12}{subsubsection.2.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.3}Approach}{12}{subsubsection.2.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.4}Future}{12}{subsubsection.2.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}(2023.3)Fusion-Based Low-Light Image Enhancement}{12}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{基于模拟多曝光融合的弱光图像增强}{12}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(International Conference on Multimedia Modeling C类) doi: 10.1088/1742-6596/2478/6/062022}{12}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.1}Research Background}{12}{subsubsection.2.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.2}Contribution}{13}{subsubsection.2.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.3}Approach}{13}{subsubsection.2.6.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   Parallel fusion frame diagram, where the red box represents the brightness adjustment branch, and the green box represents the inception module. \relax }}{13}{figure.caption.7}\protected@file@percent }
 \newlabel{fig: Parallel fusion frame diagram}{{7}{13}{Parallel fusion frame diagram, where the red box represents the brightness adjustment branch, and the green box represents the inception module. \relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}(2022.12)Dual UNet low-light image enhancement network based on attention mechanism}{13}{subsection.2.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{基于模拟多曝光融合的弱光图像增强}{13}{subsection.2.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{(Multimedia Tools and Applications 4区)}{13}{subsection.2.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.1}Research Background}{13}{subsubsection.2.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.2}Contribution}{13}{subsubsection.2.7.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces   The framework of DUAMNet. The network is divided into T recursive stages \relax }}{14}{figure.caption.8}\protected@file@percent }
-\newlabel{fig: DUAMNet framework}{{8}{14}{The framework of DUAMNet. The network is divided into T recursive stages \relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}(2022.12)Dual UNet low-light image enhancement network based on attention mechanism}{14}{subsection.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{基于模拟多曝光融合的弱光图像增强}{14}{subsection.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(Multimedia Tools and Applications 4区)}{14}{subsection.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.1}Research Background}{14}{subsubsection.2.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.2}Contribution}{14}{subsubsection.2.7.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.3}Approach}{14}{subsubsection.2.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.4}Future}{14}{subsubsection.2.7.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces   The framework of DUAMNet. The network is divided into T recursive stages \relax }}{15}{figure.caption.8}\protected@file@percent }
+\newlabel{fig: DUAMNet framework}{{8}{15}{The framework of DUAMNet. The network is divided into T recursive stages \relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.4}Future}{15}{subsubsection.2.7.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.8}(2022.10)Effective low-light image enhancement with multiscale and context learning network}{15}{subsection.2.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{基于多尺度和上下文学习网络的有效弱光图像增强}{15}{subsection.2.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{(Multimedia Tools and Applications 4区)}{15}{subsection.2.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.1}Research Background}{15}{subsubsection.2.8.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.2}Contribution}{15}{subsubsection.2.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.3}Approach}{15}{subsubsection.2.8.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces   Overview of Multiscale and Context Learning Network (MCLNet). \relax }}{15}{figure.caption.9}\protected@file@percent }
-\newlabel{fig: MCLNet Overview}{{9}{15}{Overview of Multiscale and Context Learning Network (MCLNet). \relax }{figure.caption.9}{}}
-\bibstyle{unsrt}
-\bibdata{reference}
-\bibcite{ramachandran2019stand}{1}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.3}Approach}{16}{subsubsection.2.8.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces   Overview of Multiscale and Context Learning Network (MCLNet). \relax }}{16}{figure.caption.9}\protected@file@percent }
+\newlabel{fig: MCLNet Overview}{{9}{16}{Overview of Multiscale and Context Learning Network (MCLNet). \relax }{figure.caption.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces   The architecture of the Bottleblock of Scale Aggregation module (BSAM) \relax }}{16}{figure.caption.10}\protected@file@percent }
 \newlabel{fig: MCLNet BSAM}{{10}{16}{The architecture of the Bottleblock of Scale Aggregation module (BSAM) \relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces   The architecture of the Attentive Residual Multiscale Block (ARMB) \relax }}{16}{figure.caption.11}\protected@file@percent }
-\newlabel{fig: MCLNet ARMB}{{11}{16}{The architecture of the Attentive Residual Multiscale Block (ARMB) \relax }{figure.caption.11}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.4}Future}{16}{subsubsection.2.8.4}\protected@file@percent }
-\bibcite{woo2018cbam}{2}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces   The architecture of the Attentive Residual Multiscale Block (ARMB) \relax }}{17}{figure.caption.11}\protected@file@percent }
+\newlabel{fig: MCLNet ARMB}{{11}{17}{The architecture of the Attentive Residual Multiscale Block (ARMB) \relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces   The architecture of the Context Encoding Module (CEM) \relax }}{17}{figure.caption.12}\protected@file@percent }
+\newlabel{fig: MCLNet CEM}{{12}{17}{The architecture of the Context Encoding Module (CEM) \relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.4}Future}{18}{subsubsection.2.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.9}(2018.3)CBAM: Convolutional Block Attention Module}{18}{subsection.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CBAM：卷积块注意模块}{18}{subsection.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(ECCV 2018)}{18}{subsection.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.1}Research Background}{18}{subsubsection.2.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.2}Contribution}{18}{subsubsection.2.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.3}Approach}{18}{subsubsection.2.9.3}\protected@file@percent }
+\bibstyle{unsrt}
+\bibdata{reference}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces   \textbf  {The overview of CBAM.} The module has two sequential sub-modules: channel and spatial. The intermediate feature map is adaptively refined through our module (CBAM) at every convolutional block of deep networks. \relax }}{19}{figure.caption.13}\protected@file@percent }
+\newlabel{fig: CBAM-overview}{{13}{19}{\textbf {The overview of CBAM.} The module has two sequential sub-modules: channel and spatial. The intermediate feature map is adaptively refined through our module (CBAM) at every convolutional block of deep networks. \relax }{figure.caption.13}{}}
+\newlabel{eq: CBAM}{{2}{19}{Approach}{equation.2.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Channel Attention Module}{19}{equation.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces   \textbf  {Diagram of each attention sub-module.} As illustrated, the channel sub-module utilizes both max-pooling outputs and average-pooling outputs with a shared network; the spatial sub-module utilizes similar two outputs that are pooled along the channel axis and forward them to a convolution layer. \relax }}{19}{figure.caption.14}\protected@file@percent }
+\newlabel{fig: Attention Module}{{14}{19}{\textbf {Diagram of each attention sub-module.} As illustrated, the channel sub-module utilizes both max-pooling outputs and average-pooling outputs with a shared network; the spatial sub-module utilizes similar two outputs that are pooled along the channel axis and forward them to a convolution layer. \relax }{figure.caption.14}{}}
+\bibcite{woo2018cbam}{1}
+\bibcite{ramachandran2019stand}{2}
 \bibcite{chen2018learning}{3}
 \bibcite{zamir2021learning}{4}
 \bibcite{meng2020gia}{5}
@@ -128,13 +145,13 @@
 \bibcite{zhou2019unet++}{7}
 \bibcite{yang2021locally}{8}
 \bibcite{zhang2020attention}{9}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces   The architecture of the Context Encoding Module (CEM) \relax }}{17}{figure.caption.12}\protected@file@percent }
-\newlabel{fig: MCLNet CEM}{{12}{17}{The architecture of the Context Encoding Module (CEM) \relax }{figure.caption.12}{}}
 \bibcite{li2018multi}{10}
 \bibcite{zamir2020learning}{11}
+\@writefile{toc}{\contentsline {paragraph}{Spatial Attention Module}{20}{figure.caption.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.4}Future}{20}{subsubsection.2.9.4}\protected@file@percent }
 \bibcite{li2020visual}{12}
 \bibcite{xu2020learning}{13}
-\newlabel{LastPage}{{}{18}{}{page.18}{}}
-\xdef\lastpage@lastpage{18}
-\xdef\lastpage@lastpageHy{18}
-\gdef \@abspage@last{18}
+\newlabel{LastPage}{{}{21}{}{page.21}{}}
+\xdef\lastpage@lastpage{21}
+\xdef\lastpage@lastpageHy{21}
+\gdef \@abspage@last{21}

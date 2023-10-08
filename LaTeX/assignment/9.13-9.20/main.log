@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  22 SEP 2023 16:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  8 OCT 2023 23:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,45 +903,50 @@ nicode.sfd}) [1
 
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
 quanjiao) on input line 94.
-<picture/LLIE/Overview.jpg, id=292, 1339.0025pt x 627.84563pt>
-File: picture/LLIE/Overview.jpg Graphic file (type jpg)
-<use picture/LLIE/Overview.jpg>
-Package pdftex.def Info: picture/LLIE/Overview.jpg  used on input line 110.
-(pdftex.def)             Requested size: 469.75502pt x 220.26659pt.
 
 
-LaTeX Warning: Citation `rana2021edge' on page 2 undefined on input line 118.
+LaTeX Warning: Citation `rana2021edge' on page 2 undefined on input line 107.
 
 
-LaTeX Warning: Citation `zhu2020eemefn' on page 2 undefined on input line 118.
+LaTeX Warning: Citation `zhu2020eemefn' on page 2 undefined on input line 107.
 
-[2] [3 <./picture/LLIE/Overview.jpg>]
+[2]
+
+pdfTeX warning: pdflatex.exe (file ./picture/LLIE/First architecture.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<picture/LLIE/First architecture.pdf, id=399, 1653.89893pt x 597.432pt>
+File: picture/LLIE/First architecture.pdf Graphic file (type pdf)
+<use picture/LLIE/First architecture.pdf>
+Package pdftex.def Info: picture/LLIE/First architecture.pdf  used on input lin
+e 132.
+(pdftex.def)             Requested size: 469.75502pt x 169.68646pt.
+[3] [4 <./picture/LLIE/First architecture.pdf>]
 Package CJKpunct Info: use punctuation spaces for family 'zhsong' with punctsty
-le (quanjiao) on input line 177.
- [4] [5]
-<picture/LLIE/LACN/LACN model structure.jpg, id=456, 890.82813pt x 398.99063pt>
+le (quanjiao) on input line 190.
+ [5]
+<picture/LLIE/LACN/LACN model structure.jpg, id=520, 890.82813pt x 398.99063pt>
 
 File: picture/LLIE/LACN/LACN model structure.jpg Graphic file (type jpg)
 <use picture/LLIE/LACN/LACN model structure.jpg>
 Package pdftex.def Info: picture/LLIE/LACN/LACN model structure.jpg  used on in
-put line 227.
+put line 240.
 (pdftex.def)             Requested size: 469.75502pt x 210.3986pt.
- [6 <./picture/LLIE/LACN/LACN model structure.jpg>]
-<picture/LLIE/LACN/FFM structure.jpg, id=463, 501.37312pt x 164.11313pt>
+<picture/LLIE/LACN/FFM structure.jpg, id=522, 501.37312pt x 164.11313pt>
 File: picture/LLIE/LACN/FFM structure.jpg Graphic file (type jpg)
 <use picture/LLIE/LACN/FFM structure.jpg>
 Package pdftex.def Info: picture/LLIE/LACN/FFM structure.jpg  used on input lin
-e 251.
+e 264.
 (pdftex.def)             Requested size: 375.80544pt x 123.01692pt.
- [7 <./picture/LLIE/LACN/FFM structure.jpg>]
-<picture/LLIE/DHN/Architecture.jpg, id=473, 984.67876pt x 407.5225pt>
+ [6] [7 <./picture/LLIE/LACN/LACN model structure.jpg> <./picture/LLIE/LACN/FFM
+ structure.jpg>]
+<picture/LLIE/DHN/Architecture.jpg, id=538, 984.67876pt x 407.5225pt>
 File: picture/LLIE/DHN/Architecture.jpg Graphic file (type jpg)
 <use picture/LLIE/DHN/Architecture.jpg>
 Package pdftex.def Info: picture/LLIE/DHN/Architecture.jpg  used on input line 
-304.
+317.
 (pdftex.def)             Requested size: 469.75502pt x 194.41466pt.
 
-Overfull \hbox (10.00606pt too wide) in paragraph at lines 333--334
+Overfull \hbox (10.00606pt too wide) in paragraph at lines 346--347
 []\C70/rm/m/n/10/75 1 \C70/rm/m/n/10/4e Ž \C70/rm/m/n/10/51 … \C70/rm/m/n/10/5b
  ¹ \C70/rm/m/n/10/6d A \C70/rm/m/n/10/4e - \C70/rm/m/n/10/76 „ \C70/rm/m/n/10/7
 f ^^V \C70/rm/m/n/10/78 ^^A \C70/rm/m/n/10/56 h \C70/rm/m/n/10/7f Q \C70/rm/m/n
@@ -956,44 +961,43 @@ f ^^V \C70/rm/m/n/10/78 ^^A \C70/rm/m/n/10/56 h \C70/rm/m/n/10/7f Q \C70/rm/m/n
 ^^L|
  []
 
-[8 <./picture/LLIE/DHN/Architecture.jpg>]
-<picture/LLIE/Fusion-based/decomposition and enhancement.jpg, id=482, 522.45187
+[8] [9 <./picture/LLIE/DHN/Architecture.jpg>]
+<picture/LLIE/Fusion-based/decomposition and enhancement.jpg, id=553, 522.45187
 pt x 447.17062pt>
 File: picture/LLIE/Fusion-based/decomposition and enhancement.jpg Graphic file 
 (type jpg)
 <use picture/LLIE/Fusion-based/decomposition and enhancement.jpg>
 Package pdftex.def Info: picture/LLIE/Fusion-based/decomposition and enhancemen
-t.jpg  used on input line 392.
+t.jpg  used on input line 405.
 (pdftex.def)             Requested size: 328.82707pt x 281.44604pt.
- [9] [10 <./picture/LLIE/Fusion-based/decomposition and enhancement.jpg>]
-<picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg, id=499, 1144.77687pt
+ [10] [11 <./picture/LLIE/Fusion-based/decomposition and enhancement.jpg>]
+<picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg, id=569, 1144.77687pt
  x 618.31pt>
 File: picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg Graphic file (ty
 pe jpg)
 <use picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg>
 Package pdftex.def Info: picture/LLIE/Multi-exposure fusion/Schematic diagram.j
-pg  used on input line 466.
+pg  used on input line 479.
 (pdftex.def)             Requested size: 469.75502pt x 253.72574pt.
- [11]
-<picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg, id=506, 943.
+ [12 <./picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg>]
+<picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg, id=578, 943.
 525pt x 306.64563pt>
 File: picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg Graphic 
 file (type jpg)
 <use picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg>
 Package pdftex.def Info: picture/LLIE/Fusion-Based LLIE/Parallel fusion frame d
-iagram.jpg  used on input line 513.
+iagram.jpg  used on input line 526.
 (pdftex.def)             Requested size: 469.75502pt x 152.67204pt.
- [12 <./picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg>]
-<picture/LLIE/Dual UNet/DUAMNet framework.jpg, id=513, 946.03438pt x 546.54187p
+ [13 <./picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg>]
+<picture/LLIE/Dual UNet/DUAMNet framework.jpg, id=585, 946.03438pt x 546.54187p
 t>
 File: picture/LLIE/Dual UNet/DUAMNet framework.jpg Graphic file (type jpg)
 <use picture/LLIE/Dual UNet/DUAMNet framework.jpg>
 Package pdftex.def Info: picture/LLIE/Dual UNet/DUAMNet framework.jpg  used on 
-input line 555.
+input line 568.
 (pdftex.def)             Requested size: 469.75502pt x 271.38551pt.
- [13 <./picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg>] [14 
-<./picture/LLIE/Dual UNet/DUAMNet framework.jpg>]
-Overfull \hbox (18.35605pt too wide) in paragraph at lines 605--606
+ [14]
+Overfull \hbox (18.35605pt too wide) in paragraph at lines 618--619
 []\C70/rm/m/n/10/4f \ \C70/rm/m/n/10/80 ^^E \C70/rm/m/n/10/5f ^^U \C70/rm/m/n/1
 0/51 e \C70/rm/m/n/10/4e † ^^@ * \C70/rm/m/n/10/5e & \C70/rm/m/n/10/67 	 \C70/r
 m/m/n/10/6b ‹ \C70/rm/m/n/10/5d î \C70/rm/m/n/10/5b f \C70/rm/m/n/10/4e ` \C70/
@@ -1007,57 +1011,73 @@ m/m/n/10/88 h \C70/rm/m/n/10/79 :|\C70/rm/m/n/10/30 ^^B| \C70/rm/m/n/10/57 (\OT
 1/cmr/m/n/10 ARMB\C70/rm/m/n/10/76 „
  []
 
-<picture/LLIE/MCLNet/Overview.jpg, id=524, 1027.33812pt x 392.46625pt>
+[15 <./picture/LLIE/Dual UNet/DUAMNet framework.jpg>]
+<picture/LLIE/MCLNet/Overview.jpg, id=596, 1027.33812pt x 392.46625pt>
 File: picture/LLIE/MCLNet/Overview.jpg Graphic file (type jpg)
 <use picture/LLIE/MCLNet/Overview.jpg>
 Package pdftex.def Info: picture/LLIE/MCLNet/Overview.jpg  used on input line 6
-17.
+30.
 (pdftex.def)             Requested size: 469.75502pt x 179.45871pt.
-[15 <./picture/LLIE/MCLNet/Overview.jpg>]
-<picture/LLIE/MCLNet/BSAM.jpg, id=532, 634.37pt x 309.155pt>
+<picture/LLIE/MCLNet/BSAM.jpg, id=598, 634.37pt x 309.155pt>
 File: picture/LLIE/MCLNet/BSAM.jpg Graphic file (type jpg)
 <use picture/LLIE/MCLNet/BSAM.jpg>
-Package pdftex.def Info: picture/LLIE/MCLNet/BSAM.jpg  used on input line 630.
+Package pdftex.def Info: picture/LLIE/MCLNet/BSAM.jpg  used on input line 643.
 (pdftex.def)             Requested size: 328.82707pt x 160.25676pt.
-<picture/LLIE/MCLNet/ARMB.jpg, id=533, 874.76813pt x 423.08063pt>
+<picture/LLIE/MCLNet/ARMB.jpg, id=599, 874.76813pt x 423.08063pt>
 File: picture/LLIE/MCLNet/ARMB.jpg Graphic file (type jpg)
 <use picture/LLIE/MCLNet/ARMB.jpg>
-Package pdftex.def Info: picture/LLIE/MCLNet/ARMB.jpg  used on input line 641.
+Package pdftex.def Info: picture/LLIE/MCLNet/ARMB.jpg  used on input line 654.
 (pdftex.def)             Requested size: 328.82707pt x 159.03572pt.
-<picture/LLIE/MCLNet/CEM.jpg, id=534, 872.76062pt x 345.29pt>
+<picture/LLIE/MCLNet/CEM.jpg, id=600, 872.76062pt x 345.29pt>
 File: picture/LLIE/MCLNet/CEM.jpg Graphic file (type jpg)
 <use picture/LLIE/MCLNet/CEM.jpg>
-Package pdftex.def Info: picture/LLIE/MCLNet/CEM.jpg  used on input line 652.
+Package pdftex.def Info: picture/LLIE/MCLNet/CEM.jpg  used on input line 665.
 (pdftex.def)             Requested size: 328.82707pt x 130.09459pt.
- (./main.bbl [16 <./picture/LLIE/MCLNet/BSAM.jpg> <./picture/LLIE/MCLNet/ARMB.j
-pg>] [17 <./picture/LLIE/MCLNet/CEM.jpg>]) [18] 
+ [16 <./picture/LLIE/MCLNet/Overview.jpg> <./picture/LLIE/MCLNet/BSAM.jpg>] [17
+ <./picture/LLIE/MCLNet/ARMB.jpg> <./picture/LLIE/MCLNet/CEM.jpg>]
+<picture/LLIE/CBAM/CBAM-overview.jpg, id=619, 561.09625pt x 172.645pt>
+File: picture/LLIE/CBAM/CBAM-overview.jpg Graphic file (type jpg)
+<use picture/LLIE/CBAM/CBAM-overview.jpg>
+Package pdftex.def Info: picture/LLIE/CBAM/CBAM-overview.jpg  used on input lin
+e 717.
+(pdftex.def)             Requested size: 328.82707pt x 101.17735pt.
+ [18]
+<picture/LLIE/CBAM/Attention Module.jpg, id=628, 560.0925pt x 276.03125pt>
+File: picture/LLIE/CBAM/Attention Module.jpg Graphic file (type jpg)
+<use picture/LLIE/CBAM/Attention Module.jpg>
+Package pdftex.def Info: picture/LLIE/CBAM/Attention Module.jpg  used on input 
+line 744.
+(pdftex.def)             Requested size: 328.82707pt x 162.06096pt.
+ (./main.bbl [19 <./picture/LLIE/CBAM/CBAM-overview.jpg> <./picture/LLIE/CBAM/A
+ttention Module.jpg>] [20])
+[21] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 088AD01B2921B61474256E55A74AC469;8051.
+(rerunfilecheck)             Checksum: 838F36428B29F55AB5200635CEB2BEF7;9041.
  ) 
 Here is how much of TeX's memory you used:
- 20339 strings out of 476025
- 345861 string characters out of 5791521
- 1884382 words of memory out of 5000000
- 40033 multiletter control sequences out of 15000+600000
- 574928 words of font info for 262 fonts, out of 8000000 for 9000
+ 20419 strings out of 476025
+ 347993 string characters out of 5791521
+ 1890382 words of memory out of 5000000
+ 40100 multiletter control sequences out of 15000+600000
+ 575547 words of font info for 264 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,13n,80p,1609b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 78i,13n,80p,1609b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
 imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
 /Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
 /Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
 .ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
-s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Wind
-ows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc>
+s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
+ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
 sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
 onts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/W
-indows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.t
+indows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.t
 tc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/
 simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
 s/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
@@ -1073,32 +1093,31 @@ ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
 /simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
 ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
 c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
-un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
+un.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
 nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
-ndows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.tt
-c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/Soft/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Soft/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/Soft/texlive/20
-23/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><d:/Soft/texlive/2023/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/Soft/texlive/2023/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/Soft/texlive/2023/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:/Soft/texlive/2023/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
-fb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/So
-ft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/Soft/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/Soft/texlive
-/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (18 pages, 6851143 bytes).
+ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
+c><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d
+:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/So
+ft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><d:/Soft/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><d:/Soft/texlive
+/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/Soft/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:/Soft/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/Soft/texlive/2023/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/Soft/texlive/2023/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+6.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/
+Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/Soft
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (21 pages, 6969032 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 672 compressed objects within 7 object streams
- 93 named destinations out of 1000 (max. 500000)
- 713 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 990 PDF objects out of 1000 (max. 8388607)
+ 727 compressed objects within 8 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 779 words of extra memory for PDF output out of 10000 (max. 10000000)
 
