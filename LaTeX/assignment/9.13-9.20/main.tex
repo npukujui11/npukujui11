@@ -749,9 +749,31 @@
 			}
 		\end{figure}
 		
-		通道注意力机制是将特征图在空间维度上进行压缩，得到一个一维矢量后再进行操作。在空间维度上进行压缩时，不仅考虑到了平均值池化(Average Pooling)还考虑了最大值池化(Max Pooling)。平均池化和最大池化可用来聚合特征映射的空间信息，送到一个共享网络，压缩输入特征图的空间维数，逐元素求和合并，以产生通道注意力图。单就一张图来说，通道注意力，关注的是这张图上哪些内容是有重要作用的。平均值池化对特征图上的每一个像素点都有反馈，而最大值池化在进行梯度反向传播计算时，只有特征图中响应最大的地方有梯度的反馈。通道注意力机制可以表达为：
+		通道注意力机制 (见Fig. \ref{fig: Attention Module}) 是将特征图在空间维度上进行压缩，得到一个一维矢量后再进行操作。在空间维度上进行压缩时，不仅考虑到了平均值池化 (Average Pooling) 还考虑了最大值池化 (Max Pooling)。平均池化和最大池化可用来聚合特征映射的空间信息，送到一个共享网络，压缩输入特征图的空间维数，逐元素求和合并，以产生通道注意力图。单就一张图来说，通道注意力，关注的是这张图上哪些内容是有重要作用的。平均值池化对特征图上的每一个像素点都有反馈，而最大值池化在进行梯度反向传播计算时，只有特征图中响应最大的地方有梯度的反馈。通道注意力机制可以表达为：
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{M_c}(\mathbf{F}) &= \sigma \left( MLP(AvgPool(\mathbf{F})) + MLP(MaxPool(\mathbf{F})) \right) \\
+				&= \sigma \left( \mathbf{W_1}(\mathbf{W_0}(\mathbf{F_{avg}^c})) + \mathbf{W_1}(\mathbf{W_0}(\mathbf{F_{max}^c})) \right)	
+			\end{aligned}
+			\label{eq: Channel Attention Module}
+		\end{equation}
+		
+		其中，$\sigma$为 sigmoid 操作。
 		
 		\paragraph{Spatial Attention Module}
+		
+		空间注意力机制 (见Fig. \ref{fig: Attention Module}) 是对通道进行压缩，在通道维度分别进行了平均值池化和最大值池化。MaxPool的操作就是在通道上提取最大值，提取的次数是高乘以宽；AvgPool的操作就是在通道上提取平均值，提取的次数也是是高乘以宽；接着将前面所提取到的特征图(通道数都为1)合并得到一个2通道的特征图。
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{M_s}(\mathbf{F}) &= \sigma \left( f^{7 \times 7}([AvgPool(\mathbf{F});MaxPool(\mathbf{F})]) \right) \\
+				&= \sigma \left( f^{7 \times 7}([\mathbf{F^s_{avg}};\mathbf{F^s_{max}}]) \right)
+			\end{aligned}
+			\label{eq: Spatial Attention Module}
+		\end{equation}
+		
+		其中，$7 \times 7$表示卷积核的大小。
 		
 		\subsubsection{Future}
 		
@@ -779,6 +801,8 @@
 		
 		\subsubsection{Approach}
 		
+		如 Fig. \ref{fig: SCConv} 所示，SCConv 由两个单元组成，即空间重构单元 (SRU) 和信道重构单元 (CRU) ，两个单元按顺序排列。输入的特征 $X$ 先经过 SRU，得到空间细化的特征 $X^{w}$。再经过 CRU，得到通道提炼的特征 $Y$ 作为输出。
+		
 		\begin{figure}[htbp]
 			% read manual to see what [ht] means and for other possible options
 			\centering 
@@ -787,6 +811,55 @@
 			\caption{
 				\label{fig: SCConv} 
 				The architecture of SCConv integrated with Spatial Reconstruction Unit (SRU) and Channel Reconstruction Unit (CRU). This figure shows the exact position of our SCConv module within a ResBlock.
+			}
+		\end{figure}
+		
+		SCConv 模块利用了特征之间的空间冗余和信道冗余，模块可以无缝集成到任何 CNN 框架中，减少特征之间的冗余，提高 CNN 特征的代表性。
+		
+		作者通过实验发现先使用 SRU 再使用 CRU 的效果最好。
+		
+		\paragraph{SRU}
+		
+		在作者的设计中，该单元采用 分离-重构 的方法。
+		
+		\textbf{分离}操作的目的是将信息量大的特征图从信息量小的特征图中分离出来，与空间内容相对应。作者使用组归一化 (Group Normalization) 里的缩放因子来评估不同特征图中的信息含量。
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/SCConv/Spatial Reconstruction Unit}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Spatial Reconstruction Unit} 
+				The architecture of Spatial Reconstruction Unit.
+			}
+		\end{figure}
+		
+		\begin{equation}
+			\begin{aligned}
+				X_{out} = \textbf{GN}(X) = \gamma \frac{X-\mu}{\sqrt{\sigma^2 + \varepsilon}} + \beta \\
+				W_{\gamma} = {w_i} = \frac{\gamma_i}{\sum_{j=1}^{C} \gamma_j}, \ i,\ j = 1, 2, \cdots, C \\
+				W = \textbf{Gate}(\textbf{Sigmoid}(W_{\gamma}(\textbf{GN}(X))))				
+			\end{aligned}
+			\label{eq: SRU}
+		\end{equation}
+		
+		其中，$\mu$, $\sigma$是均值和标准差，$\gamma$, $\beta$ 是可训练的变量，$\varepsilon$ 是用于保证稳定性的极小常数。更大的 $\gamma$ 代表像素之间更大的变化，也就是更丰富的空间信息。
+		
+		\textbf{重构}操作是将信息量较多的特征和信息量较少的特征相加，生成信息量更多的特征并节省空间。具体的操作是交叉重建，将加权后的两个不同信息特征合并，得到 $X^{w1}$ 和 $X^{w2}$，连接起来后得到空间细化特征图 $X^{w}$。
+		
+		
+		
+		\paragraph{CRU}
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/SCConv/Chanel Reconstruction Unit}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Chanel Reconstruction Unit} 
+				The architecture of Chanel Reconstruction Unit.
 			}
 		\end{figure}
 		

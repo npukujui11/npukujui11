@@ -70,12 +70,14 @@
 \contentsline {subsubsection}{\numberline {2.9.2}Contribution}{18}{subsubsection.2.9.2}%
 \contentsline {subsubsection}{\numberline {2.9.3}Approach}{18}{subsubsection.2.9.3}%
 \contentsline {paragraph}{Channel Attention Module}{19}{equation.2.2}%
-\contentsline {paragraph}{Spatial Attention Module}{20}{figure.caption.14}%
+\contentsline {paragraph}{Spatial Attention Module}{20}{equation.2.3}%
 \contentsline {subsubsection}{\numberline {2.9.4}Future}{20}{subsubsection.2.9.4}%
 \contentsline {subsection}{\numberline {2.10}(2023)SCConv: Spatial and Channel Reconstruction Convolution for Feature Redundancy}{20}{subsection.2.10}%
 \contentsline {paragraph}{SCConv：特征冗余的空间和信道重建卷积 }{20}{subsection.2.10}%
 \contentsline {paragraph}{(CVPR 2023)}{20}{subsection.2.10}%
 \contentsline {subsubsection}{\numberline {2.10.1}Research Background}{20}{subsubsection.2.10.1}%
 \contentsline {subsubsection}{\numberline {2.10.2}Contribution}{20}{subsubsection.2.10.2}%
-\contentsline {subsubsection}{\numberline {2.10.3}Approach}{20}{subsubsection.2.10.3}%
-\contentsline {subsubsection}{\numberline {2.10.4}Future}{20}{subsubsection.2.10.4}%
+\contentsline {subsubsection}{\numberline {2.10.3}Approach}{21}{subsubsection.2.10.3}%
+\contentsline {paragraph}{SRU}{21}{figure.caption.15}%
+\contentsline {paragraph}{CRU}{22}{equation.2.5}%
+\contentsline {subsubsection}{\numberline {2.10.4}Future}{22}{subsubsection.2.10.4}%
