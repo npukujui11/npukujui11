@@ -820,7 +820,7 @@
 		
 		\paragraph{SRU}
 		
-		在作者的设计中，该单元采用 分离-重构 的方法。
+		在作者的设计中，该单元采用\textbf{分离-重构}的方法。
 		
 		\textbf{分离}操作的目的是将信息量大的特征图从信息量小的特征图中分离出来，与空间内容相对应。作者使用组归一化 (Group Normalization) 里的缩放因子来评估不同特征图中的信息含量。
 		
@@ -848,9 +848,23 @@
 		
 		\textbf{重构}操作是将信息量较多的特征和信息量较少的特征相加，生成信息量更多的特征并节省空间。具体的操作是交叉重建，将加权后的两个不同信息特征合并，得到 $X^{w1}$ 和 $X^{w2}$，连接起来后得到空间细化特征图 $X^{w}$。
 		
+		\begin{equation}
+			\left\{
+			\begin{aligned}
+				&X_{1}^{w} = W_1 \otimes X , \\
+				&X_{2}^{w} = W_2 \otimes X , \\
+				&X_{11}^{w} \oplus X_{22}^{w} = X^{w1} , \\
+				&X_{21}^{w} \oplus X_{12}^{w} = X^{w2} , \\
+				&X^{w1} \cup X^{w2} = X^{w}.
+			\end{aligned}
+			\right.
+		\end{equation}
 		
-		
+		其中 $\otimes$ 是元素乘法，$\oplus$是元素加法，$\cup$ 是求并集。
+		经过 SRU 处理后，信息量大的特征从信息量小的特征中分离出来，减少了空间维度上的冗余特征。
 		\paragraph{CRU}
+		
+		在作者的设计中，该单元采用\textbf{分割-转换-融合}的方法。
 		
 		\begin{figure}[htbp]
 			% read manual to see what [ht] means and for other possible options
@@ -862,6 +876,12 @@
 				The architecture of Chanel Reconstruction Unit.
 			}
 		\end{figure}
+		
+		\textbf{分割}操作将输入的空间细化特征 $X^{w}$ 分割为两部分：一部分的通道数是 $\alpha C$，另一部分的通道数是 $(1-\alpha) C$，其中 $\alpha$ 是超参数且 $0 \textless \alpha \textless 1$。随后对两组特征的通道数使用 $1 \times 1$ 卷积核进行压缩，分别得到 $X_{up}$ 和 $X_{low}$。
+		
+		\textbf{转换}
+		
+		\textbf{融合}
 		
 		\subsubsection{Future}
 		
