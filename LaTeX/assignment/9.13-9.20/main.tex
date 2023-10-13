@@ -848,7 +848,21 @@
 		
 		\textbf{重构}操作是将信息量较多的特征和信息量较少的特征相加，生成信息量更多的特征并节省空间。具体的操作是交叉重建，将加权后的两个不同信息特征合并，得到 $X^{w1}$ 和 $X^{w2}$，连接起来后得到空间细化特征图 $X^{w}$。
 		
+		\begin{equation}
+			\left\{
+			\begin{aligned}
+				&X_1^{w} = W_1 \otimes X, \\
+				&X_2^{w} = W_2 \otimes X, \\
+				&X_{11}^{w} \oplus X_{22}^{w} = X^{w1}, \\
+				&X_{21}^{w} \oplus X_{12}^{w} = X^{w2}, \\
+				&X^{w1} \cup X^{w2} = X^{w}.
+			\end{aligned}
+			\right.
+		\end{equation}
 		
+		其中 $\otimes$ 是元素乘法，$oplus$ 是元素加法，$\cup$是求并集。
+		
+		经过SRU处理后，信息量大的特征从信息量小的特征中分离出来，减少了空间维度上的冗余特征。
 		
 		\paragraph{CRU}
 		
@@ -862,6 +876,14 @@
 				The architecture of Chanel Reconstruction Unit.
 			}
 		\end{figure}
+		
+		在作者的设计中，该单元采用\textbf{分割-转化-融合}的方法。
+		
+		\textbf{分割}操作将输入的空间细化特征 $X^{w}$ 分割为两部分：一部分的通道数是 $\alpha C$，另一部分的通道数是 $\left(1-\alpha \right) C$，其中 $\alpha$ 是超参数且 $0 \leq \alpha \leq 1$。随后对两组特征的通道数使用 $1 \times 1$ 卷积核进行压缩，分别得到 $X_{up}$ 和 $X_{low}$。
+		
+		\textbf{转换}操作将输入的 $X_{up}$ 作为“富特征提取”的输入，分别进行 GWC 和 PWC，然后相加得到输出 $Y_{1}$。将输入 $X_{low}$ 作为“富特征提取”的补充，进行 PWC，得到的结果和原来的输入取并集得到 $Y_2$。
+		
+		\textbf{融合}操作使用简化的 SKNet 方法来自适应的合并 $Y_{1}$ 和 $Y_{2}$。具体来说，首先使用全局平均池化技术，将全局空间信息和通道统计信息结合起来，得到经过池化的 $S_{1}$ 和 $S_{2}$。然后对 $S_{1}$ 和 $S_{2}$ 做 Softmax 得到特征权重向量 $\beta_{1}$ 和 $\beta_{2}$。最后使用特征权重向量得到输出 $Y=\beta_{1}Y_{1} + \beta_{2}Y_{2}$，$Y$ 即为通道提炼的特征。
 		
 		\subsubsection{Future}
 		

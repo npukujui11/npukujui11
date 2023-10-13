@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  10 OCT 2023 07:56
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  12 OCT 2023 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -959,7 +959,7 @@ p)
 File: picture/LLIE/SCConv/Chanel Reconstruction Unit.jpg Graphic file (type bmp
 )
 <picture/LLIE/SCConv/Chanel Reconstruction Unit.jpg>
- (./main.bbl [22]) [23]
+ [22] (./main.bbl [23]) [24]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
@@ -973,12 +973,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E85E32CFEA7CEBA5F6A51E03B5050EAF;10053.
  ) 
 Here is how much of TeX's memory you used:
- 21003 strings out of 476683
- 442384 string characters out of 5805371
+ 21027 strings out of 476683
+ 443834 string characters out of 5805371
  1875012 words of memory out of 5000000
- 40861 multiletter control sequences out of 15000+600000
+ 40885 multiletter control sequences out of 15000+600000
  520961 words of font info for 102 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,13n,97p,859b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (23 pages).
+Output written on main.pdf (24 pages).
