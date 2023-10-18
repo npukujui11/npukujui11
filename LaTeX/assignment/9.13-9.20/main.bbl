@@ -1,5 +1,20 @@
 \begin{thebibliography}{10}
 
+\bibitem{zhu2020eemefn}
+Minfeng Zhu, Pingbo Pan, Wei Chen, and Yi~Yang.
+\newblock Eemefn: Low-light image enhancement via edge-enhanced multi-exposure
+  fusion network.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~34, pages 13106--13113, 2020.
+
+\bibitem{peng2021conformer}
+Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
+  and Qixiang Ye.
+\newblock Conformer: Local features coupling global representations for visual
+  recognition.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on
+  computer vision}, pages 367--376, 2021.
+
 \bibitem{woo2018cbam}
 Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
 \newblock Cbam: Convolutional block attention module.
@@ -11,6 +26,13 @@ Prajit Ramachandran, Niki Parmar, Ashish Vaswani, Irwan Bello, Anselm Levskaya,
   and Jon Shlens.
 \newblock Stand-alone self-attention in vision models.
 \newblock {\em Advances in neural information processing systems}, 32, 2019.
+
+\bibitem{li2023scconv}
+Jiafeng Li, Ying Wen, and Lianghua He.
+\newblock Scconv: Spatial and channel reconstruction convolution for feature
+  redundancy.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 6153--6162, 2023.
 
 \bibitem{chen2018learning}
 Chen Chen, Qifeng Chen, Jia Xu, and Vladlen Koltun.

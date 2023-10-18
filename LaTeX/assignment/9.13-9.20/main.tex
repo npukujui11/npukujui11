@@ -68,9 +68,9 @@
 \begin{document}
 	
 	
-	\title{\songti \zihao{4}9月13日-9月20日工作汇报}
+	\title{\songti \zihao{4}10月工作汇报}
 	\author{\textrm{Ku Jui}}
-	\date{\textrm{September 2023}}
+	\date{\textrm{October 2023}}
 	\maketitle
 	
 	\renewcommand{\figurename}{Figure} % 可以重新定义abstract，因为ctex会覆盖thebibliography
@@ -90,8 +90,55 @@
 	\part{Pre-Knowledge}	
 	
 	\section{方向}
-	
-		边缘检测\footnote{人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的颜色和结构属性，这使得物体之间的可见性更好。}：
+		
+		\subsection{问题} 
+		
+		根据目前的文献研究，在 LLIE 任务中，一种方法是采用边缘检测思想来引导弱光图像增强\footnote{为什么要采用图像的边缘图片来指导弱光图像恢复？
+			首先，图像边缘图仅需要很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。其次，低光图像通常具有很高的对比度，现有的方法可能无法在极暗或极亮的区域恢复图像边缘细节。同时，当物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。而加入边缘先验可以降低优化外观重构时的不适定程度。最后，人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。}，其策略是将边缘图与\textbf{初步恢复的图像}进行串联，然后通过单一的增强网络来实现最终的图像恢复（见Fig. \ref{fig: EEMEFN}）。恢复结果的质量往往会受到最后的增强网络设计和初步恢复图像所包含特征与真实图像特征之间的相似度的影响。
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/EEMEFN/EEMEFN framework}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: EEMEFN} 
+				该 LLIE 结构源自\cite{zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。
+			}
+		\end{figure}
+		
+		根据目前的文献调研，当前的此类方法的特点只集中在通过边缘图指导图像恢复，且恢复出来的图像还是有明显噪点。
+		
+		\textbf{图像初步恢复的方法}目前主要包括以下几种：
+		
+		\begin{itemize}
+			\item[(1)] 
+			利用多曝光技术\footnote{多曝光技术已被实验证明可以有效的解决 LLIE 任务中普遍存在的色彩失真问题。}获得具有不同曝光度的图像，然后结合恢复网络进行初步恢复\footnote{常见的架构如基于 GAN 的多曝光图像融合架构，基于端到端深度学习框架下多曝光图像融合算法，基于稀疏表示和可平移复方向金字塔变换的多曝光融合框架。}；
+			
+			\item[(2)]
+			我们提出的 CNN 和 Transformer 并行架构（见Fig. \ref{fig: First Architecture}）。
+			
+			\item[(3)]
+			直接通过神经网络进行弱恢复。
+			
+		\end{itemize}	
+		
+		但由于噪声和伪影的存在，以及色彩与真实图像之间的差异，后者结果通常并不理想。
+
+		此外，\textbf{获取边缘图的方法}也各不相同，在 LLIE 任务中，常见方法采用\textbf{边缘检测网络}来生成边缘图。Canny 和 Sobel 算子通常被用作对比实验，也有一些研究采用辅助边缘网络以提高边缘图生成的准确性。这些方法在弱光图像恢复研究中都具有一定的学术和实际应用价值。目前在 LLIE 领域中获取边缘图分化成了两个不同的方向，一种是采用初步恢复图像获取边缘图（如Fig. \ref{fig: EEMEFN}），另一种是直接采用弱光图像获取边缘图。
+		
+		\begin{figure}[htbp]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Overview} 
+				该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha}$ 中通过边缘网络获取边缘图。
+			}
+		\end{figure}
+		
+		图像处理任务中边缘检测的各种方法：
 		
 		\begin{itemize}
 			\item[(1)] 
@@ -104,38 +151,51 @@
 			深度学习方法从原始数据中学习复杂的特征表示端到端边缘检测模型。
 		\end{itemize}	
 		
-		\cite{rana2021edge}与\cite{zhu2020eemefn}在暗区域中加入敏感边缘先验可以降低优化外观重构时的不适定程度。
-
-		这个边缘检测的思想目前的文献调研显示只集中在边缘检测和外观指导图像恢复，没有考虑和图像的色彩结合，以及恢复出来的图像还是有明显噪点。
-		
-		\subsection{问题} 
-		
-		目前的文献研究表明，在弱光环境下的图像恢复中，采用边缘检测思想来引导弱光图像恢复过程的方法，一般的策略是将边缘图与初步恢复的图像进行串联，然后通过单一的增强网络来实现最终的图像恢复。恢复结果的质量往往受到最后的增强网络设计和初步恢复图像所包含特征与真实图像特征之间的相似度的影响。
-		
-		初步恢复的方法目前主要包括两种：一种是利用多曝光技术获得具有不同曝光度的图像，然后结合恢复网络进行初步恢复；另一种则是直接通过神经网络进行弱恢复，但由于噪声和伪影的存在，以及色彩与真实图像之间的差异，结果通常并不理想。
-		
-		在增强网络的设计方面，主要采用了两种主要架构：StyleGAN 和 U-Net。这些网络通常通过串联操作或将边缘图像的分块作为卷积核的方式来引导图像恢复过程。
-		
-		此外，获得边缘图的方法也各不相同，一般采用边缘检测网络来生成边缘图。Canny 和 Sobel 算子通常被用作对比实验，也有一些研究采用辅助边缘网络以提高边缘图生成的准确性。这些方法在弱光图像恢复研究中都具有一定的学术和实际应用价值。
+		在增强网络的设计方面，主要采用了两种主要架构：StyleGAN 和 U-Net。这些网络通常通过串联操作或将边缘图像的分块作为卷积核的方式来引导图像恢复过程。关键点在于边缘图如何为\textbf{初步恢复图片}提供先验增强。
 		
 		\subsection{创新想法}
 		
 		在目前的研究中，我们探索了不同的边缘图生成方法，并引入了基于 VGG 网络的方法，同时采用 Canny 边缘检测作为参考对比方法。我们的主要目标是设计一种综合恢复策略，结合了以下几个关键元素：边缘图、初步恢复图以及原始图像的 Y/Cb/Cr 通道信息。
 		
-		在初步恢复图的生成方面，我们采用了一种复合型卷积神经网络 CNN 与 Transformer 网络的混合模型，见 Fig.\ref{fig: First Architecture}。这一模型旨在从弱光图像中提取长距离和短距离特征，以更全面地捕捉图像的信息。通过特定的特征融合策略，我们期望能够得到初步恢复的图像。
-		
-		至于增强网络的设计，我们目前尚未确定具体的方法。然而，我们的研究侧重于构建一个整体恢复框架，该框架利用边缘图、初步恢复图和通道信息的融合，以提高弱光图像的质量。我们将继续探索合适的增强网络结构，以进一步提升恢复结果的性能。这一研究旨在为弱光图像恢复领域提供新的理论和方法，以改善图像质量并拓展应用领域。
-		
 		\begin{figure}[htbp]
 			% read manual to see what [ht] means and for other possible options
 			\centering 
-			\includegraphics[width=\columnwidth]{picture/LLIE/First architecture}
+			\includegraphics[width=\columnwidth]{picture/LLIE/Conformer/the proposed Conformer}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Conformer architecture} 
+				Network architecture of the proposed Conformer. (a) Up-sampling and down-sampling for spatial alignment of
+				feature maps and patch embeddings. (b) Implementation details of the CNN block, the transformer block, and the Feature Coupling Unit (FCU). (c) Thumbnail of Conformer.
+			}
+		\end{figure}
+		
+		在初步恢复图的生成方面，我们受到了 Conformer\cite{peng2021conformer} 结构的启发，在卷积神经网络 (CNN) 中，卷积操作擅长提取局部特征，但难以捕获全局表示。Conformer 是一种混合网络结构，包含了并行的 CNN 分支和 Transformer 分支，其通过特征耦合模块融合局部与全局特征，目的在于不损失图像细节的同时捕捉图像全局信息。我们借鉴 Conformer 并发结构 (见 Fig. \ref{fig: Conformer architecture})，将其中 CNN 分支的 ResNet 结构修改为 U-Net 结构，我们的设计了采用了一种复合型卷积神经网络 CNN 与 Transformer 网络的混合模型(见 Fig. \ref{fig: First Architecture})。这一模型旨在从弱光图像中提取长距离和短距离特征，以更全面地捕捉图像的信息。通过特定的特征融合策略，我们期望能够得到初步恢复的图像。
+		
+		至于增强网络的设计，我们目前尚未确定具体的方法。然而，我们的研究侧重于构建一个整体恢复框架，该框架利用边缘图、初步恢复图和通道信息的融合，以提高弱光图像的质量。我们将继续探索合适的增强网络结构，以进一步提升恢复结果的性能。这一研究旨在为弱光图像恢复领域提供新的理论和方法，以改善图像质量并拓展应用领域。
+		
+		\begin{figure}[htb]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/The proposed architecture}
 			%\captionsetup{font=scriptsize}
 			\caption{
 				\label{fig: First Architecture} 
-				Low-Lighting 图像恢复网络，其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal{F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal{F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal{F}_3$ 经过与 U-Net 输出的特征图 $\mathcal{F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复
+				Low-Lighting 图像恢复网络。结构受 Conformer\cite{peng2021conformer} （见 Fig. \ref{fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal{F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal{F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal{F}_3$ 经过与 U-Net 输出的特征图 $\mathcal{F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。
 			}
 		\end{figure}
+		
+		\begin{figure}[htb]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/U-Net and AM}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: U-Net and AM} 
+				U-Net 图像初步恢复网络及其所属的模块。
+			}
+		\end{figure}
+		
+		\subsection{创新想法的调研支撑}
 		
 		\paragraph{Attention in CV}
 		
@@ -152,7 +212,7 @@
 			不同时关注通道和空间维度关注信息。这就造成了信息的浪费和注意力的减弱。
 		\end{itemize}	
 		
-		针对第一个限制 \cite{ramachandran2019stand} 将所有卷积替换为独立的自注意层和空间意识的独立自注意层，替换后的模型为纯注意模型。纯注意模型增强了网络对远距离特征连接的建模能力。在 ImageNet分类任务和 COCO 对象检测任务中，该模型优于使用卷积的基线模型。对于第三个限制，Woo 等人\cite{woo2018cbam}提出了一种卷积块注意模型 CBAM，这是一种轻量级的通用注意模型。该模型从通道维度和空间维度两方面关注重要信息。由于 CBAM 从多个维度提取重要信息，该模型被广泛应用于目标检测、目标分类等任务。实验表明，CBAM 模块可以显著提高网络的表达能力。
+		针对第一个限制 \cite{ramachandran2019stand} 将所有卷积替换为独立的自注意层和空间意识的独立自注意层，替换后的模型为纯注意模型。纯注意模型增强了网络对远距离特征连接的建模能力。在 ImageNet分类任务和 COCO 对象检测任务中，该模型优于使用卷积的基线模型。对于第三个限制，Woo 等人\cite{woo2018cbam}提出了一种卷积块注意模型 CBAM，这是一种轻量级的通用注意模型。该模型从通道维度和空间维度两方面关注重要信息。由于 CBAM 从多个维度提取重要信息，该模型被广泛应用于目标检测、目标分类等任务。实验表明，CBAM 模块可以显著提高网络的表达能力。同时，CBAM 可以搭配 SCConv\cite{li2023scconv}结构，SCConv 是一种名为可以即插即用的卷积模块，目的是减少卷积神经网络中特征之间的空间和通道冗余，从而压缩 CNN 模型并提高其性能。
 		
 		\paragraph{U-Net for LLIE}
 		

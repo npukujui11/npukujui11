@@ -1,0 +1,81 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {part}{I\hspace  {1em}Pre-Knowledge}{1}{part.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}背景介绍}{1}{section.1}\protected@file@percent }
+\citation{zhu2020eemefn}
+\citation{zhu2020eemefn}
+\@writefile{toc}{\contentsline {section}{\numberline {2}方向}{2}{section.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   该 LLIE 结构源自\cite  {zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。 \relax }}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig: EEMEFN}{{1}{2}{该 LLIE 结构源自\cite {zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。 \relax }{figure.caption.1}{}}
+\citation{peng2021conformer}
+\citation{peng2021conformer}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}方向一}{3}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   Low-Lighting 图像恢复网络。结构受 Conformer\cite  {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal  {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal  {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal  {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal  {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }}{3}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: The proposed architecture}{{2}{3}{Low-Lighting 图像恢复网络。结构受 Conformer\cite {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}方向二}{4}{subsection.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }}{4}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: Overview}{{3}{4}{该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}方向三}{4}{subsection.2.3}\protected@file@percent }
+\citation{peng2021conformer}
+\citation{woo2018cbam}
+\@writefile{toc}{\contentsline {section}{\numberline {3}创新想法}{5}{section.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Network architecture of the proposed Conformer. (a) Up-sampling and down-sampling for spatial alignment of feature maps and patch embeddings. (b) Implementation details of the CNN block, the transformer block, and the Feature Coupling Unit (FCU). (c) Thumbnail of Conformer. \relax }}{5}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: Conformer architecture}{{4}{5}{Network architecture of the proposed Conformer. (a) Up-sampling and down-sampling for spatial alignment of feature maps and patch embeddings. (b) Implementation details of the CNN block, the transformer block, and the Feature Coupling Unit (FCU). (c) Thumbnail of Conformer. \relax }{figure.caption.4}{}}
+\citation{ramachandran2019stand}
+\citation{woo2018cbam}
+\citation{li2023scconv}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   U-Net 图像初步恢复网络及其所属的模块。 \relax }}{6}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: U-Net and AM}{{5}{6}{U-Net 图像初步恢复网络及其所属的模块。 \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}创新想法调研支撑}{6}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Attention in CV}{6}{subsection.3.1}\protected@file@percent }
+\citation{chen2018learning}
+\citation{chen2018learning,zamir2021learning}
+\citation{chen2018learning}
+\citation{chen2018learning,zamir2021learning}
+\citation{meng2020gia}
+\citation{chen2018learning,zamir2021learning}
+\citation{meng2020gia}
+\citation{chen2018learning,meng2020gia,zamir2021learning}
+\citation{zhou2018unet++,zhou2019unet++}
+\citation{yang2021locally,zhang2020attention}
+\citation{li2018multi,zamir2020learning}
+\citation{li2020visual}
+\citation{xu2020learning}
+\bibstyle{unsrt}
+\bibdata{reference}
+\bibcite{zhu2020eemefn}{1}
+\bibcite{peng2021conformer}{2}
+\bibcite{woo2018cbam}{3}
+\bibcite{ramachandran2019stand}{4}
+\@writefile{toc}{\contentsline {paragraph}{U-Net for LLIE}{7}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CNN for LLIE}{7}{subsection.3.1}\protected@file@percent }
+\bibcite{li2023scconv}{5}
+\bibcite{chen2018learning}{6}
+\bibcite{zamir2021learning}{7}
+\bibcite{meng2020gia}{8}
+\bibcite{zhou2018unet++}{9}
+\bibcite{zhou2019unet++}{10}
+\bibcite{yang2021locally}{11}
+\bibcite{zhang2020attention}{12}
+\bibcite{li2018multi}{13}
+\bibcite{zamir2020learning}{14}
+\bibcite{li2020visual}{15}
+\bibcite{xu2020learning}{16}
+\newlabel{LastPage}{{}{9}{}{page.9}{}}
+\xdef\lastpage@lastpage{9}
+\xdef\lastpage@lastpageHy{9}
+\gdef \@abspage@last{9}
