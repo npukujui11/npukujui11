@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  18 OCT 2023 21:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  22 OCT 2023 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,96 +903,86 @@ TeX and DVIPDFMx (CTEX)
 {d:/Soft/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{UGBK.sfd}{U
 nicode.sfd}) [1
 
-]
-<picture/LLIE/EEMEFN/EEMEFN framework.jpg, id=190, 1177.90062pt x 748.7975pt>
+] [2]
+<picture/LLIE/EEMEFN/EEMEFN framework.jpg, id=234, 1177.90062pt x 748.7975pt>
 File: picture/LLIE/EEMEFN/EEMEFN framework.jpg Graphic file (type jpg)
 <use picture/LLIE/EEMEFN/EEMEFN framework.jpg>
 Package pdftex.def Info: picture/LLIE/EEMEFN/EEMEFN framework.jpg  used on inpu
-t line 113.
+t line 150.
 (pdftex.def)             Requested size: 469.75502pt x 298.62248pt.
- [2 <./picture/LLIE/EEMEFN/EEMEFN framework.jpg>]
+
 
 pdfTeX warning: pdflatex.exe (file ./picture/LLIE/My Architecture/The proposed 
-architecture.pdf): PDF inclusion: found PDF version <1.7>, but at most version 
-<1.5> allowed
-<picture/LLIE/My Architecture/The proposed architecture.pdf, id=222, 844.95674p
-t x 597.432pt>
-File: picture/LLIE/My Architecture/The proposed architecture.pdf Graphic file (
-type pdf)
-<use picture/LLIE/My Architecture/The proposed architecture.pdf>
-Package pdftex.def Info: picture/LLIE/My Architecture/The proposed architecture
-.pdf  used on input line 144.
+initial architecture.pdf): PDF inclusion: found PDF version <1.7>, but at most 
+version <1.5> allowed
+<picture/LLIE/My Architecture/The proposed initial architecture.pdf, id=243, 84
+4.95674pt x 597.432pt>
+File: picture/LLIE/My Architecture/The proposed initial architecture.pdf Graphi
+c file (type pdf)
+<use picture/LLIE/My Architecture/The proposed initial architecture.pdf>
+Package pdftex.def Info: picture/LLIE/My Architecture/The proposed initial arch
+itecture.pdf  used on input line 181.
 (pdftex.def)             Requested size: 469.75502pt x 332.14388pt.
-[3 <./picture/LLIE/My Architecture/The proposed architecture.pdf>]
-<picture/LLIE/Structure Modeling and Guidance/Overview.jpg, id=278, 1339.0025pt
+
+LaTeX Warning: Reference `fig: Conformer architecture' on page 3 undefined on i
+nput line 186.
+
+
+LaTeX Warning: Reference `fig: Conformer architecture' on page 3 undefined on i
+nput line 186.
+
+<picture/LLIE/Uformer/Uformer.jpg, id=251, 1201.48875pt x 368.37625pt>
+File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type jpg)
+<use picture/LLIE/Uformer/Uformer.jpg>
+Package pdftex.def Info: picture/LLIE/Uformer/Uformer.jpg  used on input line 1
+95.
+(pdftex.def)             Requested size: 469.75502pt x 144.0259pt.
+<picture/LLIE/MCLNet/Overview.jpg, id=252, 1027.33812pt x 392.46625pt>
+File: picture/LLIE/MCLNet/Overview.jpg Graphic file (type jpg)
+<use picture/LLIE/MCLNet/Overview.jpg>
+Package pdftex.def Info: picture/LLIE/MCLNet/Overview.jpg  used on input line 2
+06.
+(pdftex.def)             Requested size: 469.75502pt x 179.45871pt.
+[3] [4 <./picture/LLIE/EEMEFN/EEMEFN framework.jpg>] [5 <./picture/LLIE/My Arch
+itecture/The proposed initial architecture.pdf> <./picture/LLIE/Uformer/Uformer
+.jpg>]
+<picture/LLIE/Structure Modeling and Guidance/Overview.jpg, id=338, 1339.0025pt
  x 627.84563pt>
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
 ype jpg)
 <use picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
 Package pdftex.def Info: picture/LLIE/Structure Modeling and Guidance/Overview.
-jpg  used on input line 161.
+jpg  used on input line 221.
 (pdftex.def)             Requested size: 469.75502pt x 220.26659pt.
- [4 <./picture/LLIE/Structure Modeling and Guidance/Overview.jpg>]
-<picture/LLIE/Conformer/the proposed Conformer.jpg, id=293, 1046.91125pt x 566.
-115pt>
-File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type jpg)
-
-<use picture/LLIE/Conformer/the proposed Conformer.jpg>
-Package pdftex.def Info: picture/LLIE/Conformer/the proposed Conformer.jpg  use
-d on input line 197.
-(pdftex.def)             Requested size: 469.75502pt x 254.01515pt.
-
-
-LaTeX Warning: Reference `fig: First Architecture' on page 5 undefined on input
- line 206.
-
-
-
-pdfTeX warning: pdflatex.exe (file ./picture/LLIE/My Architecture/U-Net and AM.
-pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-
-<picture/LLIE/My Architecture/U-Net and AM.pdf, id=298, 844.95674pt x 597.432pt
->
-File: picture/LLIE/My Architecture/U-Net and AM.pdf Graphic file (type pdf)
-<use picture/LLIE/My Architecture/U-Net and AM.pdf>
-Package pdftex.def Info: picture/LLIE/My Architecture/U-Net and AM.pdf  used on
- input line 213.
-(pdftex.def)             Requested size: 469.75502pt x 332.14388pt.
-[5 <./picture/LLIE/Conformer/the proposed Conformer.jpg>] [6 <./picture/LLIE/My
- Architecture/U-Net and AM.pdf>] (./Direction.bbl [7] [8]) [9]
+ [6 <./picture/LLIE/MCLNet/Overview.jpg> <./picture/LLIE/Structure Modeling and
+ Guidance/Overview.jpg>] (./Direction.bbl [7]) [8]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./Direction.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `Direction.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Direction.out':
-(rerunfilecheck)             Before: 4348CA461AAEF7101E870F0694A9FF1F;725
-(rerunfilecheck)             After:  9A164794CAD97EFA9C17DAC3442FEAF2;709.
+Package rerunfilecheck Info: File `Direction.out' has not changed.
+(rerunfilecheck)             Checksum: C2E18D8B05614C1D45F780E2F611A7C6;523.
  ) 
 Here is how much of TeX's memory you used:
- 19883 strings out of 476025
- 333383 string characters out of 5791521
- 1880382 words of memory out of 5000000
- 39636 multiletter control sequences out of 15000+600000
- 572228 words of font info for 252 fonts, out of 8000000 for 9000
+ 19864 strings out of 476025
+ 332773 string characters out of 5791521
+ 1897382 words of memory out of 5000000
+ 39614 multiletter control sequences out of 15000+600000
+ 571958 words of font info for 251 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,12n,80p,1613b,587s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
-/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
-.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Font
-s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
-ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
+ 78i,12n,80p,1613b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
+imhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
+/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
+/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei
+.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Font
+s/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Wind
+ows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc>
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
-hei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/F
-onts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/W
+sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
+onts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/W
 indows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.t
 tc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/
 simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
@@ -1011,30 +1001,31 @@ ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
 c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
 un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
 nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
-ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.tt
-f><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
+ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
+c><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
+imhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
 /Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
-/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
-.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
+.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
 s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
-ows/Fonts/simsun.ttc><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-bx9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
-d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/So
-ft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/Soft/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/Soft/texlive/
-2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Soft/texlive/2023/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texlive/2023/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr9.pfb><d:/Soft/texlive/2023/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Direction.pdf (9 pages, 2672276 bytes).
+ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
+<c:/Windows/Fonts/simsun.ttc><d:/Soft/texlive/2023/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx9.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:
+/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/Soft/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/Soft/texliv
+e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/Soft/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><d:/Soft/texlive/2023/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/Soft/texlive/2023/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Direction.pdf (8 pages, 2876099 bytes).
 PDF statistics:
- 767 PDF objects out of 1000 (max. 8388607)
- 503 compressed objects within 6 object streams
- 42 named destinations out of 1000 (max. 500000)
- 390 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 736 PDF objects out of 1000 (max. 8388607)
+ 494 compressed objects within 5 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 370 words of extra memory for PDF output out of 10000 (max. 10000000)
 

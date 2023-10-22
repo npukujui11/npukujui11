@@ -7,6 +7,13 @@ Minfeng Zhu, Pingbo Pan, Wei Chen, and Yi~Yang.
 \newblock In {\em Proceedings of the AAAI Conference on Artificial
   Intelligence}, volume~34, pages 13106--13113, 2020.
 
+\bibitem{wang2022uformer}
+Zhendong Wang, Xiaodong Cun, Jianmin Bao, Wengang Zhou, Jianzhuang Liu, and
+  Houqiang Li.
+\newblock Uformer: A general u-shaped transformer for image restoration.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 17683--17693, 2022.
+
 \bibitem{peng2021conformer}
 Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
   and Qixiang Ye.
@@ -14,6 +21,24 @@ Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
   recognition.
 \newblock In {\em Proceedings of the IEEE/CVF international conference on
   computer vision}, pages 367--376, 2021.
+
+\bibitem{li2023effective}
+Qiao Li, Bin Jiang, Xiaochen Bo, Chao Yang, and Xu~Wu.
+\newblock Effective low-light image enhancement with multiscale and context
+  learning network.
+\newblock {\em Multimedia Tools and Applications}, 82(10):15271--15286, 2023.
+
+\bibitem{xu2023low}
+Xiaogang Xu, Ruixing Wang, and Jiangbo Lu.
+\newblock Low-light image enhancement via structure modeling and guidance.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 9893--9903, 2023.
+
+\bibitem{rana2021edge}
+Deepanshu Rana, Kanishk~Jayant Lal, and Anil~Singh Parihar.
+\newblock Edge guided low-light image enhancement.
+\newblock In {\em 2021 5th International Conference on Intelligent Computing
+  and Control Systems (ICICCS)}, pages 871--877. IEEE, 2021.
 
 \bibitem{woo2018cbam}
 Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
