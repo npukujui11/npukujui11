@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}开发进度}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}已知问题}{1}{subsection.1.1}%
+\contentsline {paragraph}{bug1：雨天船只翻船}{1}{figure.caption.1}%
+\contentsline {paragraph}{bug2：海面缺失}{2}{figure.caption.1}%
+\contentsline {paragraph}{bug3: 船只操控故障}{2}{figure.caption.1}%
+\contentsline {paragraph}{bug4：船只模型故障}{2}{figure.caption.1}%
+\contentsline {paragraph}{bug5：海浪缺失}{2}{figure.caption.1}%
