@@ -27,6 +27,7 @@
 \usepackage{pythonhighlight}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{tocloft}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead{}
@@ -83,9 +84,16 @@
 		%		not consistent with the theoretically predicted $k_{theory}=17.34$~s. We attribute %this
 		%		discrepancy to low efficiency of our $V$-detector.
 		%	\end{abstract}
-	\renewcommand{\contentsname}{Contents}
+	
 	\renewcommand{\tablename}{Table}
-	\tableofcontents  % 自动生成目录
+	
+	% 设置目录标题为居中
+	\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\songti}
+	\renewcommand{\cftaftertoctitle}{\hfill}
+	\renewcommand{\contentsname}{Content}
+		
+	\tableofcontents
+	
 	
 	\part{Pre-Knowledge}	
 	
@@ -254,7 +262,43 @@
 			}
 		\end{figure}
 		
+		编码器首先通过一个 $1 \times 1$ Conv，然后连续通过四个单元，前三个单元每一个都由一个 AM 集成模块和一个池化层组成，最后一个单元只有一个 AM 集成模块，从左至右采用的 AM 集成模块分别记为 $\text{AM}_i$。
 		
+		解码器首先通过一个上采样模块，然后与 $\text{AM}_{3}$ 进行 Concat 操作，然后通过 $\text{AM}_{5}$ 集成模块和上采样模块，然后与 $\text{AM}_{2}$ 进行 Concat 操作，然后通过 $\text{AM}_{6}$ 集成模块和上采样模块，然后与 $\text{AM}_{1}$ 进行 Concat 操作，最后通过 $\text{AM}_{7}$ 集成模块和 $1 \times 1$ Conv。
+		
+		\paragraph{Patch Embedding}
+		
+		在深度学习和计算机视觉中，Patch Embedding 是一种常见的操作，它将图像分割成更小的块（patches），然后将这些块转换成一系列的向量，这些向量可以被用作模型的输入。
+		
+		\begin{figure}[htb]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=0.5\columnwidth]{picture/LLIE/My Architecture/Patch Embedding}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Patch Embedding} 
+				Patch Embedding 的一般性过程。
+			}
+		\end{figure}
+		
+		首先，对原始的弱光图像 $P_1$ 进行 Patch Embedding，得到 600 个 D 维的特征向量，每个向量对应于一个 $20 \times 20$ 的 patch。然后，将 $600 \times 400$ 的特征向量重新排列成 600 个 $20 \times 20$的 patches，然后每个 patch 也被 flatten 成 400 维的向量。因为是三通道特征，所以实际上每个通道被 flatten 成 400 维，总计 1200 维的向量 $\ell_1$。
+		
+		\begin{figure}[htb]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=0.8\columnwidth]{picture/LLIE/My Architecture/Patch Embedding(ViT)}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Patch Embedding(ViT)} 
+				Vision Transformer 中 Patch Embedding 的过程。
+			}
+		\end{figure}
+		
+		实际上，我们可以将 $\ell_1$ 通过一个 Linear Projection，使其转换成 D 维的向量，如 Fig. \ref{fig: Patch Embedding(ViT)} 所示。
+		
+		Fig. \ref{fig: First Architecture} 显示了在 Patech Embedding 之后，会将特征 $\mathcal{F}_1$ 进行变换处理之后与向量 $\ell_1$ 进行 Concat 操作（不经过处理特征 $\mathcal{F}_1$ 无法直接与向量 $\ell_1$ Concat）。
+		
+		使用 $20 \times 20$ 的 Patch 大小进行 Embedding，但是这个大小是否合适取决于输入图像的尺寸和细节的重要性。如果图像中包含细小的重要特征，较小的 Patch 可能更合适。另一方面，较大的 Patch 可能会捕捉到更高层次的抽象特征。后续可能需要实验不同的 Patch 大小来找到最佳的平衡点。
 		
 		\subsection{创新想法的调研支撑}
 		
