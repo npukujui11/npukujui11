@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  8 NOV 2023 11:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  9 NOV 2023 13:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -991,7 +991,7 @@ Package pdftex.def Info: picture/LLIE/My Architecture/Fusion Block.jpg  used on
 pdfTeX warning: pdflatex.exe (file ./picture/LLIE/My Architecture/U-Net and AM.
 pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<picture/LLIE/My Architecture/U-Net and AM.pdf, id=563, 844.95674pt x 597.432pt
+<picture/LLIE/My Architecture/U-Net and AM.pdf, id=565, 844.95674pt x 597.432pt
 >
 File: picture/LLIE/My Architecture/U-Net and AM.pdf Graphic file (type pdf)
 <use picture/LLIE/My Architecture/U-Net and AM.pdf>
@@ -1012,7 +1012,7 @@ rm/m/n/10/52 ^^F r \C70/rm/m/n/10/62 ^^P \C70/rm/m/n/10/66 ô \C70/rm/m/n/10/5c
 /10 patches|\C70/rm/m/n/10/ff 	||^^L|
  []
 
-<picture/LLIE/My Architecture/Patch Embedding.jpg, id=564, 354.32375pt x 154.57
+<picture/LLIE/My Architecture/Patch Embedding.jpg, id=566, 354.32375pt x 154.57
 75pt>
 File: picture/LLIE/My Architecture/Patch Embedding.jpg Graphic file (type jpg)
 <use picture/LLIE/My Architecture/Patch Embedding.jpg>
@@ -1020,7 +1020,7 @@ Package pdftex.def Info: picture/LLIE/My Architecture/Patch Embedding.jpg  used
  on input line 276.
 (pdftex.def)             Requested size: 234.8775pt x 102.46959pt.
 [7 <./picture/LLIE/My Architecture/Fusion Block.jpg>]
-<picture/LLIE/My Architecture/Patch Embedding(ViT).jpg, id=575, 524.96124pt x 2
+<picture/LLIE/My Architecture/Patch Embedding(ViT).jpg, id=577, 524.96124pt x 2
 37.88875pt>
 File: picture/LLIE/My Architecture/Patch Embedding(ViT).jpg Graphic file (type 
 jpg)
@@ -1034,7 +1034,7 @@ ecture/Patch Embedding.jpg>] [9 <./picture/LLIE/My Architecture/Patch Embedding
 Package CJKpunct Info: use punctuation spaces for family 'zhsong' with punctsty
 le (quanjiao) on input line 355.
  [10] [11]
-<picture/LLIE/LACN/LACN model structure.jpg, id=683, 890.82813pt x 398.99063pt>
+<picture/LLIE/LACN/LACN model structure.jpg, id=685, 890.82813pt x 398.99063pt>
 
 File: picture/LLIE/LACN/LACN model structure.jpg Graphic file (type jpg)
 <use picture/LLIE/LACN/LACN model structure.jpg>
@@ -1043,14 +1043,14 @@ put line 405.
 (pdftex.def)             Requested size: 469.75502pt x 210.3986pt.
 
 [12 <./picture/LLIE/LACN/LACN model structure.jpg>]
-<picture/LLIE/LACN/FFM structure.jpg, id=690, 501.37312pt x 164.11313pt>
+<picture/LLIE/LACN/FFM structure.jpg, id=692, 501.37312pt x 164.11313pt>
 File: picture/LLIE/LACN/FFM structure.jpg Graphic file (type jpg)
 <use picture/LLIE/LACN/FFM structure.jpg>
 Package pdftex.def Info: picture/LLIE/LACN/FFM structure.jpg  used on input lin
 e 429.
 (pdftex.def)             Requested size: 375.80544pt x 123.01692pt.
  [13 <./picture/LLIE/LACN/FFM structure.jpg>]
-<picture/LLIE/DHN/Architecture.jpg, id=697, 984.67876pt x 407.5225pt>
+<picture/LLIE/DHN/Architecture.jpg, id=699, 984.67876pt x 407.5225pt>
 File: picture/LLIE/DHN/Architecture.jpg Graphic file (type jpg)
 <use picture/LLIE/DHN/Architecture.jpg>
 Package pdftex.def Info: picture/LLIE/DHN/Architecture.jpg  used on input line 
@@ -1073,7 +1073,7 @@ f ^^V \C70/rm/m/n/10/78 ^^A \C70/rm/m/n/10/56 h \C70/rm/m/n/10/7f Q \C70/rm/m/n
  []
 
 [14 <./picture/LLIE/DHN/Architecture.jpg>]
-<picture/LLIE/Fusion-based/decomposition and enhancement.jpg, id=706, 522.45187
+<picture/LLIE/Fusion-based/decomposition and enhancement.jpg, id=708, 522.45187
 pt x 447.17062pt>
 File: picture/LLIE/Fusion-based/decomposition and enhancement.jpg Graphic file 
 (type jpg)
@@ -1082,7 +1082,7 @@ Package pdftex.def Info: picture/LLIE/Fusion-based/decomposition and enhancemen
 t.jpg  used on input line 570.
 (pdftex.def)             Requested size: 328.82707pt x 281.44604pt.
  [15] [16 <./picture/LLIE/Fusion-based/decomposition and enhancement.jpg>]
-<picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg, id=723, 1144.77687pt
+<picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg, id=725, 1144.77687pt
  x 618.31pt>
 File: picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg Graphic file (ty
 pe jpg)
@@ -1091,7 +1091,7 @@ Package pdftex.def Info: picture/LLIE/Multi-exposure fusion/Schematic diagram.j
 pg  used on input line 644.
 (pdftex.def)             Requested size: 469.75502pt x 253.72574pt.
  [17]
-<picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg, id=730, 943.
+<picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg, id=732, 943.
 525pt x 306.64563pt>
 File: picture/LLIE/Fusion-Based LLIE/Parallel fusion frame diagram.jpg Graphic 
 file (type jpg)
@@ -1100,7 +1100,7 @@ Package pdftex.def Info: picture/LLIE/Fusion-Based LLIE/Parallel fusion frame d
 iagram.jpg  used on input line 691.
 (pdftex.def)             Requested size: 469.75502pt x 152.67204pt.
  [18 <./picture/LLIE/Multi-exposure fusion/Schematic diagram.jpg>]
-<picture/LLIE/Dual UNet/DUAMNet framework.jpg, id=736, 946.03438pt x 546.54187p
+<picture/LLIE/Dual UNet/DUAMNet framework.jpg, id=738, 946.03438pt x 546.54187p
 t>
 File: picture/LLIE/Dual UNet/DUAMNet framework.jpg Graphic file (type jpg)
 <use picture/LLIE/Dual UNet/DUAMNet framework.jpg>
@@ -1123,37 +1123,37 @@ m/m/n/10/88 h \C70/rm/m/n/10/79 :|\C70/rm/m/n/10/30 ^^B| \C70/rm/m/n/10/57 (\OT
 1/cmr/m/n/10 ARMB\C70/rm/m/n/10/76 „
  []
 
-<picture/LLIE/MCLNet/Overview.jpg, id=747, 1027.33812pt x 392.46625pt>
+<picture/LLIE/MCLNet/Overview.jpg, id=749, 1027.33812pt x 392.46625pt>
 File: picture/LLIE/MCLNet/Overview.jpg Graphic file (type jpg)
 <use picture/LLIE/MCLNet/Overview.jpg>
 Package pdftex.def Info: picture/LLIE/MCLNet/Overview.jpg  used on input line 7
 95.
 (pdftex.def)             Requested size: 469.75502pt x 179.45871pt.
 [21 <./picture/LLIE/MCLNet/Overview.jpg>]
-<picture/LLIE/MCLNet/BSAM.jpg, id=755, 634.37pt x 309.155pt>
+<picture/LLIE/MCLNet/BSAM.jpg, id=757, 634.37pt x 309.155pt>
 File: picture/LLIE/MCLNet/BSAM.jpg Graphic file (type jpg)
 <use picture/LLIE/MCLNet/BSAM.jpg>
 Package pdftex.def Info: picture/LLIE/MCLNet/BSAM.jpg  used on input line 808.
 (pdftex.def)             Requested size: 328.82707pt x 160.25676pt.
-<picture/LLIE/MCLNet/ARMB.jpg, id=756, 874.76813pt x 423.08063pt>
+<picture/LLIE/MCLNet/ARMB.jpg, id=758, 874.76813pt x 423.08063pt>
 File: picture/LLIE/MCLNet/ARMB.jpg Graphic file (type jpg)
 <use picture/LLIE/MCLNet/ARMB.jpg>
 Package pdftex.def Info: picture/LLIE/MCLNet/ARMB.jpg  used on input line 819.
 (pdftex.def)             Requested size: 328.82707pt x 159.03572pt.
-<picture/LLIE/MCLNet/CEM.jpg, id=757, 872.76062pt x 345.29pt>
+<picture/LLIE/MCLNet/CEM.jpg, id=759, 872.76062pt x 345.29pt>
 File: picture/LLIE/MCLNet/CEM.jpg Graphic file (type jpg)
 <use picture/LLIE/MCLNet/CEM.jpg>
 Package pdftex.def Info: picture/LLIE/MCLNet/CEM.jpg  used on input line 830.
 (pdftex.def)             Requested size: 328.82707pt x 130.09459pt.
  [22 <./picture/LLIE/MCLNet/BSAM.jpg> <./picture/LLIE/MCLNet/ARMB.jpg>]
-<picture/LLIE/CBAM/CBAM-overview.jpg, id=771, 561.09625pt x 172.645pt>
+<picture/LLIE/CBAM/CBAM-overview.jpg, id=773, 561.09625pt x 172.645pt>
 File: picture/LLIE/CBAM/CBAM-overview.jpg Graphic file (type jpg)
 <use picture/LLIE/CBAM/CBAM-overview.jpg>
 Package pdftex.def Info: picture/LLIE/CBAM/CBAM-overview.jpg  used on input lin
 e 882.
 (pdftex.def)             Requested size: 328.82707pt x 101.17735pt.
  [23 <./picture/LLIE/MCLNet/CEM.jpg>]
-<picture/LLIE/CBAM/Attention Module.jpg, id=777, 560.0925pt x 276.03125pt>
+<picture/LLIE/CBAM/Attention Module.jpg, id=779, 560.0925pt x 276.03125pt>
 File: picture/LLIE/CBAM/Attention Module.jpg Graphic file (type jpg)
 <use picture/LLIE/CBAM/Attention Module.jpg>
 Package pdftex.def Info: picture/LLIE/CBAM/Attention Module.jpg  used on input 
@@ -1161,13 +1161,13 @@ line 909.
 (pdftex.def)             Requested size: 328.82707pt x 162.06096pt.
  [24 <./picture/LLIE/CBAM/CBAM-overview.jpg> <./picture/LLIE/CBAM/Attention Mod
 ule.jpg>] [25]
-<picture/LLIE/SCConv/SCConv.jpg, id=798, 697.10437pt x 143.03438pt>
+<picture/LLIE/SCConv/SCConv.jpg, id=800, 697.10437pt x 143.03438pt>
 File: picture/LLIE/SCConv/SCConv.jpg Graphic file (type jpg)
 <use picture/LLIE/SCConv/SCConv.jpg>
 Package pdftex.def Info: picture/LLIE/SCConv/SCConv.jpg  used on input line 974
 .
 (pdftex.def)             Requested size: 469.75502pt x 96.38689pt.
-<picture/LLIE/SCConv/Spatial Reconstruction Unit.jpg, id=799, 608.77437pt x 238
+<picture/LLIE/SCConv/Spatial Reconstruction Unit.jpg, id=801, 608.77437pt x 238
 .8925pt>
 File: picture/LLIE/SCConv/Spatial Reconstruction Unit.jpg Graphic file (type jp
 g)
@@ -1177,7 +1177,7 @@ sed on input line 995.
 (pdftex.def)             Requested size: 469.75502pt x 184.34511pt.
  [26 <./picture/LLIE/SCConv/SCConv.jpg> <./picture/LLIE/SCConv/Spatial Reconstr
 uction Unit.jpg>]
-<picture/LLIE/SCConv/Chanel Reconstruction Unit.jpg, id=807, 608.2725pt x 216.8
+<picture/LLIE/SCConv/Chanel Reconstruction Unit.jpg, id=809, 608.2725pt x 216.8
 1pt>
 File: picture/LLIE/SCConv/Chanel Reconstruction Unit.jpg Graphic file (type jpg
 )
@@ -1258,9 +1258,9 @@ e1/public/amsfonts/cm/cmsy7.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy8.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti10.pfb><d:/Soft/texlive/2023/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on main.pdf (29 pages, 10067558 bytes).
+Output written on main.pdf (29 pages, 10090740 bytes).
 PDF statistics:
- 1255 PDF objects out of 1440 (max. 8388607)
+ 1257 PDF objects out of 1440 (max. 8388607)
  930 compressed objects within 10 object streams
  144 named destinations out of 1000 (max. 500000)
  901 words of extra memory for PDF output out of 10000 (max. 10000000)
