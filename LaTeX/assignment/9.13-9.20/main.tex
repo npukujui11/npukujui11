@@ -185,18 +185,273 @@
 		
 		至于增强网络的设计，目前计划使用 PACUT 中的 U-Net 改进分支。我们的研究侧重于构建一个整体恢复框架，该框架利用边缘图、初步恢复图和通道信息的融合，以提高弱光图像的质量。我们将继续探索合适的增强网络结构，以便进一步提升恢复结果的性能。这一研究旨在为弱光图像恢复领域提供新的理论和方法，以及改善图像质量并拓展应用领域。
 		
-		\begin{figure}[htb]
+		\section{具体实现}
+		
+		\subsection{Abstract}
+		
+		在当前的研究中，我们提出了一种新型的深度学习架构，命名为 PACUT ，旨在解决低光照条件下的图像增强问题。该模型结合了经典的U-Net架构和 Transformer 深度学习方法，在弱光图像增强任务中，提高恢复图像的可视性和质量，同时保留重要的细节和纹理信息。
+		
+		我们提出的 PACUT 模型基于 Conformer 架构，该架构因为在耦合局部特征和全局表示方面的强大潜力而备受欢迎。在 Conformer 中，利用卷积算子提取局部特征，并利用自注意力捕获全局表示，结合特征耦合单元 FCU 来融合局部特征和全局表示，以交互方式增强视觉表示能力。在下游任务中，Conformer显示了成为简单而有效骨干网络的巨大潜力。我们提出的 PACUT 在此基础上进行了以下关键改进：
+		
+		\begin{itemize}
+			
+		\item[(1)] 
+			深度卷积网络 (CNN) 分支： 该分支基于 U-Net 架构，采用多层卷积神经网络，通过逐层提取图像的局部特征来增强图像的细节和纹理。此分支的设计旨在处理图像的低级特征，如边缘、纹理和颜色信息。
+			
+		\item[(2)]
+			Vision Transformer (ViT) 分支： 该分支利用了 Vision Transformer 的能力，通过自注意力机制捕捉图像的长距离依赖关系。ViT分支专注于提取图像的全局特征，如整体结构和上下文信息。
+			
+		\item[(3)]
+			特征耦合单元 (FCU)： 为了有效地融合 CNN 分支和 ViT 分支的特征，引入了特征耦合单元 (FCU)。FCU 通过下采样 (FCUDown) 和上采样 (FCUUp) 操作，实现了 CNN特征图和 Transformer patch embeddings 之间的无缝转换，从而实现了局部特征和全局表示的连续耦合。
+			
+		\end{itemize}
+		
+		
+		PACUT 模型在低光照图像增强领域展现出巨大潜力。其能够有效提升图像的亮度和对比度，同时保留关键细节，适用于监控、医学成像、天文观测等领域。此外，该模型的设计理念也可推广应用于其他图像处理任务，如图像去噪、超分辨率和风格迁移。我们在弱光图像增强任务中，创新性地提出了并行特征耦合策略，为深度学习在 LLIE 任务中的应用提供了一种全新的视角。
+		
+		\subsection{PACUT Architecture}
+		
+		在计算机视觉领域，我们往往研究图像的两种主要特征：局部特征和全局表征。局部特征\cite{jain1991unsupervised}\cite{lowe2004distinctive}\cite{ojala2002multiresolution}是对图像中小区域的紧凑向量描述，它们是许多计算机视觉算法的基础。而全局表征则包括更宽范围的特征，比如长距离的轮廓\cite{lisin2005combining}、形状描述符以及不同对象的类型。在深度学习的背景下，卷积神经网络 (CNN) 通过层级的卷积操作，逐层提取图像的局部特征，并将这些特征保留在特征图中。而视觉变换器则通过一系列自我关注的模块，以一种更加灵活的方式，将这些特征聚合起来，形成对整体图像的全局理解。
+		
+		为了充分利用局部特征和全局表征，我们设计了一种并行网络结构，如Fig. \ref{fig: The proposed initial architecture(Abstract Picture)}所示，称为 PACUT (Parallel architecture combining u-net and transformer)。考虑到这两种模型风格特征的互补性，在 PACUT 中，我们通过一个交互过程以互补两种模型的优劣，将 Transformer 分支的全局上下文连续输入到特征图中，以增强卷积神经网络 (CNN) 分支的全局感知能力。同样，CNN 分支的局部特征逐步反馈到 Patch Embedding 中，以丰富 Transformer 分支的局部细节。
+		
+		\begin{figure}[htb] 
 			% read manual to see what [ht] means and for other possible options
 			\centering 
-			\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/The proposed initial architecture}
-			%\captionsetup{font=scriptsize}
+			% \includegraphics[width=0.8\columnwidth]{GLADNet}
+			
+			\begin{subfigure}{\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture.jpg}
+				\captionsetup{font=scriptsize}
+				\caption{PACUT}
+				\label{fig: First Architecture}
+			\end{subfigure}\\
+			\begin{subfigure}{0.4\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Up-sampling and down-sampling}
+				\captionsetup{font=scriptsize}
+				\caption{Up-sampling and Down-sampling}
+				\label{fig: Up-sampling and down-sampling}
+			\end{subfigure} \
+			\begin{subfigure}{0.4\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture(Abstract Picture)}
+				\captionsetup{font=scriptsize}
+				\caption{Thumbnail of PACUT}
+				\label{fig: The proposed initial architecture(Abstract Picture)}	
+			\end{subfigure}
+			
+			\captionsetup{font=scriptsize}
 			\caption{
-				\label{fig: First Architecture} 
-				PACUT 模型结构。PACUT 结构受 Conformer\cite{peng2021conformer} （见 Fig. \ref{fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal{F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal{F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal{F}_3$ 经过与 U-Net 输出的特征图 $\mathcal{F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。
+				\label{fig: PACUT}
+				PACUT 模型结构。Fig. \ref{fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。Fig. \ref{fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 Fig. \ref{fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\cite{peng2021conformer} （见 Fig. \ref{fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal{F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal{F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal{F}_3$ 经过与 U-Net 输出的特征图 $\mathcal{F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。
 			}
 		\end{figure}
 		
-		\paragraph{Feature fusion module}
+		详细地说，PACUT 由双分支、Stem 模块、用于连接双分支的特征连接单元 (FCU, Feature Coupling Unit)，以及为双分支设计的一个融合模块 (Fusion Block) 组成。Stem 模块由 VGG16 网络的前四层组成，截至第一个最大池化层，用于提取图像的初始局部特征，如边缘、纹理等，然后将其输入到 CNN 分支。
+%		我们通过以下步骤实现了这一结构：首先，加载预训练的 VGG16 模型；随后，利用 PyTorch 框架中的 nn.Sequential 方法，将 VGG16 的特征层 (vgg.features) 转换为一个序列，并选择这个序列的前四个子层作为我们的 Stem 模块。
+		Stem 模块的主要作用是提取图像的初始局部特征，如边缘、纹理等。CNN 分支是一种改进的 U-Net 网络结构，Transformer 分支由 去掉分类功能只保留特征提取功能的 Vision Transformer 结构组成。 
+		
+		这样的并行结构意味着CNN分支和变换器分支分别能够最大限度地保留局部特征和全局表征。我们提出 FCU 作为一种桥接模块，用于融合CNN分支中的局部特征和变换器分支中的全局表征，如 Fig. \ref{fig: First Architecture} 所示。 FCU 从第二步开始应用，因为两个分支的初始特征是相同的，只是表征形式不同。沿着分支，FCU 通过两个来回式的交互融合特征图和 Patch Embeddings。
+		
+		最后，两个分支的特征都被输入到特征融合模块中。对于 Transformer 分支，我们为了更好的利用获取的长距离特征，在进行 Patch Expanding 操作之前，通过 FCU 与 CNN 分支融合。最后两个分支通过特征融合模块处理后获取增强图像。在训练过程中，我们结合 $\mathcal{L}_1$ 和 SSIM 损失函数来同时优化模型在像素级误差和感知质量方面的表现。
+
+		
+		\subsubsection{CNN Branch}	
+			
+		CNN 分支的基础是 U-Net 结构，这是一种专门为图像分割任务设计的网络架构，但在图像增强领域也表现出色。U-Net 的特点是其对称的编码器-解码器结构，以及编码器和解码器之间的跳跃连接。CNN 分支的目标是从输入的弱光图像 (LLI) 中提取丰富的特征，包括边缘、纹理、颜色、亮度信息，并最终输出增强的图像 (EI)。
+		
+		\paragraph{UNetEnhance}
+		
+		UNetEnhance 模型是一种针对低光照图像增强任务设计的深度学习架构。该模型基于经典的 U-Net 架构，并引入了多项改进，以提高对低光照环境下图像的处理能力。这些改进包括更深的网络结构、改进的特征融合机制和高效的信息传递路径。
+		
+		\begin{figure}[htb]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/U-Net and AM}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: U-Net and AM} 
+				U-Net 图像初步恢复网络及其所属的模块。
+			}
+		\end{figure}
+		
+		我们提出的 UNetEnhance 模型如 Fig. \ref{fig: U-Net and AM} 所示，它由两个部分组成：1) 编码器子网络 (Encoder subnetworker)，2) 解码器子网络 (Decoder subnetworker)。对于编码器子网络，UNetEnhance 采用了多层卷积网络，在每层中我们添加了集成模块，在集成模块中又添加了空间注意力机制和通道注意力机制\cite{woo2018cbam}。与传统 U-Net 相比，这一设计增加了网络的深度，从而能够捕获更加丰富的特征信息。我们通过引入更多的卷积层，使得模型能够在更深的层次上理解图像内容。解码器部分采用了上采样和卷积操作，以逐步恢复图像的空间分辨率。在这一过程中，引入了改进的特征融合策略，将编码器中的低级特征与解码器的高级特征有效结合，从而更好地重建图像细节。同时，UNetEnhance 模型在跳跃连接的设计上进行了优化，以更有效地传递编码器中的特征信息到编码器。这些连接不仅帮助保留了在下采样过程中可能丢失的细节信息，还增强了网络的特征重建能力。此外，模型的输出层经过特别设计，以确保输出图像在视觉上的质量和连贯性，我们通过准确的调整解码器子网络中的卷积操作，将解码器的输出转换为与原始输入图像相同尺寸的增强图像。
+		
+		假设 $I_{LLI}$ 表示输入的弱光图像，$I_{EI}$ 表示输出的增强图像。编码器子网络 $\mathcal{E}$ 和解码器子网络 $\mathcal{D}$ 的操作可以表示为：
+		
+		\begin{equation}
+			\begin{aligned}
+				I_{EI} = \mathcal{D} \left( \mathcal{E} \left( I_{LLI} \right) \right)
+			\end{aligned}
+			\label{eq: UNetEnhance model}
+		\end{equation}
+		
+		对于 AM 集成模块(Fig. \ref{fig: U-Net and AM}b)，其操作可表示为：
+		
+		\begin{equation}
+			\begin{aligned}
+				\text{AM}_{i}(x) = f^{1 \times 1} \left(f^{3 \times 3} \left(\text{SCConv}\left( \text{ARMB} \left( f^{1 \times 1} (x)\right)\right)\right)\right)
+			\end{aligned}
+			\label{eq: Aggregation Module}
+		\end{equation}
+		
+		其中，$f^{1\times1}$为 $1 \times 1$ 卷积层，ARMB 和 SCConv 的操作依据其内部结构进行。
+		
+		编码器首先通过一个 $1 \times 1$ 卷积层处理输入图像，用于提取初始特征。然后连续通过四个单元，前三个单元每一个都由一个 AM 集成模块 $\text{AM}_i$ 和一个池化层组成，第四个单元仅包含一个 AM 集成模块。AM 集成模块由一系列卷积层和特殊的注意力机制组成的复杂结构，包括 ARMB 模块和 SCConv 模块，见 Eq. \ref{eq: Aggregation Module}。
+		
+		解码器首先通过一个上采样模块，然后与 $\text{AM}_{3}$ 进行拼接操作，然后通过 $\text{AM}_{5}$ 集成模块和上采样模块，然后与 $\text{AM}_{2}$ 拼接，然后通过 $\text{AM}_{6}$ 集成模块和上采样模块，然后与 $\text{AM}_{1}$ 拼接，最后通过 $\text{AM}_{7}$ 集成模块和 $1 \times 1$ 卷积层。
+		
+		\paragraph{Attentive Residual Multiscale Block}
+		
+		ARMB (Attention Residual Merging Block) 是一种用于深度学习模型中的结构单元，特别是在处理图像相关任务时，它的主要作用是融合来自不同来源的特征，并通过注意力机制增强模型对关键信息的关注。其核心作用之一是融合来自模型不同层或不同分支的特征。这种融合有助于结合低级特征（如边缘和纹理）和高级特征（如对象部分和语义信息），从而提升模型的表现力。ARMB 中的注意力机制有助于 UNetEnhance 更加关注于图像中的重要区域或特征。通过加权重要特征，ARMB 可以提高模型对关键信息的敏感性。ARMB 通过残差连接来解决深度神经网络中的梯度消失问题。如Fig .\ref{fig: U-Net and AM}c 所示，残差连接允许信息直接从早期层传递到后续层，从而保持信息流的连续性。
+		
+		模块对输入特征 $\mathcal{F}$ 进行两次分支下采样，分别获取尺寸为 $\frac{1}{2}$ 和 $\frac{1}{4}$ 的特征。每个分支使用空间注意力 (Spatial Attention) 过滤噪声，通过 $3 \times 3$ 卷积层提取特征，并通过上采样恢复到原始尺寸。将两个特征图拼接后，通过$ 1 \times 1$ 卷积层处理，再应用通道注意力 (Channel Attention) 进行特征加权，最后通过跳跃连接与原始输 $\mathcal{F}$ 合并，得到最终特征图。
+		
+		假设 $\mathcal{F}_{in}$ 是输入特征图，$\mathcal{F}_{out}$ 是输出特征图，$\mathcal{F}_{i}^\prime$ 表示对特征图进行裁剪或放大，见下式：
+		
+		\begin{equation}
+			\begin{aligned}
+				&\mathcal{F}^\prime_{\frac{1}{2}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{2},\frac{W}{2}\right)\right), \\
+				&\mathcal{F}^\prime_{\frac{1}{4}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{4},\frac{W}{4}\right)\right), \\
+				&\mathcal{F}_{out} = W_1\mathcal{F}_{out} + W_2\mathcal{C} \left( f^{1 \times 1}  \left[\mathcal{F}^\prime_2 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{2}}))), \mathcal{F}^\prime_4 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{4}})))\right] \right).
+			\end{aligned}
+			\label{eq: ARMB}
+		\end{equation}
+		
+		其中 $\mathcal{S}$ 和 $\mathcal{C}$ 分别表示空间注意力函数和通道注意力函数，$W_1$ 和 $W_2$ 为对应的特征图权重。
+		
+		\paragraph{SCConv}
+		
+		SCConv 模块是一种用于特征冗余的空间和通道重构卷积，由 SRU 和 CRU 两个子模块组成。SRU 用于通过门控机制选择性地激活特征，而 CRU 负责特征的融合和重构。
+		
+		\subsubsection{Transformer Branch}
+		
+		Transformer 分支主要基于 Vision Transformer (ViT) 架构，用于从图像中提取全局特征。这一分支的目标是捕获图像中的长距离依赖关系，以辅助 CNN 分支的局部特征提取。
+		
+		\paragraph{Patch Embedding}
+		
+		在深度学习和计算机视觉中，Patch Embedding 是一种常见的操作，它将图像分割成更小的块 (patches)，然后将这些块转换成一系列的向量，这些向量可以被用作模型的输入。
+		
+		\begin{figure}[htb]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=0.5\columnwidth]{picture/LLIE/My Architecture/Patch Embedding}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Patch Embedding} 
+				Patch Embedding 的一般性过程。
+			}
+		\end{figure}
+		
+		首先，对原始的弱光图像 $P_1$ 压缩尺寸至固定尺寸，以匹配预训练 Vision Transformer 模型的权重。对 LLI 进行 Patch Embedding，得到 576 个 D 维的特征向量，每个向量对应于一个 $16 \times 16$ 的 patch。然后，将 $384 \times 384$ 的特征向量重新排列成 576 个 $16 \times 16$的 patches，然后每个 patch 也被 flatten 成 256 维的向量。因为是三通道特征，所以实际上每个通道被 flatten 成 256 维，总计 $256 \times 3$ 维的向量 $\ell_1$。
+		
+		\begin{figure}[htb]
+			% read manual to see what [ht] means and for other possible options
+			\centering 
+			\includegraphics[width=0.8\columnwidth]{picture/LLIE/My Architecture/Patch Embedding(ViT)}
+			%\captionsetup{font=scriptsize}
+			\caption{
+				\label{fig: Patch Embedding(ViT)} 
+				Transformer 分支中 Patch Embedding 的过程。
+			}
+		\end{figure}
+		
+		实际上，我们可以将 $\ell_1$ 通过一个 Linear Projection，使其转换成 D 维的向量，如 Fig. \ref{fig: Patch Embedding(ViT)} 所示。
+		
+		Patch Embedding 的具体过程可以被描述为下列过程：
+		
+		\begin{itemize}
+			\item[$\bullet$] 
+			输入图像 $X \in \mathbb{R}^{H \times W \times C}$，其中 $H$,$W$和$C$ 分别代表图像的高度、宽度和通道数。
+			\item[$\bullet$]
+			图像被分割成 $N$ 个大小为 $P \times P$ 的 patches，每个 patch 被展平并线性投影到 D 维空间，得到 patch embeddings $E \in \mathbb{R}^{N \times D}$
+		\end{itemize}
+		
+		Fig. \ref{fig: First Architecture} 显示了在 Patech Embedding 之后，会将特征 $\mathcal{F}_1$ 进行变换处理之后与向量 $\ell_1$ 进行 Concat 操作（不经过处理特征 $\mathcal{F}_1$ 无法直接与向量 $\ell_1$ 拼接）。
+		
+		使用 $20 \times 20$ 的 Patch 大小进行 Embedding，但是这个大小是否合适取决于输入图像的尺寸和细节的重要性。如果图像中包含细小的重要特征，较小的 Patch 可能更合适。另一方面，较大的 Patch 可能会捕捉到更高层次的抽象特征。后续可能需要实验不同的 Patch 大小来找到最佳的平衡点。
+		
+		\paragraph{Positional Encoding}
+		
+		在Transformer中，由于缺乏像卷积神经网络 (CNN) 那样的固有空间结构，需要一种方法来告知模型不同 patches 之间的相对或绝对位置。Positional Encoding就是为了解决这个问题而设计的。
+		
+		Positional Encoding 通常是通过将一个固定的或可学习的编码添加到每个 patch 的 embedding 中来实现的。这个编码是根据 patch 在原始图像中的位置计算得出的。一种常见的方法是使用正弦和余弦函数的组合来生成每个位置的编码。例如，对于位置 pos 和维度 i，编码可以计算为：
+		
+		\begin{equation}
+			\begin{aligned}
+				&\text{PE}(\text{pos}, \ 2i) = \sin \left(\frac{\text{pos}}{10000^{\frac{2i}{D}}}\right) \\
+				&\text{PE}(\text{pos}, \ 2i + 1) = \cos \left(\frac{\text{pos}}{10000^{\frac{2i}{D}}}\right)
+			\end{aligned}
+			\label{eq: positional encoding}
+		\end{equation}
+		
+		其中，D 是 embedding 的维度。计算出的 Positional Encoding 被加到每个 patch 的 embedding 上。位置编码为 $PE \in \mathbb{R}^{N \times D}$，Positional Encoding 被描述为 $E_{pos} = E + PE$。 这样，即使在多头自注意力机制中，模型也能够利用这些编码来理解和利用 patches 之间的相对位置信息。在ViT中，Positional Encoding对于模型理解图像内容至关重要。它允许模型捕捉到图像中的空间层次结构和对象之间的相对位置关系，这对于图像理解任务来说是非常重要的。
+		
+		我们采用 timm 库来创建预训练的ViT模型，并移除了原始的分类头，在 timm 库中创建的预训练 ViT 模型已经内置了Positional Encoding的过程。
+		
+		\paragraph{Transformer Encoder}
+		
+		在Vision Transformer (ViT) 架构中，Transformer Encoder 是核心组件，负责处理图像的序列化表示。经过位置编码的 Patch Embeddings 被送入 Transformer 的编码器。如 Fig. \ref{fig: First Architecture} 所示，Transformer 编码器主要设计两个主要步骤，包括多头自注意力机制 (Multi-head Self-Attention) 和多层感知器 (Multi-Layer Perceptron)。这些组件共同工作，以捕获图像中的复杂特征和长距离依赖关系。
+		
+		其中，多头自注意力机制允许模型在处理每个图像 patch 时同时考虑其他所有 patch 的信息。通过这种方式，模型能够捕获图像中不同区域之间的复杂关系和依赖性。在多头自注意力中，注意力机制被分割成多个“头”，每个头学习图像的不同方面，从而提高了模型的表达能力。MLP 由多个线性层和非线性激活函数组成，它为模型引入了必要的非线性处理能力。这种非线性是处理复杂数据（如图像）时不可或缺的，因为它允许模型学习更加复杂和抽象的特征表示。
+		
+		对于每个 Transformer 层 $l$，输入 $X_l$ 经过以下过程：
+		
+		\begin{itemize}
+			\item[1)] 
+			多头自注意力 (MSA):
+			\begin{equation}
+				\begin{aligned}
+					\text{MSA}(X_l) = [\text{head}_1, \text{head}_2, \ldots, \text{head}_k] W^{O}
+				\end{aligned}
+				\label{eq: MSA}
+			\end{equation}
+			其中每个 head 是 $\text{head}_i = \text{Attention}\left(X_l W_i^Q, X_l W_i^K, X_l W_i^V \right)$。Attention 机制通常定义为
+			\begin{equation}
+				\begin{aligned}
+					\text{Attention}(Q, K, V) = \text{softmax} \left(\frac{QK^T}{\sqrt{d_k}} \right) V
+				\end{aligned}
+				\label{eq: Attention}
+			\end{equation}
+			其中 $d_k$ 是 key 向量的维度。
+				
+			\item[2)]
+			残差连接和层归一化:
+			\begin{equation}
+				\begin{aligned}
+					X_l^\prime = \text{LayerNorm} \left(X_l + \text{MSA}(X_l)\right)
+				\end{aligned}
+				\label{eq: MSA}
+			\end{equation}
+			\item[3)]
+			多层感知机:
+			
+			MLP 包含两个全连接层和一个激活函数，即 $\text{MLP} (X_l^\prime) = \text{FC}\left(\text{GELU}\left(\text{FC}(X_l^\prime)\right)\right)$
+			
+			\item[4)]
+			第二个残差连接和层归一化：
+			\begin{equation}
+				\begin{aligned}
+					X_{l+1} = \text{LayerNorm} (X_l^\prime + \text{MLP}(X_l^\prime))
+				\end{aligned}
+				\label{eq: layernorm}
+			\end{equation}
+		\end{itemize}
+		
+		经过一层 Transformer Encoder 处理后，得到的输出 $X_L$ 可以用于下一步的处理。
+		
+		Transformer Encoder 通过多层自注意力和 MLP 的堆叠，有效地处理图像数据，捕获长距离依赖关系，并学习复杂的特征表示。这种架构使得模型能够处理高维度的图像数据，并提取有用的特征，为后续的图像处理任务提供强大的特征支持。
+		
+		\subsubsection{Feature Coupling Unit}
+		
+		CNN 分支中特征映射和 Transformer 分支中 patch embedding，如何消除他们之间的错误是一个重要的问题，为了解决这个问题，使用 FCU 以交互的方式将局部特征和全局表示进行连续耦合。一方面，认识到 CNN 到 Transformer 的特征维数是不一致的，CNN 特征图的维数为 $H \times W \times C$ 分别为高度、宽度和通道。而 patch embedding 的形状为 $K \times D$，其中$K, \ D$分别表示图像 patch 的数量和 embedding 的维度。用于分类的 Vision Transformer 模型中 patch embedding 的形状为 $\left( K + 1 \right) \times D$，其中 1 为类别嵌入 (Class Token)，但是在 Transformer 分支中，我们去除了类别嵌入。
+		
+		其中，类别嵌入是一种特殊的嵌入，用于代表整个输入序列的全局信息。这个概念最初是在 BERT 等自然语言处理模型中使用的，后来被引入到 Vision Transformer(ViT) 中用于图像处理。在 ViT 中，类别嵌入被添加到图像的 patch embeddings 序列的开始位置，以便在自注意力机制的处理过程中聚合全局信息。一般来说，去除类别嵌入，通常不会影响特征图的恢复能力，尤其是在图像增强或其他非分类任务中。类别嵌入主要用于聚合全局信息，通常在图像分类任务中更为重要。在其他类型的任务中，如图像增强、分割或者超分辨率，模型的重点在于保持和恢复图像的空间特征，而不是提取全局代表性特征用于分类。
+		
+		当 CNN 分支的特征图馈送到 Transformer 分支时，特征图首先通过 $1 \times 1$ 卷积来对齐 patch embedding 的通道编号。然后使用下采样模块(见 Fig .\ref{fig: Up-sampling and down-sampling})完成空间尺寸对齐。最后，特征图添加 patch embedding，Fig .\ref{fig: First Architecture} 所示，当从 Transformer 分支馈送到 CNN 分支，需要对 patch embedding 进行上采样(见 Fig .\ref{fig: Up-sampling and down-sampling})，以对齐空间比例，然后通过 $1 \times 1$ 卷积将通道尺寸和 CNN 特征图的尺寸对齐，并添加到特征图中，LayerNorm 和 BatchNorm 用于正则化特征。
+		
+		另一方面，特征映射和 patch embedding 之间存在显著的语义鸿沟，即特征映射是从局部卷积算子收集的，而 patch embedding 则是通过自注意力机制聚合的，所以通过应用 FCU 可以填补语义空白。
+		
+		\subsubsection{Feature fusion module}
 		
 		\begin{figure}[htb]
 			% read manual to see what [ht] means and for other possible options
@@ -246,59 +501,6 @@
 		\end{equation}
 		
 		其中 $W_1$ 和 $W_2$ 是两个完全连接层的权值。
-		
-		\paragraph{Modified U-Net}
-		
-		所提出的改进版 U-Net 模型如 Fig. \ref{fig: U-Net and AM} 所示，它由两个部分组成：1) 编码器子网络(Encoder subnetworker)，2) 解码器子网络(Decoder subnetworker)
-		
-		\begin{figure}[htb]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/U-Net and AM}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: U-Net and AM} 
-				U-Net 图像初步恢复网络及其所属的模块。
-			}
-		\end{figure}
-		
-		编码器首先通过一个 $1 \times 1$ Conv，然后连续通过四个单元，前三个单元每一个都由一个 AM 集成模块和一个池化层组成，最后一个单元只有一个 AM 集成模块，从左至右采用的 AM 集成模块分别记为 $\text{AM}_i$。
-		
-		解码器首先通过一个上采样模块，然后与 $\text{AM}_{3}$ 进行 Concat 操作，然后通过 $\text{AM}_{5}$ 集成模块和上采样模块，然后与 $\text{AM}_{2}$ 进行 Concat 操作，然后通过 $\text{AM}_{6}$ 集成模块和上采样模块，然后与 $\text{AM}_{1}$ 进行 Concat 操作，最后通过 $\text{AM}_{7}$ 集成模块和 $1 \times 1$ Conv。
-		
-		\paragraph{Patch Embedding}
-		
-		在深度学习和计算机视觉中，Patch Embedding 是一种常见的操作，它将图像分割成更小的块（patches），然后将这些块转换成一系列的向量，这些向量可以被用作模型的输入。
-		
-		\begin{figure}[htb]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=0.5\columnwidth]{picture/LLIE/My Architecture/Patch Embedding}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Patch Embedding} 
-				Patch Embedding 的一般性过程。
-			}
-		\end{figure}
-		
-		首先，对原始的弱光图像 $P_1$ 进行 Patch Embedding，得到 600 个 D 维的特征向量，每个向量对应于一个 $20 \times 20$ 的 patch。然后，将 $600 \times 400$ 的特征向量重新排列成 600 个 $20 \times 20$的 patches，然后每个 patch 也被 flatten 成 400 维的向量。因为是三通道特征，所以实际上每个通道被 flatten 成 400 维，总计 1200 维的向量 $\ell_1$。
-		
-		\begin{figure}[htb]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=0.8\columnwidth]{picture/LLIE/My Architecture/Patch Embedding(ViT)}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Patch Embedding(ViT)} 
-				Vision Transformer 中 Patch Embedding 的过程。
-			}
-		\end{figure}
-		
-		实际上，我们可以将 $\ell_1$ 通过一个 Linear Projection，使其转换成 D 维的向量，如 Fig. \ref{fig: Patch Embedding(ViT)} 所示。
-		
-		Fig. \ref{fig: First Architecture} 显示了在 Patech Embedding 之后，会将特征 $\mathcal{F}_1$ 进行变换处理之后与向量 $\ell_1$ 进行 Concat 操作（不经过处理特征 $\mathcal{F}_1$ 无法直接与向量 $\ell_1$ Concat）。
-		
-		使用 $20 \times 20$ 的 Patch 大小进行 Embedding，但是这个大小是否合适取决于输入图像的尺寸和细节的重要性。如果图像中包含细小的重要特征，较小的 Patch 可能更合适。另一方面，较大的 Patch 可能会捕捉到更高层次的抽象特征。后续可能需要实验不同的 Patch 大小来找到最佳的平衡点。
 		
 		\subsection{创新想法的调研支撑}
 		
