@@ -7,46 +7,50 @@ Repeated entry---line 237 of file reference.bib
  : @inproceedings{woo2018cbam
  :                           ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 551 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in zhu2020eemefn
-You've used 20 entries,
+You've used 25 entries,
             1791 wiz_defined-function locations,
-            563 strings with 8156 characters,
-and the built_in function-call counts, 6596 in all, are:
-= -- 607
-> -- 300
-< -- 13
-+ -- 107
-- -- 87
-* -- 433
-:= -- 948
-add.period$ -- 65
-call.type$ -- 20
-change.case$ -- 20
+            589 strings with 8984 characters,
+and the built_in function-call counts, 8227 in all, are:
+= -- 764
+> -- 361
+< -- 16
++ -- 129
+- -- 104
+* -- 532
+:= -- 1171
+add.period$ -- 81
+call.type$ -- 25
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 317
-empty$ -- 614
-format.name$ -- 87
-if$ -- 1541
+cite$ -- 26
+duplicate$ -- 399
+empty$ -- 772
+format.name$ -- 104
+if$ -- 1930
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 20
-newline$ -- 103
-num.names$ -- 20
-pop$ -- 82
+int.to.str$ -- 25
+missing$ -- 25
+newline$ -- 128
+num.names$ -- 25
+pop$ -- 104
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 202
+skip$ -- 258
 stack$ -- 0
-substring$ -- 502
-swap$ -- 138
-text.length$ -- 13
+substring$ -- 640
+swap$ -- 175
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 66
-width$ -- 22
-write$ -- 226
-(There was 1 error message)
+while$ -- 82
+width$ -- 27
+write$ -- 281
+(There were 2 error messages)

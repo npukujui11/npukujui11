@@ -46,6 +46,35 @@ Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
 \newblock In {\em Proceedings of the European conference on computer vision
   (ECCV)}, pages 3--19, 2018.
 
+\bibitem{wei2018deep}
+Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
+\newblock Deep retinex decomposition for low-light enhancement.
+\newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
+
+\bibitem{cai2018learning}
+Jianrui Cai, Shuhang Gu, and Lei Zhang.
+\newblock Learning a deep single image contrast enhancer from multi-exposure
+  images.
+\newblock {\em IEEE Transactions on Image Processing}, 27(4):2049--2062, 2018.
+
+\bibitem{jiang2019learning}
+Haiyang Jiang and Yinqiang Zheng.
+\newblock Learning to see moving objects in the dark.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 7324--7333, 2019.
+
+\bibitem{bychkovsky2011learning}
+Vladimir Bychkovsky, Sylvain Paris, Eric Chan, and Fr{\'e}do Durand.
+\newblock Learning photographic global tonal adjustment with a database of
+  input/output image pairs.
+\newblock In {\em CVPR 2011}, pages 97--104. IEEE, 2011.
+
+\bibitem{chen2019seeing}
+Chen Chen, Qifeng Chen, Minh~N Do, and Vladlen Koltun.
+\newblock Seeing motion in the dark.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 3185--3194, 2019.
+
 \bibitem{ramachandran2019stand}
 Prajit Ramachandran, Niki Parmar, Ashish Vaswani, Irwan Bello, Anselm Levskaya,
   and Jon Shlens.
