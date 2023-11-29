@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Direction.aux
+The style file: unsrt.bst
+Database file #1: reference.bib
+Repeated entry---line 237 of file reference.bib
+ : @inproceedings{woo2018cbam
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 289 of file reference.bib
+ : @inproceedings{li2023scconv
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 377 of file reference.bib
+ : @article{li2023effective
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in zhu2020eemefn
+You've used 20 entries,
+            1791 wiz_defined-function locations,
+            556 strings with 8066 characters,
+and the built_in function-call counts, 7099 in all, are:
+= -- 655
+> -- 319
+< -- 15
++ -- 113
+- -- 93
+* -- 457
+:= -- 993
+add.period$ -- 65
+call.type$ -- 20
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 349
+empty$ -- 658
+format.name$ -- 93
+if$ -- 1678
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 20
+newline$ -- 103
+num.names$ -- 20
+pop$ -- 92
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 239
+stack$ -- 0
+substring$ -- 557
+swap$ -- 166
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 68
+width$ -- 22
+write$ -- 226
+(There were 3 error messages)

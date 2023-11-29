@@ -1,0 +1,89 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {part}{I\hspace  {1em}Pre-Knowledge}{1}{part.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}背景介绍}{1}{section.1}\protected@file@percent }
+\citation{woo2018cbam}
+\citation{ramachandran2019stand}
+\citation{woo2018cbam}
+\citation{li2023scconv}
+\citation{chen2018learning}
+\citation{chen2018learning,zamir2021learning}
+\citation{chen2018learning}
+\citation{chen2018learning,zamir2021learning}
+\citation{meng2020gia}
+\citation{chen2018learning,zamir2021learning}
+\citation{meng2020gia}
+\citation{chen2018learning,meng2020gia,zamir2021learning}
+\citation{zhou2018unet++,zhou2019unet++}
+\@writefile{toc}{\contentsline {section}{\numberline {2}前期调研工作}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Attention in CV}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{U-Net for LLIE}{2}{section.2}\protected@file@percent }
+\citation{yang2021locally,zhang2020attention}
+\citation{li2018multi,zamir2020learning}
+\citation{li2020visual}
+\citation{xu2020learning}
+\citation{zhu2020eemefn}
+\citation{zhu2020eemefn}
+\citation{wang2022uformer}
+\citation{peng2021conformer}
+\citation{peng2021conformer}
+\citation{wang2022uformer}
+\citation{li2023effective}
+\citation{li2023effective}
+\@writefile{toc}{\contentsline {paragraph}{CNN for LLIE}{3}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}方向}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}方向一}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   该 LLIE 结构源自\cite  {zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。 \relax }}{4}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig: EEMEFN}{{1}{4}{该 LLIE 结构源自\cite {zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。 \relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   Low-Lighting 图像恢复网络。结构受 Conformer\cite  {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal  {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal  {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal  {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal  {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }}{5}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: The proposed architecture}{{2}{5}{Low-Lighting 图像恢复网络。结构受 Conformer\cite {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   Uformer 的结构。 \relax }}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: Uformer}{{3}{5}{Uformer 的结构。 \relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   MCLNet 的结构 \relax }}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: MCLNet}{{4}{6}{MCLNet 的结构 \relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}方向二}{6}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }}{6}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: Overview}{{5}{6}{该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }{figure.caption.5}{}}
+\citation{xu2023low}
+\citation{zhu2020eemefn}
+\citation{rana2021edge}
+\bibstyle{unsrt}
+\bibdata{reference}
+\bibcite{zhu2020eemefn}{1}
+\bibcite{wang2022uformer}{2}
+\bibcite{peng2021conformer}{3}
+\bibcite{li2023effective}{4}
+\bibcite{xu2023low}{5}
+\bibcite{rana2021edge}{6}
+\bibcite{woo2018cbam}{7}
+\bibcite{ramachandran2019stand}{8}
+\bibcite{li2023scconv}{9}
+\bibcite{chen2018learning}{10}
+\bibcite{zamir2021learning}{11}
+\bibcite{meng2020gia}{12}
+\bibcite{zhou2018unet++}{13}
+\bibcite{zhou2019unet++}{14}
+\bibcite{yang2021locally}{15}
+\bibcite{zhang2020attention}{16}
+\bibcite{li2018multi}{17}
+\bibcite{zamir2020learning}{18}
+\bibcite{li2020visual}{19}
+\bibcite{xu2020learning}{20}
+\newlabel{LastPage}{{}{8}{}{page.8}{}}
+\xdef\lastpage@lastpage{8}
+\xdef\lastpage@lastpageHy{8}
+\gdef \@abspage@last{8}

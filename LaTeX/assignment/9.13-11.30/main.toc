@@ -1,0 +1,106 @@
+\contentsline {part}{I\hspace {1em}Pre-Knowledge}{3}{part.1}%
+\contentsline {section}{\numberline {1}方向}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}问题一}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}问题二}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}问题三}{5}{subsection.1.3}%
+\contentsline {section}{\numberline {2}创新想法}{5}{section.2}%
+\contentsline {section}{\numberline {3}具体实现}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Abstract}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}PACUT Architecture}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}CNN Branch}{8}{subsubsection.3.2.1}%
+\contentsline {paragraph}{UNetEnhance}{8}{subsubsection.3.2.1}%
+\contentsline {paragraph}{Attentive Residual Multiscale Block}{9}{equation.3.2}%
+\contentsline {paragraph}{SCConv}{10}{equation.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.2}Transformer Branch}{10}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Patch Embedding}{10}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Positional Encoding}{11}{figure.caption.7}%
+\contentsline {paragraph}{Transformer Encoder}{11}{equation.3.4}%
+\contentsline {subsubsection}{\numberline {3.2.3}Feature Coupling Unit}{12}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Feature fusion module}{13}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Experimental Plan}{14}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Dataset}{14}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Train}{14}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Performance Evaluation}{15}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Contrast Experiment}{15}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Attention Chart}{15}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Results analysis and reporting}{15}{subsubsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.4}创新想法的调研支撑}{15}{subsection.3.4}%
+\contentsline {paragraph}{Attention in CV}{15}{subsection.3.4}%
+\contentsline {paragraph}{U-Net for LLIE}{16}{subsection.3.4}%
+\contentsline {paragraph}{CNN for LLIE}{16}{subsection.3.4}%
+\contentsline {part}{II\hspace {1em}Paper Reading}{16}{part.2}%
+\contentsline {section}{\numberline {4}LLIE}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}(2023.1)LAE-Net: A locally-adaptive embedding network for low-light image enhancement}{17}{subsection.4.1}%
+\contentsline {paragraph}{LAE-Net：一种用于弱光图像增强的局部自适应嵌入网络}{17}{subsection.4.1}%
+\contentsline {paragraph}{(Pattern Recognition 2023 1区) doi: 10.1016/j.patcog.2022.109039}{17}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Research Background}{17}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Contribution}{17}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Approach}{17}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Future}{18}{subsubsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.2}(2023.1)LACN: A lightweight attention-guided ConvNeXt network for low-light image enhancement}{18}{subsection.4.2}%
+\contentsline {paragraph}{LACN：采用一种轻量级的注意力引导的对流网络来增强弱光图像}{18}{subsection.4.2}%
+\contentsline {paragraph}{(Engineering Applications of Artificial Intelligence 2区) doi: 10.1016/j.engappai.2022.105632}{18}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Research Background}{18}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Contribution}{18}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Approach}{19}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Future}{19}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}(2019.4)Low-Light Image Enhancement via a Deep Hybrid Network}{19}{subsection.4.3}%
+\contentsline {paragraph}{基于深度混合网络的弱光图像增强}{19}{subsection.4.3}%
+\contentsline {paragraph}{(IEEE Transactions on Image Processing 1区) doi: 10.1109/TIP.2019.2910412}{19}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Research Background}{19}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Contribution}{19}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Approach}{20}{subsubsection.4.3.3}%
+\contentsline {paragraph}{Edge Stream}{21}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Future}{21}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}(2023.5)A Fusion-Based and Multi-Layer Method for Low Light Image Enhancement}{21}{subsection.4.4}%
+\contentsline {paragraph}{基于深度混合网络的弱光图像增强}{21}{subsection.4.4}%
+\contentsline {paragraph}{(ICASSP 2023) doi: 10.1109/ICASSP49357.2023.10096454}{21}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Research Background}{21}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Contribution}{21}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Approach}{22}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Future}{22}{subsubsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.5}(2023.5)A Fusion-Based and Multi-Layer Method for Low Light Image Enhancement}{23}{subsection.4.5}%
+\contentsline {paragraph}{基于模拟多曝光融合的弱光图像增强}{23}{subsection.4.5}%
+\contentsline {paragraph}{(Journal of Physics: Conference Series 4区) doi: 10.1088/1742-6596/2478/6/062022}{23}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Research Background}{23}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Contribution}{23}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Approach}{23}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Future}{23}{subsubsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.6}(2023.3)Fusion-Based Low-Light Image Enhancement}{23}{subsection.4.6}%
+\contentsline {paragraph}{基于模拟多曝光融合的弱光图像增强}{23}{subsection.4.6}%
+\contentsline {paragraph}{(International Conference on Multimedia Modeling C类) doi: 10.1088/1742-6596/2478/6/062022}{23}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Research Background}{23}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Contribution}{24}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}Approach}{24}{subsubsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.7}(2022.12)Dual UNet low-light image enhancement network based on attention mechanism}{25}{subsection.4.7}%
+\contentsline {paragraph}{基于模拟多曝光融合的弱光图像增强}{25}{subsection.4.7}%
+\contentsline {paragraph}{(Multimedia Tools and Applications 4区)}{25}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Research Background}{25}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Contribution}{25}{subsubsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.3}Approach}{26}{subsubsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.4}Future}{26}{subsubsection.4.7.4}%
+\contentsline {subsection}{\numberline {4.8}(2022.10)Effective low-light image enhancement with multiscale and context learning network}{27}{subsection.4.8}%
+\contentsline {paragraph}{基于多尺度和上下文学习网络的有效弱光图像增强}{27}{subsection.4.8}%
+\contentsline {paragraph}{(Multimedia Tools and Applications 4区)}{27}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Research Background}{27}{subsubsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.2}Contribution}{27}{subsubsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.3}Approach}{27}{subsubsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.4}Future}{28}{subsubsection.4.8.4}%
+\contentsline {subsection}{\numberline {4.9}(2018.3)CBAM: Convolutional Block Attention Module}{29}{subsection.4.9}%
+\contentsline {paragraph}{CBAM：卷积块注意模块}{29}{subsection.4.9}%
+\contentsline {paragraph}{(ECCV 2018)}{29}{subsection.4.9}%
+\contentsline {subsubsection}{\numberline {4.9.1}Research Background}{29}{subsubsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.2}Contribution}{29}{subsubsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.3}Approach}{29}{subsubsection.4.9.3}%
+\contentsline {paragraph}{Channel Attention Module}{30}{equation.4.14}%
+\contentsline {paragraph}{Spatial Attention Module}{31}{equation.4.15}%
+\contentsline {subsubsection}{\numberline {4.9.4}Future}{31}{subsubsection.4.9.4}%
+\contentsline {subsection}{\numberline {4.10}(2023)SCConv: Spatial and Channel Reconstruction Convolution for Feature Redundancy}{31}{subsection.4.10}%
+\contentsline {paragraph}{SCConv：特征冗余的空间和信道重建卷积 }{31}{subsection.4.10}%
+\contentsline {paragraph}{(CVPR 2023)}{31}{subsection.4.10}%
+\contentsline {subsubsection}{\numberline {4.10.1}Research Background}{31}{subsubsection.4.10.1}%
+\contentsline {subsubsection}{\numberline {4.10.2}Contribution}{31}{subsubsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.3}Approach}{32}{subsubsection.4.10.3}%
+\contentsline {paragraph}{SRU}{32}{figure.caption.23}%
+\contentsline {paragraph}{CRU}{33}{equation.4.18}%
+\contentsline {subsubsection}{\numberline {4.10.4}Future}{34}{subsubsection.4.10.4}%
