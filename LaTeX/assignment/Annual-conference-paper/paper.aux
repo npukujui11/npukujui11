@@ -1,0 +1,213 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand*\HyPL@Entry[1]{}
+\citation{huang2012efficient,wang1999image}
+\citation{jobson1997properties,land1965retinex,land1977retinex}
+\citation{kim2011single,li2015low}
+\citation{ji1994adaptive,tan2019exposure}
+\citation{fu2016weighted}
+\citation{tao2017llcnn,wang2019low}
+\citation{yang2021locally,zhang2020attention}
+\citation{li2018multi,zamir2020learning}
+\citation{li2020visual}
+\citation{vaswani2017attention}
+\citation{dosovitskiy2020image}
+\citation{wang2022ultrahighdefinition}
+\citation{wang2021uformer}
+\citation{chen2023cross}
+\citation{peng2021conformer}
+\citation{jain1991unsupervised,lowe2004distinctive,ojala2002multiresolution}
+\citation{lisin2005combining}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{1}{section.1}\protected@file@percent }
+\citation{cai2018learning,guo2020zero}
+\citation{moon2013robust,lore2017llnet}
+\citation{wang2019low}
+\citation{guo2020zero}
+\citation{jiang2021enlightengan}
+\citation{zhang2021self}
+\citation{fu2020learning}
+\citation{zhang2021sa}
+\citation{zhang2021deep}
+\citation{vaswani2017attention}
+\citation{dosovitskiy2020image}
+\citation{zheng2021rethinking}
+\citation{liu2021swin}
+\citation{wang2022uformer}
+\citation{wang2022ultrahighdefinition}
+\citation{jain1991unsupervised,lowe2004distinctive,ojala2002multiresolution}
+\citation{lisin2005combining}
+\@writefile{toc}{\contentsline {section}{\numberline {2}相关工作}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}基于CNN的弱光图像增强方法}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}基于Transformer的弱光图像增强方法}{2}{subsection.2.2}\protected@file@percent }
+\citation{peng2021conformer}
+\citation{peng2021conformer}
+\citation{woo2018cbam}
+\@writefile{toc}{\contentsline {section}{\numberline {3}方法}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}PACUT结构}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}CNN 分支}{3}{subsection.3.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig: First Architecture}{{1a}{4}{PACUT\relax }{figure.caption.1}{}}
+\newlabel{sub@fig: First Architecture}{{a}{4}{PACUT\relax }{figure.caption.1}{}}
+\newlabel{fig: Up-sampling and down-sampling}{{1b}{4}{Up-sampling and Down-sampling\relax }{figure.caption.1}{}}
+\newlabel{sub@fig: Up-sampling and down-sampling}{{b}{4}{Up-sampling and Down-sampling\relax }{figure.caption.1}{}}
+\newlabel{fig: The proposed initial architecture(Abstract Picture)}{{1c}{4}{Thumbnail of PACUT\relax }{figure.caption.1}{}}
+\newlabel{sub@fig: The proposed initial architecture(Abstract Picture)}{{c}{4}{Thumbnail of PACUT\relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   PACUT 模型结构。图\ref {fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。图\ref {fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 图\ref {fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\rmfamily  \textsuperscript  {\textsuperscript  {\cite  {peng2021conformer}}}启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal  {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal  {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal  {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal  {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }}{4}{figure.caption.1}\protected@file@percent }
+\newlabel{fig: PACUT}{{1}{4}{PACUT 模型结构。图\ref {fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。图\ref {fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 图\ref {fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\upcite {peng2021conformer}启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   CNN分支及其所属的模块。 \relax }}{5}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: U-Net and AM}{{2}{5}{CNN分支及其所属的模块。 \relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}注意力残差多尺度块}{5}{subsubsection.3.2.1}\protected@file@percent }
+\newlabel{eq: ARMB}{{3}{6}{注意力残差多尺度块}{equation.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Transformer分支}{6}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}嵌入块}{6}{subsubsection.3.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   嵌入块的一般性过程。 \relax }}{6}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: Patch Embedding}{{3}{6}{嵌入块的一般性过程。 \relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Transformer 分支中嵌入块的过程。 \relax }}{7}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: Patch Embedding(ViT)}{{4}{7}{Transformer 分支中嵌入块的过程。 \relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}位置编码}{7}{subsubsection.3.3.2}\protected@file@percent }
+\newlabel{eq: positional encoding}{{4}{8}{位置编码}{equation.3.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Transformer编码器}{8}{subsubsection.3.3.3}\protected@file@percent }
+\newlabel{eq: MSA}{{5}{8}{Transformer编码器}{equation.3.5}{}}
+\newlabel{eq: Attention}{{6}{8}{Transformer编码器}{equation.3.6}{}}
+\newlabel{eq: Residual Connection}{{7}{8}{Transformer编码器}{equation.3.7}{}}
+\newlabel{eq: layernorm}{{8}{8}{Transformer编码器}{equation.3.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}特征耦合单元}{9}{subsubsection.3.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}特征融合模块}{9}{subsubsection.3.3.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   融合模块的结构。 \relax }}{9}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: Fusion Block}{{5}{9}{融合模块的结构。 \relax }{figure.caption.5}{}}
+\citation{huber1992robust}
+\citation{johnson2016perceptual}
+\citation{wang2004image}
+\newlabel{eq: capture color information}{{9}{10}{特征融合模块}{equation.3.9}{}}
+\newlabel{eq: avgpool}{{10}{10}{特征融合模块}{equation.3.10}{}}
+\newlabel{eq: maxpool}{{11}{10}{特征融合模块}{equation.3.11}{}}
+\newlabel{eq: recalibrated feature map}{{12}{10}{特征融合模块}{equation.3.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}损失函数}{10}{subsection.3.4}\protected@file@percent }
+\newlabel{eq: loss function}{{13}{10}{损失函数}{equation.3.13}{}}
+\newlabel{eq: huber loss}{{14}{11}{损失函数}{equation.3.14}{}}
+\newlabel{eq: perceptual loss}{{15}{11}{损失函数}{equation.3.15}{}}
+\newlabel{eq: SSIM}{{16}{11}{损失函数}{equation.3.16}{}}
+\newlabel{eq: SSIM loss}{{17}{11}{损失函数}{equation.3.17}{}}
+\newlabel{eq: revised_SSIM loss}{{18}{11}{损失函数}{equation.3.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}实验结果}{11}{section.4}\protected@file@percent }
+\citation{wei2018deep}
+\citation{cai2018learning}
+\citation{wang2004image}
+\citation{wang2004image}
+\citation{mittal2012making}
+\citation{pisano1998contrast}
+\citation{li2018lightennet}
+\citation{lore2017llnet}
+\citation{wei2018deep}
+\citation{lv2018mbllen}
+\citation{jiang2021enlightengan}
+\citation{guo2020zero}
+\citation{zhang2019kindling}
+\citation{wei2018deep}
+\citation{cai2018learning}
+\citation{pisano1998contrast}
+\citation{li2018lightennet}
+\citation{lore2017llnet}
+\citation{wei2018deep}
+\citation{zhang2019kindling}
+\citation{lv2018mbllen}
+\citation{jiang2021enlightengan}
+\citation{guo2020zero}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}实验设置}{12}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}数据集和评价指标}{12}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}对比试验}{12}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces   LOL和SCIE数据集在各方法下的对比值，其中红色表示最优，蓝色表示次优，$↑$表示越高越好，$↓$表示越低越好。 \relax }}{12}{table.caption.6}\protected@file@percent }
+\newlabel{tab: Quantitative Comparisons on LOL-test and SCI testing datasets}{{1}{12}{LOL和SCIE数据集在各方法下的对比值，其中红色表示最优，蓝色表示次优，$↑$表示越高越好，$↓$表示越低越好。 \relax }{table.caption.6}{}}
+\bibstyle{unsrt}
+\bibdata{reference}
+\bibcite{huang2012efficient}{1}
+\newlabel{fig: Input}{{6a}{13}{Input\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: Input}{{a}{13}{Input\relax }{figure.caption.7}{}}
+\newlabel{fig: LightenNet}{{6b}{13}{LightenNet\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: LightenNet}{{b}{13}{LightenNet\relax }{figure.caption.7}{}}
+\newlabel{fig: LLNet}{{6c}{13}{LLNet\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: LLNet}{{c}{13}{LLNet\relax }{figure.caption.7}{}}
+\newlabel{fig: RetinexNet}{{6d}{13}{RetinexNet\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: RetinexNet}{{d}{13}{RetinexNet\relax }{figure.caption.7}{}}
+\newlabel{fig: KinD}{{6e}{13}{KinD\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: KinD}{{e}{13}{KinD\relax }{figure.caption.7}{}}
+\newlabel{fig: MBLLEN}{{6f}{13}{MBLLEN\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: MBLLEN}{{f}{13}{MBLLEN\relax }{figure.caption.7}{}}
+\newlabel{fig: EnlightenGAN}{{6g}{13}{EnlightenGAN\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: EnlightenGAN}{{g}{13}{EnlightenGAN\relax }{figure.caption.7}{}}
+\newlabel{fig: Zero-DCE}{{6h}{13}{Zero-DCE\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: Zero-DCE}{{h}{13}{Zero-DCE\relax }{figure.caption.7}{}}
+\newlabel{fig: Ours}{{6i}{13}{Ours\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: Ours}{{i}{13}{Ours\relax }{figure.caption.7}{}}
+\newlabel{fig: GT}{{6j}{13}{GT\relax }{figure.caption.7}{}}
+\newlabel{sub@fig: GT}{{j}{13}{GT\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   不同方法在LOL测试数据集上的视觉表现。 \relax }}{13}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: LOL}{{6}{13}{不同方法在LOL测试数据集上的视觉表现。 \relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}消融实验}{13}{subsection.4.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces   Transformer分支和Transformer预训练权重尺寸和SCConv对模型的影响。 \relax }}{13}{table.caption.8}\protected@file@percent }
+\newlabel{tab: Ablation Study}{{2}{13}{Transformer分支和Transformer预训练权重尺寸和SCConv对模型的影响。 \relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}总结}{13}{section.5}\protected@file@percent }
+\bibcite{wang1999image}{2}
+\bibcite{jobson1997properties}{3}
+\bibcite{land1965retinex}{4}
+\bibcite{land1977retinex}{5}
+\bibcite{kim2011single}{6}
+\bibcite{li2015low}{7}
+\bibcite{ji1994adaptive}{8}
+\bibcite{tan2019exposure}{9}
+\bibcite{fu2016weighted}{10}
+\bibcite{tao2017llcnn}{11}
+\bibcite{wang2019low}{12}
+\bibcite{yang2021locally}{13}
+\bibcite{zhang2020attention}{14}
+\bibcite{li2018multi}{15}
+\bibcite{zamir2020learning}{16}
+\bibcite{li2020visual}{17}
+\bibcite{vaswani2017attention}{18}
+\bibcite{dosovitskiy2020image}{19}
+\bibcite{wang2022ultrahighdefinition}{20}
+\bibcite{wang2021uformer}{21}
+\bibcite{chen2023cross}{22}
+\bibcite{peng2021conformer}{23}
+\bibcite{jain1991unsupervised}{24}
+\bibcite{lowe2004distinctive}{25}
+\bibcite{ojala2002multiresolution}{26}
+\bibcite{lisin2005combining}{27}
+\bibcite{cai2018learning}{28}
+\bibcite{guo2020zero}{29}
+\bibcite{moon2013robust}{30}
+\bibcite{lore2017llnet}{31}
+\bibcite{jiang2021enlightengan}{32}
+\bibcite{zhang2021self}{33}
+\bibcite{fu2020learning}{34}
+\bibcite{zhang2021sa}{35}
+\bibcite{zhang2021deep}{36}
+\bibcite{zheng2021rethinking}{37}
+\bibcite{liu2021swin}{38}
+\bibcite{wang2022uformer}{39}
+\bibcite{woo2018cbam}{40}
+\bibcite{huber1992robust}{41}
+\bibcite{johnson2016perceptual}{42}
+\bibcite{wang2004image}{43}
+\bibcite{wei2018deep}{44}
+\bibcite{mittal2012making}{45}
+\bibcite{pisano1998contrast}{46}
+\bibcite{li2018lightennet}{47}
+\bibcite{lv2018mbllen}{48}
+\bibcite{zhang2019kindling}{49}
+\newlabel{LastPage}{{}{16}{}{page.16}{}}
+\xdef\lastpage@lastpage{16}
+\xdef\lastpage@lastpageHy{16}
+\gdef \@abspage@last{16}
