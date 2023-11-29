@@ -272,38 +272,4 @@ Zhou Wang, Alan~C Bovik, Hamid~R Sheikh, and Eero~P Simoncelli.
   similarity.
 \newblock {\em IEEE transactions on image processing}, 13(4):600--612, 2004.
 
-\bibitem{wei2018deep}
-Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
-\newblock Deep retinex decomposition for low-light enhancement.
-\newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
-
-\bibitem{mittal2012making}
-Anish Mittal, Rajiv Soundararajan, and Alan~C Bovik.
-\newblock Making a “completely blind” image quality analyzer.
-\newblock {\em IEEE Signal processing letters}, 20(3):209--212, 2012.
-
-\bibitem{pisano1998contrast}
-Etta~D Pisano, Shuquan Zong, Bradley~M Hemminger, Marla DeLuca, R~Eugene
-  Johnston, Keith Muller, M~Patricia Braeuning, and Stephen~M Pizer.
-\newblock Contrast limited adaptive histogram equalization image processing to
-  improve the detection of simulated spiculations in dense mammograms.
-\newblock {\em Journal of Digital imaging}, 11:193--200, 1998.
-
-\bibitem{li2018lightennet}
-Chongyi Li, Jichang Guo, Fatih Porikli, and Yanwei Pang.
-\newblock Lightennet: A convolutional neural network for weakly illuminated
-  image enhancement.
-\newblock {\em Pattern recognition letters}, 104:15--22, 2018.
-
-\bibitem{lv2018mbllen}
-Feifan Lv, Feng Lu, Jianhua Wu, and Chongsoon Lim.
-\newblock Mbllen: Low-light image/video enhancement using cnns.
-\newblock In {\em BMVC}, volume 220, page~4, 2018.
-
-\bibitem{zhang2019kindling}
-Yonghua Zhang, Jiawan Zhang, and Xiaojie Guo.
-\newblock Kindling the darkness: A practical low-light image enhancer.
-\newblock In {\em Proceedings of the 27th ACM international conference on
-  multimedia}, pages 1632--1640, 2019.
-
 \end{thebibliography}

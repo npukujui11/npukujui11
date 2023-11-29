@@ -7,10 +7,6 @@ Repeated entry---line 237 of file reference.bib
  : @inproceedings{woo2018cbam
  :                           ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 551 of file reference.bib
- : @article{wei2018deep
- :                     ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 799 of file reference.bib
  : @article{yang2021locally
  :                         ,
@@ -34,10 +30,6 @@ I'm skipping whatever remains of this entry
 Repeated entry---line 999 of file reference.bib
  : @inproceedings{peng2021conformer
  :                                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1173 of file reference.bib
- : @article{wei2018deep
- :                     ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 1283 of file reference.bib
  : @article{wang2004image
@@ -69,46 +61,45 @@ Repeated entry---line 1493 of file reference.bib
 I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in moon2013robust
 Warning--can't use both volume and number fields in zhang2021deep
-Warning--can't use both volume and number fields in lv2018mbllen
-You've used 49 entries,
+You've used 43 entries,
             1791 wiz_defined-function locations,
-            717 strings with 13774 characters,
-and the built_in function-call counts, 15576 in all, are:
-= -- 1410
-> -- 772
-< -- 26
-+ -- 275
-- -- 226
-* -- 1074
-:= -- 2289
-add.period$ -- 157
-call.type$ -- 49
-change.case$ -- 49
+            684 strings with 12566 characters,
+and the built_in function-call counts, 13924 in all, are:
+= -- 1270
+> -- 682
+< -- 23
++ -- 243
+- -- 200
+* -- 952
+:= -- 2033
+add.period$ -- 139
+call.type$ -- 43
+change.case$ -- 43
 chr.to.int$ -- 0
-cite$ -- 52
-duplicate$ -- 702
-empty$ -- 1426
-format.name$ -- 226
-if$ -- 3582
+cite$ -- 45
+duplicate$ -- 629
+empty$ -- 1276
+format.name$ -- 200
+if$ -- 3215
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 46
-newline$ -- 245
-num.names$ -- 49
-pop$ -- 187
+int.to.str$ -- 43
+missing$ -- 40
+newline$ -- 215
+num.names$ -- 43
+pop$ -- 170
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 432
+skip$ -- 394
 stack$ -- 0
-substring$ -- 1193
-swap$ -- 286
-text.length$ -- 26
+substring$ -- 1082
+swap$ -- 262
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
-while$ -- 150
-width$ -- 51
-write$ -- 543
-(There were 16 error messages)
+warning$ -- 2
+while$ -- 134
+width$ -- 45
+write$ -- 477
+(There were 14 error messages)

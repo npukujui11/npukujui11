@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  29 NOV 2023 18:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  29 NOV 2023 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -686,8 +686,8 @@ Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count335
 ))
-(./pythonhighlight.sty
-Package: pythonhighlight 2011/09/19 python code highlighting; provided by Olivi
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/pythonhighlight/pythonhighlight.sty
+Package: pythonhighlight 2017/02/09 python code highlighting; provided by Olivi
 er Verdier <olivier.verdier@gmail.com>
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
@@ -1000,59 +1000,42 @@ File: picture/LLIE/My Architecture/The proposed initial architecture(Abstract P
 icture).jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture(Abstract Pictur
 e).jpg>
-File: picture/LLIE/My Architecture/U-Net and AM.pdf Graphic file (type pdf)
-<use picture/LLIE/My Architecture/U-Net and AM.pdf>
  [3]
-[4] [5]
+
+LaTeX Warning: Reference `fig: U-Net and AM' on page 4 undefined on input line 
+223.
+
+[4]
 File: picture/LLIE/My Architecture/Patch Embedding.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/Patch Embedding.jpg>
- [6]
 File: picture/LLIE/My Architecture/Patch Embedding(ViT).jpg Graphic file (type 
 bmp)
 <picture/LLIE/My Architecture/Patch Embedding(ViT).jpg>
- [7] [8]
+ [5] [6]
 File: picture/LLIE/My Architecture/Fusion Block.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/Fusion Block.jpg>
- [9] [10] [11] [12]
-File: picture/LLIE/Efficent/Input.png Graphic file (type bmp)
-<picture/LLIE/Efficent/Input.png>
-File: picture/LLIE/Efficent/LightenNet.png Graphic file (type bmp)
-<picture/LLIE/Efficent/LightenNet.png>
-File: picture/LLIE/Efficent/LLNet.png Graphic file (type bmp)
-<picture/LLIE/Efficent/LLNet.png>
-File: picture/LLIE/Efficent/RetinexNet.png Graphic file (type bmp)
-<picture/LLIE/Efficent/RetinexNet.png>
-File: picture/LLIE/Efficent/KinD.png Graphic file (type bmp)
-<picture/LLIE/Efficent/KinD.png>
-File: picture/LLIE/Efficent/MBLLEN.png Graphic file (type bmp)
-<picture/LLIE/Efficent/MBLLEN.png>
-File: picture/LLIE/Efficent/EnlightenGAN.png Graphic file (type bmp)
-<picture/LLIE/Efficent/EnlightenGAN.png>
-File: picture/LLIE/Efficent/Zero-DCE.png Graphic file (type bmp)
-<picture/LLIE/Efficent/Zero-DCE.png>
-File: picture/LLIE/Efficent/Ours.png Graphic file (type bmp)
-<picture/LLIE/Efficent/Ours.png>
-File: picture/LLIE/Efficent/GT.png Graphic file (type bmp)
-<picture/LLIE/Efficent/GT.png>
- (./paper.bbl [13]
+ [7] [8] [9] (./paper.bbl [10]
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12.045> not availab
 le
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
-133.
- [14] [15]) [16]
+183.
+ [11]) [12]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./paper.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 63D91C77BE3966EDC62A717EDDB16A25;2203.
+(rerunfilecheck)             Checksum: 6382F8551244B9FECFA8E0BE91DD78D8;1735.
  ) 
 Here is how much of TeX's memory you used:
- 22008 strings out of 476683
- 475044 string characters out of 5805371
+ 21711 strings out of 476683
+ 464593 string characters out of 5805371
  1902012 words of memory out of 5000000
- 41853 multiletter control sequences out of 15000+600000
- 522148 words of font info for 113 fonts, out of 8000000 for 9000
+ 41582 multiletter control sequences out of 15000+600000
+ 517472 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,23n,97p,843b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,14n,97p,843b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on paper.pdf (16 pages).
+Output written on paper.pdf (12 pages).
