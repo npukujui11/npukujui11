@@ -1,0 +1,49 @@
+\beamer@slide {fig: Input}{7}
+\beamer@slide {fig: GT}{7}
+\beamer@slide {fig: Ours}{7}
+\beamer@slide {fig: DeepUPE(CVPR 2019)}{7}
+\beamer@slide {fig: SNR-Aware(CVPR 2022)}{7}
+\beamer@slide {fig: MIRNet-v2(TPAMI 2022)}{7}
+\beamer@slide {fig: color}{7}
+\beamer@slide {fig: SMG_Input}{9}
+\beamer@slide {fig: Structure of (a)}{9}
+\beamer@slide {fig: SNR (CVPR 2022)}{9}
+\beamer@slide {fig: Structure Modeling}{9}
+\beamer@slide {fig: SMG_Ours}{9}
+\beamer@slide {fig: Ground Truth}{9}
+\beamer@slide {fig: Structure Information}{9}
+\beamer@slide {fig: Contribution}{12}
+\beamer@slide {fig: Conformer}{12}
+\beamer@slide {fig: Conformer contribution}{12}
+\beamer@slide {fig: Total architecture}{14}
+\beamer@slide {fig: Abstract}{15}
+\beamer@slide {fig: PACUT}{15}
+\beamer@slide {fig: Up-sampling and down-sampling}{15}
+\beamer@slide {fig: The proposed initial architecture(Abstract Picture)}{15}
+\beamer@slide {fig: Parallel architecture combining u-net and transformer}{15}
+\beamer@slide {fig: U-Net and AM}{16}
+\beamer@slide {fig: CNN Branch}{16}
+\beamer@slide {eq: UNetEnhance model}{17}
+\beamer@slide {eq: ARMB}{18}
+\beamer@slide {fig: Patch Embedding}{19}
+\beamer@slide {fig: Patch Embedding in ViT}{20}
+\beamer@slide {fig: LLI}{23}
+\beamer@slide {fig: LLI_canny}{23}
+\beamer@slide {fig: LLI_rcf}{23}
+\beamer@slide {fig: LLI_hog}{23}
+\beamer@slide {fig: LLI_lbp}{23}
+\beamer@slide {fig: GI}{23}
+\beamer@slide {fig: GT_canny}{23}
+\beamer@slide {fig: GT_rcf}{23}
+\beamer@slide {fig: GT_hog}{23}
+\beamer@slide {fig: GT_lbp}{23}
+\beamer@slide {fig: LLI Structure Information}{23}
+\beamer@slide {fig: LLI1}{25}
+\beamer@slide {fig: LLI_hog1}{25}
+\beamer@slide {fig: LLI_lbp1}{25}
+\beamer@slide {fig: GI1}{25}
+\beamer@slide {fig: GT_hog1}{25}
+\beamer@slide {fig: GT_lbp1}{25}
+\beamer@slide {fig: LLI Structure Information1}{25}
+\beamer@slide {fig: Edge Detection Network}{26}
+\beamer@slide {tab: Paired_training_datases}{27}

@@ -1,0 +1,14 @@
+\beamer@sectionintoc {1}{研究介绍}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{研究意义}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{国内外研究现状分析}{5}{0}{1}
+\beamer@sectionintoc {2}{Literature Review}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{SOTA}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Structure Modeling and Guidance}{8}{0}{2}
+\beamer@subsectionintoc {2}{3}{Conformer}{11}{0}{2}
+\beamer@sectionintoc {3}{Proposed Model}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Total Architecture}{13}{0}{3}
+\beamer@subsectionintoc {3}{2}{PACUT}{15}{0}{3}
+\beamer@subsectionintoc {3}{3}{Edge Detection Network}{22}{0}{3}
+\beamer@sectionintoc {4}{Experimental Plan}{27}{0}{4}
+\beamer@subsectionintoc {4}{1}{Dataset}{27}{0}{4}
+\beamer@subsectionintoc {4}{2}{Train}{28}{0}{4}

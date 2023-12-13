@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: inception.aux
+The style file: elsarticle-harv.bst
+Database file #1: reference.bib
+Repeated entry---line 551 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 999 of file reference.bib
+ : @inproceedings{peng2021conformer
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1173 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1327 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1413 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 11 entries,
+            2990 wiz_defined-function locations,
+            689 strings with 7263 characters,
+and the built_in function-call counts, 9206 in all, are:
+= -- 775
+> -- 342
+< -- 11
++ -- 131
+- -- 120
+* -- 930
+:= -- 1256
+add.period$ -- 24
+call.type$ -- 11
+change.case$ -- 95
+chr.to.int$ -- 11
+cite$ -- 11
+duplicate$ -- 674
+empty$ -- 657
+format.name$ -- 157
+if$ -- 1838
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 115
+newline$ -- 61
+num.names$ -- 44
+pop$ -- 240
+preamble$ -- 1
+purify$ -- 84
+quote$ -- 0
+skip$ -- 296
+stack$ -- 0
+substring$ -- 491
+swap$ -- 499
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 99
+warning$ -- 0
+while$ -- 62
+width$ -- 0
+write$ -- 160
+(There were 5 error messages)
