@@ -23,46 +23,50 @@ Repeated entry---line 1413 of file reference.bib
  : @article{cai2018learning
  :                         ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1473 of file reference.bib
+ : @article{lore2017llnet
+ :                       ,
+I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 11 entries,
+You've used 23 entries,
             2990 wiz_defined-function locations,
-            689 strings with 7263 characters,
-and the built_in function-call counts, 9206 in all, are:
-= -- 775
-> -- 342
-< -- 11
-+ -- 131
-- -- 120
-* -- 930
-:= -- 1256
-add.period$ -- 24
-call.type$ -- 11
-change.case$ -- 95
-chr.to.int$ -- 11
-cite$ -- 11
-duplicate$ -- 674
-empty$ -- 657
-format.name$ -- 157
-if$ -- 1838
+            770 strings with 9395 characters,
+and the built_in function-call counts, 17819 in all, are:
+= -- 1453
+> -- 678
+< -- 20
++ -- 266
+- -- 237
+* -- 1873
+:= -- 2480
+add.period$ -- 58
+call.type$ -- 23
+change.case$ -- 194
+chr.to.int$ -- 23
+cite$ -- 23
+duplicate$ -- 1319
+empty$ -- 1279
+format.name$ -- 318
+if$ -- 3469
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 115
-newline$ -- 61
-num.names$ -- 44
-pop$ -- 240
+missing$ -- 237
+newline$ -- 119
+num.names$ -- 92
+pop$ -- 463
 preamble$ -- 1
-purify$ -- 84
+purify$ -- 171
 quote$ -- 0
-skip$ -- 296
+skip$ -- 496
 stack$ -- 0
-substring$ -- 491
-swap$ -- 499
-text.length$ -- 9
+substring$ -- 878
+swap$ -- 979
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 99
+type$ -- 207
 warning$ -- 0
-while$ -- 62
+while$ -- 119
 width$ -- 0
-write$ -- 160
-(There were 5 error messages)
+write$ -- 330
+(There were 6 error messages)

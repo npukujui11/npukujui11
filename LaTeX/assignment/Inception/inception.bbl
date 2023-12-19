@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{23}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -11,6 +11,14 @@
 \providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Ai and Kwon(2020)}]{s20020495}
+\bibinfo{author}{Ai, S.}, \bibinfo{author}{Kwon, J.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Extreme low-light image enhancement for surveillance
+  cameras using attention u-net}.
+\newblock \bibinfo{journal}{Sensors} \bibinfo{volume}{20}.
+\newblock \URLprefix \url{https://www.mdpi.com/1424-8220/20/2/495},
+  \DOIprefix\doi{10.3390/s20020495}.
 %Type = Inproceedings
 \bibitem[{Bychkovsky et~al.(2011)Bychkovsky, Paris, Chan and
   Durand}]{bychkovsky2011learning}
@@ -42,12 +50,72 @@
 \newblock \bibinfo{title}{Learning to see in the dark}, in:
   \bibinfo{booktitle}{Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pp. \bibinfo{pages}{3291--3300}.
+%Type = Article
+\bibitem[{Cooper and Baqai(2004)}]{cooper2004analysis}
+\bibinfo{author}{Cooper, T.J.}, \bibinfo{author}{Baqai, F.A.},
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{Analysis and extensions of the frankle-mccann retinex
+  algorithm}.
+\newblock \bibinfo{journal}{Journal of Electronic Imaging}
+  \bibinfo{volume}{13}, \bibinfo{pages}{85--92}.
+%Type = Article
+\bibitem[{Dai et~al.(2019)Dai, Pu, Rahman and Aamir}]{dai2019fractional}
+\bibinfo{author}{Dai, Q.}, \bibinfo{author}{Pu, Y.F.}, \bibinfo{author}{Rahman,
+  Z.}, \bibinfo{author}{Aamir, M.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Fractional-order fusion model for low-light image
+  enhancement}.
+\newblock \bibinfo{journal}{Symmetry} \bibinfo{volume}{11},
+  \bibinfo{pages}{574}.
 %Type = Inproceedings
 \bibitem[{Jiang and Zheng(2019)}]{jiang2019learning}
 \bibinfo{author}{Jiang, H.}, \bibinfo{author}{Zheng, Y.}, \bibinfo{year}{2019}.
 \newblock \bibinfo{title}{Learning to see moving objects in the dark}, in:
   \bibinfo{booktitle}{Proceedings of the IEEE/CVF International Conference on
   Computer Vision}, pp. \bibinfo{pages}{7324--7333}.
+%Type = Article
+\bibitem[{Land and McCann(1971)}]{land1971lightness}
+\bibinfo{author}{Land, E.H.}, \bibinfo{author}{McCann, J.J.},
+  \bibinfo{year}{1971}.
+\newblock \bibinfo{title}{Lightness and retinex theory}.
+\newblock \bibinfo{journal}{Josa} \bibinfo{volume}{61}, \bibinfo{pages}{1--11}.
+%Type = Article
+\bibitem[{Li et~al.(2021)Li, Yang, Qu, Cao and Li}]{li2021deep}
+\bibinfo{author}{Li, G.}, \bibinfo{author}{Yang, Y.}, \bibinfo{author}{Qu, X.},
+  \bibinfo{author}{Cao, D.}, \bibinfo{author}{Li, K.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{A deep learning based image enhancement approach for
+  autonomous driving at night}.
+\newblock \bibinfo{journal}{Knowledge-Based Systems} \bibinfo{volume}{213},
+  \bibinfo{pages}{106617}.
+%Type = Article
+\bibitem[{Liu et~al.(2021)Liu, Xu, Yang, Fan and Huang}]{liu2021benchmarking}
+\bibinfo{author}{Liu, J.}, \bibinfo{author}{Xu, D.}, \bibinfo{author}{Yang,
+  W.}, \bibinfo{author}{Fan, M.}, \bibinfo{author}{Huang, H.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Benchmarking low-light image enhancement and beyond}.
+\newblock \bibinfo{journal}{International Journal of Computer Vision}
+  \bibinfo{volume}{129}, \bibinfo{pages}{1153--1184}.
+%Type = Article
+\bibitem[{Lore et~al.(2017)Lore, Akintayo and Sarkar}]{lore2017llnet}
+\bibinfo{author}{Lore, K.G.}, \bibinfo{author}{Akintayo, A.},
+  \bibinfo{author}{Sarkar, S.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Llnet: A deep autoencoder approach to natural
+  low-light image enhancement}.
+\newblock \bibinfo{journal}{Pattern Recognition} \bibinfo{volume}{61},
+  \bibinfo{pages}{650--662}.
+%Type = Inproceedings
+\bibitem[{Ma et~al.(2022)Ma, Ma, Liu, Fan and Luo}]{ma2022toward}
+\bibinfo{author}{Ma, L.}, \bibinfo{author}{Ma, T.}, \bibinfo{author}{Liu, R.},
+  \bibinfo{author}{Fan, X.}, \bibinfo{author}{Luo, Z.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Toward fast, flexible, and robust low-light image
+  enhancement}, in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF Conference
+  on Computer Vision and Pattern Recognition}, pp. \bibinfo{pages}{5637--5646}.
+%Type = Article
+\bibitem[{Ma and Zhang(2019)}]{ma2019improved}
+\bibinfo{author}{Ma, R.}, \bibinfo{author}{Zhang, S.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{An improved color image defogging algorithm using
+  dark channel model and enhancing saturation}.
+\newblock \bibinfo{journal}{Optik} \bibinfo{volume}{180},
+  \bibinfo{pages}{997--1000}.
 %Type = Inproceedings
 \bibitem[{Peng et~al.(2021)Peng, Huang, Gu, Xie, Wang, Jiao and
   Ye}]{peng2021conformer}
@@ -66,6 +134,29 @@
   \bibinfo{booktitle}{2021 5th International Conference on Intelligent
   Computing and Control Systems (ICICCS)}, \bibinfo{organization}{IEEE}. pp.
   \bibinfo{pages}{871--877}.
+%Type = Article
+\bibitem[{Stark(2000)}]{stark2000adaptive}
+\bibinfo{author}{Stark, J.A.}, \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{Adaptive image contrast enhancement using
+  generalizations of histogram equalization}.
+\newblock \bibinfo{journal}{IEEE Transactions on image processing}
+  \bibinfo{volume}{9}, \bibinfo{pages}{889--896}.
+%Type = Inproceedings
+\bibitem[{Tang et~al.(2023)Tang, Zhu, Fei, Wang, Cao and Xie}]{tang2023low}
+\bibinfo{author}{Tang, H.}, \bibinfo{author}{Zhu, H.}, \bibinfo{author}{Fei,
+  L.}, \bibinfo{author}{Wang, T.}, \bibinfo{author}{Cao, Y.},
+  \bibinfo{author}{Xie, C.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Low-illumination image enhancement based on deep
+  learning techniques: A brief review}, in: \bibinfo{booktitle}{Photonics},
+  \bibinfo{organization}{MDPI}. p. \bibinfo{pages}{198}.
+%Type = Inproceedings
+\bibitem[{Ueng and Scharf(1995)}]{ueng1995gamma}
+\bibinfo{author}{Ueng, N.T.}, \bibinfo{author}{Scharf, L.L.},
+  \bibinfo{year}{1995}.
+\newblock \bibinfo{title}{The gamma transform: A local time-frequency analysis
+  method}, in: \bibinfo{booktitle}{Conference Record of The Twenty-Ninth
+  Asilomar Conference on Signals, Systems and Computers},
+  \bibinfo{organization}{IEEE}. pp. \bibinfo{pages}{920--924}.
 %Type = Inproceedings
 \bibitem[{Wang and Jin(2023)}]{wang2023brighten}
 \bibinfo{author}{Wang, C.}, \bibinfo{author}{Jin, Z.}, \bibinfo{year}{2023}.

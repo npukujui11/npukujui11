@@ -1,0 +1,100 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: inception_paper.aux
+The style file: unsrt.bst
+Database file #1: reference.bib
+Repeated entry---line 237 of file reference.bib
+ : @inproceedings{woo2018cbam
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 361 of file reference.bib
+ : @article{li2023effective
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 551 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 799 of file reference.bib
+ : @article{yang2021locally
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 813 of file reference.bib
+ : @inproceedings{zhang2020attention
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 831 of file reference.bib
+ : @inproceedings{li2018multi
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 847 of file reference.bib
+ : @inproceedings{zamir2020learning
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 865 of file reference.bib
+ : @article{li2020visual
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 999 of file reference.bib
+ : @inproceedings{peng2021conformer
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1173 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1397 of file reference.bib
+ : @inproceedings{wang2022uformer
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1473 of file reference.bib
+ : @article{lore2017llnet
+ :                       ,
+I'm skipping whatever remains of this entry
+Warning--empty publisher in dong2010fast
+Warning--can't use both volume and number fields in tang2023low
+Warning--can't use both volume and number fields in lv2018mbllen
+Warning--can't use both volume and number fields in wang2023ultra
+Warning--can't use both volume and number fields in zhu2020eemefn
+You've used 49 entries,
+            1791 wiz_defined-function locations,
+            716 strings with 13476 characters,
+and the built_in function-call counts, 15350 in all, are:
+= -- 1400
+> -- 717
+< -- 29
++ -- 256
+- -- 207
+* -- 1046
+:= -- 2247
+add.period$ -- 158
+call.type$ -- 49
+change.case$ -- 49
+chr.to.int$ -- 0
+cite$ -- 54
+duplicate$ -- 715
+empty$ -- 1421
+format.name$ -- 207
+if$ -- 3542
+int.to.chr$ -- 0
+int.to.str$ -- 49
+missing$ -- 49
+newline$ -- 248
+num.names$ -- 49
+pop$ -- 175
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 434
+stack$ -- 0
+substring$ -- 1174
+swap$ -- 289
+text.length$ -- 29
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 5
+while$ -- 150
+width$ -- 51
+write$ -- 550
+(There were 12 error messages)
