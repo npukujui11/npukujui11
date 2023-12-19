@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  18 DEC 2023 15:52
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  20 DEC 2023 03:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1124,6 +1124,9 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count391
 )
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/bbding/bbding.sty
+Package: bbding 1999/04/15 v1.01 Dingbats symbols
+)
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \c@tracingmulticols=\count392
@@ -1239,26 +1242,26 @@ Package fontspec Info: Font family 'MicrosoftYaHei(0)' created for font
  (./inception.aux)
 \openout1 = `inception.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1294,57 +1297,57 @@ LaTeX Font Info:    ... okay on input line 19.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 20.
 (./inception.out) (./inception.out)
 \@outlinefile=\write5
 \openout5 = `inception.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 19.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 19.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 19.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 19.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 20.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 19.
+(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 19.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 19.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 19.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 19.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 19.
+(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 19.
+(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 20.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 19.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 19.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 19.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 20.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 19.
+(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> TU/lmr/b/n on input line 19.
+(Font)                  OT1/lmss/b/n --> TU/lmr/b/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 19.
+(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 19.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 19.
+(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 19.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 20.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictiona
 ry-English.dict
@@ -1381,59 +1384,59 @@ Package caption Info: End \AtBeginDocument code.
  (./inception.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 22.
+(hyperref)                setting the option has no effect on input line 23.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-38.
+39.
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-8.
+9.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-38.
+39.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-38.
+39.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 38.
+(Font)              <10.95> on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 38.
+(Font)              <8> on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 38.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+(Font)              <6> on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
 
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
 
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 38.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 38.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 38.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 38.
+(Font)              <5> on input line 39.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 38.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
 
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
@@ -1470,7 +1473,7 @@ File: picture/LLIE/LightingNet/ZERO-DCE.png Graphic file (type bmp)
 File: picture/LLIE/LightingNet/LightingNet.png Graphic file (type bmp)
 <picture/LLIE/LightingNet/LightingNet.png>
 
-Overfull \vbox (16.75813pt too high) detected at line 153
+Overfull \vbox (10.05989pt too high) detected at line 154
  []
 
 
@@ -1482,9 +1485,9 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9.03374> on input line 194.
+(Font)              <9.03374> on input line 195.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <9.03374> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 194.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 195.
 File: picture/LLIE/application scenarios.jpg Graphic file (type bmp)
 <picture/LLIE/application scenarios.jpg>
 
@@ -1495,6 +1498,27 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [4
 
 ]
+File: picture/LLIE/VE-LOL-L/input.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/input.jpg>
+File: picture/LLIE/VE-LOL-L/LLNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/LLNet.jpg>
+File: picture/LLIE/VE-LOL-L/RetinexNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/RetinexNet.jpg>
+File: picture/LLIE/VE-LOL-L/MBLLEN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/MBLLEN.jpg>
+File: picture/LLIE/VE-LOL-L/EnlightenGAN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/EnlightenGAN.jpg>
+File: picture/LLIE/VE-LOL-L/RRDNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/RRDNet.jpg>
+File: picture/LLIE/VE-LOL-L/DRBN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/DRBN.jpg>
+File: picture/LLIE/VE-LOL-L/Zero-DCE++.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/Zero-DCE++.jpg>
+File: picture/LLIE/VE-LOL-L/KinD++.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/KinD++.jpg>
+File: picture/LLIE/VE-LOL-L/URetinexNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/URetinexNet.jpg>
+
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1503,25 +1527,21 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6.52437> on input line 248.
+(Font)              <6.52437> on input line 316.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6.52437> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 248.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 316.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6.52437> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 248.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 316.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <5> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 248.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 316.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.52812> on input line 248.
+(Font)              <7.52812> on input line 316.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7.52812> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 248.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 316.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7.52812> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 248.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 316.
 File: picture/LLIE/Retinex Model/Retinex Model.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/Retinex Model.png>
-
-Overfull \vbox (4.05424pt too high) detected at line 248
- []
-
 
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
@@ -1533,11 +1553,11 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 File: picture/LLIE/Retinex Model/input.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/input.png>
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 294.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 362.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <8> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 294.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 362.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 294.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 362.
 File: picture/LLIE/Retinex Model/Retinex.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/Retinex.png>
 File: picture/LLIE/Retinex Model/SSR.png Graphic file (type bmp)
@@ -1557,7 +1577,7 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 File: picture/LLIE/HE/Histogram equalization.jpg Graphic file (type bmp)
 <picture/LLIE/HE/Histogram equalization.jpg>
 
-Overfull \vbox (7.7371pt too high) detected at line 333
+Overfull \vbox (1.03886pt too high) detected at line 401
  []
 
 
@@ -1568,6 +1588,11 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [8
 
 ]
+File: picture/LLIE/MBLLEN/MBLLEN Architecture.jpg Graphic file (type bmp)
+<picture/LLIE/MBLLEN/MBLLEN Architecture.jpg>
+File: picture/LLIE/RetinexNet/RetinexNet.jpg Graphic file (type bmp)
+<picture/LLIE/RetinexNet/RetinexNet.jpg>
+
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1575,6 +1600,9 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [9
 
 ]
+File: picture/LLIE/EnlightenGAN/EnlightenGAN.jpg Graphic file (type bmp)
+<picture/LLIE/EnlightenGAN/EnlightenGAN.jpg>
+
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1582,6 +1610,9 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [10
 
 ]
+File: picture/LLIE/DRBN/DRBN.jpg Graphic file (type bmp)
+<picture/LLIE/DRBN/DRBN.jpg>
+
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1589,22 +1620,8 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [11
 
 ]
-File: picture/LLIE/SCNet/Input.jpg Graphic file (type bmp)
-<picture/LLIE/SCNet/Input.jpg>
-File: picture/LLIE/SCNet/GT.jpg Graphic file (type bmp)
-<picture/LLIE/SCNet/GT.jpg>
-File: picture/LLIE/SCNet/Ours.jpg Graphic file (type bmp)
-<picture/LLIE/SCNet/Ours.jpg>
-File: picture/LLIE/SCNet/DeepUPE(CVPR 2019).jpg Graphic file (type bmp)
-<picture/LLIE/SCNet/DeepUPE(CVPR 2019).jpg>
-File: picture/LLIE/SCNet/SNR-Aware(CVPR 2022).jpg Graphic file (type bmp)
-<picture/LLIE/SCNet/SNR-Aware(CVPR 2022).jpg>
-File: picture/LLIE/SCNet/MIRNet-v2(TPAMI 2022).jpg Graphic file (type bmp)
-<picture/LLIE/SCNet/MIRNet-v2(TPAMI 2022).jpg>
-
-Overfull \vbox (4.38748pt too high) detected at line 505
- []
-
+File: picture/LLIE/RRDNet/RRDNet.jpg Graphic file (type bmp)
+<picture/LLIE/RRDNet/RRDNet.jpg>
 
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
@@ -1613,13 +1630,11 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [12
 
 ]
-Overfull \hbox (3.81775pt too wide) has occurred while \output is active
- [][][][] []  
- []
-
-[13
-
-]
+LaTeX Font Info:    Trying to load font information for U+ding on input line 57
+7.
+ (d:/Soft/texlive/2023/texmf-dist/tex/latex/bbding/Uding.fd
+File: Uding.fd 1996/02/01 v1.0 BBding font definitions
+)
 File: picture/LLIE/Structure Modeling and Guidance/Input.jpg Graphic file (type
  bmp)
 <picture/LLIE/Structure Modeling and Guidance/Input.jpg>
@@ -1639,15 +1654,11 @@ File: picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg Graphic fil
 e (type bmp)
 <picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg>
 
-Overfull \vbox (60.18895pt too high) detected at line 599
- []
-
-
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[14
+[13
 
 ]
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
@@ -1658,7 +1669,7 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[15
+[14
 
 ]
 File: picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101).jpg
@@ -1669,25 +1680,32 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[16
+[15
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 711.
+(Font)              <10> on input line 687.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 711.
+(Font)              <7> on input line 687.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 711.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 687.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 711.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 687.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 711.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 687.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 711.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 687.
 File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type bmp)
 
 <picture/LLIE/Conformer/the proposed Conformer.jpg>
 
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[16
+
+]
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1706,7 +1724,7 @@ File: picture/LLIE/My Architecture/Total architecture.pdf Graphic file (type pd
 f)
 <use picture/LLIE/My Architecture/Total architecture.pdf>
 
-Overfull \vbox (7.26358pt too high) detected at line 772
+Overfull \vbox (0.56534pt too high) detected at line 769
  []
 
 
@@ -1728,7 +1746,7 @@ icture).jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture(Abstract Pictur
 e).jpg>
 
-Overfull \vbox (32.42104pt too high) detected at line 832
+Overfull \vbox (25.7228pt too high) detected at line 829
  []
 
 
@@ -1742,7 +1760,7 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 File: picture/LLIE/My Architecture/U-Net and AM.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/U-Net and AM.jpg>
 
-Overfull \vbox (35.2372pt too high) detected at line 864
+Overfull \vbox (28.53896pt too high) detected at line 861
  []
 
 
@@ -1781,7 +1799,7 @@ File: picture/LLIE/My Architecture/Patch Embedding(ViT).jpg Graphic file (type
 bmp)
 <picture/LLIE/My Architecture/Patch Embedding(ViT).jpg>
 
-Overfull \vbox (19.185pt too high) detected at line 971
+Overfull \vbox (12.48676pt too high) detected at line 968
  []
 
 
@@ -1870,7 +1888,7 @@ File: picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png Graphic f
 ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png>
 
-Overfull \vbox (8.16376pt too high) detected at line 1198
+Overfull \vbox (1.46552pt too high) detected at line 1195
  []
 
 
@@ -1947,6 +1965,14 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 
 
 ]
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[37
+
+
+]
 \tf@nav=\write6
 \openout6 = `inception.nav'.
 
@@ -1958,15 +1984,15 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 
  (./inception.aux)
 Package rerunfilecheck Info: File `inception.out' has not changed.
-(rerunfilecheck)             Checksum: 72E33A7415C00EEA55CA5C6AE9E68772;1807.
+(rerunfilecheck)             Checksum: 2206FF40C743A7DB477F9AC7F30E15EB;1188.
  ) 
 Here is how much of TeX's memory you used:
- 35270 strings out of 476683
- 813720 string characters out of 5805371
- 1874012 words of memory out of 5000000
- 54706 multiletter control sequences out of 15000+600000
- 549211 words of font info for 150 fonts, out of 8000000 for 9000
+ 35640 strings out of 476683
+ 826609 string characters out of 5805371
+ 1877012 words of memory out of 5000000
+ 55055 multiletter control sequences out of 15000+600000
+ 549509 words of font info for 153 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,19n,122p,529b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,19n,122p,451b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on inception.pdf (36 pages).
+Output written on inception.pdf (37 pages).

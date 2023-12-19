@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  19 DEC 2023 23:24
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  20 DEC 2023 02:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -928,38 +928,71 @@ File: picture/LLIE/Inverse/de-haze.jpg Graphic file (type bmp)
 File: picture/LLIE/Inverse/Final output.jpg Graphic file (type bmp)
 <picture/LLIE/Inverse/Final output.jpg>
  [6]
+File: picture/LLIE/LLNet/Module Structure.jpg Graphic file (type bmp)
+<picture/LLIE/LLNet/Module Structure.jpg>
+File: picture/LLIE/LLNet/LLNet.jpg Graphic file (type bmp)
+<picture/LLIE/LLNet/LLNet.jpg>
+File: picture/LLIE/LLNet/S-LLNet.jpg Graphic file (type bmp)
+<picture/LLIE/LLNet/S-LLNet.jpg>
+File: picture/LLIE/MBLLEN/MBLLEN Architecture.jpg Graphic file (type bmp)
+<picture/LLIE/MBLLEN/MBLLEN Architecture.jpg>
+ [7]
 File: picture/LLIE/RetinexNet/RetinexNet.jpg Graphic file (type bmp)
 <picture/LLIE/RetinexNet/RetinexNet.jpg>
- [7]
+ [8]
 File: picture/LLIE/EnlightenGAN/EnlightenGAN.jpg Graphic file (type bmp)
 <picture/LLIE/EnlightenGAN/EnlightenGAN.jpg>
- [8]
+ [9]
 File: picture/LLIE/DRBN/DRBN.jpg Graphic file (type bmp)
 <picture/LLIE/DRBN/DRBN.jpg>
- [9] [10]
+File: picture/LLIE/RRDNet/RRDNet.jpg Graphic file (type bmp)
+<picture/LLIE/RRDNet/RRDNet.jpg>
+ [10]
+File: picture/LLIE/VE-LOL-L/input.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/input.jpg>
+File: picture/LLIE/VE-LOL-L/LLNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/LLNet.jpg>
+File: picture/LLIE/VE-LOL-L/RetinexNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/RetinexNet.jpg>
+File: picture/LLIE/VE-LOL-L/MBLLEN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/MBLLEN.jpg>
+File: picture/LLIE/VE-LOL-L/EnlightenGAN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/EnlightenGAN.jpg>
+File: picture/LLIE/VE-LOL-L/RRDNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/RRDNet.jpg>
+File: picture/LLIE/VE-LOL-L/DRBN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/DRBN.jpg>
+File: picture/LLIE/VE-LOL-L/Zero-DCE++.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/Zero-DCE++.jpg>
+File: picture/LLIE/VE-LOL-L/KinD++.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/KinD++.jpg>
+File: picture/LLIE/VE-LOL-L/URetinexNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/URetinexNet.jpg>
+ [11] [12]
 File: picture/LLIE/EEMEFN/EEMEFN framework.jpg Graphic file (type bmp)
 <picture/LLIE/EEMEFN/EEMEFN framework.jpg>
- [11]
+ [13]
 File: picture/LLIE/My Architecture/The proposed initial architecture.pdf Graphi
 c file (type pdf)
 <use picture/LLIE/My Architecture/The proposed initial architecture.pdf>
 
 
-LaTeX Warning: Reference `fig: Conformer architecture' on page 12 undefined on 
-input line 426.
+LaTeX Warning: Reference `fig: Conformer architecture' on page 14 undefined on 
+input line 562.
 
 
-LaTeX Warning: Reference `fig: Conformer architecture' on page 12 undefined on 
-input line 426.
+LaTeX Warning: Reference `fig: Conformer architecture' on page 14 undefined on 
+input line 562.
 
 File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type bmp)
 <picture/LLIE/Uformer/Uformer.jpg>
+[14]
 File: picture/LLIE/MCLNet/Overview.jpg Graphic file (type bmp)
 <picture/LLIE/MCLNet/Overview.jpg>
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
 ype bmp)
 <picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
-(./inception_paper.bbl [12] [13] [14] [15] [16] [17]) [18]
+ [15] (./inception_paper.bbl [16] [17] [18] [19]) [20]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./inception_paper.aux)
@@ -970,15 +1003,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `inception_paper.out' has not changed.
-(rerunfilecheck)             Checksum: A99AC3937CA60139E5E1C761FCFF8E34;1582.
+(rerunfilecheck)             Checksum: 41E3D328A3A0575D807B951CC0671F55;1801.
  ) 
 Here is how much of TeX's memory you used:
- 21132 strings out of 476683
- 445996 string characters out of 5805371
- 1878012 words of memory out of 5000000
- 40984 multiletter control sequences out of 15000+600000
+ 21492 strings out of 476683
+ 459065 string characters out of 5805371
+ 1876012 words of memory out of 5000000
+ 41331 multiletter control sequences out of 15000+600000
  521009 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,13n,97p,895b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,13n,97p,869b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on inception_paper.pdf (18 pages).
+Output written on inception_paper.pdf (20 pages).

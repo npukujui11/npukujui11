@@ -9,6 +9,17 @@
 \beamer@slide {fig: ZERO-DCE}{3}
 \beamer@slide {fig: LightingNet}{3}
 \beamer@slide {fig: application scenarios}{4}
+\beamer@slide {fig: input}{5}
+\beamer@slide {fig: LLNet}{5}
+\beamer@slide {fig: RetinexNet_LOL}{5}
+\beamer@slide {fig: MBLLEN_LOL}{5}
+\beamer@slide {fig: EnlightenGAN}{5}
+\beamer@slide {fig: RRDNet}{5}
+\beamer@slide {fig: DRBN}{5}
+\beamer@slide {fig: Zero-DCE++}{5}
+\beamer@slide {fig: KinD++}{5}
+\beamer@slide {fig: URetinexNet}{5}
+\beamer@slide {fig: VE-LOL-L Visual}{5}
 \beamer@slide {fig: Retinex model}{6}
 \beamer@slide {fig: Retinex Model_input}{7}
 \beamer@slide {fig: Retinex Model_Retinex}{7}
@@ -17,23 +28,13 @@
 \beamer@slide {fig: Retinex Model_MSRCR}{7}
 \beamer@slide {fig: Retinex Model}{7}
 \beamer@slide {fig: Histogram equalization}{8}
-\beamer@slide {fig: Input}{12}
-\beamer@slide {fig: GT}{12}
-\beamer@slide {fig: Ours}{12}
-\beamer@slide {fig: DeepUPE(CVPR 2019)}{12}
-\beamer@slide {fig: SNR-Aware(CVPR 2022)}{12}
-\beamer@slide {fig: MIRNet-v2(TPAMI 2022)}{12}
-\beamer@slide {fig: color}{12}
-\beamer@slide {fig: SMG_Input}{14}
-\beamer@slide {fig: Structure of (a)}{14}
-\beamer@slide {fig: SNR (CVPR 2022)}{14}
-\beamer@slide {fig: Structure Modeling}{14}
-\beamer@slide {fig: SMG_Ours}{14}
-\beamer@slide {fig: Ground Truth}{14}
-\beamer@slide {fig: Structure Information}{14}
-\beamer@slide {fig: Contribution}{17}
-\beamer@slide {fig: Conformer}{17}
-\beamer@slide {fig: Conformer contribution}{17}
+\beamer@slide {fig: MBLLEN}{9}
+\beamer@slide {fig: RetinexNet}{9}
+\beamer@slide {fig: Supervised Learning}{9}
+\beamer@slide {fig: EnlightenGAN Architecture}{10}
+\beamer@slide {fig: Contribution}{16}
+\beamer@slide {fig: Conformer}{16}
+\beamer@slide {fig: Conformer contribution}{16}
 \beamer@slide {fig: Total architecture}{19}
 \beamer@slide {fig: Abstract}{20}
 \beamer@slide {fig: PACUT}{20}

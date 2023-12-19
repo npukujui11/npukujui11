@@ -289,14 +289,57 @@
 	
 	\paragraph{端到端 (End-to-end) 方法}
 	
-	\textbf{LLNet}\cite{lore2017llnet}是早期提出的一种基于深度学习的方法，它利用一种特殊的堆叠稀疏去噪自编码器从低光照图像中提取特征，并进行自适应增强与去噪。接着，Lv等人\cite{lv2018mbllen}介绍了 \textbf{MBLLEN}，这是一个包含特征提取模块(FEM)、增强模块(EM)和融合模块(FM)的多分支图像增强网络。MBLLEN通过多层次的特征提取和多子网络的增强处理，最终通过融合模块产生增强后的图像，有效地减少低照度区域的噪声和伪影。此外，Wang 等人\cite{wang2018gladnet}提出的 \textbf{GLADNet} 网络使用编码器-解码器架构处理输入图像，生成全局照度估计，并在此基础上进行图像重构。该网络的有效性通过Google Cloud Vision API2上的目标识别测试得到了验证。\textbf{TBEFN}\cite{lu2020tbefn}是一种多曝光融合网络，通过两个子网络生成增强图像，进而通过平均融合法降低噪声，并对效果进行细化。\textbf{PRIEN}\cite{li2021low}是一种使用递归层和残差块的递归单元的渐进式增强网络，它直接将低照度图像输入到双注意模型中提取特征，并通过递归处理减少参数数量，尽管网络结构简单，但增强效果显著。最后，\textbf{C-LIENet}\cite{ravirathinam2021c}包含一个由卷积层构成的编码器-解码器结构，并通过其独特的多上下文特征提取模块层级提取特征，该方法采用了一种三部分的损失函数，有效地处理局部特征、结构相似性和细节性。另外，Lim等人\cite{lim2020dslr}提出的深度拉普拉斯复原器（\textbf{DSLR}）能够调整输入图像的全局亮度和局部细节，并通过多尺度拉普拉斯残差块在特征空间中增强连接，提高了训练的效率。
+	\begin{figure}[htbp] 
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		% \includegraphics[width=0.8\columnwidth]{GLADNet}
+		
+		\begin{subfigure}{0.45\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/LLNet/Module Structure}
+			\captionsetup{font=scriptsize}
+			\caption{Module Structure}
+			\label{fig: Module Structure}
+		\end{subfigure}
+		\begin{subfigure}{0.18\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/LLNet/LLNet}
+			\captionsetup{font=scriptsize}
+			\caption{LLNet}
+			\label{fig: LLNet}
+		\end{subfigure}
+		\begin{subfigure}{0.175\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/LLNet/S-LLNet}
+			\captionsetup{font=scriptsize}
+			\caption{S-LLNet}
+			\label{fig: S-LLNet}	
+		\end{subfigure}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: LLNet Architecture}
+			LLNet结构示意图
+		}
+	\end{figure}
+	
+	\textbf{LLNet}\cite{lore2017llnet}是早期提出的一种基于深度学习的方法，它利用一种特殊的堆叠稀疏去噪自编码器从低光照图像中提取特征，并进行自适应增强与去噪。接着，Lv等人\cite{lv2018mbllen}介绍了 \textbf{MBLLEN}，这是一个包含特征提取模块(FEM)、增强模块(EM)和融合模块(FM)的多分支图像增强网络。MBLLEN通过多层次的特征提取和多子网络的增强处理，最终通过融合模块产生增强后的图像，有效地减少低照度区域的噪声和伪影。
+	
+	\begin{figure}[htb]
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		\includegraphics[width=\columnwidth]{picture/LLIE/MBLLEN/MBLLEN Architecture}
+		%\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: MBLLEN Architecture} 
+			MBLLEN 结构图。
+		}
+	\end{figure}
+	
+	此外，Wang 等人\cite{wang2018gladnet}提出的 \textbf{GLADNet} 网络使用编码器-解码器架构处理输入图像，生成全局照度估计，并在此基础上进行图像重构。该网络的有效性通过Google Cloud Vision API2上的目标识别测试得到了验证。\textbf{TBEFN}\cite{lu2020tbefn}是一种多曝光融合网络，通过两个子网络生成增强图像，进而通过平均融合法降低噪声，并对效果进行细化。\textbf{PRIEN}\cite{li2021low}是一种使用递归层和残差块的递归单元的渐进式增强网络，它直接将低照度图像输入到双注意模型中提取特征，并通过递归处理减少参数数量，尽管网络结构简单，但增强效果显著。最后，\textbf{C-LIENet}\cite{ravirathinam2021c}包含一个由卷积层构成的编码器-解码器结构，并通过其独特的多上下文特征提取模块层级提取特征，该方法采用了一种三部分的损失函数，有效地处理局部特征、结构相似性和细节性。另外，Lim等人\cite{lim2020dslr}提出的深度拉普拉斯复原器（\textbf{DSLR}）能够调整输入图像的全局亮度和局部细节，并通过多尺度拉普拉斯残差块在特征空间中增强连接，提高了训练的效率。
 	
 	\paragraph{Retinex 理论方法}
 	
 	\begin{figure}[htb]
 		% read manual to see what [ht] means and for other possible options
 		\centering 
-		\includegraphics[width=\columnwidth]{picture/LLIE/RetinexNet/RetinexNet}
+		\includegraphics[width=0.7\columnwidth]{picture/LLIE/RetinexNet/RetinexNet}
 		%\captionsetup{font=scriptsize}
 		\caption{
 			\label{fig: RetinexNet} 
@@ -317,7 +360,7 @@
 	\begin{figure}[htb]
 		% read manual to see what [ht] means and for other possible options
 		\centering 
-		\includegraphics[width=\columnwidth]{picture/LLIE/EnlightenGAN/EnlightenGAN}
+		\includegraphics[width=0.7\columnwidth]{picture/LLIE/EnlightenGAN/EnlightenGAN}
 		%\captionsetup{font=scriptsize}
 		\caption{
 			\label{fig: EnlightenGAN} 
@@ -334,7 +377,7 @@
 	\begin{figure}[htb]
 		% read manual to see what [ht] means and for other possible options
 		\centering 
-		\includegraphics[width=\columnwidth]{picture/LLIE/DRBN/DRBN}
+		\includegraphics[width=0.7\columnwidth]{picture/LLIE/DRBN/DRBN}
 		%\captionsetup{font=scriptsize}
 		\caption{
 			\label{fig: DRBN} 
@@ -343,6 +386,99 @@
 	\end{figure}
 	
 	在这一领域中，Yang等人\cite{qiao2021deep}提出了一种名为 \textbf{DRBN} 的半监督低照度图像增强方法，该方法基于频带表示。DRBN是一种深度递归频带网络，它通过对低光照/标准光照图像对的频带表示进行线性恢复，然后对这些频带进行重新定位，以改善频带表示。这种方法不仅有效地去除了图像噪声，还能优化图像细节。另一方面，Robert等人开发了一种名为 \textbf{HybirdNet} 的半监督学习网络\cite{robert2018hybridnet}。该网络分为两个分支：第一个分支接收监督信号并专注于提取不变的成分，而第二个分支完全无监督，其目的是重建第一个分支丢弃的模型信息，作为输入数据的补充。
+	
+	\subsubsection{Zero-Shot 学习}
+	
+	Zero-shot 学习的一个显著优点是它无需依赖预先训练的数据集。这种方法允许直接将待处理的低光照图像作为输入，而无需经过预先的训练阶段。在这一方法论下，Zhu等人\cite{zhu2020zero}提出了一种创新的三分支全卷积神经网络，名为\textbf{RRDNet}。该网络将输入图像拆分为三个组成部分：光照、反射和噪声。通过特殊设计的迭代损失函数，网络能够对噪声进行精确估计并有效恢复光照部分，实现清晰的噪声预测，进而成功去除图像中的噪声。RRDNet还引入了一种新型的损失算法，该算法依据图像的亮度分布来估计暗区的噪声，避免了暗区噪声的过度放大。受到超分辨率模型的启发，Zhang等人\cite{zhang2019zero}开发了一种专门用于实时测试的CNN网络\textbf{ExCNet}。在实际应用中，ExCNet能够估计出最适合当前背光图像的参数曲线，这使得网络非常适合在复杂拍摄环境和恶劣的背光条件下进行图像增强。ExCNet的一个独特优势是其能够利用前一帧的参数作为参考，从而在视频增强过程中避免产生伪影。
+	
+	\begin{figure}[htb]
+		% read manual to see what [ht] means and for other possible options
+		\centering 
+		\includegraphics[width=0.7\columnwidth]{picture/LLIE/RRDNet/RRDNet}
+		\caption{
+			\label{fig: RRDNet} 
+			RRDNet 结构图
+		}
+	\end{figure}
+	
+	\section{研究目的}
+	
+	现有的方法仍有很大的改进空间，例如如何在提高亮度的同时消除产生的噪声，如何避免颜色失真现象等。一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势。
+	
+	\begin{figure}[htbp]
+		\centering
+		\setlength{\abovecaptionskip}{-0.05cm}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
+			\captionsetup{font=scriptsize}
+			\caption*{input \\ \quad }
+			\label{fig: input}
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/LLNet}
+			\captionsetup{font=scriptsize}
+			\caption*{LLNet \\ (2017)}
+			\label{fig: LLNet_VE_LOL}	
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RetinexNet}
+			\captionsetup{font=scriptsize}
+			\caption*{RetinexNet \\ (2018)}
+			\label{fig: RetinexNet_VE_LOL}	
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/MBLLEN}
+			\captionsetup{font=scriptsize}
+			\caption*{MBLLEN \\ (2018)}
+			\label{fig: MBLLEN_LOL}	
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
+			\captionsetup{font=scriptsize}
+			\caption*{EnlightenGAN \\ (2019)}
+			\label{fig: EnlightenGAN_VE_LOL}	
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
+			\captionsetup{font=scriptsize}
+			\caption*{RRDNet \\ (2020)}
+			\label{fig: RRDNet_VE_LOL}	
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/DRBN}
+			\captionsetup{font=scriptsize}
+			\caption*{DRBN \\ (2020)}
+			\label{fig: DRBN_VE_LOL}	
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/Zero-DCE++}
+			\captionsetup{font=scriptsize}
+			\caption*{Zero-DCE++ \\ (2021)}
+			\label{fig: Zero-DCE++}	
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/KinD++}
+			\captionsetup{font=scriptsize}
+			\caption*{KinD++ \\ (2021)}
+			\label{fig: KinD++}	
+		\end{subfigure}
+		\begin{subfigure}{0.17\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/URetinexNet}
+			\captionsetup{font=scriptsize}
+			\caption*{URetinexNet \\ (2022)}
+			\label{fig: URetinexNet}	
+		\end{subfigure}
+		\caption{
+			\label{fig: VE-LOL-L Visual} 
+			Visual results of different algorithms on low-illumination images sampled from the VE-LOL-L dataset.
+		}
+	\end{figure}
+	
+	近年来，基于深度学习的低光图像增强（LLIE）技术取得了显著成就，它使用神经网络来学习从弱光图像到自然光图像的映射。与传统方法相比，基于深度学习的解决方案在准确性、鲁棒性和处理速度方面表现更优，因此受到了广泛关注。特别是卷积神经网络（CNN）在多个计算机视觉任务中展现出卓越的性能。CNN通过利用注意力机制和\cite{yang2021locally, zhang2020attention}上下文信息，能够从原始图像中有效提取多尺度特征\cite{li2018multi, zamir2020learning}。在这些成果的推动下，基于CNN的低光图像增强方法得到了持续发展。例如，一种基于CNN的自适应低光图像增强框架\cite{li2020visual}显著提升了图像的对比度、颜色和细节信息。然而，现有的基于CNN的方法大多集中于图像亮度、纹理和颜色的恢复，对于局部光照不均匀、颜色信息和细节信息的丢失问题，仍存在过增强或增强不足的挑战。
+	
+	此外，现有的方法可能无法在极暗或极亮的区域恢复图像边缘细节\cite{xu2023low}。同时，当物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。而加入边缘先验可以降低优化外观重构时的不适定程度。人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。
+	
+	
 	
 	\paragraph{Attention in CV}
 	

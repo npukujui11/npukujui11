@@ -10,6 +10,7 @@
 \usepackage{tikz}
 %\usepackage[latin1]{inputenc}
 \usepackage{natbib}
+\usepackage{bbding}
 \usepackage{multicol}
 \usepackage{caption} 
 \usepackage{graphicx}
@@ -153,7 +154,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		{\zihao{-4} \yahei \textbf{低照度图像增强}}
+		{\zihao{-4} \yahei \textbf{研究意义}}
 		\begin{figure}
 			\centering			
 			\begin{minipage}{.4\columnwidth}
@@ -194,29 +195,96 @@
 	\end{frame}
 	
 	\begin{frame}
-		{\zihao{-4} \yahei \textbf{低照度图像增强}}
+		{\zihao{-4} \yahei \textbf{研究意义}}
 		
 		\vspace{0.1cm}
 		
 		{\zihao{-6} \yahei 基于软件技术的图像复原增强技术得到了广泛研究，其通过引入外部信息、加入先验、基于大数据集进行学习等方式，将输入的弱光图像的低光细节复原，产生接近降质前理想质量的低噪图。}
 
-		\begin{itemize} 
-			\item \zihao{-5} \yahei \textbf{挑战}
+		\begin{figure}
+			\centering			
+			\begin{minipage}{.4\columnwidth}
+				\begin{itemize} 
+					\item \zihao{-5} \yahei \textbf{挑战}
+					
+					% 传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。
+					\zihao{6} \yahei 伪影(Artifacts)
+					
+					\zihao{6} \yahei 色差(Color Deviations) 
+					% 传统方法一般通过有效的先验或正则化来解决噪声问题。但是寻找到有效的先验和正则化相当具有挑战性，不正确的先验或正则化可能导致增强结果中的伪像和颜色偏差。
+					
+					\zihao{6} \yahei 噪声(Noise)
+					% 但是这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声，因此在增强结果中保留或放大噪声；
+					
+					\zihao{6} \yahei 鲁棒性(Robustness)
+					% 但是现有的低光照图像增强技术聚焦于构建数据驱动的深度网络，通常其网络模型复杂，导致计算效率低、推理速度慢，并且由于对于训练数据分布的依赖性导致其在未知场景下的性能缺乏保障。
+					% 物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。
+					
+					\zihao{6} \yahei 边缘细节(Edge Details)
+					% 现有的方法可能无法在极暗或极明亮的区域恢复图像的边缘细节。				
+				\end{itemize}
+			\end{minipage}
+			\begin{minipage}{.58\columnwidth}
+				\setlength{\abovecaptionskip}{-0.05cm}
+				\centering 
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
+					\caption*{\tiny input \\ \quad }
+					\label{fig: input}
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/LLNet}
+					\caption*{\tiny LLNet \\ (2017)}
+					\label{fig: LLNet}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RetinexNet}
+					\caption*{\tiny RetinexNet \\ (2018)}
+					\label{fig: RetinexNet_LOL}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/MBLLEN}
+					\caption*{\tiny MBLLEN \\ (2018)}
+					\label{fig: MBLLEN_LOL}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
+					\caption*{\tiny EnlightenGAN \\ (2019)}
+					\label{fig: EnlightenGAN}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
+					\caption*{\tiny RRDNet \\ (2020)}
+					\label{fig: RRDNet}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/DRBN}
+					\caption*{\tiny DRBN \\ (2020)}
+					\label{fig: DRBN}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/Zero-DCE++}
+					\caption*{\tiny Zero-DCE++ \\ (2021)}
+					\label{fig: Zero-DCE++}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/KinD++}
+					\caption*{\tiny KinD++ \\ (2021)}
+					\label{fig: KinD++}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/URetinexNet}
+					\caption*{\tiny URetinexNet \\ (2022)}
+					\label{fig: URetinexNet}	
+				\end{minipage}
 				
-			% 传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。
-			\zihao{-5} \yahei 伪影(Artifacts)和色差(Color Deviations) 
-			% 传统方法一般通过有效的先验或正则化来解决噪声问题。但是寻找到有效的先验和正则化相当具有挑战性，不正确的先验或正则化可能导致增强结果中的伪像和颜色偏差。
-				
-			\zihao{-5} \yahei 噪声(Noise)
-			% 但是这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声，因此在增强结果中保留或放大噪声；
-				
-			\zihao{-5} \yahei 鲁棒性(Robustness)
-			% 但是现有的低光照图像增强技术聚焦于构建数据驱动的深度网络，通常其网络模型复杂，导致计算效率低、推理速度慢，并且由于对于训练数据分布的依赖性导致其在未知场景下的性能缺乏保障。
-			% 物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。
-			
-			\zihao{-5} \yahei 边缘细节(Edge Details)
-			% 现有的方法可能无法在极暗或极明亮的区域恢复图像的边缘细节。				
-		\end{itemize}
+				%\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: VE-LOL-L Visual} 
+					\tiny Visual results of different algorithms on low-illumination images sampled from the VE-LOL-L dataset.
+				}
+			\end{minipage}
+		\end{figure}
 	\end{frame}
 	
 	\subsection{研究背景和现状}
@@ -332,6 +400,8 @@
 		
 	\end{frame}
 	
+	\subsubsection{基于深度学习的低照度图像增强方法}
+	
 	\begin{frame}
 		{\zihao{-5} \yahei \textbf{基于深度学习的低照度图像增强方法}}
 		
@@ -340,262 +410,170 @@
 		\vspace{0.1cm}
 		
 		{\zihao{-6} \yahei 基于深度学习的低照度图像增强算法，根据其学习和训练方式又分为四类，分别为有监督学习、无监督学习、半监督学习和零采样(Zero-shot)学习方法\textcolor{blue}{\citep{tang2023low}}。}
-	\end{frame}
-	
-	\begin{frame}
-
-		\begin{itemize} 
-			\item \textbf{Possible Contributions I}
-			
-			A parallel network architecture for low-light image enhancement
-			
-			\item \textbf{Possible Contributions II}
-			
-			An edge network that generates edge graphs of low-light images
-			% 一种生成弱光图像边缘图的边缘网络
-			
-			\item \textbf{Possible Contributions III}
-			
-			A model that can better solve the local edge distortion problem in low-light images
-			% 一种能够较好的解决弱光图像中的局部边缘失真问题的模型
-		\end{itemize}
-
-	\end{frame}
-	
-%	\begin{frame}
-%		\section{Literature Review}
-%		Study hard and make progress every day. % 第一等级
-%		\begin{itemize} 
-%			\item Study hard and make progress every day. % 第二等级
-%			\begin{itemize}
-%				\item Study hard and make progress every day. % 第三等级
-%				\begin{itemize}
-%					\item Study hard and make progress every day. % 第四等级
-%				\end{itemize}
-%			\end{itemize}
-%		\end{itemize}
-%	\end{frame}
-	
-	\section{Literature Review}
-	
-	\subsection{SOTA}
-	
-	\begin{frame}
 		
-		Low-Light image enhancement related work.
-		
-		\begin{itemize} 
-			\item \textbf{Current SOTA}\textcolor{blue}{\citep{wang2023brighten}}
-			% 目前的 SOTA 模型
-			
-			Recent advances in this area mainly focus on the refinement of the lightness, while ignoring the role of chrominance.
-			
-			% 近年来该领域的研究进展主要集中在亮度的细化上，而忽略了色度的作用。
-			
-			% 目前为止传统方法和基于学习的方法大多主要着眼于提高亮度的质量，这容易导致严重的色度信息丢失和不愉快的视觉效果。
-			
-			\begin{itemize}
-			
-			\item BCNet (Brihten-and-Colorize Network)	
-				
-			% 作者提出了一个“亮度和着色”网络，它将图像着色引入 LLIE，以解决上述问题。
-			
-			% BCNet 可以实现精确色彩的 LLIE，同时可以根据用户喜好定制不同饱和度和色彩风格的增强。
-			
-			% 具体来说，BCNet 将 LLIE 视为一个多任务学习问题:增亮和着色。增亮子任务与其他传统的 LLIE 方法一致，以获得良好的亮度。着色子任务是通过将弱光图像的色度作为颜色指导来完成的，就像用户指导图像着色一样。
-			
-				\begin{itemize}
-					
-					\item Multitasking-learning Architecture 
-					
-					% BCNet 采用多任务学习架构，该架构包含一个编码器和两个特定任务的解码器。编码器以弱光亮度作为输入，而两个特定任务的解码器分别输出预测亮度和色度。通过同时训练两个子任务，增亮子任务可以为着色子任务提供正常亮度信息。此外，引入颜色分类损失，将着色转化为分类任务，缓解着色子任务中的颜色消失。
-					
-					% 特点：多任务学习架构通过在相关任务之间共享知识，旨在提高学习效率和模型的泛化能力。
-					
-					\item Brightening
-					% 增亮
-					
-					\item Colorization
-					% 着色
-					
-				\end{itemize}
-			
-			\item The Color Guidance Can Be Simply Manipulated
-			
-			% 在完成模型训练后，用户可以简单地操纵颜色指导(即输入的低光色度)，以获得定制的结果。
-			
-				\begin{itemize}
-					
-					\item Chrominance
-					% 色度信息在自定义增强中起着重要作用。
-					
-					
-					% 色度是指颜色的纯度，它描述了颜色中纯色的强度相对于灰色的程度。色度是一个相对于白色背景的概念，它衡量的是颜色与白色之间的差异程度。
-					
-					% 饱和度也是描述颜色纯度的一个度量，但它是相对于颜色的最大纯度版本的。
-					% 饱和度是一个相对于颜色自身最鲜艳状态的概念，它衡量的是颜色的强度或深度。
-					\item Local Consistency
-					% 有方法利用 HSV 色彩空间中的直方图实现了色彩定制，而直方图作为全局信息很难保证局部一致性。
-					% 局部一致性指在一幅图像中，相邻像素通常具有相似的颜色和亮度，这种现象就是局部一致性的体现。这一概念在边缘检测、纹理分析、图像分割等任务中非常重要。
-				\end{itemize}
-			
-			\end{itemize}
-
-			
-		\end{itemize}
-			
-	\end{frame}
-	
-	\begin{frame}
-		
-		% 近年来该领域的研究进展主要集中在亮度的细化上，而忽略了色度的作用。
+		\vspace{0.1cm}
 		
 		\begin{figure}
 			\centering
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/Input}
-				\captionsetup{font=scriptsize}
-				\label{fig: Input}
-				\caption*{Input}
+			\setlength{\abovecaptionskip}{-0.05cm}			
+			\begin{minipage}{.4\columnwidth}
+				\setlength{\abovecaptionskip}{-0.05cm}
+				\centering 
+				\includegraphics[width=\columnwidth]{picture/LLIE/MBLLEN/MBLLEN Architecture}
+				%\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: MBLLEN} 
+					\tiny MBLLEN 结构示意图
+				}
 			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/GT}
-				\captionsetup{font=scriptsize}
-				\label{fig: GT}	
-				\caption*{GT}
+			\begin{minipage}{.4\columnwidth}
+				\setlength{\abovecaptionskip}{-0.05cm}
+				\centering 
+				\includegraphics[width=\columnwidth]{picture/LLIE/RetinexNet/RetinexNet}
+				%\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: RetinexNet} 
+					\tiny RetinexNet 结构示意图
+				}
 			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/Ours}
-				\captionsetup{font=scriptsize}
-				\label{fig: Ours}	
-				\caption*{Ours}
-			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/DeepUPE(CVPR 2019)}
-				\captionsetup{font=scriptsize}
-				\label{fig: DeepUPE(CVPR 2019)}	
-				\caption*{DeepUPE(CVPR 2019)}
-			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/SNR-Aware(CVPR 2022)}
-				\captionsetup{font=scriptsize}
-				\label{fig: SNR-Aware(CVPR 2022)}	
-				\caption*{SNR-Aware(CVPR 2022)}
-			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/MIRNet-v2(TPAMI 2022)}
-				\captionsetup{font=scriptsize}
-				\label{fig: MIRNet-v2(TPAMI 2022)}	
-				\caption*{MIRNet-v2(TPAMI 2022)}
-			\end{minipage}
-			
 			\captionsetup{font=scriptsize}
 			\caption{
-				\label{fig: color}
-				Enhancement with accurate color.
+				\label{fig: Supervised Learning}
+				\tiny 经典有监督学习架构
 			}
 		\end{figure}
 		
 	\end{frame}
 	
-	\subsection{Structure Modeling and Guidance}
+	\begin{frame}
+	{\zihao{-5} \yahei \textbf{基于深度学习的低照度图像增强方法}}
+	
+	{\zihao{-6} \yahei 尽管有监督学习方法在图像增强中取得了一定的成效，但它面临着两大主要限制。首先，可用于训练的成对图像数据集是有限的。其次，在这样的成对数据集上训练的模型容易出现过拟合的问题。为了克服这些挑战，研究者们转向了无监督学习方法。}
+	
+	{\zihao{-6} \yahei Jiang等人\textcolor{blue}{\citep{jiang2021enlightengan}}开创性地提出了一种名为 \textbf{EnlightenGAN} 的无监督学习方法。}
+	
+	\begin{figure}
+		\centering
+		\setlength{\abovecaptionskip}{-0.05cm}
+		\begin{minipage}{.6\columnwidth}
+			\includegraphics[width=\columnwidth]{picture/LLIE/EnlightenGAN/EnlightenGAN}
+			\caption{
+				\label{fig: EnlightenGAN Architecture} 
+				\tiny EnlightenGAN 结构图
+			}
+		\end{minipage}
+	\end{figure}
+	
+	{\zihao{-6} \yahei EnlightenGAN的主要创新在于两个方面：一是其全局-局部判别器结构，用于处理输入图像中的空间光照变化；二是结合自特征保留损失和自正则化注意力机制，确保增强后图像的内容特征保持不变。}
+	
+	\end{frame}
 	
 	\begin{frame}
+		{\zihao{-5} \yahei \textbf{基于深度学习的低照度图像增强方法}}
 		
-		Low-Light Image Enhancement via Structure Modeling and Guidance\textcolor{blue}{\citep{xu2023low}}
+		{\zihao{-6} \yahei 近年来，半监督学习作为一种新兴的学习方法，结合了监督学习的精确性和非监督学习的广泛适用性。这种学习方法既利用了有标签的数据，也依赖于无标签的数据。Yang等人\textcolor{blue}{\citep{qiao2021deep}}提出了一种名为 \textbf{DRBN} 的半监督低照度图像增强方法，该方法基于频带表示。}
 		
-		\begin{itemize} 
-			\item \textbf{Background}
-			
-			\item[\checkmark] Appearance and structural information defects of the image.
-				
-			% 由于低光照条件下的图像容易受到噪声的影响，现有的低光图像增强方法往往无法同时处理图像的外观和结构信息，导致结果过度增强或者不真实。
-			\vspace{.3cm}
-			\item[\checkmark] Current methods (based encoder and decoder network) \textcolor{blue}{\citep{rana2021edge}}\textcolor{blue}{\citep{zhu2020eemefn}} that use structural information to boost enhancement do not work well 
-			
-			% 在暗区域中加入敏感边缘先验可以降低优化外观重构时的不适定程度。这些框架使用基于编码器-解码器的网络和回归损失执行结构建模。然而，由于能见度和噪声严重不足导致的暗区不确定性，相应的结构建模结果并不令人满意。
-			
-		\end{itemize}
-		
-		\begin{itemize}
-			\item \textbf{Contribution}
-			
-			\item[\checkmark] A Gan Loss-based model goes out to model the structural information.
-			
-			% 论文提出了一种基于 GAN Loss 的模型去对结构信息建模，通过获得的结构信息指导增强。
-			\vspace{.3cm}
-			\item[\checkmark] It is difficult to extract good structural information from the low-illumination images.
-			
-			% 从低光图像中很难提取到好的结构信息，但是论文中提出的方法提取到的结构信息会好很多，并且用于指导图像增强信息。
-		\end{itemize}	
+		\begin{figure}
+			\centering
+			\setlength{\abovecaptionskip}{-0.05cm}
+			\begin{minipage}{.7\columnwidth}
+				\centering 
+				\includegraphics[width=\columnwidth]{picture/LLIE/DRBN/DRBN}
+				\caption{
+					\tiny DRBN 结构图
+				}
+			\end{minipage}
+		\end{figure}
 		
 	\end{frame}
 	
 	\begin{frame}
+		{\zihao{-5} \yahei \textbf{基于深度学习的低照度图像增强方法}}
+		
+		{\zihao{-6} \yahei Zero-shot 学习的一个显著优点是它无需依赖预先训练的数据集。这种方法允许直接将待处理的低光照图像作为输入，而无需经过预先的训练阶段。Zhu等人\textcolor{blue}{\citep{zhu2020zero}}提出了一种创新的三分支全卷积神经网络，名为\textbf{RRDNet}。}
 		
 		\begin{figure}
 			\centering
-			\begin{minipage}{.25\textwidth}
+			\setlength{\abovecaptionskip}{-0.05cm}
+			\begin{minipage}{.6\columnwidth}
+				\centering 
+				\includegraphics[width=\columnwidth]{picture/LLIE/RRDNet/RRDNet}
+				\caption{
+					\tiny RRDNet 结构图
+				}
+			\end{minipage}
+		\end{figure}
+		
+		{\zihao{-6} \yahei 该网络将输入图像拆分为三个组成部分：光照、反射和噪声。通过特殊设计的迭代损失函数，网络能够对噪声进行精确估计并有效恢复光照部分，实现清晰的噪声预测，进而成功去除图像中的噪声。}
+		
+	\end{frame}
+	
+	\subsubsection{研究背景}
+	
+	\begin{frame}
+		{\zihao{-4} \yahei \textbf{研究背景}}
+		
+		\begin{figure}
+		\begin{minipage}{.4\columnwidth}
+			\begin{itemize}
+				\item \zihao{-5} \yahei \textbf{现有方法存在的局限性}
+				
+				\item[\XSolidBrush]
+				\zihao{6} \yahei 在提高亮度的同时，无法很好的消除产生的噪声。
+				
+				\item[\XSolidBrush]
+				\zihao{6} \yahei 一些方法无法很好的避免颜色失真现象。
+				
+				\item[\XSolidBrush]
+				\zihao{6} \yahei 现有的方法往往不具备鲁棒性。
+				% 一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势。
+				\item[\XSolidBrush]
+				\zihao{6} \yahei 无法在极暗或极亮的区域很好地恢复图像边缘细节\textcolor{blue}{\citep{xu2023low}}。
+				
+				\vspace{0.2cm}
+				
+				{\zihao{-6} \yahei 在暗区域中加入敏感边缘先验可以降低优化外观重构时的不适定程度\textcolor{blue}{\citep{xu2023low}}。一些框架\textcolor{blue}{\citep{rana2021edge}}\textcolor{blue}{\citep{zhu2020eemefn}}使用基于编码器-解码器的网络和回归损失执行结构建模。然而，由于能见度和噪声严重不足导致的暗区不确定性，相应的结构建模结果并不令人满意。}
+			\end{itemize}
+		\end{minipage}
+		\begin{minipage}{.58\columnwidth}
+			\setlength{\abovecaptionskip}{-0.05cm}
+			\centering 
+			\begin{minipage}{0.3\textwidth}
 				\centering
 				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Input}
-				\captionsetup{font=scriptsize}
-				\label{fig: SMG_Input}
-				\caption*{Input}
+				\caption*{\tiny (a) Input}
 			\end{minipage}
-			\begin{minipage}{.25\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
 				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Structure of (a)}
-				\captionsetup{font=scriptsize}
-				\label{fig: Structure of (a)}	
-				\caption*{Structure of (a)}
+				\caption*{\tiny (b) Structure of input}
 			\end{minipage}
-			\begin{minipage}{.25\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
 				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022)}
-				\captionsetup{font=scriptsize}
-				\label{fig: SNR (CVPR 2022)}	
-				\caption*{SNR (CVPR 2022)}
+				\caption*{\tiny (c) SNR (CVPR 2022)}
 			\end{minipage}
-			\begin{minipage}{.25\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
 				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Structure Modeling}
-				\captionsetup{font=scriptsize}
-				\label{fig: Structure Modeling}	
-				\caption*{Structure Modeling}
+				\caption*{\tiny (d) Structure Modeling}
 			\end{minipage}
-			\begin{minipage}{.25\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
 				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Ours}
-				\captionsetup{font=scriptsize}
-				\label{fig: SMG_Ours}	
-				\caption*{Ours}
+				\caption*{\tiny (e) Ours}
 			\end{minipage}
-			\begin{minipage}{.25\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
 				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Ground Truth}
-				\captionsetup{font=scriptsize}
-				\label{fig: Ground Truth}	
-				\caption*{Ground Truth}
+				\caption*{\tiny (f) Ground Truth}
 			\end{minipage}
-			\captionsetup{font=scriptsize}
 			\caption{
-				\label{fig: Structure Information}
-				A challenging low-light frame (a), from SID-sRGB\cite{chen2018learning},
-				enhanced by a SOTA method (c) and our method (e). Our method
-				can synthesize the structure map (d) from the input image, leading
-				to clearer details, more distinct contrast, and more vivid color. Although
-				(c) has high PSNR as 28.17, its SSIM is low as 0.75. Ours
-				achieves high scores for both dB and SSIM, as 28.60dB and 0.80.
+				\tiny SID-sRGB\textcolor{blue}{\citep{chen2018learning}}中一张弱光图片, 通过SOTA方法 (c) 和  \textcolor{blue}{\citep{xu2023low}} 提出的方法 (e)增强。作者的方法可以从输入的图像中合成结构图(d)，使细节更清晰，对比度更清晰，颜色更鲜艳。虽然(c)的 PSNR 为 28.17，但其 SSIM 低为 0.75。作者的方法在dB和SSIM的得分都很高，分别为28.60 dB 和 0.80。
 			}
+		\end{minipage}
 		\end{figure}
-		% 作者的模型 PSNR 和 SSIM 得分在 LOL-v2 数据集中很高。
-		% 作者的方法可以从输入图像中合成结构图 Structure Modeling
+		
 	\end{frame}
 	
 	\begin{frame}
@@ -634,8 +612,6 @@
 			\end{itemize}
 		\end{minipage}
 	\end{frame}
-	
-	\subsection{Conformer}
 	
 	\begin{frame}
 		Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}
@@ -710,7 +686,28 @@
 		
 	\end{frame}
 	
-	\section{Proposed Model}
+	\begin{frame}
+		
+		\begin{itemize} 
+			\item \textbf{Possible Contributions I}
+			
+			A parallel network architecture for low-light image enhancement
+			
+			\item \textbf{Possible Contributions II}
+			
+			An edge network that generates edge graphs of low-light images
+			% 一种生成弱光图像边缘图的边缘网络
+			
+			\item \textbf{Possible Contributions III}
+			
+			A model that can better solve the local edge distortion problem in low-light images
+			% 一种能够较好的解决弱光图像中的局部边缘失真问题的模型
+		\end{itemize}
+		
+	\end{frame}
+	
+	
+	\section{研究内容}
 	
 	\subsection{Total Architecture}
 	
@@ -1210,7 +1207,7 @@
 		\end{figure}
 	\end{frame}
 	
-	\section{Experimental Plan}
+	\section{具体工作内容}
 	
 	\subsection{Dataset}
 	

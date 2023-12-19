@@ -169,6 +169,20 @@ Thomas Robert, Nicolas Thome, and Matthieu Cord.
 \newblock In {\em Proceedings of the European Conference on Computer Vision
   (ECCV)}, pages 153--169, 2018.
 
+\bibitem{zhu2020zero}
+Anqi Zhu, Lin Zhang, Ying Shen, Yong Ma, Shengjie Zhao, and Yicong Zhou.
+\newblock Zero-shot restoration of underexposed images via robust retinex
+  decomposition.
+\newblock In {\em 2020 IEEE International Conference on Multimedia and Expo
+  (ICME)}, pages 1--6. IEEE, 2020.
+
+\bibitem{zhang2019zero}
+Lin Zhang, Lijun Zhang, Xiao Liu, Ying Shen, Shaoming Zhang, and Shengjie Zhao.
+\newblock Zero-shot restoration of back-lit images using deep internal
+  learning.
+\newblock In {\em Proceedings of the 27th ACM international conference on
+  multimedia}, pages 1623--1631, 2019.
+
 \bibitem{woo2018cbam}
 Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
 \newblock Cbam: Convolutional block attention module.
