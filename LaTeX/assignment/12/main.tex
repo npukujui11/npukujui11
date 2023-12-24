@@ -1,0 +1,210 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{ctex}
+\usepackage{titlesec}
+%\usepackage{CJKutf8, CJK}
+\usepackage{makecell}                 % 三线表-竖线
+\usepackage{booktabs}                 % 三线表-短细横线
+% \usepackage{natbib}
+\usepackage{graphicx}				  % 表格单元格逆时针
+\usepackage{multirow}				  % 合并单元格
+\usepackage{array}
+\usepackage{amssymb}				  % 勾
+\usepackage{amsmath}
+\usepackage{longtable}                % 导入 longtable 宏包，表格自动换行
+\usepackage{caption}
+\usepackage{subcaption}               % 设置子图
+\usepackage{color}					  % 文本颜色包
+\usepackage{xcolor}
+\usepackage{bbm}					  % 输入指示函数
+\usepackage{tablefootnote}			  % 表格注释
+\usepackage{pythonhighlight}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[R]{\small Page \thepage\ of \pageref*{LastPage}}
+\fancyhead[L]{\small Report}
+
+\usepackage{listings}                 % 导入代码块
+\usepackage{xcolor}
+\lstset{
+	numbers=left, 
+	tabsize=1,
+	columns=flexible, 
+	numberstyle=  \small, 
+	keywordstyle= \color{ blue!70},
+	commentstyle= \color{red!50!green!50!blue!50}, 
+	frame=shadowbox, % 阴影效果
+	rulesepcolor= \color{ red!20!green!20!blue!20} ,
+	escapeinside=``, % 英文分号中可写入中文
+	xleftmargin=2em,
+	xrightmargin=2em, 
+	aboveskip=1em,
+} 
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+%++++++++++++++++++++++++++++++++++++++++
+\titleformat{\section}{\Large\bfseries\songti}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\songti}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\songti}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\small\bfseries\songti}{\paragraph}{1em}{}
+\titleformat{\subparagraph}{\footnotesize\bfseries\songti}{\subparagraph}{1em}{}
+
+\begin{document}
+	
+	
+	\title{\songti \zihao{4}工作简报}
+	\author{\textrm{Ku Jui}}
+	\date{\textrm{December 2023}}
+	\maketitle
+	
+	\renewcommand{\figurename}{Figure} % 可以重新定义abstract，因为ctex会覆盖thebibliography
+	% 	\begin{abstract}
+		%		In this experiment we studied a very important physical effect by measuring the
+		%		dependence of a quantity $V$ of the quantity $X$ for two different sample
+		%		temperatures.  Our experimental measurements confirmed the quadratic dependence
+		%		$V = kX^2$ predicted by Someone's first law. The value of the mystery parameter
+		%		$k = 15.4\pm 0.5$~s was extracted from the fit. This value is
+		%		not consistent with the theoretically predicted $k_{theory}=17.34$~s. We attribute %this
+		%		discrepancy to low efficiency of our $V$-detector.
+		%	\end{abstract}
+	\renewcommand{\contentsname}{目录}
+	\renewcommand{\tablename}{Table}
+	\newpage
+	
+	\part*{ \zihao{4} 完成 CDP-VR Tester (Windows 端) 代码开发}
+	\section{主要成果}
+	
+	经过对功能业务逻辑的沟通和磋商，目前已经完成了 CDP-VR Tester (Windows 端) 全部的代码部分，主要完了以下几个功能。
+	
+	\subsection{蓝牙连接功能}
+	
+	\begin{itemize}
+		\item [+] connectBluetooth(): 连接蓝牙设备。	
+			\begin{itemize}
+				\item [-] FindBtAddress(): 查找特定名称的蓝牙设备地址。
+				\item [-] DisconnectBluetooth(): 断开蓝牙设备连接。
+			\end{itemize}
+		\item [+] BluetoothReadThread: 定义线程接收蓝牙设备数据。
+			\begin{itemize}
+				\item [-] ProcessReadData(): 处理接收到的 VR 眼镜数据。
+			\end{itemize}
+	\end{itemize}
+	
+	\subsection{蓝牙数据传输}
+	
+	\begin{itemize}
+		\item [+] BluetoothSendData(): 定义蓝牙数据缓冲区和发送逻辑。
+			\begin{itemize}
+				\item [-] SendData(): 负责数据发送。
+			\end{itemize}
+	\end{itemize}
+	
+	\subsection{蓝牙缓冲区定义}
+	
+	\begin{itemize}
+		\item [$\bullet$] 长度：9个字节。
+		\item [$\bullet$] 字节定义：
+			
+			第1个字节：存放 CurMinorVersion（次版本号）。
+			
+			第2个字节：存放 CurMajorVersion（主版本号）。
+			
+			第3个字节：传递 Seethrough 指令。
+			
+			第4个字节：传递 Darkness 指令。
+			
+			第5个字节：传递 Freeze Pitch 指令。
+			
+			第6个字节：传递 Pitch 值。
+			
+			第7个字节：传递场景值。
+			
+			第8和9个字节：保留。
+	\end{itemize}
+	
+	\subsection{当前工作}
+	
+	VR Goggle端正在进行蓝牙缓冲区读取功能的代码修改，以确保能按照指定的字节定义来读取接收到的蓝牙数据包。
+	
+	\subsection{下一步计划}
+	
+	第一轮测试工作计划于下周一和周二进行。
+	
+	\part*{\zihao{4} 开题报告文档和PPT制作}
+	
+	\section{主要工作}
+	
+	\begin{itemize}
+		\item[(1)] 使用 \LaTeX 编写开题报告文档和PPT。
+		
+		\item[(2)] 按照信息院官网发布的要求，报告主要章节包括：
+		
+			\begin{itemize}
+				\item [1] 研究介绍		
+					\begin{itemize}
+						\item [\checkmark 1.1] 研究意义
+						\item [\checkmark 1.2] 研究背景和现状
+						\begin{itemize}
+							\item [\checkmark 1.2.1] 传统方法
+							\item [\checkmark 1.2.2] 基于深度学习的低照度图像增强方法
+							\item [\checkmark 1.2.3] 研究背景
+						\end{itemize}						
+					\end{itemize}				
+				\item [2] 研究内容			
+					\begin{itemize}
+						\item [\checkmark 2.1] 采用的方法
+						\item [\checkmark 2.2] 数据集
+						\item [\checkmark 2.3] 文献调研与支撑（标题待定）
+					\end{itemize}			
+				\item [3] 具体工作内容				
+					\begin{itemize}
+						\item [3.1] 已完成工作
+						\item [3.2] 下一步工作
+					\end{itemize}
+			\end{itemize}
+		
+		\item[(3)] 目前已完成第1章和第2章的文档编写，PPT进度与文档一致。
+		
+			\item[\checkmark] 正在考虑是否删除2.2章节（数据集）。
+		
+		\item[(4)] 开题报告文档预计页数约30页，引用文献约200条。
+	\end{itemize}
+	
+	\section{下一步计划}
+	
+		\begin{itemize}
+			\item [(1)] 完成文档：
+				
+				\item [\checkmark] 优先完成文档编写（预计下周末完成）。
+				
+				\item [\checkmark] 定义并统一术语表示，如“Low-light Image”统一称为“低光图像”。
+				
+				\item [\checkmark] 整理文档格式并检查内容完整性。
+				
+			\item [(2)] 格式与规范：
+			
+				\item [\checkmark] 学院暂未明确文档和PPT的格式求，可能需要后续调整。
+		\end{itemize}
+	
+%	\renewcommand{\refname}{References}
+%	\bibliographystyle{unsrt}
+%	\bibliography{reference}
+	
+	
+\end{document}
