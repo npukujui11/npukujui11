@@ -508,10 +508,10 @@
 		
 	\end{frame}
 	
-	\subsubsection{研究背景}
+	\subsection{研究目的}
 	
 	\begin{frame}
-		{\zihao{-4} \yahei \textbf{研究背景}}
+		{\zihao{-4} \yahei \textbf{研究目的}}
 		
 		\begin{figure}
 		\begin{minipage}{.4\columnwidth}
@@ -577,6 +577,39 @@
 	\end{frame}
 	
 	\begin{frame}
+		\begin{figure}
+			\centering
+			\setlength{\abovecaptionskip}{-0.05cm}
+			\begin{minipage}{0.45\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/EEMEFN/EEMEFN framework}
+				\caption*{\tiny
+					(a) 该 LLIE 结构源自\cite{zhu2020eemefn},如其 Multi-Exposure Fusion 部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat, 后续通过一个 U-Net 网络进一步恢复图像。}
+			\end{minipage}
+			\begin{minipage}{0.45\columnwidth}
+				\setlength{\abovecaptionskip}{0.29cm}
+				\includegraphics[width=\linewidth]{picture/LLIE/EdgeNet/Archtecture workflow}
+				\caption*{\tiny
+					(b) 该 LLIE 结构源自\cite{rana2021edge}使用 EdgeNet 首先从低光图像中过滤边缘，EnhanceNet 反复使用上采样和下采样块的组合，从局部到全局逐渐提取特征，并消除伪影和噪声。}
+			\end{minipage}
+			\caption{\tiny 边缘图像指导弱光图像增强的传统架构。}
+		\end{figure}
+		
+		\vspace{-0.5cm}
+		
+		\begin{minipage}{.9\textwidth}
+			\textbf{\tiny 具有的特点}
+			\begin{itemize} \tiny
+				\item [\checkmark] 其恢复结果的质量会受到\textcolor{red}{增强网络的设计}和\textcolor{red}{初步恢复图像与边缘结构图生成质量}的影响。
+				
+				\item [\checkmark] 边缘图的准确性会极大影响最终的恢复结果，直接从弱光图像中获取边缘图具有一定的挑战性。
+				
+				\item [\checkmark] 边缘图与初步恢复图像之间多采用\textcolor{red}{串联方式}输入卷积以获得最终增强结果。
+			\end{itemize}
+		\end{minipage}
+		
+	\end{frame}	
+	
+	\begin{frame}
 		\begin{figure}[htbp]
 			\begin{center}
 				\includegraphics[width=0.8\textwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
@@ -640,8 +673,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		
-		
+
 		\begin{figure}
 			\centering
 			\begin{minipage}{.4\textwidth}
