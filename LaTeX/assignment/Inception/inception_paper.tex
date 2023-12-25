@@ -94,7 +94,7 @@
 	
 	\newpage
 	
-	\part{研究介绍}
+	\part*{研究介绍}
 	
 	\section{研究意义}
 	
@@ -401,9 +401,7 @@
 		}
 	\end{figure}
 	
-	\subsection{研究背景}
-	
-	\section{研究目的}
+	\subsection{研究目的}
 	
 	现有的方法仍有很大的改进空间，例如如何在提高亮度的同时消除产生的噪声，如何避免颜色失真现象等。一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势，如图\ref{fig: VE-LOL-L Visual}展示了不同算法在VE-LOL-L数据集下的可视化结果。
 	
@@ -500,6 +498,20 @@
 	\end{figure}
 	
 	\begin{figure}[htb]
+		\centering 
+		\begin{subfigure}{0.8\columnwidth}
+			\includegraphics[width=\columnwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
+			\captionsetup{font=scriptsize}
+			\caption{该 LLIE 结构源自\cite{xu2023low}，其提出一种基于 GAN Loss 的模型去对结构信息建模，通过获得的结构信息指导增强。}
+			\label{fig: SMG-LLIE Architecture}
+		\end{subfigure}
+		\caption{
+			\label{fig: SMG-LLIE Overview} 
+			边缘图像指导弱光图像增强的最新架构(CVPR 2023)。
+		}
+	\end{figure}
+	
+	\begin{figure}[htb]
 		\centering
 		\begin{subfigure}{0.25\columnwidth}
 			\includegraphics[width=\linewidth]{picture/LLIE/Structure Modeling and Guidance/Input}
@@ -557,20 +569,6 @@
 	
 	作者\cite{xu2023low}提出了一种基于结构先验的图像增强方式，以更好的从弱光图像中提取到更有效的边缘信息并用于指导图像增强。从图\ref{fig: Structural Information}中可以看到边缘图和LBP图\cite{pietikainen2010local}所反映结构信息具有明显的区别，边缘信息能反映更多的细节信息。我们不难发现，相较于LBP，图像边缘图仅保留了很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。
 	
-	\begin{figure}[htb]
-		\centering 
-		\begin{subfigure}{0.9\columnwidth}
-			\includegraphics[width=\columnwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
-			\captionsetup{font=scriptsize}
-			\caption{该 LLIE 结构源自\cite{xu2023low}，其提出一种基于 GAN Loss 的模型去对结构信息建模，通过获得的结构信息指导增强。}
-			\label{fig: SMG-LLIE Architecture}
-		\end{subfigure}
-		\caption{
-			\label{fig: SMG-LLIE Overview} 
-			边缘图像指导弱光图像增强的最新架构。
-		}
-	\end{figure}
-	
 	此外，获取边缘图的方法也各不相同，在 LLIE 任务中，常见方法采用边缘检测网络来生成边缘图，然后使用 Canny 或 Sobel 算子\cite{maini2009study}从 GT 中获取边缘图用做对照组。目前在 LLIE 领域中获取边缘图分化成了两个不同的方向，一种是通过初步恢复图像获取边缘图（见图\ref{fig: EEMEFN}），另一种是直接通过弱光图像以获取边缘图（见图\ref{fig: EdgeNet}和图\ref{fig: SMG-LLIE Architecture}）。LLIE 任务中边缘检测的主要有下列方法：
 	
 	\begin{itemize}
@@ -581,7 +579,33 @@
 		\item [(3)] 深度学习方法从原始数据中学习复杂的特征表示端到端边缘检测模型(RCF边缘检测模型\cite{liu2017richer})。
 	\end{itemize}
 	
-	\part{研究内容}
+	综上所述，本研究旨在实现以下明确的研究目标\footnote{在对Xu等人\cite{xu2023low}的模型（参见图\ref{fig: SMG-LLIE Architecture}）进行深入分析后，本研究旨在通过采用与原作者不同的方法论来实现若干具体目标，并力求在关键评价指标上超越原模型的性能。具体而言，本研究的核心目标包括：首先，在目标(1)和目标(2)的框架内，探索与Xu等人不同的优化策略；其次，这些优化策略应致力于提升模型的整体性能，目的在于在关键评价指标上实现超越原作者的成果。通过这种方法，本研究不仅旨在增强现有模型的能力，同时也寻求对该领域的理论和实践知识做出贡献。}:
+	
+	\begin{itemize}
+		\item [(1)] \textbf{边缘网络的开发：} 设计并构建一个创新的边缘网络，其核心功能是从低光照图像中直接提取边缘结构图。该网络生成的结构图应与地面真实（GT）生成的边缘结构图具有高度的相似性，从而确保准确性和可靠性。
+		
+		\item [(2)] \textbf{初步恢复图像的生成模型：} 开发一个用于生成初步恢复图像的低光照图像增强模型。该模型应专注于从弱光条件下的图像中恢复清晰度和细节，以提高整体图像质量。
+		
+		\item [(2)] \textbf{边缘语义信息的增强网络模型：} 在现有的直接串联方法基础上，进行创新性改进，构建一种更有效利用边缘语义信息的增强网络模型。目的在于通过这种改进，进一步提升图像增强过程中边缘结构的利用效率和效果。
+	\end{itemize}
+	
+	通过实现这些目标，本研究期望对低照度图像处理领域的理论与实践作出贡献，特别是在图像边缘结构的提取和利用方面。
+	
+	\part*{研究内容}
+	
+	\section{采用的方法}
+	
+	
+	
+	\section{数据集}
+	
+	\section{文献调研与支撑}
+	
+	\part*{具体工作内容}
+	
+	\section{已完成工作}
+	
+	\section{下一步工作}
 	
 	在计算机视觉领域，研究人员使用了不同类型的注意力机制，目的是使模型聚焦于图像本身。这大致分为两种类型：一种是基于通道的注意力机制，即 Squeeze-and-Excite。另一个是基于空间的注意力机制\cite{woo2018cbam}。然而，研究发现这些类型有三个局限性：
 	
