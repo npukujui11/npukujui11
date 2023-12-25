@@ -102,7 +102,7 @@
 	
 	低光图像增强在不同领域享有广泛的应用，包括视觉监控、自动驾驶和计算摄影。特别是，智能手机摄影已经变得无处不在和突出。受限于相机光圈的大小、实时处理的要求以及存储器的约束，在昏暗环境中用智能手机的相机拍摄照片尤其具有挑战性。
 	
-	用于低光增强的传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。然而，这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声，因此在增强结果中保留或放大噪声；找到有效的先验或正则化是具有挑战性的，不准确的先验或正则化可能导致增强结果中的伪像和颜色偏差；由于其复杂的优化过程，运行时间相对较长。
+	用于低光增强的传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。然而，这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声\cite{liu2021retinex, xu2020learning}，因此在增强结果中保留或放大噪声；找到有效的先验或正则化是具有挑战性的，不准确的先验或正则化可能导致增强结果中的伪像和颜色偏差；由于其复杂的优化过程，运行时间相对较长。
 	
 	近年来基于深度学习的 LLIE 取得了引人注目的成功。基于深度学习的解决方案比传统方法具有更好的准确性、鲁棒性和速度，因此越来越受到关注。然而，现有的低光照图像增强技术聚焦于构建数据驱动的深度网络，通常其网络模型复杂，导致计算效率低、推理速度慢，并且由于对于训练数据分布的依赖性导致其在未知场景下的性能缺乏保障。
 	
@@ -401,13 +401,14 @@
 		}
 	\end{figure}
 	
+	\subsection{研究背景}
+	
 	\section{研究目的}
 	
-	现有的方法仍有很大的改进空间，例如如何在提高亮度的同时消除产生的噪声，如何避免颜色失真现象等。一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势。
+	现有的方法仍有很大的改进空间，例如如何在提高亮度的同时消除产生的噪声，如何避免颜色失真现象等。一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势，如图\ref{fig: VE-LOL-L Visual}展示了不同算法在VE-LOL-L数据集下的可视化结果。
 	
 	\begin{figure}[htbp]
 		\centering
-		\setlength{\abovecaptionskip}{-0.05cm}
 		\begin{subfigure}{0.17\columnwidth}
 			\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
 			\captionsetup{font=scriptsize}
@@ -470,17 +471,117 @@
 		\end{subfigure}
 		\caption{
 			\label{fig: VE-LOL-L Visual} 
-			Visual results of different algorithms on low-illumination images sampled from the VE-LOL-L dataset.
+			不同算法对从 VE-LOL-L 数据集采样的低照度图像的可视化结果。 
 		}
 	\end{figure}
 	
 	近年来，基于深度学习的低光图像增强（LLIE）技术取得了显著成就，它使用神经网络来学习从弱光图像到自然光图像的映射。与传统方法相比，基于深度学习的解决方案在准确性、鲁棒性和处理速度方面表现更优，因此受到了广泛关注。特别是卷积神经网络（CNN）在多个计算机视觉任务中展现出卓越的性能。CNN通过利用注意力机制和\cite{yang2021locally, zhang2020attention}上下文信息，能够从原始图像中有效提取多尺度特征\cite{li2018multi, zamir2020learning}。在这些成果的推动下，基于CNN的低光图像增强方法得到了持续发展。例如，一种基于CNN的自适应低光图像增强框架\cite{li2020visual}显著提升了图像的对比度、颜色和细节信息。然而，现有的基于CNN的方法大多集中于图像亮度、纹理和颜色的恢复，对于局部光照不均匀、颜色信息和细节信息的丢失问题，仍存在过增强或增强不足的挑战。
 	
-	此外，现有的方法可能无法在极暗或极亮的区域恢复图像边缘细节\cite{xu2023low}。同时，当物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。而加入边缘先验可以降低优化外观重构时的不适定程度。人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。
+	现有的方法可能无法在极暗或极亮的区域恢复图像边缘细节\cite{xu2023low}，如图\ref{fig: SNR (CVPR 2022)}和图\ref{fig: SMG-LLIE}所示，暗区结构细节模糊。同时，当物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。而加入边缘先验可以降低优化外观重构时的不适定程度。人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。
 	
+	\begin{figure}[htb]
+		\centering
+		\begin{subfigure}{0.45\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/EEMEFN/EEMEFN framework}
+			\captionsetup{font=scriptsize}
+			\caption{\label{fig: EEMEFN}
+				该 LLIE 结构源自\cite{zhu2020eemefn},如其 Multi-Exposure Fusion 部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat, 后续通过一个 U-Net 网络进一步恢复图像。}
+		\end{subfigure}
+		\begin{subfigure}{0.45\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/EdgeNet/Archtecture workflow}
+			\captionsetup{font=scriptsize}
+			\caption{\label{fig: EdgeNet} 
+				该 LLIE 结构源自\cite{rana2021edge}使用 EdgeNet 首先从低光图像中过滤边缘，EnhanceNet 反复使用上采样和下采样块的组合，从局部到全局逐渐提取特征，并消除伪影和噪声。}
+		\end{subfigure}
+		\caption{
+			\label{fig: Traditional Architecture}
+			边缘图像指导弱光图像增强的传统架构。
+		}
+	\end{figure}
 	
+	\begin{figure}[htb]
+		\centering
+		\begin{subfigure}{0.25\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Structure Modeling and Guidance/Input}
+			\captionsetup{font=scriptsize}
+			\caption{Input}
+			\label{fig: Input}
+		\end{subfigure}
+		\begin{subfigure}{0.25\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Structure Modeling and Guidance/Structure of (a)}
+			\captionsetup{font=scriptsize}
+			\caption{Structure of (a)}
+			\label{fig: Structure of (a)}	
+		\end{subfigure}
+		\begin{subfigure}{0.25\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022)}
+			\captionsetup{font=scriptsize}
+			\caption{SNR (CVPR 2022)}
+			\label{fig: SNR (CVPR 2022)}	
+		\end{subfigure}
+		\begin{subfigure}{0.25\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Structure Modeling and Guidance/Structure Modeling}
+			\captionsetup{font=scriptsize}
+			\caption{Structure Modeling}
+			\label{fig: Structure Modeling}
+		\end{subfigure}
+		\begin{subfigure}{0.25\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Structure Modeling and Guidance/Ours}
+			\captionsetup{font=scriptsize}
+			\caption{SMG-LLIE}
+			\label{fig: SMG-LLIE}
+		\end{subfigure}
+		\begin{subfigure}{0.25\columnwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Structure Modeling and Guidance/Ground Truth}
+			\captionsetup{font=scriptsize}
+			\caption{Ground Truth}
+			\label{fig: Ground Truth}
+		\end{subfigure}
+		\caption{
+			\label{fig: Structural Information}
+			SID-sRGB\cite{chen2018learning}中一张弱光图片, 通过SOTA方法 (c) 和\cite{xu2023low}提出的方法 (e)增强。作者的方法可以从输入的图像中合成结构图(d)，使细节更清晰，对比度更清晰，颜色更鲜艳。虽然(c)的 PSNR 为 28.17，但其 SSIM 低为 0.75。作者的方法在dB和SSIM\cite{wang2004image}的得分都很高，分别为28.60 dB 和 0.80。
+		}
+	\end{figure}
 	
-	\paragraph{Attention in CV}
+	基于这个问题，即\textbf{如何更好的使用边缘图来“指导”弱光图像的恢复？}我们对此进行了相关文献调研。其中，一类方法（如图\ref{fig: Traditional Architecture}所示，我们称之为传统架构）是采用边缘检测思想来引导弱光图像增强，其策略是将边缘图与\textbf{一张从弱光中初步恢复的图像}（后面统一称作初步恢复图像）进行串联，然后通过一个增强网络来实现最终的图像增强\cite{zhu2020eemefn, rana2021edge}。但是我们通过观察这类模型的架构发现其具有以下三个特点：
+	
+	\begin{itemize}
+		\item [(1)] 其恢复结果的质量往往会受到最后的增强网络设计和初步恢复图像所包含特征与真实图像特征之间的相似度的影响。
+		
+		\item [(2)] 边缘图的准确性会极大影响最终的恢复结果，直接从弱光图像中获取边缘图具有一定的挑战性。
+		
+		\item [(3)] 边缘图与初步恢复图像之间多采用串联方式输入卷积以获得最终增强结果。
+	\end{itemize}
+	
+	传统架构存在一定的局限性，虽然采用了边缘结构信息增强弱光图像，但是无法很好的利用边缘信息语义指导恢复弱光图像，需要在现有的直接串联方法的基础上进行改进。此外，从低光照中的图片很难提取到好的结构信息，如何设计更好的边缘网络从弱光图像中提取出接近 GT 边缘图的结果是我们需要考虑的问题。
+	
+	作者\cite{xu2023low}提出了一种基于结构先验的图像增强方式，以更好的从弱光图像中提取到更有效的边缘信息并用于指导图像增强。从图\ref{fig: Structural Information}中可以看到边缘图和LBP图\cite{pietikainen2010local}所反映结构信息具有明显的区别，边缘信息能反映更多的细节信息。我们不难发现，相较于LBP，图像边缘图仅保留了很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。
+	
+	\begin{figure}[htb]
+		\centering 
+		\begin{subfigure}{0.9\columnwidth}
+			\includegraphics[width=\columnwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
+			\captionsetup{font=scriptsize}
+			\caption{该 LLIE 结构源自\cite{xu2023low}，其提出一种基于 GAN Loss 的模型去对结构信息建模，通过获得的结构信息指导增强。}
+			\label{fig: SMG-LLIE Architecture}
+		\end{subfigure}
+		\caption{
+			\label{fig: SMG-LLIE Overview} 
+			边缘图像指导弱光图像增强的最新架构。
+		}
+	\end{figure}
+	
+	此外，获取边缘图的方法也各不相同，在 LLIE 任务中，常见方法采用边缘检测网络来生成边缘图，然后使用 Canny 或 Sobel 算子\cite{maini2009study}从 GT 中获取边缘图用做对照组。目前在 LLIE 领域中获取边缘图分化成了两个不同的方向，一种是通过初步恢复图像获取边缘图（见图\ref{fig: EEMEFN}），另一种是直接通过弱光图像以获取边缘图（见图\ref{fig: EdgeNet}和图\ref{fig: SMG-LLIE Architecture}）。LLIE 任务中边缘检测的主要有下列方法：
+	
+	\begin{itemize}
+		\item [(1)] 手工设计各种滤波器来生成边缘图。
+		
+		\item [(2)] 根据人类设计的特征使用数据驱动模型来预测边缘(随机决策森林来学习边缘板块)。
+		
+		\item [(3)] 深度学习方法从原始数据中学习复杂的特征表示端到端边缘检测模型(RCF边缘检测模型\cite{liu2017richer})。
+	\end{itemize}
+	
+	\part{研究内容}
 	
 	在计算机视觉领域，研究人员使用了不同类型的注意力机制，目的是使模型聚焦于图像本身。这大致分为两种类型：一种是基于通道的注意力机制，即 Squeeze-and-Excite。另一个是基于空间的注意力机制\cite{woo2018cbam}。然而，研究发现这些类型有三个局限性：
 	
@@ -518,18 +619,7 @@
 	\section{方向}
 	
 	根据目前的文献研究，在 LLIE 任务中，一种方法是采用边缘检测思想来引导弱光图像增强\footnote{为什么要采用图像的边缘图片来指导弱光图像恢复？
-		首先，图像边缘图仅需要很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。其次，低光图像通常具有很高的对比度，现有的方法可能无法在极暗或极亮的区域恢复图像边缘细节。同时，当物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。而加入边缘先验可以降低优化外观重构时的不适定程度。最后，人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。}，其策略是将边缘图与\textbf{初步恢复的图像}进行串联，然后通过单一的增强网络来实现最终的图像恢复（见Fig. \ref{fig: EEMEFN}）。恢复结果的质量往往会受到最后的增强网络设计和初步恢复图像所包含特征与真实图像特征之间的相似度的影响。
-	
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=\columnwidth]{picture/LLIE/EEMEFN/EEMEFN framework}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: EEMEFN} 
-			该 LLIE 结构源自\cite{zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。
-		}
-	\end{figure}
+		首先，图像边缘图仅需要很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。其次，低光图像通常具有很高的对比度，现有的方法可能无法在极暗或极亮的区域恢复图像边缘细节。同时，当物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。而加入边缘先验可以降低优化外观重构时的不适定程度。最后，人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。}，其策略是将边缘图与\textbf{初步恢复的图像}进行串联，然后通过单一的增强网络来实现最终的图像恢复。恢复结果的质量往往会受到最后的增强网络设计和初步恢复图像所包含特征与真实图像特征之间的相似度的影响。
 	
 	根据目前的文献调研，当前的此类方法的特点只集中在通过边缘图指导图像恢复，且恢复出来的图像还是有明显噪点。
 	

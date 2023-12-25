@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  20 DEC 2023 02:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  25 DEC 2023 22:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -968,31 +968,54 @@ File: picture/LLIE/VE-LOL-L/KinD++.jpg Graphic file (type bmp)
 <picture/LLIE/VE-LOL-L/KinD++.jpg>
 File: picture/LLIE/VE-LOL-L/URetinexNet.jpg Graphic file (type bmp)
 <picture/LLIE/VE-LOL-L/URetinexNet.jpg>
- [11] [12]
+ [11]
 File: picture/LLIE/EEMEFN/EEMEFN framework.jpg Graphic file (type bmp)
 <picture/LLIE/EEMEFN/EEMEFN framework.jpg>
- [13]
+File: picture/LLIE/EdgeNet/Archtecture workflow.jpg Graphic file (type bmp)
+<picture/LLIE/EdgeNet/Archtecture workflow.jpg>
+File: picture/LLIE/Structure Modeling and Guidance/Input.jpg Graphic file (type
+ bmp)
+<picture/LLIE/Structure Modeling and Guidance/Input.jpg>
+File: picture/LLIE/Structure Modeling and Guidance/Structure of (a).jpg Graphic
+ file (type bmp)
+<picture/LLIE/Structure Modeling and Guidance/Structure of (a).jpg>
+File: picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022).jpg Graphic 
+file (type bmp)
+<picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022).jpg>
+File: picture/LLIE/Structure Modeling and Guidance/Structure Modeling.jpg Graph
+ic file (type bmp)
+<picture/LLIE/Structure Modeling and Guidance/Structure Modeling.jpg>
+File: picture/LLIE/Structure Modeling and Guidance/Ours.jpg Graphic file (type 
+bmp)
+<picture/LLIE/Structure Modeling and Guidance/Ours.jpg>
+File: picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg Graphic fil
+e (type bmp)
+<picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg>
+File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
+ype bmp)
+<picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
+ [12] [13]
+[14]
 File: picture/LLIE/My Architecture/The proposed initial architecture.pdf Graphi
 c file (type pdf)
 <use picture/LLIE/My Architecture/The proposed initial architecture.pdf>
 
 
-LaTeX Warning: Reference `fig: Conformer architecture' on page 14 undefined on 
-input line 562.
+LaTeX Warning: Reference `fig: Conformer architecture' on page 15 undefined on 
+input line 652.
 
 
-LaTeX Warning: Reference `fig: Conformer architecture' on page 14 undefined on 
-input line 562.
+LaTeX Warning: Reference `fig: Conformer architecture' on page 15 undefined on 
+input line 652.
 
 File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type bmp)
 <picture/LLIE/Uformer/Uformer.jpg>
-[14]
 File: picture/LLIE/MCLNet/Overview.jpg Graphic file (type bmp)
 <picture/LLIE/MCLNet/Overview.jpg>
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
 ype bmp)
 <picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
- [15] (./inception_paper.bbl [16] [17] [18] [19]) [20]
+[15] [16] [17] (./inception_paper.bbl [18] [19] [20] [21]) [22]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./inception_paper.aux)
@@ -1003,15 +1026,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `inception_paper.out' has not changed.
-(rerunfilecheck)             Checksum: 41E3D328A3A0575D807B951CC0671F55;1801.
+(rerunfilecheck)             Checksum: A504F6098D7EAE408994A62E3EFDEAB6;1982.
  ) 
 Here is how much of TeX's memory you used:
- 21492 strings out of 476683
- 459065 string characters out of 5805371
- 1876012 words of memory out of 5000000
- 41331 multiletter control sequences out of 15000+600000
+ 21721 strings out of 476683
+ 472013 string characters out of 5805371
+ 1881012 words of memory out of 5000000
+ 41552 multiletter control sequences out of 15000+600000
  521009 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,13n,97p,869b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,13n,97p,869b,645s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on inception_paper.pdf (20 pages).
+Output written on inception_paper.pdf (22 pages).
