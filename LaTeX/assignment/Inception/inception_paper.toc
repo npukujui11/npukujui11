@@ -20,6 +20,6 @@
 \contentsline {section}{\numberline {7}下一步工作}{14}{section.7}%
 \contentsline {paragraph}{U-Net for LLIE}{15}{section.7}%
 \contentsline {paragraph}{CNN for LLIE}{15}{section.7}%
-\contentsline {section}{\numberline {8}方向}{15}{section.8}%
+\contentsline {section}{\numberline {8}方向}{16}{section.8}%
 \contentsline {subsection}{\numberline {8.1}方向一}{16}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}方向二}{16}{subsection.8.2}%

@@ -279,6 +279,39 @@ Yun Liu, Ming-Ming Cheng, Xiaowei Hu, Kai Wang, and Xiang Bai.
 \newblock In {\em Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pages 3000--3009, 2017.
 
+\bibitem{peng2021conformer}
+Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
+  and Qixiang Ye.
+\newblock Conformer: Local features coupling global representations for visual
+  recognition.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on
+  computer vision}, pages 367--376, 2021.
+
+\bibitem{jain1991unsupervised}
+Anil~K Jain and Farshid Farrokhnia.
+\newblock Unsupervised texture segmentation using gabor filters.
+\newblock {\em Pattern recognition}, 24(12):1167--1186, 1991.
+
+\bibitem{lowe2004distinctive}
+David~G Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em International journal of computer vision}, 60:91--110, 2004.
+
+\bibitem{ojala2002multiresolution}
+Timo Ojala, Matti Pietikainen, and Topi Maenpaa.
+\newblock Multiresolution gray-scale and rotation invariant texture
+  classification with local binary patterns.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  24(7):971--987, 2002.
+
+\bibitem{lisin2005combining}
+Dimitri~A Lisin, Marwan~A Mattar, Matthew~B Blaschko, Erik~G Learned-Miller,
+  and Mark~C Benfield.
+\newblock Combining local and global image features for object class
+  recognition.
+\newblock In {\em 2005 IEEE computer society conference on computer vision and
+  pattern recognition (CVPR'05)-Workshops}, pages 47--47. IEEE, 2005.
+
 \bibitem{woo2018cbam}
 Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
 \newblock Cbam: Convolutional block attention module.
@@ -330,14 +363,6 @@ Zhendong Wang, Xiaodong Cun, Jianmin Bao, Wengang Zhou, Jianzhuang Liu, and
 \newblock Uformer: A general u-shaped transformer for image restoration.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
   pattern recognition}, pages 17683--17693, 2022.
-
-\bibitem{peng2021conformer}
-Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
-  and Qixiang Ye.
-\newblock Conformer: Local features coupling global representations for visual
-  recognition.
-\newblock In {\em Proceedings of the IEEE/CVF international conference on
-  computer vision}, pages 367--376, 2021.
 
 \bibitem{li2023effective}
 Qiao Li, Bin Jiang, Xiaochen Bo, Chao Yang, and Xu~Wu.

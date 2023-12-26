@@ -184,15 +184,18 @@
 \newlabel{sub@fig: Ground Truth}{{f}{13}{Ground Truth\relax }{figure.caption.15}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces   SID-sRGB\cite  {chen2018learning}中一张弱光图片, 通过SOTA方法 (c) 和\cite  {xu2023low}提出的方法 (e)增强。作者的方法可以从输入的图像中合成结构图(d)，使细节更清晰，对比度更清晰，颜色更鲜艳。虽然(c)的 PSNR 为 28.17，但其 SSIM 低为 0.75。作者的方法在dB和SSIM\cite  {wang2004image}的得分都很高，分别为28.60 dB 和 0.80。 \relax }}{13}{figure.caption.15}\protected@file@percent }
 \newlabel{fig: Structural Information}{{14}{13}{SID-sRGB\cite {chen2018learning}中一张弱光图片, 通过SOTA方法 (c) 和\cite {xu2023low}提出的方法 (e)增强。作者的方法可以从输入的图像中合成结构图(d)，使细节更清晰，对比度更清晰，颜色更鲜艳。虽然(c)的 PSNR 为 28.17，但其 SSIM 低为 0.75。作者的方法在dB和SSIM\cite {wang2004image}的得分都很高，分别为28.60 dB 和 0.80。 \relax }{figure.caption.15}{}}
+\citation{peng2021conformer}
+\citation{jain1991unsupervised,lowe2004distinctive,ojala2002multiresolution}
+\citation{lisin2005combining}
 \citation{woo2018cbam}
-\citation{ramachandran2019stand}
-\citation{woo2018cbam}
-\citation{li2023scconv}
 \@writefile{toc}{\contentsline {section}{\numberline {3}采用的方法}{14}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}数据集}{14}{section.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}文献调研与支撑}{14}{section.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}已完成工作}{14}{section.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7}下一步工作}{14}{section.7}\protected@file@percent }
+\citation{ramachandran2019stand}
+\citation{woo2018cbam}
+\citation{li2023scconv}
 \citation{chen2018learning}
 \citation{chen2018learning,zamir2021learning}
 \citation{chen2018learning}
@@ -208,7 +211,6 @@
 \citation{xu2020learning}
 \@writefile{toc}{\contentsline {paragraph}{U-Net for LLIE}{15}{section.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{CNN for LLIE}{15}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}方向}{15}{section.8}\protected@file@percent }
 \citation{wang2022uformer}
 \citation{peng2021conformer}
 \citation{peng2021conformer}
@@ -220,8 +222,7 @@
 \citation{rana2021edge}
 \bibstyle{unsrt}
 \bibdata{reference}
-\bibcite{liu2021retinex}{1}
-\bibcite{xu2020learning}{2}
+\@writefile{toc}{\contentsline {section}{\numberline {8}方向}{16}{section.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1}方向一}{16}{subsection.8.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.2}方向二}{16}{subsection.8.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces   Low-Lighting 图像恢复网络。结构受 Conformer\cite  {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal  {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal  {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal  {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal  {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }}{17}{figure.caption.18}\protected@file@percent }
@@ -232,6 +233,8 @@
 \newlabel{fig: MCLNet}{{17}{18}{MCLNet 的结构 \relax }{figure.caption.20}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces   该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }}{18}{figure.caption.21}\protected@file@percent }
 \newlabel{fig: Overview}{{18}{18}{该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }{figure.caption.21}{}}
+\bibcite{liu2021retinex}{1}
+\bibcite{xu2020learning}{2}
 \bibcite{ueng1995gamma}{3}
 \bibcite{stark2000adaptive}{4}
 \bibcite{land1971lightness}{5}
@@ -276,17 +279,21 @@
 \bibcite{pietikainen2010local}{44}
 \bibcite{maini2009study}{45}
 \bibcite{liu2017richer}{46}
-\bibcite{woo2018cbam}{47}
-\bibcite{ramachandran2019stand}{48}
-\bibcite{li2023scconv}{49}
-\bibcite{zamir2021learning}{50}
-\bibcite{meng2020gia}{51}
-\bibcite{zhou2018unet++}{52}
-\bibcite{zhou2019unet++}{53}
-\bibcite{wang2022uformer}{54}
-\bibcite{peng2021conformer}{55}
-\bibcite{li2023effective}{56}
-\newlabel{LastPage}{{}{22}{}{page.22}{}}
-\xdef\lastpage@lastpage{22}
-\xdef\lastpage@lastpageHy{22}
-\gdef \@abspage@last{22}
+\bibcite{peng2021conformer}{47}
+\bibcite{jain1991unsupervised}{48}
+\bibcite{lowe2004distinctive}{49}
+\bibcite{ojala2002multiresolution}{50}
+\bibcite{lisin2005combining}{51}
+\bibcite{woo2018cbam}{52}
+\bibcite{ramachandran2019stand}{53}
+\bibcite{li2023scconv}{54}
+\bibcite{zamir2021learning}{55}
+\bibcite{meng2020gia}{56}
+\bibcite{zhou2018unet++}{57}
+\bibcite{zhou2019unet++}{58}
+\bibcite{wang2022uformer}{59}
+\bibcite{li2023effective}{60}
+\newlabel{LastPage}{{}{23}{}{page.23}{}}
+\xdef\lastpage@lastpage{23}
+\xdef\lastpage@lastpageHy{23}
+\gdef \@abspage@last{23}
