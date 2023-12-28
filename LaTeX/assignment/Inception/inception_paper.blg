@@ -68,45 +68,45 @@ Warning--can't use both volume and number fields in tang2023low
 Warning--can't use both volume and number fields in lv2018mbllen
 Warning--can't use both volume and number fields in wang2023ultra
 Warning--can't use both volume and number fields in zhu2020eemefn
-You've used 60 entries,
+You've used 68 entries,
             1791 wiz_defined-function locations,
-            773 strings with 15497 characters,
-and the built_in function-call counts, 18807 in all, are:
-= -- 1728
-> -- 857
-< -- 34
-+ -- 307
-- -- 247
-* -- 1283
-:= -- 2741
-add.period$ -- 193
-call.type$ -- 60
-change.case$ -- 60
+            806 strings with 17093 characters,
+and the built_in function-call counts, 20874 in all, are:
+= -- 1887
+> -- 1004
+< -- 36
++ -- 359
+- -- 291
+* -- 1422
+:= -- 3072
+add.period$ -- 216
+call.type$ -- 68
+change.case$ -- 68
 chr.to.int$ -- 0
-cite$ -- 65
-duplicate$ -- 876
-empty$ -- 1752
-format.name$ -- 247
-if$ -- 4343
+cite$ -- 73
+duplicate$ -- 959
+empty$ -- 1936
+format.name$ -- 291
+if$ -- 4804
 int.to.chr$ -- 0
-int.to.str$ -- 60
-missing$ -- 60
-newline$ -- 303
-num.names$ -- 60
-pop$ -- 211
+int.to.str$ -- 68
+missing$ -- 65
+newline$ -- 340
+num.names$ -- 68
+pop$ -- 249
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 533
+skip$ -- 583
 stack$ -- 0
-substring$ -- 1473
-swap$ -- 352
-text.length$ -- 34
+substring$ -- 1568
+swap$ -- 379
+text.length$ -- 36
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 187
-width$ -- 62
-write$ -- 673
+while$ -- 203
+width$ -- 70
+write$ -- 753
 (There were 15 error messages)

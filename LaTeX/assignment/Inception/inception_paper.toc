@@ -2,24 +2,39 @@
 \contentsline {section}{\numberline {2}研究背景和现状}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}传统低照度图像增强方法}{3}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}基于 Retinex 的方法}{3}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}基于直方图的方法}{5}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.2}基于直方图的方法}{4}{subsubsection.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.3}基于图像反相的方法}{6}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}基于深度学习的低照度图像增强方法}{7}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}有监督学习}{7}{subsubsection.2.2.1}%
-\contentsline {paragraph}{端到端 (End-to-end) 方法}{7}{subsubsection.2.2.1}%
-\contentsline {paragraph}{Retinex 理论方法}{8}{figure.caption.7}%
-\contentsline {paragraph}{基于 Transformer 的方法}{9}{figure.caption.8}%
-\contentsline {subsubsection}{\numberline {2.2.2}无监督学习}{9}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}半监督学习}{10}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Zero-Shot 学习}{10}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2}基于深度学习的低照度图像增强方法}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}有监督学习}{6}{subsubsection.2.2.1}%
+\contentsline {paragraph}{端到端 (End-to-end) 方法}{6}{subsubsection.2.2.1}%
+\contentsline {paragraph}{Retinex 理论方法}{7}{figure.caption.7}%
+\contentsline {paragraph}{基于 Transformer 的方法}{7}{figure.caption.8}%
+\contentsline {subsubsection}{\numberline {2.2.2}无监督学习}{8}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}半监督学习}{9}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Zero-Shot 学习}{9}{subsubsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.3}研究目的}{10}{subsection.2.3}%
-\contentsline {section}{\numberline {3}采用的方法}{14}{section.3}%
-\contentsline {section}{\numberline {4}数据集}{14}{section.4}%
-\contentsline {section}{\numberline {5}文献调研与支撑}{14}{section.5}%
-\contentsline {section}{\numberline {6}已完成工作}{14}{section.6}%
-\contentsline {section}{\numberline {7}下一步工作}{14}{section.7}%
-\contentsline {paragraph}{U-Net for LLIE}{15}{section.7}%
-\contentsline {paragraph}{CNN for LLIE}{15}{section.7}%
-\contentsline {section}{\numberline {8}方向}{16}{section.8}%
-\contentsline {subsection}{\numberline {8.1}方向一}{16}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}方向二}{16}{subsection.8.2}%
+\contentsline {section}{\numberline {3}采用的方法}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}注意力机制}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}U-Net网络结构}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}CNN网络结构}{13}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Transformer网络结构}{14}{subsection.3.4}%
+\contentsline {section}{\numberline {4}具体方法}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}初步恢复图像的生成模型}{14}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}CNN 分支}{16}{subsubsection.4.1.1}%
+\contentsline {paragraph}{注意力残差多尺度块}{17}{equation.4.2}%
+\contentsline {subsubsection}{\numberline {4.1.2}Transformer分支}{18}{subsubsection.4.1.2}%
+\contentsline {paragraph}{嵌入块}{18}{subsubsection.4.1.2}%
+\contentsline {paragraph}{位置编码}{19}{figure.caption.21}%
+\contentsline {paragraph}{Transformer编码器}{19}{equation.4.4}%
+\contentsline {paragraph}{特征耦合单元}{20}{equation.4.8}%
+\contentsline {subsubsection}{\numberline {4.1.3}特征融合模块}{20}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}损失函数}{21}{subsubsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.2}边缘检测网络}{22}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}基于边缘语义信息的增强网络模型}{22}{subsection.4.3}%
+\contentsline {section}{\numberline {5}数据集}{24}{section.5}%
+\contentsline {section}{\numberline {6}文献调研与支撑}{24}{section.6}%
+\contentsline {section}{\numberline {7}已完成工作}{24}{section.7}%
+\contentsline {section}{\numberline {8}下一步工作}{24}{section.8}%
+\contentsline {section}{\numberline {9}方向}{24}{section.9}%
+\contentsline {subsection}{\numberline {9.1}方向一}{24}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}方向二}{24}{subsection.9.2}%
