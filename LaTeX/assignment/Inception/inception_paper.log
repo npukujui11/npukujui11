@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  28 DEC 2023 23:03
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  28 DEC 2023 23:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1088,11 +1088,11 @@ c file (type pdf)
 
 
 LaTeX Warning: Reference `fig: Conformer architecture' on page 24 undefined on 
-input line 1073.
+input line 1075.
 
 
 LaTeX Warning: Reference `fig: Conformer architecture' on page 24 undefined on 
-input line 1073.
+input line 1075.
 
 File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type bmp)
 <picture/LLIE/Uformer/Uformer.jpg>
@@ -1101,9 +1101,9 @@ File: picture/LLIE/MCLNet/Overview.jpg Graphic file (type bmp)
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
 ype bmp)
 <picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
-[24
+(./inception_paper.bbl [24
 
-] (./inception_paper.bbl [25] [26] [27
+] [25] [26] [27
 
 ] [28] [29] [30]) [31]
 
@@ -1113,12 +1113,12 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `inception_paper.out' has not changed.
-(rerunfilecheck)             Checksum: 1364CD77205F4A89B5EBE459DA33458F;3556.
+(rerunfilecheck)             Checksum: 8BB2D1E0F0353081B1E01D7FF1F25E4E;3478.
  ) 
 Here is how much of TeX's memory you used:
  22897 strings out of 476683
  516041 string characters out of 5805371
- 1882012 words of memory out of 5000000
+ 1883012 words of memory out of 5000000
  42718 multiletter control sequences out of 15000+600000
  519014 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
