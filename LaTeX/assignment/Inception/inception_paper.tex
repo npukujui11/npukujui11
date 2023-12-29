@@ -409,7 +409,183 @@
 	
 	\subsection{数据集}
 	
+	LOL和LE-LOL-L数据集的测试图像的客观评价指标值比SCIE和LIME数据集更适合人类视觉效果。用成对数据集训练的算法将得到更明显的增强效果。从数据中可以看出，基于监督学习的方法比其他方法更能取得更好的效果。
+	
+	然而，无监督学习、Zero-Shot学习和半监督学习是当前的发展趋势，主要是因为在低光照环境下很难获得成对的图像。与其他方法相比，基于完全监督学习的方法泛化能力较低，适用性较差。此外，无监督学习方法可以通过设计适当的损失函数和网络结构，引入更多反映环境特征的先验知识。
+	
+	\subsection{评价指标}
+	
+	\subsubsection{客观评价指标}
+	
+	图像的客观评价指标很多，不同角度的评价标准也不尽相同。每种评价标准都有其相应的优缺点。到目前为止，还没有明确设计用于微光图像增强的评估指标。现有的图像质量评价方法可分为完全参考评价指标和无参考评价指标。
+	
+	\textbf{完全参考评价指标}需要有一个完整的参考图像（即原始图像或专家标注的高质量图像）作为参照。通过将待评价的图像与参考图像进行比较，计算它们之间的差异来评估图像的质量。常见的完全参考评价指标包括：均方误差（Mean Square Error，MSE）、峰值信噪比（Peak Signal-to-Noise Ratio，PSNR）、结构相似性指数（Structural Similarity Index，SSIM）
+	
+	\begin{table}[!htbp]
+		\centering
+		\small
+		%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{cc}
+				
+				\toprule
+				
+				\textbf{Abbreviation} & \textbf{Full-/Non-Reference} \\
+				
+				\hline
+				
+				MSE (Mean Square Error) & Full-Reference \\
+				MAE (Mean Absolute Error) & Full-Reference \\
+				SNR (Signal to Noise Ratio) & Full-Reference \\
+				PSNR (Peak-Signal to Noise Ratio) & Full-Reference \\
+				LPIPS (Learned Perceptual Image Patch Similarity) & Full-Reference \\
+				IFC (Information Fidelity Criterion) & Full-Reference \\
+				VIF (Visual Information Fidelity) & Full-Reference \\
+				SSIM (Structural Similarity Index) & Full-Reference \\
+				IE (Information Entropy) & Non-Reference \\
+				NIQE (Natural Image Quality Evaluator) & Non-Reference \\
+				LOE (Lightness Order Error) & Full-Reference \\
+				PI (Perceptual Index) & Non-Reference \\
+				MUSIQ (Multi-scale Image Quality Transformer) & Non-Reference \\
+				NIMA (Neural Image Assessment) & Non-Reference \\
+				SPAQ (Smartphone Photography Attribute and Quality) & Non-Reference \\
+				
+				\bottomrule
+				
+			\end{tabular}
+			%}
+		%	\captionsetup{font=scriptsize}
+		\caption{\label{tab: quality evaluation index}
+			图像的客观质量评价指标
+		} %表格的标题
+	\end{table}
+	
+	\textbf{无参考评价指标}不需要参考图像，仅通过待评价图像自身的特征来评估图像质量。这些指标主要基于图像的统计特性、信息熵等，无需外部参考信息。常见的无参考评价指标包括：
+	
+	\begin{itemize}
+		\item [(1)] 图像清晰度评估：通过图像的锐度、对比度等特征来评估图像的清晰度和质量。
+		
+		\item [(2)] 图像亮度评估：基于图像的亮度直方图、灰度均值等特征，评估图像的亮度质量。
+		
+		\item [(3)] 图像块失真评估：通过比较图像中局部块之间的差异，来评估图像的块状失真程度。
+	\end{itemize}
+	
+	表\ref{tab: quality evaluation index} 列出了最新的几个经典关键的质量评价指标。
+	
+	\paragraph{峰值信噪比 (Peak-Signal to Noise Ratio, PSNR)} 峰值信噪比（PSNR）是应用最广泛的指标之一。单位为dB。它用于测量两个图像之间的差异。如压缩图像与原始图像、压缩图像质量评估、恢复图像与实际图像、恢复算法性能评估等。PSNR值越高，失真越小。PSNR的公式为式\ref{eq: PSNR}
+	\begin{equation}
+		\begin{aligned}
+			\text{PSNR} = 10 \times \log \frac{\text{{MaxValue}}^2}{\text{MSE}}
+		\end{aligned}
+		\label{eq: PSNR}
+	\end{equation}
+	
+	其中MSE是两个图像的均方误差；MaxValue是图像像素的最大值。
+	
+	\paragraph{结构相似性 (Structural Similarity, SSIM)} 结构相似性（SSIM）是参考图像质量评价中应用最广泛的标准。SSIM用于突出值范围为0–1的两幅图像之间的亮度、对比度和结构相似性；越接近1，两个图像就越相似。假设x和y是两个输入图像，SSIM的公式为式\ref{eq: SSIM_eq}
+	\begin{equation}
+		\begin{aligned}
+			\text{SSIM} = {\left[ l(x,y) \right]}^{\alpha} {\left[C(x,y)\right]}^\beta {\left[S(x,y)\right]}^\gamma
+		\end{aligned}
+		\label{eq: SSIM_eq}
+	\end{equation}
+	
+	其中，$l(x,y)$是亮度比较，$C(x,y)$是对比度比较，$S(x,y)$是结构比较。$\alpha, \beta, \gamma$大于$0$，用于调节三部分比重。$l(x, y)$、$C(x, y)$和$S(x, y)$分别为式\ref{eq: l(x，y)}, 式\ref{eq: C(x，y)}, 式\ref{eq: (x, y)}
+	
+	\begin{equation}
+		\begin{aligned}
+			l(x,y)=\frac{2\mu_x \mu_y + c_1}{\mu x^2 + \mu y^2 + c_1}
+		\end{aligned}
+		\label{eq: l(x，y)}
+	\end{equation}
+	
+	\begin{equation}
+		\begin{aligned}
+			C(x,y) = \frac{2\sigma_{xy}+c_2}{\sigma_x^2 + \sigma_ y^2 + c^2}
+		\end{aligned}
+		\label{eq: C(x，y)}
+	\end{equation}
+	
+	\begin{equation}
+		\begin{aligned}
+			(x, y) = \frac{\sigma_{xy} + c_3}{\sigma_{x}\sigma_{y} + c_3}
+		\end{aligned}
+		\label{eq: (x, y)}
+	\end{equation}
+	
+	其中$\mu_x$和$\mu_y$表示两幅图像的平均值，$\sigma_x$和$sigma_y$分别表示两幅图的标准差。$\sigma_xy$表示两个图像的协方差。$c_1$、$c_2$和$c_3$是常数，以避免分母为0。
+	
+	\paragraph{均方误差 (Mean Square Error, MSE)}
+	
+	均方误差（MSE）也是衡量图像质量最常用的指标之一。它是指估计值与真实值之间的平方差的期望值。在图像处理算法中，它是被处理后的图像像素值与原始像素值之间的平方差的平均值。MSE表达式如式\ref{eq: MSE}
+	\begin{equation}
+		\begin{aligned}
+			\text{MSE} = \frac{1}{M \times N} \sum_{i=1}^{M} \sum_{N}^{j=1}{\left[ g(x,y) - \hat{g}(x,y) \right]}^2
+		\end{aligned}
+		\label{eq: MSE}
+	\end{equation}
+	
+	其中，$M$是图像的高度，$N$是图像的宽度。$g(x,y)$和$\hat{g}(x,y)$分别表示原始图像和增强图像。MSE的值越小，图像质量越好。
+	
+	
+	\paragraph{信息熵 (Information Entropy, IE)}
+	
+	信息熵（IE）反映了图像所携带的信息量。信息熵越大，图像信息越丰富，质量越好。IE用于比较不同图像中信息内容的差异。例如，在同一区域拍摄的图像也会由于额外的拍摄时间而具有不同的信息内容。IE表达式式\ref{eq: IE}
+	\begin{equation}
+		\begin{aligned}
+			\text{H} = -\sum_{i=0}^{M} p(k)\log_{2}p(k)
+		\end{aligned}
+		\label{eq: IE}
+	\end{equation}
+	
+	其中$p(k)$是灰度级$k$的概率密度，$M$是最大灰度级
+	
+	\paragraph{标准偏差 (Standard Deviation, STD)}
+	
+	标准差（STD），也称为标准差，表示每个数据项与平均值的平均距离。STD也是方差的平方根。STD可以反映数据集的分散程度。与图像相比，STD反映了插图与平均值之间的分散程度，是特定范围内图像对比度的衡量标准。标准偏差越大，图像中包含的信息越多，视觉效果越好。STD的表达式式\ref{eq: STD}
+	\begin{equation}
+		\begin{aligned}
+			\text{STD} = \sqrt{\frac{\sum_{i=1}^{M} \sum_{j=1}^{N} f(i,j)\left( f(i,j)-\delta \right)^{2}}{M \times N}}
+		\end{aligned}
+		\label{eq: STD}
+	\end{equation}
+	
+	其中$M$是图像的高度，$N$是图像的宽度，$f(i, j)$表示图像的$(i, j)$处的像素的灰度值。$\delta$表示图像的平均灰度值，其表达式为式\ref{eq: delta}
+	\begin{equation}
+		\begin{aligned}
+			\delta = \frac{1}{M \times N} \sum_{i=1}^{M} \sum_{j=1}^{N} f(i,j)
+		\end{aligned}
+		\label{eq: delta}
+	\end{equation}
+	
+	\paragraph{亮度顺序误差 (Lightness Order Error, LOE)}
+	
+	亮度顺序误差（LOE）是图像亮度的顺序差异，并且通过评估图像在邻域中的亮度的顺序变化过程来评估图像的照度变化。LOE反映了图像的自然保持能力。较小的值表示图像具有更好的亮度顺序并且看起来更自然。表达式为式\ref{eq: LOE}
+	\begin{equation}
+		\begin{aligned}
+			\text{RD}(i,j) = \sum_{x}^{M} \sum_{y}^{N} U\left( L(i,j), L(x,y) \right) \oplus U\left( L_{e}(i,j), L(x,y) \right) 
+		\end{aligned}
+		\label{eq: LOE}
+	\end{equation}
+	
+	式中，$M$是图像的高度，$N$是图像的宽度，而$\oplus$是XOR算子，$L(i, j)$和$L_{e}(x, y)$分别表示三个颜色通道中的最大值。LOE的值越小，图像保持的亮度顺序越好。
+	
+	\subsubsection{主观评价指标}
+	
+	\paragraph{差分平均意见分数 (Differential Mean Opinion Score, MOS)}
+	
+	差分平均意见得分（MOS）或差分平均看法得分（DMOS）。其中，MOS是应用最广泛的主观IQA方法。不同的人在原始图像和增强图像之间进行主观比较，以获得MOS分数，最后获得平均分数。MOS评分范围从1到5，评分越高表示主观增强越好。MOS评分公式为式\ref{MOS}
+	\begin{equation}
+		\begin{aligned}
+			\text{MOS} = \frac{\sum_{n=1}^{N} R_{n}} {N}
+		\end{aligned}
+		\label{eq: MOS}
+	\end{equation}
+	
+	其中$R$表示评价者对图像的满意度得分的数量，$N$表示评价者的总数。
+	
 	\subsection{研究目的}
+	
+	\subsubsection{现有方法的局限性}
 	
 	现有的方法仍有很大的改进空间，例如如何在提高亮度的同时消除产生的噪声，如何避免颜色失真现象等。一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势，如图\ref{fig: VE-LOL-L Visual}展示了不同算法在VE-LOL-L数据集下的可视化结果。
 	
@@ -1005,6 +1181,21 @@
 	
 	\subsection{边缘检测网络}
 	
+	\subsubsection{现有方法的局限性}
+	
+	边缘检测是视觉任务中非常基础的任务，现有的基于 CNN 的边缘检测方法有两个明显的问题。
+	
+	\begin{itemize}
+		\item [(1)] 首先，当前大多数方法主要依赖于 CNN 的最终层（通常是最后一层卷积层）的输出，而忽视了网络中间层的潜在价值。这种做法可能导致信息的丢失，特别是那些在中间层中更为显著的特征信息。
+		
+		\item [(2)] 虽然研究者们普遍关注于探索更深层次的 CNN 结构，但在边缘检测这一特定任务中，这种方法面临着数据稀缺性和梯度消失问题的双重挑战。由于边缘检测任务通常涉及的数据量相对较少，加之深层网络易于出现梯度消失，这些因素共同制约了深层 CNN 在边缘检测领域的应用效果。
+		
+	\end{itemize}
+
+	%现在的方法大多只使用 CNN 的最后一层 conv 的结果，忽略了中间层的结果。
+		
+	%更多的方法集中在探究更深的 CNN，但边缘检测是数据比较少，而且容易发生梯度消失的现象。
+	
 	\begin{figure}[htb]
 		% read manual to see what [ht] means and for other possible options
 		\centering 
@@ -1035,6 +1226,175 @@
 	\part*{具体工作内容}
 	
 	\section{已完成工作}
+	
+	\subsection{初步恢复图像的生成模型实验结果}
+	
+	我们针对初步恢复图像的生成模型进行了实验验证，以验证所提出方法的有效性。首先，介绍了实验的具体实施细节，包括网络的实现、所采用的数据集以及评估指标的选择。接着，通过与当前领先技术的比较分析，展示了我们网络在低光图像增强任务中的性能优势。最后，为了深入理解各个网络组件的贡献，我们执行了一系列消融研究，探讨了这些组件在低光图像增强任务中的作用和重要性。
+	
+	具体来说，实验设置部分详细描述了网络的配置、训练过程中的参数设置、以及用于训练和测试的数据集特性。此外，本研究采用的评估指标被精心选取，以全面反映图像增强的效果，包括定量指标和定性分析。
+	
+	在性能比较部分，我们的方法与当前最先进的低光图像增强技术进行了对比。这一比较不仅基于传统的性能指标，如图像质量评分，还包括了对增强效果的视觉评估，以展示我们方法的综合优势。
+	
+	最后，消融实验部分旨在揭示网络各个组成部分的相对重要性和功能。通过系统地移除或修改网络的特定部分，我们能够评估每个组件对最终增强效果的贡献，从而深入理解整个网络的工作机制。这些实验结果为我们的网络设计提供了进一步的洞察和验证。
+	
+	\subsubsection{实验设置}
+	
+	在实验实施方面，模型是基于 Pytorch 框架进行实现的。为了确定 Transformer 分支的最优输入图像尺寸，我们分别设置了 384x384 和 224x224 两种分辨率，并通过一系列实验来确定最佳的预训练图像尺寸。在模型训练过程中，我们采用了 Adam 优化器，其权重衰减系数设定为 0.00001，以减少过拟合的风险。此外，模型中所有层的学习率统一设置为 0.0001，以确保训练过程的稳定性和收敛性。
+	
+	基于硬件资源和内存限制的考虑，我们将训练的批处理大小设定为 8。同时，为了充分训练模型并确保其泛化能力，我们将训练的 epoch 数设置为200。所有的实验均在配备 NVIDIA GeForce RTX 4090 显卡的计算平台上进行，以确保训练和测试过程的高效性和可靠性。
+	
+	\subsubsection{数据集和评价指标}
+	
+	为了全面评估我们所提出网络的性能，我们对两个公共数据集（LOL\cite{wei2018deep}和SCIE\cite{cai2018learning}）进行了实验评估。在评估过程中，我们使用了峰值信噪比（PSNR）\cite{wang2004image}、结构相似度（SSIM）\cite{wang2004image}以及自然图像质量评估器（NIQE）\cite{mittal2012making}等度量指标，以全面衡量图像增强结果的质量。这些评价指标旨在提供对重建图像质量的客观评估，从而深入了解我们提出的网络在低光照环境下的性能表现。
+	
+	\subsubsection{对比试验}
+	
+	我们将所提算法的结果与多个公开可获得的代码进行比较，包括HE\cite{pisano1998contrast}、LightenNet\cite{li2018lightennet}、LLNet\cite{lore2017llnet}、Retinex-Net\cite{wei2018deep}、MBLLEN\cite{lv2018mbllen}、EnlightenGAN\cite{jiang2021enlightengan}、Zero-DCE\cite{guo2020zero}以及KinD\cite{zhang2019kindling}。
+	
+	\begin{table}[!htbp]
+		\centering
+		\tiny
+		\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+				\begin{tabular}{>{\centering\arraybackslash}m{2.5cm}|c|c|c|c|c|c}
+						
+						\hline %添加表格头部粗线
+						
+						\multirowcell{2}{\textbf{Method}} & \multicolumn{3}{c|}{\makecell{\textbf{LOL}\cite{wei2018deep}}} & \multicolumn{3}{c}{\makecell{\textbf{SCIE}\cite{cai2018learning}}} \\
+						
+						\cline{2-7}
+						
+						
+						      & \textbf{PSNR↑} & \textbf{SSIM↑} & \textbf{NIQE↓} & \textbf{PSNR↑}  & \textbf{SSIM↑} & \textbf{NIQE↓} \\
+						
+						\hline
+						
+						input & 7.773 & 0.181 & 0.560 & 17.824 & 0.779 & 0.148  \\
+						
+						\hline	
+						
+						HE\cite{pisano1998contrast}             & 15.467 & 0.504 & 9.531 & 15.342 & 0.741 & 9.232 \\
+						LightenNet\cite{li2018lightennet}       & 10.301 & 0.361 & 7.422 & 13.579 & 0.744 & 8.166 \\
+						LLNet\cite{lore2017llnet}               & \textcolor{blue}{17.953} & 0.704 & \textcolor{red}{3.974} & 12.177 & 0.645 & 4.292 \\
+						Retinex-Net\cite{wei2018deep}           & 16.774 & 0.462 & 5.474 & 12.310 & 0.671 & 7.239 \\ 
+						KinD\cite{zhang2019kindling} 	          & 16.648 & \textcolor{blue}{0.779} & 6.175 & 21.103 & \textcolor{red}{0.838} & 4.195 \\
+						MBLLEN\cite{lv2018mbllen}               & 17.902 & 0.715 & \textcolor{blue}{4.247} & 13.638 & 0.632 & \textcolor{blue}{2.108} \\
+						EnlightenGAN\cite{jiang2021enlightengan}& 17.483 & 0.658 & 4.889 & 18.726 & 0.822 & 5.216 \\
+						Zero-DCE\cite{guo2020zero}              & 17.622 & 0.556 & 7.972 & \textcolor{red}{22.682} & 0.810 & \textcolor{red}{1.158} \\
+						\textbf{Ours}                             & \textcolor{red}{22.780} & \textcolor{red}{0.823} & 4.473 & \textcolor{blue}{21.543} & \textcolor{blue}{0.835} & 3.412 \\
+						\hline
+						
+					\end{tabular}
+			}
+		%\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{
+				\label{tab: Quantitative Comparisons on LOL-test and SCI testing datasets}
+				LOL和SCIE数据集在各方法下的对比值，其中红色表示最优，蓝色表示次优，$↑$表示越高越好，$↓$表示越低越好。
+				} 
+	\end{table}
+	
+	本研究通过对 LOL 数据集的全面评估展示了所提出模型与其他方法的整体性能，具体结果见表\ref{tab: Quantitative Comparisons on LOL-test and SCI testing datasets}。在LOL测试数据集上，我们的模型展现出卓越的性能，其 PSNR 和 SSIM 达到最佳水平。在 SCIE 测试数据集上，尽管 PSNR 和 SSIM 相对较低，但仍表现出令人满意的效果，验证了模型的有效性。
+	
+	\begin{figure}[htb] 
+		\centering 
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/Input}
+			\captionsetup{font=scriptsize}
+			\caption{Input}
+			\label{fig: LLI Input}
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/LightenNet}
+			\captionsetup{font=scriptsize}
+			\caption{LightenNet}
+			\label{fig: LightenNet}
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/LLNet}				
+			\captionsetup{font=scriptsize}
+			\caption{LLNet}
+			\label{fig: LLI LLNet}	
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/RetinexNet}
+			\captionsetup{font=scriptsize}
+			\caption{RetinexNet}
+			\label{fig: LLI RetinexNet}	
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/KinD}
+			\captionsetup{font=scriptsize}
+			\caption{KinD}
+			\label{fig: KinD}	
+		\end{subfigure}\\
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/MBLLEN}
+			\captionsetup{font=scriptsize}
+			\caption{MBLLEN}
+			\label{fig: MBLLEN}	
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/EnlightenGAN}
+			\captionsetup{font=scriptsize}
+			\caption{EnlightenGAN}
+			\label{fig: LLI EnlightenGAN}	
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/Zero-DCE}
+			\captionsetup{font=scriptsize}
+			\caption{Zero-DCE}
+			\label{fig: Zero-DCE}	
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/Ours}
+			\captionsetup{font=scriptsize}
+			\caption{Ours}
+			\label{fig: Ours}	
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/GT}
+			\captionsetup{font=scriptsize}
+			\caption{GT}
+			\label{fig: GT}	
+		\end{subfigure}
+		%\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: LOL}
+			不同方法在LOL测试数据集上的视觉表现。
+		}
+	\end{figure}
+	
+	图\ref{fig: LOL}展示了各种方法在LOL测试数据集上的图像增强效果，其中 GT 表示真实图片。与Zero-DCE、LLNet和MBLLEN相比，RetinexNet呈现出颜色饱和度更强的增强效果，而Zero-DCE、LLNet和MBLLEN的结果在视觉上偏暗。EnlightenGAN在增强的图像中显示出明显的灰色伪影，表明其对噪声较为敏感。尽管我们的方法相对真实值而言稍显偏亮，但在LOL数据集上表现出优于对比方法的效果。
+	
+	\subsection{消融实验}
+	
+	我们采用PSNR、SSIM和NIQE指标，对SCConv模块、Transformer分支以及基于不同尺寸的预训练视觉变换器模型的有效性进行评估。我们设定去除SCConv模块的CNN分支作为基线网络。如表\ref{tab: Ablation Study}所示，引入Transformer分支并增加输入到Transformer分支的特征图尺寸，相较于基线，模型性能得到了显著改善。
+	
+	\begin{table}[!htbp]
+		\centering
+		\tiny
+		\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{c|c|c|c|c|c|c}
+						
+					\hline
+						
+					\textbf{基线模型} & \textbf{SCConv} & \textbf{Transformer分支} & \textbf{Transformer预训练权重尺寸}  & \textbf{PSNR↑} & \textbf{SSIM↑} & \textbf{NIQE↓} \\
+			
+					\hline
+					
+					\checkmark &            &            &                  & 18.222 & 0.642 & 7.213 \\
+					\checkmark & \checkmark &            &                  & 18.231 & 0.523 & 5.231 \\
+					\checkmark & \checkmark & \checkmark & $224 \times 224$ & 21.643 & 0.815 & 4.552 \\
+					\checkmark & \checkmark & \checkmark & $384 \times 384$ & \textbf{22.780} & \textbf{0.823} & \textbf{4.473} \\
+		
+					\hline			
+			\end{tabular}
+		}
+		%\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{
+			\label{tab: Ablation Study}
+			Transformer分支和Transformer预训练权重尺寸和SCConv对模型的影响。
+		} 
+	\end{table}
 	
 	\section{下一步工作}
 	

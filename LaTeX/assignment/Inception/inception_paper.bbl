@@ -403,6 +403,37 @@ Justin Johnson, Alexandre Alahi, and Li~Fei-Fei.
   Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part II 14},
   pages 694--711. Springer, 2016.
 
+\bibitem{cai2018learning}
+Jianrui Cai, Shuhang Gu, and Lei Zhang.
+\newblock Learning a deep single image contrast enhancer from multi-exposure
+  images.
+\newblock {\em IEEE Transactions on Image Processing}, 27(4):2049--2062, 2018.
+
+\bibitem{mittal2012making}
+Anish Mittal, Rajiv Soundararajan, and Alan~C Bovik.
+\newblock Making a “completely blind” image quality analyzer.
+\newblock {\em IEEE Signal processing letters}, 20(3):209--212, 2012.
+
+\bibitem{pisano1998contrast}
+Etta~D Pisano, Shuquan Zong, Bradley~M Hemminger, Marla DeLuca, R~Eugene
+  Johnston, Keith Muller, M~Patricia Braeuning, and Stephen~M Pizer.
+\newblock Contrast limited adaptive histogram equalization image processing to
+  improve the detection of simulated spiculations in dense mammograms.
+\newblock {\em Journal of Digital imaging}, 11:193--200, 1998.
+
+\bibitem{li2018lightennet}
+Chongyi Li, Jichang Guo, Fatih Porikli, and Yanwei Pang.
+\newblock Lightennet: A convolutional neural network for weakly illuminated
+  image enhancement.
+\newblock {\em Pattern recognition letters}, 104:15--22, 2018.
+
+\bibitem{guo2020zero}
+Chunle Guo, Chongyi Li, Jichang Guo, Chen~Change Loy, Junhui Hou, Sam Kwong,
+  and Runmin Cong.
+\newblock Zero-reference deep curve estimation for low-light image enhancement.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 1780--1789, 2020.
+
 \bibitem{wang2022uformer}
 Zhendong Wang, Xiaodong Cun, Jianmin Bao, Wengang Zhou, Jianzhuang Liu, and
   Houqiang Li.
