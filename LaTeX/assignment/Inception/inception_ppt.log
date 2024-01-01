@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  1 JAN 2024 22:22
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  1 JAN 2024 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1631,8 +1631,18 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [12
 
 ]
-LaTeX Font Info:    Trying to load font information for U+ding on input line 57
-7.
+File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type bmp)
+<picture/LLIE/Uformer/Uformer.jpg>
+
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[13
+
+]
+LaTeX Font Info:    Trying to load font information for U+ding on input line 60
+3.
  (d:/Soft/texlive/2023/texmf-dist/tex/latex/bbding/Uding.fd
 File: Uding.fd 1996/02/01 v1.0 BBding font definitions
 )
@@ -1659,7 +1669,7 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[13
+[14
 
 ]
 File: picture/LLIE/EEMEFN/EEMEFN framework.jpg Graphic file (type bmp)
@@ -1671,7 +1681,7 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[14
+[15
 
 ]
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
@@ -1682,7 +1692,14 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[15
+[16
+
+]
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[17
 
 ]
 File: picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101).jpg
@@ -1693,21 +1710,21 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[16
+[18
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 719.
+(Font)              <10> on input line 770.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 719.
+(Font)              <7> on input line 770.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 719.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 770.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 719.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 770.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 719.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 770.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 719.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 770.
 File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type bmp)
 
 <picture/LLIE/Conformer/the proposed Conformer.jpg>
@@ -1716,28 +1733,21 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[17
-
-]
-Overfull \hbox (3.81775pt too wide) has occurred while \output is active
- [][][][] []  
- []
-
-[18
-
-]
-Overfull \hbox (3.81775pt too wide) has occurred while \output is active
- [][][][] []  
- []
-
 [19
+
+]
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[20
 
 ]
 File: picture/LLIE/My Architecture/Total architecture.pdf Graphic file (type pd
 f)
 <use picture/LLIE/My Architecture/Total architecture.pdf>
 
-Overfull \vbox (0.56534pt too high) detected at line 801
+Overfull \vbox (0.56534pt too high) detected at line 831
  []
 
 
@@ -1745,7 +1755,7 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[20
+[21
 
 ]
 File: picture/LLIE/My Architecture/The proposed initial architecture.jpg Graphi
@@ -1759,21 +1769,7 @@ icture).jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture(Abstract Pictur
 e).jpg>
 
-Overfull \vbox (25.7228pt too high) detected at line 861
- []
-
-
-Overfull \hbox (3.81775pt too wide) has occurred while \output is active
- [][][][] []  
- []
-
-[21
-
-]
-File: picture/LLIE/My Architecture/U-Net and AM.jpg Graphic file (type bmp)
-<picture/LLIE/My Architecture/U-Net and AM.jpg>
-
-Overfull \vbox (28.53896pt too high) detected at line 893
+Overfull \vbox (25.7228pt too high) detected at line 891
  []
 
 
@@ -1784,6 +1780,13 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [22
 
 ]
+File: picture/LLIE/My Architecture/U-Net and AM.jpg Graphic file (type bmp)
+<picture/LLIE/My Architecture/U-Net and AM.jpg>
+
+Overfull \vbox (28.53896pt too high) detected at line 923
+ []
+
+
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1798,9 +1801,6 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [24
 
 ]
-File: picture/LLIE/My Architecture/Patch Embedding.jpg Graphic file (type bmp)
-<picture/LLIE/My Architecture/Patch Embedding.jpg>
-
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1808,13 +1808,8 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [25
 
 ]
-File: picture/LLIE/My Architecture/Patch Embedding(ViT).jpg Graphic file (type 
-bmp)
-<picture/LLIE/My Architecture/Patch Embedding(ViT).jpg>
-
-Overfull \vbox (12.48676pt too high) detected at line 1000
- []
-
+File: picture/LLIE/My Architecture/Patch Embedding.jpg Graphic file (type bmp)
+<picture/LLIE/My Architecture/Patch Embedding.jpg>
 
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
@@ -1823,6 +1818,14 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [26
 
 ]
+File: picture/LLIE/My Architecture/Patch Embedding(ViT).jpg Graphic file (type 
+bmp)
+<picture/LLIE/My Architecture/Patch Embedding(ViT).jpg>
+
+Overfull \vbox (12.48676pt too high) detected at line 1030
+ []
+
+
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1835,6 +1838,13 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  []
 
 [28
+
+]
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[29
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00044.png Graphic file (ty
@@ -1872,14 +1882,14 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[29
+[30
 
 ]
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[30
+[31
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00269.png Graphic file (ty
@@ -1901,20 +1911,9 @@ File: picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png Graphic f
 ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png>
 
-Overfull \vbox (1.46552pt too high) detected at line 1227
+Overfull \vbox (1.46552pt too high) detected at line 1257
  []
 
-
-Overfull \hbox (3.81775pt too wide) has occurred while \output is active
- [][][][] []  
- []
-
-[31
-
-]
-File: picture/LLIE/My Architecture/Edge Detection Network.jpg Graphic file (typ
-e bmp)
-<picture/LLIE/My Architecture/Edge Detection Network.jpg>
 
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
@@ -1923,6 +1922,10 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 [32
 
 ]
+File: picture/LLIE/My Architecture/Edge Detection Network.jpg Graphic file (typ
+e bmp)
+<picture/LLIE/My Architecture/Edge Detection Network.jpg>
+
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
@@ -1936,7 +1939,28 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 
 [34
 
-] [35
+]
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[35
+
+]
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[36
+
+]
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[37
+
+] [38
 
 ] (./inception_ppt.bbl
 
@@ -1967,14 +1991,22 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[36
+[39
 
 ]
 Overfull \hbox (3.81775pt too wide) has occurred while \output is active
  [][][][] []  
  []
 
-[37
+[40
+
+
+]
+Overfull \hbox (3.81775pt too wide) has occurred while \output is active
+ [][][][] []  
+ []
+
+[41
 
 
 ]
@@ -1989,15 +2021,15 @@ Overfull \hbox (3.81775pt too wide) has occurred while \output is active
 
  (./inception_ppt.aux)
 Package rerunfilecheck Info: File `inception_ppt.out' has not changed.
-(rerunfilecheck)             Checksum: 80BE0EB4FD455D35968F6AE93E41F5E7;1279.
+(rerunfilecheck)             Checksum: 63AB6117737BC8CE324213FEC8F24F88;1249.
  ) 
 Here is how much of TeX's memory you used:
- 35684 strings out of 476683
- 828746 string characters out of 5805371
- 1876012 words of memory out of 5000000
- 55095 multiletter control sequences out of 15000+600000
- 549509 words of font info for 153 fonts, out of 8000000 for 9000
+ 35738 strings out of 476683
+ 830236 string characters out of 5805371
+ 1879012 words of memory out of 5000000
+ 55145 multiletter control sequences out of 15000+600000
+ 549525 words of font info for 155 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,19n,122p,455b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on inception_ppt.pdf (37 pages).
+Output written on inception_ppt.pdf (41 pages).

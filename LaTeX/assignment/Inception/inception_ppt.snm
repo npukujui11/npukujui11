@@ -32,38 +32,39 @@
 \beamer@slide {fig: RetinexNet}{9}
 \beamer@slide {fig: Supervised Learning}{9}
 \beamer@slide {fig: EnlightenGAN Architecture}{10}
-\beamer@slide {fig: Contribution}{17}
-\beamer@slide {fig: Conformer}{17}
-\beamer@slide {fig: Conformer contribution}{17}
-\beamer@slide {fig: Total architecture}{20}
-\beamer@slide {fig: Abstract}{21}
-\beamer@slide {fig: PACUT}{21}
-\beamer@slide {fig: Up-sampling and down-sampling}{21}
-\beamer@slide {fig: The proposed initial architecture(Abstract Picture)}{21}
-\beamer@slide {fig: Parallel architecture combining u-net and transformer}{21}
-\beamer@slide {fig: U-Net and AM}{22}
-\beamer@slide {fig: CNN Branch}{22}
-\beamer@slide {eq: UNetEnhance model}{23}
-\beamer@slide {eq: ARMB}{24}
-\beamer@slide {fig: Patch Embedding}{25}
-\beamer@slide {fig: Patch Embedding in ViT}{26}
-\beamer@slide {fig: LLI}{29}
-\beamer@slide {fig: LLI_canny}{29}
-\beamer@slide {fig: LLI_rcf}{29}
-\beamer@slide {fig: LLI_hog}{29}
-\beamer@slide {fig: LLI_lbp}{29}
-\beamer@slide {fig: GI}{29}
-\beamer@slide {fig: GT_canny}{29}
-\beamer@slide {fig: GT_rcf}{29}
-\beamer@slide {fig: GT_hog}{29}
-\beamer@slide {fig: GT_lbp}{29}
-\beamer@slide {fig: LLI Structure Information}{29}
-\beamer@slide {fig: LLI1}{31}
-\beamer@slide {fig: LLI_hog1}{31}
-\beamer@slide {fig: LLI_lbp1}{31}
-\beamer@slide {fig: GI1}{31}
-\beamer@slide {fig: GT_hog1}{31}
-\beamer@slide {fig: GT_lbp1}{31}
-\beamer@slide {fig: LLI Structure Information1}{31}
-\beamer@slide {fig: Edge Detection Network}{32}
-\beamer@slide {tab: Paired_training_datases}{33}
+\beamer@slide {fig: Uformer}{13}
+\beamer@slide {fig: Contribution}{19}
+\beamer@slide {fig: Conformer}{19}
+\beamer@slide {fig: Conformer contribution}{19}
+\beamer@slide {fig: Total architecture}{21}
+\beamer@slide {fig: Abstract}{22}
+\beamer@slide {fig: PACUT}{22}
+\beamer@slide {fig: Up-sampling and down-sampling}{22}
+\beamer@slide {fig: The proposed initial architecture(Abstract Picture)}{22}
+\beamer@slide {fig: Parallel architecture combining u-net and transformer}{22}
+\beamer@slide {fig: U-Net and AM}{23}
+\beamer@slide {fig: CNN Branch}{23}
+\beamer@slide {eq: UNetEnhance model}{24}
+\beamer@slide {eq: ARMB}{25}
+\beamer@slide {fig: Patch Embedding}{26}
+\beamer@slide {fig: Patch Embedding in ViT}{27}
+\beamer@slide {fig: LLI}{30}
+\beamer@slide {fig: LLI_canny}{30}
+\beamer@slide {fig: LLI_rcf}{30}
+\beamer@slide {fig: LLI_hog}{30}
+\beamer@slide {fig: LLI_lbp}{30}
+\beamer@slide {fig: GI}{30}
+\beamer@slide {fig: GT_canny}{30}
+\beamer@slide {fig: GT_rcf}{30}
+\beamer@slide {fig: GT_hog}{30}
+\beamer@slide {fig: GT_lbp}{30}
+\beamer@slide {fig: LLI Structure Information}{30}
+\beamer@slide {fig: LLI1}{32}
+\beamer@slide {fig: LLI_hog1}{32}
+\beamer@slide {fig: LLI_lbp1}{32}
+\beamer@slide {fig: GI1}{32}
+\beamer@slide {fig: GT_hog1}{32}
+\beamer@slide {fig: GT_lbp1}{32}
+\beamer@slide {fig: LLI Structure Information1}{32}
+\beamer@slide {fig: Edge Detection Network}{33}
+\beamer@slide {tab: Paired_training_datases}{35}

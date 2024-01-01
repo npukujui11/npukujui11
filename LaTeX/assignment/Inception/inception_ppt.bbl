@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{30}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -50,6 +50,14 @@
 \newblock \bibinfo{title}{Learning to see in the dark}, in:
   \bibinfo{booktitle}{Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pp. \bibinfo{pages}{3291--3300}.
+%Type = Misc
+\bibitem[{Chen et~al.(2023)Chen, Zhang, Gu, Zhang, Kong and
+  Yuan}]{chen2023cross}
+\bibinfo{author}{Chen, Z.}, \bibinfo{author}{Zhang, Y.}, \bibinfo{author}{Gu,
+  J.}, \bibinfo{author}{Zhang, Y.}, \bibinfo{author}{Kong, L.},
+  \bibinfo{author}{Yuan, X.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Cross aggregation transformer for image restoration}.
+\newblock \href{http://arxiv.org/abs/2211.13654}{{\tt arXiv:2211.13654}}.
 %Type = Article
 \bibitem[{Cooper and Baqai(2004)}]{cooper2004analysis}
 \bibinfo{author}{Cooper, T.J.}, \bibinfo{author}{Baqai, F.A.},
@@ -66,6 +74,19 @@
   enhancement}.
 \newblock \bibinfo{journal}{Symmetry} \bibinfo{volume}{11},
   \bibinfo{pages}{574}.
+%Type = Article
+\bibitem[{Dosovitskiy et~al.(2020)Dosovitskiy, Beyer, Kolesnikov, Weissenborn,
+  Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly
+  et~al.}]{dosovitskiy2020image}
+\bibinfo{author}{Dosovitskiy, A.}, \bibinfo{author}{Beyer, L.},
+  \bibinfo{author}{Kolesnikov, A.}, \bibinfo{author}{Weissenborn, D.},
+  \bibinfo{author}{Zhai, X.}, \bibinfo{author}{Unterthiner, T.},
+  \bibinfo{author}{Dehghani, M.}, \bibinfo{author}{Minderer, M.},
+  \bibinfo{author}{Heigold, G.}, \bibinfo{author}{Gelly, S.}, et~al.,
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{An image is worth 16x16 words: Transformers for image
+  recognition at scale}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2010.11929} .
 %Type = Inproceedings
 \bibitem[{Jiang and Zheng(2019)}]{jiang2019learning}
 \bibinfo{author}{Jiang, H.}, \bibinfo{author}{Zheng, Y.}, \bibinfo{year}{2019}.
@@ -177,6 +198,34 @@
   method}, in: \bibinfo{booktitle}{Conference Record of The Twenty-Ninth
   Asilomar Conference on Signals, Systems and Computers},
   \bibinfo{organization}{IEEE}. pp. \bibinfo{pages}{920--924}.
+%Type = Article
+\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones,
+  Gomez, Kaiser and Polosukhin}]{vaswani2017attention}
+\bibinfo{author}{Vaswani, A.}, \bibinfo{author}{Shazeer, N.},
+  \bibinfo{author}{Parmar, N.}, \bibinfo{author}{Uszkoreit, J.},
+  \bibinfo{author}{Jones, L.}, \bibinfo{author}{Gomez, A.N.},
+  \bibinfo{author}{Kaiser, {\L}.}, \bibinfo{author}{Polosukhin, I.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Attention is all you need}.
+\newblock \bibinfo{journal}{Advances in neural information processing systems}
+  \bibinfo{volume}{30}.
+%Type = Misc
+\bibitem[{Wang et~al.(2022)Wang, Zhang, Shen, Luo, Stenger and
+  Lu}]{wang2022ultrahighdefinition}
+\bibinfo{author}{Wang, T.}, \bibinfo{author}{Zhang, K.}, \bibinfo{author}{Shen,
+  T.}, \bibinfo{author}{Luo, W.}, \bibinfo{author}{Stenger, B.},
+  \bibinfo{author}{Lu, T.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Ultra-high-definition low-light image enhancement: A
+  benchmark and transformer-based method}.
+\newblock \href{http://arxiv.org/abs/2212.11548}{{\tt arXiv:2212.11548}}.
+%Type = Misc
+\bibitem[{Wang et~al.(2021)Wang, Cun, Bao, Zhou, Liu and Li}]{wang2021uformer}
+\bibinfo{author}{Wang, Z.}, \bibinfo{author}{Cun, X.}, \bibinfo{author}{Bao,
+  J.}, \bibinfo{author}{Zhou, W.}, \bibinfo{author}{Liu, J.},
+  \bibinfo{author}{Li, H.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Uformer: A general u-shaped transformer for image
+  restoration}.
+\newblock \href{http://arxiv.org/abs/2106.03106}{{\tt arXiv:2106.03106}}.
 %Type = Article
 \bibitem[{Wei et~al.(2018)Wei, Wang, Yang and Liu}]{wei2018deep}
 \bibinfo{author}{Wei, C.}, \bibinfo{author}{Wang, W.}, \bibinfo{author}{Yang,

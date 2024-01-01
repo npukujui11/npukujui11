@@ -63,11 +63,11 @@
 	\subsection{研究意义}
 	
 	\begin{frame}
-	{\zihao{-4} \yahei \textbf{低照度图像增强}}
+	{\zihao{-4} \yahei \textbf{弱光图像增强}}
 	
 	\vspace{0.1cm}
 
-	{\zihao{-6} \yahei \textbf{低照度图像增强}旨在从黑暗和噪声图像中恢复正常光线和无噪声图像，这是一个长期存在的重要计算机视觉课题。在硬件条件不变的情况下，给定降质图像或恶劣天气下拍摄的图像，研究生成高质量、无噪声图像等增强方法，在实际应用中非常有意义。}
+	{\zihao{-6} \yahei \textbf{弱光图像增强}旨在从黑暗和噪声图像中恢复正常光线和无噪声图像，这是一个长期存在的重要计算机视觉课题。在硬件条件不变的情况下，给定降质图像或恶劣天气下拍摄的图像，研究生成高质量、无噪声图像等增强方法，在实际应用中非常有意义。}
 
 		%它具有广泛的应用领域，包括视频监控，自动驾驶和计算摄影方面。特别是，智能手机摄影已经变得无处不在。受限于相机光圈的大小、实时处理的要求以及存储器的约束，在昏暗环境中用智能手机的相机拍摄照片尤其具有挑战性。
 		
@@ -292,7 +292,7 @@
 	\subsubsection{传统方法}
 	
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{传统低照度图像增强方法}}
+		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
 		
 		{\zihao{-6} \yahei \textbf{基于传统方法的低照度图像增强算法}通常利用单张图像自身的性质进行图像增强。主要包括灰度变换(GT)\textcolor{blue}{\citep{ueng1995gamma}}、直方图均衡化(HE)\textcolor{blue}{\citep{stark2000adaptive}}、Retinex模型\textcolor{blue}{\citep{land1971lightness}}、频域处理\textcolor{blue}{\citep{liu2021benchmarking}}、图像融合模型\textcolor{blue}{\citep{dai2019fractional}}、去雾模型\textcolor{blue}{\citep{ma2019improved}}等。在低照度图像增强的领域中，基于 Retinex 理论的方法非常受欢迎，并且吸引了众多研究者的关注。}
 		
@@ -316,7 +316,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{传统低照度图像增强方法}}
+		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
 		
 		\begin{figure}[htbp] 
 			\centering
@@ -362,7 +362,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{传统低照度图像增强方法}}
+		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
 		
 		{\zihao{-6} \yahei 直方图均衡化通过对直方图的分布进行约束，改善图片的亮度分布。直方图描述了图像灰度级的分布情况，显示了图像的灰度范围和每个灰度级的出现频率。摄影师也常利用直方图判断整幅图像的明暗程度、对比度等图像特征，以便完成相应的后期处理。}
 		
@@ -403,7 +403,7 @@
 	\subsubsection{基于深度学习的低照度图像增强方法}
 	
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{基于深度学习的低照度图像增强方法}}
+		{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
 		
 		{\zihao{-6} \yahei 从2017年LLNet\textcolor{blue}{\citep{lore2017llnet}}的出现，基于深度学习的低照度图像增强方法受到广泛关注，截至2023年已经出现了上百种基于深度学习的低照度图像增强方法，这充分反映了基于深度学习的方法具有更好的准确性、鲁棒性和更快的速度。}
 		
@@ -446,7 +446,7 @@
 	\end{frame}
 	
 	\begin{frame}
-	{\zihao{-5} \yahei \textbf{基于深度学习的低照度图像增强方法}}
+	{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
 	
 	{\zihao{-6} \yahei 尽管有监督学习方法在图像增强中取得了一定的成效，但它面临着两大主要限制。首先，可用于训练的成对图像数据集是有限的。其次，在这样的成对数据集上训练的模型容易出现过拟合的问题。为了克服这些挑战，研究者们转向了无监督学习方法。}
 	
@@ -469,7 +469,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{基于深度学习的低照度图像增强方法}}
+		{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
 		
 		{\zihao{-6} \yahei 近年来，半监督学习作为一种新兴的学习方法，结合了监督学习的精确性和非监督学习的广泛适用性。这种学习方法既利用了有标签的数据，也依赖于无标签的数据。Yang等人\textcolor{blue}{\citep{qiao2021deep}}提出了一种名为 \textbf{DRBN} 的半监督低照度图像增强方法，该方法基于频带表示。}
 		
@@ -488,7 +488,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{基于深度学习的低照度图像增强方法}}
+		{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
 		
 		{\zihao{-6} \yahei Zero-shot 学习的一个显著优点是它无需依赖预先训练的数据集。这种方法允许直接将待处理的低光照图像作为输入，而无需经过预先的训练阶段。Zhu等人\textcolor{blue}{\citep{zhu2020zero}}提出了一种创新的三分支全卷积神经网络，名为\textbf{RRDNet}。}
 		
@@ -506,6 +506,32 @@
 		
 		{\zihao{-6} \yahei 该网络将输入图像拆分为三个组成部分：光照、反射和噪声。通过特殊设计的迭代损失函数，网络能够对噪声进行精确估计并有效恢复光照部分，实现清晰的噪声预测，进而成功去除图像中的噪声。}
 		
+	\end{frame}
+	
+	\begin{frame}
+		{\zihao{-5} \yahei \textbf{基于Transformer的弱光图像增强方法}}
+		
+		{\zihao{-6} \yahei Transformer架构\textcolor{blue}{\cite{vaswani2017attention}}在图像处理领域的应用以来\textcolor{blue}{\cite{dosovitskiy2020image}}，其在捕获全局特征方面的能力引起了行业的广泛关注。}
+		
+		\begin{figure}
+			\centering
+			\setlength{\abovecaptionskip}{-0.05cm}
+			\begin{minipage}{.6\columnwidth}
+				\centering
+				\includegraphics[width=\columnwidth]{picture/LLIE/Uformer/Uformer}
+				%\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: Uformer} 
+					\tiny Uformer 的结构。
+				}
+			\end{minipage}
+		\end{figure}
+		
+		{\zihao{-6} \yahei 为了缓解计算负担，部分研究工作尝试采用局部窗口策略来限制自注意力机制的计算范围，并借鉴 U-Net 架构，引入跳过连接机制以增强特征传递\textcolor{blue}{\cite{wang2021uformer}}。}
+		
+		%尽管这种方法在降低计算成本方面取得了一定成效，但它可能会削弱Transformer架构在捕获图像中长距离特征的能力，进而影响其在图像复原任务中的整体性能。
+		
+		%为了克服这一限制，提出的解决方案\cite{chen2023cross}主要集中在窗口间的交互和与卷积神经网络（CNN）模块的耦合上。这种方法旨在将CNN的平移不变性和局部性归纳偏差融入Transformer架构中，从而实现两者优势的互补。我们将这类解决方案称为CNN与Transformer的串联策略。
 	\end{frame}
 	
 	\subsection{研究目的}
@@ -613,37 +639,62 @@
 		\begin{figure}[htbp]
 			\begin{center}
 				\includegraphics[width=0.8\textwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
+				\caption{
+					\tiny 该 LLIE 结构源自\textcolor{blue}{\cite{xu2023low}}，其提出一种基于 GAN Loss 的模型去对结构信息建模，通过获得的结构信息指导增强。
+				}
 			\end{center}
 		\end{figure}
 		
-		\begin{minipage}{.45\textwidth}
-			\textbf{\tiny Architecture}
-			\begin{itemize}\tiny
-			\item [-] U-Net
-			% 通过一个简单的 U-Net 去对外观建模，可以理解成先简单地学习到一个正常光照的 coarse version。其中，损失函数为一个重建损失加感知损失。
-					
-			\item [-] Structure-Aware Feature Extractor
-			% 对于结构信息建模部分，借鉴了 GAN prior 的思路，但是不用预训练的GAN 模型。这里设计到一个结构特征的提取Structure-Aware Feature Extractor (SAFE)
-					
-			\item [-] Structure-Guided Enhancement Module
-			% 为了利用得到的结构图来提高外观，作者设计了一个结构导向增强模块 Structure-Guided Enhancement Module（SGEM模块）初始外观建模结果。在 SGEM 中，根据结构映射生成空间自适应核和归一化参数。然后，对SGEM 解码器的每一层的特征进行空间全处理y−自适应卷积和归一化。虽然 SGEM 的整体架构采用了一个简单的U-Net 的形式，但它可以有效地增强原始的外观。
+		\vspace{-0.5cm}
+		
+		\begin{minipage}{.6\textwidth}
+			\textbf{\tiny 具有的特点}
+			\begin{itemize} \tiny
+				\item [\checkmark] 传统架构无法很好的利用边缘信息语义指导恢复弱光图像。
+				
+				\item [\checkmark] 低光照中的图片很难提取到好的结构信息。
+				
+				\item [\checkmark] StyleGAN从弱光图像中提取出接近 GT 边缘图。
 			\end{itemize}
 		\end{minipage}
-		\begin{minipage}{.45\textwidth}
-			\textbf{\tiny Edge Detection}
+		\begin{minipage}{.3\textwidth}
+			\textbf{\tiny 可以改进的点}
 			\begin{itemize}\tiny
-			\item [-] Too few datasets for extracting edge information
+			\item [-] 未给出边缘网络模型的实验结果。
 			% 论文指出低光数据集图片较少，所以结构信息提取模块的训练会受限，因此作者引入其他结构信息提取的数据集做额外训练可以进一步提升performance
 			
-			\item [-] Semantic maps and depth maps
+			\item [-] 语义图和深度图可以作为引导信息。
 			% 作者提出除了边缘结构图作为引导信息，也可以使用其他特征，比如语义图（ Ours with SEG.）和深度图（ Ours with Dep.），总体表现没有边缘图好，但是也比一些现有的增强方法好。
 			
-			\item [-] Input image or initial enhanced image
+			\item [-] 可以使用不同的引导网络。
 			% 作者没有说 Appearance Modeling 的结果去提取边缘会达到什么效果？
 			
 			% 此外作者做消融实验的过程中，使用一个 SOTA 边缘提取网络代替论文中的structural modeling 模块（但是感觉在低光照下很难提取到有效的边缘，合理点的话需要先对输入亮度增强一下）
 			\end{itemize}
 		\end{minipage}
+	\end{frame}
+	
+	\begin{frame}
+		{\zihao{-4} \yahei \textbf{本研究的研究目标}}
+		
+		\begin{itemize}\zihao{5}
+			\item [-]
+			边缘网络的开发
+			%设计并构建一个创新的边缘网络，其核心功能是从低光照图像中直接提取边缘结构图。该网络生成的结构图应与地面真实（GT）生成的边缘结构图具有高度的相似性，从而确保准确性和可靠性。
+			
+			\vspace{-0.05cm}
+			
+			\item [-]
+			初步恢复图像的生成模型
+			%开发一个用于生成初步恢复图像的低光照图像增强模型。该模型应专注于从弱光条件下的图像中恢复清晰度和细节，以提高整体图像质量。
+	
+			\vspace{-0.05cm}
+			
+			\item [-]
+			边缘语义信息的增强网络模型
+			%在现有的直接串联方法基础上，进行创新性改进，构建一种更有效利用边缘语义信息的增强网络模型。目的在于通过这种改进，进一步提升图像增强过程中边缘结构的利用效率和效果。
+		\end{itemize}
+		
 	\end{frame}
 	
 	\begin{frame}
@@ -718,30 +769,9 @@
 		
 	\end{frame}
 	
-	\begin{frame}
-		
-		\begin{itemize} 
-			\item \textbf{Possible Contributions I}
-			
-			A parallel network architecture for low-light image enhancement
-			
-			\item \textbf{Possible Contributions II}
-			
-			An edge network that generates edge graphs of low-light images
-			% 一种生成弱光图像边缘图的边缘网络
-			
-			\item \textbf{Possible Contributions III}
-			
-			A model that can better solve the local edge distortion problem in low-light images
-			% 一种能够较好的解决弱光图像中的局部边缘失真问题的模型
-		\end{itemize}
-		
-	\end{frame}
-	
-	
 	\section{研究内容}
 	
-	\subsection{Total Architecture}
+	\subsection{总体模型架构}
 	
 	\begin{frame}
 		
@@ -800,7 +830,7 @@
 		
 	\end{frame}
 	
-	\subsection{PACUT}
+	\subsection{初步恢复图像的生成模型}
 	
 	\begin{frame}
 		\begin{figure}
@@ -1015,7 +1045,7 @@
 		\end{itemize}
 	\end{frame}
 	
-	\subsection{Edge Detection Network}
+	\subsection{边缘检测网络}
 	
 	\begin{frame}
 		
@@ -1241,10 +1271,23 @@
 	
 	\section{具体工作内容}
 	
-	\subsection{Dataset}
+	\subsection{已完成工作}
 	
 	\begin{frame}
+		{\zihao{-5} \yahei \textbf{已完成工作}}
+		% 实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于scikit-image 库计算PSNR、SSIM 等评价指标。
 		
+		\begin{itemize} 
+			\item \textbf{Low-light Dataset}
+		\end{itemize}
+		
+	\end{frame}
+	
+	
+	\subsubsection{数据集和评价指标}
+	
+	\begin{frame}
+		{\zihao{-5} \yahei \textbf{数据集和评价指标}}
 		% 实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于scikit-image 库计算PSNR、SSIM 等评价指标。
 		
 		\begin{itemize} 
@@ -1288,9 +1331,10 @@
 		\end{table}
 	\end{frame}
 	
-	\subsection{Train}
+	\subsubsection{对比实验和消融实验}
 	
 	\begin{frame}
+		{\zihao{-5} \yahei \textbf{对比实验和消融实验}}
 		\begin{itemize}
 			\item \textbf{Train}
 			
@@ -1327,6 +1371,13 @@
 			% 分析: 分析不同数据集和不同模型配置(如有/无Transformer分支) 的性能差异。
 		\end{itemize}
 				
+	\end{frame}
+	
+	\subsection{下一步工作}
+	\begin{frame}
+		{\zihao{-5} \yahei \textbf{下一步工作}}
+		
+		
 	\end{frame}
 	
 	
