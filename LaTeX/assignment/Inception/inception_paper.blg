@@ -7,10 +7,6 @@ Repeated entry---line 237 of file reference.bib
  : @inproceedings{woo2018cbam
  :                           ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 361 of file reference.bib
- : @article{li2023effective
- :                         ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 551 of file reference.bib
  : @article{wei2018deep
  :                     ,
@@ -75,50 +71,71 @@ Repeated entry---line 2169 of file reference.bib
  : @article{wang2004image
  :                       ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 2333 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2355 of file reference.bib
+ : @article{liu2021benchmarking
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2395 of file reference.bib
+ : @incollection{dong2010fast
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2569 of file reference.bib
+ : @article{mittal2012making
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2591 of file reference.bib
+ : @inproceedings{fu2016weighted
+ :                              ,
+I'm skipping whatever remains of this entry
 Warning--empty publisher in dong2010fast
 Warning--can't use both volume and number fields in tang2023low
 Warning--can't use both volume and number fields in lv2018mbllen
 Warning--can't use both volume and number fields in wang2023ultra
+Warning--can't use both volume and number fields in singh2016contrast
 Warning--can't use both volume and number fields in zhu2020eemefn
-You've used 73 entries,
+You've used 91 entries,
             1791 wiz_defined-function locations,
-            834 strings with 18162 characters,
-and the built_in function-call counts, 22415 in all, are:
-= -- 2024
-> -- 1089
-< -- 37
-+ -- 389
-- -- 316
-* -- 1546
-:= -- 3311
-add.period$ -- 231
-call.type$ -- 73
-change.case$ -- 73
+            928 strings with 21329 characters,
+and the built_in function-call counts, 28081 in all, are:
+= -- 2557
+> -- 1319
+< -- 46
++ -- 472
+- -- 381
+* -- 1924
+:= -- 4113
+add.period$ -- 287
+call.type$ -- 91
+change.case$ -- 91
 chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 1018
-empty$ -- 2071
-format.name$ -- 316
-if$ -- 5140
+cite$ -- 97
+duplicate$ -- 1285
+empty$ -- 2617
+format.name$ -- 381
+if$ -- 6455
 int.to.chr$ -- 0
-int.to.str$ -- 73
-missing$ -- 70
-newline$ -- 365
-num.names$ -- 73
-pop$ -- 259
+int.to.str$ -- 91
+missing$ -- 88
+newline$ -- 455
+num.names$ -- 91
+pop$ -- 323
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 614
+skip$ -- 785
 stack$ -- 0
-substring$ -- 1708
-swap$ -- 396
-text.length$ -- 37
+substring$ -- 2200
+swap$ -- 502
+text.length$ -- 46
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 5
-while$ -- 219
-width$ -- 75
-write$ -- 808
-(There were 18 error messages)
+warning$ -- 6
+while$ -- 277
+width$ -- 93
+write$ -- 1007
+(There were 22 error messages)

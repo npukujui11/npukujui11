@@ -148,10 +148,8 @@
 	令 $Z = \log z_i \left(x, y\right)$，$M = \log m_i \left(x, y\right)$，$N = \log n_i \left(x, y\right)$，则有 $M = Z - N$，将所得结果变换至指数域可得到图像反射分量，其算法处理过程如图\ref{fig: Retinex model}所示。
 	
 	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=\columnwidth]{picture/LLIE/Retinex Model/Retinex Model}
-		%\captionsetup{font=scriptsize}
 		\caption{
 			\label{fig: Retinex model} 
 			Retinex 算法处理过程
@@ -192,8 +190,6 @@
 			\caption{MSRCR}
 			\label{fig: Retinex Model_MSRCR}	
 		\end{subfigure}
-		
-		\captionsetup{font=scriptsize}
 		\caption{
 			\label{fig: Retinex Model}
 			传统 Retinex 算法实验结果。
@@ -205,7 +201,6 @@
 	基于直方图的方法主要考虑直方图均衡化\cite{stark2000adaptive}，通过对直方图\footnote{直方图统计图像每个灰度级的出现频率，其横坐标表示灰度级，纵坐标表示像素值为该灰度级下像素的频率。}的分布进行约束，改善图像的亮度分布。直方图描述了图像灰度级\footnote{图像灰度(image grayscale)：把白色与黑色之间按对数关系分为若干等级，称为灰度。灰度分为256阶。用灰度表示的图像称作灰度图。}的分布情况，显示了图像的灰度范围和每个灰度级的出现频率。摄影师也常利用直方图判断整幅图像的明暗程度、对比度等图像特征，以便完成相应的后期处理。
 	
 	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=\columnwidth]{picture/LLIE/HE/Histogram equalization}
 		%\captionsetup{font=scriptsize}
@@ -237,11 +232,8 @@
 	
 	\subsubsection{基于图像反相的方法}
 	
-	\begin{figure}[htbp] 
-		% read manual to see what [ht] means and for other possible options
+	\begin{figure}[htbp]
 		\centering 
-		% \includegraphics[width=0.8\columnwidth]{GLADNet}
-		
 		\begin{subfigure}{0.18\textwidth}
 			\includegraphics[width=\linewidth]{picture/LLIE/Inverse/LL input}
 			\captionsetup{font=scriptsize}
@@ -328,7 +320,6 @@
 	\textbf{LLNet}\cite{lore2017llnet}是早期提出的一种基于深度学习的方法，它利用一种特殊的堆叠稀疏去噪自编码器从低光照图像中提取特征，并进行自适应增强与去噪。接着，Lv等人\cite{lv2018mbllen}介绍了 \textbf{MBLLEN}，这是一个包含特征提取模块(FEM)、增强模块(EM)和融合模块(FM)的多分支图像增强网络。MBLLEN通过多层次的特征提取和多子网络的增强处理，最终通过融合模块产生增强后的图像，有效地减少低照度区域的噪声和伪影。
 	
 	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=\columnwidth]{picture/LLIE/MBLLEN/MBLLEN Architecture}
 		%\captionsetup{font=scriptsize}
@@ -343,7 +334,6 @@
 	\paragraph{Retinex 理论方法}
 	
 	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=0.7\columnwidth]{picture/LLIE/RetinexNet/RetinexNet}
 		%\captionsetup{font=scriptsize}
@@ -364,7 +354,6 @@
 	尽管有监督学习方法在图像增强中取得了一定的成效，但它面临着两大主要限制。首先，可用于训练的成对图像数据集是有限的。其次，在这样的成对数据集上训练的模型容易出现过拟合的问题。为了克服这些挑战，研究者们转向了无监督学习方法。无监督学习的主要特点是在没有标签数据的情况下进行学习。Jiang等人\cite{jiang2021enlightengan}开创性地提出了一种名为 \textbf{EnlightenGAN} 的无监督学习方法。这是首个在该领域成功应用非配对训练的例子。EnlightenGAN的主要创新在于两个方面：一是其全局-局部判别器结构，用于处理输入图像中的空间光照变化；二是结合自特征保留损失和自正则化注意力机制，确保增强后图像的内容特征保持不变。此外，Fu等人\cite{fu2022gan}设计了一种名为 \textbf{LE-GAN} 的低照度增强网络，使用不变身份损失和注意力模块来提升图像特征提取，同时实现降噪和细节增强。该网络通过不变身份损失解决过度曝光的问题。他们还构建并公开了一个较大的非配对低照度/正常照度图像数据集PNLI。
 	
 	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=0.7\columnwidth]{picture/LLIE/EnlightenGAN/EnlightenGAN}
 		%\captionsetup{font=scriptsize}
@@ -381,7 +370,6 @@
 	近年来，半监督学习作为一种新兴的学习方法，结合了监督学习的精确性和非监督学习的广泛适用性。这种学习方法既利用了有标签的数据，也依赖于无标签的数据。其显著特点是能够在有限的标记样本和大量未标记样本的情况下训练有效的分类器，从而解决在标记样本稀缺、未标记样本丰富的情境下的学习问题。
 	
 	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=0.7\columnwidth]{picture/LLIE/DRBN/DRBN}
 		%\captionsetup{font=scriptsize}
@@ -398,7 +386,6 @@
 	Zero-shot 学习的一个显著优点是它无需依赖预先训练的数据集。这种方法允许直接将待处理的低光照图像作为输入，而无需经过预先的训练阶段。在这一方法论下，Zhu等人\cite{zhu2020zero}提出了一种创新的三分支全卷积神经网络，名为\textbf{RRDNet}。该网络将输入图像拆分为三个组成部分：光照、反射和噪声。通过特殊设计的迭代损失函数，网络能够对噪声进行精确估计并有效恢复光照部分，实现清晰的噪声预测，进而成功去除图像中的噪声。RRDNet还引入了一种新型的损失算法，该算法依据图像的亮度分布来估计暗区的噪声，避免了暗区噪声的过度放大。受到超分辨率模型的启发，Zhang等人\cite{zhang2019zero}开发了一种专门用于实时测试的CNN网络\textbf{ExCNet}。在实际应用中，ExCNet能够估计出最适合当前背光图像的参数曲线，这使得网络非常适合在复杂拍摄环境和恶劣的背光条件下进行图像增强。ExCNet的一个独特优势是其能够利用前一帧的参数作为参考，从而在视频增强过程中避免产生伪影。
 	
 	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=0.7\columnwidth]{picture/LLIE/RRDNet/RRDNet}
 		\caption{
@@ -409,7 +396,7 @@
 	
 	\subsection{数据集}
 	
-	LOL和LE-LOL-L数据集的测试图像的客观评价指标值比SCIE和LIME数据集更适合人类视觉效果。用成对数据集训练的算法将得到更明显的增强效果。从数据中可以看出，基于监督学习的方法比其他方法更能取得更好的效果。
+	LOL\cite{wei2018deep}和LE-LOL-L\cite{liu2021benchmarking}数据集的测试图像的客观评价指标值比 SCIE\cite{cai2018learning} 和 LIME\cite{guo2016lime} 数据集更适合人类视觉效果。用成对数据集训练的算法将得到更明显的增强效果。从数据中可以看出，基于监督学习的方法比其他方法更能取得更好的效果。
 	
 	然而，无监督学习、Zero-Shot学习和半监督学习是当前的发展趋势，主要是因为在低光照环境下很难获得成对的图像。与其他方法相比，基于完全监督学习的方法泛化能力较低，适用性较差。此外，无监督学习方法可以通过设计适当的损失函数和网络结构，引入更多反映环境特征的先验知识。
 	
@@ -433,21 +420,21 @@
 				
 				\hline
 				
-				MSE (Mean Square Error) & Full-Reference \\
-				MAE (Mean Absolute Error) & Full-Reference \\
-				SNR (Signal to Noise Ratio) & Full-Reference \\
-				PSNR (Peak-Signal to Noise Ratio) & Full-Reference \\
-				LPIPS (Learned Perceptual Image Patch Similarity) & Full-Reference \\
-				IFC (Information Fidelity Criterion) & Full-Reference \\
-				VIF (Visual Information Fidelity) & Full-Reference \\
-				SSIM (Structural Similarity Index) & Full-Reference \\
-				IE (Information Entropy) & Non-Reference \\
-				NIQE (Natural Image Quality Evaluator) & Non-Reference \\
-				LOE (Lightness Order Error) & Full-Reference \\
-				PI (Perceptual Index) & Non-Reference \\
-				MUSIQ (Multi-scale Image Quality Transformer) & Non-Reference \\
-				NIMA (Neural Image Assessment) & Non-Reference \\
-				SPAQ (Smartphone Photography Attribute and Quality) & Non-Reference \\
+				MSE (Mean Square Error)\cite{singh2016contrast,dong2010fast} & Full-Reference \\
+				MAE (Mean Absolute Error)\cite{chai2014root} & Full-Reference \\
+				SNR (Signal to Noise Ratio)\cite{kellman2005image} & Full-Reference \\
+				PSNR (Peak-Signal to Noise Ratio)\cite{yu2017low} & Full-Reference \\
+				LPIPS (Learned Perceptual Image Patch Similarity)\cite{zhang2018unreasonable} & Full-Reference \\
+				IFC (Information Fidelity Criterion)\cite{sheikh2005information} & Full-Reference \\
+				VIF (Visual Information Fidelity)\cite{russakovsky2015imagenet} & Full-Reference \\
+				SSIM (Structural Similarity Index)\cite{ignatov2018wespe} & Full-Reference \\
+				IE (Information Entropy)\cite{zhu2015low} & Non-Reference \\
+				NIQE (Natural Image Quality Evaluator)\cite{mittal2012making} & Non-Reference \\
+				LOE (Lightness Order Error)\cite{fu2016weighted} & Full-Reference \\
+				PI (Perceptual Index)\cite{ma2017learning} & Non-Reference \\
+				MUSIQ (Multi-scale Image Quality Transformer)\cite{ke2021musiq} & Non-Reference \\
+				NIMA (Neural Image Assessment)\cite{talebi2018nima} & Non-Reference \\
+				SPAQ (Smartphone Photography Attribute and Quality)\cite{fang2020perceptual} & Non-Reference \\
 				
 				\bottomrule
 				
@@ -751,17 +738,7 @@
 	
 	传统架构存在一定的局限性，虽然采用了边缘结构信息增强弱光图像，但是无法很好的利用边缘信息语义指导恢复弱光图像，需要在现有的直接串联方法的基础上进行改进。此外，从低光照中的图片很难提取到好的结构信息，如何设计更好的边缘网络从弱光图像中提取出接近 GT 边缘图的结果是我们需要考虑的问题。
 	
-	作者\cite{xu2023low}提出了一种基于结构先验的图像增强方式，以更好的从弱光图像中提取到更有效的边缘信息并用于指导图像增强。从图\ref{fig: Structural Information}中可以看到边缘图和LBP图\cite{pietikainen2010local}所反映结构信息具有明显的区别，边缘信息能反映更多的细节信息。我们不难发现，相较于LBP，图像边缘图仅保留了很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。
-	
-	此外，获取边缘图的方法也各不相同，在 LLIE 任务中，常见方法采用边缘检测网络来生成边缘图，然后使用 Canny 或 Sobel 算子\cite{maini2009study}从 GT 中获取边缘图用做对照组。目前在 LLIE 领域中获取边缘图分化成了两个不同的方向，一种是通过初步恢复图像获取边缘图（见图\ref{fig: EEMEFN}），另一种是直接通过弱光图像以获取边缘图（见图\ref{fig: EdgeNet}和图\ref{fig: SMG-LLIE Architecture}）。LLIE 任务中边缘检测的主要有下列方法：
-	
-	\begin{itemize}
-		\item [(1)] 手工设计各种滤波器来生成边缘图。
-		
-		\item [(2)] 根据人类设计的特征使用数据驱动模型来预测边缘(随机决策森林来学习边缘板块)。
-		
-		\item [(3)] 深度学习方法从原始数据中学习复杂的特征表示端到端边缘检测模型(RCF边缘检测模型\cite{liu2017richer})。
-	\end{itemize}
+	作者\cite{xu2023low}提出了一种基于结构先验的图像增强方式，以更好的从弱光图像中提取到更有效的边缘信息并用于指导图像增强。从图\ref{fig: Structural Information}和\ref{fig: LLI Structure Information}中可以看到边缘图和LBP图\cite{pietikainen2010local}所反映结构信息具有明显的区别，边缘信息能反映更多的细节信息。我们不难发现，相较于LBP，图像边缘图仅保留了很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。
 	
 	综上所述，本研究旨在实现以下明确的研究目标\footnote{在对Xu等人\cite{xu2023low}的模型（参见图\ref{fig: SMG-LLIE Architecture}）进行深入分析后，本研究旨在通过采用与原作者不同的方法论来实现若干具体目标，并力求在关键评价指标上超越原模型的性能。具体而言，本研究的核心目标包括：首先，在目标(1)和目标(2)的框架内，探索与Xu等人不同的优化策略；其次，这些优化策略应致力于提升模型的整体性能，目的在于在关键评价指标上实现超越原作者的成果。通过这种方法，本研究不仅旨在增强现有模型的能力，同时也寻求对该领域的理论和实践知识做出贡献。}:
 	
@@ -816,16 +793,39 @@
 	
 	\subsection{Transformer网络结构}
 	
-	Transformer架构\cite{vaswani2017attention}在图像处理领域的应用以来\cite{dosovitskiy2020image}，其在捕获全局特征方面的能力已经引起了行业的广泛关注。然而，在图像复原任务中，由于Transformer基于自注意力机制的计算特性，其面临着较高的计算复杂度问题。这一挑战通常需要通过改进前馈神经网络（FFN）来解决，以便更有效地捕获关键信息，从而增强模型的非线性建模能力\cite{wang2022ultrahighdefinition}。为了缓解计算负担，部分研究工作尝试采用局部窗口策略来限制自注意力机制的计算范围，并借鉴U-Net架构，引入跳过连接机制以增强特征传递\cite{wang2021uformer}。尽管这种方法在降低计算成本方面取得了一定成效，但它可能会削弱Transformer架构在捕获图像中长距离特征的能力，进而影响其在图像复原任务中的整体性能。为了克服这一限制，提出的解决方案\cite{chen2023cross}主要集中在窗口间的交互和与卷积神经网络（CNN）模块的耦合上。这种方法旨在将CNN的平移不变性和局部性归纳偏差融入Transformer架构中，从而实现两者优势的互补。我们将这类解决方案称为CNN与Transformer的串联策略。
+	Transformer架构\cite{vaswani2017attention}在图像处理领域的应用以来\cite{dosovitskiy2020image}，其在捕获全局特征方面的能力已经引起了行业的广泛关注。然而，在图像复原任务中，由于Transformer基于自注意力机制的计算特性，其面临着较高的计算复杂度问题。这一挑战通常需要通过改进前馈神经网络（FFN）来解决，以便更有效地捕获关键信息，从而增强模型的非线性建模能力\cite{wang2022ultrahighdefinition}。为了缓解计算负担，部分研究工作尝试采用局部窗口策略来限制自注意力机制的计算范围，并借鉴 U-Net 架构，引入跳过连接机制以增强特征传递\cite{wang2021uformer}（如图\ref{fig: Uformer}所示）。尽管这种方法在降低计算成本方面取得了一定成效，但它可能会削弱Transformer架构在捕获图像中长距离特征的能力，进而影响其在图像复原任务中的整体性能。为了克服这一限制，提出的解决方案\cite{chen2023cross}主要集中在窗口间的交互和与卷积神经网络（CNN）模块的耦合上。这种方法旨在将CNN的平移不变性和局部性归纳偏差融入Transformer架构中，从而实现两者优势的互补。我们将这类解决方案称为CNN与Transformer的串联策略。
+	
+	\begin{figure}[htb]
+		\centering 
+		\includegraphics[width=\columnwidth]{picture/LLIE/Uformer/Uformer}
+		%\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Uformer} 
+			Uformer 的结构。
+		}
+	\end{figure}
 	
 	\section{具体的方法}
 	
 	\subsection{初步恢复图像的生成模型}
 	
-	在计算机视觉领域，图像特征的研究通常聚焦于两个主要方面：局部特征和全局特征。局部特征，也称为短距离特征，指的是对图像中微小区域的紧凑向量描述，这些特征在众多计算机视觉算法中扮演着基础角色\cite{jain1991unsupervised, lowe2004distinctive, ojala2002multiresolution}。相对而言，全局特征，或长距离特征，涵盖了更广泛的范围，包括但不限于长距离轮廓\cite{lisin2005combining}、形状描述符以及不同对象类别的识别。
+	\textbf{初步恢复图像的生成模型}目前主要包括以下几种：
+	
+	\begin{itemize}
+		\item[(1)] 
+		利用多曝光技术(Multi-exposure image fusion, MEF)\footnote{多曝光技术已被实验证明可以有效的解决 LLIE 任务中普遍存在的色彩失真问题。}获得具有不同曝光度的图像，然后结合恢复网络进行初步恢复\footnote{常见的架构如基于 GAN 的多曝光图像融合架构，基于端到端深度学习框架下多曝光图像融合算法，基于稀疏表示和可平移复方向金字塔变换的多曝光融合框架。}\cite{burt1984pyramid}；
+		
+		\item[(2)]
+		结合 CNN 和 Transformer 架构的方法，可以是类似于 Uformer \cite{wang2022uformer}的串行架构，亦或者是类似于 Conformer 的并行架构。我们提出的 CNN 和 Transformer 并行架构（见图\ref{fig: First Architecture}）。
+		
+		\item[(3)]
+		通过 U-Net 进行弱恢复。
+		
+	\end{itemize}	
+	
+	但由于噪声和伪影的存在，以及色彩与真实图像之间的差异，直接采用神经网络恢复结果通常并不理想。
 	
 	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=0.9\columnwidth]{picture/LLIE/Conformer/the proposed Conformer}
 		\caption{
@@ -834,20 +834,16 @@
 		}
 	\end{figure}
 	
+	在计算机视觉领域，图像特征的研究通常聚焦于两个主要方面：局部特征和全局特征。局部特征，也称为短距离特征，指的是对图像中微小区域的紧凑向量描述，这些特征在众多计算机视觉算法中扮演着基础角色\cite{jain1991unsupervised, lowe2004distinctive, ojala2002multiresolution}。相对而言，全局特征，或长距离特征，涵盖了更广泛的范围，包括但不限于长距离轮廓\cite{lisin2005combining}、形状描述符以及不同对象类别的识别。
+	
 	在深度学习的框架下，卷积神经网络（CNN）通过分层的卷积操作，逐步提取并加工图像的局部特征。这些特征随后被保留在特征图中，以供后续处理和分析。另一方面，视觉变换器（Vision Transformers）则采用一系列自注意力模块，这些模块能够以更加灵活的方式聚合这些特征，从而形成对整体图像的全面和全局性理解。这种方法在处理图像的全局特征时显示出了显著的优势，尤其是在捕获长距离依赖关系和整体图像结构方面。
-	
-	在初步恢复图的生成方面，我们受到了 Conformer 结构\cite{peng2021conformer}（如图）的启发，该结构巧妙地结合了卷积神经网络（CNN）在捕获短距离特征\cite{jain1991unsupervised, lowe2004distinctive, ojala2002multiresolution}方面的优势与Transformer自注意力模块在捕获长距离特征\cite{lisin2005combining}依赖关系方面的能力。然而，Transformer的自注意力模块在捕获远距离特征的同时，可能会忽视局部特征的细节。为了克服这一局限性，Conformer结构融合了卷积运算和自注意力机制，以增强表示学习的能力。为了最大限度地利用局部特征和全局表征的互补优势，我们提出一种新颖的并行深度学习架构（如图\ref{fig: PACUT}所示），专门针对低光照条件下的图像增强问题。该模型融合了经典的 U 型网络和 Transformer 深度学习方法，旨在提升弱光图像增强任务中恢复图像的可视性和质量，同时保留关键的细节和纹理\cite{karu1996there}信息。
-	
-	具体而言，该架构由两个并行分支、一个 Stem 模块、一个特征连接单元（FCU, Feature Coupling Unit）以及一个为两个分支设计的融合模块（Fusion Block）组成。Stem模块由 VGG16 网络的前四层构成，截至第一个最大池化层，其主要功能是提取图像的初始局部特征，如边缘和纹理等，随后将这些特征输入到 CNN 分支。CNN 分支采用了改进的 U-Net 网络结构，而 Transformer 分支则由一个经过修改的 Vision Transformer 构成，去除了分类功能，仅保留特征提取功能。
-	
-	在这种并行结构中，CNN分支和Transformer分支分别专注于最大程度地保留局部特征和全局表征。FCU作为一种桥接模块，其作用是融合CNN分支中的局部特征和Transformer分支中的全局表征，如图\ref{fig: First Architecture} 所示。FCU从第二步开始应用，因为两个分支的初始特征虽相同，但表征形式不同。在整个网络中，FCU通过双向交互融合特征图和Patch Embeddings。
 	
 	\begin{figure}[htb] 
 		\centering 		
 		\begin{subfigure}{\textwidth}
 			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture.jpg}
 			\captionsetup{font=scriptsize}
-			\caption{PACUT}
+			\caption{Parallel Architecture}
 			\label{fig: First Architecture}
 		\end{subfigure}\\
 		\begin{subfigure}{0.4\textwidth}
@@ -869,15 +865,22 @@
 		}
 	\end{figure}
 	\FloatBarrier
+	
+	在初步恢复图的生成方面，我们受到了 Conformer 结构\cite{peng2021conformer}（如图）的启发，该结构巧妙地结合了卷积神经网络（CNN）在捕获短距离特征\cite{jain1991unsupervised, lowe2004distinctive, ojala2002multiresolution}方面的优势与Transformer自注意力模块在捕获长距离特征\cite{lisin2005combining}依赖关系方面的能力。然而，Transformer的自注意力模块在捕获远距离特征的同时，可能会忽视局部特征的细节。为了克服这一局限性，Conformer结构融合了卷积运算和自注意力机制，以增强表示学习的能力。为了最大限度地利用局部特征和全局表征的互补优势，我们提出一种新颖的并行深度学习架构（如图\ref{fig: PACUT}所示），专门针对低光照条件下的图像增强问题。该模型融合了经典的 U 型网络和 Transformer 深度学习方法，旨在提升弱光图像增强任务中恢复图像的可视性和质量，同时保留关键的细节和纹理\cite{karu1996there}信息。
+	
+	具体而言，该架构由两个并行分支、一个 Stem 模块、一个特征连接单元（FCU, Feature Coupling Unit）以及一个为两个分支设计的融合模块（Fusion Block）组成。Stem模块\footnote{Stem模块一般包含几个卷积层、激活函数、池化层（如最大池化或平均池化）等。这些组件共同工作，以有效地提取和转换输入数据的特征，为网络的后续层提供更加丰富和有用的信息。}由 VGG16 网络的前四层构成\cite{szegedy2016rethinking}，截至第一个最大池化层，其主要功能是提取图像的初始局部特征，如边缘和纹理等，随后将这些特征输入到 CNN 分支。CNN 分支采用了改进的 U-Net 网络结构，而 Transformer 分支则由一个经过修改的 Vision Transformer 构成，去除了分类功能，仅保留特征提取功能。
+	
+	在这种并行结构中，CNN分支和Transformer分支分别专注于最大程度地保留局部特征和全局表征。FCU作为一种桥接模块，其作用是融合CNN分支中的局部特征和Transformer分支中的全局表征，如图\ref{fig: First Architecture} 所示。FCU从第二步开始应用，因为两个分支的初始特征虽相同，但表征形式不同。在整个网络中，FCU通过双向交互融合特征图和Patch Embeddings。
+	
 	最终，两个分支的特征都被送入特征融合模块进行处理。对于Transformer分支，为了更有效地利用长距离特征，我们在进行Patch Expanding操作之前，通过FCU与CNN分支进行融合。最后，两个分支的输出通过特征融合模块处理后，生成最终的增强图像。在训练过程中，我们采用了结合$\mathcal{L}_1$和SSIM损失函数的策略，以优化模型在像素级误差和感知质量方面的表现。
 	
 	\subsubsection{CNN 分支}
 	
 	在PACUT架构中，CNN分支基于U-Net网络结构，这是一种原本为图像分割任务设计的网络架构，但其在图像增强领域同样展现出卓越的性能。U-Net的显著特点在于其对称的编码器-解码器结构和编码器与解码器之间的跳跃连接。在本研究中，CNN分支的目标是从输入的低光照图像（LLI）中提取丰富的特征，包括边缘、纹理、颜色和亮度信息，并最终生成增强的图像（EI）。
 	
-	
 	\begin{figure}[htb]
 		\centering 
+		\setlength{\abovecaptionskip}{-1.5cm}
 		\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/U-Net and AM}
 		%\captionsetup{font=scriptsize}
 			\caption{
@@ -1189,8 +1192,150 @@
 		\item [(1)] 首先，当前大多数方法主要依赖于 CNN 的最终层（通常是最后一层卷积层）的输出，而忽视了网络中间层的潜在价值。这种做法可能导致信息的丢失，特别是那些在中间层中更为显著的特征信息。
 		
 		\item [(2)] 虽然研究者们普遍关注于探索更深层次的 CNN 结构，但在边缘检测这一特定任务中，这种方法面临着数据稀缺性和梯度消失问题的双重挑战。由于边缘检测任务通常涉及的数据量相对较少，加之深层网络易于出现梯度消失，这些因素共同制约了深层 CNN 在边缘检测领域的应用效果。
-		
 	\end{itemize}
+
+	Liu\cite{liu2017richer}发现不同卷积层获得的结果随着深度增加而更加粗糙（如图\ref{fig: Motivation of RCF}所示），其提出 RCF(Richer convolutional features) 方法充分利用所有 CNN 层的结果。相比之下，HED (Holistically-nested edge detection) \cite{xie2015holistically}方法仅采用了 VGG16 架构中每个阶段的最后一层卷积输出，而 RCF (Richer Convolutional Features) 方法则利用了每个层级的卷积结果。这一策略使得 RCF 在捕获丰富的边缘信息方面展现了更为显著的能力。
+
+	\begin{figure}[htb] 
+		\centering 		
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/RCF/origin image}
+			\captionsetup{font=scriptsize}
+			\caption{origin image}
+			\label{fig: origin image}
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/RCF/GT}
+			\captionsetup{font=scriptsize}
+			\caption{GT}
+			\label{fig: RCF_GT}
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_1}
+			\captionsetup{font=scriptsize}
+			\caption{conv3\_1}
+			\label{fig: conv3_1}	
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_2}
+			\captionsetup{font=scriptsize}
+			\caption{conv3\_2}
+			\label{fig: conv3_2}	
+		\end{subfigure}\\
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_3}
+			\captionsetup{font=scriptsize}
+			\caption{conv3\_3}
+			\label{fig: conv3_3}
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_1}
+			\captionsetup{font=scriptsize}
+			\caption{conv4\_1}
+			\label{fig: conv4_1}
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_2}
+			\captionsetup{font=scriptsize}
+			\caption{conv4\_2}
+			\label{fig: conv4_2}	
+		\end{subfigure}
+		\begin{subfigure}{0.2\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_3}
+			\captionsetup{font=scriptsize}
+			\caption{conv4\_3}
+			\label{fig: conv4_3}	
+		\end{subfigure}
+		%\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: Motivation of RCF}
+			建立了一个基于 VGG16\cite{simonyan2014very} 的简单网络来产生侧输出(c-h)。我们可以看到，卷积特征逐渐变得更粗，而中间层(c、d、f、g)包含了在其他层中没有出现的基本细节。
+		}
+	\end{figure}
+	\FloatBarrier
+
+	此外，获取边缘图的方法也各不相同，在 LLIE 任务中，常见方法采用边缘检测网络来生成边缘图，然后使用 Canny 或 Sobel 算子\cite{maini2009study}从 GT 中获取边缘图用做对照组。目前在 LLIE 领域中获取边缘图分化成了两个不同的方向，一种是通过初步恢复图像获取边缘图（见图\ref{fig: EEMEFN}），另一种是直接通过弱光图像以获取边缘图（见图\ref{fig: EdgeNet}和图\ref{fig: SMG-LLIE Architecture}）。LLIE 任务中边缘检测的主要有下列方法：
+	
+	在LLIE（低光照图像增强）任务中，边缘检测技术的应用可概括为以下几种主要方法：
+	
+	\begin{itemize}
+		\item [(1)] 利用手工设计的各类滤波器生成边缘图像。
+		
+		\item [(2)] 采用基于人类设计特征的数据驱动模型（如使用随机决策森林）来预测边缘。
+		
+		\item [(3)] 通过深度学习技术，从原始数据中学习复杂的特征表示，实现端到端的边缘检测模型（例如RCF边缘检测模型\cite{liu2017richer}）。
+	\end{itemize}
+
+	经过广泛的文献综述，我们发现在LLIE领域内，边缘图像的获取主要分为两个不同的路径：一是从初步恢复的图像中提取边缘图（如图\ref{fig: EEMEFN}所示），二是直接从低光照图像中提取边缘图（如图\ref{fig: EdgeNet}和图\ref{fig: SMG-LLIE Architecture}所示）。传统方法如 Canny 和 Sobel 算子\cite{maini2009study}在直接从低光照图像中提取边缘时面临较大挑战，如图\ref{fig: LLI_canny}所示。然而，基于深度学习的方法能从低光照图像中提取出更为详细的边缘图像，虽然与真实边缘仍有差异。我们的研究目标是缩减这一差距，以提高基于结构建模指导的模型的准确性。本研究尝试使用不同曝光度的图片，获取它们的 HOG 和 LBP 图像，并采用多曝光图像融合架构，从而获得更接近真实边缘结构的边缘图像，其结构示意见图\ref{fig: Edge Detection Network}。
+
+	\begin{figure}[htb]
+		\centering
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044}
+			\captionsetup{font=scriptsize}
+			\caption{LLI}
+			\label{fig: LLI}
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_canny}				
+			\captionsetup{font=scriptsize}
+			\caption{LLI Canny}
+			\label{fig: LLI_canny}	
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_rcf}
+			\captionsetup{font=scriptsize}
+			\caption{LLI RCF}
+			\label{fig: LLI_rcf}
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_hog}
+			\captionsetup{font=scriptsize}
+			\caption{LLI HOG}
+			\label{fig: LLI_hog}
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_lbp}
+			\captionsetup{font=scriptsize}
+			\caption{LLI LBP}
+			\label{fig: LLI_lbp}
+		\end{subfigure}\\
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044}
+			\captionsetup{font=scriptsize}
+			\caption{GT}
+			\label{fig: GI}
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_canny}
+			\captionsetup{font=scriptsize}
+			\caption{GT Canny}
+			\label{fig: GT_canny}
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_rcf}
+			\captionsetup{font=scriptsize}
+			\caption{GT RCF}
+			\label{fig: GT_rcf}
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_hog}
+			\captionsetup{font=scriptsize}
+			\caption{GT HOG}
+			\label{fig: GT_hog}	
+		\end{subfigure}
+		\begin{subfigure}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_lbp}
+			\captionsetup{font=scriptsize}
+			\caption{GT LBP}
+			\label{fig: GT_lbp}	
+		\end{subfigure}
+		\caption{
+			\label{fig: LLI Structure Information}
+			基于 LOL-v2 弱光数据集的边缘信息。
+		}
+	\end{figure}
+	\FloatBarrier
 
 	%现在的方法大多只使用 CNN 的最后一层 conv 的结果，忽略了中间层的结果。
 		
@@ -1206,10 +1351,9 @@
 			边缘检测网络。
 		}
 	\end{figure}
+	\FloatBarrier
 	
-	\subsection{基于边缘语义信息的增强网络模型}
-	
-	\begin{figure}[htbp]
+	\begin{figure}[htb]
 		% read manual to see what [ht] means and for other possible options
 		\centering 
 		\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/Total architecture}
@@ -1218,10 +1362,7 @@
 			我们提出的网络结构。
 		}
 	\end{figure}
-	
-
-	
-	
+	\FloatBarrier
 	
 	\part*{具体工作内容}
 	
@@ -1398,101 +1539,20 @@
 	
 	\section{下一步工作}
 	
+	接下来主要工作主要从以下方面开展：
 	
-	\section{方向}
+	通过完善文献调研工作进一步阐述弱光图像恢复的重要性及其在当前研究领域的挑战性，包括强调边缘信息在图像处理中的关键作用。此外，进一步明确提出研究的主要目标。综述现有文献，包括边缘检测技术、低光图像恢复方法以及Transformer网络的应用。分析现有方法的局限性，并探讨潜在的改进方向。
 	
-	根据目前的文献研究，在 LLIE 任务中，一种方法是采用边缘检测思想来引导弱光图像增强\footnote{为什么要采用图像的边缘图片来指导弱光图像恢复？
-		首先，图像边缘图仅需要很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。其次，低光图像通常具有很高的对比度，现有的方法可能无法在极暗或极亮的区域恢复图像边缘细节。同时，当物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。而加入边缘先验可以降低优化外观重构时的不适定程度。最后，人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。}，其策略是将边缘图与\textbf{初步恢复的图像}进行串联，然后通过单一的增强网络来实现最终的图像恢复。恢复结果的质量往往会受到最后的增强网络设计和初步恢复图像所包含特征与真实图像特征之间的相似度的影响。
-	
-	根据目前的文献调研，当前的此类方法的特点只集中在通过边缘图指导图像恢复，且恢复出来的图像还是有明显噪点。
-	
-	\subsection{方向一}
-	
-	\textbf{图像初步恢复的方法}目前主要包括以下几种：
-	
+	总结下来分为以下三个方面：
 	\begin{itemize}
-		\item[(1)] 
-		利用多曝光技术\footnote{多曝光技术已被实验证明可以有效的解决 LLIE 任务中普遍存在的色彩失真问题。}获得具有不同曝光度的图像，然后结合恢复网络进行初步恢复\footnote{常见的架构如基于 GAN 的多曝光图像融合架构，基于端到端深度学习框架下多曝光图像融合算法，基于稀疏表示和可平移复方向金字塔变换的多曝光融合框架。}；
+		\item[(1)] \textbf{边缘检测网络评价指标的研究：}确立用于评估边缘检测网络性能的关键指标，如精度、召回率和F1分数等。此外，设计实验以量化评估不同边缘检测方法在低光条件下的表现。
 		
-		\item[(2)]
-		结合 CNN 和 Transformer 架构的方法，可以是类似于 Uformer \cite{wang2022uformer}的串行架构，亦或者是类似于 Conformer 的并行架构。我们提出的 CNN 和 Transformer 并行架构（见Fig. \ref{fig: The proposed architecture}）。
+		\item[(2)] \textbf{实验设计与验证：}使用现有边缘检测模型（例如RCF）进行初步实验，评估其在弱光图像恢复中的效果。对比分析现有技术与改进方法的性能差异。
 		
-		\item[(3)]
-		直接通过神经网络进行弱恢复。
-		
-	\end{itemize}	
+		\item[(3)] \textbf{改进方案的探索与实现：}尝试结合 RCF 方法和 Transformer 模型，设计新的边缘检测与图像恢复模型，并在标准数据集上测试新模型，并与传统方法进行性能比较。
+	\end{itemize}
 	
-	但由于噪声和伪影的存在，以及色彩与真实图像之间的差异，直接采用神经网络恢复结果通常并不理想。
-	
-	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/The proposed initial architecture}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: The proposed architecture} 
-			Low-Lighting 图像恢复网络。结构受 Conformer\cite{peng2021conformer} （见 Fig. \ref{fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal{F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal{F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal{F}_3$ 经过与 U-Net 输出的特征图 $\mathcal{F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。
-		}
-	\end{figure}
-	
-	\textcolor{blue}{要求复现 Uformer\cite{wang2022uformer} 代码（见 Fig. \ref{fig: Uformer}），以及基于 Uformer 架构的改进方法\cite{li2023effective}。复现论文\cite{li2023effective}中提出的一种改进的基于 U-Net 网络的弱光图像增强方法（见 Fig. \ref{fig: MCLNet}），作者提出的 CEM 模块本质上基于 Uformer 思想。}。	
-	\textcolor{red}{建议拟题《一种基于xx方法的弱光图像增强方法》}
-	
-	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=\columnwidth]{picture/LLIE/Uformer/Uformer}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: Uformer} 
-			Uformer 的结构。
-		}
-	\end{figure}
-	
-	\begin{figure}[htbp]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=\columnwidth]{picture/LLIE/MCLNet/Overview}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: MCLNet} 
-			MCLNet 的结构
-		}
-	\end{figure}
-	
-	\subsection{方向二}
-	
-	此外，\textbf{获取边缘图的方法}也各不相同，在 LLIE 任务中，常见方法采用\textbf{边缘检测网络}来生成边缘图。Canny 和 Sobel 算子通常被用作对比实验，也有一些研究采用辅助边缘网络以提高边缘图生成的准确性。这些方法在弱光图像恢复研究中都具有一定的学术和实际应用价值。目前在 LLIE 领域中获取边缘图分化成了两个不同的方向，一种是采用初步恢复图像获取边缘图（如Fig. \ref{fig: EEMEFN}），另一种是直接采用弱光图像获取边缘图。
-	
-	\begin{figure}[htb]
-		% read manual to see what [ht] means and for other possible options
-		\centering 
-		\includegraphics[width=\columnwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
-		%\captionsetup{font=scriptsize}
-		\caption{
-			\label{fig: Overview} 
-			该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha}$ 中通过边缘网络获取边缘图。
-		}
-	\end{figure}
-	
-	图像处理任务中边缘检测的各种方法：
-	
-	\begin{itemize}
-		\item[(1)] 
-		手工设计各种滤波器来生成边缘图。
-		
-		\item[(2)]
-		根据人类设计的特征使用数据驱动模型来预测边缘（随机决策森林来学习边缘斑块）
-		
-		\item[(3)]
-		深度学习方法从原始数据中学习复杂的特征表示端到端边缘检测模型。
-	\end{itemize}	
-	
-	\textcolor{blue}{要求复现论文\cite{xu2023low}代码。论文作者使用 StyleGAN 结构构建一种边缘网络，可以从弱光图像中获取边缘图。复现论文\cite{zhu2020eemefn}代码，其提出了一个从已经初步恢复的图像（非弱光图像）中获取边缘图的方法。复现论文\cite{rana2021edge}，其提出了一种 EdgeNet 方法，可以从弱光图像中获取边缘图的方法。}
-	
-	\textcolor{red}{建议拟题《一种基于xx方法的弱光图像边缘生成网络》}
-	
-	\renewcommand{\refname}{References}
+	\renewcommand{\refname}{参考文献}
 	
 	
 	%	\begin{thebibliography}{00}

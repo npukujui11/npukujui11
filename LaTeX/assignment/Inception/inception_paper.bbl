@@ -197,6 +197,108 @@ Lin Zhang, Lijun Zhang, Xiao Liu, Ying Shen, Shaoming Zhang, and Shengjie Zhao.
 \newblock In {\em Proceedings of the 27th ACM international conference on
   multimedia}, pages 1623--1631, 2019.
 
+\bibitem{cai2018learning}
+Jianrui Cai, Shuhang Gu, and Lei Zhang.
+\newblock Learning a deep single image contrast enhancer from multi-exposure
+  images.
+\newblock {\em IEEE Transactions on Image Processing}, 27(4):2049--2062, 2018.
+
+\bibitem{guo2016lime}
+Xiaojie Guo, Yu~Li, and Haibin Ling.
+\newblock Lime: Low-light image enhancement via illumination map estimation.
+\newblock {\em IEEE Transactions on image processing}, 26(2):982--993, 2016.
+
+\bibitem{singh2016contrast}
+Ankita Singh and KK~Gupta.
+\newblock A contrast enhancement technique for low light images.
+\newblock In {\em AIP Conference Proceedings}, volume 1715. AIP Publishing,
+  2016.
+
+\bibitem{chai2014root}
+Tianfeng Chai and Roland~R Draxler.
+\newblock Root mean square error (rmse) or mean absolute error
+  (mae)?--arguments against avoiding rmse in the literature.
+\newblock {\em Geoscientific model development}, 7(3):1247--1250, 2014.
+
+\bibitem{kellman2005image}
+Peter Kellman and Elliot~R McVeigh.
+\newblock Image reconstruction in snr units: a general method for snr
+  measurement.
+\newblock {\em Magnetic resonance in medicine}, 54(6):1439--1447, 2005.
+
+\bibitem{yu2017low}
+C~Yu, X~Xu, H~Lin, and Y~Xinyan.
+\newblock Low-illumination image enhancement method based on a fog-degraded
+  model.
+\newblock {\em Journal of Image and Graphics}, 22(9):1194--1205, 2017.
+
+\bibitem{zhang2018unreasonable}
+Richard Zhang, Phillip Isola, Alexei~A Efros, Eli Shechtman, and Oliver Wang.
+\newblock The unreasonable effectiveness of deep features as a perceptual
+  metric.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 586--595, 2018.
+
+\bibitem{sheikh2005information}
+Hamid~R Sheikh, Alan~C Bovik, and Gustavo De~Veciana.
+\newblock An information fidelity criterion for image quality assessment using
+  natural scene statistics.
+\newblock {\em IEEE Transactions on image processing}, 14(12):2117--2128, 2005.
+
+\bibitem{russakovsky2015imagenet}
+Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma,
+  Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, et~al.
+\newblock Imagenet large scale visual recognition challenge.
+\newblock {\em International journal of computer vision}, 115:211--252, 2015.
+
+\bibitem{ignatov2018wespe}
+Andrey Ignatov, Nikolay Kobyshev, Radu Timofte, Kenneth Vanhoey, and Luc
+  Van~Gool.
+\newblock Wespe: weakly supervised photo enhancer for digital cameras.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition Workshops}, pages 691--700, 2018.
+
+\bibitem{zhu2015low}
+J~Zhu and Z~Wang.
+\newblock Low-illumination surveillance image enhancement based on similar
+  scenes.
+\newblock {\em Comput. Appl. Softw}, 32(1):203--205, 2015.
+
+\bibitem{mittal2012making}
+Anish Mittal, Rajiv Soundararajan, and Alan~C Bovik.
+\newblock Making a “completely blind” image quality analyzer.
+\newblock {\em IEEE Signal processing letters}, 20(3):209--212, 2012.
+
+\bibitem{fu2016weighted}
+Xueyang Fu, Delu Zeng, Yue Huang, Xiao-Ping Zhang, and Xinghao Ding.
+\newblock A weighted variational model for simultaneous reflectance and
+  illumination estimation.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2782--2790, 2016.
+
+\bibitem{ma2017learning}
+Chao Ma, Chih-Yuan Yang, Xiaokang Yang, and Ming-Hsuan Yang.
+\newblock Learning a no-reference quality metric for single-image
+  super-resolution.
+\newblock {\em Computer Vision and Image Understanding}, 158:1--16, 2017.
+
+\bibitem{ke2021musiq}
+Junjie Ke, Qifei Wang, Yilin Wang, Peyman Milanfar, and Feng Yang.
+\newblock Musiq: Multi-scale image quality transformer.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 5148--5157, 2021.
+
+\bibitem{talebi2018nima}
+Hossein Talebi and Peyman Milanfar.
+\newblock Nima: Neural image assessment.
+\newblock {\em IEEE transactions on image processing}, 27(8):3998--4011, 2018.
+
+\bibitem{fang2020perceptual}
+Yuming Fang, Hanwei Zhu, Yan Zeng, Kede Ma, and Zhou Wang.
+\newblock Perceptual quality assessment of smartphone photography.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 3677--3686, 2020.
+
 \bibitem{yang2021locally}
 Chenglin Yang, Siyuan Qiao, Adam Kortylewski, and Alan Yuille.
 \newblock Locally enhanced self-attention: Combining self-attention and
@@ -266,18 +368,6 @@ Zhou Wang, Alan~C Bovik, Hamid~R Sheikh, and Eero~P Simoncelli.
 Matti Pietik{\"a}inen.
 \newblock Local binary patterns.
 \newblock {\em Scholarpedia}, 5(3):9775, 2010.
-
-\bibitem{maini2009study}
-Raman Maini and Himanshu Aggarwal.
-\newblock Study and comparison of various image edge detection techniques.
-\newblock {\em International journal of image processing (IJIP)}, 3(1):1--11,
-  2009.
-
-\bibitem{liu2017richer}
-Yun Liu, Ming-Ming Cheng, Xiaowei Hu, Kai Wang, and Xiang Bai.
-\newblock Richer convolutional features for edge detection.
-\newblock In {\em Proceedings of the IEEE conference on computer vision and
-  pattern recognition}, pages 3000--3009, 2017.
 
 \bibitem{woo2018cbam}
 Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
@@ -352,6 +442,27 @@ Zhendong Wang, Xiaodong Cun, Jianmin Bao, Wengang Zhou, Jianzhuang Liu, and
 Zheng Chen, Yulun Zhang, Jinjin Gu, Yongbing Zhang, Linghe Kong, and Xin Yuan.
 \newblock Cross aggregation transformer for image restoration, 2023.
 
+\bibitem{burt1984pyramid}
+Peter~J Burt.
+\newblock The pyramid as a structure for efficient computation.
+\newblock In {\em Multiresolution image processing and analysis}, pages 6--35.
+  Springer, 1984.
+
+\bibitem{wang2022uformer}
+Zhendong Wang, Xiaodong Cun, Jianmin Bao, Wengang Zhou, Jianzhuang Liu, and
+  Houqiang Li.
+\newblock Uformer: A general u-shaped transformer for image restoration.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 17683--17693, 2022.
+
+\bibitem{peng2021conformer}
+Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
+  and Qixiang Ye.
+\newblock Conformer: Local features coupling global representations for visual
+  recognition.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on
+  computer vision}, pages 367--376, 2021.
+
 \bibitem{jain1991unsupervised}
 Anil~K Jain and Farshid Farrokhnia.
 \newblock Unsupervised texture segmentation using gabor filters.
@@ -377,18 +488,17 @@ Dimitri~A Lisin, Marwan~A Mattar, Matthew~B Blaschko, Erik~G Learned-Miller,
 \newblock In {\em 2005 IEEE computer society conference on computer vision and
   pattern recognition (CVPR'05)-Workshops}, pages 47--47. IEEE, 2005.
 
-\bibitem{peng2021conformer}
-Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
-  and Qixiang Ye.
-\newblock Conformer: Local features coupling global representations for visual
-  recognition.
-\newblock In {\em Proceedings of the IEEE/CVF international conference on
-  computer vision}, pages 367--376, 2021.
-
 \bibitem{karu1996there}
 Kalle Karu, Anil~K Jain, and Ruud~M Bolle.
 \newblock Is there any texture in the image?
 \newblock {\em Pattern Recognition}, 29(9):1437--1446, 1996.
+
+\bibitem{szegedy2016rethinking}
+Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, and Zbigniew
+  Wojna.
+\newblock Rethinking the inception architecture for computer vision.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2818--2826, 2016.
 
 \bibitem{huber1992robust}
 Peter~J Huber.
@@ -403,16 +513,28 @@ Justin Johnson, Alexandre Alahi, and Li~Fei-Fei.
   Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part II 14},
   pages 694--711. Springer, 2016.
 
-\bibitem{cai2018learning}
-Jianrui Cai, Shuhang Gu, and Lei Zhang.
-\newblock Learning a deep single image contrast enhancer from multi-exposure
-  images.
-\newblock {\em IEEE Transactions on Image Processing}, 27(4):2049--2062, 2018.
+\bibitem{liu2017richer}
+Yun Liu, Ming-Ming Cheng, Xiaowei Hu, Kai Wang, and Xiang Bai.
+\newblock Richer convolutional features for edge detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3000--3009, 2017.
 
-\bibitem{mittal2012making}
-Anish Mittal, Rajiv Soundararajan, and Alan~C Bovik.
-\newblock Making a “completely blind” image quality analyzer.
-\newblock {\em IEEE Signal processing letters}, 20(3):209--212, 2012.
+\bibitem{xie2015holistically}
+Saining Xie and Zhuowen Tu.
+\newblock Holistically-nested edge detection.
+\newblock In {\em Proceedings of the IEEE international conference on computer
+  vision}, pages 1395--1403, 2015.
+
+\bibitem{simonyan2014very}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em arXiv preprint arXiv:1409.1556}, 2014.
+
+\bibitem{maini2009study}
+Raman Maini and Himanshu Aggarwal.
+\newblock Study and comparison of various image edge detection techniques.
+\newblock {\em International journal of image processing (IJIP)}, 3(1):1--11,
+  2009.
 
 \bibitem{pisano1998contrast}
 Etta~D Pisano, Shuquan Zong, Bradley~M Hemminger, Marla DeLuca, R~Eugene
@@ -433,18 +555,5 @@ Chunle Guo, Chongyi Li, Jichang Guo, Chen~Change Loy, Junhui Hou, Sam Kwong,
 \newblock Zero-reference deep curve estimation for low-light image enhancement.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
   pattern recognition}, pages 1780--1789, 2020.
-
-\bibitem{wang2022uformer}
-Zhendong Wang, Xiaodong Cun, Jianmin Bao, Wengang Zhou, Jianzhuang Liu, and
-  Houqiang Li.
-\newblock Uformer: A general u-shaped transformer for image restoration.
-\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
-  pattern recognition}, pages 17683--17693, 2022.
-
-\bibitem{li2023effective}
-Qiao Li, Bin Jiang, Xiaochen Bo, Chao Yang, and Xu~Wu.
-\newblock Effective low-light image enhancement with multiscale and context
-  learning network.
-\newblock {\em Multimedia Tools and Applications}, 82(10):15271--15286, 2023.
 
 \end{thebibliography}
