@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  1 JAN 2024 22:15
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  1 JAN 2024 22:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1001,6 +1001,10 @@ File: picture/LLIE/RRDNet/RRDNet.jpg Graphic file (type bmp)
 
 LaTeX Warning: Reference `MOS' on page 12 undefined on input line 563.
 
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 575.
+
 File: picture/LLIE/VE-LOL-L/input.jpg Graphic file (type bmp)
 <picture/LLIE/VE-LOL-L/input.jpg>
 File: picture/LLIE/VE-LOL-L/LLNet.jpg Graphic file (type bmp)
@@ -1163,11 +1167,11 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `inception_paper.out' has not changed.
-(rerunfilecheck)             Checksum: 82725E940238F03A84A07C0BC6B2C062;4262.
+(rerunfilecheck)             Checksum: 6F0AC86108761FC5FA146B07D7C8A3C8;4243.
  ) 
 Here is how much of TeX's memory you used:
  23532 strings out of 476683
- 539938 string characters out of 5805371
+ 539933 string characters out of 5805371
  1880012 words of memory out of 5000000
  43310 multiletter control sequences out of 15000+600000
  523722 words of font info for 121 fonts, out of 8000000 for 9000

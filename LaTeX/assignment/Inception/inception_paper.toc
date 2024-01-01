@@ -23,30 +23,30 @@
 \contentsline {paragraph}{亮度顺序误差 (Lightness Order Error, LOE)}{12}{equation.2.14}%
 \contentsline {subsubsection}{\numberline {2.4.2}主观评价指标}{12}{subsubsection.2.4.2}%
 \contentsline {paragraph}{差分平均意见分数 (Differential Mean Opinion Score, MOS)}{12}{subsubsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.5}研究目的}{12}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}现有方法的局限性}{12}{subsubsection.2.5.1}%
-\contentsline {section}{\numberline {3}采用的方法}{15}{section.3}%
-\contentsline {subsection}{\numberline {3.1}注意力机制}{15}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}U-Net网络结构}{15}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}CNN网络结构}{16}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Transformer网络结构}{16}{subsection.3.4}%
-\contentsline {section}{\numberline {4}具体的方法}{17}{section.4}%
-\contentsline {subsection}{\numberline {4.1}初步恢复图像的生成模型}{17}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}CNN 分支}{19}{subsubsection.4.1.1}%
-\contentsline {paragraph}{注意力残差多尺度块}{20}{equation.4.2}%
-\contentsline {subsubsection}{\numberline {4.1.2}Transformer分支}{21}{subsubsection.4.1.2}%
-\contentsline {paragraph}{嵌入块}{21}{subsubsection.4.1.2}%
+\contentsline {section}{\numberline {3}研究目的}{12}{section.3}%
+\contentsline {subsubsection}{\numberline {3.0.1}现有方法的局限性}{12}{subsubsection.3.0.1}%
+\contentsline {section}{\numberline {4}采用的方法}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}注意力机制}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}U-Net网络结构}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}CNN网络结构}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Transformer网络结构}{16}{subsection.4.4}%
+\contentsline {section}{\numberline {5}具体的方法}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}初步恢复图像的生成模型}{17}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}CNN 分支}{19}{subsubsection.5.1.1}%
+\contentsline {paragraph}{注意力残差多尺度块}{20}{equation.5.2}%
+\contentsline {subsubsection}{\numberline {5.1.2}Transformer分支}{21}{subsubsection.5.1.2}%
+\contentsline {paragraph}{嵌入块}{21}{subsubsection.5.1.2}%
 \contentsline {paragraph}{位置编码}{22}{figure.caption.23}%
-\contentsline {paragraph}{Transformer编码器}{22}{equation.4.4}%
-\contentsline {paragraph}{特征耦合单元}{23}{equation.4.8}%
-\contentsline {subsubsection}{\numberline {4.1.3}特征融合模块}{23}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}损失函数}{24}{subsubsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.2}边缘检测网络}{25}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}现有方法的局限性}{25}{subsubsection.4.2.1}%
-\contentsline {section}{\numberline {5}已完成工作}{28}{section.5}%
-\contentsline {subsection}{\numberline {5.1}初步恢复图像的生成模型实验结果}{28}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}实验设置}{28}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}数据集和评价指标}{29}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}对比试验}{29}{subsubsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.2}消融实验}{30}{subsection.5.2}%
-\contentsline {section}{\numberline {6}下一步工作}{30}{section.6}%
+\contentsline {paragraph}{Transformer编码器}{22}{equation.5.4}%
+\contentsline {paragraph}{特征耦合单元}{23}{equation.5.8}%
+\contentsline {subsubsection}{\numberline {5.1.3}特征融合模块}{23}{subsubsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.4}损失函数}{24}{subsubsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.2}边缘检测网络}{25}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}现有方法的局限性}{25}{subsubsection.5.2.1}%
+\contentsline {section}{\numberline {6}已完成工作}{28}{section.6}%
+\contentsline {subsection}{\numberline {6.1}初步恢复图像的生成模型实验结果}{28}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}实验设置}{28}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}数据集和评价指标}{29}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}对比试验}{29}{subsubsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.2}消融实验}{30}{subsection.6.2}%
+\contentsline {section}{\numberline {7}下一步工作}{30}{section.7}%
