@@ -19,7 +19,7 @@
 
 \begin{document}
 	
-	\title{Hybrid Parallel CNN-Transformer Architecture for Enhanced Low-Light Image}
+	\title{开题答辩}
 	\author[顾睿 (LZU)]{顾睿 \inst{1}}
 	\institute[*]{\inst{1} 兰州大学，信息科学与工程学院\\
 		npukujui11@gmail.com}
@@ -775,60 +775,62 @@
 	
 	\begin{frame}
 		
-		Our study focuses on constructing an overall recovery framework that utilizes the fusion of edge maps, preliminary recovery maps, and channel information to improve the quality of low-light images.
+		{\zihao{-5} \yahei 我们的研究侧重于构建一个整体恢复框架，该框架利用边缘图、初步恢复图和通道信息的融合，以提高弱光图像的质量。}
+		
+		% Our study focuses on constructing an overall recovery framework that utilizes the fusion of edge maps, preliminary recovery maps, and channel information to improve the quality of low-light images.
 		
 		% 我们的研究侧重于构建一个整体恢复框架，该框架利用边缘图、初步恢复图和通道信息的融合，以提高弱光图像的质量。我们将继续探索合适的增强网络结构，以便进一步提升恢复结果的性能。这一研究旨在为弱光图像恢复领域提供新的理论和方法，以及改善图像质量并拓展应用领域。
 		
-		\begin{itemize} 
-			\item \textbf{Model for the initial recovery }
-			% 初步恢复的模型
-			
-			\small Drawing on the conformer parallel structure, CNN branched Res-Net structure is modified to the U-Net structure.
-			% 我们受到了 Conformer 结构的启发，在卷积神经网络 (CNN) 中，卷积操作擅长提取局部特征，但难以捕获全局表示。Conformer 是一种混合网络结构，包含了混合网络结构，包含了并行的 CNN 分支和 Transformer 分支，其通过特征耦合模块融合局部与全局特征，目的在于不损失图像细节的同时捕捉图像全局信息。我们借鉴 Conformer 并发结构，将其中 CNN 分支的 ResNet 结构修改为 U-Net 结构。基于这一点，我们设计了一种结合U-Net 与Transformer 网络的并行模型(PACUT, Parallel architecture combining u-net and transformer)。这一模型旨在从弱光图像中提取长距离和短距离特征，以便更全面地捕捉图像的信息。通过特定的特征融合策略，我们期望能够得到初步恢复的图像。
-
-			\item \textbf{Low-light image edge generation network}
-			% 弱光图像边缘生成网络
-			
-			\small Multi-exposure Architecture
-			% 多曝光架构
-			
-			\small HOG and LBP guided
-			% HOG 和 LBP 融合
-			
-			
-			\item \textbf{Edge-guided enhancement}
-			% 边缘图像指导恢复网络
-			
-			\small Series fusion
-			% 串联融合
-			
-			\item \textbf{Challenge}
-			
-			\small The coordination of the overall model
-			% 整体模型的协调性
-			
-			\small Ablation Study
-			% 消融实验
-			
-			
-		\end{itemize}
-		
-	\end{frame}
-	
-	\begin{frame}
-		
-		\begin{figure}[htbp]
-			\begin{center}
-				\includegraphics[width=0.65\textwidth]{picture/LLIE/My Architecture/Total architecture}
-			\end{center}
-			\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Total architecture}
-				Total Architecture
-			}
+		\begin{figure}
+			\begin{minipage}{.4\columnwidth}
+				\begin{itemize}\zihao{-5}
+					\item \textbf{初步恢复图像的生成模型}
+					
+					{\zihao{6} 基于 Conformer 结构}
+					%\small Drawing on the conformer parallel structure, CNN branched Res-Net structure is modified to the U-Net structure.
+					
+					
+					%我们受到了 Conformer 结构的启发，在卷积神经网络 (CNN) 中，卷积操作擅长提取局部特征，但难以捕获全局表示。Conformer 是一种混合网络结构，包含了混合网络结构，包含了并行的 CNN 分支和 Transformer 分支，其通过特征耦合模块融合局部与全局特征，目的在于不损失图像细节的同时捕捉图像全局信息。我们借鉴 Conformer 并发结构，将其中 CNN 分支的 ResNet 结构修改为 U-Net 结构。基于这一点，我们设计了一种结合U-Net 与Transformer 网络的并行模型(PACUT, Parallel architecture combining u-net and transformer)。这一模型旨在从弱光图像中提取长距离和短距离特征，以便更全面地捕捉图像的信息。通过特定的特征融合策略，我们期望能够得到初步恢复的图像。
+					
+					\item \textbf{边缘检测网络}
+					% 弱光图像边缘生成网络
+					
+					{\zihao{6} 多曝光架构}
+					% 多曝光架构
+					
+					{\zihao{6} 融合HOG和LBP图像}
+					% HOG 和 LBP 融合
+					
+					
+					\item \textbf{边缘图像指导恢复网络}
+					% 边缘图像指导恢复网络
+					
+					{\zihao{6} 串联融合}
+					% 串联融合
+					
+					\item \textbf{挑战}
+					
+					{\zihao{6} 整体模型的协调性}
+					% 整体模型的协调性
+					
+					{\zihao{6} 消融实验的设计}
+					% 消融实验
+				\end{itemize}
+			\end{minipage}
+			\begin{minipage}{.58\columnwidth}
+				\setlength{\abovecaptionskip}{-0.05cm}
+				\centering 
+				\includegraphics[width=\textwidth]{picture/LLIE/My Architecture/Total architecture}
+				\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: Total architecture}
+					Total Architecture
+				}
+			\end{minipage}
 		\end{figure}
 		
 	\end{frame}
+	
 	
 	\subsection{初步恢复图像的生成模型}
 	
@@ -867,7 +869,7 @@
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture.jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: PACUT}	
-				\caption*{\tiny PACUT}
+				\caption*{\tiny 初步恢复图像的生成模型}
 			\end{minipage}\\
 			\hfill
 			\begin{minipage}{.28\textwidth}
@@ -1049,103 +1051,150 @@
 	
 	\begin{frame}
 		
-		\begin{itemize} 
-			\item \textbf{Traditional Method}
-			% 获取图像边缘的深度学习方法主要依赖于卷积神经网络（CNN）的变体和架构，这些方法能够有效地提取图像的特征，包括边缘信息。以下是一些常见的深度学习方法，用于获取图像边缘。
-			
-			CNN
-			% 传统的CNN架构，如LeNet、AlexNet、VGGNet等，可以通过训练来识别图像边缘。在这些网络的初级层中，通常会学习到类似于传统边缘检测滤波器（如 Sobel 或 Canny）的特征。
-			
-			Auto-encoder
-			% 自编码器可以用于学习图像的压缩表示，其中编码器部分可以被训练来提取图像的边缘信息。
-			
-			GANS
-			% GANs可以用于边缘检测，特别是在图像到图像的转换任务中
-			
-			U-Net
-			% U-Net是一种流行的用于图像分割的网络架构，它也可以被用于边缘检测。U-Net的对称结构和跳跃连接特别适合于捕捉图像的细节和边缘。
-		\end{itemize}
-		\begin{itemize} 
-			\item \textbf{Challenge}
-			
-			Processing dark light images directly can distort the edge map
-			% 直接处理暗光图片会使得边缘图失真
-			
-		\end{itemize}
+		{\zihao{6} \yahei Liu\textcolor{blue}{\citep{liu2017richer}}发现不同卷积层获得的结果随着深度增加而更加粗糙，其提出 RCF(Richer convolutional features) 方法充分利用所有 CNN 层的结果。}
+		
+		\begin{figure}
+			\centering
+			\setlength{\abovecaptionskip}{-0.05cm} 		
+			\begin{minipage}{0.11\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/RCF/origin image}
+				\caption*{\tiny (a) origin image}
+				\label{fig: origin image}
+			\end{minipage}
+			\begin{minipage}{0.11\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/RCF/GT}
+				\caption*{\tiny (b) GT}
+				\label{fig: RCF_GT}
+			\end{minipage}
+			\begin{minipage}{0.11\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_1}
+				\caption*{\tiny (c) conv3\_1}
+				\label{fig: conv3_1}	
+			\end{minipage}
+			\begin{minipage}{0.11\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_2}
+				\caption*{\tiny (d) conv3\_2}
+				\label{fig: conv3_2}	
+			\end{minipage}
+			\begin{minipage}{0.11\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_3}
+				\caption*{\tiny (e) conv3\_3}
+				\label{fig: conv3_3}
+			\end{minipage}
+			\begin{minipage}{0.11\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_1}
+				\caption*{\tiny (f) conv4\_1}
+				\label{fig: conv4_1}
+			\end{minipage}
+			\begin{minipage}{0.11\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_2}
+				\caption*{\tiny (g) conv4\_2}
+				\label{fig: conv4_2}	
+			\end{minipage}
+			\begin{minipage}{0.11\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_3}
+				\caption*{\tiny (h) conv4\_3}
+				\label{fig: conv4_3}	
+			\end{minipage}
+			\caption{
+				\tiny 建立了一个基于 VGG16\cite{simonyan2014very} 的简单网络来产生侧输出(c-h)。我们可以看到，卷积特征逐渐变得更粗，而中间层(c、d、f、g)包含了在其他层中没有出现的基本细节。
+			}
+		\end{figure}
+		
+		{\zihao{6} \yahei 相比之下，HED (Holistically-nested edge detection) \textcolor{blue}{\cite{xie2015holistically}}方法仅采用了 VGG16 架构中每个阶段的最后一层卷积输出，而 RCF (Richer Convolutional Features) 方法则利用了每个层级的卷积结果。}
+		
 	\end{frame}
+	
+%	\begin{frame}
+%		
+%		\begin{itemize} 
+%			\item \textbf{Traditional Method}
+%			% 获取图像边缘的深度学习方法主要依赖于卷积神经网络（CNN）的变体和架构，这些方法能够有效地提取图像的特征，包括边缘信息。以下是一些常见的深度学习方法，用于获取图像边缘。
+%			
+%			CNN
+%			% 传统的CNN架构，如LeNet、AlexNet、VGGNet等，可以通过训练来识别图像边缘。在这些网络的初级层中，通常会学习到类似于传统边缘检测滤波器（如 Sobel 或 Canny）的特征。
+%			
+%			Auto-encoder
+%			% 自编码器可以用于学习图像的压缩表示，其中编码器部分可以被训练来提取图像的边缘信息。
+%			
+%			GANS
+%			% GANs可以用于边缘检测，特别是在图像到图像的转换任务中
+%			
+%			U-Net
+%			% U-Net是一种流行的用于图像分割的网络架构，它也可以被用于边缘检测。U-Net的对称结构和跳跃连接特别适合于捕捉图像的细节和边缘。
+%		\end{itemize}
+%		\begin{itemize} 
+%			\item \textbf{Challenge}
+%			
+%			Processing dark light images directly can distort the edge map
+%			% 直接处理暗光图片会使得边缘图失真
+%			
+%		\end{itemize}
+%	\end{frame}
 	
 	\begin{frame}
 		\begin{figure}
 			\centering
+			\setlength{\abovecaptionskip}{-0.05cm} 	
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044}
+				\caption*{\tiny LLI}
 				\label{fig: LLI}
-				\caption*{LLI}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_canny}
-				\captionsetup{font=scriptsize}
-				\label{fig: LLI_canny}	
-				\caption*{LLI Canny}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_canny}
+				\caption*{\tiny LLI Canny}
+				\label{fig: LLI_canny}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_rcf}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_rcf}
+				\caption*{\tiny LLI RCF}
 				\label{fig: LLI_rcf}	
-				\caption*{LLI RCF}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_hog}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_hog}
+				\caption*{\tiny LLI HOG}
 				\label{fig: LLI_hog}	
-				\caption*{LLI HOG}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_lbp}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_lbp}
+				\caption*{\tiny LLI LBP}
 				\label{fig: LLI_lbp}	
-				\caption*{LLI LBP}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044}
+				\caption*{\tiny GT}
 				\label{fig: GI}
-				\caption*{GT}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_canny}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_canny}
+				\caption*{\tiny GT Canny}
 				\label{fig: GT_canny}	
-				\caption*{GT Canny}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_rcf}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_rcf}
+				\caption*{\tiny GT RCF}
 				\label{fig: GT_rcf}	
-				\caption*{GT RCF}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_hog}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_hog}
+				\caption*{\tiny GT HOG}
 				\label{fig: GT_hog}	
-				\caption*{GT HOG}
 			\end{minipage}
 			\begin{minipage}{.19\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_lbp}
-				\captionsetup{font=scriptsize}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044_lbp}
+				\caption*{\tiny GT LBP}
 				\label{fig: GT_lbp}	
-				\caption*{GT LBP}
 			\end{minipage}
 			\captionsetup{font=scriptsize}
 			\caption{
@@ -1153,113 +1202,108 @@
 				LLI and GT Structure Information
 			}
 		\end{figure}
+		
+		\vspace{-0.5cm}
+		
+		{\zihao{6} \yahei 传统方法如 Canny 和 Sobel 算子\textcolor{blue}{\cite{maini2009study}}在直接从低光照图像中提取边缘时面临较大挑战。然而，基于深度学习的方法能从低光照图像中提取出更为详细的边缘图像，虽然与真实边缘仍有差异。我们的研究目标是缩减这一差距，以提高基于结构建模指导的模型的准确性。}
 	\end{frame}
 	
 	\begin{frame}
 		
-		\begin{itemize} 
-			\item \textbf{Histogram of Oriented Gradients, HOG}
+		\begin{itemize}\zihao{5}
+			\item \textbf{方向梯度直方图, HOG}
 			\vspace{.3cm}
 			% 一般而言，HOG特征在物体检测（特别是行人检测）中非常有效，它通常与支持向量机（SVM）分类器一起使用。
 			% HOG 主要原理是计算图像的梯度幅值和方向。具体来说先把图像分割个小的连续区域(Cell)，计算每一个区域梯度方向的直方图，最后合并成更大的区域(Block) 来对直方图进行归一化，然后合并所有 Block 形成最终的 HOG 特征图。		
 			
-			\small HOG is a feature control for shape information and texture information for local images.
-			% HOG 是一个用于局部图像的形状信息和纹理信息的特征控件。它基于图像的梯度方向来构建直方图。
+			%\small HOG is a feature control for shape information and texture information for local images.
+			\checkmark {\zihao{6} HOG 是一个用于局部图像的形状信息和纹理信息的特征控件。它基于图像的梯度方向来构建直方图。}
 			
-			\small Vectors of the shape and edge information of the object in the image
-			% HOG特征表示包含图像中对象的形状和边缘信息的向量，它分析了图像中局部梯度方向的分布。
+			%\small Vectors of the shape and edge information of the object in the image
+			\checkmark {\zihao{6} HOG特征表示包含图像中对象的形状和边缘信息的向量，它分析了图像中局部梯度方向的分布。}
 			
-			\small HOG maintains good invariance to both image geometry and optical deformation.
-			% 由于HOG是在图像的局部方格单元上操作，所以它对图像几何的和光学的形变都能保持很好的不变性。
+			%\small HOG maintains good invariance to both image geometry and optical deformation.
+			\checkmark {\zihao{6} 由于HOG是在图像的局部方格单元上操作，所以它对图像几何的和光学的形变都能保持很好的不变性。}
 		\end{itemize}
 		
-		\begin{itemize} 
-			\item \textbf{Local Binary Pattern, LBP}
+		\begin{itemize} \zihao{5}
+			\item \textbf{局部二值模式图, LBP}
 			\vspace{.3cm}
 			% 一般而言，HOG特征在物体检测（特别是行人检测）中非常有效，它通常与支持向量机（SVM）分类器一起使用。
 			% HOG 主要原理是计算图像的梯度幅值和方向。具体来说先把图像分割个小的连续区域(Cell)，计算每一个区域梯度方向的直方图，最后合并成更大的区域(Block) 来对直方图进行归一化，然后合并所有 Block 形成最终的 HOG 特征图。		
 			
-			\small LBP is an operator used to describe the local features of images
-			% LBP 是一种用来描述图像局部特征的算子。
+			%\small LBP is an operator used to describe the local features of images
+			\checkmark {\zihao{6} LBP 是一种用来描述图像局部特征的算子。}
 			
-			\small LBP features have significant advantages such as gray invariance and rotation invariance.
-			% LBP特征具有灰度不变性和旋转不变性等显著优点
+			%\small LBP features have significant advantages such as gray invariance and rotation invariance.
+			\checkmark {\zihao{6} LBP特征具有灰度不变性和旋转不变性等显著优点.}
 			
-			\small HOG maintains good invariance to both image geometry and optical deformation.
+			%\small HOG maintains good invariance to both image geometry and optical deformation.
 			% LBP主要工作原理如下：对于图像中的每个像素，考虑其周围的一个领域(例如，3 × 3 的窗口)，然后将邻域中的每个像素与中心像素进行比较。如果领域像素的值大于或等于中心像素的值，则将其标记为1，否则标记为0。这样相邻的所有域都会产生一个二进制模式(例如，11100101)，通过计算所有二进制模式的直方图作为图像的 LBP 特征。
 		\end{itemize}
 		
-		\begin{itemize} 
-			\item \textbf{What we can find from HOG and LBP?}
+		\begin{itemize} \zihao{5}
+			\item \textbf{我们能从 HOG 和 LBP获得什么？}
 			\vspace{.3cm}
 			
-			\small Edge information
+			%\small Edge information
+			\checkmark {\zihao{6} 边缘信息}
 			
-			\small Necessarily Work?
-			% 是否一定有效？
+			%\small Necessarily Work?
+			\checkmark {\zihao{6} 是否一定有效？}
 			
-			\small How to solve?
-			
+			%\small How to solve?
+			\checkmark {\zihao{6} 怎么利用这两个特征？}
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
 		\begin{figure}
 			\centering
-			\begin{minipage}{.32\textwidth}
+			\setlength{\abovecaptionskip}{-0.005cm} 	
+			\begin{minipage}{.3\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00269}
-				\captionsetup{font=scriptsize}
-				\label{fig: LLI1}
-				\caption*{LLI with noise}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00269}
+				\caption*{\small LLI with noise}
 			\end{minipage}
-			\begin{minipage}{.32\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00269_hog}
-				\captionsetup{font=scriptsize}
-				\label{fig: LLI_hog1}	
-				\caption*{LLI HOG}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00269_hog}	
+				\caption*{\small LLI HOG}
 			\end{minipage}
-			\begin{minipage}{.32\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00269_lbp}
-				\captionsetup{font=scriptsize}
-				\label{fig: LLI_lbp1}	
-				\caption*{LLI LBP}
-			\end{minipage}
-			\begin{minipage}{.32\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00269_lbp}	
+				\caption*{\small LLI LBP}
+			\end{minipage} \\
+			\vspace{-0.3cm}
+			\begin{minipage}{.3\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00269}
-				\captionsetup{font=scriptsize}
-				\label{fig: GI1}
-				\caption*{GT}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00269}
+				\caption*{\small GT}
 			\end{minipage}
-			\begin{minipage}{.32\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00269_hog}
-				\captionsetup{font=scriptsize}
-				\label{fig: GT_hog1}	
-				\caption*{GT HOG}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00269_hog}
+				\caption*{\small GT HOG}
 			\end{minipage}
-			\begin{minipage}{.32\textwidth}
+			\begin{minipage}{.3\textwidth}
 				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00269_lbp}
-				\captionsetup{font=scriptsize}
-				\label{fig: GT_lbp1}	
-				\caption*{GT LBP}
+				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00269_lbp}
+				\caption*{\small GT LBP}
 			\end{minipage}
-			\captionsetup{font=scriptsize}
 			\caption{
 				\label{fig: LLI Structure Information1}
-				LLI with noise and GT Structure Information
+				\small LLI with noise and GT Structure Information
 			}
 		\end{figure}
 	\end{frame}
 	
-		\begin{frame}
+	\begin{frame}
 		\begin{figure}
 			\centering
-			\begin{minipage}{\textwidth}
+			\setlength{\abovecaptionskip}{-0.05cm} 	
+			\begin{minipage}{0.9\textwidth}
 				\centering
 				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection Network}
 				\captionsetup{font=scriptsize}
@@ -1267,6 +1311,10 @@
 				\caption{Edge Detection Network}
 			\end{minipage}
 		\end{figure}
+		
+		\vspace{-0.5cm}
+		
+		{\zihao{6} \yahei 本研究尝试使用不同曝光度的图片，获取它们的 HOG 和 LBP 图像，并采用多曝光图像融合架构，从而获得更接近真实边缘结构的边缘图像。}
 	\end{frame}
 	
 	\section{具体工作内容}
@@ -1274,11 +1322,15 @@
 	\subsection{已完成工作}
 	
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{已完成工作}}
+		{\zihao{5} \yahei \textbf{已完成工作}}
 		% 实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于scikit-image 库计算PSNR、SSIM 等评价指标。
 		
-		\begin{itemize} 
-			\item \textbf{Low-light Dataset}
+		{\zihao{-5} \yahei 我们针对初步恢复图像的生成模型进行了实验验证，以验证所提出方法的有效性。}
+		
+		\begin{itemize}\zihao{-5}
+			\item [(1)] 首先，介绍了实验的具体实施细节，包括网络的实现、所采用的数据集以及评估指标的选择。
+			\item [(2)] 接着，通过与当前领先技术的比较分析，展示了我们网络在低光图像增强任务中的性能优势。
+			\item [(3)] 最后，为了深入理解各个网络组件的贡献，我们执行了一系列消融研究，探讨了这些组件在低光图像增强任务中的作用和重要性。
 		\end{itemize}
 		
 	\end{frame}
@@ -1291,7 +1343,7 @@
 		% 实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于scikit-image 库计算PSNR、SSIM 等评价指标。
 		
 		\begin{itemize} 
-			\item \textbf{Low-light Dataset}
+			\item \textbf{弱光数据集}
 		\end{itemize}
 		
 		\begin{table}[!htbp]
@@ -1329,58 +1381,211 @@
 				Summary of paired training datasets. 'Syn' represents Synthetic.} %表格的标题
 			
 		\end{table}
+		
+		\vspace{-0.3cm}
+		
+		\begin{itemize}\zihao{5}
+			\item \textbf{评价指标}
+			
+			\checkmark {\zihao{6} 峰值信噪比（PSNR）是应用最广泛的指标之一。PSNR值越高，失真越小。单位为dB。}
+			
+			\checkmark {\zihao{6} 结构相似性（SSIM）是参考图像质量评价中应用最广泛的标准。越接近1，两个图像就越相似。}
+		\end{itemize}
 	\end{frame}
 	
 	\subsubsection{对比实验和消融实验}
 	
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{对比实验和消融实验}}
-		\begin{itemize}
-			\item \textbf{Train}
-			
-			\checkmark Baseline Model
-			% 基线模型: 首先，训练基线模型（即完整的并行模型，包含完整的CNN 和Transformer 分支）。
-			
-			\checkmark Ablation Study
-			% 消融研究: 接着，训练去除Transformer 分支的模型，以进行消融实验。
-		\end{itemize}
+		{\zihao{-5} \yahei \textbf{对比实验}}
 		
-		\begin{itemize}
-			\item \textbf{Performance Evaluation}
-			
-			\checkmark MSE
-			% 均方误差
-			
-			\checkmark PSNR
-			% 峰值信噪比
-			
-			\checkmark SSIM
-			% 结构相似性指数
-			
-			\checkmark LPIPS
-			% 感知图像质量评估
-		\end{itemize}
+		{\zihao{6} \yahei 我们将所提算法的结果与多个公开可获得的代码进行比较，包括HE\textcolor{blue}{\citep{pisano1998contrast}}、LightenNet\textcolor{blue}{\citep{li2018lightennet}}、LLNet\textcolor{blue}{\citep{lore2017llnet}}、Retinex-Net\textcolor{blue}{\citep{wei2018deep}}、MBLLEN\textcolor{blue}{\citep{lv2018mbllen}}、EnlightenGAN\textcolor{blue}{\citep{jiang2021enlightengan}}、Zero-DCE\textcolor{blue}{\citep{guo2020zero}}以及KinD\textcolor{blue}{\citep{zhang2019kindling}}。}
 		
-		\begin{itemize}
-			\item \textbf{Results analysis and reporting}
-			
-			\checkmark All experimental results were compiled into tables or graphs.
-			% 数据整理: 将所有实验结果整理成表格或图表。
-			
-			\checkmark Analysis of differences
-			% 分析: 分析不同数据集和不同模型配置(如有/无Transformer分支) 的性能差异。
-		\end{itemize}
+		\begin{table}[!htbp]
+			\centering
+			\tiny
+			\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+				\begin{tabular}{>{\centering\arraybackslash}m{2.5cm}|c|c|c|c|c|c}
+					
+					\hline %添加表格头部粗线
+					
+					\multirowcell{2}{\textbf{Method}} & \multicolumn{3}{c|}{\makecell{\textbf{LOL}}} & \multicolumn{3}{c}{\makecell{\textbf{SCIE}}} \\
+					
+					\cline{2-7}
+					
+					
+					& \textbf{PSNR↑} & \textbf{SSIM↑} & \textbf{NIQE↓} & \textbf{PSNR↑}  & \textbf{SSIM↑} & \textbf{NIQE↓} \\
+					
+					\hline
+					
+					input & 7.773 & 0.181 & 0.560 & 17.824 & 0.779 & 0.148  \\
+					
+					\hline	
+					
+					HE             & 15.467 & 0.504 & 9.531 & 15.342 & 0.741 & 9.232 \\
+					LightenNet     & 10.301 & 0.361 & 7.422 & 13.579 & 0.744 & 8.166 \\
+					LLNet          & \textcolor{blue}{17.953} & 0.704 & \textcolor{red}{3.974} & 12.177 & 0.645 & 4.292 \\
+					Retinex-Net    & 16.774 & 0.462 & 5.474 & 12.310 & 0.671 & 7.239 \\ 
+					KinD 	          & 16.648 & \textcolor{blue}{0.779} & 6.175 & 21.103 & \textcolor{red}{0.838} & 4.195 \\
+					MBLLEN         & 17.902 & 0.715 & \textcolor{blue}{4.247} & 13.638 & 0.632 & \textcolor{blue}{2.108} \\
+					EnlightenGAN   & 17.483 & 0.658 & 4.889 & 18.726 & 0.822 & 5.216 \\
+					Zero-DCE       & 17.622 & 0.556 & 7.972 & \textcolor{red}{22.682} & 0.810 & \textcolor{red}{1.158} \\
+					\textbf{Ours}  & \textcolor{red}{22.780} & \textcolor{red}{0.823} & 4.473 & \textcolor{blue}{21.543} & \textcolor{blue}{0.835} & 3.412 \\
+					\hline
+					
+				\end{tabular}
+			}
+			\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+			\caption{
+				\tiny LOL和SCIE数据集在各方法下的对比值，其中红色表示最优，蓝色表示次优，$↑$表示越高越好，$↓$表示越低越好。
+			} 
+		\end{table}
+		
+%		\begin{itemize}
+%			\item \textbf{Performance Evaluation}
+%			
+%			\checkmark MSE
+%			% 均方误差
+%			
+%			\checkmark PSNR
+%			% 峰值信噪比
+%			
+%			\checkmark SSIM
+%			% 结构相似性指数
+%			
+%			\checkmark LPIPS
+%			% 感知图像质量评估
+%		\end{itemize}
+%		
+%		\begin{itemize}
+%			\item \textbf{Results analysis and reporting}
+%			
+%			\checkmark All experimental results were compiled into tables or graphs.
+%			% 数据整理: 将所有实验结果整理成表格或图表。
+%			
+%			\checkmark Analysis of differences
+%			% 分析: 分析不同数据集和不同模型配置(如有/无Transformer分支) 的性能差异。
+%		\end{itemize}
 				
+	\end{frame}
+	
+	\begin{frame}
+	{\zihao{-5} \yahei \textbf{对比实验}}
+	
+		\begin{figure}
+		\centering 
+		\setlength{\abovecaptionskip}{-0.05cm}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/Input}
+			\caption*{\tiny (a) Input}
+			\label{fig: LLI Input}
+		\end{minipage}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/LightenNet}
+			\caption*{\tiny (b) LightenNet}
+			\label{fig: LightenNet}
+		\end{minipage}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/LLNet}				
+			\caption*{\tiny (c) LLNet}
+			\label{fig: LLI LLNet}	
+		\end{minipage}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/RetinexNet}
+			\caption*{\tiny (d) RetinexNet}
+			\label{fig: LLI RetinexNet}	
+		\end{minipage}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/KinD}
+			\caption*{\tiny (e) KinD}
+			\label{fig: KinD}	
+		\end{minipage}\\
+		\vspace{-0.3cm}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/MBLLEN}
+			\caption*{\tiny (f) MBLLEN}
+			\label{fig: MBLLEN_contrast}	
+		\end{minipage}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/EnlightenGAN}
+			\caption*{\tiny (g)EnlightenGAN}
+			\label{fig: LLI EnlightenGAN}	
+		\end{minipage}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/Zero-DCE}
+			\caption*{\tiny (h) Zero-DCE}
+			\label{fig: Zero-DCE}	
+		\end{minipage}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/Ours}
+			\caption*{\tiny (i) Ours}
+			\label{fig: Ours}	
+		\end{minipage}
+		\begin{minipage}{0.19\textwidth}
+			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/GT}
+			\caption*{\tiny (j) GT}
+			\label{fig: GT}	
+		\end{minipage}
+		\captionsetup{font=scriptsize}
+		\caption{
+			\label{fig: LOL}
+			\small 不同方法在LOL测试数据集上的视觉表现。
+		}
+	\end{figure}
+	
+	\vspace{-0.3cm}
+	
+	{\zihao{6} \yahei 如图展示了各种方法在LOL测试数据集上的图像增强效果，其中 GT 表示真实图片。与Zero-DCE、LLNet和MBLLEN相比，RetinexNet呈现出颜色饱和度更强的增强效果，而Zero-DCE、LLNet和MBLLEN的结果在视觉上偏暗。EnlightenGAN在增强的图像中显示出明显的灰色伪影，表明其对噪声较为敏感。尽管我们的方法相对真实值而言稍显偏亮，但在LOL数据集上表现出优于对比方法的效果。}
+	
+	\end{frame}
+	
+	\begin{frame}
+		{\zihao{-5} \yahei \textbf{消融实验}}
+		
+		{\zihao{6} \yahei 我们采用PSNR、SSIM和NIQE指标，对SCConv模块、Transformer分支以及基于不同尺寸的预训练视觉变换器模型的有效性进行评估。我们设定去除SCConv模块的CNN分支作为基线网络。我们引入Transformer分支并增加输入到Transformer分支的特征图尺寸，相较于基线，模型性能得到了显著改善。}
+		
+		\begin{table}[!htbp]
+			\centering
+			\tiny
+			\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+				\begin{tabular}{c|c|c|c|c|c|c}
+					
+					\hline
+					
+					\textbf{基线模型} & \textbf{SCConv} & \textbf{Transformer分支} & \textbf{Transformer预训练权重尺寸}  & \textbf{PSNR↑} & \textbf{SSIM↑} & \textbf{NIQE↓} \\
+					
+					\hline
+					
+					\checkmark &            &            &                  & 18.222 & 0.642 & 7.213 \\
+					\checkmark & \checkmark &            &                  & 18.231 & 0.523 & 5.231 \\
+					\checkmark & \checkmark & \checkmark & $224 \times 224$ & 21.643 & 0.815 & 4.552 \\
+					\checkmark & \checkmark & \checkmark & $384 \times 384$ & \textbf{22.780} & \textbf{0.823} & \textbf{4.473} \\
+					
+					\hline			
+				\end{tabular}
+			}
+			\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+			\caption{
+				\label{tab: Ablation Study}
+				\small Transformer分支和Transformer预训练权重尺寸和SCConv对模型的影响。
+			} 
+		\end{table}
+		
 	\end{frame}
 	
 	\subsection{下一步工作}
 	\begin{frame}
-		{\zihao{-5} \yahei \textbf{下一步工作}}
+		{\zihao{5} \yahei \textbf{下一步工作}}
 		
+		{\zihao{-5} \yahei 接下来主要工作主要从以下方面开展：}
 		
+		\begin{itemize}\zihao{-5}
+			\item[(1)] \textbf{边缘检测网络评价指标的研究：}确立用于评估边缘检测网络性能的关键指标，如精度、召回率和F1分数等。此外，设计实验以量化评估不同边缘检测方法在低光条件下的表现。
+			
+			\item[(2)] \textbf{实验设计与验证：}使用现有边缘检测模型（例如RCF）进行初步实验，评估其在弱光图像恢复中的效果。对比分析现有技术与改进方法的性能差异。
+			
+			\item[(3)] \textbf{改进方案的探索与实现：}尝试结合 RCF 方法和 Transformer 模型，设计新的边缘检测与图像恢复模型，并在标准数据集上测试新模型，并与传统方法进行性能比较。
+		\end{itemize}
 	\end{frame}
-	
-	
 	
 	\begin{frame}[plain,c]
 		\begin{center}

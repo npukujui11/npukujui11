@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{37}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -50,14 +50,6 @@
 \newblock \bibinfo{title}{Learning to see in the dark}, in:
   \bibinfo{booktitle}{Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pp. \bibinfo{pages}{3291--3300}.
-%Type = Misc
-\bibitem[{Chen et~al.(2023)Chen, Zhang, Gu, Zhang, Kong and
-  Yuan}]{chen2023cross}
-\bibinfo{author}{Chen, Z.}, \bibinfo{author}{Zhang, Y.}, \bibinfo{author}{Gu,
-  J.}, \bibinfo{author}{Zhang, Y.}, \bibinfo{author}{Kong, L.},
-  \bibinfo{author}{Yuan, X.}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{Cross aggregation transformer for image restoration}.
-\newblock \href{http://arxiv.org/abs/2211.13654}{{\tt arXiv:2211.13654}}.
 %Type = Article
 \bibitem[{Cooper and Baqai(2004)}]{cooper2004analysis}
 \bibinfo{author}{Cooper, T.J.}, \bibinfo{author}{Baqai, F.A.},
@@ -88,6 +80,16 @@
   recognition at scale}.
 \newblock \bibinfo{journal}{arXiv preprint arXiv:2010.11929} .
 %Type = Inproceedings
+\bibitem[{Guo et~al.(2020)Guo, Li, Guo, Loy, Hou, Kwong and Cong}]{guo2020zero}
+\bibinfo{author}{Guo, C.}, \bibinfo{author}{Li, C.}, \bibinfo{author}{Guo, J.},
+  \bibinfo{author}{Loy, C.C.}, \bibinfo{author}{Hou, J.},
+  \bibinfo{author}{Kwong, S.}, \bibinfo{author}{Cong, R.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Zero-reference deep curve estimation for low-light
+  image enhancement}, in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF
+  conference on computer vision and pattern recognition}, pp.
+  \bibinfo{pages}{1780--1789}.
+%Type = Inproceedings
 \bibitem[{Jiang and Zheng(2019)}]{jiang2019learning}
 \bibinfo{author}{Jiang, H.}, \bibinfo{author}{Zheng, Y.}, \bibinfo{year}{2019}.
 \newblock \bibinfo{title}{Learning to see moving objects in the dark}, in:
@@ -111,6 +113,14 @@
 \newblock \bibinfo{title}{Lightness and retinex theory}.
 \newblock \bibinfo{journal}{Josa} \bibinfo{volume}{61}, \bibinfo{pages}{1--11}.
 %Type = Article
+\bibitem[{Li et~al.(2018)Li, Guo, Porikli and Pang}]{li2018lightennet}
+\bibinfo{author}{Li, C.}, \bibinfo{author}{Guo, J.}, \bibinfo{author}{Porikli,
+  F.}, \bibinfo{author}{Pang, Y.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Lightennet: A convolutional neural network for weakly
+  illuminated image enhancement}.
+\newblock \bibinfo{journal}{Pattern recognition letters} \bibinfo{volume}{104},
+  \bibinfo{pages}{15--22}.
+%Type = Article
 \bibitem[{Li et~al.(2021)Li, Yang, Qu, Cao and Li}]{li2021deep}
 \bibinfo{author}{Li, G.}, \bibinfo{author}{Yang, Y.}, \bibinfo{author}{Qu, X.},
   \bibinfo{author}{Cao, D.}, \bibinfo{author}{Li, K.}, \bibinfo{year}{2021}.
@@ -126,6 +136,14 @@
 \newblock \bibinfo{title}{Benchmarking low-light image enhancement and beyond}.
 \newblock \bibinfo{journal}{International Journal of Computer Vision}
   \bibinfo{volume}{129}, \bibinfo{pages}{1153--1184}.
+%Type = Inproceedings
+\bibitem[{Liu et~al.(2017)Liu, Cheng, Hu, Wang and Bai}]{liu2017richer}
+\bibinfo{author}{Liu, Y.}, \bibinfo{author}{Cheng, M.M.}, \bibinfo{author}{Hu,
+  X.}, \bibinfo{author}{Wang, K.}, \bibinfo{author}{Bai, X.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Richer convolutional features for edge detection},
+  in: \bibinfo{booktitle}{Proceedings of the IEEE conference on computer vision
+  and pattern recognition}, pp. \bibinfo{pages}{3000--3009}.
 %Type = Article
 \bibitem[{Lore et~al.(2017)Lore, Akintayo and Sarkar}]{lore2017llnet}
 \bibinfo{author}{Lore, K.G.}, \bibinfo{author}{Akintayo, A.},
@@ -134,6 +152,12 @@
   low-light image enhancement}.
 \newblock \bibinfo{journal}{Pattern Recognition} \bibinfo{volume}{61},
   \bibinfo{pages}{650--662}.
+%Type = Inproceedings
+\bibitem[{Lv et~al.(2018)Lv, Lu, Wu and Lim}]{lv2018mbllen}
+\bibinfo{author}{Lv, F.}, \bibinfo{author}{Lu, F.}, \bibinfo{author}{Wu, J.},
+  \bibinfo{author}{Lim, C.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Mbllen: Low-light image/video enhancement using
+  cnns.}, in: \bibinfo{booktitle}{BMVC}, p.~\bibinfo{pages}{4}.
 %Type = Inproceedings
 \bibitem[{Ma et~al.(2022)Ma, Ma, Liu, Fan and Luo}]{ma2022toward}
 \bibinfo{author}{Ma, L.}, \bibinfo{author}{Ma, T.}, \bibinfo{author}{Liu, R.},
@@ -148,6 +172,14 @@
   dark channel model and enhancing saturation}.
 \newblock \bibinfo{journal}{Optik} \bibinfo{volume}{180},
   \bibinfo{pages}{997--1000}.
+%Type = Article
+\bibitem[{Maini and Aggarwal(2009)}]{maini2009study}
+\bibinfo{author}{Maini, R.}, \bibinfo{author}{Aggarwal, H.},
+  \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{Study and comparison of various image edge detection
+  techniques}.
+\newblock \bibinfo{journal}{International journal of image processing (IJIP)}
+  \bibinfo{volume}{3}, \bibinfo{pages}{1--11}.
 %Type = Inproceedings
 \bibitem[{Peng et~al.(2021)Peng, Huang, Gu, Xie, Wang, Jiao and
   Ye}]{peng2021conformer}
@@ -158,6 +190,19 @@
   representations for visual recognition}, in: \bibinfo{booktitle}{Proceedings
   of the IEEE/CVF international conference on computer vision}, pp.
   \bibinfo{pages}{367--376}.
+%Type = Article
+\bibitem[{Pisano et~al.(1998)Pisano, Zong, Hemminger, DeLuca, Johnston, Muller,
+  Braeuning and Pizer}]{pisano1998contrast}
+\bibinfo{author}{Pisano, E.D.}, \bibinfo{author}{Zong, S.},
+  \bibinfo{author}{Hemminger, B.M.}, \bibinfo{author}{DeLuca, M.},
+  \bibinfo{author}{Johnston, R.E.}, \bibinfo{author}{Muller, K.},
+  \bibinfo{author}{Braeuning, M.P.}, \bibinfo{author}{Pizer, S.M.},
+  \bibinfo{year}{1998}.
+\newblock \bibinfo{title}{Contrast limited adaptive histogram equalization
+  image processing to improve the detection of simulated spiculations in dense
+  mammograms}.
+\newblock \bibinfo{journal}{Journal of Digital imaging} \bibinfo{volume}{11},
+  \bibinfo{pages}{193--200}.
 %Type = Inproceedings
 \bibitem[{Qiao et~al.(2021)Qiao, Xu, Sun, Qiu and Guo}]{qiao2021deep}
 \bibinfo{author}{Qiao, Z.}, \bibinfo{author}{Xu, W.}, \bibinfo{author}{Sun,
@@ -175,6 +220,13 @@
   \bibinfo{booktitle}{2021 5th International Conference on Intelligent
   Computing and Control Systems (ICICCS)}, \bibinfo{organization}{IEEE}. pp.
   \bibinfo{pages}{871--877}.
+%Type = Article
+\bibitem[{Simonyan and Zisserman(2014)}]{simonyan2014very}
+\bibinfo{author}{Simonyan, K.}, \bibinfo{author}{Zisserman, A.},
+  \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{Very deep convolutional networks for large-scale
+  image recognition}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1409.1556} .
 %Type = Article
 \bibitem[{Stark(2000)}]{stark2000adaptive}
 \bibinfo{author}{Stark, J.A.}, \bibinfo{year}{2000}.
@@ -210,15 +262,6 @@
 \newblock \bibinfo{journal}{Advances in neural information processing systems}
   \bibinfo{volume}{30}.
 %Type = Misc
-\bibitem[{Wang et~al.(2022)Wang, Zhang, Shen, Luo, Stenger and
-  Lu}]{wang2022ultrahighdefinition}
-\bibinfo{author}{Wang, T.}, \bibinfo{author}{Zhang, K.}, \bibinfo{author}{Shen,
-  T.}, \bibinfo{author}{Luo, W.}, \bibinfo{author}{Stenger, B.},
-  \bibinfo{author}{Lu, T.}, \bibinfo{year}{2022}.
-\newblock \bibinfo{title}{Ultra-high-definition low-light image enhancement: A
-  benchmark and transformer-based method}.
-\newblock \href{http://arxiv.org/abs/2212.11548}{{\tt arXiv:2212.11548}}.
-%Type = Misc
 \bibitem[{Wang et~al.(2021)Wang, Cun, Bao, Zhou, Liu and Li}]{wang2021uformer}
 \bibinfo{author}{Wang, Z.}, \bibinfo{author}{Cun, X.}, \bibinfo{author}{Bao,
   J.}, \bibinfo{author}{Zhou, W.}, \bibinfo{author}{Liu, J.},
@@ -234,12 +277,25 @@
   enhancement}.
 \newblock \bibinfo{journal}{arXiv preprint arXiv:1808.04560} .
 %Type = Inproceedings
+\bibitem[{Xie and Tu(2015)}]{xie2015holistically}
+\bibinfo{author}{Xie, S.}, \bibinfo{author}{Tu, Z.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Holistically-nested edge detection}, in:
+  \bibinfo{booktitle}{Proceedings of the IEEE international conference on
+  computer vision}, pp. \bibinfo{pages}{1395--1403}.
+%Type = Inproceedings
 \bibitem[{Xu et~al.(2023)Xu, Wang and Lu}]{xu2023low}
 \bibinfo{author}{Xu, X.}, \bibinfo{author}{Wang, R.}, \bibinfo{author}{Lu, J.},
   \bibinfo{year}{2023}.
 \newblock \bibinfo{title}{Low-light image enhancement via structure modeling
   and guidance}, in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF Conference
   on Computer Vision and Pattern Recognition}, pp. \bibinfo{pages}{9893--9903}.
+%Type = Inproceedings
+\bibitem[{Zhang et~al.(2019)Zhang, Zhang and Guo}]{zhang2019kindling}
+\bibinfo{author}{Zhang, Y.}, \bibinfo{author}{Zhang, J.}, \bibinfo{author}{Guo,
+  X.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Kindling the darkness: A practical low-light image
+  enhancer}, in: \bibinfo{booktitle}{Proceedings of the 27th ACM international
+  conference on multimedia}, pp. \bibinfo{pages}{1632--1640}.
 %Type = Inproceedings
 \bibitem[{Zhu et~al.(2020a)Zhu, Zhang, Shen, Ma, Zhao and Zhou}]{zhu2020zero}
 \bibinfo{author}{Zhu, A.}, \bibinfo{author}{Zhang, L.}, \bibinfo{author}{Shen,
