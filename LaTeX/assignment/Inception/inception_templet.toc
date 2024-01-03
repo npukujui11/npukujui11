@@ -1,0 +1,40 @@
+\contentsline {section}{\numberline {1}立题依据}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}课题的研究意义}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}国内外研究现状分析}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}传统低照度图像增强方法}{3}{subsubsection.1.2.1}%
+\contentsline {paragraph}{基于 Retinex 的方法}{3}{subsubsection.1.2.1}%
+\contentsline {paragraph}{基于直方图的方法}{3}{subsubsection.1.2.1}%
+\contentsline {paragraph}{基于图像反相的方法}{4}{figure.caption.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}基于深度学习的弱光图像增强方法}{4}{subsubsection.1.2.2}%
+\contentsline {paragraph}{有监督学习}{4}{subsubsection.1.2.2}%
+\contentsline {paragraph}{半监督学习}{5}{figure.caption.2}%
+\contentsline {paragraph}{Zero-Shot 学习}{6}{figure.caption.2}%
+\contentsline {paragraph}{基于 Transformer 的方法}{6}{figure.caption.2}%
+\contentsline {section}{\numberline {2}研究方案}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}研究目标}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}研究内容}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}拟解决的关键问题}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}拟采取的研究方法}{8}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}注意力机制}{8}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}U-Net网络结构}{9}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}CNN网络结构}{9}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Transformer网络结构}{9}{subsubsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.5}技术路线}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}方案及可行性研究}{10}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}初步恢复图像的生成模型}{10}{subsubsection.2.6.1}%
+\contentsline {paragraph}{CNN 分支}{12}{figure.caption.7}%
+\contentsline {paragraph}{注意力残差多尺度块}{13}{figure.caption.8}%
+\contentsline {paragraph}{Transformer分支}{14}{figure.caption.8}%
+\contentsline {paragraph}{Transformer编码器}{14}{figure.caption.8}%
+\contentsline {paragraph}{特征融合模块}{14}{figure.caption.8}%
+\contentsline {paragraph}{损失函数}{14}{figure.caption.9}%
+\contentsline {subsubsection}{\numberline {2.6.2}边缘检测网络}{15}{subsubsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.7}计划进度}{17}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}预期的研究进展}{17}{subsection.2.8}%
+\contentsline {section}{\numberline {3}课题的创新性}{17}{section.3}%
+\contentsline {section}{\numberline {4}研究基础}{18}{section.4}%
+\contentsline {subsection}{\numberline {4.1}已完成工作}{18}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}初步恢复图像的生成模型实验结果}{18}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}数据集和评价指标}{18}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}对比试验}{18}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}消融实验}{19}{subsubsection.4.1.4}%
