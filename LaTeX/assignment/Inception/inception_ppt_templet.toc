@@ -7,8 +7,8 @@
 \beamer@sectionintoc {2}{研究内容}{18}{0}{2}
 \beamer@subsectionintoc {2}{1}{总体模型架构}{18}{0}{2}
 \beamer@subsectionintoc {2}{2}{初步恢复图像的生成模型}{19}{0}{2}
-\beamer@sectionintoc {3}{具体工作内容}{24}{0}{3}
-\beamer@subsectionintoc {3}{1}{已完成工作}{24}{0}{3}
-\beamer@subsubsectionintoc {3}{1}{1}{数据集和评价指标}{25}{0}{3}
-\beamer@subsubsectionintoc {3}{1}{2}{对比实验和消融实验}{26}{0}{3}
-\beamer@subsectionintoc {3}{2}{下一步工作}{29}{0}{3}
+\beamer@sectionintoc {3}{工作内容}{23}{0}{3}
+\beamer@subsectionintoc {3}{1}{已完成工作}{23}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{1}{数据集和评价指标}{24}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{2}{对比实验和消融实验}{25}{0}{3}
+\beamer@subsectionintoc {3}{2}{下一步工作}{28}{0}{3}

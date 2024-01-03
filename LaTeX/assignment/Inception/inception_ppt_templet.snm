@@ -53,18 +53,18 @@
 \beamer@slide {fig: GT_hog}{20}
 \beamer@slide {fig: GT_lbp}{20}
 \beamer@slide {fig: LLI Structure Information}{20}
-\beamer@slide {fig: LLI Structure Information1}{22}
-\beamer@slide {fig: Edge Detection Network}{23}
-\beamer@slide {tab: Paired_training_datases}{25}
-\beamer@slide {fig: LLI Input}{27}
-\beamer@slide {fig: LightenNet}{27}
-\beamer@slide {fig: LLI LLNet}{27}
-\beamer@slide {fig: LLI RetinexNet}{27}
-\beamer@slide {fig: KinD}{27}
-\beamer@slide {fig: MBLLEN_contrast}{27}
-\beamer@slide {fig: LLI EnlightenGAN}{27}
-\beamer@slide {fig: Zero-DCE}{27}
-\beamer@slide {fig: Ours}{27}
-\beamer@slide {fig: GT}{27}
-\beamer@slide {fig: LOL}{27}
-\beamer@slide {tab: Ablation Study}{28}
+\beamer@slide {fig: LLI Structure Information1}{21}
+\beamer@slide {fig: Edge Detection Network}{22}
+\beamer@slide {tab: Paired_training_datases}{24}
+\beamer@slide {fig: LLI Input}{26}
+\beamer@slide {fig: LightenNet}{26}
+\beamer@slide {fig: LLI LLNet}{26}
+\beamer@slide {fig: LLI RetinexNet}{26}
+\beamer@slide {fig: KinD}{26}
+\beamer@slide {fig: MBLLEN_contrast}{26}
+\beamer@slide {fig: LLI EnlightenGAN}{26}
+\beamer@slide {fig: Zero-DCE}{26}
+\beamer@slide {fig: Ours}{26}
+\beamer@slide {fig: GT}{26}
+\beamer@slide {fig: LOL}{26}
+\beamer@slide {tab: Ablation Study}{27}

@@ -698,20 +698,25 @@
 	\end{frame}
 	
 	\begin{frame}
-		Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}
-		\begin{itemize}
-			\item \textbf{Background}
-			\item[\checkmark]
-			Transformer is introduced into the visual task. 
-			% Transformer 被引入视觉任务
+		
+		{\zihao{5} \yahei Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}}
+		\begin{itemize}\zihao{-5}
+			\item \textbf{研究背景}
 			
 			\item[\checkmark]
-			Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
-			% 由于自注意力机制和多层感知器 MLP 结构，Vision Transformer反映了复杂的空间变换和远距离特征依赖，它们构成了全局表示。
+			% Transformer is introduced into the visual task. 
+			Transformer 被引入视觉任务
 			
 			\item[\checkmark]
-			Local feature details are ignored.
-			% Vision Transformer 反映了复杂的空间变换和远距离特征以来，他们构成了全局表示。
+			% Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
+			% 由于自注意力机制和多层感知器 MLP 结构，
+%			ViT 反映了复杂的空间变换和全局特征依赖
+			ViT 具有全局特征依赖
+			%，它们构成了全局表示。
+			
+			\item[\checkmark]
+			% Local feature details are ignored.
+			CNN 容易忽略全局特征
 		\end{itemize}
 		
 		\begin{figure}[htbp]
@@ -724,25 +729,45 @@
 	\end{frame}
 	
 	\begin{frame}
-
+		
+		{\zihao{-5} \yahei Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}}
 		\begin{figure}
 			\centering
 			\begin{minipage}{.4\textwidth}
 				\centering
-				\small
-				\begin{itemize}
-					\item \textbf{Contribution}
+				\begin{itemize}\zihao{-5}
+					\item \textbf{背景}
 					
 					\item[\checkmark]
-					A Dual Network Structure
-					% 一种双重网络结构
+					% Transformer is introduced into the visual task. 
+					Transformer 被引入视觉任务
 					
 					\item[\checkmark]
-					CNN and Transformer Branch
-					% Conformer由 CNN 和 Transformer 分支组成，分别遵循 ResNet 和 ViT 的设计，这两个分支形成了 local convolution blocks，自注意力模块和 MLP 的组合。
+					% Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
+					% 由于自注意力机制和多层感知器 MLP 结构，
+					%			ViT 反映了复杂的空间变换和全局特征依赖
+					ViT 具有全局特征依赖
+					%，它们构成了全局表示。
 					
 					\item[\checkmark]
-					Cross-entropy Loss Function
+					% Local feature details are ignored.
+					CNN 容易忽略全局特征
+				\end{itemize}
+				
+				\begin{itemize}\zihao{-5}
+					\item \textbf{贡献}
+					
+					\item[\checkmark]
+					% A Dual Network Structure
+					一种并行网络结构
+					
+					\item[\checkmark]
+					% CNN and Transformer Branch
+					由 CNN 和 Transformer 分支组成
+					%，分别遵循 ResNet 和 ViT 的设计，这两个分支形成了 local convolution blocks，自注意力模块和 MLP 的组合。
+					
+					\item[\checkmark]
+					% Cross-entropy Loss Function
 					% 在训练期间，使用交叉熵损失函数用于监督 CNN 和 Transformer 分支
 					
 					\item[\checkmark]
@@ -830,7 +855,6 @@
 		\end{figure}
 		
 	\end{frame}
-	
 	
 	\subsection{初步恢复图像的生成模型}
 	
@@ -1208,54 +1232,54 @@
 		{\zihao{6} \yahei 传统方法如 Canny 和 Sobel 算子\textcolor{blue}{\cite{maini2009study}}在直接从低光照图像中提取边缘时面临较大挑战。然而，基于深度学习的方法能从低光照图像中提取出更为详细的边缘图像，虽然与真实边缘仍有差异。我们的研究目标是缩减这一差距，以提高基于结构建模指导的模型的准确性。}
 	\end{frame}
 	
-	\begin{frame}
-		
-		\begin{itemize}\zihao{5}
-			\item \textbf{方向梯度直方图, HOG}
-			\vspace{.3cm}
-			% 一般而言，HOG特征在物体检测（特别是行人检测）中非常有效，它通常与支持向量机（SVM）分类器一起使用。
-			% HOG 主要原理是计算图像的梯度幅值和方向。具体来说先把图像分割个小的连续区域(Cell)，计算每一个区域梯度方向的直方图，最后合并成更大的区域(Block) 来对直方图进行归一化，然后合并所有 Block 形成最终的 HOG 特征图。		
-			
-			%\small HOG is a feature control for shape information and texture information for local images.
-			\checkmark {\zihao{6} HOG 是一个用于局部图像的形状信息和纹理信息的特征控件。它基于图像的梯度方向来构建直方图。}
-			
-			%\small Vectors of the shape and edge information of the object in the image
-			\checkmark {\zihao{6} HOG特征表示包含图像中对象的形状和边缘信息的向量，它分析了图像中局部梯度方向的分布。}
-			
-			%\small HOG maintains good invariance to both image geometry and optical deformation.
-			\checkmark {\zihao{6} 由于HOG是在图像的局部方格单元上操作，所以它对图像几何的和光学的形变都能保持很好的不变性。}
-		\end{itemize}
-		
-		\begin{itemize} \zihao{5}
-			\item \textbf{局部二值模式图, LBP}
-			\vspace{.3cm}
-			% 一般而言，HOG特征在物体检测（特别是行人检测）中非常有效，它通常与支持向量机（SVM）分类器一起使用。
-			% HOG 主要原理是计算图像的梯度幅值和方向。具体来说先把图像分割个小的连续区域(Cell)，计算每一个区域梯度方向的直方图，最后合并成更大的区域(Block) 来对直方图进行归一化，然后合并所有 Block 形成最终的 HOG 特征图。		
-			
-			%\small LBP is an operator used to describe the local features of images
-			\checkmark {\zihao{6} LBP 是一种用来描述图像局部特征的算子。}
-			
-			%\small LBP features have significant advantages such as gray invariance and rotation invariance.
-			\checkmark {\zihao{6} LBP特征具有灰度不变性和旋转不变性等显著优点.}
-			
-			%\small HOG maintains good invariance to both image geometry and optical deformation.
-			% LBP主要工作原理如下：对于图像中的每个像素，考虑其周围的一个领域(例如，3 × 3 的窗口)，然后将邻域中的每个像素与中心像素进行比较。如果领域像素的值大于或等于中心像素的值，则将其标记为1，否则标记为0。这样相邻的所有域都会产生一个二进制模式(例如，11100101)，通过计算所有二进制模式的直方图作为图像的 LBP 特征。
-		\end{itemize}
-		
-		\begin{itemize} \zihao{5}
-			\item \textbf{我们能从 HOG 和 LBP获得什么？}
-			\vspace{.3cm}
-			
-			%\small Edge information
-			\checkmark {\zihao{6} 边缘信息}
-			
-			%\small Necessarily Work?
-			\checkmark {\zihao{6} 是否一定有效？}
-			
-			%\small How to solve?
-			\checkmark {\zihao{6} 怎么利用这两个特征？}
-		\end{itemize}
-	\end{frame}
+%	\begin{frame}
+%		
+%		\begin{itemize}\zihao{5}
+%			\item \textbf{方向梯度直方图, HOG}
+%			\vspace{.3cm}
+%			% 一般而言，HOG特征在物体检测（特别是行人检测）中非常有效，它通常与支持向量机（SVM）分类器一起使用。
+%			% HOG 主要原理是计算图像的梯度幅值和方向。具体来说先把图像分割个小的连续区域(Cell)，计算每一个区域梯度方向的直方图，最后合并成更大的区域(Block) 来对直方图进行归一化，然后合并所有 Block 形成最终的 HOG 特征图。		
+%			
+%			%\small HOG is a feature control for shape information and texture information for local images.
+%			\checkmark {\zihao{6} HOG 是一个用于局部图像的形状信息和纹理信息的特征控件。它基于图像的梯度方向来构建直方图。}
+%			
+%			%\small Vectors of the shape and edge information of the object in the image
+%			\checkmark {\zihao{6} HOG特征表示包含图像中对象的形状和边缘信息的向量，它分析了图像中局部梯度方向的分布。}
+%			
+%			%\small HOG maintains good invariance to both image geometry and optical deformation.
+%			\checkmark {\zihao{6} 由于HOG是在图像的局部方格单元上操作，所以它对图像几何的和光学的形变都能保持很好的不变性。}
+%		\end{itemize}
+%		
+%		\begin{itemize} \zihao{5}
+%			\item \textbf{局部二值模式图, LBP}
+%			\vspace{.3cm}
+%			% 一般而言，HOG特征在物体检测（特别是行人检测）中非常有效，它通常与支持向量机（SVM）分类器一起使用。
+%			% HOG 主要原理是计算图像的梯度幅值和方向。具体来说先把图像分割个小的连续区域(Cell)，计算每一个区域梯度方向的直方图，最后合并成更大的区域(Block) 来对直方图进行归一化，然后合并所有 Block 形成最终的 HOG 特征图。		
+%			
+%			%\small LBP is an operator used to describe the local features of images
+%			\checkmark {\zihao{6} LBP 是一种用来描述图像局部特征的算子。}
+%			
+%			%\small LBP features have significant advantages such as gray invariance and rotation invariance.
+%			\checkmark {\zihao{6} LBP特征具有灰度不变性和旋转不变性等显著优点.}
+%			
+%			%\small HOG maintains good invariance to both image geometry and optical deformation.
+%			% LBP主要工作原理如下：对于图像中的每个像素，考虑其周围的一个领域(例如，3 × 3 的窗口)，然后将邻域中的每个像素与中心像素进行比较。如果领域像素的值大于或等于中心像素的值，则将其标记为1，否则标记为0。这样相邻的所有域都会产生一个二进制模式(例如，11100101)，通过计算所有二进制模式的直方图作为图像的 LBP 特征。
+%		\end{itemize}
+%		
+%		\begin{itemize} \zihao{5}
+%			\item \textbf{我们能从 HOG 和 LBP获得什么？}
+%			\vspace{.3cm}
+%			
+%			%\small Edge information
+%			\checkmark {\zihao{6} 边缘信息}
+%			
+%			%\small Necessarily Work?
+%			\checkmark {\zihao{6} 是否一定有效？}
+%			
+%			%\small How to solve?
+%			\checkmark {\zihao{6} 怎么利用这两个特征？}
+%		\end{itemize}
+%	\end{frame}
 	
 	\begin{frame}
 		\begin{figure}
@@ -1317,7 +1341,7 @@
 		{\zihao{6} \yahei 本研究尝试使用不同曝光度的图片，获取它们的 HOG 和 LBP 图像，并采用多曝光图像融合架构，从而获得更接近真实边缘结构的边缘图像。}
 	\end{frame}
 	
-	\section{具体工作内容}
+	\section{工作内容}
 	
 	\subsection{已完成工作}
 	
@@ -1390,6 +1414,8 @@
 			\checkmark {\zihao{6} 峰值信噪比（PSNR）是应用最广泛的指标之一。PSNR值越高，失真越小。单位为dB。}
 			
 			\checkmark {\zihao{6} 结构相似性（SSIM）是参考图像质量评价中应用最广泛的标准。越接近1，两个图像就越相似。}
+			
+			\checkmark {\zihao{6} 自然图像质量评估方法（NIQE） 是一种新的无参考图像质量指标。分数越小，表示感知质量越好。}
 		\end{itemize}
 	\end{frame}
 	

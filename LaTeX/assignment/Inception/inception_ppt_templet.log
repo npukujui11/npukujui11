@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  3 JAN 2024 23:26
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.8)  4 JAN 2024 01:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1610,24 +1610,14 @@ ype bmp)
 [15
 
 ]
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <9.03374> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 729.
 File: picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101).jpg
  Graphic file (type bmp)
 <picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101).jpg>
  [16
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 770.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 770.
-LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 770.
-LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 770.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 770.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 770.
 File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type bmp)
 
 <picture/LLIE/Conformer/the proposed Conformer.jpg>
@@ -1638,12 +1628,24 @@ File: picture/LLIE/My Architecture/Total architecture.pdf Graphic file (type pd
 f)
 <use picture/LLIE/My Architecture/Total architecture.pdf>
 
-Overfull \vbox (0.87288pt too high) detected at line 832
+Overfull \vbox (0.87288pt too high) detected at line 857
  []
 
 [18
 
 ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 917.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 917.
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 917.
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 917.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 917.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 917.
 File: picture/LLIE/My Architecture/The proposed initial architecture.jpg Graphi
 c file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture.jpg>
@@ -1655,7 +1657,7 @@ icture).jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture(Abstract Pictur
 e).jpg>
 
-Overfull \vbox (25.7228pt too high) detected at line 893
+Overfull \vbox (25.7228pt too high) detected at line 917
  []
 
 [19
@@ -1694,17 +1696,6 @@ ile (type bmp)
  [20
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.53937> on input line 1258.
-LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.53937> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 1258.
-
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.53937> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1258.
-
- [21
-
-]
 File: picture/LLIE/My Architecture/Edge Detection/low00269.png Graphic file (ty
 pe bmp)
 <picture/LLIE/My Architecture/Edge Detection/low00269.png>
@@ -1724,35 +1715,44 @@ File: picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png Graphic f
 ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png>
 
-Overfull \vbox (2.36853pt too high) detected at line 1300
+Overfull \vbox (2.36853pt too high) detected at line 1324
  []
 
-[22
+[21
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection Network.jpg Graphic file (typ
 e bmp)
 <picture/LLIE/My Architecture/Edge Detection Network.jpg>
- [23
+ [22
 
-] [24
+] [23
 
-] [25
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.53937> on input line 1420.
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.53937> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 1420.
+
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.53937> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1420.
+
+ [24
 
 ]
 
 Package makecell Warning: \multirowcell needs multirow package on input line 14
-69.
+95.
 
 Missing character: There is no ↑ ("2191) in font rm-lmss8!
 Missing character: There is no ↓ ("2193) in font rm-lmss8!
 Missing character: There is no ↑ ("2191) in font rm-lmss8!
 Missing character: There is no ↓ ("2193) in font rm-lmss8!
 
-Overfull \vbox (6.37415pt too high) detected at line 1469
+Overfull \vbox (6.37415pt too high) detected at line 1495
  []
 
-[26
+[25
 
 ]
 File: picture/LLIE/Efficent/Input.png Graphic file (type bmp)
@@ -1776,16 +1776,16 @@ File: picture/LLIE/Efficent/Ours.png Graphic file (type bmp)
 File: picture/LLIE/Efficent/GT.png Graphic file (type bmp)
 <picture/LLIE/Efficent/GT.png>
 
-Overfull \vbox (1.03601pt too high) detected at line 1539
+Overfull \vbox (1.03601pt too high) detected at line 1565
  []
 
-[27
+[26
+
+] [27
 
 ] [28
 
 ] [29
-
-] [30
 
 ] (./inception_ppt_templet.bbl
 
@@ -1811,12 +1811,12 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-) [31
+) [30
+
+] [31
+
 
 ] [32
-
-
-] [33
 
 
 ]
@@ -1832,15 +1832,15 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 
 (./inception_ppt_templet.aux)
 Package rerunfilecheck Info: File `inception_ppt_templet.out' has not changed.
-(rerunfilecheck)             Checksum: CD43498668F79FE1D410DD766725B823;1142.
+(rerunfilecheck)             Checksum: 34162271F8869038ECCFCFC670C01D74;1126.
  ) 
 Here is how much of TeX's memory you used:
- 35955 strings out of 476683
- 843602 string characters out of 5805371
+ 35930 strings out of 476683
+ 841811 string characters out of 5805371
  1883012 words of memory out of 5000000
- 55357 multiletter control sequences out of 15000+600000
+ 55332 multiletter control sequences out of 15000+600000
  553355 words of font info for 165 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,19n,122p,471b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on inception_ppt_templet.pdf (33 pages).
+Output written on inception_ppt_templet.pdf (32 pages).
