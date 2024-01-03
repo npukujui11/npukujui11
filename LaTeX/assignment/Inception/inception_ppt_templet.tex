@@ -194,102 +194,9 @@
 		\end{figure}
 	\end{frame}
 	
-	\begin{frame}
-		{\zihao{-4} \yahei \textbf{研究意义}}
-		
-		\vspace{0.1cm}
-		
-		{\zihao{-6} \yahei 基于软件技术的图像复原增强技术得到了广泛研究，其通过引入外部信息、加入先验、基于大数据集进行学习等方式，将输入的弱光图像的低光细节复原，产生接近降质前理想质量的低噪图。}
-
-		\begin{figure}
-			\centering			
-			\begin{minipage}{.4\columnwidth}
-				\begin{itemize} 
-					\item \zihao{-5} \yahei \textbf{挑战}
-					
-					% 传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。
-					\zihao{6} \yahei 伪影(Artifacts)
-					
-					\zihao{6} \yahei 色差(Color Deviations) 
-					% 传统方法一般通过有效的先验或正则化来解决噪声问题。但是寻找到有效的先验和正则化相当具有挑战性，不正确的先验或正则化可能导致增强结果中的伪像和颜色偏差。
-					
-					\zihao{6} \yahei 噪声(Noise)
-					% 但是这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声，因此在增强结果中保留或放大噪声；
-					
-					\zihao{6} \yahei 鲁棒性(Robustness)
-					% 但是现有的低光照图像增强技术聚焦于构建数据驱动的深度网络，通常其网络模型复杂，导致计算效率低、推理速度慢，并且由于对于训练数据分布的依赖性导致其在未知场景下的性能缺乏保障。
-					% 物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。
-					
-					\zihao{6} \yahei 边缘细节(Edge Details)
-					% 现有的方法可能无法在极暗或极明亮的区域恢复图像的边缘细节。				
-				\end{itemize}
-			\end{minipage}
-			\begin{minipage}{.58\columnwidth}
-				\setlength{\abovecaptionskip}{-0.05cm}
-				\centering 
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
-					\caption*{\tiny input \\ \quad }
-					\label{fig: input}
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/LLNet}
-					\caption*{\tiny LLNet \\ (2017)}
-					\label{fig: LLNet}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RetinexNet}
-					\caption*{\tiny RetinexNet \\ (2018)}
-					\label{fig: RetinexNet_LOL}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/MBLLEN}
-					\caption*{\tiny MBLLEN \\ (2018)}
-					\label{fig: MBLLEN_LOL}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
-					\caption*{\tiny EnlightenGAN \\ (2019)}
-					\label{fig: EnlightenGAN}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
-					\caption*{\tiny RRDNet \\ (2020)}
-					\label{fig: RRDNet}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/DRBN}
-					\caption*{\tiny DRBN \\ (2020)}
-					\label{fig: DRBN}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/Zero-DCE++}
-					\caption*{\tiny Zero-DCE++ \\ (2021)}
-					\label{fig: Zero-DCE++}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/KinD++}
-					\caption*{\tiny KinD++ \\ (2021)}
-					\label{fig: KinD++}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/URetinexNet}
-					\caption*{\tiny URetinexNet \\ (2022)}
-					\label{fig: URetinexNet}	
-				\end{minipage}
-				
-				%\captionsetup{font=scriptsize}
-				\caption{
-					\label{fig: VE-LOL-L Visual} 
-					\tiny Visual results of different algorithms on low-illumination images sampled from the VE-LOL-L dataset.
-				}
-			\end{minipage}
-		\end{figure}
-	\end{frame}
-	
 	\subsection{研究背景和现状}
 	
-	\subsubsection{传统方法}
+	\subsubsection{传统弱光图像增强方法}
 	
 	\begin{frame}
 		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
@@ -468,45 +375,45 @@
 	
 	\end{frame}
 	
-	\begin{frame}
-		{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
-		
-		{\zihao{-6} \yahei 近年来，半监督学习作为一种新兴的学习方法，结合了监督学习的精确性和非监督学习的广泛适用性。这种学习方法既利用了有标签的数据，也依赖于无标签的数据。Yang等人\textcolor{blue}{\citep{qiao2021deep}}提出了一种名为 \textbf{DRBN} 的半监督低照度图像增强方法，该方法基于频带表示。}
-		
-		\begin{figure}
-			\centering
-			\setlength{\abovecaptionskip}{-0.05cm}
-			\begin{minipage}{.7\columnwidth}
-				\centering 
-				\includegraphics[width=\columnwidth]{picture/LLIE/DRBN/DRBN}
-				\caption{
-					\tiny DRBN 结构图
-				}
-			\end{minipage}
-		\end{figure}
-		
-	\end{frame}
+%	\begin{frame}
+%		{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
+%		
+%		{\zihao{-6} \yahei 近年来，半监督学习作为一种新兴的学习方法，结合了监督学习的精确性和非监督学习的广泛适用性。这种学习方法既利用了有标签的数据，也依赖于无标签的数据。Yang等人\textcolor{blue}{\citep{qiao2021deep}}提出了一种名为 \textbf{DRBN} 的半监督低照度图像增强方法，该方法基于频带表示。}
+%		
+%		\begin{figure}
+%			\centering
+%			\setlength{\abovecaptionskip}{-0.05cm}
+%			\begin{minipage}{.7\columnwidth}
+%				\centering 
+%				\includegraphics[width=\columnwidth]{picture/LLIE/DRBN/DRBN}
+%				\caption{
+%					\tiny DRBN 结构图
+%				}
+%			\end{minipage}
+%		\end{figure}
+%		
+%	\end{frame}
 	
-	\begin{frame}
-		{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
-		
-		{\zihao{-6} \yahei Zero-shot 学习的一个显著优点是它无需依赖预先训练的数据集。这种方法允许直接将待处理的低光照图像作为输入，而无需经过预先的训练阶段。Zhu等人\textcolor{blue}{\citep{zhu2020zero}}提出了一种创新的三分支全卷积神经网络，名为\textbf{RRDNet}。}
-		
-		\begin{figure}
-			\centering
-			\setlength{\abovecaptionskip}{-0.05cm}
-			\begin{minipage}{.6\columnwidth}
-				\centering 
-				\includegraphics[width=\columnwidth]{picture/LLIE/RRDNet/RRDNet}
-				\caption{
-					\tiny RRDNet 结构图
-				}
-			\end{minipage}
-		\end{figure}
-		
-		{\zihao{-6} \yahei 该网络将输入图像拆分为三个组成部分：光照、反射和噪声。通过特殊设计的迭代损失函数，网络能够对噪声进行精确估计并有效恢复光照部分，实现清晰的噪声预测，进而成功去除图像中的噪声。}
-		
-	\end{frame}
+%	\begin{frame}
+%		{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
+%		
+%		{\zihao{-6} \yahei Zero-shot 学习的一个显著优点是它无需依赖预先训练的数据集。这种方法允许直接将待处理的低光照图像作为输入，而无需经过预先的训练阶段。Zhu等人\textcolor{blue}{\citep{zhu2020zero}}提出了一种创新的三分支全卷积神经网络，名为\textbf{RRDNet}。}
+%		
+%		\begin{figure}
+%			\centering
+%			\setlength{\abovecaptionskip}{-0.05cm}
+%			\begin{minipage}{.6\columnwidth}
+%				\centering 
+%				\includegraphics[width=\columnwidth]{picture/LLIE/RRDNet/RRDNet}
+%				\caption{
+%					\tiny RRDNet 结构图
+%				}
+%			\end{minipage}
+%		\end{figure}
+%		
+%		{\zihao{-6} \yahei 该网络将输入图像拆分为三个组成部分：光照、反射和噪声。通过特殊设计的迭代损失函数，网络能够对噪声进行精确估计并有效恢复光照部分，实现清晰的噪声预测，进而成功去除图像中的噪声。}
+%		
+%	\end{frame}
 	
 	\begin{frame}
 		{\zihao{-5} \yahei \textbf{基于Transformer的弱光图像增强方法}}
@@ -539,6 +446,99 @@
 	\begin{frame}
 		{\zihao{-4} \yahei \textbf{研究目的}}
 		
+		\vspace{0.1cm}
+		
+		{\zihao{-6} \yahei 基于软件技术的图像复原增强技术得到了广泛研究，其通过引入外部信息、加入先验、基于大数据集进行学习等方式，将输入的弱光图像的低光细节复原，产生接近降质前理想质量的低噪图。}
+		
+		\begin{figure}
+			\centering			
+			\begin{minipage}{.4\columnwidth}
+				\begin{itemize} 
+					\item \zihao{-5} \yahei \textbf{挑战}
+					
+					% 传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。
+					\zihao{6} \yahei 伪影(Artifacts)
+					
+					\zihao{6} \yahei 色差(Color Deviations) 
+					% 传统方法一般通过有效的先验或正则化来解决噪声问题。但是寻找到有效的先验和正则化相当具有挑战性，不正确的先验或正则化可能导致增强结果中的伪像和颜色偏差。
+					
+					\zihao{6} \yahei 噪声(Noise)
+					% 但是这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声，因此在增强结果中保留或放大噪声；
+					
+					\zihao{6} \yahei 鲁棒性(Robustness)
+					% 但是现有的低光照图像增强技术聚焦于构建数据驱动的深度网络，通常其网络模型复杂，导致计算效率低、推理速度慢，并且由于对于训练数据分布的依赖性导致其在未知场景下的性能缺乏保障。
+					% 物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。
+					
+					\zihao{6} \yahei 边缘细节(Edge Details)
+					% 现有的方法可能无法在极暗或极明亮的区域恢复图像的边缘细节。				
+				\end{itemize}
+			\end{minipage}
+			\begin{minipage}{.58\columnwidth}
+				\setlength{\abovecaptionskip}{-0.05cm}
+				\centering 
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
+					\caption*{\tiny input \\ \quad }
+					\label{fig: input}
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/LLNet}
+					\caption*{\tiny LLNet \\ (2017)}
+					\label{fig: LLNet}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RetinexNet}
+					\caption*{\tiny RetinexNet \\ (2018)}
+					\label{fig: RetinexNet_LOL}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/MBLLEN}
+					\caption*{\tiny MBLLEN \\ (2018)}
+					\label{fig: MBLLEN_LOL}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
+					\caption*{\tiny EnlightenGAN \\ (2019)}
+					\label{fig: EnlightenGAN}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
+					\caption*{\tiny RRDNet \\ (2020)}
+					\label{fig: RRDNet}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/DRBN}
+					\caption*{\tiny DRBN \\ (2020)}
+					\label{fig: DRBN}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/Zero-DCE++}
+					\caption*{\tiny Zero-DCE++ \\ (2021)}
+					\label{fig: Zero-DCE++}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/KinD++}
+					\caption*{\tiny KinD++ \\ (2021)}
+					\label{fig: KinD++}	
+				\end{minipage}
+				\begin{minipage}{0.17\columnwidth}
+					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/URetinexNet}
+					\caption*{\tiny URetinexNet \\ (2022)}
+					\label{fig: URetinexNet}	
+				\end{minipage}
+				
+				%\captionsetup{font=scriptsize}
+				\caption{
+					\label{fig: VE-LOL-L Visual} 
+					\tiny Visual results of different algorithms on low-illumination images sampled from the VE-LOL-L dataset.
+				}
+			\end{minipage}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		{\zihao{-4} \yahei \textbf{研究目的}}
+		
 		\begin{figure}
 		\begin{minipage}{.4\columnwidth}
 			\begin{itemize}
@@ -551,7 +551,7 @@
 				\zihao{6} \yahei 一些方法无法很好的避免颜色失真现象。
 				
 				\item[\XSolidBrush]
-				\zihao{6} \yahei 现有的方法往往不具备鲁棒性。
+				\zihao{6} \yahei 现有的方法鲁棒性比较差。
 				% 一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势。
 				\item[\XSolidBrush]
 				\zihao{6} \yahei 无法在极暗或极亮的区域很好地恢复图像边缘细节\textcolor{blue}{\citep{xu2023low}}。
@@ -892,218 +892,218 @@
 		
 	\end{frame}
 	
-	\begin{frame}
-		
-		\begin{itemize} 
-			\item \textbf{CNN Branch}
-			
-			\small The foundation of the CNN branch is the U-Net structure, a network architecture designed specifically for image segmentation tasks, but also outstanding in the field of image enhancement.
-			% CNN 分支的基础是 U-Net 结构，这是一种专门为图像分割任务设计的网络架构，但在图像增强领域也表现出色。U-Net 的特点是其对称的编码器-解码器结构，以及编码器和解码器之间的跳跃连接。CNN 分支的目标是从输入的弱光图像(LLI) 中提取丰富的特征，包括边缘、纹理、颜色、亮度信息，并最终输出增强的图像(EI)。
-			
-			\checkmark \small UNetEnhanced Method
-			% UNetEnhanced 模型是一种针对低光照图像增强任务设计的深度学习架构。该模型基于经典的U-Net 架构，并引入了多项改进，以提高对低光照环境下图像的处理能力。这些改进包括更深的网络结构、改进的特征融合机制和高效的信息传递路径。
-		\end{itemize}
-		
-		% UNetEnhance 模型由两个部分组成：1) 编码器子网络(Encoder subnetworker)，2) 解码器子网络(Decoder subnetworker)。对于编码器子网络，UNetEnhance 采用了多层卷积网络，在每层中我们添加了集成模块，在集成模块中又添加了空间注意力机制和通道注意力机制。与传统 U-Net 相比，这一设计增加了网络的深度，从而能够捕获更加丰富的特征信息。我们通过引入更多的卷积层，使得模型能够在更深的层次上理解图像内容。解码器部分采用了上采样和卷积操作，以逐步恢复图像的空间分辨率。
-		
-		% 在这一过程中，引入了改进的特征融合策略，将编码器中的低级特征与解码器的高级特征有效结合，从而更好地重建图像细节。同时，UNetEnhance 模型在跳跃连接的设计上进行了优化，以更有效地传递编码器中的特征信息到编码器。这些连接不仅帮助保留了在下采样过程中可能丢失的细节信息，还增强了网络的特征重建能力。此外，模型的输出层经过特别设计，以确保输出图像在视觉上的质量和连贯性，我们通过准确的调整解码器子网络中的卷积操作，将解码器的输出转换为与原始输入图像相同尺寸的增强图像。
-		
-		\begin{figure}
-			\centering
-			\begin{minipage}{.65\textwidth}
-				\includegraphics[width=0.85\linewidth]{picture/LLIE/My Architecture/U-Net and AM.jpg}
-				\captionsetup{font=scriptsize}
-				\label{fig: U-Net and AM}	
-				\caption*{UNetEnhanced Method}
-			\end{minipage}
-			\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: CNN Branch}
-			}
-		\end{figure}
-		
-	\end{frame}
+%	\begin{frame}
+%		
+%		\begin{itemize} 
+%			\item \textbf{CNN Branch}
+%			
+%			\small The foundation of the CNN branch is the U-Net structure, a network architecture designed specifically for image segmentation tasks, but also outstanding in the field of image enhancement.
+%			% CNN 分支的基础是 U-Net 结构，这是一种专门为图像分割任务设计的网络架构，但在图像增强领域也表现出色。U-Net 的特点是其对称的编码器-解码器结构，以及编码器和解码器之间的跳跃连接。CNN 分支的目标是从输入的弱光图像(LLI) 中提取丰富的特征，包括边缘、纹理、颜色、亮度信息，并最终输出增强的图像(EI)。
+%			
+%			\checkmark \small UNetEnhanced Method
+%			% UNetEnhanced 模型是一种针对低光照图像增强任务设计的深度学习架构。该模型基于经典的U-Net 架构，并引入了多项改进，以提高对低光照环境下图像的处理能力。这些改进包括更深的网络结构、改进的特征融合机制和高效的信息传递路径。
+%		\end{itemize}
+%		
+%		% UNetEnhance 模型由两个部分组成：1) 编码器子网络(Encoder subnetworker)，2) 解码器子网络(Decoder subnetworker)。对于编码器子网络，UNetEnhance 采用了多层卷积网络，在每层中我们添加了集成模块，在集成模块中又添加了空间注意力机制和通道注意力机制。与传统 U-Net 相比，这一设计增加了网络的深度，从而能够捕获更加丰富的特征信息。我们通过引入更多的卷积层，使得模型能够在更深的层次上理解图像内容。解码器部分采用了上采样和卷积操作，以逐步恢复图像的空间分辨率。
+%		
+%		% 在这一过程中，引入了改进的特征融合策略，将编码器中的低级特征与解码器的高级特征有效结合，从而更好地重建图像细节。同时，UNetEnhance 模型在跳跃连接的设计上进行了优化，以更有效地传递编码器中的特征信息到编码器。这些连接不仅帮助保留了在下采样过程中可能丢失的细节信息，还增强了网络的特征重建能力。此外，模型的输出层经过特别设计，以确保输出图像在视觉上的质量和连贯性，我们通过准确的调整解码器子网络中的卷积操作，将解码器的输出转换为与原始输入图像相同尺寸的增强图像。
+%		
+%		\begin{figure}
+%			\centering
+%			\begin{minipage}{.65\textwidth}
+%				\includegraphics[width=0.85\linewidth]{picture/LLIE/My Architecture/U-Net and AM.jpg}
+%				\captionsetup{font=scriptsize}
+%				\label{fig: U-Net and AM}	
+%				\caption*{UNetEnhanced Method}
+%			\end{minipage}
+%			\captionsetup{font=scriptsize}
+%			\caption{
+%				\label{fig: CNN Branch}
+%			}
+%		\end{figure}
+%		
+%	\end{frame}
 	
-	\begin{frame}	
-		
-		Assuming that $I_{LLI}$ represents the input low-light image and $I_{EI}$ represents the enhanced image of the output. The operation of the encoder subnetwork $\mathcal{E}$ and the decoder subnetwork $\mathcal{D}$ can be expressed as:
-		% 假设ILLI 表示输入的弱光图像，IEI 表示输出的增强图像。编码器子网络 E 和解码器子网络 D 的操作可以表示为：
-		\begin{block}{UNetEnhanced}
-			\begin{equation}
-				\begin{aligned}
-					I_{EI} = \mathcal{D} \left( \mathcal{E} \left( I_{LLI} \right) \right)
-				\end{aligned}
-				\label{eq: UNetEnhance model}
-			\end{equation}
-		\end{block}
-		
-		\begin{block}{Aggregation Module}
-			\begin{equation}
-				\begin{aligned}
-					\text{AM}_{i}(x) = f^{1 \times 1} \left(f^{3 \times 3} \left(\text{SCConv}\left( \text{ARMB} \left( f^{1 \times 1} (x)\right)\right)\right)\right)
-				\end{aligned}
-			\end{equation}
-		\end{block}
-		
-		Where $f ^ {1 \times 1} $ is the $1 \times 1$ convolution layer, and the operation of ARMB and SCConv depends on their internal structure.
-		% 其中，f1×1为1 × 1 卷积层，ARMB 和SCConv 的操作依据其内部结构进行。
-	\end{frame}
+%	\begin{frame}	
+%		
+%		Assuming that $I_{LLI}$ represents the input low-light image and $I_{EI}$ represents the enhanced image of the output. The operation of the encoder subnetwork $\mathcal{E}$ and the decoder subnetwork $\mathcal{D}$ can be expressed as:
+%		% 假设ILLI 表示输入的弱光图像，IEI 表示输出的增强图像。编码器子网络 E 和解码器子网络 D 的操作可以表示为：
+%		\begin{block}{UNetEnhanced}
+%			\begin{equation}
+%				\begin{aligned}
+%					I_{EI} = \mathcal{D} \left( \mathcal{E} \left( I_{LLI} \right) \right)
+%				\end{aligned}
+%				\label{eq: UNetEnhance model}
+%			\end{equation}
+%		\end{block}
+%		
+%		\begin{block}{Aggregation Module}
+%			\begin{equation}
+%				\begin{aligned}
+%					\text{AM}_{i}(x) = f^{1 \times 1} \left(f^{3 \times 3} \left(\text{SCConv}\left( \text{ARMB} \left( f^{1 \times 1} (x)\right)\right)\right)\right)
+%				\end{aligned}
+%			\end{equation}
+%		\end{block}
+%		
+%		Where $f ^ {1 \times 1} $ is the $1 \times 1$ convolution layer, and the operation of ARMB and SCConv depends on their internal structure.
+%		% 其中，f1×1为1 × 1 卷积层，ARMB 和SCConv 的操作依据其内部结构进行。
+%	\end{frame}
 	
-	\begin{frame}	
-		
-		ARMB (Attention Residual Merging Block) 
-		
-		% ARMB (Attention Residual Merging Block) 是一种用于深度学习模型中的结构单元，特别是在处理图像相关任务时，它的主要作用是融合来自不同来源的特征，并通过注意力机制增强模型对关键信息的关注。其核心作用之一是融合来自模型不同层或不同分支的特征。
-		
-		Suppose $ \mathcal {F} _ {in} $ is the input feature graph, $ \mathcal {F} _ {out} $ is the output feature graph, $ \mathcal {F} _ {i} ^ \prime$ means that the feature graph is trimmed or enlarged, see the following equation:
-		
-		% 假设Fin 是输入特征图，Fout 是输出特征图，F′i 表示对特征图进行裁剪或放大，见下式：
-		
-		\begin{block}{ARMB}
-			\begin{equation}
-				\begin{aligned}
-					&\mathcal{F}^\prime_{\frac{1}{2}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{2},\frac{W}{2}\right)\right), \\
-					&\mathcal{F}^\prime_{\frac{1}{4}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{4},\frac{W}{4}\right)\right), \\
-					&\mathcal{F}_{out} = W_1\mathcal{F}_{out} + W_2\mathcal{C} \left( f^{1 \times 1}  \left[\mathcal{F}^\prime_2 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{2}}))), \mathcal{F}^\prime_4 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{4}})))\right] \right).
-				\end{aligned}
-				\label{eq: ARMB}
-			\end{equation}
-		\end{block}
-		
-		Where $ \mathcal{S} $ and $ \mathcal{C} $ represent the spatial and channel attention function, respectively, and $W_1$ and $W_2$ are the corresponding feature graph weights.
-		
-		% 其中S 和 C 分别表示空间注意力函数和通道注意力函数，W1 和W2 为对应的特征图权重。
-	\end{frame}
+%	\begin{frame}	
+%		
+%		ARMB (Attention Residual Merging Block) 
+%		
+%		% ARMB (Attention Residual Merging Block) 是一种用于深度学习模型中的结构单元，特别是在处理图像相关任务时，它的主要作用是融合来自不同来源的特征，并通过注意力机制增强模型对关键信息的关注。其核心作用之一是融合来自模型不同层或不同分支的特征。
+%		
+%		Suppose $ \mathcal {F} _ {in} $ is the input feature graph, $ \mathcal {F} _ {out} $ is the output feature graph, $ \mathcal {F} _ {i} ^ \prime$ means that the feature graph is trimmed or enlarged, see the following equation:
+%		
+%		% 假设Fin 是输入特征图，Fout 是输出特征图，F′i 表示对特征图进行裁剪或放大，见下式：
+%		
+%		\begin{block}{ARMB}
+%			\begin{equation}
+%				\begin{aligned}
+%					&\mathcal{F}^\prime_{\frac{1}{2}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{2},\frac{W}{2}\right)\right), \\
+%					&\mathcal{F}^\prime_{\frac{1}{4}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{4},\frac{W}{4}\right)\right), \\
+%					&\mathcal{F}_{out} = W_1\mathcal{F}_{out} + W_2\mathcal{C} \left( f^{1 \times 1}  \left[\mathcal{F}^\prime_2 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{2}}))), \mathcal{F}^\prime_4 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{4}})))\right] \right).
+%				\end{aligned}
+%				\label{eq: ARMB}
+%			\end{equation}
+%		\end{block}
+%		
+%		Where $ \mathcal{S} $ and $ \mathcal{C} $ represent the spatial and channel attention function, respectively, and $W_1$ and $W_2$ are the corresponding feature graph weights.
+%		
+%		% 其中S 和 C 分别表示空间注意力函数和通道注意力函数，W1 和W2 为对应的特征图权重。
+%	\end{frame}
 	
-	\begin{frame}
-		\begin{figure}
-			\centering
-			\begin{minipage}{.45\textwidth}
-			\begin{itemize} 
-				\item \textbf{Transformer Branch}
-				
-				Based Vision Transformer (ViT)
-				
-				Extract global features
-				% 这一分支的目标是捕获图像中的长距离依赖关系，以辅助CNN 分支的局部特征提取。
-				
-			\end{itemize}
-			
-	
-			\begin{itemize} 
-				\item \textbf{Patch Embedding}
-				% Patch Embedding是一种常见的操作，它将图像分割成更小的块(patches)，然后将这些块转换成一系列的向量，这些向量可以被用作模型的输入。
-				
-				\item[\checkmark] Segmenting
-				
-				\item[\checkmark] Reshape
-				
-				\item[\checkmark] Flatten
-				
-				\item[\checkmark] Linear Projection
-				
-			\end{itemize}
-			\end{minipage}
-			\begin{minipage}{.45\textwidth}
-				\includegraphics[width=0.85\linewidth]{picture/LLIE/My Architecture/Patch Embedding}
-				\captionsetup{font=scriptsize}
-				\caption*{Patch Embedding}
-			\end{minipage}
-			\captionsetup{font=scriptsize}
-			\caption*{
-				\label{fig: Patch Embedding}
-			}
-		\end{figure}
-	\end{frame}
+%	\begin{frame}
+%		\begin{figure}
+%			\centering
+%			\begin{minipage}{.45\textwidth}
+%			\begin{itemize} 
+%				\item \textbf{Transformer Branch}
+%				
+%				Based Vision Transformer (ViT)
+%				
+%				Extract global features
+%				% 这一分支的目标是捕获图像中的长距离依赖关系，以辅助CNN 分支的局部特征提取。
+%				
+%			\end{itemize}
+%			
+%	
+%			\begin{itemize} 
+%				\item \textbf{Patch Embedding}
+%				% Patch Embedding是一种常见的操作，它将图像分割成更小的块(patches)，然后将这些块转换成一系列的向量，这些向量可以被用作模型的输入。
+%				
+%				\item[\checkmark] Segmenting
+%				
+%				\item[\checkmark] Reshape
+%				
+%				\item[\checkmark] Flatten
+%				
+%				\item[\checkmark] Linear Projection
+%				
+%			\end{itemize}
+%			\end{minipage}
+%			\begin{minipage}{.45\textwidth}
+%				\includegraphics[width=0.85\linewidth]{picture/LLIE/My Architecture/Patch Embedding}
+%				\captionsetup{font=scriptsize}
+%				\caption*{Patch Embedding}
+%			\end{minipage}
+%			\captionsetup{font=scriptsize}
+%			\caption*{
+%				\label{fig: Patch Embedding}
+%			}
+%		\end{figure}
+%	\end{frame}
 
-	\begin{frame}
-		\begin{figure}
-			\centering
-			\begin{minipage}{.95\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Patch Embedding(ViT)}
-				\captionsetup{font=scriptsize}
-				\caption{Patch Embedding in Transformer Branch}
-			\end{minipage}
-			\captionsetup{font=scriptsize}
-			\caption*{
-				\label{fig: Patch Embedding in ViT}
-			}
-		\end{figure}
-	\end{frame}
+%	\begin{frame}
+%		\begin{figure}
+%			\centering
+%			\begin{minipage}{.95\textwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Patch Embedding(ViT)}
+%				\captionsetup{font=scriptsize}
+%				\caption{Patch Embedding in Transformer Branch}
+%			\end{minipage}
+%			\captionsetup{font=scriptsize}
+%			\caption*{
+%				\label{fig: Patch Embedding in ViT}
+%			}
+%		\end{figure}
+%	\end{frame}
 	
-	\begin{frame}
-		\begin{itemize} 
-			\item \textbf{Feature Coupling Unit}
-			% CNN 分支中特征映射和Transformer 分支中patch embedding，如何消除他们之间的错误是一个重要的问题，为了解决这个问题，使用FCU 以交互的方式将局部特征和全局表示进行连续耦合。
-			
-			Feature mapping in CNN branch and patch embedding in Transformer branch, how to eliminate errors between them is an important question, and to solve this problem, the FCU is used to continuously couple local features and global representations in an interactive manner.
-			
-			\item[\checkmark] CNN dim: $H \times W \times C$
-			
-			\item[\checkmark] Transformer dim: $K \times D$
-			% 其中K, D分别表示图像 patch 的数量和 embedding 的维度。用于分类的 Vision Transformer 模型中 patch embedding 的形状为 (K + 1)×D，其中 1 为类别嵌入 (Class Token)，但是在 Transformer 分支中，我们去除了类别嵌入。			
-			
-			% 特征映射和patch embedding 之间存在显著的语义鸿沟，即特征映射是从局部卷积算子收集的，而 patch embedding 则是通过自注意力机制聚合的，所以通过应用 FCU 可以填补语义空白。 
-		\end{itemize}
-	\end{frame}
+%	\begin{frame}
+%		\begin{itemize} 
+%			\item \textbf{Feature Coupling Unit}
+%			% CNN 分支中特征映射和Transformer 分支中patch embedding，如何消除他们之间的错误是一个重要的问题，为了解决这个问题，使用FCU 以交互的方式将局部特征和全局表示进行连续耦合。
+%			
+%			Feature mapping in CNN branch and patch embedding in Transformer branch, how to eliminate errors between them is an important question, and to solve this problem, the FCU is used to continuously couple local features and global representations in an interactive manner.
+%			
+%			\item[\checkmark] CNN dim: $H \times W \times C$
+%			
+%			\item[\checkmark] Transformer dim: $K \times D$
+%			% 其中K, D分别表示图像 patch 的数量和 embedding 的维度。用于分类的 Vision Transformer 模型中 patch embedding 的形状为 (K + 1)×D，其中 1 为类别嵌入 (Class Token)，但是在 Transformer 分支中，我们去除了类别嵌入。			
+%			
+%			% 特征映射和patch embedding 之间存在显著的语义鸿沟，即特征映射是从局部卷积算子收集的，而 patch embedding 则是通过自注意力机制聚合的，所以通过应用 FCU 可以填补语义空白。 
+%		\end{itemize}
+%	\end{frame}
 	
-	\subsection{边缘检测网络}
-	
-	\begin{frame}
-		
-		{\zihao{6} \yahei Liu\textcolor{blue}{\citep{liu2017richer}}发现不同卷积层获得的结果随着深度增加而更加粗糙，其提出 RCF(Richer convolutional features) 方法充分利用所有 CNN 层的结果。}
-		
-		\begin{figure}
-			\centering
-			\setlength{\abovecaptionskip}{-0.05cm} 		
-			\begin{minipage}{0.11\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/RCF/origin image}
-				\caption*{\tiny (a) origin image}
-				\label{fig: origin image}
-			\end{minipage}
-			\begin{minipage}{0.11\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/RCF/GT}
-				\caption*{\tiny (b) GT}
-				\label{fig: RCF_GT}
-			\end{minipage}
-			\begin{minipage}{0.11\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_1}
-				\caption*{\tiny (c) conv3\_1}
-				\label{fig: conv3_1}	
-			\end{minipage}
-			\begin{minipage}{0.11\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_2}
-				\caption*{\tiny (d) conv3\_2}
-				\label{fig: conv3_2}	
-			\end{minipage}
-			\begin{minipage}{0.11\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_3}
-				\caption*{\tiny (e) conv3\_3}
-				\label{fig: conv3_3}
-			\end{minipage}
-			\begin{minipage}{0.11\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_1}
-				\caption*{\tiny (f) conv4\_1}
-				\label{fig: conv4_1}
-			\end{minipage}
-			\begin{minipage}{0.11\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_2}
-				\caption*{\tiny (g) conv4\_2}
-				\label{fig: conv4_2}	
-			\end{minipage}
-			\begin{minipage}{0.11\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_3}
-				\caption*{\tiny (h) conv4\_3}
-				\label{fig: conv4_3}	
-			\end{minipage}
-			\caption{
-				\tiny 建立了一个基于 VGG16\cite{simonyan2014very} 的简单网络来产生侧输出(c-h)。我们可以看到，卷积特征逐渐变得更粗，而中间层(c、d、f、g)包含了在其他层中没有出现的基本细节。
-			}
-		\end{figure}
-		
-		{\zihao{6} \yahei 相比之下，HED (Holistically-nested edge detection) \textcolor{blue}{\cite{xie2015holistically}}方法仅采用了 VGG16 架构中每个阶段的最后一层卷积输出，而 RCF (Richer Convolutional Features) 方法则利用了每个层级的卷积结果。}
-		
-	\end{frame}
+%	\subsection{边缘检测网络}
+%	
+%	\begin{frame}
+%		
+%		{\zihao{6} \yahei Liu\textcolor{blue}{\citep{liu2017richer}}发现不同卷积层获得的结果随着深度增加而更加粗糙，其提出 RCF(Richer convolutional features) 方法充分利用所有 CNN 层的结果。}
+%		
+%		\begin{figure}
+%			\centering
+%			\setlength{\abovecaptionskip}{-0.05cm} 		
+%			\begin{minipage}{0.11\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/RCF/origin image}
+%				\caption*{\tiny (a) origin image}
+%				\label{fig: origin image}
+%			\end{minipage}
+%			\begin{minipage}{0.11\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/RCF/GT}
+%				\caption*{\tiny (b) GT}
+%				\label{fig: RCF_GT}
+%			\end{minipage}
+%			\begin{minipage}{0.11\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_1}
+%				\caption*{\tiny (c) conv3\_1}
+%				\label{fig: conv3_1}	
+%			\end{minipage}
+%			\begin{minipage}{0.11\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_2}
+%				\caption*{\tiny (d) conv3\_2}
+%				\label{fig: conv3_2}	
+%			\end{minipage}
+%			\begin{minipage}{0.11\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv3_3}
+%				\caption*{\tiny (e) conv3\_3}
+%				\label{fig: conv3_3}
+%			\end{minipage}
+%			\begin{minipage}{0.11\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_1}
+%				\caption*{\tiny (f) conv4\_1}
+%				\label{fig: conv4_1}
+%			\end{minipage}
+%			\begin{minipage}{0.11\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_2}
+%				\caption*{\tiny (g) conv4\_2}
+%				\label{fig: conv4_2}	
+%			\end{minipage}
+%			\begin{minipage}{0.11\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/RCF/conv4_3}
+%				\caption*{\tiny (h) conv4\_3}
+%				\label{fig: conv4_3}	
+%			\end{minipage}
+%			\caption{
+%				\tiny 建立了一个基于 VGG16\cite{simonyan2014very} 的简单网络来产生侧输出(c-h)。我们可以看到，卷积特征逐渐变得更粗，而中间层(c、d、f、g)包含了在其他层中没有出现的基本细节。
+%			}
+%		\end{figure}
+%		
+%		{\zihao{6} \yahei 相比之下，HED (Holistically-nested edge detection) \textcolor{blue}{\cite{xie2015holistically}}方法仅采用了 VGG16 架构中每个阶段的最后一层卷积输出，而 RCF (Richer Convolutional Features) 方法则利用了每个层级的卷积结果。}
+%		
+%	\end{frame}
 	
 %	\begin{frame}
 %		
