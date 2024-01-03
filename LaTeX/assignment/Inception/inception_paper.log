@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  1 JAN 2024 22:25
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  3 JAN 2024 12:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -931,251 +931,74 @@ Package fontspec Info: Font family 'SimSun(1)' created for font 'SimSun' with
 
  [1
 
-] (./inception_paper.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
-
-(d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
-
-(d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+] (./inception_paper.toc)
 \tf@toc=\write4
 \openout4 = `inception_paper.toc'.
 
- [2]
+
+[2]
+
+LaTeX Warning: Citation `liu2021retinex' on page 3 undefined on input line 115.
+
+
+
+LaTeX Warning: Citation `xu2020learning' on page 3 undefined on input line 115.
+
+
+
+LaTeX Warning: Citation `ueng1995gamma' on page 3 undefined on input line 124.
+
+
+LaTeX Warning: Citation `stark2000adaptive' on page 3 undefined on input line 1
+24.
+
+
+LaTeX Warning: Citation `land1971lightness' on page 3 undefined on input line 1
+24.
+
+
+LaTeX Warning: Citation `liu2021benchmarking' on page 3 undefined on input line
+ 124.
+
+
+LaTeX Warning: Citation `dai2019fractional' on page 3 undefined on input line 1
+24.
+
+
+LaTeX Warning: Citation `ma2019improved' on page 3 undefined on input line 124.
+
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 130
+.
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 130
+.
+
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: Reference `eq: Retinex model formula' on page 3 undefined on inp
+ut line 130.
+
+
+LaTeX Warning: Reference `eq: Retinex model formula' on page 3 undefined on inp
+ut line 139.
+
+
+LaTeX Warning: Reference `eq: Retinex model formula log' on page 3 undefined on
+ input line 139.
+
+
+LaTeX Warning: Reference `fig: Retinex model' on page 3 undefined on input line
+ 148.
+
 File: picture/LLIE/Retinex Model/Retinex Model.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/Retinex Model.png>
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not avail
 able
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
 157.
- [3]
-File: picture/LLIE/Retinex Model/input.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/input.png>
-File: picture/LLIE/Retinex Model/Retinex.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/Retinex.png>
-File: picture/LLIE/Retinex Model/SSR.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/SSR.png>
-File: picture/LLIE/Retinex Model/MSR.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/MSR.png>
-File: picture/LLIE/Retinex Model/MSRCR.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/MSRCR.png>
-File: picture/LLIE/HE/Histogram equalization.jpg Graphic file (type bmp)
-<picture/LLIE/HE/Histogram equalization.jpg>
- [4]
-File: picture/LLIE/Inverse/LL input.jpg Graphic file (type bmp)
-<picture/LLIE/Inverse/LL input.jpg>
-File: picture/LLIE/Inverse/Inversed.jpg Graphic file (type bmp)
-<picture/LLIE/Inverse/Inversed.jpg>
-File: picture/LLIE/Inverse/marked image.jpg Graphic file (type bmp)
-<picture/LLIE/Inverse/marked image.jpg>
-File: picture/LLIE/Inverse/de-haze.jpg Graphic file (type bmp)
-<picture/LLIE/Inverse/de-haze.jpg>
-File: picture/LLIE/Inverse/Final output.jpg Graphic file (type bmp)
-<picture/LLIE/Inverse/Final output.jpg>
-
-[5]
-File: picture/LLIE/LLNet/Module Structure.jpg Graphic file (type bmp)
-<picture/LLIE/LLNet/Module Structure.jpg>
-File: picture/LLIE/LLNet/LLNet.jpg Graphic file (type bmp)
-<picture/LLIE/LLNet/LLNet.jpg>
-File: picture/LLIE/LLNet/S-LLNet.jpg Graphic file (type bmp)
-<picture/LLIE/LLNet/S-LLNet.jpg>
-File: picture/LLIE/MBLLEN/MBLLEN Architecture.jpg Graphic file (type bmp)
-<picture/LLIE/MBLLEN/MBLLEN Architecture.jpg>
- [6]
-File: picture/LLIE/RetinexNet/RetinexNet.jpg Graphic file (type bmp)
-<picture/LLIE/RetinexNet/RetinexNet.jpg>
- [7]
-File: picture/LLIE/EnlightenGAN/EnlightenGAN.jpg Graphic file (type bmp)
-<picture/LLIE/EnlightenGAN/EnlightenGAN.jpg>
- [8]
-File: picture/LLIE/DRBN/DRBN.jpg Graphic file (type bmp)
-<picture/LLIE/DRBN/DRBN.jpg>
-File: picture/LLIE/RRDNet/RRDNet.jpg Graphic file (type bmp)
-<picture/LLIE/RRDNet/RRDNet.jpg>
- [9] [10] [11]
-
-LaTeX Warning: Reference `MOS' on page 12 undefined on input line 563.
-
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 575.
-
-File: picture/LLIE/VE-LOL-L/input.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/input.jpg>
-File: picture/LLIE/VE-LOL-L/LLNet.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/LLNet.jpg>
-File: picture/LLIE/VE-LOL-L/RetinexNet.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/RetinexNet.jpg>
-File: picture/LLIE/VE-LOL-L/MBLLEN.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/MBLLEN.jpg>
-File: picture/LLIE/VE-LOL-L/EnlightenGAN.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/EnlightenGAN.jpg>
-File: picture/LLIE/VE-LOL-L/RRDNet.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/RRDNet.jpg>
-File: picture/LLIE/VE-LOL-L/DRBN.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/DRBN.jpg>
-File: picture/LLIE/VE-LOL-L/Zero-DCE++.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/Zero-DCE++.jpg>
-File: picture/LLIE/VE-LOL-L/KinD++.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/KinD++.jpg>
-File: picture/LLIE/VE-LOL-L/URetinexNet.jpg Graphic file (type bmp)
-<picture/LLIE/VE-LOL-L/URetinexNet.jpg>
-[12]
-File: picture/LLIE/EEMEFN/EEMEFN framework.jpg Graphic file (type bmp)
-<picture/LLIE/EEMEFN/EEMEFN framework.jpg>
-File: picture/LLIE/EdgeNet/Archtecture workflow.jpg Graphic file (type bmp)
-<picture/LLIE/EdgeNet/Archtecture workflow.jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
-ype bmp)
-<picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Input.jpg Graphic file (type
- bmp)
-<picture/LLIE/Structure Modeling and Guidance/Input.jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Structure of (a).jpg Graphic
- file (type bmp)
-<picture/LLIE/Structure Modeling and Guidance/Structure of (a).jpg>
-File: picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022).jpg Graphic 
-file (type bmp)
-<picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022).jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Structure Modeling.jpg Graph
-ic file (type bmp)
-<picture/LLIE/Structure Modeling and Guidance/Structure Modeling.jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Ours.jpg Graphic file (type 
-bmp)
-<picture/LLIE/Structure Modeling and Guidance/Ours.jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg Graphic fil
-e (type bmp)
-<picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg>
- [13] [14] [15]
-File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type bmp)
-<picture/LLIE/Uformer/Uformer.jpg>
- [16]
-File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type bmp)
-
-<picture/LLIE/Conformer/the proposed Conformer.jpg>
-File: picture/LLIE/My Architecture/The proposed initial architecture.jpg Graphi
-c file (type bmp)
-<picture/LLIE/My Architecture/The proposed initial architecture.jpg>
-File: picture/LLIE/My Architecture/Up-sampling and down-sampling.jpg Graphic fi
-le (type bmp)
-<picture/LLIE/My Architecture/Up-sampling and down-sampling.jpg>
-File: picture/LLIE/My Architecture/The proposed initial architecture(Abstract P
-icture).jpg Graphic file (type bmp)
-<picture/LLIE/My Architecture/The proposed initial architecture(Abstract Pictur
-e).jpg>
- [17] [18]
-File: picture/LLIE/My Architecture/U-Net and AM.pdf Graphic file (type pdf)
-<use picture/LLIE/My Architecture/U-Net and AM.pdf>
- [19] [20]
-File: picture/LLIE/My Architecture/Patch Embedding.jpg Graphic file (type bmp)
-<picture/LLIE/My Architecture/Patch Embedding.jpg>
-File: picture/LLIE/My Architecture/Patch Embedding(ViT).jpg Graphic file (type 
-bmp)
-<picture/LLIE/My Architecture/Patch Embedding(ViT).jpg>
- [21] [22]
-File: picture/LLIE/My Architecture/Fusion Block.jpg Graphic file (type bmp)
-<picture/LLIE/My Architecture/Fusion Block.jpg>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[23] [24] [25]
-File: picture/LLIE/RCF/origin image.jpg Graphic file (type bmp)
-<picture/LLIE/RCF/origin image.jpg>
-File: picture/LLIE/RCF/GT.jpg Graphic file (type bmp)
-<picture/LLIE/RCF/GT.jpg>
-File: picture/LLIE/RCF/conv3_1.jpg Graphic file (type bmp)
-<picture/LLIE/RCF/conv3_1.jpg>
-File: picture/LLIE/RCF/conv3_2.jpg Graphic file (type bmp)
-<picture/LLIE/RCF/conv3_2.jpg>
-File: picture/LLIE/RCF/conv3_3.jpg Graphic file (type bmp)
-<picture/LLIE/RCF/conv3_3.jpg>
-File: picture/LLIE/RCF/conv4_1.jpg Graphic file (type bmp)
-<picture/LLIE/RCF/conv4_1.jpg>
-File: picture/LLIE/RCF/conv4_2.jpg Graphic file (type bmp)
-<picture/LLIE/RCF/conv4_2.jpg>
-File: picture/LLIE/RCF/conv4_3.jpg Graphic file (type bmp)
-<picture/LLIE/RCF/conv4_3.jpg>
- [26]
-File: picture/LLIE/My Architecture/Edge Detection/low00044.png Graphic file (ty
-pe bmp)
-<picture/LLIE/My Architecture/Edge Detection/low00044.png>
-File: picture/LLIE/My Architecture/Edge Detection/low00044_canny.png Graphic fi
-le (type bmp)
-<picture/LLIE/My Architecture/Edge Detection/low00044_canny.png>
-File: picture/LLIE/My Architecture/Edge Detection/low00044_rcf.png Graphic file
- (type bmp)
-<picture/LLIE/My Architecture/Edge Detection/low00044_rcf.png>
-File: picture/LLIE/My Architecture/Edge Detection/low00044_hog.png Graphic file
- (type bmp)
-<picture/LLIE/My Architecture/Edge Detection/low00044_hog.png>
-File: picture/LLIE/My Architecture/Edge Detection/low00044_lbp.png Graphic file
- (type bmp)
-<picture/LLIE/My Architecture/Edge Detection/low00044_lbp.png>
-File: picture/LLIE/My Architecture/Edge Detection/normal00044.png Graphic file 
-(type bmp)
-<picture/LLIE/My Architecture/Edge Detection/normal00044.png>
-File: picture/LLIE/My Architecture/Edge Detection/normal00044_canny.png Graphic
- file (type bmp)
-<picture/LLIE/My Architecture/Edge Detection/normal00044_canny.png>
-File: picture/LLIE/My Architecture/Edge Detection/normal00044_rcf.png Graphic f
-ile (type bmp)
-<picture/LLIE/My Architecture/Edge Detection/normal00044_rcf.png>
-File: picture/LLIE/My Architecture/Edge Detection/normal00044_hog.png Graphic f
-ile (type bmp)
-<picture/LLIE/My Architecture/Edge Detection/normal00044_hog.png>
-File: picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png Graphic f
-ile (type bmp)
-<picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png>
-File: picture/LLIE/My Architecture/Edge Detection Network.jpg Graphic file (typ
-e bmp)
-<picture/LLIE/My Architecture/Edge Detection Network.jpg>
-File: picture/LLIE/My Architecture/Total architecture.pdf Graphic file (type pd
-f)
-<use picture/LLIE/My Architecture/Total architecture.pdf>
- [27] [28]
-File: picture/LLIE/Efficent/Input.png Graphic file (type bmp)
-<picture/LLIE/Efficent/Input.png>
-File: picture/LLIE/Efficent/LightenNet.png Graphic file (type bmp)
-<picture/LLIE/Efficent/LightenNet.png>
-File: picture/LLIE/Efficent/LLNet.png Graphic file (type bmp)
-<picture/LLIE/Efficent/LLNet.png>
-File: picture/LLIE/Efficent/RetinexNet.png Graphic file (type bmp)
-<picture/LLIE/Efficent/RetinexNet.png>
-File: picture/LLIE/Efficent/KinD.png Graphic file (type bmp)
-<picture/LLIE/Efficent/KinD.png>
-File: picture/LLIE/Efficent/MBLLEN.png Graphic file (type bmp)
-<picture/LLIE/Efficent/MBLLEN.png>
-File: picture/LLIE/Efficent/EnlightenGAN.png Graphic file (type bmp)
-<picture/LLIE/Efficent/EnlightenGAN.png>
-File: picture/LLIE/Efficent/Zero-DCE.png Graphic file (type bmp)
-<picture/LLIE/Efficent/Zero-DCE.png>
-File: picture/LLIE/Efficent/Ours.png Graphic file (type bmp)
-<picture/LLIE/Efficent/Ours.png>
-File: picture/LLIE/Efficent/GT.png Graphic file (type bmp)
-<picture/LLIE/Efficent/GT.png>
- [29] (./inception_paper.bbl [30] [31] [32]
-[33] [34] [35]) [36] 
-enddocument/afterlastpage: lastpage setting LastPage.
-(./inception_paper.aux)
-
-LaTeX Warning: There were undefined references.
-
-Package rerunfilecheck Info: File `inception_paper.out' has not changed.
-(rerunfilecheck)             Checksum: 6F0AC86108761FC5FA146B07D7C8A3C8;4243.
- ) 
-Here is how much of TeX's memory you used:
- 23532 strings out of 476683
- 539933 string characters out of 5805371
- 1880012 words of memory out of 5000000
- 43310 multiletter control sequences out of 15000+600000
- 523722 words of font info for 121 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 89i,20n,97p,875b,651s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on inception_paper.pdf (36 pages).
+[3

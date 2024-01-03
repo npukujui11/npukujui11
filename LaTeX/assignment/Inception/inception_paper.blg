@@ -1,141 +1,47 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: inception_paper.aux
-The style file: unsrt.bst
-Database file #1: reference.bib
-Repeated entry---line 237 of file reference.bib
- : @inproceedings{woo2018cbam
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 551 of file reference.bib
- : @article{wei2018deep
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 799 of file reference.bib
- : @article{yang2021locally
- :                         ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 813 of file reference.bib
- : @inproceedings{zhang2020attention
- :                                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 831 of file reference.bib
- : @inproceedings{li2018multi
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 847 of file reference.bib
- : @inproceedings{zamir2020learning
- :                                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 865 of file reference.bib
- : @article{li2020visual
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 999 of file reference.bib
- : @inproceedings{peng2021conformer
- :                                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1173 of file reference.bib
- : @article{wei2018deep
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1283 of file reference.bib
- : @article{wang2004image
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1327 of file reference.bib
- : @article{cai2018learning
- :                         ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1397 of file reference.bib
- : @inproceedings{wang2022uformer
- :                               ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1413 of file reference.bib
- : @article{cai2018learning
- :                         ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1435 of file reference.bib
- : @inproceedings{guo2020zero
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1473 of file reference.bib
- : @article{lore2017llnet
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2153 of file reference.bib
- : @inproceedings{xu2020learning
- :                              ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2169 of file reference.bib
- : @article{wang2004image
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2333 of file reference.bib
- : @article{cai2018learning
- :                         ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2355 of file reference.bib
- : @article{liu2021benchmarking
- :                             ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2395 of file reference.bib
- : @incollection{dong2010fast
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2569 of file reference.bib
- : @article{mittal2012making
- :                          ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2591 of file reference.bib
- : @inproceedings{fu2016weighted
- :                              ,
-I'm skipping whatever remains of this entry
-Warning--empty publisher in dong2010fast
-Warning--can't use both volume and number fields in tang2023low
-Warning--can't use both volume and number fields in lv2018mbllen
-Warning--can't use both volume and number fields in wang2023ultra
-Warning--can't use both volume and number fields in singh2016contrast
-Warning--can't use both volume and number fields in zhu2020eemefn
-You've used 91 entries,
-            1791 wiz_defined-function locations,
-            928 strings with 21329 characters,
-and the built_in function-call counts, 28081 in all, are:
-= -- 2557
-> -- 1319
-< -- 46
-+ -- 472
-- -- 381
-* -- 1924
-:= -- 4113
-add.period$ -- 287
-call.type$ -- 91
-change.case$ -- 91
+I found no \bibdata command---while reading file inception_paper.aux
+I found no \bibstyle command---while reading file inception_paper.aux
+You've used 8 entries,
+            0 wiz_defined-function locations,
+            91 strings with 629 characters,
+and the built_in function-call counts, 0 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 0
+:= -- 0
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 97
-duplicate$ -- 1285
-empty$ -- 2617
-format.name$ -- 381
-if$ -- 6455
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 0
+format.name$ -- 0
+if$ -- 0
 int.to.chr$ -- 0
-int.to.str$ -- 91
-missing$ -- 88
-newline$ -- 455
-num.names$ -- 91
-pop$ -- 323
-preamble$ -- 1
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 0
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 0
 purify$ -- 0
 quote$ -- 0
-skip$ -- 785
+skip$ -- 0
 stack$ -- 0
-substring$ -- 2200
-swap$ -- 502
-text.length$ -- 46
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
-while$ -- 277
-width$ -- 93
-write$ -- 1007
-(There were 22 error messages)
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 0
+(There were 2 error messages)
