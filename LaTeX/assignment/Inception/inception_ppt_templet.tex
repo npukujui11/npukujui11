@@ -456,7 +456,7 @@
 		
 		\begin{figure}
 			\centering			
-			\begin{minipage}{.4\columnwidth}
+			\begin{minipage}{.3\columnwidth}
 				\begin{itemize} 
 					\item \zihao{-5} \yahei \textbf{挑战}
 					
@@ -477,7 +477,7 @@
 					% 现有的方法可能无法在极暗或极明亮的区域恢复图像的边缘细节。				
 				\end{itemize}
 			\end{minipage}
-			\begin{minipage}{.58\columnwidth}
+			\begin{minipage}{.65\columnwidth}
 				\setlength{\abovecaptionskip}{-0.05cm}
 				\centering 
 				\begin{minipage}{0.17\columnwidth}
@@ -504,7 +504,8 @@
 					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
 					\caption*{\tiny EnlightenGAN \\ (2019)}
 					\label{fig: EnlightenGAN}	
-				\end{minipage}
+				\end{minipage}\\
+				\vspace{-0.3cm}
 				\begin{minipage}{0.17\columnwidth}
 					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
 					\caption*{\tiny RRDNet \\ (2020)}
@@ -530,11 +531,11 @@
 					\caption*{\tiny URetinexNet \\ (2022)}
 					\label{fig: URetinexNet}	
 				\end{minipage}
-				
 				%\captionsetup{font=scriptsize}
 				\caption{
 					\label{fig: VE-LOL-L Visual} 
-					\tiny Visual results of different algorithms on low-illumination images sampled from the VE-LOL-L dataset.
+					\scriptsize 
+					VE-LOL-L 数据集下不同方法的可视化结果。
 				}
 			\end{minipage}
 		\end{figure}
@@ -679,23 +680,23 @@
 	\end{frame}
 	
 	\begin{frame}
-		{\zihao{-4} \yahei \textbf{本研究的研究目标}}
+		{\zihao{-4} \yahei \textbf{研究目标}}
 		
 		\begin{itemize}\zihao{5}
-			\item [-]
-			边缘网络的开发
+			\item [\checkmark]
+			可直接从弱光图像映射到边缘语义信息的边缘网络结构
 			%设计并构建一个创新的边缘网络，其核心功能是从低光照图像中直接提取边缘结构图。该网络生成的结构图应与地面真实（GT）生成的边缘结构图具有高度的相似性，从而确保准确性和可靠性。
 			
-			\vspace{-0.05cm}
+			\vspace{0.5cm}
 			
-			\item [-]
-			初步恢复图像的生成模型
+			\item [\checkmark]
+			一种可用于弱恢复的弱光图像增强模型
 			%开发一个用于生成初步恢复图像的低光照图像增强模型。该模型应专注于从弱光条件下的图像中恢复清晰度和细节，以提高整体图像质量。
 	
-			\vspace{-0.05cm}
+			\vspace{0.5cm}
 			
-			\item [-]
-			边缘语义信息的增强网络模型
+			\item [\checkmark]
+			基于边缘语义信息的增强网络模型
 			%在现有的直接串联方法基础上，进行创新性改进，构建一种更有效利用边缘语义信息的增强网络模型。目的在于通过这种改进，进一步提升图像增强过程中边缘结构的利用效率和效果。
 		\end{itemize}
 		
@@ -1349,19 +1350,19 @@
 	
 	\subsection{已完成工作}
 	
-	\begin{frame}
-		{\zihao{5} \yahei \textbf{已完成工作}}
-		% 实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于scikit-image 库计算PSNR、SSIM 等评价指标。
-		
-		{\zihao{-5} \yahei 我们针对初步恢复图像的生成模型进行了实验验证，以验证所提出方法的有效性。}
-		
-		\begin{itemize}\zihao{-5}
-			\item [(1)] 首先，介绍了实验的具体实施细节，包括网络的实现、所采用的数据集以及评估指标的选择。
-			\item [(2)] 接着，通过与经典技术的比较分析，展示了我们网络在低光图像增强任务中的性能优势。
-			\item [(3)] 最后，为了深入理解各个网络组件的贡献，我们执行了一系列消融研究，探讨了这些组件在低光图像增强任务中的作用和重要性。
-		\end{itemize}
-		
-	\end{frame}
+%	\begin{frame}
+%		{\zihao{5} \yahei \textbf{已完成工作}}
+%		% 实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于scikit-image 库计算PSNR、SSIM 等评价指标。
+%		
+%		{\zihao{-5} \yahei 我们针对初步恢复图像的生成模型进行了实验验证，以验证所提出方法的有效性。}
+%		
+%		\begin{itemize}\zihao{-5}
+%			\item [(1)] 首先，介绍了实验的具体实施细节，包括网络的实现、所采用的数据集以及评估指标的选择。
+%			\item [(2)] 接着，通过与经典技术的比较分析，展示了我们网络在低光图像增强任务中的性能优势。
+%			\item [(3)] 最后，为了深入理解各个网络组件的贡献，我们执行了一系列消融研究，探讨了这些组件在低光图像增强任务中的作用和重要性。
+%		\end{itemize}
+%		
+%	\end{frame}
 	
 	
 	\subsubsection{数据集和评价指标}
@@ -1608,10 +1609,16 @@
 		
 		{\zihao{-5} \yahei 接下来主要工作主要从以下方面开展：}
 		
+		\vspace{0.5cm}
+		
 		\begin{itemize}\zihao{-5}
 			\item[(1)] \textbf{边缘检测网络评价指标的研究：}确立用于评估边缘检测网络性能的关键指标，如精度、召回率和F1分数等。此外，设计实验以量化评估不同边缘检测方法在低光条件下的表现。
 			
+			\vspace{0.3cm}
+			
 			\item[(2)] \textbf{实验设计与验证：}使用现有边缘检测模型（例如RCF）进行初步实验，评估其在弱光图像恢复中的效果。对比分析现有技术与改进方法的性能差异。
+			
+			\vspace{0.3cm}
 			
 			\item[(3)] \textbf{改进方案的探索与实现：}尝试结合 RCF 方法和 Transformer 模型，设计新的边缘检测与图像恢复模型，并在标准数据集上测试新模型，并与传统方法进行性能比较。
 		\end{itemize}
