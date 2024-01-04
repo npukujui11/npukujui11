@@ -226,51 +226,51 @@
 		\end{figure}
 	\end{frame}
 	
-	\begin{frame}
-		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
-		
-		\begin{figure}[htbp] 
-			\centering
-			\setlength{\abovecaptionskip}{-0.03cm}
-			\begin{minipage}{0.18\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/input}
-				\captionsetup{font=scriptsize}
-				\caption*{\tiny input}
-				\label{fig: Retinex Model_input}
-			\end{minipage}
-			\begin{minipage}{0.18\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/Retinex}
-				\captionsetup{font=scriptsize}
-				\caption*{\tiny \textcolor{blue}{\citep{cooper2004analysis}}}
-				\label{fig: Retinex Model_Retinex}
-			\end{minipage}
-			\begin{minipage}{0.18\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/SSR}
-				\captionsetup{font=scriptsize}
-				\caption*{\tiny SSR}
-				\label{fig: Retinex Model_SSR}	
-			\end{minipage}
-			\begin{minipage}{0.18\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/MSR}
-				\captionsetup{font=scriptsize}
-				\caption*{\tiny MSR}
-				\label{fig: Retinex Model_MSR}	
-			\end{minipage}
-			\begin{minipage}{0.18\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/MSRCR}
-				\captionsetup{font=scriptsize}
-				\caption*{\tiny MSRCR}
-				\label{fig: Retinex Model_MSRCR}	
-			\end{minipage}
-			\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Retinex Model}
-				\tiny 传统 Retinex 算法实验结果。
-			}
-		\end{figure}
-		
-		{\zihao{-6} \yahei Retinex 模型在处理过程中往往忽视了噪声问题，这可能导致在反射图中产生大量噪声。反射图的计算本身是一个不稳定的问题，通常需要通过近似方法来估计。}
-	\end{frame}
+%	\begin{frame}
+%		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
+%		
+%		\begin{figure}[htbp] 
+%			\centering
+%			\setlength{\abovecaptionskip}{-0.03cm}
+%			\begin{minipage}{0.18\textwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/input}
+%				\captionsetup{font=scriptsize}
+%				\caption*{\tiny input}
+%				\label{fig: Retinex Model_input}
+%			\end{minipage}
+%			\begin{minipage}{0.18\textwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/Retinex}
+%				\captionsetup{font=scriptsize}
+%				\caption*{\tiny \textcolor{blue}{\citep{cooper2004analysis}}}
+%				\label{fig: Retinex Model_Retinex}
+%			\end{minipage}
+%			\begin{minipage}{0.18\textwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/SSR}
+%				\captionsetup{font=scriptsize}
+%				\caption*{\tiny SSR}
+%				\label{fig: Retinex Model_SSR}	
+%			\end{minipage}
+%			\begin{minipage}{0.18\textwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/MSR}
+%				\captionsetup{font=scriptsize}
+%				\caption*{\tiny MSR}
+%				\label{fig: Retinex Model_MSR}	
+%			\end{minipage}
+%			\begin{minipage}{0.18\textwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/Retinex Model/MSRCR}
+%				\captionsetup{font=scriptsize}
+%				\caption*{\tiny MSRCR}
+%				\label{fig: Retinex Model_MSRCR}	
+%			\end{minipage}
+%			\captionsetup{font=scriptsize}
+%			\caption{
+%				\label{fig: Retinex Model}
+%				\tiny 传统 Retinex 算法实验结果。
+%			}
+%		\end{figure}
+%		
+%		{\zihao{-6} \yahei Retinex 模型在处理过程中往往忽视了噪声问题，这可能导致在反射图中产生大量噪声。反射图的计算本身是一个不稳定的问题，通常需要通过近似方法来估计。}
+%	\end{frame}
 	
 	\begin{frame}
 		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
@@ -356,28 +356,28 @@
 		
 	\end{frame}
 	
-	\begin{frame}
-	{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
-	
-	{\zihao{-6} \yahei 尽管有监督学习方法在图像增强中取得了一定的成效，但它面临着两大主要限制。首先，可用于训练的成对图像数据集是有限的。其次，在这样的成对数据集上训练的模型容易出现过拟合的问题。为了克服这些挑战，研究者们转向了无监督学习方法。}
-	
-	{\zihao{-6} \yahei Jiang等人\textcolor{blue}{\citep{jiang2021enlightengan}}开创性地提出了一种名为 \textbf{EnlightenGAN} 的无监督学习方法。}
-	
-	\begin{figure}
-		\centering
-		\setlength{\abovecaptionskip}{-0.05cm}
-		\begin{minipage}{.6\columnwidth}
-			\includegraphics[width=\columnwidth]{picture/LLIE/EnlightenGAN/EnlightenGAN}
-			\caption{
-				\label{fig: EnlightenGAN Architecture} 
-				\tiny EnlightenGAN 结构图
-			}
-		\end{minipage}
-	\end{figure}
-	
-	{\zihao{-6} \yahei EnlightenGAN的主要创新在于两个方面：一是其全局-局部判别器结构，用于处理输入图像中的空间光照变化；二是结合自特征保留损失和自正则化注意力机制，确保增强后图像的内容特征保持不变。}
-	
-	\end{frame}
+%	\begin{frame}
+%	{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}
+%	
+%	{\zihao{-6} \yahei 尽管有监督学习方法在图像增强中取得了一定的成效，但它面临着两大主要限制。首先，可用于训练的成对图像数据集是有限的。其次，在这样的成对数据集上训练的模型容易出现过拟合的问题。为了克服这些挑战，研究者们转向了无监督学习方法。}
+%	
+%	{\zihao{-6} \yahei Jiang等人\textcolor{blue}{\citep{jiang2021enlightengan}}开创性地提出了一种名为 \textbf{EnlightenGAN} 的无监督学习方法。}
+%	
+%	\begin{figure}
+%		\centering
+%		\setlength{\abovecaptionskip}{-0.05cm}
+%		\begin{minipage}{.6\columnwidth}
+%			\includegraphics[width=\columnwidth]{picture/LLIE/EnlightenGAN/EnlightenGAN}
+%			\caption{
+%				\label{fig: EnlightenGAN Architecture} 
+%				\tiny EnlightenGAN 结构图
+%			}
+%		\end{minipage}
+%	\end{figure}
+%	
+%	{\zihao{-6} \yahei EnlightenGAN的主要创新在于两个方面：一是其全局-局部判别器结构，用于处理输入图像中的空间光照变化；二是结合自特征保留损失和自正则化注意力机制，确保增强后图像的内容特征保持不变。}
+%	
+%	\end{frame}
 	
 %	\begin{frame}
 %		{\zihao{-5} \yahei \textbf{基于深度学习的弱光图像增强方法}}

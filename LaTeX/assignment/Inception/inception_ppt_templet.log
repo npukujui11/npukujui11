@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  4 JAN 2024 14:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  4 JAN 2024 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1499,49 +1499,31 @@ File: picture/LLIE/Retinex Model/Retinex Model.png Graphic file (type bmp)
  [5
 
 ]
-File: picture/LLIE/Retinex Model/input.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/input.png>
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 273.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 312.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <8> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 273.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 312.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 273.
-File: picture/LLIE/Retinex Model/Retinex.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/Retinex.png>
-File: picture/LLIE/Retinex Model/SSR.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/SSR.png>
-File: picture/LLIE/Retinex Model/MSR.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/MSR.png>
-File: picture/LLIE/Retinex Model/MSRCR.png Graphic file (type bmp)
-<picture/LLIE/Retinex Model/MSRCR.png>
- [6
-
-]
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 312.
 File: picture/LLIE/HE/Histogram equalization.jpg Graphic file (type bmp)
 <picture/LLIE/HE/Histogram equalization.jpg>
 
 Overfull \vbox (1.03886pt too high) detected at line 312
  []
 
-[7
+[6
 
 ]
 File: picture/LLIE/MBLLEN/MBLLEN Architecture.jpg Graphic file (type bmp)
 <picture/LLIE/MBLLEN/MBLLEN Architecture.jpg>
 File: picture/LLIE/RetinexNet/RetinexNet.jpg Graphic file (type bmp)
 <picture/LLIE/RetinexNet/RetinexNet.jpg>
- [8
-
-]
-File: picture/LLIE/EnlightenGAN/EnlightenGAN.jpg Graphic file (type bmp)
-<picture/LLIE/EnlightenGAN/EnlightenGAN.jpg>
- [9
+ [7
 
 ]
 File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type bmp)
 <picture/LLIE/Uformer/Uformer.jpg>
- [10
+ [8
 
 ]
 File: picture/LLIE/VE-LOL-L/input.jpg Graphic file (type bmp)
@@ -1564,13 +1546,12 @@ File: picture/LLIE/VE-LOL-L/KinD++.jpg Graphic file (type bmp)
 <picture/LLIE/VE-LOL-L/KinD++.jpg>
 File: picture/LLIE/VE-LOL-L/URetinexNet.jpg Graphic file (type bmp)
 <picture/LLIE/VE-LOL-L/URetinexNet.jpg>
- [11
+ [9
 
 ]
 LaTeX Font Info:    Trying to load font information for U+ding on input line 60
 7.
-
-(d:/Soft/texlive/2023/texmf-dist/tex/latex/bbding/Uding.fd
+ (d:/Soft/texlive/2023/texmf-dist/tex/latex/bbding/Uding.fd
 File: Uding.fd 1996/02/01 v1.0 BBding font definitions
 )
 File: picture/LLIE/Structure Modeling and Guidance/Input.jpg Graphic file (type
@@ -1591,23 +1572,23 @@ bmp)
 File: picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg Graphic fil
 e (type bmp)
 <picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg>
- [12
+
+[10
 
 ]
 File: picture/LLIE/EEMEFN/EEMEFN framework.jpg Graphic file (type bmp)
 <picture/LLIE/EEMEFN/EEMEFN framework.jpg>
 File: picture/LLIE/EdgeNet/Archtecture workflow.jpg Graphic file (type bmp)
 <picture/LLIE/EdgeNet/Archtecture workflow.jpg>
- [13
+ [11
 
 ]
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
 ype bmp)
 <picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
- [14
+ [12
 
-]
-[15
+] [13
 
 ]
 File: picture/LLIE/My Architecture/Total architecture.pdf Graphic file (type pd
@@ -1617,7 +1598,7 @@ f)
 Overfull \vbox (0.87288pt too high) detected at line 795
  []
 
-[16
+[14
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <9.03374> not available
@@ -1625,7 +1606,7 @@ LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <9.03374> not available
 File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type bmp)
 
 <picture/LLIE/Conformer/the proposed Conformer.jpg>
- [17
+ [15
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1654,7 +1635,7 @@ e).jpg>
 Overfull \vbox (25.7228pt too high) detected at line 921
  []
 
-[18
+[16
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00044.png Graphic file (ty
@@ -1687,7 +1668,7 @@ ile (type bmp)
 File: picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png Graphic f
 ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png>
- [19
+ [17
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00269.png Graphic file (ty
@@ -1712,15 +1693,15 @@ ile (type bmp)
 Overfull \vbox (2.36853pt too high) detected at line 1328
  []
 
-[20
+[18
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection Network.jpg Graphic file (typ
 e bmp)
 <picture/LLIE/My Architecture/Edge Detection Network.jpg>
- [21
+ [19
 
-] [22
+] [20
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1731,7 +1712,7 @@ LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.53937> not available
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.53937> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1424.
 
- [23
+ [21
 
 ]
 
@@ -1746,7 +1727,7 @@ Missing character: There is no ↓ ("2193) in font rm-lmss8!
 Overfull \vbox (6.37415pt too high) detected at line 1499
  []
 
-[24
+[22
 
 ]
 File: picture/LLIE/Efficent/Input.png Graphic file (type bmp)
@@ -1773,13 +1754,13 @@ File: picture/LLIE/Efficent/GT.png Graphic file (type bmp)
 Overfull \vbox (1.03601pt too high) detected at line 1569
  []
 
-[25
+[23
+
+] [24
+
+] [25
 
 ] [26
-
-] [27
-
-] [28
 
 ] (./inception_ppt_templet.bbl
 
@@ -1805,12 +1786,12 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-) [29
+) [27
 
-] [30
+] [28
 
 
-] [31
+] [29
 
 
 ]
@@ -1826,15 +1807,15 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 
 (./inception_ppt_templet.aux)
 Package rerunfilecheck Info: File `inception_ppt_templet.out' has not changed.
-(rerunfilecheck)             Checksum: 31F5C01B51C233A53017AA5F0663332D;1233.
+(rerunfilecheck)             Checksum: F90676EACAE3B3478F7BFD021B2BB830;1232.
  ) 
 Here is how much of TeX's memory you used:
- 35905 strings out of 476683
- 840055 string characters out of 5805371
- 1883012 words of memory out of 5000000
- 55309 multiletter control sequences out of 15000+600000
+ 35745 strings out of 476683
+ 833243 string characters out of 5805371
+ 1880012 words of memory out of 5000000
+ 55153 multiletter control sequences out of 15000+600000
  553347 words of font info for 164 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,19n,122p,471b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on inception_ppt_templet.pdf (31 pages).
+Output written on inception_ppt_templet.pdf (29 pages).

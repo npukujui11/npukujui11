@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{32}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -136,14 +136,6 @@
 \newblock \bibinfo{title}{Benchmarking low-light image enhancement and beyond}.
 \newblock \bibinfo{journal}{International Journal of Computer Vision}
   \bibinfo{volume}{129}, \bibinfo{pages}{1153--1184}.
-%Type = Inproceedings
-\bibitem[{Liu et~al.(2017)Liu, Cheng, Hu, Wang and Bai}]{liu2017richer}
-\bibinfo{author}{Liu, Y.}, \bibinfo{author}{Cheng, M.M.}, \bibinfo{author}{Hu,
-  X.}, \bibinfo{author}{Wang, K.}, \bibinfo{author}{Bai, X.},
-  \bibinfo{year}{2017}.
-\newblock \bibinfo{title}{Richer convolutional features for edge detection},
-  in: \bibinfo{booktitle}{Proceedings of the IEEE conference on computer vision
-  and pattern recognition}, pp. \bibinfo{pages}{3000--3009}.
 %Type = Article
 \bibitem[{Lore et~al.(2017)Lore, Akintayo and Sarkar}]{lore2017llnet}
 \bibinfo{author}{Lore, K.G.}, \bibinfo{author}{Akintayo, A.},
@@ -204,15 +196,6 @@
 \newblock \bibinfo{journal}{Journal of Digital imaging} \bibinfo{volume}{11},
   \bibinfo{pages}{193--200}.
 %Type = Inproceedings
-\bibitem[{Qiao et~al.(2021)Qiao, Xu, Sun, Qiu and Guo}]{qiao2021deep}
-\bibinfo{author}{Qiao, Z.}, \bibinfo{author}{Xu, W.}, \bibinfo{author}{Sun,
-  L.}, \bibinfo{author}{Qiu, S.}, \bibinfo{author}{Guo, H.},
-  \bibinfo{year}{2021}.
-\newblock \bibinfo{title}{Deep semi-supervised learning for low-light image
-  enhancement}, in: \bibinfo{booktitle}{2021 14th International Congress on
-  Image and Signal Processing, BioMedical Engineering and Informatics
-  (CISP-BMEI)}, \bibinfo{organization}{IEEE}. pp. \bibinfo{pages}{1--6}.
-%Type = Inproceedings
 \bibitem[{Rana et~al.(2021)Rana, Lal and Parihar}]{rana2021edge}
 \bibinfo{author}{Rana, D.}, \bibinfo{author}{Lal, K.J.},
   \bibinfo{author}{Parihar, A.S.}, \bibinfo{year}{2021}.
@@ -220,13 +203,6 @@
   \bibinfo{booktitle}{2021 5th International Conference on Intelligent
   Computing and Control Systems (ICICCS)}, \bibinfo{organization}{IEEE}. pp.
   \bibinfo{pages}{871--877}.
-%Type = Article
-\bibitem[{Simonyan and Zisserman(2014)}]{simonyan2014very}
-\bibinfo{author}{Simonyan, K.}, \bibinfo{author}{Zisserman, A.},
-  \bibinfo{year}{2014}.
-\newblock \bibinfo{title}{Very deep convolutional networks for large-scale
-  image recognition}.
-\newblock \bibinfo{journal}{arXiv preprint arXiv:1409.1556} .
 %Type = Article
 \bibitem[{Stark(2000)}]{stark2000adaptive}
 \bibinfo{author}{Stark, J.A.}, \bibinfo{year}{2000}.
@@ -277,12 +253,6 @@
   enhancement}.
 \newblock \bibinfo{journal}{arXiv preprint arXiv:1808.04560} .
 %Type = Inproceedings
-\bibitem[{Xie and Tu(2015)}]{xie2015holistically}
-\bibinfo{author}{Xie, S.}, \bibinfo{author}{Tu, Z.}, \bibinfo{year}{2015}.
-\newblock \bibinfo{title}{Holistically-nested edge detection}, in:
-  \bibinfo{booktitle}{Proceedings of the IEEE international conference on
-  computer vision}, pp. \bibinfo{pages}{1395--1403}.
-%Type = Inproceedings
 \bibitem[{Xu et~al.(2023)Xu, Wang and Lu}]{xu2023low}
 \bibinfo{author}{Xu, X.}, \bibinfo{author}{Wang, R.}, \bibinfo{author}{Lu, J.},
   \bibinfo{year}{2023}.
@@ -297,18 +267,9 @@
   enhancer}, in: \bibinfo{booktitle}{Proceedings of the 27th ACM international
   conference on multimedia}, pp. \bibinfo{pages}{1632--1640}.
 %Type = Inproceedings
-\bibitem[{Zhu et~al.(2020a)Zhu, Zhang, Shen, Ma, Zhao and Zhou}]{zhu2020zero}
-\bibinfo{author}{Zhu, A.}, \bibinfo{author}{Zhang, L.}, \bibinfo{author}{Shen,
-  Y.}, \bibinfo{author}{Ma, Y.}, \bibinfo{author}{Zhao, S.},
-  \bibinfo{author}{Zhou, Y.}, \bibinfo{year}{2020}a.
-\newblock \bibinfo{title}{Zero-shot restoration of underexposed images via
-  robust retinex decomposition}, in: \bibinfo{booktitle}{2020 IEEE
-  International Conference on Multimedia and Expo (ICME)},
-  \bibinfo{organization}{IEEE}. pp. \bibinfo{pages}{1--6}.
-%Type = Inproceedings
-\bibitem[{Zhu et~al.(2020b)Zhu, Pan, Chen and Yang}]{zhu2020eemefn}
+\bibitem[{Zhu et~al.(2020)Zhu, Pan, Chen and Yang}]{zhu2020eemefn}
 \bibinfo{author}{Zhu, M.}, \bibinfo{author}{Pan, P.}, \bibinfo{author}{Chen,
-  W.}, \bibinfo{author}{Yang, Y.}, \bibinfo{year}{2020}b.
+  W.}, \bibinfo{author}{Yang, Y.}, \bibinfo{year}{2020}.
 \newblock \bibinfo{title}{Eemefn: Low-light image enhancement via edge-enhanced
   multi-exposure fusion network}, in: \bibinfo{booktitle}{Proceedings of the
   AAAI Conference on Artificial Intelligence}, pp.

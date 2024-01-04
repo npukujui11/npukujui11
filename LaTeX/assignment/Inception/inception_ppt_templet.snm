@@ -10,60 +10,53 @@
 \beamer@slide {fig: LightingNet}{3}
 \beamer@slide {fig: application scenarios}{4}
 \beamer@slide {fig: Retinex model}{5}
-\beamer@slide {fig: Retinex Model_input}{6}
-\beamer@slide {fig: Retinex Model_Retinex}{6}
-\beamer@slide {fig: Retinex Model_SSR}{6}
-\beamer@slide {fig: Retinex Model_MSR}{6}
-\beamer@slide {fig: Retinex Model_MSRCR}{6}
-\beamer@slide {fig: Retinex Model}{6}
-\beamer@slide {fig: Histogram equalization}{7}
-\beamer@slide {fig: MBLLEN}{8}
-\beamer@slide {fig: RetinexNet}{8}
-\beamer@slide {fig: Supervised Learning}{8}
-\beamer@slide {fig: EnlightenGAN Architecture}{9}
-\beamer@slide {fig: Uformer}{10}
-\beamer@slide {fig: input}{11}
-\beamer@slide {fig: LLNet}{11}
-\beamer@slide {fig: RetinexNet_LOL}{11}
-\beamer@slide {fig: MBLLEN_LOL}{11}
-\beamer@slide {fig: EnlightenGAN}{11}
-\beamer@slide {fig: RRDNet}{11}
-\beamer@slide {fig: DRBN}{11}
-\beamer@slide {fig: Zero-DCE++}{11}
-\beamer@slide {fig: KinD++}{11}
-\beamer@slide {fig: URetinexNet}{11}
-\beamer@slide {fig: VE-LOL-L Visual}{11}
-\beamer@slide {fig: Total architecture}{16}
-\beamer@slide {fig: Contribution}{17}
-\beamer@slide {fig: Conformer}{17}
-\beamer@slide {fig: Abstract}{18}
-\beamer@slide {fig: PACUT}{18}
-\beamer@slide {fig: Up-sampling and down-sampling}{18}
-\beamer@slide {fig: The proposed initial architecture(Abstract Picture)}{18}
-\beamer@slide {fig: Parallel architecture combining u-net and transformer}{18}
-\beamer@slide {fig: LLI}{19}
-\beamer@slide {fig: LLI_canny}{19}
-\beamer@slide {fig: LLI_rcf}{19}
-\beamer@slide {fig: LLI_hog}{19}
-\beamer@slide {fig: LLI_lbp}{19}
-\beamer@slide {fig: GI}{19}
-\beamer@slide {fig: GT_canny}{19}
-\beamer@slide {fig: GT_rcf}{19}
-\beamer@slide {fig: GT_hog}{19}
-\beamer@slide {fig: GT_lbp}{19}
-\beamer@slide {fig: LLI Structure Information}{19}
-\beamer@slide {fig: LLI Structure Information1}{20}
-\beamer@slide {fig: Edge Detection Network}{21}
-\beamer@slide {tab: Paired_training_datases}{23}
-\beamer@slide {fig: LLI Input}{25}
-\beamer@slide {fig: LightenNet}{25}
-\beamer@slide {fig: LLI LLNet}{25}
-\beamer@slide {fig: LLI RetinexNet}{25}
-\beamer@slide {fig: KinD}{25}
-\beamer@slide {fig: MBLLEN_contrast}{25}
-\beamer@slide {fig: LLI EnlightenGAN}{25}
-\beamer@slide {fig: Zero-DCE}{25}
-\beamer@slide {fig: Ours}{25}
-\beamer@slide {fig: GT}{25}
-\beamer@slide {fig: LOL}{25}
-\beamer@slide {tab: Ablation Study}{26}
+\beamer@slide {fig: Histogram equalization}{6}
+\beamer@slide {fig: MBLLEN}{7}
+\beamer@slide {fig: RetinexNet}{7}
+\beamer@slide {fig: Supervised Learning}{7}
+\beamer@slide {fig: Uformer}{8}
+\beamer@slide {fig: input}{9}
+\beamer@slide {fig: LLNet}{9}
+\beamer@slide {fig: RetinexNet_LOL}{9}
+\beamer@slide {fig: MBLLEN_LOL}{9}
+\beamer@slide {fig: EnlightenGAN}{9}
+\beamer@slide {fig: RRDNet}{9}
+\beamer@slide {fig: DRBN}{9}
+\beamer@slide {fig: Zero-DCE++}{9}
+\beamer@slide {fig: KinD++}{9}
+\beamer@slide {fig: URetinexNet}{9}
+\beamer@slide {fig: VE-LOL-L Visual}{9}
+\beamer@slide {fig: Total architecture}{14}
+\beamer@slide {fig: Contribution}{15}
+\beamer@slide {fig: Conformer}{15}
+\beamer@slide {fig: Abstract}{16}
+\beamer@slide {fig: PACUT}{16}
+\beamer@slide {fig: Up-sampling and down-sampling}{16}
+\beamer@slide {fig: The proposed initial architecture(Abstract Picture)}{16}
+\beamer@slide {fig: Parallel architecture combining u-net and transformer}{16}
+\beamer@slide {fig: LLI}{17}
+\beamer@slide {fig: LLI_canny}{17}
+\beamer@slide {fig: LLI_rcf}{17}
+\beamer@slide {fig: LLI_hog}{17}
+\beamer@slide {fig: LLI_lbp}{17}
+\beamer@slide {fig: GI}{17}
+\beamer@slide {fig: GT_canny}{17}
+\beamer@slide {fig: GT_rcf}{17}
+\beamer@slide {fig: GT_hog}{17}
+\beamer@slide {fig: GT_lbp}{17}
+\beamer@slide {fig: LLI Structure Information}{17}
+\beamer@slide {fig: LLI Structure Information1}{18}
+\beamer@slide {fig: Edge Detection Network}{19}
+\beamer@slide {tab: Paired_training_datases}{21}
+\beamer@slide {fig: LLI Input}{23}
+\beamer@slide {fig: LightenNet}{23}
+\beamer@slide {fig: LLI LLNet}{23}
+\beamer@slide {fig: LLI RetinexNet}{23}
+\beamer@slide {fig: KinD}{23}
+\beamer@slide {fig: MBLLEN_contrast}{23}
+\beamer@slide {fig: LLI EnlightenGAN}{23}
+\beamer@slide {fig: Zero-DCE}{23}
+\beamer@slide {fig: Ours}{23}
+\beamer@slide {fig: GT}{23}
+\beamer@slide {fig: LOL}{23}
+\beamer@slide {tab: Ablation Study}{24}
