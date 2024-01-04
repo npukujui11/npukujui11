@@ -38,10 +38,14 @@
 		\titlepage
 	\end{frame}
 	
+	\setbeamerfont{section in toc}{size=\zihao{6}}
+	\setbeamerfont{subsection in toc}{size=\zihao{6}}
+	\setbeamerfont{subsubsection in toc}{size=\zihao{6}}
+	
 	\begin{frame}
-		\begin{multicols}{2}
-			\small \tableofcontents
-		\end{multicols}
+%		\begin{multicols}{3}
+			\zihao{6} \tableofcontents
+%		\end{multicols}
 	\end{frame}
 	
 %	\begin{frame} \transblindshorizontal<1>  %百叶窗效果
@@ -697,102 +701,36 @@
 		
 	\end{frame}
 	
-	\begin{frame}
-		
-		{\zihao{5} \yahei Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}}
-		\begin{itemize}\zihao{-5}
-			\item \textbf{研究背景}
-			
-			\item[\checkmark]
-			% Transformer is introduced into the visual task. 
-			Transformer 被引入视觉任务
-			
-			\item[\checkmark]
-			% Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
-			% 由于自注意力机制和多层感知器 MLP 结构，
-%			ViT 反映了复杂的空间变换和全局特征依赖
-			ViT 具有全局特征依赖
-			%，它们构成了全局表示。
-			
-			\item[\checkmark]
-			% Local feature details are ignored.
-			CNN 容易忽略全局特征
-		\end{itemize}
-		
-		\begin{figure}[htbp]
-			\begin{center}
-				\includegraphics[width=0.8\textwidth]{picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101)}
-			\end{center}
-		\end{figure}
-		
-		% CNN (ResNet-101)、Visual Transformer (DeiT-S)和所提出的 Conformer 的特征图比较。变压器中的贴片嵌入被重塑为特征映射，以实现可视化。CNN 激活了判别性的局部区域(例如: 孔雀的头部(a)和尾部(e))， Conformer 的 CNN 分支利用了来自视觉变压器的全局线索，从而激活了完整的对象(例如: 孔雀的整个范围(b)和(f))。与 CNN 相比，视觉变压器的局部特征细节变差(例如: (c), (g))。Conformer的 Transformer 分支保留了 CNN 的局部特征细节，同时压制了背景(例如: (d)和(h)中的孔雀轮廓比(c)和(g)中的孔雀轮廓更完整)。(以彩色观看效果最佳)
-	\end{frame}
-	
-	\begin{frame}
-		
-		{\zihao{-5} \yahei Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}}
-		\begin{figure}
-			\centering
-			\begin{minipage}{.4\textwidth}
-				\centering
-				\begin{itemize}\zihao{-5}
-					\item \textbf{背景}
-					
-					\item[\checkmark]
-					% Transformer is introduced into the visual task. 
-					Transformer 被引入视觉任务
-					
-					\item[\checkmark]
-					% Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
-					% 由于自注意力机制和多层感知器 MLP 结构，
-					%			ViT 反映了复杂的空间变换和全局特征依赖
-					ViT 具有全局特征依赖
-					%，它们构成了全局表示。
-					
-					\item[\checkmark]
-					% Local feature details are ignored.
-					CNN 容易忽略全局特征
-				\end{itemize}
-				
-				\begin{itemize}\zihao{-5}
-					\item \textbf{贡献}
-					
-					\item[\checkmark]
-					% A Dual Network Structure
-					一种并行网络结构
-					
-					\item[\checkmark]
-					% CNN and Transformer Branch
-					由 CNN 和 Transformer 分支组成
-					%，分别遵循 ResNet 和 ViT 的设计，这两个分支形成了 local convolution blocks，自注意力模块和 MLP 的组合。
-					
-					\item[\checkmark]
-					% Cross-entropy Loss Function
-					% 在训练期间，使用交叉熵损失函数用于监督 CNN 和 Transformer 分支
-					
-					\item[\checkmark]
-					Feature Coupling Unit (FCU)
-					% 考虑到 CNN 和 Transformer 之间的特征错位（feature misalignment），特征耦合单元 Feature Coupling Unit（FCU） 被设计为 bridge，一方面为了融合这两种风格特征，FCU 利用 1x1 卷积来对齐通道尺寸，利用向上/向下采样策略来对齐分辨率，利用LN，BN对齐特征值。
-				\end{itemize}
-				\captionsetup{font=scriptsize}
-				\label{fig: Contribution}
-				%\caption*{Contribution}
-			\end{minipage}
-			\begin{minipage}{.58\textwidth}
-				\centering
-				\includegraphics[width=\linewidth]{picture/LLIE/Conformer/the proposed Conformer}
-				\captionsetup{font=scriptsize}
-				\label{fig: Conformer}	
-				\caption*{Conformer}
-			\end{minipage}
-			\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Conformer contribution}
-				Network architecture of the proposed Conformer.
-			}
-		\end{figure}
-		
-	\end{frame}
+%	\begin{frame}
+%		
+%		{\zihao{5} \yahei Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}}
+%		\begin{itemize}\zihao{-5}
+%			\item \textbf{研究背景}
+%			
+%			\item[\checkmark]
+%			% Transformer is introduced into the visual task. 
+%			Transformer 被引入视觉任务
+%			
+%			\item[\checkmark]
+%			% Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
+%			% 由于自注意力机制和多层感知器 MLP 结构，
+%%			ViT 反映了复杂的空间变换和全局特征依赖
+%			ViT 具有全局特征依赖
+%			%，它们构成了全局表示。
+%			
+%			\item[\checkmark]
+%			% Local feature details are ignored.
+%			CNN 容易忽略全局特征
+%		\end{itemize}
+%		
+%		\begin{figure}[htbp]
+%			\begin{center}
+%				\includegraphics[width=0.8\textwidth]{picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101)}
+%			\end{center}
+%		\end{figure}
+%		
+%		% CNN (ResNet-101)、Visual Transformer (DeiT-S)和所提出的 Conformer 的特征图比较。变压器中的贴片嵌入被重塑为特征映射，以实现可视化。CNN 激活了判别性的局部区域(例如: 孔雀的头部(a)和尾部(e))， Conformer 的 CNN 分支利用了来自视觉变压器的全局线索，从而激活了完整的对象(例如: 孔雀的整个范围(b)和(f))。与 CNN 相比，视觉变压器的局部特征细节变差(例如: (c), (g))。Conformer的 Transformer 分支保留了 CNN 的局部特征细节，同时压制了背景(例如: (d)和(h)中的孔雀轮廓比(c)和(g)中的孔雀轮廓更完整)。(以彩色观看效果最佳)
+%	\end{frame}
 	
 	\section{研究内容}
 	
@@ -856,6 +794,72 @@
 		
 	\end{frame}
 	
+	\begin{frame}
+		
+		{\zihao{-5} \yahei Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}}
+		\begin{figure}
+			\centering
+			\begin{minipage}{.4\textwidth}
+				\centering
+				\begin{itemize}\zihao{-5}
+					\item \textbf{背景}
+					
+					\item[\checkmark]
+					% Transformer is introduced into the visual task. 
+					Transformer 被引入视觉任务
+					
+					\item[\checkmark]
+					% Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
+					% 由于自注意力机制和多层感知器 MLP 结构，
+					%			ViT 反映了复杂的空间变换和全局特征依赖
+					ViT 具有全局特征依赖
+					%，它们构成了全局表示。
+					
+					\item[\checkmark]
+					% Local feature details are ignored.
+					CNN 容易忽略全局特征
+				\end{itemize}
+				
+				\begin{itemize}\zihao{-5}
+					\item \textbf{贡献}
+					
+					\item[\checkmark]
+					% A Dual Network Structure
+					一种并行网络结构
+					
+					\item[\checkmark]
+					% CNN and Transformer Branch
+					由 CNN 和 Transformer 分支组成
+					%，分别遵循 ResNet 和 ViT 的设计，这两个分支形成了 local convolution blocks，自注意力模块和 MLP 的组合。
+					
+					%\item[\checkmark]
+					% Cross-entropy Loss Function
+					% 在训练期间，使用交叉熵损失函数用于监督 CNN 和 Transformer 分支
+					
+					\item[\checkmark]
+					Feature Coupling Unit (FCU)
+					% 考虑到 CNN 和 Transformer 之间的特征错位（feature misalignment），特征耦合单元 Feature Coupling Unit（FCU） 被设计为 bridge，一方面为了融合这两种风格特征，FCU 利用 1x1 卷积来对齐通道尺寸，利用向上/向下采样策略来对齐分辨率，利用LN，BN对齐特征值。
+				\end{itemize}
+				\captionsetup{font=scriptsize}
+				\label{fig: Contribution}
+				%\caption*{Contribution}
+			\end{minipage}
+			\begin{minipage}{.58\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{picture/LLIE/Conformer/the proposed Conformer}
+				\captionsetup{font=scriptsize}
+				\label{fig: Conformer}	
+				\caption*{Conformer}
+			\end{minipage}
+			\captionsetup{font=scriptsize}
+			%			\caption{
+				%				\label{fig: Conformer contribution}
+				%				Network architecture of the proposed Conformer.
+				%			}
+		\end{figure}
+		
+	\end{frame}
+	
 	\subsection{初步恢复图像的生成模型}
 	
 	\begin{frame}
@@ -866,21 +870,21 @@
 				\small
 				% 在当前的研究中，我们提出了一种新型的深度学习架构，命名为 PACUT ，旨在解决低光照条件下的图像增强问题。该模型结合了经典的 U-Net 架构和 Transformer 深度学习方法，在弱光图像增强任务中，提高恢复图像的可视性和质量，同时保留重要的细节和纹理信息。此分支的设计旨在处理图像的低级特征，如边缘、纹理和颜色信息。
 				\begin{itemize} 
-					\item \textbf{Abstract}
+					\item \textbf{概述}
 					
-					\item[\checkmark]\small Based Conformer
+					\item[\checkmark]\small 基于 Conformer
 					
-					\item[\checkmark]\small Long-and short-distance feature
+					\item[\checkmark]\small 捕获局部和全局特征
 					
 				\end{itemize}
 				\begin{itemize} 
-					\item \textbf{Key improvements}
+					\item \textbf{关键改进}
 					
-					\item[\checkmark]\small CNN Branch
+					\item[\checkmark]\small CNN 分支的改进
 					
 					% 深度卷积网络(CNN)分支：该分支基于 U-Net 架构，采用多层卷积神经网络，通过逐层提取图像的局部特征来增强图像的细节和纹理。
 					
-					\item[\checkmark]\small Feature Coupling Unit
+					\item[\checkmark]\small 特征融合模块
 					
 					% 特征耦合单元(FCU)：为了有效地融合 CNN 分支和 ViT 分支的特征，引入了特征耦合单元(FCU)。FCU 通过下采样(FCUDown) 和上采样(FCUUp) 操作，实现了CNN特征图和Transformer patch embeddings 之间的无缝转换，从而实现了局部特征和全局表示的连续耦合。
 				\end{itemize}
@@ -900,13 +904,13 @@
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/Up-sampling and down-sampling.jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: Up-sampling and down-sampling}	
-				\caption*{\tiny Up-sampling and down-sampling}
+				\caption*{\tiny 上采样和下采样}
 			\end{minipage}
 			\begin{minipage}{.28\textwidth}
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture(Abstract Picture).jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: The proposed initial architecture(Abstract Picture)}	
-				\caption*{\tiny Thumbnail of PACUT}
+				\caption*{\tiny 缩略图}
 			\end{minipage}
 			\captionsetup{font=scriptsize}
 			\caption{
@@ -1071,7 +1075,7 @@
 %		\end{itemize}
 %	\end{frame}
 	
-%	\subsection{边缘检测网络}
+	\subsection{边缘检测网络}
 %	
 %	\begin{frame}
 %		
@@ -1223,7 +1227,7 @@
 			\captionsetup{font=scriptsize}
 			\caption{
 				\label{fig: LLI Structure Information}
-				LLI and GT Structure Information
+				弱光图像和真实图像的结构信息
 			}
 		\end{figure}
 		
@@ -1318,7 +1322,7 @@
 			\end{minipage}
 			\caption{
 				\label{fig: LLI Structure Information1}
-				\small LLI with noise and GT Structure Information
+				含有噪声的弱光图像和真实图像的结构信息
 			}
 		\end{figure}
 	\end{frame}
@@ -1332,7 +1336,7 @@
 				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection Network}
 				\captionsetup{font=scriptsize}
 				\label{fig: Edge Detection Network}	
-				\caption{Edge Detection Network}
+				\caption{边缘检测网络}
 			\end{minipage}
 		\end{figure}
 		
@@ -1353,7 +1357,7 @@
 		
 		\begin{itemize}\zihao{-5}
 			\item [(1)] 首先，介绍了实验的具体实施细节，包括网络的实现、所采用的数据集以及评估指标的选择。
-			\item [(2)] 接着，通过与当前领先技术的比较分析，展示了我们网络在低光图像增强任务中的性能优势。
+			\item [(2)] 接着，通过与经典技术的比较分析，展示了我们网络在低光图像增强任务中的性能优势。
 			\item [(3)] 最后，为了深入理解各个网络组件的贡献，我们执行了一系列消融研究，探讨了这些组件在低光图像增强任务中的作用和重要性。
 		\end{itemize}
 		
