@@ -16,6 +16,12 @@
 \usepackage{graphicx}
 \usepackage{makecell}                 % 三线表-竖线
 \usepackage{booktabs}                 % 三线表-短细横线
+\usepackage{tikz}
+
+\addtobeamertemplate{headline}{}{%
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[anchor=north west] at (current page.north west) {\includegraphics[height=0.75cm, height=0.75cm]{picture/lzu-logo/png/logo-white_530x160}};
+\end{tikzpicture}}
 
 \begin{document}
 	
@@ -33,7 +39,9 @@
 	\renewcommand{\tablename}{表}
 	\renewcommand{\refname}{References}
 	\date{\today}
-	
+%	\logo{\includegraphics[width=1.5cm,height=1.5cm]{picture/lzu-logo/png/badge-blue_160x160.png}}
+	% 设置logo位置
+%	\setbeamertemplate{sidebar left}{\includegraphics[width=1cm]{picture/lzu-logo/png/badge-blue_160x160.png}}
 	\begin{frame}
 		\titlepage
 	\end{frame}
@@ -196,7 +204,7 @@
 				\includegraphics[width=\linewidth]{picture/LLIE/application scenarios}
 				\caption{
 					\label{fig: application scenarios}
-					\footnotesize 应用场景
+					\tiny 应用场景
 				}
 			\end{minipage}
 		\end{figure}
@@ -209,7 +217,7 @@
 	\begin{frame}
 		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
 		
-		{\zihao{-6} \yahei \textbf{基于传统方法的低照度图像增强算法}通常利用单张图像自身的性质进行图像增强。主要包括灰度变换(GT)\textcolor{blue}{\citep{ueng1995gamma}}、直方图均衡化(HE)\textcolor{blue}{\citep{stark2000adaptive}}、Retinex模型\textcolor{blue}{\citep{land1971lightness}}、频域处理\textcolor{blue}{\citep{liu2021benchmarking}}、图像融合模型\textcolor{blue}{\citep{dai2019fractional}}、去雾模型\textcolor{blue}{\citep{ma2019improved}}等。在低照度图像增强的领域中，基于 Retinex 理论的方法非常受欢迎，并且吸引了众多研究者的关注。}
+		{\zihao{-6} \yahei \textbf{基于传统方法的低照度图像增强算法}通常利用单张图像自身的性质进行图像增强。主要包括灰度变换(GT)\textcolor{blue}{\citep{ueng1995gamma}}、直方图均衡化(HE)\textcolor{blue}{\citep{stark2000adaptive}}、Retinex模型\textcolor{blue}{\citep{land1971lightness}}、频域处理\textcolor{blue}{\citep{liu2021benchmarking}}、图像融合模型\textcolor{blue}{\citep{dai2019fractional}}、去雾模型\textcolor{blue}{\citep{ma2019improved}}等。在低照度图像增强的领域中，基于 Retinex 理论的方法非常受欢迎，并且吸引了众多研究者的关注。直方图均衡化通过对直方图的分布进行约束，改善图片的亮度分布。}
 		
 %		\vspace{0.2cm}
 %		
@@ -221,22 +229,22 @@
 		
 		\begin{figure}
 			\centering
-			\setlength{\abovecaptionskip}{-0.05cm}		
-			\begin{minipage}{.45\columnwidth}
+			\begin{minipage}[t]{.45\columnwidth}
+				\centering
 				\includegraphics[width=\columnwidth]{picture/LLIE/Retinex Model/Retinex Model}
 				%\captionsetup{font=scriptsize}
 				\caption*{
 					\label{fig: Retinex model} 
-					\footnotesize Retinex 算法处理过程
+					\tiny (a) Retinex 算法处理过程
 				}
 			\end{minipage}
-			\begin{minipage}{.45\columnwidth}	
-				\centering 
-				\includegraphics[width=\columnwidth]{picture/LLIE/HE/Histogram equalization}
+			\begin{minipage}[t]{.45\columnwidth}	
+				\centering
+				\includegraphics[width=0.82\columnwidth]{picture/LLIE/HE/Histogram equalization}
 				%\captionsetup{font=scriptsize}
-				\caption{
+				\caption*{
 					\label{fig: Histogram equalization} 
-					\footnotesize 直方图均衡化示意图
+					\tiny (b) 直方图均衡化示意图
 				}
 			\end{minipage}
 		\end{figure}
@@ -289,44 +297,44 @@
 %		{\zihao{-6} \yahei Retinex 模型在处理过程中往往忽视了噪声问题，这可能导致在反射图中产生大量噪声。反射图的计算本身是一个不稳定的问题，通常需要通过近似方法来估计。}
 %	\end{frame}
 	
-	\begin{frame}
-		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
-		
-		{\zihao{-6} \yahei 直方图均衡化通过对直方图的分布进行约束，改善图片的亮度分布。直方图描述了图像灰度级的分布情况，显示了图像的灰度范围和每个灰度级的出现频率。摄影师也常利用直方图判断整幅图像的明暗程度、对比度等图像特征，以便完成相应的后期处理。}
-		
-		\begin{figure}
-			\centering			
-			\begin{minipage}{.4\columnwidth}
-				\begin{itemize}
-					\item \zihao{-6} \yahei \textbf{直方图均衡化}
-					
-					\item[\checkmark]
-					\zihao{-6} \yahei 快速有效，可逆操作				
-					
-					\item[\checkmark]
-					\zihao{-6} \yahei 不加选择地处理数据，增加背景噪声的对比度.
-				
-					\item[\checkmark]
-					\zihao{-6} \yahei 降低图像内容的对比度，导致视觉效果欠佳。
-					
-					\item[\checkmark]
-					\zihao{-6} \yahei ......
-					
-				\end{itemize}
-			\end{minipage}
-			\begin{minipage}{.55\columnwidth}
-				\setlength{\abovecaptionskip}{-0.05cm}
-				\centering 
-				\includegraphics[width=\columnwidth]{picture/LLIE/HE/Histogram equalization}
-				%\captionsetup{font=scriptsize}
-				\caption{
-					\label{fig: Histogram equalization} 
-					\tiny 直方图均衡化示意图
-				}
-			\end{minipage}
-		\end{figure}
-		
-	\end{frame}
+%	\begin{frame}
+%		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
+%		
+%		{\zihao{-6} \yahei 直方图均衡化通过对直方图的分布进行约束，改善图片的亮度分布。直方图描述了图像灰度级的分布情况，显示了图像的灰度范围和每个灰度级的出现频率。摄影师也常利用直方图判断整幅图像的明暗程度、对比度等图像特征，以便完成相应的后期处理。}
+%		
+%		\begin{figure}
+%			\centering			
+%			\begin{minipage}{.4\columnwidth}
+%				\begin{itemize}
+%					\item \zihao{-6} \yahei \textbf{直方图均衡化}
+%					
+%					\item[\checkmark]
+%					\zihao{-6} \yahei 快速有效，可逆操作				
+%					
+%					\item[\checkmark]
+%					\zihao{-6} \yahei 不加选择地处理数据，增加背景噪声的对比度.
+%				
+%					\item[\checkmark]
+%					\zihao{-6} \yahei 降低图像内容的对比度，导致视觉效果欠佳。
+%					
+%					\item[\checkmark]
+%					\zihao{-6} \yahei ......
+%					
+%				\end{itemize}
+%			\end{minipage}
+%			\begin{minipage}{.55\columnwidth}
+%				\setlength{\abovecaptionskip}{-0.05cm}
+%				\centering 
+%				\includegraphics[width=\columnwidth]{picture/LLIE/HE/Histogram equalization}
+%				%\captionsetup{font=scriptsize}
+%				\caption{
+%					\label{fig: Histogram equalization} 
+%					\tiny 直方图均衡化示意图
+%				}
+%			\end{minipage}
+%		\end{figure}
+%		
+%	\end{frame}
 	
 	\subsubsection{基于深度学习的低照度图像增强方法}
 	
@@ -344,17 +352,17 @@
 		\begin{figure}
 			\centering
 			\setlength{\abovecaptionskip}{-0.05cm}			
-			\begin{minipage}{.4\columnwidth}
+			\begin{minipage}{.45\columnwidth}
 				\setlength{\abovecaptionskip}{-0.05cm}
 				\centering 
-				\includegraphics[width=\columnwidth]{picture/LLIE/MBLLEN/MBLLEN Architecture}
+				\includegraphics[width=0.85\columnwidth]{picture/LLIE/MBLLEN/MBLLEN Architecture}
 				%\captionsetup{font=scriptsize}
 				\caption*{
 					\label{fig: MBLLEN} 
 					\tiny (a) MBLLEN 结构示意图
 				}
 			\end{minipage}
-			\begin{minipage}{.4\columnwidth}
+			\begin{minipage}{.45\columnwidth}
 				\setlength{\abovecaptionskip}{-0.05cm}
 				\centering 
 				\includegraphics[width=\columnwidth]{picture/LLIE/RetinexNet/RetinexNet}
@@ -464,99 +472,99 @@
 	
 	\subsection{研究目的}
 	
-	\begin{frame}
-		{\zihao{-4} \yahei \textbf{研究目的}}
-		
-		\vspace{0.1cm}
-		
-		{\zihao{-6} \yahei 基于软件技术的图像复原增强技术得到了广泛研究，其通过引入外部信息、加入先验、基于大数据集进行学习等方式，将输入的弱光图像的低光细节复原，产生接近降质前理想质量的低噪图。}
-		
-		\begin{figure}
-			\centering			
-			\begin{minipage}{.3\columnwidth}
-				\begin{itemize} 
-					\item \zihao{-5} \yahei \textbf{挑战}
-					
-					% 传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。
-					\zihao{6} \yahei 伪影(Artifacts)
-					
-					\zihao{6} \yahei 色差(Color Deviations) 
-					% 传统方法一般通过有效的先验或正则化来解决噪声问题。但是寻找到有效的先验和正则化相当具有挑战性，不正确的先验或正则化可能导致增强结果中的伪像和颜色偏差。
-					
-					\zihao{6} \yahei 噪声(Noise)
-					% 但是这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声，因此在增强结果中保留或放大噪声；
-					
-					\zihao{6} \yahei 鲁棒性(Robustness)
-					% 但是现有的低光照图像增强技术聚焦于构建数据驱动的深度网络，通常其网络模型复杂，导致计算效率低、推理速度慢，并且由于对于训练数据分布的依赖性导致其在未知场景下的性能缺乏保障。
-					% 物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。
-					
-					\zihao{6} \yahei 边缘细节(Edge Details)
-					% 现有的方法可能无法在极暗或极明亮的区域恢复图像的边缘细节。				
-				\end{itemize}
-			\end{minipage}
-			\begin{minipage}{.65\columnwidth}
-				\setlength{\abovecaptionskip}{-0.05cm}
-				\centering 
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
-					\caption*{\tiny input \\ \quad }
-					\label{fig: input}
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/LLNet}
-					\caption*{\tiny LLNet \\ (2017)}
-					\label{fig: LLNet}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RetinexNet}
-					\caption*{\tiny RetinexNet \\ (2018)}
-					\label{fig: RetinexNet_LOL}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/MBLLEN}
-					\caption*{\tiny MBLLEN \\ (2018)}
-					\label{fig: MBLLEN_LOL}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
-					\caption*{\tiny EnlightenGAN \\ (2019)}
-					\label{fig: EnlightenGAN}	
-				\end{minipage}\\
-				\vspace{-0.3cm}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
-					\caption*{\tiny RRDNet \\ (2020)}
-					\label{fig: RRDNet}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/DRBN}
-					\caption*{\tiny DRBN \\ (2020)}
-					\label{fig: DRBN}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/Zero-DCE++}
-					\caption*{\tiny Zero-DCE++ \\ (2021)}
-					\label{fig: Zero-DCE++}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/KinD++}
-					\caption*{\tiny KinD++ \\ (2021)}
-					\label{fig: KinD++}	
-				\end{minipage}
-				\begin{minipage}{0.17\columnwidth}
-					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/URetinexNet}
-					\caption*{\tiny URetinexNet \\ (2022)}
-					\label{fig: URetinexNet}	
-				\end{minipage}
-				%\captionsetup{font=scriptsize}
-				\caption{
-					\label{fig: VE-LOL-L Visual} 
-					\scriptsize 
-					VE-LOL-L 数据集下不同方法的可视化结果。
-				}
-			\end{minipage}
-		\end{figure}
-	\end{frame}
+%	\begin{frame}
+%		{\zihao{-4} \yahei \textbf{研究目的}}
+%		
+%		\vspace{0.1cm}
+%		
+%		{\zihao{-6} \yahei 基于软件技术的图像复原增强技术得到了广泛研究，其通过引入外部信息、加入先验、基于大数据集进行学习等方式，将输入的弱光图像的低光细节复原，产生接近降质前理想质量的低噪图。}
+%		
+%		\begin{figure}
+%			\centering			
+%			\begin{minipage}{.3\columnwidth}
+%				\begin{itemize} 
+%					\item \zihao{-5} \yahei \textbf{挑战}
+%					
+%					% 传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。
+%					\zihao{6} \yahei 伪影(Artifacts)
+%					
+%					\zihao{6} \yahei 色差(Color Deviations) 
+%					% 传统方法一般通过有效的先验或正则化来解决噪声问题。但是寻找到有效的先验和正则化相当具有挑战性，不正确的先验或正则化可能导致增强结果中的伪像和颜色偏差。
+%					
+%					\zihao{6} \yahei 噪声(Noise)
+%					% 但是这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声，因此在增强结果中保留或放大噪声；
+%					
+%					\zihao{6} \yahei 鲁棒性(Robustness)
+%					% 但是现有的低光照图像增强技术聚焦于构建数据驱动的深度网络，通常其网络模型复杂，导致计算效率低、推理速度慢，并且由于对于训练数据分布的依赖性导致其在未知场景下的性能缺乏保障。
+%					% 物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。
+%					
+%					\zihao{6} \yahei 边缘细节(Edge Details)
+%					% 现有的方法可能无法在极暗或极明亮的区域恢复图像的边缘细节。				
+%				\end{itemize}
+%			\end{minipage}
+%			\begin{minipage}{.65\columnwidth}
+%				\setlength{\abovecaptionskip}{-0.05cm}
+%				\centering 
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
+%					\caption*{\tiny input \\ \quad }
+%					\label{fig: input}
+%				\end{minipage}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/LLNet}
+%					\caption*{\tiny LLNet \\ (2017)}
+%					\label{fig: LLNet}	
+%				\end{minipage}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RetinexNet}
+%					\caption*{\tiny RetinexNet \\ (2018)}
+%					\label{fig: RetinexNet_LOL}	
+%				\end{minipage}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/MBLLEN}
+%					\caption*{\tiny MBLLEN \\ (2018)}
+%					\label{fig: MBLLEN_LOL}	
+%				\end{minipage}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
+%					\caption*{\tiny EnlightenGAN \\ (2019)}
+%					\label{fig: EnlightenGAN}	
+%				\end{minipage}\\
+%				\vspace{-0.3cm}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
+%					\caption*{\tiny RRDNet \\ (2020)}
+%					\label{fig: RRDNet}	
+%				\end{minipage}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/DRBN}
+%					\caption*{\tiny DRBN \\ (2020)}
+%					\label{fig: DRBN}	
+%				\end{minipage}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/Zero-DCE++}
+%					\caption*{\tiny Zero-DCE++ \\ (2021)}
+%					\label{fig: Zero-DCE++}	
+%				\end{minipage}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/KinD++}
+%					\caption*{\tiny KinD++ \\ (2021)}
+%					\label{fig: KinD++}	
+%				\end{minipage}
+%				\begin{minipage}{0.17\columnwidth}
+%					\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/URetinexNet}
+%					\caption*{\tiny URetinexNet \\ (2022)}
+%					\label{fig: URetinexNet}	
+%				\end{minipage}
+%				%\captionsetup{font=scriptsize}
+%				\caption{
+%					\label{fig: VE-LOL-L Visual} 
+%					\tiny
+%					VE-LOL-L 数据集下不同方法的可视化结果。
+%				}
+%			\end{minipage}
+%		\end{figure}
+%	\end{frame}
 	
 	\begin{frame}
 		{\zihao{-4} \yahei \textbf{研究目的}}
@@ -701,7 +709,7 @@
 		
 		\begin{itemize}\zihao{5}
 			\item [\checkmark]
-			可直接从弱光图像映射到边缘语义信息的边缘网络结构
+			一种可直接从弱光图像映射到边缘语义信息的边缘网络结构
 			%设计并构建一个创新的边缘网络，其核心功能是从低光照图像中直接提取边缘结构图。该网络生成的结构图应与地面真实（GT）生成的边缘结构图具有高度的相似性，从而确保准确性和可靠性。
 			
 			\vspace{0.5cm}
@@ -1396,7 +1404,7 @@
 			\centering
 			\tiny
 			%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
-				\begin{tabular}{>{\centering\arraybackslash}m{4cm}|c|c|c|c}
+				\begin{tabular}{>{\centering\arraybackslash}m{4.3cm}|c|c|c|c}
 					
 					\hline
 					
