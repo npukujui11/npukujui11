@@ -87,55 +87,49 @@ Repeated entry---line 2569 of file reference.bib
  : @article{mittal2012making
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2591 of file reference.bib
- : @inproceedings{fu2016weighted
- :                              ,
-I'm skipping whatever remains of this entry
 Warning--empty publisher in dong2010fast
-Warning--can't use both volume and number fields in tang2023low
 Warning--can't use both volume and number fields in lv2018mbllen
 Warning--can't use both volume and number fields in wang2023ultra
-Warning--can't use both volume and number fields in singh2016contrast
 Warning--can't use both volume and number fields in zhu2020eemefn
-You've used 91 entries,
+You've used 65 entries,
             1791 wiz_defined-function locations,
-            928 strings with 21333 characters,
-and the built_in function-call counts, 28081 in all, are:
-= -- 2557
-> -- 1319
-< -- 46
-+ -- 472
-- -- 381
-* -- 1924
-:= -- 4113
-add.period$ -- 287
-call.type$ -- 91
-change.case$ -- 91
+            799 strings with 16722 characters,
+and the built_in function-call counts, 20388 in all, are:
+= -- 1853
+> -- 969
+< -- 35
++ -- 346
+- -- 281
+* -- 1391
+:= -- 2987
+add.period$ -- 207
+call.type$ -- 65
+change.case$ -- 65
 chr.to.int$ -- 0
-cite$ -- 97
-duplicate$ -- 1285
-empty$ -- 2617
-format.name$ -- 381
-if$ -- 6455
+cite$ -- 69
+duplicate$ -- 942
+empty$ -- 1886
+format.name$ -- 281
+if$ -- 4696
 int.to.chr$ -- 0
-int.to.str$ -- 91
-missing$ -- 88
-newline$ -- 455
-num.names$ -- 91
-pop$ -- 323
+int.to.str$ -- 65
+missing$ -- 64
+newline$ -- 327
+num.names$ -- 65
+pop$ -- 235
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 785
+skip$ -- 579
 stack$ -- 0
-substring$ -- 2200
-swap$ -- 502
-text.length$ -- 46
+substring$ -- 1573
+swap$ -- 376
+text.length$ -- 35
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
-while$ -- 277
-width$ -- 93
-write$ -- 1007
-(There were 22 error messages)
+warning$ -- 4
+while$ -- 201
+width$ -- 67
+write$ -- 723
+(There were 21 error messages)

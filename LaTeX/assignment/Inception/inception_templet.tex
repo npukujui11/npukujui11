@@ -76,7 +76,7 @@
 
 \begin{document}
 	
-	\title{\songti \zihao{4}一种基于边缘结构指导的弱光图像增强方法}
+	\title{\songti \zihao{4}基于边缘结构指导的弱光图像增强方法}
 	\author{\textrm{Ku Jui}}
 	\date{\textrm{October 2023}}
 	\maketitle
@@ -342,10 +342,6 @@
 	Transformer架构\cite{vaswani2017attention}在图像处理中表现出色，但计算复杂度较高\cite{dosovitskiy2020image}。一些研究通过引入局部窗口策略和与CNN模块的耦合来缓解计算负担\cite{chen2023cross}。这种串联策略旨在充分发挥CNN的平移不变性和局部性，使其与Transformer优势互补。
 	
 	\subsection{技术路线}
-
-	根据当前文献研究，在低光照图像增强（LLIE）任务中，一种常见方法是采用边缘检测思想来引导弱光图像增强。该策略涉及将边缘图与初步恢复的图像进行串联，随后通过单一的增强网络来实现最终的图像恢复。然而，恢复结果的质量常受最后的增强网络设计以及初步恢复图像所包含特征与真实图像特征相似度的影响。综合目前文献调研发现，目前这类方法生成的图像仍然存在明显噪点。
-	
-	本研究基于上述的策略，基于边缘结构图来引导弱光图像恢复。通过利用边缘结构图引导图像恢复过程，旨在改善低光照条件下的图像质量，特别是在边缘细节方面。该策略基于深度学习技术和图像处理理论，尤其是边缘检测和图像增强技术。通过这一新方法，我们期望能够克服当前方法中存在的图像噪点问题，提升弱光图像增强的效果。
 	
 	\begin{figure}[htb]
 		\centering 
@@ -356,6 +352,10 @@
 		}
 	\end{figure}
 	\FloatBarrier
+	
+	根据当前文献研究，在低光照图像增强（LLIE）任务中，一种常见方法是采用边缘检测思想来引导弱光图像增强。该策略涉及将边缘图与初步恢复的图像进行串联，随后通过单一的增强网络来实现最终的图像恢复。然而，恢复结果的质量常受最后的增强网络设计以及初步恢复图像所包含特征与真实图像特征相似度的影响。综合目前文献调研发现，目前这类方法生成的图像仍然存在明显噪点。
+	
+	本研究基于上述的策略，基于边缘结构图来引导弱光图像恢复。通过利用边缘结构图引导图像恢复过程，旨在改善低光照条件下的图像质量，特别是在边缘细节方面。该策略基于深度学习技术和图像处理理论，尤其是边缘检测和图像增强技术。通过这一新方法，我们期望能够克服当前方法中存在的图像噪点问题，提升弱光图像增强的效果。
 	
 	\subsection{方案及可行性研究}
 	
@@ -400,7 +400,6 @@
 			我们提出的初步恢复图架构。图\ref{fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。图\ref{fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 图\ref{fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\cite{peng2021conformer}启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal{F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal{F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal{F}_3$ 经过与 U-Net 输出的特征图 $\mathcal{F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。
 		}
 	\end{figure}
-	\FloatBarrier
 	
 	在计算机视觉领域，图像特征的研究通常聚焦于两个主要方面：局部特征\cite{jain1991unsupervised, lowe2004distinctive, ojala2002multiresolution}和全局特征\cite{lisin2005combining}。局部特征是对图像微小区域的紧凑向量描述，而全局特征则涵盖更广泛的范围，包括长距离轮廓、形状描述符和不同对象类别的识别
 	

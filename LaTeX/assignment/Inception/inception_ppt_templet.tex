@@ -25,7 +25,7 @@
 
 \begin{document}
 	
-	\title{一种基于边缘结构指导的弱光图像增强方法}
+	\title{基于边缘结构指导的弱光图像增强方法}
 	\author[顾睿 (LZU)]{顾睿 \inst{1}}
 	\institute[*]{\inst{1} 兰州大学，信息科学与工程学院\\
 		npukujui11@gmail.com}
@@ -36,9 +36,9 @@
 		
 	\renewcommand{\today}{\the\year 年 \monthname[\the\month] 月 \the\day 日}
 	\renewcommand{\figurename}{\tiny 图}
-	\renewcommand{\tablename}{表}
+	\renewcommand{\tablename}{\tiny 表}
 	\renewcommand{\refname}{References}
-	\date{\today}
+%	\date{\today}
 %	\logo{\includegraphics[width=1.5cm,height=1.5cm]{picture/lzu-logo/png/badge-blue_160x160.png}}
 	% 设置logo位置
 %	\setbeamertemplate{sidebar left}{\includegraphics[width=1cm]{picture/lzu-logo/png/badge-blue_160x160.png}}
@@ -217,7 +217,7 @@
 	\begin{frame}
 		{\zihao{-5} \yahei \textbf{传统的弱光图像增强方法}}
 		
-		{\zihao{-6} \yahei \textbf{基于传统方法的低照度图像增强算法}通常利用单张图像自身的性质进行图像增强。主要包括灰度变换(GT)\textcolor{blue}{\citep{ueng1995gamma}}、直方图均衡化(HE)\textcolor{blue}{\citep{stark2000adaptive}}、Retinex模型\textcolor{blue}{\citep{land1971lightness}}、频域处理\textcolor{blue}{\citep{liu2021benchmarking}}、图像融合模型\textcolor{blue}{\citep{dai2019fractional}}、去雾模型\textcolor{blue}{\citep{ma2019improved}}等。在低照度图像增强的领域中，基于 Retinex 理论的方法非常受欢迎，并且吸引了众多研究者的关注。直方图均衡化通过对直方图的分布进行约束，改善图片的亮度分布。}
+		{\zihao{-6} \yahei \textbf{基于传统方法的弱光图像增强算法}通常利用单张图像自身的性质进行图像增强。主要包括灰度变换(GT)\textcolor{blue}{\citep{ueng1995gamma}}、直方图均衡化(HE)\textcolor{blue}{\citep{stark2000adaptive}}、Retinex模型\textcolor{blue}{\citep{land1971lightness}}、频域处理\textcolor{blue}{\citep{liu2021benchmarking}}、图像融合模型\textcolor{blue}{\citep{dai2019fractional}}、去雾模型\textcolor{blue}{\citep{ma2019improved}}等。在低照度图像增强的领域中，基于 Retinex 理论的方法非常受欢迎，并且吸引了众多研究者的关注。直方图均衡化通过对直方图的分布进行约束，改善图片的亮度分布。}
 		
 %		\vspace{0.2cm}
 %		
@@ -444,31 +444,31 @@
 %		
 %	\end{frame}
 	
-	\begin{frame}
-		{\zihao{-5} \yahei \textbf{基于Transformer的弱光图像增强方法}}
-		
-		{\zihao{-6} \yahei Transformer架构\textcolor{blue}{\cite{vaswani2017attention}}在图像处理领域的应用以来\textcolor{blue}{\cite{dosovitskiy2020image}}，其在捕获全局特征方面的能力引起了行业的广泛关注。}
-		
-		\begin{figure}
-			\centering
-			\setlength{\abovecaptionskip}{-0.05cm}
-			\begin{minipage}{.6\columnwidth}
-				\centering
-				\includegraphics[width=\columnwidth]{picture/LLIE/Uformer/Uformer}
-				%\captionsetup{font=scriptsize}
-				\caption{
-					\label{fig: Uformer} 
-					\tiny Uformer 的结构。
-				}
-			\end{minipage}
-		\end{figure}
-		
-		{\zihao{-6} \yahei 为了缓解计算负担，部分研究工作尝试采用局部窗口策略来限制自注意力机制的计算范围，并借鉴 U-Net 架构，引入跳过连接机制以增强特征传递\textcolor{blue}{\cite{wang2021uformer}}。}
-		
-		%尽管这种方法在降低计算成本方面取得了一定成效，但它可能会削弱Transformer架构在捕获图像中长距离特征的能力，进而影响其在图像复原任务中的整体性能。
-		
-		%为了克服这一限制，提出的解决方案\cite{chen2023cross}主要集中在窗口间的交互和与卷积神经网络（CNN）模块的耦合上。这种方法旨在将CNN的平移不变性和局部性归纳偏差融入Transformer架构中，从而实现两者优势的互补。我们将这类解决方案称为CNN与Transformer的串联策略。
-	\end{frame}
+%	\begin{frame}
+%		{\zihao{-5} \yahei \textbf{基于Transformer的弱光图像增强方法}}
+%		
+%		{\zihao{-6} \yahei Transformer架构\textcolor{blue}{\cite{vaswani2017attention}}在图像处理领域的应用以来\textcolor{blue}{\cite{dosovitskiy2020image}}，其在捕获全局特征方面的能力引起了行业的广泛关注。}
+%		
+%		\begin{figure}
+%			\centering
+%			\setlength{\abovecaptionskip}{-0.05cm}
+%			\begin{minipage}{.6\columnwidth}
+%				\centering
+%				\includegraphics[width=\columnwidth]{picture/LLIE/Uformer/Uformer}
+%				%\captionsetup{font=scriptsize}
+%				\caption{
+%					\label{fig: Uformer} 
+%					\tiny Uformer 的结构。
+%				}
+%			\end{minipage}
+%		\end{figure}
+%		
+%		{\zihao{-6} \yahei 为了缓解计算负担，部分研究工作尝试采用局部窗口策略来限制自注意力机制的计算范围，并借鉴 U-Net 架构，引入跳过连接机制以增强特征传递\textcolor{blue}{\cite{wang2021uformer}}。}
+%		
+%		%尽管这种方法在降低计算成本方面取得了一定成效，但它可能会削弱Transformer架构在捕获图像中长距离特征的能力，进而影响其在图像复原任务中的整体性能。
+%		
+%		%为了克服这一限制，提出的解决方案\cite{chen2023cross}主要集中在窗口间的交互和与卷积神经网络（CNN）模块的耦合上。这种方法旨在将CNN的平移不变性和局部性归纳偏差融入Transformer架构中，从而实现两者优势的互补。我们将这类解决方案称为CNN与Transformer的串联策略。
+%	\end{frame}
 	
 	\subsection{研究目的}
 	
@@ -570,7 +570,7 @@
 		{\zihao{-4} \yahei \textbf{研究目的}}
 		
 		\begin{figure}
-		\begin{minipage}{.4\columnwidth}
+		\begin{minipage}{.35\columnwidth}
 			\begin{itemize}
 				\item \zihao{-5} \yahei \textbf{现有方法存在的局限性}
 				
@@ -578,7 +578,7 @@
 				\zihao{6} \yahei 在提高亮度的同时，会放大噪声。
 				
 				\item[\XSolidBrush]
-				\zihao{6} \yahei 一些方法无法很好的避免颜色失真现象。
+				\zihao{6} \yahei 颜色失真现象。
 				
 				\item[\XSolidBrush]
 				\zihao{6} \yahei 现有的方法鲁棒性比较差。
@@ -591,118 +591,183 @@
 				{\zihao{-6} \yahei 在暗区域中加入敏感边缘先验可以降低优化外观重构时的不适定程度\textcolor{blue}{\citep{xu2023low}}。一些框架\textcolor{blue}{\citep{rana2021edge}}\textcolor{blue}{\citep{zhu2020eemefn}}使用基于编码器-解码器的网络和回归损失执行结构建模。然而，由于能见度和噪声严重不足导致的暗区不确定性，相应的结构建模结果并不令人满意。}
 			\end{itemize}
 		\end{minipage}
-		\begin{minipage}{.58\columnwidth}
+		\begin{minipage}{.6\columnwidth}
 			\setlength{\abovecaptionskip}{-0.05cm}
 			\centering 
-			\begin{minipage}{0.3\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Input}
-				\caption*{\tiny (a) Input}
+%			\begin{minipage}{0.3\textwidth}
+%				\centering
+%				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Input}
+%				\caption*{\tiny (a) Input}
+%			\end{minipage}
+%			\begin{minipage}{.3\textwidth}
+%				\centering
+%				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Structure of (a)}
+%				\caption*{\tiny (b) Structure of input}
+%			\end{minipage}
+%			\begin{minipage}{.3\textwidth}
+%				\centering
+%				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022)}
+%				\caption*{\tiny (c) SNR (CVPR 2022)}
+%			\end{minipage}
+%			\begin{minipage}{.3\textwidth}
+%				\centering
+%				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Structure Modeling}
+%				\caption*{\tiny (d) Structure Modeling}
+%			\end{minipage}
+%			\begin{minipage}{.3\textwidth}
+%				\centering
+%				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Ours}
+%				\caption*{\tiny (e) Ours}
+%			\end{minipage}
+%			\begin{minipage}{.3\textwidth}
+%				\centering
+%				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Ground Truth}
+%				\caption*{\tiny (f) Ground Truth}
+%			\end{minipage}
+%			\caption{
+%				\tiny SID-sRGB\textcolor{blue}{\citep{chen2018learning}}中一张弱光图片, 通过SOTA方法 (c) 和  \textcolor{blue}{\citep{xu2023low}} 提出的方法 (e)增强。作者的方法可以从输入的图像中合成结构图(d)，使细节更清晰，对比度更清晰，颜色更鲜艳。虽然(c)的 PSNR 为 28.17，但其 SSIM 低为 0.75。作者的方法在dB和SSIM的得分都很高，分别为28.60 dB 和 0.80。
+%			}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
+				\captionsetup{justification=centering}
+				\caption*{\tiny input \\ \quad }
+				\label{fig: input}
 			\end{minipage}
-			\begin{minipage}{.3\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Structure of (a)}
-				\caption*{\tiny (b) Structure of input}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/LLNet}
+				\captionsetup{justification=centering}
+				\caption*{\tiny LLNet \\ (2017)}
+				\label{fig: LLNet}	
 			\end{minipage}
-			\begin{minipage}{.3\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022)}
-				\caption*{\tiny (c) SNR (CVPR 2022)}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RetinexNet}
+				\captionsetup{justification=centering}
+				\caption*{\tiny RetinexNet \\ (2018)}
+				\label{fig: RetinexNet_LOL}	
 			\end{minipage}
-			\begin{minipage}{.3\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Structure Modeling}
-				\caption*{\tiny (d) Structure Modeling}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/MBLLEN}
+				\captionsetup{justification=centering}
+				\caption*{\tiny MBLLEN \\ (2018)}
+				\label{fig: MBLLEN_LOL}	
 			\end{minipage}
-			\begin{minipage}{.3\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Ours}
-				\caption*{\tiny (e) Ours}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
+				\captionsetup{justification=centering}
+				\caption*{\tiny EnlightenGAN \\ (2019)}
+				\label{fig: EnlightenGAN}	
+			\end{minipage}\\
+			\vspace{-0.3cm}
+			\begin{minipage}{0.18\columnwidth}	
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
+				\captionsetup{justification=centering}
+				\caption*{\tiny RRDNet \\ (2020)}
+				\label{fig: RRDNet}	
 			\end{minipage}
-			\begin{minipage}{.3\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/Structure Modeling and Guidance/Ground Truth}
-				\caption*{\tiny (f) Ground Truth}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/DRBN}
+				\captionsetup{justification=centering}
+				\caption*{\tiny DRBN \\ (2020)}
+				\label{fig: DRBN}	
 			\end{minipage}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/Zero-DCE++}
+				\captionsetup{justification=centering}
+				\caption*{\tiny Zero-DCE++ \\ (2021)}
+				\label{fig: Zero-DCE++}	
+			\end{minipage}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/KinD++}
+				\captionsetup{justification=centering}
+				\caption*{\tiny KinD++ \\ (2021)}
+				\label{fig: KinD++}	
+			\end{minipage}
+			\begin{minipage}{0.18\columnwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/URetinexNet}
+				\captionsetup{justification=centering}
+				\caption*{\tiny URetinexNet \\ (2022)}
+				\label{fig: URetinexNet}	
+			\end{minipage}
+			%\captionsetup{font=scriptsize}
 			\caption{
-				\tiny SID-sRGB\textcolor{blue}{\citep{chen2018learning}}中一张弱光图片, 通过SOTA方法 (c) 和  \textcolor{blue}{\citep{xu2023low}} 提出的方法 (e)增强。作者的方法可以从输入的图像中合成结构图(d)，使细节更清晰，对比度更清晰，颜色更鲜艳。虽然(c)的 PSNR 为 28.17，但其 SSIM 低为 0.75。作者的方法在dB和SSIM的得分都很高，分别为28.60 dB 和 0.80。
+				\label{fig: VE-LOL-L Visual} 
+				\tiny VE-LOL-L 数据集下不同方法的可视化结果。
 			}
 		\end{minipage}
 		\end{figure}
-		
 	\end{frame}
 	
-	\begin{frame}
-		\begin{figure}
-			\centering
-			\setlength{\abovecaptionskip}{-0.05cm}
-			\begin{minipage}{0.45\columnwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/EEMEFN/EEMEFN framework}
-				\caption*{\tiny
-					(a) 该 LLIE 结构源自\cite{zhu2020eemefn},如其 Multi-Exposure Fusion 部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat, 后续通过一个 U-Net 网络进一步恢复图像。}
-			\end{minipage}
-			\begin{minipage}{0.45\columnwidth}
-				\setlength{\abovecaptionskip}{0.29cm}
-				\includegraphics[width=\linewidth]{picture/LLIE/EdgeNet/Archtecture workflow}
-				\caption*{\tiny
-					(b) 该 LLIE 结构源自\cite{rana2021edge}使用 EdgeNet 首先从低光图像中过滤边缘，EnhanceNet 反复使用上采样和下采样块的组合，从局部到全局逐渐提取特征，并消除伪影和噪声。}
-			\end{minipage}
-			\caption{\tiny 边缘图像指导弱光图像增强的传统架构。}
-		\end{figure}
-		
-		\vspace{-0.5cm}
-		
-		\begin{minipage}{.9\textwidth}
-			\textbf{\tiny 具有的特点}
-			\begin{itemize} \tiny
-				\item [\checkmark] 其恢复结果的质量会受到\textcolor{red}{增强网络的设计}和\textcolor{red}{初步恢复图像与边缘结构图生成质量}的影响。
-				
-				\item [\checkmark] 边缘图的准确性会极大影响最终的恢复结果，直接从弱光图像中获取边缘图具有一定的挑战性。
-				
-				\item [\checkmark] 边缘图与初步恢复图像之间多采用\textcolor{red}{串联方式}输入卷积以获得最终增强结果。
-			\end{itemize}
-		\end{minipage}
-		
-	\end{frame}	
+%	\begin{frame}
+%		\begin{figure}
+%			\centering
+%			\setlength{\abovecaptionskip}{-0.05cm}
+%			\begin{minipage}{0.45\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/EEMEFN/EEMEFN framework}
+%				\caption*{\tiny
+%					(a) 该 LLIE 结构源自\cite{zhu2020eemefn},如其 Multi-Exposure Fusion 部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat, 后续通过一个 U-Net 网络进一步恢复图像。}
+%			\end{minipage}
+%			\begin{minipage}{0.45\columnwidth}
+%				\setlength{\abovecaptionskip}{0.29cm}
+%				\includegraphics[width=\linewidth]{picture/LLIE/EdgeNet/Archtecture workflow}
+%				\caption*{\tiny
+%					(b) 该 LLIE 结构源自\cite{rana2021edge}使用 EdgeNet 首先从低光图像中过滤边缘，EnhanceNet 反复使用上采样和下采样块的组合，从局部到全局逐渐提取特征，并消除伪影和噪声。}
+%			\end{minipage}
+%			\caption{\tiny 边缘图像指导弱光图像增强的传统架构。}
+%		\end{figure}
+%		
+%		\vspace{-0.5cm}
+%		
+%		\begin{minipage}{.9\textwidth}
+%			\textbf{\tiny 具有的特点}
+%			\begin{itemize} \tiny
+%				\item [\checkmark] 其恢复结果的质量会受到\textcolor{red}{增强网络的设计}和\textcolor{red}{初步恢复图像与边缘结构图生成质量}的影响。
+%				
+%				\item [\checkmark] 边缘图的准确性会极大影响最终的恢复结果，直接从弱光图像中获取边缘图具有一定的挑战性。
+%				
+%				\item [\checkmark] 边缘图与初步恢复图像之间多采用\textcolor{red}{串联方式}输入卷积以获得最终增强结果。
+%			\end{itemize}
+%		\end{minipage}
+%		
+%	\end{frame}	
 	
-	\begin{frame}
-		\begin{figure}[htbp]
-			\begin{center}
-				\includegraphics[width=0.8\textwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
-				\caption{
-					\tiny 该 LLIE 结构源自\textcolor{blue}{\cite{xu2023low}}，其提出一种基于 GAN Loss 的模型去对结构信息建模，通过获得的结构信息指导增强。
-				}
-			\end{center}
-		\end{figure}
-		
-		\vspace{-0.5cm}
-		
-		\begin{minipage}{.6\textwidth}
-			\textbf{\tiny 具有的特点}
-			\begin{itemize} \tiny
-				\item [\checkmark] 传统架构无法很好的利用边缘信息语义指导恢复弱光图像。
-				
-				\item [\checkmark] 低光照中的图片很难提取到好的结构信息。
-				
-				\item [\checkmark] StyleGAN从弱光图像中提取出接近 GT 边缘图。
-			\end{itemize}
-		\end{minipage}
-		\begin{minipage}{.3\textwidth}
-			\textbf{\tiny 可以改进的点}
-			\begin{itemize}\tiny
-			\item [-] 未给出边缘网络模型的实验结果。
-			% 论文指出低光数据集图片较少，所以结构信息提取模块的训练会受限，因此作者引入其他结构信息提取的数据集做额外训练可以进一步提升performance
-			
-			\item [-] 语义图和深度图可以作为引导信息。
-			% 作者提出除了边缘结构图作为引导信息，也可以使用其他特征，比如语义图（ Ours with SEG.）和深度图（ Ours with Dep.），总体表现没有边缘图好，但是也比一些现有的增强方法好。
-			
-			\item [-] 可以使用不同的引导网络。
-			% 作者没有说 Appearance Modeling 的结果去提取边缘会达到什么效果？
-			
-			% 此外作者做消融实验的过程中，使用一个 SOTA 边缘提取网络代替论文中的structural modeling 模块（但是感觉在低光照下很难提取到有效的边缘，合理点的话需要先对输入亮度增强一下）
-			\end{itemize}
-		\end{minipage}
-	\end{frame}
+%	\begin{frame}
+%		\begin{figure}[htbp]
+%			\begin{center}
+%				\includegraphics[width=0.8\textwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
+%				\caption{
+%					\tiny 该 LLIE 结构源自\textcolor{blue}{\cite{xu2023low}}，其提出一种基于 GAN Loss 的模型去对结构信息建模，通过获得的结构信息指导增强。
+%				}
+%			\end{center}
+%		\end{figure}
+%		
+%		\vspace{-0.5cm}
+%		
+%		\begin{minipage}{.6\textwidth}
+%			\textbf{\tiny 具有的特点}
+%			\begin{itemize} \tiny
+%				\item [\checkmark] 传统架构无法很好的利用边缘信息语义指导恢复弱光图像。
+%				
+%				\item [\checkmark] 低光照中的图片很难提取到好的结构信息。
+%				
+%				\item [\checkmark] StyleGAN从弱光图像中提取出接近 GT 边缘图。
+%			\end{itemize}
+%		\end{minipage}
+%		\begin{minipage}{.3\textwidth}
+%			\textbf{\tiny 可以改进的点}
+%			\begin{itemize}\tiny
+%			\item [-] 未给出边缘网络模型的实验结果。
+%			% 论文指出低光数据集图片较少，所以结构信息提取模块的训练会受限，因此作者引入其他结构信息提取的数据集做额外训练可以进一步提升performance
+%			
+%			\item [-] 语义图和深度图可以作为引导信息。
+%			% 作者提出除了边缘结构图作为引导信息，也可以使用其他特征，比如语义图（ Ours with SEG.）和深度图（ Ours with Dep.），总体表现没有边缘图好，但是也比一些现有的增强方法好。
+%			
+%			\item [-] 可以使用不同的引导网络。
+%			% 作者没有说 Appearance Modeling 的结果去提取边缘会达到什么效果？
+%			
+%			% 此外作者做消融实验的过程中，使用一个 SOTA 边缘提取网络代替论文中的structural modeling 模块（但是感觉在低光照下很难提取到有效的边缘，合理点的话需要先对输入亮度增强一下）
+%			\end{itemize}
+%		\end{minipage}
+%	\end{frame}
 	
 	\begin{frame}
 		{\zihao{-4} \yahei \textbf{研究目标}}
@@ -813,78 +878,78 @@
 				\captionsetup{font=scriptsize}
 				\caption{
 					\label{fig: Total architecture}
-					Total Architecture
+					\tiny 整体结构
 				}
 			\end{minipage}
 		\end{figure}
 		
 	\end{frame}
 	
-	\begin{frame}
-		
-		{\zihao{-5} \yahei Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}}
-		\begin{figure}
-			\centering
-			\begin{minipage}{.4\textwidth}
-				\centering
-				\begin{itemize}\zihao{-5}
-					\item \textbf{背景}
-					
-					\item[\checkmark]
-					% Transformer is introduced into the visual task. 
-					Transformer 被引入视觉任务
-					
-					\item[\checkmark]
-					% Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
-					% 由于自注意力机制和多层感知器 MLP 结构，
-					%			ViT 反映了复杂的空间变换和全局特征依赖
-					ViT 具有全局特征依赖
-					%，它们构成了全局表示。
-					
-					\item[\checkmark]
-					% Local feature details are ignored.
-					CNN 容易忽略全局特征
-				\end{itemize}
-				
-				\begin{itemize}\zihao{-5}
-					\item \textbf{贡献}
-					
-					\item[\checkmark]
-					% A Dual Network Structure
-					一种并行网络结构
-					
-					\item[\checkmark]
-					% CNN and Transformer Branch
-					由 CNN 和 Transformer 分支组成
-					%，分别遵循 ResNet 和 ViT 的设计，这两个分支形成了 local convolution blocks，自注意力模块和 MLP 的组合。
-					
-					%\item[\checkmark]
-					% Cross-entropy Loss Function
-					% 在训练期间，使用交叉熵损失函数用于监督 CNN 和 Transformer 分支
-					
-					\item[\checkmark]
-					Feature Coupling Unit (FCU)
-					% 考虑到 CNN 和 Transformer 之间的特征错位（feature misalignment），特征耦合单元 Feature Coupling Unit（FCU） 被设计为 bridge，一方面为了融合这两种风格特征，FCU 利用 1x1 卷积来对齐通道尺寸，利用向上/向下采样策略来对齐分辨率，利用LN，BN对齐特征值。
-				\end{itemize}
-				\captionsetup{font=scriptsize}
-				\label{fig: Contribution}
-				%\caption*{Contribution}
-			\end{minipage}
-			\begin{minipage}{.58\textwidth}
-				\centering
-				\includegraphics[width=\linewidth]{picture/LLIE/Conformer/the proposed Conformer}
-				\captionsetup{font=scriptsize}
-				\label{fig: Conformer}	
-				\caption*{Conformer}
-			\end{minipage}
-			\captionsetup{font=scriptsize}
-			%			\caption{
-				%				\label{fig: Conformer contribution}
-				%				Network architecture of the proposed Conformer.
-				%			}
-		\end{figure}
-		
-	\end{frame}
+%	\begin{frame}
+%		
+%		{\zihao{-5} \yahei Conformer: Local Features Coupling Global presentations for Visual Recognition\textcolor{blue}{\citep{peng2021conformer}}}
+%		\begin{figure}
+%			\centering
+%			\begin{minipage}{.4\textwidth}
+%				\centering
+%				\begin{itemize}\zihao{-5}
+%					\item \textbf{背景}
+%					
+%					\item[\checkmark]
+%					% Transformer is introduced into the visual task. 
+%					Transformer 被引入视觉任务
+%					
+%					\item[\checkmark]
+%					% Vision Transformer reflect the complex spatial transformations and long-distance feature dependence.
+%					% 由于自注意力机制和多层感知器 MLP 结构，
+%					%			ViT 反映了复杂的空间变换和全局特征依赖
+%					ViT 具有全局特征依赖
+%					%，它们构成了全局表示。
+%					
+%					\item[\checkmark]
+%					% Local feature details are ignored.
+%					CNN 容易忽略全局特征
+%				\end{itemize}
+%				
+%				\begin{itemize}\zihao{-5}
+%					\item \textbf{贡献}
+%					
+%					\item[\checkmark]
+%					% A Dual Network Structure
+%					一种并行网络结构
+%					
+%					\item[\checkmark]
+%					% CNN and Transformer Branch
+%					由 CNN 和 Transformer 分支组成
+%					%，分别遵循 ResNet 和 ViT 的设计，这两个分支形成了 local convolution blocks，自注意力模块和 MLP 的组合。
+%					
+%					%\item[\checkmark]
+%					% Cross-entropy Loss Function
+%					% 在训练期间，使用交叉熵损失函数用于监督 CNN 和 Transformer 分支
+%					
+%					\item[\checkmark]
+%					Feature Coupling Unit (FCU)
+%					% 考虑到 CNN 和 Transformer 之间的特征错位（feature misalignment），特征耦合单元 Feature Coupling Unit（FCU） 被设计为 bridge，一方面为了融合这两种风格特征，FCU 利用 1x1 卷积来对齐通道尺寸，利用向上/向下采样策略来对齐分辨率，利用LN，BN对齐特征值。
+%				\end{itemize}
+%				\captionsetup{font=scriptsize}
+%				\label{fig: Contribution}
+%				%\caption*{Contribution}
+%			\end{minipage}
+%			\begin{minipage}{.58\textwidth}
+%				\centering
+%				\includegraphics[width=\linewidth]{picture/LLIE/Conformer/the proposed Conformer}
+%				\captionsetup{font=scriptsize}
+%				\label{fig: Conformer}	
+%				\caption*{Conformer}
+%			\end{minipage}
+%			\captionsetup{font=scriptsize}
+%			%			\caption{
+%				%				\label{fig: Conformer contribution}
+%				%				Network architecture of the proposed Conformer.
+%				%			}
+%		\end{figure}
+%		
+%	\end{frame}
 	
 	\subsection{初步恢复图像的生成模型}
 	
@@ -923,20 +988,20 @@
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture.jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: PACUT}	
-				\caption*{\tiny 初步恢复图像的生成模型}
+				\caption*{\tiny (a) 初步恢复图像的生成模型}
 			\end{minipage}\\
 			\hfill
 			\begin{minipage}{.28\textwidth}
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/Up-sampling and down-sampling.jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: Up-sampling and down-sampling}	
-				\caption*{\tiny 上采样和下采样}
+				\caption*{\tiny (b) 上采样和下采样}
 			\end{minipage}
 			\begin{minipage}{.28\textwidth}
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture(Abstract Picture).jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: The proposed initial architecture(Abstract Picture)}	
-				\caption*{\tiny 缩略图}
+				\caption*{\tiny (c) 缩略图}
 			\end{minipage}
 			\captionsetup{font=scriptsize}
 			\caption{
@@ -1219,7 +1284,8 @@
 				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/low00044_lbp}
 				\caption*{\tiny LLI LBP}
 				\label{fig: LLI_lbp}	
-			\end{minipage}
+			\end{minipage}\\
+			\vspace{-0.2cm}
 			\begin{minipage}{.19\textwidth}
 				\centering
 				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection/normal00044}
@@ -1253,7 +1319,7 @@
 			\captionsetup{font=scriptsize}
 			\caption{
 				\label{fig: LLI Structure Information}
-				弱光图像和真实图像的结构信息
+				\tiny 弱光图像和真实图像的结构信息
 			}
 		\end{figure}
 		
@@ -1362,7 +1428,7 @@
 				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Edge Detection Network}
 				\captionsetup{font=scriptsize}
 				\label{fig: Edge Detection Network}	
-				\caption{边缘检测网络}
+				\caption{\tiny 边缘检测网络}
 			\end{minipage}
 		\end{figure}
 		
@@ -1390,64 +1456,64 @@
 %	\end{frame}
 	
 	
-	\subsubsection{数据集和评价指标}
-	
-	\begin{frame}
-		{\zihao{-5} \yahei \textbf{数据集和评价指标}}
-		% 实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于scikit-image 库计算PSNR、SSIM 等评价指标。
-		
-		\begin{itemize} 
-			\item \textbf{弱光数据集}
-		\end{itemize}
-		
-		\begin{table}[!htbp]
-			\centering
-			\tiny
-			%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
-				\begin{tabular}{>{\centering\arraybackslash}m{4.3cm}|c|c|c|c}
-					
-					\hline
-					
-					\textbf{Name} & \textbf{Number} & \textbf{Format} & \textbf{Real/Syn} & \textbf{Video} \\
-					
-					\hline
-					
-					LOL\textcolor{blue}{\citep{wei2018deep}} & 500 & RGB & Real & \\
-					
-					SCIE\textcolor{blue}{\citep{cai2018learning}} & 4,413 & RGB & Real & \\
-					
-					VE-LOL-L\textcolor{blue}{\citep{jiang2019learning}} & 2,500 & RGB & Real+Syn & \\
-					
-					MIT-Adobe FiveK\textcolor{blue}{\citep{bychkovsky2011learning}} & 5,000 & Raw & Real & \\
-					
-					SID\textcolor{blue}{\citep{wei2018deep}} & 5,094 & Raw & Real & \\
-					
-					DRV\textcolor{blue}{\citep{chen2019seeing}} & 202 & Raw & Real & \checkmark  \\
-					
-					SMOID\textcolor{blue}{\citep{jiang2019learning}} & 179 & Raw & Real & \checkmark  \\
-					
-					\hline
-					
-				\end{tabular}
-				%}
-			\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
-			\caption{\label{tab: Paired_training_datases}
-				Summary of paired training datasets. 'Syn' represents Synthetic.} %表格的标题
-			
-		\end{table}
-		
-		\vspace{-0.3cm}
-		
-		\begin{itemize}\zihao{5}
-			\item \textbf{评价指标}
-			
-			\checkmark {\zihao{6} 峰值信噪比（PSNR）是应用最广泛的指标之一。PSNR值越高，失真越小。单位为dB。}
-			
-			\checkmark {\zihao{6} 结构相似性（SSIM）是参考图像质量评价中应用最广泛的标准。越接近1，两个图像就越相似。}
-			
-			\checkmark {\zihao{6} 自然图像质量评估方法（NIQE） 是一种新的无参考图像质量指标。分数越小，表示感知质量越好。}
-		\end{itemize}
-	\end{frame}
+%	\subsubsection{数据集和评价指标}
+%	
+%	\begin{frame}
+%		{\zihao{-5} \yahei \textbf{数据集和评价指标}}
+%		% 实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于scikit-image 库计算PSNR、SSIM 等评价指标。
+%		
+%		\begin{itemize} 
+%			\item \textbf{弱光数据集}
+%		\end{itemize}
+%		
+%		\begin{table}[!htbp]
+%			\centering
+%			\tiny
+%			%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+%				\begin{tabular}{>{\centering\arraybackslash}m{4.3cm}|c|c|c|c}
+%					
+%					\hline
+%					
+%					\textbf{Name} & \textbf{Number} & \textbf{Format} & \textbf{Real/Syn} & \textbf{Video} \\
+%					
+%					\hline
+%					
+%					LOL\textcolor{blue}{\citep{wei2018deep}} & 500 & RGB & Real & \\
+%					
+%					SCIE\textcolor{blue}{\citep{cai2018learning}} & 4,413 & RGB & Real & \\
+%					
+%					VE-LOL-L\textcolor{blue}{\citep{jiang2019learning}} & 2,500 & RGB & Real+Syn & \\
+%					
+%					MIT-Adobe FiveK\textcolor{blue}{\citep{bychkovsky2011learning}} & 5,000 & Raw & Real & \\
+%					
+%					SID\textcolor{blue}{\citep{wei2018deep}} & 5,094 & Raw & Real & \\
+%					
+%					DRV\textcolor{blue}{\citep{chen2019seeing}} & 202 & Raw & Real & \checkmark  \\
+%					
+%					SMOID\textcolor{blue}{\citep{jiang2019learning}} & 179 & Raw & Real & \checkmark  \\
+%					
+%					\hline
+%					
+%				\end{tabular}
+%				%}
+%			\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+%			\caption{\label{tab: Paired_training_datases}
+%				Summary of paired training datasets. 'Syn' represents Synthetic.} %表格的标题
+%			
+%		\end{table}
+%		
+%		\vspace{-0.3cm}
+%		
+%		\begin{itemize}\zihao{5}
+%			\item \textbf{评价指标}
+%			
+%			\checkmark {\zihao{6} 峰值信噪比（PSNR）是应用最广泛的指标之一。PSNR值越高，失真越小。单位为dB。}
+%			
+%			\checkmark {\zihao{6} 结构相似性（SSIM）是参考图像质量评价中应用最广泛的标准。越接近1，两个图像就越相似。}
+%			
+%			\checkmark {\zihao{6} 自然图像质量评估方法（NIQE） 是一种新的无参考图像质量指标。分数越小，表示感知质量越好。}
+%		\end{itemize}
+%	\end{frame}
 	
 	\subsubsection{对比实验}
 	
@@ -1464,7 +1530,7 @@
 					
 					\hline %添加表格头部粗线
 					
-					\multirowcell{2}{\textbf{Method}} & \multicolumn{3}{c|}{\makecell{\textbf{LOL}}} & \multicolumn{3}{c}{\makecell{\textbf{SCIE}}} \\
+					\multirowcell{2}{\textbf{Method}} & \multicolumn{3}{c|}{\makecell{\textbf{LOL}\textcolor{blue}{\citep{wei2018deep}}}} & \multicolumn{3}{c}{\makecell{\textbf{SCIE}\textcolor{blue}{\citep{cai2018learning}}}} \\
 					
 					\cline{2-7}
 					
@@ -1563,7 +1629,7 @@
 		\end{minipage}
 		\begin{minipage}{0.19\textwidth}
 			\includegraphics[width=\linewidth]{picture/LLIE/Efficent/EnlightenGAN}
-			\caption*{\tiny (g)EnlightenGAN}
+			\caption*{\tiny (g) EnlightenGAN}
 			\label{fig: LLI EnlightenGAN}	
 		\end{minipage}
 		\begin{minipage}{0.19\textwidth}
@@ -1584,7 +1650,7 @@
 		\captionsetup{font=scriptsize}
 		\caption{
 			\label{fig: LOL}
-			\small 不同方法在LOL测试数据集上的视觉表现。
+			\tiny 不同方法在LOL测试数据集上的视觉表现。
 		}
 	\end{figure}
 	
@@ -1649,7 +1715,7 @@
 		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}[plain,c]
+	\begin{frame}[c]
 		\begin{center}
 			\Huge Thank you !
 		\end{center}

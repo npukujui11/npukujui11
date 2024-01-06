@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  4 JAN 2024 18:20
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  6 JAN 2024 08:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1481,97 +1481,67 @@ File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
  [5
 
 ]
-File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type bmp)
-<picture/LLIE/Uformer/Uformer.jpg>
+LaTeX Font Info:    Trying to load font information for U+ding on input line 69
+8.
+
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/bbding/Uding.fd
+File: Uding.fd 1996/02/01 v1.0 BBding font definitions
+)
+File: picture/LLIE/VE-LOL-L/input.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/input.jpg>
+File: picture/LLIE/VE-LOL-L/LLNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/LLNet.jpg>
+File: picture/LLIE/VE-LOL-L/RetinexNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/RetinexNet.jpg>
+File: picture/LLIE/VE-LOL-L/MBLLEN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/MBLLEN.jpg>
+File: picture/LLIE/VE-LOL-L/EnlightenGAN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/EnlightenGAN.jpg>
+File: picture/LLIE/VE-LOL-L/RRDNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/RRDNet.jpg>
+File: picture/LLIE/VE-LOL-L/DRBN.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/DRBN.jpg>
+File: picture/LLIE/VE-LOL-L/Zero-DCE++.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/Zero-DCE++.jpg>
+File: picture/LLIE/VE-LOL-L/KinD++.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/KinD++.jpg>
+File: picture/LLIE/VE-LOL-L/URetinexNet.jpg Graphic file (type bmp)
+<picture/LLIE/VE-LOL-L/URetinexNet.jpg>
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
  [6
 
 ]
-LaTeX Font Info:    Trying to load font information for U+ding on input line 63
-3.
-
-(d:/Soft/texlive/2023/texmf-dist/tex/latex/bbding/Uding.fd
-File: Uding.fd 1996/02/01 v1.0 BBding font definitions
-)
-File: picture/LLIE/Structure Modeling and Guidance/Input.jpg Graphic file (type
- bmp)
-<picture/LLIE/Structure Modeling and Guidance/Input.jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Structure of (a).jpg Graphic
- file (type bmp)
-<picture/LLIE/Structure Modeling and Guidance/Structure of (a).jpg>
-File: picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022).jpg Graphic 
-file (type bmp)
-<picture/LLIE/Structure Modeling and Guidance/SNR (CVPR 2022).jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Structure Modeling.jpg Graph
-ic file (type bmp)
-<picture/LLIE/Structure Modeling and Guidance/Structure Modeling.jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Ours.jpg Graphic file (type 
-bmp)
-<picture/LLIE/Structure Modeling and Guidance/Ours.jpg>
-File: picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg Graphic fil
-e (type bmp)
-<picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg>
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.53937> on input line 793.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 793.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.53937> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 793.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 793.
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
  [7
-
-]
-File: picture/LLIE/EEMEFN/EEMEFN framework.jpg Graphic file (type bmp)
-<picture/LLIE/EEMEFN/EEMEFN framework.jpg>
-File: picture/LLIE/EdgeNet/Archtecture workflow.jpg Graphic file (type bmp)
-<picture/LLIE/EdgeNet/Archtecture workflow.jpg>
-File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
-<picture/lzu-logo/png/logo-white_530x160.png>
- [8
-
-]
-File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
-ype bmp)
-<picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
-File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
-<picture/lzu-logo/png/logo-white_530x160.png>
- [9
-
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.53937> on input line 728.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 728.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.53937> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 728.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 728.
-File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
-<picture/lzu-logo/png/logo-white_530x160.png>
-
-[10
 
 ]
 File: picture/LLIE/My Architecture/Total architecture.pdf Graphic file (type pd
 f)
 <use picture/LLIE/My Architecture/Total architecture.pdf>
 
-Overfull \vbox (0.87288pt too high) detected at line 821
+Overfull \vbox (0.12288pt too high) detected at line 886
  []
 
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
-[11
-
-]
-File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type bmp)
-
-<picture/LLIE/Conformer/the proposed Conformer.jpg>
-File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
-<picture/lzu-logo/png/logo-white_530x160.png>
- [12
+[8
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 947.
+(Font)              <10> on input line 1012.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 947.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1012.
+
 File: picture/LLIE/My Architecture/The proposed initial architecture.jpg Graphi
 c file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture.jpg>
@@ -1583,12 +1553,12 @@ icture).jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture(Abstract Pictur
 e).jpg>
 
-Overfull \vbox (25.7228pt too high) detected at line 947
+Overfull \vbox (25.7228pt too high) detected at line 1012
  []
 
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
-[13
+[9
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00044.png Graphic file (ty
@@ -1623,7 +1593,7 @@ ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png>
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
- [14
+ [10
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection Network.jpg Graphic file (typ
@@ -1631,29 +1601,24 @@ e bmp)
 <picture/LLIE/My Architecture/Edge Detection Network.jpg>
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
- [15
-
-]
-File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
-<picture/lzu-logo/png/logo-white_530x160.png>
- [16
+ [11
 
 ]
 
 Package makecell Warning: \multirowcell needs multirow package on input line 15
-25.
+91.
 
 Missing character: There is no ↑ ("2191) in font rm-lmss8!
 Missing character: There is no ↓ ("2193) in font rm-lmss8!
 Missing character: There is no ↑ ("2191) in font rm-lmss8!
 Missing character: There is no ↓ ("2193) in font rm-lmss8!
 
-Overfull \vbox (6.37415pt too high) detected at line 1525
+Overfull \vbox (6.31708pt too high) detected at line 1591
  []
 
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
-[17
+[12
 
 ]
 File: picture/LLIE/Efficent/Input.png Graphic file (type bmp)
@@ -1678,14 +1643,17 @@ File: picture/LLIE/Efficent/GT.png Graphic file (type bmp)
 <picture/LLIE/Efficent/GT.png>
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
- [18
+ [13
 
 ]
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
- [19
+ [14
 
-] [20
+]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [15
 
 ] (./inception_ppt_templet.bbl
 
@@ -1714,18 +1682,18 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 )
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
- [21
+ [16
 
 ]
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
- [22
+ [17
 
 
 ]
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
- [23
+ [18
 
 
 ]
@@ -1741,15 +1709,15 @@ File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 
 (./inception_ppt_templet.aux)
 Package rerunfilecheck Info: File `inception_ppt_templet.out' has not changed.
-(rerunfilecheck)             Checksum: 3B2D80336820684FE6144684C5290553;1232.
+(rerunfilecheck)             Checksum: 89DF224935F9DF235A69386E606933B8;1230.
  ) 
 Here is how much of TeX's memory you used:
- 35245 strings out of 476683
- 812460 string characters out of 5805371
+ 35165 strings out of 476683
+ 803977 string characters out of 5805371
  1881012 words of memory out of 5000000
- 54679 multiletter control sequences out of 15000+600000
- 545709 words of font info for 149 fonts, out of 8000000 for 9000
+ 54608 multiletter control sequences out of 15000+600000
+ 545701 words of font info for 148 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,19n,122p,479b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,19n,122p,478b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on inception_ppt_templet.pdf (23 pages).
+Output written on inception_ppt_templet.pdf (18 pages).
