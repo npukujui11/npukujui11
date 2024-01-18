@@ -44,41 +44,39 @@
 \beamer@slide {fig: Parallel architecture combining u-net and transformer}{21}
 \beamer@slide {fig: U-Net and AM}{22}
 \beamer@slide {fig: CNN Branch}{22}
-\beamer@slide {eq: UNetEnhance model}{23}
-\beamer@slide {eq: ARMB}{24}
-\beamer@slide {fig: Patch Embedding}{25}
-\beamer@slide {fig: Patch Embedding in ViT}{26}
-\beamer@slide {fig: origin image}{28}
-\beamer@slide {fig: RCF_GT}{28}
-\beamer@slide {fig: conv3_1}{28}
-\beamer@slide {fig: conv3_2}{28}
-\beamer@slide {fig: conv3_3}{28}
-\beamer@slide {fig: conv4_1}{28}
-\beamer@slide {fig: conv4_2}{28}
-\beamer@slide {fig: conv4_3}{28}
-\beamer@slide {fig: LLI}{29}
-\beamer@slide {fig: LLI_canny}{29}
-\beamer@slide {fig: LLI_rcf}{29}
-\beamer@slide {fig: LLI_hog}{29}
-\beamer@slide {fig: LLI_lbp}{29}
-\beamer@slide {fig: GI}{29}
-\beamer@slide {fig: GT_canny}{29}
-\beamer@slide {fig: GT_rcf}{29}
-\beamer@slide {fig: GT_hog}{29}
-\beamer@slide {fig: GT_lbp}{29}
-\beamer@slide {fig: LLI Structure Information}{29}
-\beamer@slide {fig: LLI Structure Information1}{31}
-\beamer@slide {fig: Edge Detection Network}{32}
-\beamer@slide {tab: Paired_training_datases}{34}
-\beamer@slide {fig: LLI Input}{36}
-\beamer@slide {fig: LightenNet}{36}
-\beamer@slide {fig: LLI LLNet}{36}
-\beamer@slide {fig: LLI RetinexNet}{36}
-\beamer@slide {fig: KinD}{36}
-\beamer@slide {fig: MBLLEN_contrast}{36}
-\beamer@slide {fig: LLI EnlightenGAN}{36}
-\beamer@slide {fig: Zero-DCE}{36}
-\beamer@slide {fig: Ours}{36}
-\beamer@slide {fig: GT}{36}
-\beamer@slide {fig: LOL}{36}
-\beamer@slide {tab: Ablation Study}{37}
+\beamer@slide {fig: Patch Embedding}{23}
+\beamer@slide {fig: Patch Embedding in ViT}{24}
+\beamer@slide {fig: origin image}{26}
+\beamer@slide {fig: RCF_GT}{26}
+\beamer@slide {fig: conv3_1}{26}
+\beamer@slide {fig: conv3_2}{26}
+\beamer@slide {fig: conv3_3}{26}
+\beamer@slide {fig: conv4_1}{26}
+\beamer@slide {fig: conv4_2}{26}
+\beamer@slide {fig: conv4_3}{26}
+\beamer@slide {fig: LLI}{27}
+\beamer@slide {fig: LLI_canny}{27}
+\beamer@slide {fig: LLI_rcf}{27}
+\beamer@slide {fig: LLI_hog}{27}
+\beamer@slide {fig: LLI_lbp}{27}
+\beamer@slide {fig: GI}{27}
+\beamer@slide {fig: GT_canny}{27}
+\beamer@slide {fig: GT_rcf}{27}
+\beamer@slide {fig: GT_hog}{27}
+\beamer@slide {fig: GT_lbp}{27}
+\beamer@slide {fig: LLI Structure Information}{27}
+\beamer@slide {fig: LLI Structure Information1}{29}
+\beamer@slide {fig: Edge Detection Network}{30}
+\beamer@slide {tab: Paired_training_datases}{32}
+\beamer@slide {fig: LLI Input}{34}
+\beamer@slide {fig: LightenNet}{34}
+\beamer@slide {fig: LLI LLNet}{34}
+\beamer@slide {fig: LLI RetinexNet}{34}
+\beamer@slide {fig: KinD}{34}
+\beamer@slide {fig: MBLLEN_contrast}{34}
+\beamer@slide {fig: LLI EnlightenGAN}{34}
+\beamer@slide {fig: Zero-DCE}{34}
+\beamer@slide {fig: Ours}{34}
+\beamer@slide {fig: GT}{34}
+\beamer@slide {fig: LOL}{34}
+\beamer@slide {tab: Ablation Study}{35}

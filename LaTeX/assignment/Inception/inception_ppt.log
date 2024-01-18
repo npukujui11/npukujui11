@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.8)  2 JAN 2024 03:45
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.8)  14 JAN 2024 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1243,26 +1243,26 @@ Package fontspec Info: Font family 'MicrosoftYaHei(0)' created for font
 (./inception_ppt.aux)
 \openout1 = `inception_ppt.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1298,57 +1298,57 @@ LaTeX Font Info:    ... okay on input line 20.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 24.
 (./inception_ppt.out) (./inception_ppt.out)
 \@outlinefile=\write5
 \openout5 = `inception_ppt.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 20.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 20.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 20.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 20.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 24.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 20.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 20.
+(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 20.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 20.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 20.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 20.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 20.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 20.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 20.
+(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 20.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 20.
+(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 20.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 20.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 20.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 20.
+(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> TU/lmr/b/n on input line 20.
+(Font)                  OT1/lmss/b/n --> TU/lmr/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 20.
+(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 20.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 20.
+(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 20.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 24.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictiona
 ry-English.dict
@@ -1383,65 +1383,73 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
  (./inception_ppt.nav)
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 23.
+(hyperref)                setting the option has no effect on input line 27.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-39.
+43.
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-9.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+3.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-39.
+43.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-39.
+43.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 39.
+(Font)              <10.95> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 39.
+(Font)              <8> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 39.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+(Font)              <6> on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
 
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
 
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 43.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 43.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 39.
+(Font)              <5> on input line 43.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 39.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 43.
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [1
 
 ]
-(./inception_ppt.toc) [2
+(./inception_ppt.toc)
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [2
 
 ]
 File: picture/LLIE/LightingNet/LOW.png Graphic file (type bmp)
@@ -1465,18 +1473,22 @@ File: picture/LLIE/LightingNet/ZERO-DCE.png Graphic file (type bmp)
 File: picture/LLIE/LightingNet/LightingNet.png Graphic file (type bmp)
 <picture/LLIE/LightingNet/LightingNet.png>
 
-Overfull \vbox (10.05989pt too high) detected at line 154
+Overfull \vbox (10.05989pt too high) detected at line 158
  []
 
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
 [3
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9.03374> on input line 195.
+(Font)              <9.03374> on input line 199.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <9.03374> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 195.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 199.
 File: picture/LLIE/application scenarios.jpg Graphic file (type bmp)
 <picture/LLIE/application scenarios.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [4
 
 ]
@@ -1500,36 +1512,40 @@ File: picture/LLIE/VE-LOL-L/KinD++.jpg Graphic file (type bmp)
 <picture/LLIE/VE-LOL-L/KinD++.jpg>
 File: picture/LLIE/VE-LOL-L/URetinexNet.jpg Graphic file (type bmp)
 <picture/LLIE/VE-LOL-L/URetinexNet.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [5
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6.52437> on input line 316.
+(Font)              <6.52437> on input line 320.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6.52437> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 316.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 320.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6.52437> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 316.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 320.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <5> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 316.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 320.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.52812> on input line 316.
+(Font)              <7.52812> on input line 320.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7.52812> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 316.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 320.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7.52812> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 316.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 320.
 File: picture/LLIE/Retinex Model/Retinex Model.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/Retinex Model.png>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [6
 
 ]
 File: picture/LLIE/Retinex Model/input.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/input.png>
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 362.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 366.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <8> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 362.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 366.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 362.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 366.
 File: picture/LLIE/Retinex Model/Retinex.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/Retinex.png>
 File: picture/LLIE/Retinex Model/SSR.png Graphic file (type bmp)
@@ -1538,15 +1554,19 @@ File: picture/LLIE/Retinex Model/MSR.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/MSR.png>
 File: picture/LLIE/Retinex Model/MSRCR.png Graphic file (type bmp)
 <picture/LLIE/Retinex Model/MSRCR.png>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [7
 
 ]
 File: picture/LLIE/HE/Histogram equalization.jpg Graphic file (type bmp)
 <picture/LLIE/HE/Histogram equalization.jpg>
 
-Overfull \vbox (1.03886pt too high) detected at line 401
+Overfull \vbox (1.03886pt too high) detected at line 405
  []
 
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
 [8
 
 ]
@@ -1554,31 +1574,41 @@ File: picture/LLIE/MBLLEN/MBLLEN Architecture.jpg Graphic file (type bmp)
 <picture/LLIE/MBLLEN/MBLLEN Architecture.jpg>
 File: picture/LLIE/RetinexNet/RetinexNet.jpg Graphic file (type bmp)
 <picture/LLIE/RetinexNet/RetinexNet.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [9
 
 ]
 File: picture/LLIE/EnlightenGAN/EnlightenGAN.jpg Graphic file (type bmp)
 <picture/LLIE/EnlightenGAN/EnlightenGAN.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [10
 
 ]
 File: picture/LLIE/DRBN/DRBN.jpg Graphic file (type bmp)
 <picture/LLIE/DRBN/DRBN.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [11
 
 ]
 File: picture/LLIE/RRDNet/RRDNet.jpg Graphic file (type bmp)
 <picture/LLIE/RRDNet/RRDNet.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [12
 
 ]
 File: picture/LLIE/Uformer/Uformer.jpg Graphic file (type bmp)
 <picture/LLIE/Uformer/Uformer.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [13
 
 ]
 LaTeX Font Info:    Trying to load font information for U+ding on input line 60
-3.
+7.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/bbding/Uding.fd
 File: Uding.fd 1996/02/01 v1.0 BBding font definitions
@@ -1601,6 +1631,8 @@ bmp)
 File: picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg Graphic fil
 e (type bmp)
 <picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [14
 
 ]
@@ -1608,39 +1640,50 @@ File: picture/LLIE/EEMEFN/EEMEFN framework.jpg Graphic file (type bmp)
 <picture/LLIE/EEMEFN/EEMEFN framework.jpg>
 File: picture/LLIE/EdgeNet/Archtecture workflow.jpg Graphic file (type bmp)
 <picture/LLIE/EdgeNet/Archtecture workflow.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [15
 
 ]
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
 ype bmp)
 <picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [16
 
 ]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+
 [17
 
 ]
 File: picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101).jpg
  Graphic file (type bmp)
 <picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101).jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [18
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 770.
+(Font)              <10> on input line 774.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 770.
+(Font)              <7> on input line 774.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 770.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 774.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 770.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 774.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 770.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 774.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 770.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 774.
 File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type bmp)
 
 <picture/LLIE/Conformer/the proposed Conformer.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [19
 
 ]
@@ -1648,9 +1691,11 @@ File: picture/LLIE/My Architecture/Total architecture.pdf Graphic file (type pd
 f)
 <use picture/LLIE/My Architecture/Total architecture.pdf>
 
-Overfull \vbox (0.87288pt too high) detected at line 832
+Overfull \vbox (0.91432pt too high) detected at line 836
  []
 
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
 [20
 
 ]
@@ -1665,40 +1710,47 @@ icture).jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture(Abstract Pictur
 e).jpg>
 
-Overfull \vbox (25.7228pt too high) detected at line 893
+Overfull \vbox (25.7228pt too high) detected at line 897
  []
 
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
 [21
 
 ]
 File: picture/LLIE/My Architecture/U-Net and AM.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/U-Net and AM.jpg>
 
-Overfull \vbox (28.53896pt too high) detected at line 925
+Overfull \vbox (28.53896pt too high) detected at line 929
  []
 
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
 [22
-
-] [23
-
-] [24
 
 ]
 File: picture/LLIE/My Architecture/Patch Embedding.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/Patch Embedding.jpg>
- [25
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [23
 
 ]
 File: picture/LLIE/My Architecture/Patch Embedding(ViT).jpg Graphic file (type 
 bmp)
 <picture/LLIE/My Architecture/Patch Embedding(ViT).jpg>
 
-Overfull \vbox (12.48676pt too high) detected at line 1032
+Overfull \vbox (12.48676pt too high) detected at line 1036
  []
 
-[26
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+[24
 
-] [27
+]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [25
 
 ]
 File: picture/LLIE/RCF/origin image.jpg Graphic file (type bmp)
@@ -1717,7 +1769,9 @@ File: picture/LLIE/RCF/conv4_2.jpg Graphic file (type bmp)
 <picture/LLIE/RCF/conv4_2.jpg>
 File: picture/LLIE/RCF/conv4_3.jpg Graphic file (type bmp)
 <picture/LLIE/RCF/conv4_3.jpg>
- [28
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [26
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00044.png Graphic file (ty
@@ -1750,18 +1804,22 @@ ile (type bmp)
 File: picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png Graphic f
 ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png>
- [29
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [27
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.53937> on input line 1258.
+(Font)              <10.53937> on input line 1262.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.53937> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 1258.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 1262.
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.53937> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1258.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1262.
 
- [30
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [28
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00269.png Graphic file (ty
@@ -1783,35 +1841,47 @@ File: picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png Graphic f
 ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png>
 
-Overfull \vbox (2.36853pt too high) detected at line 1300
+Overfull \vbox (2.36853pt too high) detected at line 1304
  []
 
-[31
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+[29
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection Network.jpg Graphic file (typ
 e bmp)
 <picture/LLIE/My Architecture/Edge Detection Network.jpg>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [30
+
+]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [31
+
+]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
  [32
-
-] [33
-
-] [34
 
 ]
 
 Package makecell Warning: \multirowcell needs multirow package on input line 14
-69.
+73.
 
 Missing character: There is no ↑ ("2191) in font rm-lmss8!
 Missing character: There is no ↓ ("2193) in font rm-lmss8!
 Missing character: There is no ↑ ("2191) in font rm-lmss8!
 Missing character: There is no ↓ ("2193) in font rm-lmss8!
 
-Overfull \vbox (6.37415pt too high) detected at line 1469
+Overfull \vbox (6.98427pt too high) detected at line 1473
  []
 
-[35
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+[33
 
 ]
 File: picture/LLIE/Efficent/Input.png Graphic file (type bmp)
@@ -1834,17 +1904,21 @@ File: picture/LLIE/Efficent/Ours.png Graphic file (type bmp)
 <picture/LLIE/Efficent/Ours.png>
 File: picture/LLIE/Efficent/GT.png Graphic file (type bmp)
 <picture/LLIE/Efficent/GT.png>
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [34
 
-Overfull \vbox (1.03601pt too high) detected at line 1539
- []
+]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [35
 
-[36
+]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [36
 
 ] [37
-
-] [38
-
-] [39
 
 ] (./inception_ppt.bbl
 
@@ -1870,12 +1944,21 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-) [40
+)
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [38
 
-] [41
+]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [39
 
 
-] [42
+]
+File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
+<picture/lzu-logo/png/logo-white_530x160.png>
+ [40
 
 
 ]
@@ -1888,17 +1971,18 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 \tf@snm=\write8
 \openout8 = `inception_ppt.snm'.
 
- (./inception_ppt.aux)
+
+(./inception_ppt.aux)
 Package rerunfilecheck Info: File `inception_ppt.out' has not changed.
-(rerunfilecheck)             Checksum: DD7E0721ABFA4233A068E11C6A8BF42C;1249.
+(rerunfilecheck)             Checksum: 9AE1C7971424BA463962AF09B3959D01;1249.
  ) 
 Here is how much of TeX's memory you used:
- 36315 strings out of 476683
- 855946 string characters out of 5805371
- 1882012 words of memory out of 5000000
- 55704 multiletter control sequences out of 15000+600000
- 553355 words of font info for 165 fonts, out of 8000000 for 9000
+ 36362 strings out of 476683
+ 855836 string characters out of 5805371
+ 1884012 words of memory out of 5000000
+ 55748 multiletter control sequences out of 15000+600000
+ 553363 words of font info for 166 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,19n,122p,463b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,19n,122p,463b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on inception_ppt.pdf (42 pages).
+Output written on inception_ppt.pdf (40 pages).

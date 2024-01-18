@@ -16,10 +16,14 @@
 \usepackage{graphicx}
 \usepackage{makecell}                 % 三线表-竖线
 \usepackage{booktabs}                 % 三线表-短细横线
+\addtobeamertemplate{headline}{}{%
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[anchor=north west] at (current page.north west) {\includegraphics[height=0.75cm, height=0.75cm]{picture/lzu-logo/png/logo-white_530x160}};
+\end{tikzpicture}}
 
 \begin{document}
 	
-	\title{开题答辩}
+	\title{基于边缘结构指导的弱光图像增强方法}
 	\author[顾睿 (LZU)]{顾睿 \inst{1}}
 	\institute[*]{\inst{1} 兰州大学，信息科学与工程学院\\
 		npukujui11@gmail.com}
@@ -39,9 +43,9 @@
 	\end{frame}
 	
 	\begin{frame}
-		\begin{multicols}{2}
-			\small \tableofcontents
-		\end{multicols}
+%		\begin{multicols}{1}
+			\zihao{5} \tableofcontents
+%		\end{multicols}
 	\end{frame}
 	
 %	\begin{frame} \transblindshorizontal<1>  %百叶窗效果
@@ -824,7 +828,7 @@
 				\captionsetup{font=scriptsize}
 				\caption{
 					\label{fig: Total architecture}
-					Total Architecture
+					总架构
 				}
 			\end{minipage}
 		\end{figure}
@@ -842,21 +846,21 @@
 				\small
 				% 在当前的研究中，我们提出了一种新型的深度学习架构，命名为 PACUT ，旨在解决低光照条件下的图像增强问题。该模型结合了经典的 U-Net 架构和 Transformer 深度学习方法，在弱光图像增强任务中，提高恢复图像的可视性和质量，同时保留重要的细节和纹理信息。此分支的设计旨在处理图像的低级特征，如边缘、纹理和颜色信息。
 				\begin{itemize} 
-					\item \textbf{Abstract}
+					\item \textbf{概述}
 					
-					\item[\checkmark]\small Based Conformer
+					\item[\checkmark]\small 基于 Conformer
 					
-					\item[\checkmark]\small Long-and short-distance feature
+					\item[\checkmark]\small 捕获局部和全局特征
 					
 				\end{itemize}
 				\begin{itemize} 
-					\item \textbf{Key improvements}
+					\item \textbf{关键改进}
 					
-					\item[\checkmark]\small CNN Branch
+					\item[\checkmark]\small CNN 分支的改进
 					
 					% 深度卷积网络(CNN)分支：该分支基于 U-Net 架构，采用多层卷积神经网络，通过逐层提取图像的局部特征来增强图像的细节和纹理。
 					
-					\item[\checkmark]\small Feature Coupling Unit
+					\item[\checkmark]\small 特征融合模块
 					
 					% 特征耦合单元(FCU)：为了有效地融合 CNN 分支和 ViT 分支的特征，引入了特征耦合单元(FCU)。FCU 通过下采样(FCUDown) 和上采样(FCUUp) 操作，实现了CNN特征图和Transformer patch embeddings 之间的无缝转换，从而实现了局部特征和全局表示的连续耦合。
 				\end{itemize}
@@ -869,20 +873,20 @@
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture.jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: PACUT}	
-				\caption*{\tiny 初步恢复图像的生成模型}
+				\caption*{\tiny (a) 初步恢复图像的生成模型}
 			\end{minipage}\\
 			\hfill
 			\begin{minipage}{.28\textwidth}
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/Up-sampling and down-sampling.jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: Up-sampling and down-sampling}	
-				\caption*{\tiny Up-sampling and down-sampling}
+				\caption*{\tiny (b) 上采样和下采样}
 			\end{minipage}
 			\begin{minipage}{.28\textwidth}
 				\includegraphics[width=.88\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture(Abstract Picture).jpg}
 				\captionsetup{font=scriptsize}
 				\label{fig: The proposed initial architecture(Abstract Picture)}	
-				\caption*{\tiny Thumbnail of PACUT}
+				\caption*{\tiny (c) 缩略图}
 			\end{minipage}
 			\captionsetup{font=scriptsize}
 			\caption{
@@ -924,56 +928,56 @@
 		
 	\end{frame}
 	
-	\begin{frame}	
-		
-		Assuming that $I_{LLI}$ represents the input low-light image and $I_{EI}$ represents the enhanced image of the output. The operation of the encoder subnetwork $\mathcal{E}$ and the decoder subnetwork $\mathcal{D}$ can be expressed as:
-		% 假设ILLI 表示输入的弱光图像，IEI 表示输出的增强图像。编码器子网络 E 和解码器子网络 D 的操作可以表示为：
-		\begin{block}{UNetEnhanced}
-			\begin{equation}
-				\begin{aligned}
-					I_{EI} = \mathcal{D} \left( \mathcal{E} \left( I_{LLI} \right) \right)
-				\end{aligned}
-				\label{eq: UNetEnhance model}
-			\end{equation}
-		\end{block}
-		
-		\begin{block}{Aggregation Module}
-			\begin{equation}
-				\begin{aligned}
-					\text{AM}_{i}(x) = f^{1 \times 1} \left(f^{3 \times 3} \left(\text{SCConv}\left( \text{ARMB} \left( f^{1 \times 1} (x)\right)\right)\right)\right)
-				\end{aligned}
-			\end{equation}
-		\end{block}
-		
-		Where $f ^ {1 \times 1} $ is the $1 \times 1$ convolution layer, and the operation of ARMB and SCConv depends on their internal structure.
-		% 其中，f1×1为1 × 1 卷积层，ARMB 和SCConv 的操作依据其内部结构进行。
-	\end{frame}
+%	\begin{frame}	
+%		
+%		Assuming that $I_{LLI}$ represents the input low-light image and $I_{EI}$ represents the enhanced image of the output. The operation of the encoder subnetwork $\mathcal{E}$ and the decoder subnetwork $\mathcal{D}$ can be expressed as:
+%		% 假设ILLI 表示输入的弱光图像，IEI 表示输出的增强图像。编码器子网络 E 和解码器子网络 D 的操作可以表示为：
+%		\begin{block}{UNetEnhanced}
+%			\begin{equation}
+%				\begin{aligned}
+%					I_{EI} = \mathcal{D} \left( \mathcal{E} \left( I_{LLI} \right) \right)
+%				\end{aligned}
+%				\label{eq: UNetEnhance model}
+%			\end{equation}
+%		\end{block}
+%		
+%		\begin{block}{Aggregation Module}
+%			\begin{equation}
+%				\begin{aligned}
+%					\text{AM}_{i}(x) = f^{1 \times 1} \left(f^{3 \times 3} \left(\text{SCConv}\left( \text{ARMB} \left( f^{1 \times 1} (x)\right)\right)\right)\right)
+%				\end{aligned}
+%			\end{equation}
+%		\end{block}
+%		
+%		Where $f ^ {1 \times 1} $ is the $1 \times 1$ convolution layer, and the operation of ARMB and SCConv depends on their internal structure.
+%		% 其中，f1×1为1 × 1 卷积层，ARMB 和SCConv 的操作依据其内部结构进行。
+%	\end{frame}
 	
-	\begin{frame}	
-		
-		ARMB (Attention Residual Merging Block) 
-		
-		% ARMB (Attention Residual Merging Block) 是一种用于深度学习模型中的结构单元，特别是在处理图像相关任务时，它的主要作用是融合来自不同来源的特征，并通过注意力机制增强模型对关键信息的关注。其核心作用之一是融合来自模型不同层或不同分支的特征。
-		
-		Suppose $ \mathcal {F} _ {in} $ is the input feature graph, $ \mathcal {F} _ {out} $ is the output feature graph, $ \mathcal {F} _ {i} ^ \prime$ means that the feature graph is trimmed or enlarged, see the following equation:
-		
-		% 假设Fin 是输入特征图，Fout 是输出特征图，F′i 表示对特征图进行裁剪或放大，见下式：
-		
-		\begin{block}{ARMB}
-			\begin{equation}
-				\begin{aligned}
-					&\mathcal{F}^\prime_{\frac{1}{2}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{2},\frac{W}{2}\right)\right), \\
-					&\mathcal{F}^\prime_{\frac{1}{4}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{4},\frac{W}{4}\right)\right), \\
-					&\mathcal{F}_{out} = W_1\mathcal{F}_{out} + W_2\mathcal{C} \left( f^{1 \times 1}  \left[\mathcal{F}^\prime_2 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{2}}))), \mathcal{F}^\prime_4 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{4}})))\right] \right).
-				\end{aligned}
-				\label{eq: ARMB}
-			\end{equation}
-		\end{block}
-		
-		Where $ \mathcal{S} $ and $ \mathcal{C} $ represent the spatial and channel attention function, respectively, and $W_1$ and $W_2$ are the corresponding feature graph weights.
-		
-		% 其中S 和 C 分别表示空间注意力函数和通道注意力函数，W1 和W2 为对应的特征图权重。
-	\end{frame}
+%	\begin{frame}	
+%		
+%		ARMB (Attention Residual Merging Block) 
+%		
+%		% ARMB (Attention Residual Merging Block) 是一种用于深度学习模型中的结构单元，特别是在处理图像相关任务时，它的主要作用是融合来自不同来源的特征，并通过注意力机制增强模型对关键信息的关注。其核心作用之一是融合来自模型不同层或不同分支的特征。
+%		
+%		Suppose $ \mathcal {F} _ {in} $ is the input feature graph, $ \mathcal {F} _ {out} $ is the output feature graph, $ \mathcal {F} _ {i} ^ \prime$ means that the feature graph is trimmed or enlarged, see the following equation:
+%		
+%		% 假设Fin 是输入特征图，Fout 是输出特征图，F′i 表示对特征图进行裁剪或放大，见下式：
+%		
+%		\begin{block}{ARMB}
+%			\begin{equation}
+%				\begin{aligned}
+%					&\mathcal{F}^\prime_{\frac{1}{2}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{2},\frac{W}{2}\right)\right), \\
+%					&\mathcal{F}^\prime_{\frac{1}{4}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{4},\frac{W}{4}\right)\right), \\
+%					&\mathcal{F}_{out} = W_1\mathcal{F}_{out} + W_2\mathcal{C} \left( f^{1 \times 1}  \left[\mathcal{F}^\prime_2 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{2}}))), \mathcal{F}^\prime_4 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{4}})))\right] \right).
+%				\end{aligned}
+%				\label{eq: ARMB}
+%			\end{equation}
+%		\end{block}
+%		
+%		Where $ \mathcal{S} $ and $ \mathcal{C} $ represent the spatial and channel attention function, respectively, and $W_1$ and $W_2$ are the corresponding feature graph weights.
+%		
+%		% 其中S 和 C 分别表示空间注意力函数和通道注意力函数，W1 和W2 为对应的特征图权重。
+%	\end{frame}
 	
 	\begin{frame}
 		\begin{figure}
@@ -1097,7 +1101,7 @@
 				\label{fig: conv4_3}	
 			\end{minipage}
 			\caption{
-				\tiny 建立了一个基于 VGG16\cite{simonyan2014very} 的简单网络来产生侧输出(c-h)。我们可以看到，卷积特征逐渐变得更粗，而中间层(c、d、f、g)包含了在其他层中没有出现的基本细节。
+				\zihao{6} 建立了一个基于 VGG16\cite{simonyan2014very} 的简单网络来产生侧输出(c-h)。我们可以看到，卷积特征逐渐变得更粗，而中间层(c、d、f、g)包含了在其他层中没有出现的基本细节。
 			}
 		\end{figure}
 		
@@ -1436,7 +1440,7 @@
 			}
 			\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
 			\caption{
-				\tiny LOL和SCIE数据集在各方法下的对比值，其中红色表示最优，蓝色表示次优，$↑$表示越高越好，$↓$表示越低越好。
+				\zihao{6} LOL和SCIE数据集在各方法下的对比值，其中红色表示最优，蓝色表示次优，$↑$表示越高越好，$↓$表示越低越好。
 			} 
 		\end{table}
 		
@@ -1528,7 +1532,7 @@
 		\captionsetup{font=scriptsize}
 		\caption{
 			\label{fig: LOL}
-			\small 不同方法在LOL测试数据集上的视觉表现。
+			\zihao{6} 不同方法在LOL测试数据集上的视觉表现。
 		}
 	\end{figure}
 	
@@ -1566,7 +1570,7 @@
 			\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
 			\caption{
 				\label{tab: Ablation Study}
-				\small Transformer分支和Transformer预训练权重尺寸和SCConv对模型的影响。
+				\zihao{6} Transformer分支和Transformer预训练权重尺寸和SCConv对模型的影响。
 			} 
 		\end{table}
 		
