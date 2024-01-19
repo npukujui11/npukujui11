@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  18 JAN 2024 22:50
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  19 JAN 2024 11:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -893,14 +893,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
+
+LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 88.
+
 (./main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
-
-
-
-LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 90.
 
 File: picture/VertiVR-CDP Tester UI.jpg Graphic file (type bmp)
 <picture/VertiVR-CDP Tester UI.jpg>
@@ -914,27 +913,33 @@ File: picture/Pico UI 1.jpg Graphic file (type bmp)
 <picture/Pico UI 1.jpg>
 File: picture/Pico UI 2.jpg Graphic file (type bmp)
 <picture/Pico UI 2.jpg>
-[1
+ [1
 
 ] [2]
 File: picture/Unity Asset.jpg Graphic file (type bmp)
 <picture/Unity Asset.jpg>
- [3] [4] 
+ [3]
+File: picture/btlibrary.jpg Graphic file (type bmp)
+<picture/btlibrary.jpg>
+File: picture/NativeBT.jpg Graphic file (type bmp)
+<picture/NativeBT.jpg>
+ [4] [5]
+
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A8B838DC02B4C88FB221A1BA2C768EB1;390.
+(rerunfilecheck)             Checksum: E3690D9AD9262BC864EFCD1D840ECC82;481.
  ) 
 Here is how much of TeX's memory you used:
- 20638 strings out of 476683
- 424750 string characters out of 5805371
+ 20734 strings out of 476683
+ 428852 string characters out of 5805371
  1874012 words of memory out of 5000000
- 40529 multiletter control sequences out of 15000+600000
+ 40623 multiletter control sequences out of 15000+600000
  520905 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,18n,97p,454b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (4 pages).
+Output written on main.pdf (5 pages).

@@ -73,7 +73,7 @@
 	\date{\textrm{January 2024}}
 	\maketitle
 	
-	\renewcommand{\figurename}{Figure} % 可以重新定义abstract，因为ctex会覆盖thebibliography
+	\renewcommand{\figurename}{图} % 可以重新定义abstract，因为ctex会覆盖thebibliography
 	% 	\begin{abstract}
 		%		In this experiment we studied a very important physical effect by measuring the
 		%		dependence of a quantity $V$ of the quantity $X$ for two different sample
@@ -83,19 +83,19 @@
 		%		not consistent with the theoretically predicted $k_{theory}=17.34$~s. We attribute %this
 		%		discrepancy to low efficiency of our $V$-detector.
 		%	\end{abstract}
-	\renewcommand{\contentsname}{Contents}
-	\renewcommand{\tablename}{Table}
+	\renewcommand{\contentsname}{目录}
+	\renewcommand{\tablename}{表}
 	\tableofcontents  % 自动生成目录
 		
 	\section{开发进展}
 
 		\subsection{PC 端软件界面}	
 		
-		VertiVR-CDP Tester（PC端）软件界面如 Fig. \ref{fig:vertivr-cdp-tester-ui} 所示，单击蓝牙开关启动蓝牙功能（需要 Windows 端启动蓝牙开关），随后单击 Find Device 按钮搜索周围蓝牙设备，如 Fig. \ref{fig:vertivr-cdp-tester-finddevice}所示。随后我们选择可以选择支持蓝牙串口协议的设备，单击 Connect 按钮进行连接。
+		VertiVR-CDP Tester（PC端）软件界面如图\ref{fig:vertivr-cdp-tester-ui}所示，单击蓝牙开关启动蓝牙功能（需要在Windows端启动蓝牙开关），随后单击 Find Device 按钮搜索周围蓝牙设备，如图\ref{fig:vertivr-cdp-tester-finddevice}所示。随后我们可以选择支持蓝牙串口协议的设备，并单击 Connect 按钮进行连接。
 		
-		我们在另外一台 PC 设备上构建了支持蓝牙串口协议的环境，我们通过串口调试软件验证了 PC 端通过蓝牙串口协议发送指令的可行性。如 Fig. \ref{fig:serial-port-assistant} 所示，我们通过蓝牙串口不断的向 VertiVR-CDP Tester 发送数据 43 01 02，分别代表电量67，大版本号 1，小版本号 2，VertiVR-CDP Tester 界面能够显示从蓝牙串口接收到的数据包并进行解析，如 Fig. \ref{fig:vertivr-cdp-tester-connect} 所示。此外，我们分别依次单击 Darkness, Senthrough, Freeze Pitch, Set Pitch 按钮，在串口调试助手上，我们依次接收到5个数据包。
+		在另一台PC设备上，我们构建了支持蓝牙串口协议的环境。通过串口调试软件，我们验证了PC端通过蓝牙串口协议发送指令的可行性。如图\ref{fig:serial-port-assistant}所示，我们通过蓝牙串口向VertiVR-CDP Tester不断发送数据43 01 02，分别代表电量67\%，大版本号1，小版本号2。VertiVR-CDP Tester界面能够显示从蓝牙串口接收到的数据包并进行解析，如图\ref{fig:vertivr-cdp-tester-connect}所示。此外，我们分别单击了Darkness、Senthrough、Freeze Pitch、Set Pitch按钮，在串口调试助手上，我们依次接收到5个数据包。
 		
-		我们对蓝牙缓冲区的定义如 Table. \ref{tab: bluetooth-buffer-definition} 所示。
+		蓝牙缓冲区的定义如表\ref{tab: bluetooth-buffer-definition}所示。
 		\begin{table}[!htbp]
 			\centering
 			\tiny
@@ -194,10 +194,10 @@
 	
 		\section{存在问题}
 		
-		目前 PC 端的功能已经基本实现，Pico 端的蓝牙功能并未实现。我们通过调研发现 Pico 端有\textbf{两种途径}可以实现蓝牙功能：
+		目前，PC 端的功能已基本实现，但Pico 端的蓝牙功能尚未实现。经调研发现，Pico 端实现蓝牙功能主要有以下两种途径：
 		
 		\begin{itemize}
-			\item[(1)] 一是使用 Unity Asset 提供的第三方蓝牙功能库，如 Fig. \ref{fig:unity-asset} 所示。
+			\item[(1)] 一是使用 Unity Asset 提供的第三方蓝牙功能库，如图\ref{fig:unity-asset} 所示。
 			\item[(2)] 二是基于 Android 平台的标准蓝牙 API 实现我们所需要的蓝牙串口功能，编译后生成 jar 包导入 Unity 使用。
 		\end{itemize}
 
@@ -208,7 +208,51 @@
 			\label{fig:unity-asset}
 		\end{figure}
 		
-		但是考虑到第一种方法的花费的时间可能较少，所以一开始我们尝试采用第一种方法，使用第三方蓝牙库来完成蓝牙功能。		
+		但是考虑到第一种方法的花费的时间和学习成本可能比较少，所以一开始，我们尝试使用第一种方法，选用了以下五种第三方蓝牙库进行尝试：
+		
+		\begin{itemize}
+			\item[(1)] \textbf{Simple Bluetooth for android}
+			\item[(2)] \textbf{Bluetooth Plugin for Android}
+			\item[(3)] \textbf{Android \& Microcontroll / Bluetooth}
+			\item[(4)] \textbf{Bluetooth Android Plugin}
+			\item[(5)] \textbf{NativeBT}
+		\end{itemize}
+		
+		我们认为Pico端需要作为蓝牙服务器，监听连接请求，并在建立连接后发送和接收蓝牙数据包，对内容进行解析。
+		
+		经实验发现，Simple Bluetooth for android库无法适用于VR设备，其初始化代码，即BluetoothForAndroid.Initialize()方法，并未在Pico端执行。对于Bluetooth Plugin for Android和Android \& Microcontroller / Bluetooth库，能正确初始化蓝牙设备，但无法执行其提供的startServer()方法，部分代码见图\ref{fig:btlibrary}。
+		
+		\begin{figure}[htbp] 
+			\centering 
+			\begin{subfigure}{0.545\textwidth}
+				\includegraphics[width=\linewidth]{picture/btlibrary}
+				\captionsetup{font=scriptsize}
+				\caption{Android \& Microcontroll / Bluetooth}
+				\label{fig:btlibrary}
+			\end{subfigure}
+			\begin{subfigure}{0.448\textwidth}
+				\includegraphics[width=\linewidth]{picture/NativeBT}
+				\captionsetup{font=scriptsize}
+				\caption{Android \& Microcontroll / Bluetooth}
+				\label{fig:nativebt}
+			\end{subfigure}
+			%			\captionsetup{font=scriptsize}
+			\caption{			
+			}
+		\end{figure}
+		
+		经实验发现，Bluetooth Android Plugin库不支持PC和Android设备间的通信，仅支持Android设备间的通信，且未提供蓝牙服务器方法，即监听设备的相关方法。对于NativeBT库，无法执行监听事件触发器和监听蓝牙连接请求的代码。如图\ref{fig:nativebt}所示，蓝牙缓冲区显示"Bluetooth Adapter is Listening！"后，PC端无法与Pico端建立连接。因此，我们认为\textbf{这些第三方库不具备打开Pico端串口功能的方法，在实际监听方法未得到执行。}
+		
+		\section{后续开发计划}
+		
+		一是重点放在 Pico 端的蓝牙功能的实现，尝试以下两种方法：
+		
+		\begin{itemize}
+			\item[(1)] 基于 Android 平台的标准蓝牙 API 实现具体蓝牙串口功能，编译后调用该库。
+			\item[(2)] 修改使用的蓝牙协议，尝试改用低功耗蓝牙协议。
+		\end{itemize}
+		
+		二是研究实现根据不同指令切换天空盒场景。
 		
 		
 %		\renewcommand{\refname}{References}
