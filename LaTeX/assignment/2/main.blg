@@ -1,0 +1,92 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+Database file #1: reference.bib
+Repeated entry---line 237 of file reference.bib
+ : @inproceedings{woo2018cbam
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 551 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 799 of file reference.bib
+ : @article{yang2021locally
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 813 of file reference.bib
+ : @inproceedings{zhang2020attention
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 831 of file reference.bib
+ : @inproceedings{li2018multi
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 847 of file reference.bib
+ : @inproceedings{zamir2020learning
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 865 of file reference.bib
+ : @article{li2020visual
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 999 of file reference.bib
+ : @inproceedings{peng2021conformer
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1173 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1327 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1413 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in zhu2020eemefn
+You've used 33 entries,
+            1791 wiz_defined-function locations,
+            628 strings with 10276 characters,
+and the built_in function-call counts, 10956 in all, are:
+= -- 1020
+> -- 464
+< -- 22
++ -- 166
+- -- 133
+* -- 682
+:= -- 1532
+add.period$ -- 105
+call.type$ -- 33
+change.case$ -- 33
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 547
+empty$ -- 1037
+format.name$ -- 133
+if$ -- 2591
+int.to.chr$ -- 0
+int.to.str$ -- 33
+missing$ -- 33
+newline$ -- 168
+num.names$ -- 33
+pop$ -- 144
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 373
+stack$ -- 0
+substring$ -- 856
+swap$ -- 249
+text.length$ -- 22
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 108
+width$ -- 35
+write$ -- 368
+(There were 11 error messages)

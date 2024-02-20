@@ -1,0 +1,200 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\citation{zhu2020eemefn}
+\citation{zhu2020eemefn}
+\@writefile{toc}{\contentsline {part}{I\hspace  {1em}Pre-Knowledge}{2}{part.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}方向}{2}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}问题一}{2}{subsection.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   该 LLIE 结构源自\cite  {zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。 \relax }}{3}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig: EEMEFN}{{1}{3}{该 LLIE 结构源自\cite {zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。 \relax }{figure.caption.1}{}}
+\citation{peng2021conformer}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}问题二}{4}{subsection.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: Overview}{{2}{4}{该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}问题三}{4}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}创新想法}{4}{section.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   Network architecture of the proposed Conformer. (a) Up-sampling and down-sampling for spatial alignment of feature maps and patch embeddings. (b) Implementation details of the CNN block, the transformer block, and the Feature Coupling Unit (FCU). (c) Thumbnail of Conformer. \relax }}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: Conformer architecture}{{3}{5}{Network architecture of the proposed Conformer. (a) Up-sampling and down-sampling for spatial alignment of feature maps and patch embeddings. (b) Implementation details of the CNN block, the transformer block, and the Feature Coupling Unit (FCU). (c) Thumbnail of Conformer. \relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}具体实现}{5}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Abstract}{5}{subsection.3.1}\protected@file@percent }
+\citation{jain1991unsupervised}
+\citation{lowe2004distinctive}
+\citation{ojala2002multiresolution}
+\citation{lisin2005combining}
+\citation{peng2021conformer}
+\citation{peng2021conformer}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}PACUT Architecture}{6}{subsection.3.2}\protected@file@percent }
+\citation{woo2018cbam}
+\newlabel{fig: First Architecture}{{4a}{7}{PACUT\relax }{figure.caption.4}{}}
+\newlabel{sub@fig: First Architecture}{{a}{7}{PACUT\relax }{figure.caption.4}{}}
+\newlabel{fig: Up-sampling and down-sampling}{{4b}{7}{Up-sampling and Down-sampling\relax }{figure.caption.4}{}}
+\newlabel{sub@fig: Up-sampling and down-sampling}{{b}{7}{Up-sampling and Down-sampling\relax }{figure.caption.4}{}}
+\newlabel{fig: The proposed initial architecture(Abstract Picture)}{{4c}{7}{Thumbnail of PACUT\relax }{figure.caption.4}{}}
+\newlabel{sub@fig: The proposed initial architecture(Abstract Picture)}{{c}{7}{Thumbnail of PACUT\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   PACUT 模型结构。Fig. \ref {fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。Fig. \ref {fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 Fig. \ref {fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\cite  {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal  {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal  {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal  {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal  {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }}{7}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: PACUT}{{4}{7}{PACUT 模型结构。Fig. \ref {fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。Fig. \ref {fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 Fig. \ref {fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\cite {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}CNN Branch}{7}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{UNetEnhance}{7}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   U-Net 图像初步恢复网络及其所属的模块。 \relax }}{8}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: U-Net and AM}{{5}{8}{U-Net 图像初步恢复网络及其所属的模块。 \relax }{figure.caption.5}{}}
+\newlabel{eq: UNetEnhance model}{{1}{8}{UNetEnhance}{equation.3.1}{}}
+\newlabel{eq: Aggregation Module}{{2}{8}{UNetEnhance}{equation.3.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Attentive Residual Multiscale Block}{9}{equation.3.2}\protected@file@percent }
+\newlabel{eq: ARMB}{{3}{9}{Attentive Residual Multiscale Block}{equation.3.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{SCConv}{9}{equation.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Transformer Branch}{9}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Patch Embedding}{9}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   Patch Embedding 的一般性过程。 \relax }}{10}{figure.caption.6}\protected@file@percent }
+\newlabel{fig: Patch Embedding}{{6}{10}{Patch Embedding 的一般性过程。 \relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   Transformer 分支中 Patch Embedding 的过程。 \relax }}{10}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: Patch Embedding(ViT)}{{7}{10}{Transformer 分支中 Patch Embedding 的过程。 \relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Positional Encoding}{11}{figure.caption.7}\protected@file@percent }
+\newlabel{eq: positional encoding}{{4}{11}{Positional Encoding}{equation.3.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Transformer Encoder}{11}{equation.3.4}\protected@file@percent }
+\newlabel{eq: MSA}{{5}{11}{Transformer Encoder}{equation.3.5}{}}
+\newlabel{eq: Attention}{{6}{11}{Transformer Encoder}{equation.3.6}{}}
+\newlabel{eq: MSA}{{7}{11}{Transformer Encoder}{equation.3.7}{}}
+\newlabel{eq: layernorm}{{8}{12}{Transformer Encoder}{equation.3.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Feature Coupling Unit}{12}{subsubsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Feature fusion module}{12}{subsubsection.3.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces   融合模块的结构。 \relax }}{13}{figure.caption.8}\protected@file@percent }
+\newlabel{fig: Fusion Block}{{8}{13}{融合模块的结构。 \relax }{figure.caption.8}{}}
+\newlabel{eq: capture color information}{{9}{13}{Feature fusion module}{equation.3.9}{}}
+\newlabel{eq: avgpool}{{10}{13}{Feature fusion module}{equation.3.10}{}}
+\newlabel{eq: maxpool}{{11}{13}{Feature fusion module}{equation.3.11}{}}
+\newlabel{eq: recalibrated feature map}{{12}{13}{Feature fusion module}{equation.3.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Experimental Plan}{13}{subsection.3.3}\protected@file@percent }
+\citation{wei2018deep}
+\citation{cai2018learning}
+\citation{jiang2019learning}
+\citation{bychkovsky2011learning}
+\citation{wei2018deep}
+\citation{chen2019seeing}
+\citation{jiang2019learning}
+\citation{woo2018cbam}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Dataset}{14}{subsubsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Train}{14}{subsubsection.3.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  Summary of paired training datasets. 'Syn' represents Synthetic.\relax }}{14}{table.caption.9}\protected@file@percent }
+\newlabel{tab: Paired_training_datases}{{1}{14}{Summary of paired training datasets. 'Syn' represents Synthetic.\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Performance Evaluation}{14}{subsubsection.3.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Contrast Experiment}{14}{subsubsection.3.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}Attention Chart}{14}{subsubsection.3.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.6}Results analysis and reporting}{14}{subsubsection.3.3.6}\protected@file@percent }
+\citation{ramachandran2019stand}
+\citation{woo2018cbam}
+\citation{li2023scconv}
+\citation{chen2018learning}
+\citation{chen2018learning,zamir2021learning}
+\citation{chen2018learning}
+\citation{chen2018learning,zamir2021learning}
+\citation{meng2020gia}
+\citation{chen2018learning,zamir2021learning}
+\citation{meng2020gia}
+\citation{chen2018learning,meng2020gia,zamir2021learning}
+\citation{zhou2018unet++,zhou2019unet++}
+\citation{yang2021locally,zhang2020attention}
+\citation{li2018multi,zamir2020learning}
+\citation{li2020visual}
+\citation{xu2020learning}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}创新想法的调研支撑}{15}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Attention in CV}{15}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{U-Net for LLIE}{15}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CNN for LLIE}{16}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Paper Reading}{16}{part.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Lightweight Model}{16}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}(2023.8)1M parameters are enough? A lightweight CNN-based model for medical image segmentation}{16}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{1M的参数就足够了吗？一种基于 CNN 的轻量级医学图像分割模型}{16}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(APSIPA ASC 2023 2区) doi: 10.1109/APSIPAASC58517.2023}{16}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Research Background}{16}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Contribution}{16}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Approach}{17}{subsubsection.4.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces   The proposed U-Lite architecture. \relax }}{17}{figure.caption.10}\protected@file@percent }
+\newlabel{fig: U-Lite Architecture}{{9}{17}{The proposed U-Lite architecture. \relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Axial Depthwise Convolution module}{17}{figure.caption.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces   Architectures of (a) Vision Permutator, (b) ConvNext, and (c) Proposed Axial DW Convolution module. The proposed module is inspired by Vision Permutator’s and ConvNext's designs. \relax }}{18}{figure.caption.11}\protected@file@percent }
+\newlabel{fig: Axial Depthwise Convolution module}{{10}{18}{Architectures of (a) Vision Permutator, (b) ConvNext, and (c) Proposed Axial DW Convolution module. The proposed module is inspired by Vision Permutator’s and ConvNext's designs. \relax }{figure.caption.11}{}}
+\newlabel{eq: Axial Depthwise Convolution module}{{13}{18}{Axial Depthwise Convolution module}{equation.4.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces   The receptive field comparison between Convolution $3 \times 3$, Vision Permutator, and Axial convolution $7 \times 7$. Axial convolution $7 \times 7$ offers a large receptive field compared with Convolution $3 \times 3$ while using fewer computational parameters than Vision Permutator. \relax }}{18}{figure.caption.12}\protected@file@percent }
+\newlabel{fig: Receptive Field}{{11}{18}{The receptive field comparison between Convolution $3 \times 3$, Vision Permutator, and Axial convolution $7 \times 7$. Axial convolution $7 \times 7$ offers a large receptive field compared with Convolution $3 \times 3$ while using fewer computational parameters than Vision Permutator. \relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Encoder Block and Decoder Block}{19}{figure.caption.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces   Encoder, decoder, and bottleneck blocks. Designed based on Depthwise Separable Convolution concept. Each block adopts one Batch Normalization layer and ends with a GELU activation function. \relax }}{19}{figure.caption.13}\protected@file@percent }
+\newlabel{fig: Encoder and Decoder}{{12}{19}{Encoder, decoder, and bottleneck blocks. Designed based on Depthwise Separable Convolution concept. Each block adopts one Batch Normalization layer and ends with a GELU activation function. \relax }{figure.caption.13}{}}
+\citation{bertasius2015high}
+\citation{xie2015holistically}
+\citation{liu2017richer}
+\citation{deng2020deep}
+\citation{su2021pixel}
+\@writefile{toc}{\contentsline {paragraph}{Bottleneck Block}{20}{figure.caption.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}Future}{20}{subsubsection.4.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Edge Detection}{20}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}(2022.3)Survey of Image Edge Detection}{20}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{图像边缘检测综述}{20}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(Frontiers in Signal Processing 2区) doi: 10.3389/frsip.2022.826967}{20}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Research Background}{20}{subsubsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Contribution}{20}{subsubsection.5.1.2}\protected@file@percent }
+\citation{krizhevsky2012imagenet}
+\citation{simonyan2014very}
+\citation{he2016deep}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces   Development of edge detection algorithms based on traditional and deep learning methods. \relax }}{21}{figure.caption.14}\protected@file@percent }
+\newlabel{fig: Development}{{13}{21}{Development of edge detection algorithms based on traditional and deep learning methods. \relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Approach}{21}{subsubsection.5.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluation Indicators}{21}{subsubsection.5.1.3}\protected@file@percent }
+\newlabel{eq: F-Score}{{14}{21}{Evaluation Indicators}{equation.5.14}{}}
+\newlabel{eq: F-Score1}{{15}{21}{Evaluation Indicators}{equation.5.15}{}}
+\newlabel{eq: F-Score2}{{16}{21}{Evaluation Indicators}{equation.5.16}{}}
+\newlabel{eq: F-Score3}{{17}{21}{Evaluation Indicators}{equation.5.17}{}}
+\@writefile{toc}{\contentsline {paragraph}{Backbone Network}{21}{equation.5.17}\protected@file@percent }
+\bibstyle{unsrt}
+\bibdata{reference}
+\bibcite{zhu2020eemefn}{1}
+\bibcite{peng2021conformer}{2}
+\bibcite{jain1991unsupervised}{3}
+\bibcite{lowe2004distinctive}{4}
+\bibcite{ojala2002multiresolution}{5}
+\bibcite{lisin2005combining}{6}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}Future}{22}{subsubsection.5.1.4}\protected@file@percent }
+\bibcite{woo2018cbam}{7}
+\bibcite{wei2018deep}{8}
+\bibcite{cai2018learning}{9}
+\bibcite{jiang2019learning}{10}
+\bibcite{bychkovsky2011learning}{11}
+\bibcite{chen2019seeing}{12}
+\bibcite{ramachandran2019stand}{13}
+\bibcite{li2023scconv}{14}
+\bibcite{chen2018learning}{15}
+\bibcite{zamir2021learning}{16}
+\bibcite{meng2020gia}{17}
+\bibcite{zhou2018unet++}{18}
+\bibcite{zhou2019unet++}{19}
+\bibcite{yang2021locally}{20}
+\bibcite{zhang2020attention}{21}
+\bibcite{li2018multi}{22}
+\bibcite{zamir2020learning}{23}
+\bibcite{li2020visual}{24}
+\bibcite{xu2020learning}{25}
+\bibcite{bertasius2015high}{26}
+\bibcite{xie2015holistically}{27}
+\bibcite{liu2017richer}{28}
+\bibcite{deng2020deep}{29}
+\bibcite{su2021pixel}{30}
+\bibcite{krizhevsky2012imagenet}{31}
+\bibcite{simonyan2014very}{32}
+\bibcite{he2016deep}{33}
+\newlabel{LastPage}{{}{25}{}{page.25}{}}
+\xdef\lastpage@lastpage{25}
+\xdef\lastpage@lastpageHy{25}
+\gdef \@abspage@last{25}

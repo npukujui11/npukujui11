@@ -1,0 +1,212 @@
+\begin{thebibliography}{10}
+
+\bibitem{zhu2020eemefn}
+Minfeng Zhu, Pingbo Pan, Wei Chen, and Yi~Yang.
+\newblock Eemefn: Low-light image enhancement via edge-enhanced multi-exposure
+  fusion network.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~34, pages 13106--13113, 2020.
+
+\bibitem{peng2021conformer}
+Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
+  and Qixiang Ye.
+\newblock Conformer: Local features coupling global representations for visual
+  recognition.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on
+  computer vision}, pages 367--376, 2021.
+
+\bibitem{jain1991unsupervised}
+Anil~K Jain and Farshid Farrokhnia.
+\newblock Unsupervised texture segmentation using gabor filters.
+\newblock {\em Pattern recognition}, 24(12):1167--1186, 1991.
+
+\bibitem{lowe2004distinctive}
+David~G Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em International journal of computer vision}, 60:91--110, 2004.
+
+\bibitem{ojala2002multiresolution}
+Timo Ojala, Matti Pietikainen, and Topi Maenpaa.
+\newblock Multiresolution gray-scale and rotation invariant texture
+  classification with local binary patterns.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  24(7):971--987, 2002.
+
+\bibitem{lisin2005combining}
+Dimitri~A Lisin, Marwan~A Mattar, Matthew~B Blaschko, Erik~G Learned-Miller,
+  and Mark~C Benfield.
+\newblock Combining local and global image features for object class
+  recognition.
+\newblock In {\em 2005 IEEE computer society conference on computer vision and
+  pattern recognition (CVPR'05)-Workshops}, pages 47--47. IEEE, 2005.
+
+\bibitem{woo2018cbam}
+Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
+\newblock Cbam: Convolutional block attention module.
+\newblock In {\em Proceedings of the European conference on computer vision
+  (ECCV)}, pages 3--19, 2018.
+
+\bibitem{wei2018deep}
+Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
+\newblock Deep retinex decomposition for low-light enhancement.
+\newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
+
+\bibitem{cai2018learning}
+Jianrui Cai, Shuhang Gu, and Lei Zhang.
+\newblock Learning a deep single image contrast enhancer from multi-exposure
+  images.
+\newblock {\em IEEE Transactions on Image Processing}, 27(4):2049--2062, 2018.
+
+\bibitem{jiang2019learning}
+Haiyang Jiang and Yinqiang Zheng.
+\newblock Learning to see moving objects in the dark.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 7324--7333, 2019.
+
+\bibitem{bychkovsky2011learning}
+Vladimir Bychkovsky, Sylvain Paris, Eric Chan, and Fr{\'e}do Durand.
+\newblock Learning photographic global tonal adjustment with a database of
+  input/output image pairs.
+\newblock In {\em CVPR 2011}, pages 97--104. IEEE, 2011.
+
+\bibitem{chen2019seeing}
+Chen Chen, Qifeng Chen, Minh~N Do, and Vladlen Koltun.
+\newblock Seeing motion in the dark.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 3185--3194, 2019.
+
+\bibitem{ramachandran2019stand}
+Prajit Ramachandran, Niki Parmar, Ashish Vaswani, Irwan Bello, Anselm Levskaya,
+  and Jon Shlens.
+\newblock Stand-alone self-attention in vision models.
+\newblock {\em Advances in neural information processing systems}, 32, 2019.
+
+\bibitem{li2023scconv}
+Jiafeng Li, Ying Wen, and Lianghua He.
+\newblock Scconv: Spatial and channel reconstruction convolution for feature
+  redundancy.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 6153--6162, 2023.
+
+\bibitem{chen2018learning}
+Chen Chen, Qifeng Chen, Jia Xu, and Vladlen Koltun.
+\newblock Learning to see in the dark.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3291--3300, 2018.
+
+\bibitem{zamir2021learning}
+Syed~Waqas Zamir, Aditya Arora, Salman Khan, Fahad~Shahbaz Khan, and Ling Shao.
+\newblock Learning digital camera pipeline for extreme low-light imaging.
+\newblock {\em Neurocomputing}, 452:37--47, 2021.
+
+\bibitem{meng2020gia}
+Zibo Meng, Runsheng Xu, and Chiu~Man Ho.
+\newblock Gia-net: Global information aware network for low-light imaging.
+\newblock In {\em European Conference on Computer Vision}, pages 327--342.
+  Springer, 2020.
+
+\bibitem{zhou2018unet++}
+Zongwei Zhou, Md~Mahfuzur Rahman~Siddiquee, Nima Tajbakhsh, and Jianming Liang.
+\newblock Unet++: A nested u-net architecture for medical image segmentation.
+\newblock In {\em Deep Learning in Medical Image Analysis and Multimodal
+  Learning for Clinical Decision Support: 4th International Workshop, DLMIA
+  2018, and 8th International Workshop, ML-CDS 2018, Held in Conjunction with
+  MICCAI 2018, Granada, Spain, September 20, 2018, Proceedings 4}, pages 3--11.
+  Springer, 2018.
+
+\bibitem{zhou2019unet++}
+Zongwei Zhou, Md~Mahfuzur~Rahman Siddiquee, Nima Tajbakhsh, and Jianming Liang.
+\newblock Unet++: Redesigning skip connections to exploit multiscale features
+  in image segmentation.
+\newblock {\em IEEE transactions on medical imaging}, 39(6):1856--1867, 2019.
+
+\bibitem{yang2021locally}
+Chenglin Yang, Siyuan Qiao, Adam Kortylewski, and Alan Yuille.
+\newblock Locally enhanced self-attention: Combining self-attention and
+  convolution as local and context terms.
+\newblock {\em arXiv preprint arXiv:2107.05637}, 2021.
+
+\bibitem{zhang2020attention}
+Cheng Zhang, Qingsen Yan, Yu~Zhu, Xianjun Li, Jinqiu Sun, and Yanning Zhang.
+\newblock Attention-based network for low-light image enhancement.
+\newblock In {\em 2020 IEEE international conference on multimedia and expo
+  (ICME)}, pages 1--6. IEEE, 2020.
+
+\bibitem{li2018multi}
+Juncheng Li, Faming Fang, Kangfu Mei, and Guixu Zhang.
+\newblock Multi-scale residual network for image super-resolution.
+\newblock In {\em Proceedings of the European conference on computer vision
+  (ECCV)}, pages 517--532, 2018.
+
+\bibitem{zamir2020learning}
+Syed~Waqas Zamir, Aditya Arora, Salman Khan, Munawar Hayat, Fahad~Shahbaz Khan,
+  Ming-Hsuan Yang, and Ling Shao.
+\newblock Learning enriched features for real image restoration and
+  enhancement.
+\newblock In {\em Computer Vision--ECCV 2020: 16th European Conference,
+  Glasgow, UK, August 23--28, 2020, Proceedings, Part XXV 16}, pages 492--511.
+  Springer, 2020.
+
+\bibitem{li2020visual}
+Xiaoxiao Li, Xiaopeng Guo, Liye Mei, Mingyu Shang, Jie Gao, Maojing Shu, and
+  Xiang Wang.
+\newblock Visual perception model for rapid and adaptive low-light image
+  enhancement.
+\newblock {\em arXiv preprint arXiv:2005.07343}, 2020.
+
+\bibitem{xu2020learning}
+Ke~Xu, Xin Yang, Baocai Yin, and Rynson~WH Lau.
+\newblock Learning to restore low-light images via
+  decomposition-and-enhancement.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 2281--2290, 2020.
+
+\bibitem{bertasius2015high}
+Gedas Bertasius, Jianbo Shi, and Lorenzo Torresani.
+\newblock High-for-low and low-for-high: Efficient boundary detection from deep
+  object features and its applications to high-level vision.
+\newblock In {\em Proceedings of the IEEE international conference on computer
+  vision}, pages 504--512, 2015.
+
+\bibitem{xie2015holistically}
+Saining Xie and Zhuowen Tu.
+\newblock Holistically-nested edge detection.
+\newblock In {\em Proceedings of the IEEE international conference on computer
+  vision}, pages 1395--1403, 2015.
+
+\bibitem{liu2017richer}
+Yun Liu, Ming-Ming Cheng, Xiaowei Hu, Kai Wang, and Xiang Bai.
+\newblock Richer convolutional features for edge detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3000--3009, 2017.
+
+\bibitem{deng2020deep}
+Ruoxi Deng and Shengjun Liu.
+\newblock Deep structural contour detection.
+\newblock In {\em Proceedings of the 28th ACM international conference on
+  multimedia}, pages 304--312, 2020.
+
+\bibitem{su2021pixel}
+Zhuo Su, Wenzhe Liu, Zitong Yu, Dewen Hu, Qing Liao, Qi~Tian, Matti
+  Pietik{\"a}inen, and Li~Liu.
+\newblock Pixel difference networks for efficient edge detection.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on
+  computer vision}, pages 5117--5127, 2021.
+
+\bibitem{krizhevsky2012imagenet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock {\em Advances in neural information processing systems}, 25, 2012.
+
+\bibitem{simonyan2014very}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em arXiv preprint arXiv:1409.1556}, 2014.
+
+\bibitem{he2016deep}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
+
+\end{thebibliography}
