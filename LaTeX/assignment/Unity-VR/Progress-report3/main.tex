@@ -1,0 +1,181 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{ctex}
+\usepackage{titlesec}
+%\usepackage{CJKutf8, CJK}
+\usepackage{makecell}                 % 三线表-竖线
+\usepackage{booktabs}                 % 三线表-短细横线
+% \usepackage{natbib}
+\usepackage{graphicx}				  % 表格单元格逆时针
+\usepackage{multirow}				  % 合并单元格
+\usepackage{array}
+\usepackage{amssymb}				  % 勾
+\usepackage{amsmath}
+\usepackage{longtable}                % 导入 longtable 宏包，表格自动换行
+\usepackage{caption}
+\usepackage{subcaption}               % 设置子图
+\usepackage{color}					  % 文本颜色包
+\usepackage{xcolor}
+\usepackage{bbm}					  % 输入指示函数
+\usepackage{tablefootnote}			  % 表格注释
+\usepackage{pythonhighlight}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[R]{\small Page \thepage\ of \pageref*{LastPage}}
+\fancyhead[L]{\small Unity Bluetooth Function}
+
+\usepackage{listings}                 % 导入代码块
+\usepackage{xcolor}
+\lstset{
+	numbers=left, 
+	tabsize=1,
+	columns=flexible, 
+	numberstyle=  \small, 
+	keywordstyle= \color{ blue!70},
+	commentstyle= \color{red!50!green!50!blue!50}, 
+	frame=shadowbox, % 阴影效果
+	rulesepcolor= \color{ red!20!green!20!blue!20} ,
+	escapeinside=``, % 英文分号中可写入中文
+	xleftmargin=2em,
+	xrightmargin=2em, 
+	aboveskip=1em,
+} 
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+%++++++++++++++++++++++++++++++++++++++++
+\titleformat{\section}{\Large\bfseries\songti}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\songti}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\songti}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\small\bfseries\songti}{\paragraph}{1em}{}
+\titleformat{\subparagraph}{\footnotesize\bfseries\songti}{\subparagraph}{1em}{}
+
+\begin{document}
+	
+	
+%	\title{\songti \zihao{4}Unity VR 项目开发进度}
+%	\author{\textrm{Ku Jui}}
+%   \date{\textrm{January 2024}}
+%	\maketitle
+	
+	\renewcommand{\figurename}{图} % 可以重新定义abstract，因为ctex会覆盖thebibliography
+	% 	\begin{abstract}
+		%		In this experiment we studied a very important physical effect by measuring the
+		%		dependence of a quantity $V$ of the quantity $X$ for two different sample
+		%		temperatures.  Our experimental measurements confirmed the quadratic dependence
+		%		$V = kX^2$ predicted by Someone's first law. The value of the mystery parameter
+		%		$k = 15.4\pm 0.5$~s was extracted from the fit. This value is
+		%		not consistent with the theoretically predicted $k_{theory}=17.34$~s. We attribute %this
+		%		discrepancy to low efficiency of our $V$-detector.
+		%	\end{abstract}
+	\renewcommand{\contentsname}{目录}
+	\renewcommand{\tablename}{表}
+%	\tableofcontents  % 自动生成目录
+		
+	\part*{Unity Bluetooth Function}
+	
+	需求文件中要求我们在 VertiVR-CDP(Android端) 中实现经典蓝牙功能，其中 VertiVR-CDP 运行在 PICO neo3 平台上，而 Unity 官方并不提供蓝牙插件，为了实现蓝牙功能，我们只能使用 Android 系统中的经典蓝牙库。根据这种思想，我们想到通过 JNI(Java Native Interface) 来实现在 C\texttt{\#} 中调用Java。
+	
+	在 Unity 的官方文档中\footnote{https://docs.unity3d.com/cn/current/Manual/android-plugin-types.html}提到，Unity中插入 Android 应用程序总共有 4 种方法(如Table .\ref{tab: Android plug-in types}所示)。
+	
+	\begin{table}[!htbp]
+		\centering
+		\tiny
+		\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{>{\arraybackslash}m{3.5cm}|>{\arraybackslash}m{9cm}}
+				
+				\hline
+				
+				\textbf{\centering Topic} & \textbf{\centering Description} \\
+				
+				\hline
+				
+				Android Library Projects and Android Archive plug-ins & Understand Android Library Projects and Android Archive plug-ins, and how to use them to extend your application with C++ and Java code created outside of Unity. \\
+				
+				\hline
+				
+				JAR plug-ins & Understand JAR plug-ins and learn how to use them to interact with the Android operating system or call Java code from Csharp scripts. \\
+				
+				\hline
+				
+				Native plug-ins for Android & Understand how to use native plug-ins to call C/C++ code from Csharp scripts. \\
+				
+				\hline
+				
+				Java and Kotlin source plug-ins & Understand how to use Java and Kotlin source code plug-ins to call Java or Kotlin code from Csharp scripts. \\
+				
+				\hline
+				
+			\end{tabular}
+		}
+		\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+		\caption{
+			\label{tab: Android plug-in types}
+			Unity supports multiple plug-in types for Android applications.} %表格的标题
+		
+	\end{table}
+	
+	\textbf{我们测试 VertiVR-CDP 蓝牙功能是否生效的策略如下}：
+	
+	\begin{itemize}
+		\item[(1)]
+		在Unity中的场景(场景名: UI\texttt{\_}WorldSpace)中构建一个 Canvas，在 Canvas 中构建一个 Toggle(Toggle名: Bluetooth Toggle)，设置 Toggle 的 On Value Changed 为脚本代码中的 OnBluetoothToogleChanged 方法。
+		
+		\item[(2)]
+		接上，在 Canvas 中构建一个 Scrollbar(名称：Bluetooth Buffer)，并将 Scrollbar 中的 Viewport 下 Context 中 Text 修改为 TextMeshPro - Text(UI)。
+		
+		\item[(3)]
+		通过在 Scrollbar 中的 Text(UI) 中的显示内容，判断蓝牙连接状态和显示蓝牙发送与接收数据的具体内容。
+	\end{itemize}
+	
+	通过上述方法，我们基于此判断 Android 端蓝牙功能的实现。
+	
+	\section*{Approach}
+	
+	因为我们的需求是将 VertiVR-CDP 作为蓝牙服务端，即接受传入的蓝牙连接请求，所以我们采用 GitHub 中的开源项目 Android-Bluetooth-Library \footnote{https://github.com/prasad-psp/Android-Bluetooth-Library}。Android-Bluetooth-Library 中提供了作为蓝牙服务器接受传入的蓝牙连接请求的相关类。我们分别将 Android-Bluetooth-Library 导入 Android Studio 作为 Android Library，按照源码中原有的 Gradle 版本对其进行编译打包\footnote{我们发现下载 Android Studio 之后，对 Android-Bluetooth-Library 进行编译打包之后，在 Unity 中无法正常编译apk，因为编译打包之后似乎会影响 Gradle 的版本，影响到 Unity 中的 Gradle版本。}，打包为 unityandroidbluetoothlelib.jar。然后在 Unity 中通过 C\texttt{\#} 对蓝牙功能进行调用，具体脚本代码见BluetoothFunction\texttt{\_}jar.cs，能够正常编译apk，但在测试过程中发现具体蓝牙功能并未起作用。
+	
+	如果，直接导入 Android-Bluetooth-Library 源码，使用的脚本代码见BluetoothSPP.cs，但不能正常编译apk，Unity报错Gradle版本不符合。
+	
+	我们尝试使用了几乎所有的第三方安装包，但发现均无法正常满足功能。
+		
+		
+%		\renewcommand{\refname}{References}
+		
+		
+		%	\begin{thebibliography}{00}
+			
+			%		\bibitem{b1}\label{cite:b1}
+			%		W. Wang, C. Wei, W. Yang and J. Liu, "GLADNet: Low-Light Enhancement Network with Global Awareness," 2018 13th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2018), Xi'an, China, 2018, pp. 751-755, DOI: 10.1109/FG.2018.00118.
+			
+			%		\bibitem{b2}\label{cite:b2}
+			%		A.\ Mahajan, K.\ Somaraj and M. Sameer, "Adopting Artificial Intelligence Powered ConvNet To Detect Epileptic Seizures," 2020 IEEE-EMBS Conference on Biomedical Engineering and Sciences (IECBES), Langkawi Island, Malaysia, 2021, pp. 427-432, DOI: 10.1109/IECBES48179.2021.9398832.
+			
+			%		\bibitem{Cyr}
+			%		N.\ Cyr, M.\ T$\hat{e}$tu, and M.\ Breton,
+			% "All-optical microwave frequency standard: a proposal,"
+			%		IEEE Trans.\ Instrum.\ Meas.\ \textbf{42}, 640 (1993).
+			
+			
+			
+			%	\end{thebibliography}
+		
+%		\bibliographystyle{unsrt}
+%		\bibliography{reference}
+		
+		
+	\end{document}
