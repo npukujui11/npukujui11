@@ -2,28 +2,28 @@
 \contentsline {section}{\numberline {1}方向}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}问题一}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}问题二}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}问题三}{4}{subsection.1.3}%
-\contentsline {section}{\numberline {2}创新想法}{4}{section.2}%
-\contentsline {section}{\numberline {3}具体实现}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Abstract}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {1.3}问题三}{5}{subsection.1.3}%
+\contentsline {section}{\numberline {2}创新想法}{5}{section.2}%
+\contentsline {section}{\numberline {3}具体实现}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Abstract}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}PACUT Architecture}{6}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}CNN Branch}{7}{subsubsection.3.2.1}%
-\contentsline {paragraph}{UNetEnhance}{7}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1}CNN Branch}{8}{subsubsection.3.2.1}%
+\contentsline {paragraph}{UNetEnhance}{8}{subsubsection.3.2.1}%
 \contentsline {paragraph}{Attentive Residual Multiscale Block}{9}{equation.3.2}%
-\contentsline {paragraph}{SCConv}{9}{equation.3.3}%
-\contentsline {subsubsection}{\numberline {3.2.2}Transformer Branch}{9}{subsubsection.3.2.2}%
-\contentsline {paragraph}{Patch Embedding}{9}{subsubsection.3.2.2}%
+\contentsline {paragraph}{SCConv}{10}{equation.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.2}Transformer Branch}{10}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Patch Embedding}{10}{subsubsection.3.2.2}%
 \contentsline {paragraph}{Positional Encoding}{11}{figure.caption.7}%
 \contentsline {paragraph}{Transformer Encoder}{11}{equation.3.4}%
 \contentsline {subsubsection}{\numberline {3.2.3}Feature Coupling Unit}{12}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Feature fusion module}{12}{subsubsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.3}Experimental Plan}{13}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Feature fusion module}{13}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Experimental Plan}{14}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Dataset}{14}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Train}{14}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Performance Evaluation}{14}{subsubsection.3.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.4}Contrast Experiment}{14}{subsubsection.3.3.4}%
-\contentsline {subsubsection}{\numberline {3.3.5}Attention Chart}{14}{subsubsection.3.3.5}%
-\contentsline {subsubsection}{\numberline {3.3.6}Results analysis and reporting}{14}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.5}Attention Chart}{15}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Results analysis and reporting}{15}{subsubsection.3.3.6}%
 \contentsline {subsection}{\numberline {3.4}创新想法的调研支撑}{15}{subsection.3.4}%
 \contentsline {paragraph}{Attention in CV}{15}{subsection.3.4}%
 \contentsline {paragraph}{U-Net for LLIE}{15}{subsection.3.4}%
@@ -38,15 +38,29 @@
 \contentsline {subsubsection}{\numberline {4.1.3}Approach}{17}{subsubsection.4.1.3}%
 \contentsline {paragraph}{Axial Depthwise Convolution module}{17}{figure.caption.11}%
 \contentsline {paragraph}{Encoder Block and Decoder Block}{19}{figure.caption.12}%
-\contentsline {paragraph}{Bottleneck Block}{20}{figure.caption.13}%
-\contentsline {subsubsection}{\numberline {4.1.4}Future}{20}{subsubsection.4.1.4}%
+\contentsline {paragraph}{Bottleneck Block}{19}{figure.caption.13}%
+\contentsline {subsubsection}{\numberline {4.1.4}Future}{19}{subsubsection.4.1.4}%
 \contentsline {section}{\numberline {5}Edge Detection}{20}{section.5}%
 \contentsline {subsection}{\numberline {5.1}(2022.3)Survey of Image Edge Detection}{20}{subsection.5.1}%
 \contentsline {paragraph}{图像边缘检测综述}{20}{subsection.5.1}%
 \contentsline {paragraph}{(Frontiers in Signal Processing 2区) doi: 10.3389/frsip.2022.826967}{20}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Research Background}{20}{subsubsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.2}Contribution}{20}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}Approach}{21}{subsubsection.5.1.3}%
-\contentsline {paragraph}{Evaluation Indicators}{21}{subsubsection.5.1.3}%
-\contentsline {paragraph}{Backbone Network}{21}{equation.5.17}%
-\contentsline {subsubsection}{\numberline {5.1.4}Future}{22}{subsubsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.3}Approach}{22}{subsubsection.5.1.3}%
+\contentsline {paragraph}{Evaluation Indicators}{22}{subsubsection.5.1.3}%
+\contentsline {paragraph}{Backbone Network}{22}{equation.5.17}%
+\contentsline {subsubsection}{\numberline {5.1.4}Future}{23}{subsubsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.2}(2020)Dense Extreme Inception Network: Towards a Robust CNN Model for Edge Detection}{23}{subsection.5.2}%
+\contentsline {paragraph}{DeixNeD: 面向一个鲁棒的CNN边缘检测模型}{23}{subsection.5.2}%
+\contentsline {paragraph}{(CVPR 2020) doi: 10.48550/arXiv.1909.01955}{23}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Research Background}{23}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Contribution}{23}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Approach}{23}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}Future}{23}{subsubsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.3}(2020.10) Deep Structural Contour Detection}{25}{subsection.5.3}%
+\contentsline {paragraph}{深结构轮廓检测}{25}{subsection.5.3}%
+\contentsline {paragraph}{(ACM MM 2020) doi: 10.1145/3394171.3413750}{25}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Research Background}{25}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Contribution}{25}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Approach}{25}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}Future}{25}{subsubsection.5.3.4}%

@@ -161,6 +161,22 @@ Ke~Xu, Xin Yang, Baocai Yin, and Rynson~WH Lau.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
   pattern recognition}, pages 2281--2290, 2020.
 
+\bibitem{liu2021swin}
+Ze~Liu, Yutong Lin, Yue Cao, Han Hu, Yixuan Wei, Zheng Zhang, Stephen Lin, and
+  Baining Guo.
+\newblock Swin transformer: Hierarchical vision transformer using shifted
+  windows.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on
+  computer vision}, pages 10012--10022, 2021.
+
+\bibitem{dong2022cswin}
+Xiaoyi Dong, Jianmin Bao, Dongdong Chen, Weiming Zhang, Nenghai Yu, Lu~Yuan,
+  Dong Chen, and Baining Guo.
+\newblock Cswin transformer: A general vision transformer backbone with
+  cross-shaped windows.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 12124--12134, 2022.
+
 \bibitem{bertasius2015high}
 Gedas Bertasius, Jianbo Shi, and Lorenzo Torresani.
 \newblock High-for-low and low-for-high: Efficient boundary detection from deep
