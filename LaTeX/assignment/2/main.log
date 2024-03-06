@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  29 FEB 2024 20:22
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  5 MAR 2024 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -982,23 +982,22 @@ File: picture/Lightweight Model/Axial Depthwise Convolution module.jpg Graphic
 file (type bmp)
 <picture/Lightweight Model/Axial Depthwise Convolution module.jpg>
  [17]
+[18]
 File: picture/Lightweight Model/Receptive Field.jpg Graphic file (type bmp)
 <picture/Lightweight Model/Receptive Field.jpg>
-
-[18]
 File: picture/Lightweight Model/Encoder and Decoder.jpg Graphic file (type bmp)
 
 <picture/Lightweight Model/Encoder and Decoder.jpg>
- [19]
+ [19] [20]
 File: picture/Edge Detection/Development.jpg Graphic file (type bmp)
 <picture/Edge Detection/Development.jpg>
- [20] [21] [22]
+ [21] [22] [23]
 File: picture/Edge Detection/DeixNed Architecture.jpg Graphic file (type bmp)
 <picture/Edge Detection/DeixNed Architecture.jpg>
 File: picture/Edge Detection/DeiXNed Upsampling Block.jpg Graphic file (type bm
 p)
 <picture/Edge Detection/DeiXNed Upsampling Block.jpg>
- [23] [24]
+ [24]
 File: picture/Edge Detection/DSCD proposed network.jpg Graphic file (type bmp)
 <picture/Edge Detection/DSCD proposed network.jpg>
  (./main.bbl [25] [26] [27]) [28]

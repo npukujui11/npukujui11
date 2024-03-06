@@ -36,27 +36,27 @@
 \contentsline {subsubsection}{\numberline {4.1.1}Research Background}{16}{subsubsection.4.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.2}Contribution}{16}{subsubsection.4.1.2}%
 \contentsline {subsubsection}{\numberline {4.1.3}Approach}{17}{subsubsection.4.1.3}%
-\contentsline {paragraph}{Axial Depthwise Convolution module}{17}{figure.caption.11}%
+\contentsline {paragraph}{Axial Depthwise Separable Convolution Module}{17}{figure.caption.11}%
 \contentsline {paragraph}{Encoder Block and Decoder Block}{19}{figure.caption.12}%
 \contentsline {paragraph}{Bottleneck Block}{19}{figure.caption.13}%
-\contentsline {subsubsection}{\numberline {4.1.4}Future}{19}{subsubsection.4.1.4}%
-\contentsline {section}{\numberline {5}Edge Detection}{20}{section.5}%
-\contentsline {subsection}{\numberline {5.1}(2022.3)Survey of Image Edge Detection}{20}{subsection.5.1}%
-\contentsline {paragraph}{图像边缘检测综述}{20}{subsection.5.1}%
-\contentsline {paragraph}{(Frontiers in Signal Processing 2区) doi: 10.3389/frsip.2022.826967}{20}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Research Background}{20}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Contribution}{20}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.4}Future}{20}{subsubsection.4.1.4}%
+\contentsline {section}{\numberline {5}Edge Detection}{21}{section.5}%
+\contentsline {subsection}{\numberline {5.1}(2022.3)Survey of Image Edge Detection}{21}{subsection.5.1}%
+\contentsline {paragraph}{图像边缘检测综述}{21}{subsection.5.1}%
+\contentsline {paragraph}{(Frontiers in Signal Processing 2区) doi: 10.3389/frsip.2022.826967}{21}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Research Background}{21}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Contribution}{21}{subsubsection.5.1.2}%
 \contentsline {subsubsection}{\numberline {5.1.3}Approach}{22}{subsubsection.5.1.3}%
 \contentsline {paragraph}{Evaluation Indicators}{22}{subsubsection.5.1.3}%
-\contentsline {paragraph}{Backbone Network}{22}{equation.5.17}%
+\contentsline {paragraph}{Backbone Network}{23}{equation.5.17}%
 \contentsline {subsubsection}{\numberline {5.1.4}Future}{23}{subsubsection.5.1.4}%
 \contentsline {subsection}{\numberline {5.2}(2020)Dense Extreme Inception Network: Towards a Robust CNN Model for Edge Detection}{23}{subsection.5.2}%
 \contentsline {paragraph}{DeixNeD: 面向一个鲁棒的CNN边缘检测模型}{23}{subsection.5.2}%
 \contentsline {paragraph}{(CVPR 2020) doi: 10.48550/arXiv.1909.01955}{23}{subsection.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1}Research Background}{23}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}Contribution}{23}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}Approach}{23}{subsubsection.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.4}Future}{23}{subsubsection.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.3}Approach}{24}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}Future}{24}{subsubsection.5.2.4}%
 \contentsline {subsection}{\numberline {5.3}(2020.10) Deep Structural Contour Detection}{25}{subsection.5.3}%
 \contentsline {paragraph}{深结构轮廓检测}{25}{subsection.5.3}%
 \contentsline {paragraph}{(ACM MM 2020) doi: 10.1145/3394171.3413750}{25}{subsection.5.3}%

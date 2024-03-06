@@ -69,7 +69,7 @@
 \begin{document}
 	
 	
-	\title{\songti \zihao{4}10-11月工作汇报}
+	\title{\songti \zihao{4}2月工作汇报}
 	\author{\textrm{Ku Jui}}
 	\date{\textrm{Oct - Nov 2023}}
 	\maketitle
@@ -726,7 +726,16 @@
 			
 			Bottleneck 和解码器参与处理这些特征，并将它们放大到原始形状以获得分割 Mask。作者还在编码器和解码器之间使用 skip connections 连接。值得注意力的是，尽管 U-Lite 的设计很简单，但由于轴向深度卷积模块的贡献，该模型在分割任务上仍然表现良好。
 			
-			\paragraph{Axial Depthwise Convolution module}
+			\paragraph{Axial Depthwise Separable Convolution Module}
+
+			轴线深度可分离卷积是一种特殊的卷积操作，它将传统的深度可分离卷积进一步分解为两个独立的轴向卷积：水平轴向卷积和垂直轴向卷积。
+			
+			\begin{itemize}
+				\item[(1)]
+				\textbf{深度可分离卷积 (Depthwise Separable Convolution):} 这是一种将标准卷积分解为两个较小的卷积操作的技术。首先是深度卷积（Depthwise Convolution），它对每个输入通道单独应用卷积核，然后是逐点卷积（Pointwise Convolution），它使用 1x1 的卷积核将深度卷积的结果合并在一起。这种分解减少了计算量和参数数量。
+				\item[(2)]
+				\textbf{轴向卷积 (Axial Convolution):} 在轴向深度可分离卷积中，深度卷积被进一步分解为两个轴向操作：一个沿水平方向（宽度），另一个沿垂直方向（高度）。这样做可以进一步减少计算量，同时保持良好的特征提取能力。
+			\end{itemize}
 			
 			视觉 Transformer 的成功推动了研究和改进这种特殊结构的各种工作。Swin-Transformer 通过将自注意力计算限制在大小为 $7 \times 7$ 的非重叠局部窗口，降低了 Transformer 的计算复杂性。ConvNext 实现了这一修改，并在 CNN 架构中采用了 kernel 大小为 $7 \times 7$ 的卷积，使 ResNet 在 ImageNet 上的最高精度达到 $86.4\%$。
 			
