@@ -13,220 +13,146 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand*\HyPL@Entry[1]{}
 \HyPL@Entry{0<</S/D>>}
-\citation{zhu2020eemefn}
-\citation{zhu2020eemefn}
-\@writefile{toc}{\contentsline {part}{I\hspace  {1em}Pre-Knowledge}{2}{part.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1}方向}{2}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}问题一}{2}{subsection.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   该 LLIE 结构源自\cite  {zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。 \relax }}{3}{figure.caption.1}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig: EEMEFN}{{1}{3}{该 LLIE 结构源自\cite {zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。 \relax }{figure.caption.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}问题二}{4}{subsection.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }}{4}{figure.caption.2}\protected@file@percent }
-\newlabel{fig: Overview}{{2}{4}{该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha }$ 中通过边缘网络获取边缘图。 \relax }{figure.caption.2}{}}
-\citation{peng2021conformer}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}问题三}{5}{subsection.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}创新想法}{5}{section.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   Network architecture of the proposed Conformer. (a) Up-sampling and down-sampling for spatial alignment of feature maps and patch embeddings. (b) Implementation details of the CNN block, the transformer block, and the Feature Coupling Unit (FCU). (c) Thumbnail of Conformer. \relax }}{5}{figure.caption.3}\protected@file@percent }
-\newlabel{fig: Conformer architecture}{{3}{5}{Network architecture of the proposed Conformer. (a) Up-sampling and down-sampling for spatial alignment of feature maps and patch embeddings. (b) Implementation details of the CNN block, the transformer block, and the Feature Coupling Unit (FCU). (c) Thumbnail of Conformer. \relax }{figure.caption.3}{}}
-\citation{jain1991unsupervised}
-\citation{lowe2004distinctive}
-\citation{ojala2002multiresolution}
-\citation{lisin2005combining}
-\citation{peng2021conformer}
-\citation{peng2021conformer}
-\@writefile{toc}{\contentsline {section}{\numberline {3}具体实现}{6}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Abstract}{6}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}PACUT Architecture}{6}{subsection.3.2}\protected@file@percent }
-\newlabel{fig: First Architecture}{{4a}{7}{PACUT\relax }{figure.caption.4}{}}
-\newlabel{sub@fig: First Architecture}{{a}{7}{PACUT\relax }{figure.caption.4}{}}
-\newlabel{fig: Up-sampling and down-sampling}{{4b}{7}{Up-sampling and Down-sampling\relax }{figure.caption.4}{}}
-\newlabel{sub@fig: Up-sampling and down-sampling}{{b}{7}{Up-sampling and Down-sampling\relax }{figure.caption.4}{}}
-\newlabel{fig: The proposed initial architecture(Abstract Picture)}{{4c}{7}{Thumbnail of PACUT\relax }{figure.caption.4}{}}
-\newlabel{sub@fig: The proposed initial architecture(Abstract Picture)}{{c}{7}{Thumbnail of PACUT\relax }{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   PACUT 模型结构。Fig. \ref {fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。Fig. \ref {fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 Fig. \ref {fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\cite  {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal  {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal  {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal  {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal  {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }}{7}{figure.caption.4}\protected@file@percent }
-\newlabel{fig: PACUT}{{4}{7}{PACUT 模型结构。Fig. \ref {fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。Fig. \ref {fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 Fig. \ref {fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\cite {peng2021conformer} （见 Fig. \ref {fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal {F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal {F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal {F}_3$ 经过与 U-Net 输出的特征图 $\mathcal {F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。 \relax }{figure.caption.4}{}}
-\citation{woo2018cbam}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}CNN Branch}{8}{subsubsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{UNetEnhance}{8}{subsubsection.3.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   U-Net 图像初步恢复网络及其所属的模块。 \relax }}{8}{figure.caption.5}\protected@file@percent }
-\newlabel{fig: U-Net and AM}{{5}{8}{U-Net 图像初步恢复网络及其所属的模块。 \relax }{figure.caption.5}{}}
-\newlabel{eq: UNetEnhance model}{{1}{9}{UNetEnhance}{equation.3.1}{}}
-\newlabel{eq: Aggregation Module}{{2}{9}{UNetEnhance}{equation.3.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Attentive Residual Multiscale Block}{9}{equation.3.2}\protected@file@percent }
-\newlabel{eq: ARMB}{{3}{9}{Attentive Residual Multiscale Block}{equation.3.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{SCConv}{10}{equation.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Transformer Branch}{10}{subsubsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Patch Embedding}{10}{subsubsection.3.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   Patch Embedding 的一般性过程。 \relax }}{10}{figure.caption.6}\protected@file@percent }
-\newlabel{fig: Patch Embedding}{{6}{10}{Patch Embedding 的一般性过程。 \relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   Transformer 分支中 Patch Embedding 的过程。 \relax }}{10}{figure.caption.7}\protected@file@percent }
-\newlabel{fig: Patch Embedding(ViT)}{{7}{10}{Transformer 分支中 Patch Embedding 的过程。 \relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Positional Encoding}{11}{figure.caption.7}\protected@file@percent }
-\newlabel{eq: positional encoding}{{4}{11}{Positional Encoding}{equation.3.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Transformer Encoder}{11}{equation.3.4}\protected@file@percent }
-\newlabel{eq: MSA}{{5}{12}{Transformer Encoder}{equation.3.5}{}}
-\newlabel{eq: Attention}{{6}{12}{Transformer Encoder}{equation.3.6}{}}
-\newlabel{eq: MSA}{{7}{12}{Transformer Encoder}{equation.3.7}{}}
-\newlabel{eq: layernorm}{{8}{12}{Transformer Encoder}{equation.3.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Feature Coupling Unit}{12}{subsubsection.3.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Feature fusion module}{13}{subsubsection.3.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces   融合模块的结构。 \relax }}{13}{figure.caption.8}\protected@file@percent }
-\newlabel{fig: Fusion Block}{{8}{13}{融合模块的结构。 \relax }{figure.caption.8}{}}
-\newlabel{eq: capture color information}{{9}{13}{Feature fusion module}{equation.3.9}{}}
-\newlabel{eq: avgpool}{{10}{13}{Feature fusion module}{equation.3.10}{}}
-\newlabel{eq: maxpool}{{11}{13}{Feature fusion module}{equation.3.11}{}}
-\newlabel{eq: recalibrated feature map}{{12}{13}{Feature fusion module}{equation.3.12}{}}
+\citation{ji1994adaptive}
+\citation{land1965,land1977retinex,jobson1997properties}
+\citation{yang2021locally,zhang2020attention}
+\citation{li2018multi,zamir2020learning}
+\citation{dinh20231m}
+\citation{cao2022swin}
+\@writefile{toc}{\contentsline {part}{I\hspace  {1em}Pre-Knowledge}{3}{part.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{3}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}实验计划}{3}{section.2}\protected@file@percent }
 \citation{wei2018deep}
 \citation{cai2018learning}
 \citation{jiang2019learning}
-\citation{bychkovsky2011learning}
-\citation{wei2018deep}
-\citation{chen2019seeing}
-\citation{jiang2019learning}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Experimental Plan}{14}{subsection.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Dataset}{14}{subsubsection.3.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Train}{14}{subsubsection.3.3.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  Summary of paired training datasets. 'Syn' represents Synthetic.\relax }}{14}{table.caption.9}\protected@file@percent }
-\newlabel{tab: Paired_training_datases}{{1}{14}{Summary of paired training datasets. 'Syn' represents Synthetic.\relax }{table.caption.9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Performance Evaluation}{14}{subsubsection.3.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Contrast Experiment}{14}{subsubsection.3.3.4}\protected@file@percent }
-\citation{woo2018cbam}
-\citation{ramachandran2019stand}
-\citation{woo2018cbam}
-\citation{li2023scconv}
-\citation{chen2018learning}
-\citation{chen2018learning,zamir2021learning}
-\citation{chen2018learning}
-\citation{chen2018learning,zamir2021learning}
-\citation{meng2020gia}
-\citation{chen2018learning,zamir2021learning}
-\citation{meng2020gia}
-\citation{chen2018learning,meng2020gia,zamir2021learning}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}Attention Chart}{15}{subsubsection.3.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.6}Results analysis and reporting}{15}{subsubsection.3.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}创新想法的调研支撑}{15}{subsection.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Attention in CV}{15}{subsection.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{U-Net for LLIE}{15}{subsection.3.4}\protected@file@percent }
-\citation{zhou2018unet++,zhou2019unet++}
-\citation{yang2021locally,zhang2020attention}
-\citation{li2018multi,zamir2020learning}
-\citation{li2020visual}
-\citation{xu2020learning}
-\@writefile{toc}{\contentsline {paragraph}{CNN for LLIE}{16}{subsection.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Paper Reading}{16}{part.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Lightweight Model}{16}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}(2023.8)1M parameters are enough? A lightweight CNN-based model for medical image segmentation}{16}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{1M的参数就足够了吗？一种基于 CNN 的轻量级医学图像分割模型}{16}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{(APSIPA ASC 2023 2区) doi: 10.1109/APSIPAASC58517.2023}{16}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Research Background}{16}{subsubsection.4.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Contribution}{16}{subsubsection.4.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Approach}{17}{subsubsection.4.1.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces   The proposed U-Lite architecture. \relax }}{17}{figure.caption.10}\protected@file@percent }
-\newlabel{fig: U-Lite Architecture}{{9}{17}{The proposed U-Lite architecture. \relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{Axial Depthwise Separable Convolution Module}{17}{figure.caption.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.0.1}Dataset}{4}{subsubsection.2.0.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  Summary of paired training datasets. 'Syn' represents Synthetic.\relax }}{4}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab: Paired_training_datases}{{1}{4}{Summary of paired training datasets. 'Syn' represents Synthetic.\relax }{table.caption.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.0.2}Train}{4}{subsubsection.2.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.0.3}Performance Evaluation}{4}{subsubsection.2.0.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.0.4}Loss Function}{4}{subsubsection.2.0.4}\protected@file@percent }
+\newlabel{eq: huber loss}{{1}{4}{Loss Function}{equation.2.1}{}}
+\newlabel{eq: perceptual loss}{{2}{4}{Loss Function}{equation.2.2}{}}
+\newlabel{eq: revised_SSIM loss}{{3}{4}{Loss Function}{equation.2.3}{}}
+\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Paper Reading}{5}{part.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Lightweight Model}{5}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}(2023.8)1M parameters are enough? A lightweight CNN-based model for medical image segmentation}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{1M的参数就足够了吗？一种基于 CNN 的轻量级医学图像分割模型}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(APSIPA ASC 2023 2区) doi: 10.1109/APSIPAASC58517.2023}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Research Background}{5}{subsubsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Contribution}{5}{subsubsection.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}Approach}{6}{subsubsection.3.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   The proposed U-Lite architecture. \relax }}{6}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: U-Lite Architecture}{{1}{6}{The proposed U-Lite architecture. \relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces   Architectures of (a) Vision Permutator, (b) ConvNext, and (c) Proposed Axial DW Convolution module. The proposed module is inspired by Vision Permutator’s and ConvNext's designs. \relax }}{6}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: Axial Depthwise Convolution module}{{2}{6}{Architectures of (a) Vision Permutator, (b) ConvNext, and (c) Proposed Axial DW Convolution module. The proposed module is inspired by Vision Permutator’s and ConvNext's designs. \relax }{figure.caption.3}{}}
 \citation{liu2021swin}
 \citation{dong2022cswin}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces   Architectures of (a) Vision Permutator, (b) ConvNext, and (c) Proposed Axial DW Convolution module. The proposed module is inspired by Vision Permutator’s and ConvNext's designs. \relax }}{18}{figure.caption.11}\protected@file@percent }
-\newlabel{fig: Axial Depthwise Convolution module}{{10}{18}{Architectures of (a) Vision Permutator, (b) ConvNext, and (c) Proposed Axial DW Convolution module. The proposed module is inspired by Vision Permutator’s and ConvNext's designs. \relax }{figure.caption.11}{}}
-\newlabel{eq: Axial Depthwise Convolution module}{{13}{19}{Axial Depthwise Separable Convolution Module}{equation.4.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces   The receptive field comparison between Convolution $3 \times 3$, Vision Permutator, and Axial convolution $7 \times 7$. Axial convolution $7 \times 7$ offers a large receptive field compared with Convolution $3 \times 3$ while using fewer computational parameters than Vision Permutator. \relax }}{19}{figure.caption.12}\protected@file@percent }
-\newlabel{fig: Receptive Field}{{11}{19}{The receptive field comparison between Convolution $3 \times 3$, Vision Permutator, and Axial convolution $7 \times 7$. Axial convolution $7 \times 7$ offers a large receptive field compared with Convolution $3 \times 3$ while using fewer computational parameters than Vision Permutator. \relax }{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {paragraph}{Encoder Block and Decoder Block}{19}{figure.caption.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Bottleneck Block}{19}{figure.caption.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces   Encoder, decoder, and bottleneck blocks. Designed based on Depthwise Separable Convolution concept. Each block adopts one Batch Normalization layer and ends with a GELU activation function. \relax }}{20}{figure.caption.13}\protected@file@percent }
-\newlabel{fig: Encoder and Decoder}{{12}{20}{Encoder, decoder, and bottleneck blocks. Designed based on Depthwise Separable Convolution concept. Each block adopts one Batch Normalization layer and ends with a GELU activation function. \relax }{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}Future}{20}{subsubsection.4.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Axial Depthwise Separable Convolution Module}{7}{figure.caption.3}\protected@file@percent }
+\newlabel{eq: Axial Depthwise Convolution module}{{6}{7}{Axial Depthwise Separable Convolution Module}{equation.3.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   The receptive field comparison between Convolution $3 \times 3$, Vision Permutator, and Axial convolution $7 \times 7$. Axial convolution $7 \times 7$ offers a large receptive field compared with Convolution $3 \times 3$ while using fewer computational parameters than Vision Permutator. \relax }}{8}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: Receptive Field}{{3}{8}{The receptive field comparison between Convolution $3 \times 3$, Vision Permutator, and Axial convolution $7 \times 7$. Axial convolution $7 \times 7$ offers a large receptive field compared with Convolution $3 \times 3$ while using fewer computational parameters than Vision Permutator. \relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Encoder Block and Decoder Block}{8}{figure.caption.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Bottleneck Block}{8}{figure.caption.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.4}Future}{8}{subsubsection.3.1.4}\protected@file@percent }
 \citation{bertasius2015high}
 \citation{xie2015holistically}
 \citation{liu2017richer}
 \citation{deng2020deep}
 \citation{su2021pixel}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Edge Detection}{21}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}(2022.3)Survey of Image Edge Detection}{21}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{图像边缘检测综述}{21}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{(Frontiers in Signal Processing 2区) doi: 10.3389/frsip.2022.826967}{21}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Research Background}{21}{subsubsection.5.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Contribution}{21}{subsubsection.5.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces   Development of edge detection algorithms based on traditional and deep learning methods. \relax }}{21}{figure.caption.14}\protected@file@percent }
-\newlabel{fig: Development}{{13}{21}{Development of edge detection algorithms based on traditional and deep learning methods. \relax }{figure.caption.14}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces  Performance comparison of conventional edge detection based algorithms on the BSDS500 dataset.\relax }}{21}{table.caption.15}\protected@file@percent }
-\newlabel{tab: Algorithms on the BSDS500 dataset}{{2}{21}{Performance comparison of conventional edge detection based algorithms on the BSDS500 dataset.\relax }{table.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Encoder, decoder, and bottleneck blocks. Designed based on Depthwise Separable Convolution concept. Each block adopts one Batch Normalization layer and ends with a GELU activation function. \relax }}{9}{figure.caption.5}\protected@file@percent }
+\newlabel{fig: Encoder and Decoder}{{4}{9}{Encoder, decoder, and bottleneck blocks. Designed based on Depthwise Separable Convolution concept. Each block adopts one Batch Normalization layer and ends with a GELU activation function. \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Edge Detection}{9}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}(2022.3)Survey of Image Edge Detection}{9}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{图像边缘检测综述}{9}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(Frontiers in Signal Processing 2区) doi: 10.3389/frsip.2022.826967}{9}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Research Background}{9}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Contribution}{9}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   Development of edge detection algorithms based on traditional and deep learning methods. \relax }}{10}{figure.caption.6}\protected@file@percent }
+\newlabel{fig: Development}{{5}{10}{Development of edge detection algorithms based on traditional and deep learning methods. \relax }{figure.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces  Performance comparison of conventional edge detection based algorithms on the BSDS500 dataset.\relax }}{10}{table.caption.7}\protected@file@percent }
+\newlabel{tab: Algorithms on the BSDS500 dataset}{{2}{10}{Performance comparison of conventional edge detection based algorithms on the BSDS500 dataset.\relax }{table.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces  Performance comparison of conventional edge detection based algorithms on the NYUD dataset.\relax }}{10}{table.caption.8}\protected@file@percent }
+\newlabel{tab: Algorithms on the NYUD dataset}{{3}{10}{Performance comparison of conventional edge detection based algorithms on the NYUD dataset.\relax }{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces  Performance comparison of deep learning-based edge detection algorithms on the BSDS500 dataset.\relax }}{10}{table.caption.9}\protected@file@percent }
+\newlabel{tab: Deep learning on the BSDS500 dataset}{{4}{10}{Performance comparison of deep learning-based edge detection algorithms on the BSDS500 dataset.\relax }{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces  Performance comparison of deep learning-based edge detection algorithms on the NYUD dataset.\relax }}{10}{table.caption.10}\protected@file@percent }
+\newlabel{tab: Deep learning on the NYUD dataset}{{5}{10}{Performance comparison of deep learning-based edge detection algorithms on the NYUD dataset.\relax }{table.caption.10}{}}
 \citation{krizhevsky2012imagenet}
 \citation{simonyan2014very}
 \citation{he2016deep}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces  Performance comparison of conventional edge detection based algorithms on the NYUD dataset.\relax }}{22}{table.caption.16}\protected@file@percent }
-\newlabel{tab: Algorithms on the NYUD dataset}{{3}{22}{Performance comparison of conventional edge detection based algorithms on the NYUD dataset.\relax }{table.caption.16}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces  Performance comparison of deep learning-based edge detection algorithms on the BSDS500 dataset.\relax }}{22}{table.caption.17}\protected@file@percent }
-\newlabel{tab: Deep learning on the BSDS500 dataset}{{4}{22}{Performance comparison of deep learning-based edge detection algorithms on the BSDS500 dataset.\relax }{table.caption.17}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces  Performance comparison of deep learning-based edge detection algorithms on the NYUD dataset.\relax }}{22}{table.caption.18}\protected@file@percent }
-\newlabel{tab: Deep learning on the NYUD dataset}{{5}{22}{Performance comparison of deep learning-based edge detection algorithms on the NYUD dataset.\relax }{table.caption.18}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Approach}{22}{subsubsection.5.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Evaluation Indicators}{22}{subsubsection.5.1.3}\protected@file@percent }
-\newlabel{eq: F-Score}{{14}{22}{Evaluation Indicators}{equation.5.14}{}}
-\newlabel{eq: F-Score1}{{15}{22}{Evaluation Indicators}{equation.5.15}{}}
-\newlabel{eq: F-Score2}{{16}{22}{Evaluation Indicators}{equation.5.16}{}}
-\newlabel{eq: F-Score3}{{17}{22}{Evaluation Indicators}{equation.5.17}{}}
-\@writefile{toc}{\contentsline {paragraph}{Backbone Network}{23}{equation.5.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}Future}{23}{subsubsection.5.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}(2020)Dense Extreme Inception Network: Towards a Robust CNN Model for Edge Detection}{23}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{DeixNeD: 面向一个鲁棒的CNN边缘检测模型}{23}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{(CVPR 2020) doi: 10.48550/arXiv.1909.01955}{23}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Research Background}{23}{subsubsection.5.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Contribution}{23}{subsubsection.5.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}Approach}{24}{subsubsection.5.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces   Proposed architecture: Dense Extreme Inception Network, consists of an encoder composed by six main blocks (showed in light gray). The main blocks are connected between them through 1x1 convolutional blocks. Each of the main blocks is composed by sub-blocks that are densely interconnected by the output of the previous main block. The output from each of the main blocks is fed to an upsampling block that produces an intermediate edge-map in order to build a Scale Space Volume, which is used to compose a final fused edge-map. \relax }}{24}{figure.caption.19}\protected@file@percent }
-\newlabel{fig: DeixNed Architecture}{{14}{24}{Proposed architecture: Dense Extreme Inception Network, consists of an encoder composed by six main blocks (showed in light gray). The main blocks are connected between them through 1x1 convolutional blocks. Each of the main blocks is composed by sub-blocks that are densely interconnected by the output of the previous main block. The output from each of the main blocks is fed to an upsampling block that produces an intermediate edge-map in order to build a Scale Space Volume, which is used to compose a final fused edge-map. \relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces   Detail of the upsampling block that receives as input the learned features extracted from each of the main blocks. The features are fed into a stack of learned convolutional and transposed convolutional filters in order to extract an intermediate edge-map. \relax }}{24}{figure.caption.20}\protected@file@percent }
-\newlabel{fig: DeixNed Architecture Block}{{15}{24}{Detail of the upsampling block that receives as input the learned features extracted from each of the main blocks. The features are fed into a stack of learned convolutional and transposed convolutional filters in order to extract an intermediate edge-map. \relax }{figure.caption.20}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4}Future}{24}{subsubsection.5.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Approach}{11}{subsubsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Evaluation Indicators}{11}{subsubsection.4.1.3}\protected@file@percent }
+\newlabel{eq: F-Score}{{7}{11}{Evaluation Indicators}{equation.4.7}{}}
+\newlabel{eq: F-Score1}{{8}{11}{Evaluation Indicators}{equation.4.8}{}}
+\newlabel{eq: F-Score2}{{9}{11}{Evaluation Indicators}{equation.4.9}{}}
+\newlabel{eq: F-Score3}{{10}{11}{Evaluation Indicators}{equation.4.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Backbone Network}{11}{equation.4.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}Future}{12}{subsubsection.4.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}(2020)Dense Extreme Inception Network: Towards a Robust CNN Model for Edge Detection}{12}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{DeixNeD: 面向一个鲁棒的CNN边缘检测模型}{12}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(CVPR 2020) doi: 10.48550/arXiv.1909.01955}{12}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Research Background}{12}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Contribution}{12}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Approach}{12}{subsubsection.4.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Future}{12}{subsubsection.4.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces   Proposed architecture: Dense Extreme Inception Network, consists of an encoder composed by six main blocks (showed in light gray). The main blocks are connected between them through 1x1 convolutional blocks. Each of the main blocks is composed by sub-blocks that are densely interconnected by the output of the previous main block. The output from each of the main blocks is fed to an upsampling block that produces an intermediate edge-map in order to build a Scale Space Volume, which is used to compose a final fused edge-map. \relax }}{13}{figure.caption.11}\protected@file@percent }
+\newlabel{fig: DeixNed Architecture}{{6}{13}{Proposed architecture: Dense Extreme Inception Network, consists of an encoder composed by six main blocks (showed in light gray). The main blocks are connected between them through 1x1 convolutional blocks. Each of the main blocks is composed by sub-blocks that are densely interconnected by the output of the previous main block. The output from each of the main blocks is fed to an upsampling block that produces an intermediate edge-map in order to build a Scale Space Volume, which is used to compose a final fused edge-map. \relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces   Detail of the upsampling block that receives as input the learned features extracted from each of the main blocks. The features are fed into a stack of learned convolutional and transposed convolutional filters in order to extract an intermediate edge-map. \relax }}{13}{figure.caption.12}\protected@file@percent }
+\newlabel{fig: DeixNed Architecture Block}{{7}{13}{Detail of the upsampling block that receives as input the learned features extracted from each of the main blocks. The features are fed into a stack of learned convolutional and transposed convolutional filters in order to extract an intermediate edge-map. \relax }{figure.caption.12}{}}
 \bibstyle{unsrt}
 \bibdata{reference}
-\bibcite{zhu2020eemefn}{1}
-\bibcite{peng2021conformer}{2}
-\bibcite{jain1991unsupervised}{3}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}(2020.10) Deep Structural Contour Detection}{25}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{深结构轮廓检测}{25}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{(ACM MM 2020) doi: 10.1145/3394171.3413750}{25}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Research Background}{25}{subsubsection.5.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Contribution}{25}{subsubsection.5.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3}Approach}{25}{subsubsection.5.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces   Illustration of the proposed network. The left and the right are the encoder and the decoder, respectively. We adopt the VGG16 as our encoder. The encoder extracts multi-scale, multi-level features and the decoder fuse the features and recover the feature resolution to the original. The middle rectangle is the proposed hyper convolutional module. It adopts three conv blocks and captures dense connection among the hierarchical features. The module can significantly improve model performance. To the best view, we omit the connections between the encoder features and the decoder features. \relax }}{25}{figure.caption.21}\protected@file@percent }
-\newlabel{fig: DSCD proposed network}{{16}{25}{Illustration of the proposed network. The left and the right are the encoder and the decoder, respectively. We adopt the VGG16 as our encoder. The encoder extracts multi-scale, multi-level features and the decoder fuse the features and recover the feature resolution to the original. The middle rectangle is the proposed hyper convolutional module. It adopts three conv blocks and captures dense connection among the hierarchical features. The module can significantly improve model performance. To the best view, we omit the connections between the encoder features and the decoder features. \relax }{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.4}Future}{25}{subsubsection.5.3.4}\protected@file@percent }
-\bibcite{lowe2004distinctive}{4}
-\bibcite{ojala2002multiresolution}{5}
-\bibcite{lisin2005combining}{6}
-\bibcite{woo2018cbam}{7}
-\bibcite{wei2018deep}{8}
-\bibcite{cai2018learning}{9}
-\bibcite{jiang2019learning}{10}
-\bibcite{bychkovsky2011learning}{11}
-\bibcite{chen2019seeing}{12}
-\bibcite{ramachandran2019stand}{13}
-\bibcite{li2023scconv}{14}
-\bibcite{chen2018learning}{15}
-\bibcite{zamir2021learning}{16}
-\bibcite{meng2020gia}{17}
-\bibcite{zhou2018unet++}{18}
-\bibcite{zhou2019unet++}{19}
-\bibcite{yang2021locally}{20}
-\bibcite{zhang2020attention}{21}
-\bibcite{li2018multi}{22}
-\bibcite{zamir2020learning}{23}
-\bibcite{li2020visual}{24}
-\bibcite{xu2020learning}{25}
-\bibcite{liu2021swin}{26}
-\bibcite{dong2022cswin}{27}
-\bibcite{bertasius2015high}{28}
-\bibcite{xie2015holistically}{29}
-\bibcite{liu2017richer}{30}
-\bibcite{deng2020deep}{31}
-\bibcite{su2021pixel}{32}
-\bibcite{krizhevsky2012imagenet}{33}
-\bibcite{simonyan2014very}{34}
-\bibcite{he2016deep}{35}
-\newlabel{LastPage}{{}{28}{}{page.28}{}}
-\xdef\lastpage@lastpage{28}
-\xdef\lastpage@lastpageHy{28}
-\gdef \@abspage@last{28}
+\bibcite{ji1994adaptive}{1}
+\bibcite{land1965}{2}
+\bibcite{land1977retinex}{3}
+\bibcite{jobson1997properties}{4}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}(2020.10) Deep Structural Contour Detection}{14}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{深结构轮廓检测}{14}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{(ACM MM 2020) doi: 10.1145/3394171.3413750}{14}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Research Background}{14}{subsubsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Contribution}{14}{subsubsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Approach}{14}{subsubsection.4.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces   Illustration of the proposed network. The left and the right are the encoder and the decoder, respectively. We adopt the VGG16 as our encoder. The encoder extracts multi-scale, multi-level features and the decoder fuse the features and recover the feature resolution to the original. The middle rectangle is the proposed hyper convolutional module. It adopts three conv blocks and captures dense connection among the hierarchical features. The module can significantly improve model performance. To the best view, we omit the connections between the encoder features and the decoder features. \relax }}{14}{figure.caption.13}\protected@file@percent }
+\newlabel{fig: DSCD proposed network}{{8}{14}{Illustration of the proposed network. The left and the right are the encoder and the decoder, respectively. We adopt the VGG16 as our encoder. The encoder extracts multi-scale, multi-level features and the decoder fuse the features and recover the feature resolution to the original. The middle rectangle is the proposed hyper convolutional module. It adopts three conv blocks and captures dense connection among the hierarchical features. The module can significantly improve model performance. To the best view, we omit the connections between the encoder features and the decoder features. \relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4}Future}{14}{subsubsection.4.3.4}\protected@file@percent }
+\bibcite{yang2021locally}{5}
+\bibcite{zhang2020attention}{6}
+\bibcite{li2018multi}{7}
+\bibcite{zamir2020learning}{8}
+\bibcite{jain1991unsupervised}{9}
+\bibcite{lowe2004distinctive}{10}
+\bibcite{ojala2002multiresolution}{11}
+\bibcite{dinh20231m}{12}
+\bibcite{cao2022swin}{13}
+\bibcite{peng2021conformer}{14}
+\bibcite{lisin2005combining}{15}
+\bibcite{woo2018cbam}{16}
+\bibcite{wei2018deep}{17}
+\bibcite{cai2018learning}{18}
+\bibcite{jiang2019learning}{19}
+\bibcite{bychkovsky2011learning}{20}
+\bibcite{chen2019seeing}{21}
+\bibcite{ramachandran2019stand}{22}
+\bibcite{li2023scconv}{23}
+\bibcite{chen2018learning}{24}
+\bibcite{zamir2021learning}{25}
+\bibcite{meng2020gia}{26}
+\bibcite{zhou2018unet++}{27}
+\bibcite{zhou2019unet++}{28}
+\bibcite{li2020visual}{29}
+\bibcite{xu2020learning}{30}
+\bibcite{liu2021swin}{31}
+\bibcite{dong2022cswin}{32}
+\bibcite{bertasius2015high}{33}
+\bibcite{xie2015holistically}{34}
+\bibcite{liu2017richer}{35}
+\bibcite{deng2020deep}{36}
+\bibcite{su2021pixel}{37}
+\bibcite{krizhevsky2012imagenet}{38}
+\bibcite{simonyan2014very}{39}
+\bibcite{he2016deep}{40}
+\newlabel{LastPage}{{}{17}{}{page.17}{}}
+\xdef\lastpage@lastpage{17}
+\xdef\lastpage@lastpageHy{17}
+\gdef \@abspage@last{17}

@@ -7,90 +7,101 @@ Repeated entry---line 119 of file reference.bib
  : @inproceedings{woo2018cbam
  :                           ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 276 of file reference.bib
- : @article{wei2018deep
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 400 of file reference.bib
+Repeated entry---line 393 of file reference.bib
  : @article{yang2021locally
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 407 of file reference.bib
+Repeated entry---line 400 of file reference.bib
  : @inproceedings{zhang2020attention
  :                                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 416 of file reference.bib
+Repeated entry---line 409 of file reference.bib
  : @inproceedings{li2018multi
  :                           ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 424 of file reference.bib
+Repeated entry---line 417 of file reference.bib
  : @inproceedings{zamir2020learning
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 433 of file reference.bib
+Repeated entry---line 426 of file reference.bib
  : @article{li2020visual
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 500 of file reference.bib
+Repeated entry---line 493 of file reference.bib
  : @inproceedings{peng2021conformer
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 587 of file reference.bib
+Repeated entry---line 580 of file reference.bib
  : @article{wei2018deep
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 664 of file reference.bib
+Repeated entry---line 657 of file reference.bib
  : @article{cai2018learning
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 707 of file reference.bib
+Repeated entry---line 700 of file reference.bib
  : @article{cai2018learning
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 857 of file reference.bib
+Repeated entry---line 850 of file reference.bib
  : @inproceedings{liu2021swin
  :                           ,
 I'm skipping whatever remains of this entry
-Warning--can't use both volume and number fields in zhu2020eemefn
-You've used 35 entries,
+Repeated entry---line 884 of file reference.bib
+ : @article{yang2021locally
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 891 of file reference.bib
+ : @inproceedings{zhang2020attention
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 900 of file reference.bib
+ : @inproceedings{li2018multi
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 908 of file reference.bib
+ : @inproceedings{zamir2020learning
+ :                                 ,
+I'm skipping whatever remains of this entry
+You've used 40 entries,
             1791 wiz_defined-function locations,
-            637 strings with 10724 characters,
-and the built_in function-call counts, 11980 in all, are:
-= -- 1112
-> -- 516
-< -- 24
-+ -- 184
-- -- 149
-* -- 750
-:= -- 1666
-add.period$ -- 111
-call.type$ -- 35
-change.case$ -- 35
+            666 strings with 11577 characters,
+and the built_in function-call counts, 13459 in all, are:
+= -- 1263
+> -- 569
+< -- 25
++ -- 204
+- -- 164
+* -- 849
+:= -- 1883
+add.period$ -- 129
+call.type$ -- 40
+change.case$ -- 40
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 597
-empty$ -- 1125
-format.name$ -- 149
-if$ -- 2835
+cite$ -- 40
+duplicate$ -- 664
+empty$ -- 1270
+format.name$ -- 164
+if$ -- 3180
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 35
-newline$ -- 178
-num.names$ -- 35
-pop$ -- 156
+int.to.str$ -- 40
+missing$ -- 40
+newline$ -- 203
+num.names$ -- 40
+pop$ -- 173
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 417
+skip$ -- 448
 stack$ -- 0
-substring$ -- 952
-swap$ -- 279
-text.length$ -- 24
+substring$ -- 1083
+swap$ -- 300
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 116
-width$ -- 37
-write$ -- 390
-(There were 12 error messages)
+warning$ -- 0
+while$ -- 133
+width$ -- 42
+write$ -- 447
+(There were 15 error messages)

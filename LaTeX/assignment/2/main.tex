@@ -71,7 +71,7 @@
 	
 	\title{\songti \zihao{4}2月工作汇报}
 	\author{\textrm{Ku Jui}}
-	\date{\textrm{Oct - Nov 2023}}
+	\date{\textrm{Feb 2024}}
 	\maketitle
 	
 	\renewcommand{\figurename}{Figure} % 可以重新定义abstract，因为ctex会覆盖thebibliography
@@ -94,427 +94,118 @@
 		
 	\tableofcontents
 	
+	\newpage
 	
 	\part{Pre-Knowledge}	
 	
-	\section{方向}
+	\section{引言}
 		
-%		弱光图像增强是图像处理领域的一个关键任务，旨在提升低光环境下拍摄图像的视觉质量。该领域的最新进展主要由深度学习技术推动，涵盖了多种学习策略、网络架构、损失函数和训练数据集的应用。低光图像增强在视觉监控、自动驾驶和计算摄影等多个领域均有广泛应用。特别是在智能手机摄影领域，由于相机光圈大小、实时处理需求和存储限制，低光环境下的图像拍摄面临着显著挑战。
-%		
-%		传统的低光增强方法，如基于直方图均衡和Retinex模型的方法，尽管在某些情况下有效，但也存在明显局限。例如，Retinex模型通常忽略噪声问题，可能导致增强结果中噪声的保留或放大；有效的先验或正则化的选择具有挑战性，不准确的先验可能导致伪影和颜色偏差；此外，这些方法的复杂优化过程也导致了较长的运行时间。
-%		
-%		近年来，基于深度学习的低光图像增强（LLIE）方法取得了显著的成功。与传统方法相比，基于深度学习的解决方案在准确性、鲁棒性和速度方面表现更佳，因此受到了越来越多的关注。然而，现有研究主要集中在亮度细化上，而忽视了色度的重要性。此外，这些方法在优化弱光图像与真实图像之间的外观距离时，往往忽略了物体边缘的模糊问题，这可能导致图像细节的损失，从而影响最终的结构相似性指数（SSIM）。
-%		
-%		针对极暗或极亮区域中图像边缘细节恢复的问题，一些研究者提出了在暗区域中加入敏感边缘先验的方法，以降低优化过程中的不适定性，并采用基于编码器-解码器的网络结构和回归损失来执行结构建模。进一步的研究提出了改进的模型，以解决弱光图像中局部边缘失真的问题，并对边缘图与弱恢复图的融合策略进行了优化。
-%		
-%		本研究提出了三个主要的创新点：首先，提出了一种基于CNN-Transformer并行架构的低光图像增强方法，用于有效地增强低光图像；其次，开发了一种从低光图像中直接提取边缘结构的多曝光策略；最后，提出了一种并联方法，用于融合边缘图和初步恢复的图像。
+		低光图像增强（Low-Light Image Enhancement, LLIE）是图像处理领域的一个关键任务，旨在提升低光环境下拍摄图像的视觉质量。该领域的最新进展主要由深度学习技术推动，包括多种学习策略、网络架构、损失函数和训练数据集的应用。低光图像增强在视觉监控、自动驾驶和计算摄影等多个领域具有广泛应用。尤其在智能手机摄影领域，由于相机光圈大小、实时处理需求和存储限制，低光环境下的图像拍摄面临着显著挑战。
 		
-		根据目前的文献研究，在 LLIE 任务中，一种方法是采用边缘检测思想来引导弱光图像增强\footnote{为什么要采用图像的边缘图片来指导弱光图像恢复？
-		首先，图像边缘图仅需要很少的数据量，其剔除了不相关的信息，保留了图像重要的结构属性。其次，低光图像通常具有很高的对比度，现有的方法可能无法在极暗或极亮的区域恢复图像边缘细节。同时，当物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。而加入边缘先验可以降低优化外观重构时的不适定程度。最后，人类视觉系统对边缘高度敏感，保留结构信息对图像重建任务的性能至关重要。定义边缘可以通过学习区分黑暗区域的不同物体来指导增强过程，而不仅仅是识别低光区域。通过保留图像中的结构属性，这使得物体之间的可见性更好。}，其策略是将边缘图与\textbf{初步恢复的图像}进行串联，然后通过单一的增强网络来实现最终的图像恢复（见Fig. \ref{fig: EEMEFN}）。恢复结果的质量往往会受到最后的增强网络设计和初步恢复图像所包含特征与真实图像特征之间的相似度的影响。
+		%介绍传统的低光图像增强方法
+		传统的低光增强方法，如基于直方图均衡化\cite{ji1994adaptive}和Retinex理论\cite{land1965, land1977retinex, jobson1997properties}的方法，虽然能够在一定程度上改善图像质量，但存在一些局限性。直方图均衡化能够提高图像的全局对比度，但可能增加背景噪声的对比度并降低有用图像内容的对比度，导致视觉效果不佳。Retinex算法旨在消除图像照度分量的干扰并还原图像真实色彩，但通常忽略噪声问题，可能导致增强结果中噪声的保留或放大，并且其复杂的优化过程增加了模型的复杂度。
 		
-		\begin{figure}[htbp]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=\columnwidth]{picture/LLIE/EEMEFN/EEMEFN framework}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: EEMEFN} 
-				该 LLIE 结构源自\cite{zhu2020eemefn},如其 Multi-Exposure Fusion部分采用多曝光融合结构,与由 Initial image 生成的边缘图进行 Concat,后续通过一个 U-Net 网络进一步恢复图像。
-			}
-		\end{figure}
+		%传统的低光增强方法，如基于直方图均衡\cite{ji1994adaptive}和 Retinex\cite{land1965, land1977retinex, jobson1997properties}的方法，直方图均衡化重新调整图像的直方图分布，一方面增加了图像的全局对比度，另一方面使得亮度在整个图像的分布更加均匀。直方图均衡化的方法非常快速有效，并且是一个可逆操作，但缺点在于其不加选择地处理数据，可能增加背景噪声的对比度，同时降低有用的图像内容的对比度，导致视觉效果欠佳。此外，该方法也无法适用于复杂多变的低光照场景。Retinex 算法的核心思想是消除源图像照度分量干扰，依据反射分量信息还原图像真实色彩。基于 Retinex 的方法能够很大程度改善图像质量，但在应用的过程中仍存在不可忽视的缺点。例如，其通常忽略噪声问题，可能导致增强结果中噪声的保留或放大；有效的先验或正则化的选择具有挑战性，不准确的先验可能导致伪影和颜色偏差；此外，这些方法的复杂优化过程也导致最终的模型较为复杂。
 		
-		根据目前的文献调研，当前的此类方法的特点只集中在通过边缘图指导图像恢复，且恢复出来的图像还是有明显噪点。
+		近年来，基于深度学习的低光图像增强技术取得了显著成就，特别是卷积神经网络（CNN）在多个计算机视觉任务中展现出卓越的性能。CNN通过利用注意力机制\cite{yang2021locally,zhang2020attention}和上下文信息，能够从原始图像中有效提取长距离特征\cite{li2018multi, zamir2020learning}。然而，现有的基于CNN的方法在处理局部光照不均匀、颜色信息和细节信息丢失问题时，仍存在过增强或增强不足的挑战，并且增强结果受到感受野大小的限制。
 		
-		\subsection{问题一} 
+		%近年来，基于深度学习的低光图像增强 (LLIE) 方法取得了显著的成功。与传统方法相比，基于深度学习的解决方案在准确性、鲁棒性和速度方面表现更佳，因此受到了越来越多的关注。近年来，基于深度学习的低光图像增强 (LLIE) 技术取得了显著成就，它使用神经网络来学习从弱光图像到自然光图像的映射。与传统方法相比，基于深度学习的解决方案在准确性、鲁棒性和处理速度方面表现更优，因此受到了广泛关注。特别是卷积神经网络（CNN）在多个计算机视觉任务中展现出卓越的性能。CNN 通过利用注意力机制和\cite{yang2021locally, zhang2020attention}上下文信息，能够从原始图像中有效提取多尺度特征\cite{li2018multi, zamir2020learning}。在这些成果的推动下，基于 CNN 的低光图像增强方法得到了持续发展。此外，现有的基于 CNN 的方法大多集中于图像亮度、纹理和颜色的恢复，对于局部光照不均匀、颜色信息和细节信息的丢失问题，仍存在过增强或增强不足的挑战，同时增强结果受到感受野大小的限制，但通过增大卷积核以及多次卷积的方法进行卷积又会增加模型的复杂度。
 		
-		\textbf{图像初步恢复的方法}目前主要包括以下几种：
+		为了解决这些问题，我们提出了一种新颖的方法（方法名待定）。受到ULite\cite{dinh20231m}中深度可分离卷积的启发，我们将U-Net网络中的卷积改为轴向深度可分离卷积，以减少模型冗余同时保持增强效果。此外，我们借鉴Swin-Unet\cite{cao2022swin}在BottleNeck中使用连续的Swin Transformer块以捕获图像长距离特征，相较于传统的Transformer块，Swin Transformer能够减少参数量和模型复杂度。通过以上改进，我们的方法能够有效提升低光图像的视觉质量，同时保持较低的计算复杂度，具有实际应用的潜力。
 		
+		%弱光图像增强结果也会受到弱光区域的形状和大小的影响，在深度学习的框架下，卷积神经网络（CNN）通过分层的卷积操作，逐步提取并加工图像的局部特征\cite{jain1991unsupervised, lowe2004distinctive, ojala2002multiresolution}，而难以获取图像中的长距离特征，进而导致结果增强过或不足，为了解决这些问题，\textcolor{red}{我们提出了一种方法(方法名待定)}。我们受到ULite\cite{dinh20231m}中深度可分离卷积的启发，将原有的 U-Net 网络中的卷积改为轴向深度可分离卷积，通过这种方式在不损害增强效果的情况下，减少模型冗余。此外，我们借鉴于 Swin-Unet\cite{cao2022swin} 在 BottleNeck 中使用连续的 Swin Transformer 块以捕获图像长距离特征。相较于使用 Transformer 块，使用 Swin Transformer 能够减少参数量和模型复杂度。
+		
+%		现有的方法仍有很大的改进空间，例如如何在提高亮度的同时消除产生的噪声，如何避免颜色失真现象等。一些现有的方法可以有效地解决一个问题，但往往会忽略了其他问题。不同的方法在不同的数据集上往往具有不同的优势，即在不同的评估标准下有不同的优势，如图.\ref{fig: VE-LOL-L Visual}展示了不同算法在 VE-LOL-L 数据集下的可视化结果。
+%
+%		\begin{figure}[htbp]
+%			\centering
+%			\setlength{\abovecaptionskip}{-0.05cm}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/input}
+%				\captionsetup{font=scriptsize}
+%				\caption*{input \\ \quad }
+%				\label{fig: input}
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/LLNet}
+%				\captionsetup{font=scriptsize}
+%				\caption*{LLNet \\ (2017)}
+%				\label{fig: LLNet_VE_LOL}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RetinexNet}
+%				\captionsetup{font=scriptsize}
+%				\caption*{RetinexNet \\ (2018)}
+%				\label{fig: RetinexNet_VE_LOL}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/MBLLEN}
+%				\captionsetup{font=scriptsize}
+%				\caption*{MBLLEN \\ (2018)}
+%				\label{fig: MBLLEN_LOL}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/EnlightenGAN}
+%				\captionsetup{font=scriptsize}
+%				\caption*{EnlightenGAN \\ (2019)}
+%				\label{fig: EnlightenGAN_VE_LOL}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/RRDNet}
+%				\captionsetup{font=scriptsize}
+%				\caption*{RRDNet \\ (2020)}
+%				\label{fig: RRDNet_VE_LOL}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/DRBN}
+%				\captionsetup{font=scriptsize}
+%				\caption*{DRBN \\ (2020)}
+%				\label{fig: DRBN_VE_LOL}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/Zero-DCE++}
+%				\captionsetup{font=scriptsize}
+%				\caption*{Zero-DCE++ \\ (2021)}
+%				\label{fig: Zero-DCE++}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/KinD++}
+%				\captionsetup{font=scriptsize}
+%				\caption*{KinD++ \\ (2021)}
+%				\label{fig: KinD++}	
+%			\end{subfigure}
+%			\begin{subfigure}{0.17\columnwidth}
+%				\includegraphics[width=\linewidth]{picture/LLIE/VE-LOL-L/URetinexNet}
+%				\captionsetup{font=scriptsize}
+%				\caption*{URetinexNet \\ (2022)}
+%				\label{fig: URetinexNet}	
+%			\end{subfigure}
+%			\caption{
+%				\label{fig: VE-LOL-L Visual} 
+%				不同算法对从VE-LOL-L 数据集采样的低照度图像的可视化结果。
+%			}
+%		\end{figure}
+		
+		
+		%针对极暗或极亮区域中图像边缘细节恢复的问题，一些研究者提出了在暗区域中加入敏感边缘先验的方法，以降低优化过程中的不适定性，并采用基于编码器-解码器的网络结构和回归损失来执行结构建模。进一步的研究提出了改进的模型，以解决弱光图像中局部边缘失真的问题，并对边缘图与弱恢复图的融合策略进行了优化。
+		
+		本研究提出了三个主要的创新点：(\textcolor{red}{若并行架构未实现或性能不佳，则可尝试仅通过CNN分支进行图像的弱光恢复，并相应调整创新点，去除并行架构这一创新点。})
 		\begin{itemize}
-			\item[(1)] 
-			利用多曝光技术\footnote{多曝光技术已被实验证明可以有效的解决 LLIE 任务中普遍存在的色彩失真问题。}获得具有不同曝光度的图像，然后结合恢复网络进行初步恢复\footnote{常见的架构如基于 GAN 的多曝光图像融合架构，基于端到端深度学习框架下多曝光图像融合算法，基于稀疏表示和可平移复方向金字塔变换的多曝光融合框架。}；
-			
-			\item[(2)]
-			我们提出的 CNN 和 Transformer 并行架构（见Fig. \ref{fig: First Architecture}）。
-			
-			\item[(3)]
-			直接通过神经网络进行弱恢复。
-			
-		\end{itemize}	
-		
-		但由于噪声和伪影的存在，以及色彩与真实图像之间的差异，后者结果通常并不理想。
-
-		\subsection{问题二} 
-		
-		此外，\textbf{获取边缘图的方法}也各不相同，在 LLIE 任务中，常见方法采用\textbf{边缘检测网络}来生成边缘图。Canny 和 Sobel 算子通常被用作对比实验，也有一些研究采用辅助边缘网络以提高边缘图生成的准确性。这些方法在弱光图像恢复研究中都具有一定的学术和实际应用价值。目前在 LLIE 领域中获取边缘图分化成了两个不同的方向，一种是采用初步恢复图像获取边缘图（如Fig. \ref{fig: EEMEFN}），另一种是直接采用弱光图像获取边缘图。
-		
-		\begin{figure}[htbp]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=\columnwidth]{picture/LLIE/Structure Modeling and Guidance/Overview}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Overview} 
-				该结构的边缘图直接从 $I$ 中通过 StyleGAN 得到边缘图 $I_s$, 而非从 $I_{\alpha}$ 中通过边缘网络获取边缘图。
-			}
-		\end{figure}
-		
-		图像处理任务中边缘检测的各种方法：
-		
-		\begin{itemize}
-			\item[(1)] 
-			手工设计各种滤波器来生成边缘图。
-			
-			\item[(2)]
-			根据人类设计的特征使用数据驱动模型来预测边缘（随机决策森林来学习边缘斑块）
-			
-			\item[(3)]
-			深度学习方法从原始数据中学习复杂的特征表示端到端边缘检测模型。
-		\end{itemize}	
-		
-		\subsection{问题三}
-		
-		在增强网络的设计方面，主要采用了两种主要架构：StyleGAN 和 U-Net。这些网络通常通过串联操作或将边缘图像的分块作为卷积核的方式来引导图像恢复过程。关键点在于边缘图如何为\textbf{初步恢复图片}提供先验增强。
-		
-	\section{创新想法}
-		
-		在目前的研究中，我们探索了不同的边缘图生成方法，并引入了基于 VGG 网络的方法，同时采用 Canny 边缘检测作为参考对比方法。我们的主要目标是设计一种综合恢复策略，结合了以下几个关键元素：边缘图、初步恢复图以及原始图像的 Y/Cb/Cr 通道信息。
-		
-		\begin{figure}[htbp]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=\columnwidth]{picture/LLIE/Conformer/the proposed Conformer}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Conformer architecture} 
-				Network architecture of the proposed Conformer. (a) Up-sampling and down-sampling for spatial alignment of
-				feature maps and patch embeddings. (b) Implementation details of the CNN block, the transformer block, and the Feature Coupling Unit (FCU). (c) Thumbnail of Conformer.
-			}
-		\end{figure}
-		
-		在初步恢复图的生成方面，我们受到了 Conformer\cite{peng2021conformer} 结构的启发，在卷积神经网络 (CNN) 中，卷积操作擅长提取局部特征，但难以捕获全局表示。Conformer 是一种混合网络结构，包含了并行的 CNN 分支和 Transformer 分支，其通过特征耦合模块融合局部与全局特征，目的在于不损失图像细节的同时捕捉图像全局信息。我们借鉴 Conformer 并发结构 (见 Fig. \ref{fig: Conformer architecture})，将其中 CNN 分支的 ResNet 结构修改为 U-Net 结构(见Fig. \ref{fig: U-Net and AM})。基于这一点，我们设计了一种结合 U-Net 与 Transformer 网络的并行模型 (PACUT, Parallel architecture combining u-net and transformer)(见 Fig. \ref{fig: First Architecture})。这一模型旨在从弱光图像中提取长距离和短距离特征，以便更全面地捕捉图像的信息。通过特定的特征融合策略，我们期望能够得到初步恢复的图像。
-		
-		至于增强网络的设计，目前计划使用 PACUT 中的 U-Net 改进分支。我们的研究侧重于构建一个整体恢复框架，该框架利用边缘图、初步恢复图和通道信息的融合，以提高弱光图像的质量。我们将继续探索合适的增强网络结构，以便进一步提升恢复结果的性能。这一研究旨在为弱光图像恢复领域提供新的理论和方法，以及改善图像质量并拓展应用领域。
-		
-		\section{具体实现}
-		
-		\subsection{Abstract}
-		
-		在当前的研究中，我们提出了一种新型的深度学习架构，命名为 PACUT ，旨在解决低光照条件下的图像增强问题。该模型结合了经典的U-Net架构和 Transformer 深度学习方法，在弱光图像增强任务中，提高恢复图像的可视性和质量，同时保留重要的细节和纹理信息。
-		
-		我们提出的 PACUT 模型基于 Conformer 架构，该架构因为在耦合局部特征和全局表示方面的强大潜力而备受欢迎。在 Conformer 中，利用卷积算子提取局部特征，并利用自注意力捕获全局表示，结合特征耦合单元 FCU 来融合局部特征和全局表示，以交互方式增强视觉表示能力。在下游任务中，Conformer显示了成为简单而有效骨干网络的巨大潜力。我们提出的 PACUT 在此基础上进行了以下关键改进：
-		
-		\begin{itemize}
-			
-		\item[(1)] 
-			深度卷积网络 (CNN) 分支： 该分支基于 U-Net 架构，采用多层卷积神经网络，通过逐层提取图像的局部特征来增强图像的细节和纹理。此分支的设计旨在处理图像的低级特征，如边缘、纹理和颜色信息。
-			
-		\item[(2)]
-			Vision Transformer (ViT) 分支： 该分支利用了 Vision Transformer 的能力，通过自注意力机制捕捉图像的长距离依赖关系。ViT分支专注于提取图像的全局特征，如整体结构和上下文信息。
-			
-		\item[(3)]
-			特征耦合单元 (FCU)： 为了有效地融合 CNN 分支和 ViT 分支的特征，引入了特征耦合单元 (FCU)。FCU 通过下采样 (FCUDown) 和上采样 (FCUUp) 操作，实现了 CNN特征图和 Transformer patch embeddings 之间的无缝转换，从而实现了局部特征和全局表示的连续耦合。
-			
-		\end{itemize}
-		
-		
-		PACUT 模型在低光照图像增强领域展现出巨大潜力。其能够有效提升图像的亮度和对比度，同时保留关键细节，适用于监控、医学成像、天文观测等领域。此外，该模型的设计理念也可推广应用于其他图像处理任务，如图像去噪、超分辨率和风格迁移。我们在弱光图像增强任务中，创新性地提出了并行特征耦合策略，为深度学习在 LLIE 任务中的应用提供了一种全新的视角。
-		
-		\subsection{PACUT Architecture}
-		
-		在计算机视觉领域，我们往往研究图像的两种主要特征：局部特征和全局表征。局部特征\cite{jain1991unsupervised}\cite{lowe2004distinctive}\cite{ojala2002multiresolution}是对图像中小区域的紧凑向量描述，它们是许多计算机视觉算法的基础。而全局表征则包括更宽范围的特征，比如长距离的轮廓\cite{lisin2005combining}、形状描述符以及不同对象的类型。在深度学习的背景下，卷积神经网络 (CNN) 通过层级的卷积操作，逐层提取图像的局部特征，并将这些特征保留在特征图中。而视觉变换器则通过一系列自我关注的模块，以一种更加灵活的方式，将这些特征聚合起来，形成对整体图像的全局理解。
-		
-		为了充分利用局部特征和全局表征，我们设计了一种并行网络结构，如Fig. \ref{fig: The proposed initial architecture(Abstract Picture)}所示，称为 PACUT (Parallel architecture combining u-net and transformer)。考虑到这两种模型风格特征的互补性，在 PACUT 中，我们通过一个交互过程以互补两种模型的优劣，将 Transformer 分支的全局上下文连续输入到特征图中，以增强卷积神经网络 (CNN) 分支的全局感知能力。同样，CNN 分支的局部特征逐步反馈到 Patch Embedding 中，以丰富 Transformer 分支的局部细节。
-		
-		\begin{figure}[htb] 
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			% \includegraphics[width=0.8\columnwidth]{GLADNet}
-			
-			\begin{subfigure}{\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture.jpg}
-				\captionsetup{font=scriptsize}
-				\caption{PACUT}
-				\label{fig: First Architecture}
-			\end{subfigure}\\
-			\begin{subfigure}{0.4\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/Up-sampling and down-sampling}
-				\captionsetup{font=scriptsize}
-				\caption{Up-sampling and Down-sampling}
-				\label{fig: Up-sampling and down-sampling}
-			\end{subfigure} \
-			\begin{subfigure}{0.4\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/My Architecture/The proposed initial architecture(Abstract Picture)}
-				\captionsetup{font=scriptsize}
-				\caption{Thumbnail of PACUT}
-				\label{fig: The proposed initial architecture(Abstract Picture)}	
-			\end{subfigure}
-			
-			\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: PACUT}
-				PACUT 模型结构。Fig. \ref{fig: First Architecture} CNN 分支和 Transformer 分支以及 FCU (Feature Coupling Unit)。Fig. \ref{fig: Up-sampling and down-sampling} 特征映射和 Patch embeddings 空间对齐的上采样和下采样过程。 Fig. \ref{fig: The proposed initial architecture(Abstract Picture)} PACUT 的缩略图。PACUT 结构受 Conformer\cite{peng2021conformer} （见 Fig. \ref{fig: Conformer architecture}）启发，将原来结构中 CNN 分支的 ResNet 结构修改为 U-Net 结构。其采用一个 U-Net 和 ViT 的并行架构，通过 U-Net 结构得到一个弱恢复的弱特征图 $\mathcal{F}_2$，通过 ViT 融合的特征可以初步增强弱特征图 $\mathcal{F}_2$，ViT 的输出经过 Patch Expanding 的特征图 $\mathcal{F}_3$ 经过与 U-Net 输出的特征图 $\mathcal{F}_2$ 融合之后得到一个初步恢复的图片 output image，用以后续参与图片的进一步恢复。
-			}
-		\end{figure}
-		
-		详细地说，PACUT 由双分支、Stem 模块、用于连接双分支的特征连接单元 (FCU, Feature Coupling Unit)，以及为双分支设计的一个融合模块 (Fusion Block) 组成。Stem 模块由 VGG16 网络的前四层组成，截至第一个最大池化层，用于提取图像的初始局部特征，如边缘、纹理等，然后将其输入到 CNN 分支。
-%		我们通过以下步骤实现了这一结构：首先，加载预训练的 VGG16 模型；随后，利用 PyTorch 框架中的 nn.Sequential 方法，将 VGG16 的特征层 (vgg.features) 转换为一个序列，并选择这个序列的前四个子层作为我们的 Stem 模块。
-		Stem 模块的主要作用是提取图像的初始局部特征，如边缘、纹理等。CNN 分支是一种改进的 U-Net 网络结构，Transformer 分支由 去掉分类功能只保留特征提取功能的 Vision Transformer 结构组成。 
-		
-		这样的并行结构意味着CNN分支和变换器分支分别能够最大限度地保留局部特征和全局表征。我们提出 FCU 作为一种桥接模块，用于融合CNN分支中的局部特征和变换器分支中的全局表征，如 Fig. \ref{fig: First Architecture} 所示。 FCU 从第二步开始应用，因为两个分支的初始特征是相同的，只是表征形式不同。沿着分支，FCU 通过两个来回式的交互融合特征图和 Patch Embeddings。
-		
-		最后，两个分支的特征都被输入到特征融合模块中。对于 Transformer 分支，我们为了更好的利用获取的长距离特征，在进行 Patch Expanding 操作之前，通过 FCU 与 CNN 分支融合。最后两个分支通过特征融合模块处理后获取增强图像。在训练过程中，我们结合 $\mathcal{L}_1$ 和 SSIM 损失函数来同时优化模型在像素级误差和感知质量方面的表现。
-
-		
-		\subsubsection{CNN Branch}	
-			
-		CNN 分支的基础是 U-Net 结构，这是一种专门为图像分割任务设计的网络架构，但在图像增强领域也表现出色。U-Net 的特点是其对称的编码器-解码器结构，以及编码器和解码器之间的跳跃连接。CNN 分支的目标是从输入的弱光图像 (LLI) 中提取丰富的特征，包括边缘、纹理、颜色、亮度信息，并最终输出增强的图像 (EI)。
-		
-		\paragraph{UNetEnhance}
-		
-		UNetEnhance 模型是一种针对低光照图像增强任务设计的深度学习架构。该模型基于经典的 U-Net 架构，并引入了多项改进，以提高对低光照环境下图像的处理能力。这些改进包括更深的网络结构、改进的特征融合机制和高效的信息传递路径。
-		
-		\begin{figure}[htb]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=\columnwidth]{picture/LLIE/My Architecture/U-Net and AM}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: U-Net and AM} 
-				U-Net 图像初步恢复网络及其所属的模块。
-			}
-		\end{figure}
-		
-		我们提出的 UNetEnhance 模型如 Fig. \ref{fig: U-Net and AM} 所示，它由两个部分组成：1) 编码器子网络 (Encoder subnetworker)，2) 解码器子网络 (Decoder subnetworker)。对于编码器子网络，UNetEnhance 采用了多层卷积网络，在每层中我们添加了集成模块，在集成模块中又添加了空间注意力机制和通道注意力机制\cite{woo2018cbam}。与传统 U-Net 相比，这一设计增加了网络的深度，从而能够捕获更加丰富的特征信息。我们通过引入更多的卷积层，使得模型能够在更深的层次上理解图像内容。解码器部分采用了上采样和卷积操作，以逐步恢复图像的空间分辨率。在这一过程中，引入了改进的特征融合策略，将编码器中的低级特征与解码器的高级特征有效结合，从而更好地重建图像细节。同时，UNetEnhance 模型在跳跃连接的设计上进行了优化，以更有效地传递编码器中的特征信息到编码器。这些连接不仅帮助保留了在下采样过程中可能丢失的细节信息，还增强了网络的特征重建能力。此外，模型的输出层经过特别设计，以确保输出图像在视觉上的质量和连贯性，我们通过准确的调整解码器子网络中的卷积操作，将解码器的输出转换为与原始输入图像相同尺寸的增强图像。
-		
-		假设 $I_{LLI}$ 表示输入的弱光图像，$I_{EI}$ 表示输出的增强图像。编码器子网络 $\mathcal{E}$ 和解码器子网络 $\mathcal{D}$ 的操作可以表示为：
-		
-		\begin{equation}
-			\begin{aligned}
-				I_{EI} = \mathcal{D} \left( \mathcal{E} \left( I_{LLI} \right) \right)
-			\end{aligned}
-			\label{eq: UNetEnhance model}
-		\end{equation}
-		
-		对于 AM 集成模块(Fig. \ref{fig: U-Net and AM}b)，其操作可表示为：
-		
-		\begin{equation}
-			\begin{aligned}
-				\text{AM}_{i}(x) = f^{1 \times 1} \left(f^{3 \times 3} \left(\text{SCConv}\left( \text{ARMB} \left( f^{1 \times 1} (x)\right)\right)\right)\right)
-			\end{aligned}
-			\label{eq: Aggregation Module}
-		\end{equation}
-		
-		其中，$f^{1\times1}$为 $1 \times 1$ 卷积层，ARMB 和 SCConv 的操作依据其内部结构进行。
-		
-		编码器首先通过一个 $1 \times 1$ 卷积层处理输入图像，用于提取初始特征。然后连续通过四个单元，前三个单元每一个都由一个 AM 集成模块 $\text{AM}_i$ 和一个池化层组成，第四个单元仅包含一个 AM 集成模块。AM 集成模块由一系列卷积层和特殊的注意力机制组成的复杂结构，包括 ARMB 模块和 SCConv 模块，见 Eq. \ref{eq: Aggregation Module}。
-		
-		解码器首先通过一个上采样模块，然后与 $\text{AM}_{3}$ 进行拼接操作，然后通过 $\text{AM}_{5}$ 集成模块和上采样模块，然后与 $\text{AM}_{2}$ 拼接，然后通过 $\text{AM}_{6}$ 集成模块和上采样模块，然后与 $\text{AM}_{1}$ 拼接，最后通过 $\text{AM}_{7}$ 集成模块和 $1 \times 1$ 卷积层。
-		
-		\paragraph{Attentive Residual Multiscale Block}
-		
-		ARMB (Attention Residual Merging Block) 是一种用于深度学习模型中的结构单元，特别是在处理图像相关任务时，它的主要作用是融合来自不同来源的特征，并通过注意力机制增强模型对关键信息的关注。其核心作用之一是融合来自模型不同层或不同分支的特征。这种融合有助于结合低级特征（如边缘和纹理）和高级特征（如对象部分和语义信息），从而提升模型的表现力。ARMB 中的注意力机制有助于 UNetEnhance 更加关注于图像中的重要区域或特征。通过加权重要特征，ARMB 可以提高模型对关键信息的敏感性。ARMB 通过残差连接来解决深度神经网络中的梯度消失问题。如Fig .\ref{fig: U-Net and AM}c 所示，残差连接允许信息直接从早期层传递到后续层，从而保持信息流的连续性。
-		
-		模块对输入特征 $\mathcal{F}$ 进行两次分支下采样，分别获取尺寸为 $\frac{1}{2}$ 和 $\frac{1}{4}$ 的特征。每个分支使用空间注意力 (Spatial Attention) 过滤噪声，通过 $3 \times 3$ 卷积层提取特征，并通过上采样恢复到原始尺寸。将两个特征图拼接后，通过$ 1 \times 1$ 卷积层处理，再应用通道注意力 (Channel Attention) 进行特征加权，最后通过跳跃连接与原始输 $\mathcal{F}$ 合并，得到最终特征图。
-		
-		假设 $\mathcal{F}_{in}$ 是输入特征图，$\mathcal{F}_{out}$ 是输出特征图，$\mathcal{F}_{i}^\prime$ 表示对特征图进行裁剪或放大，见下式：
-		
-		\begin{equation}
-			\begin{aligned}
-				&\mathcal{F}^\prime_{\frac{1}{2}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{2},\frac{W}{2}\right)\right), \\
-				&\mathcal{F}^\prime_{\frac{1}{4}} = \text{Resize}\left(\mathcal{F}_{in},\left(\frac{H}{4},\frac{W}{4}\right)\right), \\
-				&\mathcal{F}_{out} = W_1\mathcal{F}_{out} + W_2\mathcal{C} \left( f^{1 \times 1}  \left[\mathcal{F}^\prime_2 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{2}}))), \mathcal{F}^\prime_4 (f^{3 \times 3}(\mathcal{S}(\mathcal{F}^\prime_{\frac{1}{4}})))\right] \right).
-			\end{aligned}
-			\label{eq: ARMB}
-		\end{equation}
-		
-		其中 $\mathcal{S}$ 和 $\mathcal{C}$ 分别表示空间注意力函数和通道注意力函数，$W_1$ 和 $W_2$ 为对应的特征图权重。
-		
-		\paragraph{SCConv}
-		
-		SCConv 模块是一种用于特征冗余的空间和通道重构卷积，由 SRU 和 CRU 两个子模块组成。SRU 用于通过门控机制选择性地激活特征，而 CRU 负责特征的融合和重构。
-		
-		\subsubsection{Transformer Branch}
-		
-		Transformer 分支主要基于 Vision Transformer (ViT) 架构，用于从图像中提取全局特征。这一分支的目标是捕获图像中的长距离依赖关系，以辅助 CNN 分支的局部特征提取。
-		
-		\paragraph{Patch Embedding}
-		
-		在深度学习和计算机视觉中，Patch Embedding 是一种常见的操作，它将图像分割成更小的块 (patches)，然后将这些块转换成一系列的向量，这些向量可以被用作模型的输入。
-		
-		\begin{figure}[htb]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=0.5\columnwidth]{picture/LLIE/My Architecture/Patch Embedding}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Patch Embedding} 
-				Patch Embedding 的一般性过程。
-			}
-		\end{figure}
-		
-		首先，对原始的弱光图像 $P_1$ 压缩尺寸至固定尺寸，以匹配预训练 Vision Transformer 模型的权重。对 LLI 进行 Patch Embedding，得到 576 个 D 维的特征向量，每个向量对应于一个 $16 \times 16$ 的 patch。然后，将 $384 \times 384$ 的特征向量重新排列成 576 个 $16 \times 16$的 patches，然后每个 patch 也被 flatten 成 256 维的向量。因为是三通道特征，所以实际上每个通道被 flatten 成 256 维，总计 $256 \times 3$ 维的向量 $\ell_1$。
-		
-		\begin{figure}[htb]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=0.8\columnwidth]{picture/LLIE/My Architecture/Patch Embedding(ViT)}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Patch Embedding(ViT)} 
-				Transformer 分支中 Patch Embedding 的过程。
-			}
-		\end{figure}
-		
-		实际上，我们可以将 $\ell_1$ 通过一个 Linear Projection，使其转换成 D 维的向量，如 Fig. \ref{fig: Patch Embedding(ViT)} 所示。
-		
-		Patch Embedding 的具体过程可以被描述为下列过程：
-		
-		\begin{itemize}
-			\item[$\bullet$] 
-			输入图像 $X \in \mathbb{R}^{H \times W \times C}$，其中 $H$,$W$和$C$ 分别代表图像的高度、宽度和通道数。
 			\item[$\bullet$]
-			图像被分割成 $N$ 个大小为 $P \times P$ 的 patches，每个 patch 被展平并线性投影到 D 维空间，得到 patch embeddings $E \in \mathbb{R}^{N \times D}$
+			%首先，提出了一种结合 CNN 和 Transformer 的并行架构用于弱光图像增强。我们发现卷积网络通过合理的增加感受野大小，可以有效捕获图像的局部特征，因而我们利用 UNet 网络对弱光图像进行弱恢复，使用 Swin Transformer 块捕获图像的长距离特征，最后通过特征融合块将二者特征加以融合。
+			
+			首先，提出了一种结合卷积神经网络（CNN）和Transformer的并行架构用于弱光图像增强。在该架构中，UNet网络用于捕获图像的局部特征并进行初步恢复，而Swin Transformer块用于捕获图像的长距离特征。最后，通过特征融合块将两者的特征进行融合，以实现更全面的图像增强效果。
+			\item[$\bullet$] 
+			%其次，在CNN分支中，提出了一个深度语义模块，融合 Swin Transformer 分支，能有效捕获图像长距离特征；
+			其次，提出了一个深度语义模块，该模块融合了Swin Transformer分支，使CNN分支能够有效捕获图像的长距离特征。这种设计增强了CNN分支的能力，使其能够更好地理解图像的全局上下文信息。
+			\item[$\bullet$]
+			%最后，我们将深度可分离卷积融合进 CNN 分支中，应用于轻量级网络用于提取图像的局部特征；
+			最后，将深度可分离卷积融合进CNN分支中，应用于轻量级网络用于提取图像的局部特征。这种设计旨在减少模型的参数量和计算复杂度，同时保持对局部特征的有效提取能力。
 		\end{itemize}
 		
-		Fig. \ref{fig: First Architecture} 显示了在 Patech Embedding 之后，会将特征 $\mathcal{F}_1$ 进行变换处理之后与向量 $\ell_1$ 进行 Concat 操作（不经过处理特征 $\mathcal{F}_1$ 无法直接与向量 $\ell_1$ 拼接）。
-		
-		使用 $20 \times 20$ 的 Patch 大小进行 Embedding，但是这个大小是否合适取决于输入图像的尺寸和细节的重要性。如果图像中包含细小的重要特征，较小的 Patch 可能更合适。另一方面，较大的 Patch 可能会捕捉到更高层次的抽象特征。后续可能需要实验不同的 Patch 大小来找到最佳的平衡点。
-		
-		\paragraph{Positional Encoding}
-		
-		在Transformer中，由于缺乏像卷积神经网络 (CNN) 那样的固有空间结构，需要一种方法来告知模型不同 patches 之间的相对或绝对位置。Positional Encoding就是为了解决这个问题而设计的。
-		
-		Positional Encoding 通常是通过将一个固定的或可学习的编码添加到每个 patch 的 embedding 中来实现的。这个编码是根据 patch 在原始图像中的位置计算得出的。一种常见的方法是使用正弦和余弦函数的组合来生成每个位置的编码。例如，对于位置 pos 和维度 i，编码可以计算为：
-		
-		\begin{equation}
-			\begin{aligned}
-				&\text{PE}(\text{pos}, \ 2i) = \sin \left(\frac{\text{pos}}{10000^{\frac{2i}{D}}}\right) \\
-				&\text{PE}(\text{pos}, \ 2i + 1) = \cos \left(\frac{\text{pos}}{10000^{\frac{2i}{D}}}\right)
-			\end{aligned}
-			\label{eq: positional encoding}
-		\end{equation}
-		
-		其中，D 是 embedding 的维度。计算出的 Positional Encoding 被加到每个 patch 的 embedding 上。位置编码为 $PE \in \mathbb{R}^{N \times D}$，Positional Encoding 被描述为 $E_{pos} = E + PE$。 这样，即使在多头自注意力机制中，模型也能够利用这些编码来理解和利用 patches 之间的相对位置信息。在ViT中，Positional Encoding对于模型理解图像内容至关重要。它允许模型捕捉到图像中的空间层次结构和对象之间的相对位置关系，这对于图像理解任务来说是非常重要的。
-		
-		我们采用 timm 库来创建预训练的ViT模型，并移除了原始的分类头，在 timm 库中创建的预训练 ViT 模型已经内置了Positional Encoding的过程。
-		
-		\paragraph{Transformer Encoder}
-		
-		在Vision Transformer (ViT) 架构中，Transformer Encoder 是核心组件，负责处理图像的序列化表示。经过位置编码的 Patch Embeddings 被送入 Transformer 的编码器。如 Fig. \ref{fig: First Architecture} 所示，Transformer 编码器主要设计两个主要步骤，包括多头自注意力机制 (Multi-head Self-Attention) 和多层感知器 (Multi-Layer Perceptron)。这些组件共同工作，以捕获图像中的复杂特征和长距离依赖关系。
-		
-		其中，多头自注意力机制允许模型在处理每个图像 patch 时同时考虑其他所有 patch 的信息。通过这种方式，模型能够捕获图像中不同区域之间的复杂关系和依赖性。在多头自注意力中，注意力机制被分割成多个“头”，每个头学习图像的不同方面，从而提高了模型的表达能力。MLP 由多个线性层和非线性激活函数组成，它为模型引入了必要的非线性处理能力。这种非线性是处理复杂数据（如图像）时不可或缺的，因为它允许模型学习更加复杂和抽象的特征表示。
-		
-		对于每个 Transformer 层 $l$，输入 $X_l$ 经过以下过程：
-		
-		\begin{itemize}
-			\item[1)] 
-			多头自注意力 (MSA):
-			\begin{equation}
-				\begin{aligned}
-					\text{MSA}(X_l) = [\text{head}_1, \text{head}_2, \ldots, \text{head}_k] W^{O}
-				\end{aligned}
-				\label{eq: MSA}
-			\end{equation}
-			其中每个 head 是 $\text{head}_i = \text{Attention}\left(X_l W_i^Q, X_l W_i^K, X_l W_i^V \right)$。Attention 机制通常定义为
-			\begin{equation}
-				\begin{aligned}
-					\text{Attention}(Q, K, V) = \text{softmax} \left(\frac{QK^T}{\sqrt{d_k}} \right) V
-				\end{aligned}
-				\label{eq: Attention}
-			\end{equation}
-			其中 $d_k$ 是 key 向量的维度。
-				
-			\item[2)]
-			残差连接和层归一化:
-			\begin{equation}
-				\begin{aligned}
-					X_l^\prime = \text{LayerNorm} \left(X_l + \text{MSA}(X_l)\right)
-				\end{aligned}
-				\label{eq: MSA}
-			\end{equation}
-			\item[3)]
-			多层感知机:
-			
-			MLP 包含两个全连接层和一个激活函数，即 $\text{MLP} (X_l^\prime) = \text{FC}\left(\text{GELU}\left(\text{FC}(X_l^\prime)\right)\right)$
-			
-			\item[4)]
-			第二个残差连接和层归一化：
-			\begin{equation}
-				\begin{aligned}
-					X_{l+1} = \text{LayerNorm} (X_l^\prime + \text{MLP}(X_l^\prime))
-				\end{aligned}
-				\label{eq: layernorm}
-			\end{equation}
-		\end{itemize}
-		
-		经过一层 Transformer Encoder 处理后，得到的输出 $X_L$ 可以用于下一步的处理。
-		
-		Transformer Encoder 通过多层自注意力和 MLP 的堆叠，有效地处理图像数据，捕获长距离依赖关系，并学习复杂的特征表示。这种架构使得模型能够处理高维度的图像数据，并提取有用的特征，为后续的图像处理任务提供强大的特征支持。
-		
-		\subsubsection{Feature Coupling Unit}
-		
-		CNN 分支中特征映射和 Transformer 分支中 patch embedding，如何消除他们之间的错误是一个重要的问题，为了解决这个问题，使用 FCU 以交互的方式将局部特征和全局表示进行连续耦合。一方面，认识到 CNN 到 Transformer 的特征维数是不一致的，CNN 特征图的维数为 $H \times W \times C$ 分别为高度、宽度和通道。而 patch embedding 的形状为 $K \times D$，其中$K, \ D$分别表示图像 patch 的数量和 embedding 的维度。用于分类的 Vision Transformer 模型中 patch embedding 的形状为 $\left( K + 1 \right) \times D$，其中 1 为类别嵌入 (Class Token)，但是在 Transformer 分支中，我们去除了类别嵌入。
-		
-		其中，类别嵌入是一种特殊的嵌入，用于代表整个输入序列的全局信息。这个概念最初是在 BERT 等自然语言处理模型中使用的，后来被引入到 Vision Transformer(ViT) 中用于图像处理。在 ViT 中，类别嵌入被添加到图像的 patch embeddings 序列的开始位置，以便在自注意力机制的处理过程中聚合全局信息。一般来说，去除类别嵌入，通常不会影响特征图的恢复能力，尤其是在图像增强或其他非分类任务中。类别嵌入主要用于聚合全局信息，通常在图像分类任务中更为重要。在其他类型的任务中，如图像增强、分割或者超分辨率，模型的重点在于保持和恢复图像的空间特征，而不是提取全局代表性特征用于分类。
-		
-		当 CNN 分支的特征图馈送到 Transformer 分支时，特征图首先通过 $1 \times 1$ 卷积来对齐 patch embedding 的通道编号。然后使用下采样模块(见 Fig .\ref{fig: Up-sampling and down-sampling})完成空间尺寸对齐。最后，特征图添加 patch embedding，Fig .\ref{fig: First Architecture} 所示，当从 Transformer 分支馈送到 CNN 分支，需要对 patch embedding 进行上采样(见 Fig .\ref{fig: Up-sampling and down-sampling})，以对齐空间比例，然后通过 $1 \times 1$ 卷积将通道尺寸和 CNN 特征图的尺寸对齐，并添加到特征图中，LayerNorm 和 BatchNorm 用于正则化特征。
-		
-		另一方面，特征映射和 patch embedding 之间存在显著的语义鸿沟，即特征映射是从局部卷积算子收集的，而 patch embedding 则是通过自注意力机制聚合的，所以通过应用 FCU 可以填补语义空白。
-		
-		\subsubsection{Feature fusion module}
-		
-		\begin{figure}[htb]
-			% read manual to see what [ht] means and for other possible options
-			\centering 
-			\includegraphics[width=0.7\columnwidth]{picture/LLIE/My Architecture/Fusion Block}
-			%\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: Fusion Block} 
-				融合模块的结构。
-			}
-		\end{figure}
-		
-		在 U-Net 网络编码器结构中，浅层特征包含丰富的纹理信息和颜色信息，多层卷积得到的高层特征包含全局信息。对于弱光图像增强，需要尽可能的保留输出结果中的颜色信息。为此，PACUT 结构引入了图像通道来保留具由特定颜色特征的信息，从而更好的恢复暗区信息，防止亮区信息过度曝光。具体来说，在 U-Net 网络中设计了三个条约链接，将浅层特征发送到后头，以解决颜色信息丢失的问题。为了有效的融合 ViT 和 U-Net 特征，提出一个如 Fig. \ref{fig: Fusion Block}所示的特征融合模块。其输入由两部分组成，即 PACUT 中 U-Net 分支得到的特征 $\mathcal{F_2}$ 和 ViT 分支中 Patch Expanding 后得到的特征 $\mathcal{F_3}$。该模块包含两个步骤。
-		
-		第一步，将两个尺寸为 $H \times W \times C$的特征图连接起来，形成一个尺寸为 $H \times W \times 2C$的特征图 $\mathcal{F}_4$。以该特征图为输入，通过 $3 \times 3$ 的卷积核，步长为1，进一步得到大小为 $H \times W \times 2C$ 的特征图 $\mathcal{F}_5$。这个过程可以有效的捕获颜色信息，表示为 
-		
-		\begin{equation}
-			\begin{aligned}
-				\mathcal{F}_5 = \delta \left( f^{3 \times 3} (\mathcal{F}_4)\right)
-			\end{aligned}
-			\label{eq: capture color information}
-		\end{equation}
-		
-		在第二步中，通过为不同的通道分配适当的权重来重新校准特征映射 $\mathcal{F}_5$。为此，构建一个由两个加权支路和一个短连接组成的模块，如 Fig. \ref{fig: Fusion Block}所示。首先，通过全局平均池化将特征映射 $\mathcal{F}_5$ 压缩成 $1 \times 1 \times 2C$ 个向量；同时，特征映射 $\mathcal{F}_5$ 还需要进行全局最大池化，以尽可能的保留纹理细节。得到的 $1 \times 1 \times 2C$ 向量中的每一个元素表示通道信息。它们的公式为
-		
-		\begin{equation}
-			\begin{aligned}
-				\mathcal{Z}_{GAP} = \frac{1}{H \times W} \sum_{i}^{H} \sum_{j}^{W} {\mathcal{F}_5}_C (i,j)
-			\end{aligned}
-			\label{eq: avgpool}
-		\end{equation}
-		
-		\begin{equation}
-			\begin{aligned}
-				\mathcal{Z}_{GMP} = \max \left( \mathcal{F}_5 \right)
-			\end{aligned}
-			\label{eq: maxpool}
-		\end{equation}
-		
-		其中 $\mathcal{Z}_{GAP}$ 和 $\mathcal{Z}_{GMP}$ 分别为全局平均池化和全局最大池化得到的特征值，${\mathcal{F}_5}_C$ 为 $\mathcal{F}_5$ 的第 $C$ 个通道的特征。接下来，这两个压缩向量通过两个完全连接的层进行加权，以获得各自的权重向量。最后，通过特征向量乘以相应的权值，得到一个重新校准后，大小为 $H \times W \times 2C$ 的特征图 $\mathcal{F}_7$
-		
-		\begin{equation}
-			\begin{aligned}
-				\mathcal{F}_7 = \sigma \left( W_2 \delta (W_1 Z_{GAP}) \right) \cdot M \cdot \sigma \left( W_2 \delta (W_1 Z_{GMP})\right) +  \mathcal{F}_5
-			\end{aligned}
-			\label{eq: recalibrated feature map}
-		\end{equation}
-		
-		其中 $W_1$ 和 $W_2$ 是两个完全连接层的权值。
-		
-		\subsection{Experimental Plan}
+		\section{实验计划}
 
-		实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估，使用 Matplotlib 库用于绘制图标和注意力图。基于 scikit-image 库计算 PSNR、SSIM 等评价指标。
+		实验的过程中，确保所有的实验在相同的硬件和软件环境下进行，并且为了确保结果的可靠性，可能需要多次运行实验并取平均值。我们主要基于 PyTorch 进行模型的搭建、训练和评估。基于 scikit-image 库计算 PSNR、SSIM 等评价指标。首先构建 U-Net 基本架构模型，然后实现 Swin Transformer 块中的LocalselfAttention类，PositionEncoding类，PositionEmbedding类。
 
 		\subsubsection{Dataset}
 		
@@ -526,16 +217,6 @@
 			
 			\item [$\bullet$]
 			分割: 将每个数据集分为训练集、验证集和测试集。
-		\end{itemize}
-		
-		\subsubsection{Train}
-		
-		\begin{itemize}
-			\item [$\bullet$]
-			基线模型: 首先，训练基线模型（即完整的并行模型，包含完整的 CNN 和 Transformer 分支）。
-			
-			\item [$\bullet$]
-			消融研究: 接着，训练去除 Transformer 分支的模型，以进行消融实验。
 		\end{itemize}
 		
 		\begin{table}[!htbp]
@@ -556,14 +237,6 @@
 					
 					VE-LOL-L\cite{jiang2019learning} & 2,500 & RGB & Real+Syn & \\
 					
-					MIT-Adobe FiveK\cite{bychkovsky2011learning} & 5,000 & Raw & Real & \\
-					
-					SID\cite{wei2018deep} & 5,094 & Raw & Real & \\
-					
-					DRV\cite{chen2019seeing} & 202 & Raw & Real & \checkmark  \\
-					
-					SMOID\cite{jiang2019learning} & 179 & Raw & Real & \checkmark  \\
-					
 					\hline
 					
 				\end{tabular}
@@ -574,13 +247,21 @@
 			
 		\end{table}
 		
+		\subsubsection{Train}
+		
+		\begin{itemize}
+			\item [$\bullet$]
+			基线模型: 首先，训练基线模型。
+			
+			\item [$\bullet$]
+			消融研究: 接着，训练正常 BottleNeck 的模型，以进行消融实验。
+		\end{itemize}
+		
 		\subsubsection{Performance Evaluation}
 		
 		对于每个数据集，使用以下指标评估模型性能：
 		
 		\begin{itemize}
-			\item[$\bullet$]
-			均方误差 (MSE)
 			\item[$\bullet$]
 			峰值信噪比 (PSNR)
 			\item[$\bullet$]
@@ -588,70 +269,52 @@
 			\item[$\bullet$]
 			感知图像质量评估 (LPIPS)
 		\end{itemize}
-		
-		\subsubsection{Contrast Experiment}
-		
-		\begin{itemize}
-			\item[$\bullet$]
-			跨数据集比较： 在所有数据集上评估基线模型的性能，并记录结果。
-			\item[$\bullet$]
-			消融实验： 在相同的数据集上评估去除 Transformer 分支的模型，并与基线模型进行比较。
-		\end{itemize}
 				
-		\subsubsection{Attention Chart}
+		\subsubsection{Loss Function}
+		
+		\begin{equation}
+			J_{Huber}(\delta)= \frac{1}{N}\sum_{i=1}^{N}
+			\left\{
+			\begin{aligned}
+				&\frac{1}{2}{\left\|\hat{y}_i - y_i \right\|}_2^{2}, \left\| \hat{y}_i -y_i \right\| < \delta , \\
+				&\delta\left({\left\|\hat{y}_i - y_i \right\|}_1 - \frac{1}{2}\delta \right), \left\| \hat{y}_i -y_i \right\| \geq \delta.
+			\end{aligned}
+			\right.
+			\label{eq: huber loss}
+		\end{equation}
+		
+		\begin{equation}
+			\begin{aligned}
+				\ell_{feat}^{\phi,j} (\hat{y},y) = \frac{1}{C_{j}H_{j}W_{j}}{\left\| \phi_{j}(\hat{y})-\phi_{j}(y)\right\|}_{2}^2
+			\end{aligned}
+			\label{eq: perceptual loss}
+		\end{equation}
+		
+		\begin{equation}
+			\begin{aligned}
+				\mathcal{L}^{\text{SSIM}}(P)=1-\text{SSIM}(\tilde{p}).
+			\end{aligned}
+			\label{eq: revised_SSIM loss}
+		\end{equation}
+		
+		
+		一共尝试以下两种损失函数的搭配方式:
 		
 		\begin{itemize}
 			\item[$\bullet$]
-			CNN 分支: 可视化 CNN 分支的特征图，以展示模型如何处理局部特征。
+			休伯损失函数和SSIM损失函数
+			
+			\begin{equation}
+				L_{loss} = \alpha J_{Huber}(\delta) + \beta \mathcal{L}^{\text{SSIM}}(P)
+			\end{equation}
+			
 			\item[$\bullet$]
-			Transformer 分支: 可视化 Transformer 分支的注意力图，以展示模型如何处理全局特征。
+			休伯损失函数，SSIM损失函数，Perceptual损失函数(耗费更多训练时间)
+			
+			\begin{equation}
+				L_{loss} = \alpha J_{Huber}(\delta) + \beta \mathcal{L}^{\text{SSIM}}(P) + \gamma \ell_{feat}^{\phi,j} (\hat{y},y)
+			\end{equation}
 		\end{itemize}
-				
-		\subsubsection{Results analysis and reporting}
-		
-		\begin{itemize}
-			\item[$\bullet$]
-			数据整理: 将所有实验结果整理成表格或图表。
-			\item[$\bullet$]
-			分析: 分析不同数据集和不同模型配置 (如有/无Transformer分支) 的性能差异。
-		\end{itemize}
-				
-		\subsection{创新想法的调研支撑}
-		
-		\paragraph{Attention in CV}
-		
-		在计算机视觉领域，研究人员使用了不同类型的注意力机制，目的是使模型聚焦于图像本身。这大致分为两种类型：一种是基于通道的注意力机制，即 Squeeze-and-Excite。另一个是基于空间的注意力机制\cite{woo2018cbam}。然而，研究发现这些类型有三个局限性：
-		
-		\begin{itemize}
-			\item[(1)] 
-			卷积捕捉远距离特征的能力较差；
-			
-			\item[(2)]
-			注意力机制关注所有输入；当分辨率较大时，计算成本增加；
-			
-			\item[(3)]
-			不同时关注通道和空间维度关注信息。这就造成了信息的浪费和注意力的减弱。
-		\end{itemize}	
-		
-		针对第一个限制 \cite{ramachandran2019stand} 将所有卷积替换为独立的自注意层和空间意识的独立自注意层，替换后的模型为纯注意模型。纯注意模型增强了网络对远距离特征连接的建模能力。在 ImageNet分类任务和 COCO 对象检测任务中，该模型优于使用卷积的基线模型。对于第三个限制，Woo 等人\cite{woo2018cbam}提出了一种卷积块注意模型 CBAM，这是一种轻量级的通用注意模型。该模型从通道维度和空间维度两方面关注重要信息。由于 CBAM 从多个维度提取重要信息，该模型被广泛应用于目标检测、目标分类等任务。实验表明，CBAM 模块可以显著提高网络的表达能力。同时，CBAM 可以搭配 SCConv\cite{li2023scconv}结构，SCConv 是一种名为可以即插即用的卷积模块，目的是减少卷积神经网络中特征之间的空间和通道冗余，从而压缩 CNN 模型并提高其性能。
-		
-		\paragraph{U-Net for LLIE}
-		
-		U-Net 网络由卷积层、下采样、上采样和跳过连接操作组成，其编码器和解码器具有对称结构。长期以来，U-Net 网络及其改进结构由于其强大的特征学习和特征重构能力，在图像语义分割领域取得了巨大的成功。U-Net 网络在弱光图像增强方面显示出出色的效果。Chen 等\cite{chen2018learning}创新性地提出了一种基于 U-Net 框架的弱光图像增强网络。该网络的核心架构是多尺度上下文聚合网络 (CAN) 和 U-Net 网络。之后的工作\cite{chen2018learning, zamir2021learning}也将 U-Net 架构应用到自己的网络中，其网络包含两个子网。即图像约简子网和感知损失子网，其中图像约简子网具有与\cite{chen2018learning}相同的 U-Net 架构。虽然\cite{chen2018learning, zamir2021learning}在使用U-Net架构增强图像方面取得了一定的效果，但\cite{meng2020gia}认为\cite{chen2018learning, zamir2021learning}网络忽略了全局信息，导致增强图像中的颜色不自然和物体伪影问题。为了改善以往网络的缺陷，利用 U-Net 架构，\cite{meng2020gia}在U-Net的编码器和解码器之间增加了全局信息感知模块(global information awareness module, GIA)， GIA 可以将全局信息整合到整个网络中，改善增强图像中的颜色不一致和伪影。经过对\cite{chen2018learning, meng2020gia, zamir2021learning}的仔细研究，基于 U-Net 网络的弱光图像增强方法取得了很好的效果。然而，该网络仍然存在两个局限性:
-		
-		\begin{itemize}
-			\item[(a)] 
-			跳过连接只融合相同尺度的特征，导致编码器和解码器之间存在较大的语义差距;
-			
-			\item[(2)]
-			全局上下文信息的连接相对稀缺。
-		\end{itemize}	
-		
-		这两个限制容易导致增强图像的细节丢失、对比度差和颜色信息不准确。Zhou等\cite{zhou2018unet++,zhou2019unet++}改进了 U-Net 架构生成 U-Net++，在 U-Net++ 中将跳跃连接重新设计为一系列嵌套的密集跳跃连接，实现了多个特征的融合，加强了不同层次的特征信息接触。
-
-		\paragraph{CNN for LLIE}
-		
-		CNN 在许多计算机视觉任务中表现出了令人印象深刻的结果。CNN 利用注意力机制\cite{yang2021locally, zhang2020attention}和上下文信息，从原始图像中生成注意感知并提取多尺度特征\cite{li2018multi,zamir2020learning}。基于 CNN 的低光图像增强方法不断发展。例如，基于 CNN 的自适应弱光图像增强框架\cite{li2020visual}极大地增强了图像对比度、颜色和细节信息。然而，现有的基于 CNN 的方法大多侧重于图像亮度、纹理和颜色的恢复\cite{xu2020learning}。由于局部光照不均匀，颜色信息和细节信息丢失严重，容易出现过增强或增强不足的问题。
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

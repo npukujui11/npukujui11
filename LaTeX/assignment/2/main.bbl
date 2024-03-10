@@ -1,19 +1,52 @@
 \begin{thebibliography}{10}
 
-\bibitem{zhu2020eemefn}
-Minfeng Zhu, Pingbo Pan, Wei Chen, and Yi~Yang.
-\newblock Eemefn: Low-light image enhancement via edge-enhanced multi-exposure
-  fusion network.
-\newblock In {\em Proceedings of the AAAI Conference on Artificial
-  Intelligence}, volume~34, pages 13106--13113, 2020.
+\bibitem{ji1994adaptive}
+T-L Ji, Malur~K Sundareshan, and Hans Roehrig.
+\newblock Adaptive image contrast enhancement based on human visual properties.
+\newblock {\em IEEE transactions on medical imaging}, 13(4):573--586, 1994.
 
-\bibitem{peng2021conformer}
-Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
-  and Qixiang Ye.
-\newblock Conformer: Local features coupling global representations for visual
-  recognition.
-\newblock In {\em Proceedings of the IEEE/CVF international conference on
-  computer vision}, pages 367--376, 2021.
+\bibitem{land1965}
+Edwin~H Land.
+\newblock The retinex.
+\newblock In {\em Ciba Foundation Symposium-Colour Vision: Physiology and
+  Experimental Psychology}, pages 217--227. Wiley Online Library, 1965.
+
+\bibitem{land1977retinex}
+Edwin~H Land.
+\newblock The retinex theory of color vision.
+\newblock {\em Scientific american}, 237(6):108--129, 1977.
+
+\bibitem{jobson1997properties}
+Daniel~J Jobson, Zia-ur Rahman, and Glenn~A Woodell.
+\newblock Properties and performance of a center/surround retinex.
+\newblock {\em IEEE transactions on image processing}, 6(3):451--462, 1997.
+
+\bibitem{yang2021locally}
+Chenglin Yang, Siyuan Qiao, Adam Kortylewski, and Alan Yuille.
+\newblock Locally enhanced self-attention: Combining self-attention and
+  convolution as local and context terms.
+\newblock {\em arXiv preprint arXiv:2107.05637}, 2021.
+
+\bibitem{zhang2020attention}
+Cheng Zhang, Qingsen Yan, Yu~Zhu, Xianjun Li, Jinqiu Sun, and Yanning Zhang.
+\newblock Attention-based network for low-light image enhancement.
+\newblock In {\em 2020 IEEE international conference on multimedia and expo
+  (ICME)}, pages 1--6. IEEE, 2020.
+
+\bibitem{li2018multi}
+Juncheng Li, Faming Fang, Kangfu Mei, and Guixu Zhang.
+\newblock Multi-scale residual network for image super-resolution.
+\newblock In {\em Proceedings of the European conference on computer vision
+  (ECCV)}, pages 517--532, 2018.
+
+\bibitem{zamir2020learning}
+Syed~Waqas Zamir, Aditya Arora, Salman Khan, Munawar Hayat, Fahad~Shahbaz Khan,
+  Ming-Hsuan Yang, and Ling Shao.
+\newblock Learning enriched features for real image restoration and
+  enhancement.
+\newblock In {\em Computer Vision--ECCV 2020: 16th European Conference,
+  Glasgow, UK, August 23--28, 2020, Proceedings, Part XXV 16}, pages 492--511.
+  Springer, 2020.
 
 \bibitem{jain1991unsupervised}
 Anil~K Jain and Farshid Farrokhnia.
@@ -31,6 +64,29 @@ Timo Ojala, Matti Pietikainen, and Topi Maenpaa.
   classification with local binary patterns.
 \newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
   24(7):971--987, 2002.
+
+\bibitem{dinh20231m}
+Binh-Duong Dinh, Thanh-Thu Nguyen, Thi-Thao Tran, and Van-Truong Pham.
+\newblock 1m parameters are enough? a lightweight cnn-based model for medical
+  image segmentation.
+\newblock In {\em 2023 Asia Pacific Signal and Information Processing
+  Association Annual Summit and Conference (APSIPA ASC)}, pages 1279--1284.
+  IEEE, 2023.
+
+\bibitem{cao2022swin}
+Hu~Cao, Yueyue Wang, Joy Chen, Dongsheng Jiang, Xiaopeng Zhang, Qi~Tian, and
+  Manning Wang.
+\newblock Swin-unet: Unet-like pure transformer for medical image segmentation.
+\newblock In {\em European conference on computer vision}, pages 205--218.
+  Springer, 2022.
+
+\bibitem{peng2021conformer}
+Zhiliang Peng, Wei Huang, Shanzhi Gu, Lingxi Xie, Yaowei Wang, Jianbin Jiao,
+  and Qixiang Ye.
+\newblock Conformer: Local features coupling global representations for visual
+  recognition.
+\newblock In {\em Proceedings of the IEEE/CVF international conference on
+  computer vision}, pages 367--376, 2021.
 
 \bibitem{lisin2005combining}
 Dimitri~A Lisin, Marwan~A Mattar, Matthew~B Blaschko, Erik~G Learned-Miller,
@@ -119,33 +175,6 @@ Zongwei Zhou, Md~Mahfuzur~Rahman Siddiquee, Nima Tajbakhsh, and Jianming Liang.
 \newblock Unet++: Redesigning skip connections to exploit multiscale features
   in image segmentation.
 \newblock {\em IEEE transactions on medical imaging}, 39(6):1856--1867, 2019.
-
-\bibitem{yang2021locally}
-Chenglin Yang, Siyuan Qiao, Adam Kortylewski, and Alan Yuille.
-\newblock Locally enhanced self-attention: Combining self-attention and
-  convolution as local and context terms.
-\newblock {\em arXiv preprint arXiv:2107.05637}, 2021.
-
-\bibitem{zhang2020attention}
-Cheng Zhang, Qingsen Yan, Yu~Zhu, Xianjun Li, Jinqiu Sun, and Yanning Zhang.
-\newblock Attention-based network for low-light image enhancement.
-\newblock In {\em 2020 IEEE international conference on multimedia and expo
-  (ICME)}, pages 1--6. IEEE, 2020.
-
-\bibitem{li2018multi}
-Juncheng Li, Faming Fang, Kangfu Mei, and Guixu Zhang.
-\newblock Multi-scale residual network for image super-resolution.
-\newblock In {\em Proceedings of the European conference on computer vision
-  (ECCV)}, pages 517--532, 2018.
-
-\bibitem{zamir2020learning}
-Syed~Waqas Zamir, Aditya Arora, Salman Khan, Munawar Hayat, Fahad~Shahbaz Khan,
-  Ming-Hsuan Yang, and Ling Shao.
-\newblock Learning enriched features for real image restoration and
-  enhancement.
-\newblock In {\em Computer Vision--ECCV 2020: 16th European Conference,
-  Glasgow, UK, August 23--28, 2020, Proceedings, Part XXV 16}, pages 492--511.
-  Springer, 2020.
 
 \bibitem{li2020visual}
 Xiaoxiao Li, Xiaopeng Guo, Liye Mei, Mingyu Shang, Jie Gao, Maojing Shu, and
