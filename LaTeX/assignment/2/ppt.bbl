@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -66,13 +66,6 @@
   \bibinfo{booktitle}{2021 5th International Conference on Intelligent
   Computing and Control Systems (ICICCS)}, \bibinfo{organization}{IEEE}. pp.
   \bibinfo{pages}{871--877}.
-%Type = Inproceedings
-\bibitem[{Wang and Jin(2023)}]{wang2023brighten}
-\bibinfo{author}{Wang, C.}, \bibinfo{author}{Jin, Z.}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{Brighten-and-colorize: A decoupled network for
-  customized low-light image enhancement}, in: \bibinfo{booktitle}{Proceedings
-  of the 31st ACM International Conference on Multimedia}, pp.
-  \bibinfo{pages}{8356--8366}.
 %Type = Article
 \bibitem[{Wei et~al.(2018)Wei, Wang, Yang and Liu}]{wei2018deep}
 \bibinfo{author}{Wei, C.}, \bibinfo{author}{Wang, W.}, \bibinfo{author}{Yang,
