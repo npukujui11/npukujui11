@@ -1,0 +1,46 @@
+\beamer@slide {fig: application scenarios}{3}
+\beamer@slide {fig: Retinex model}{4}
+\beamer@slide {fig: Histogram equalization}{4}
+\beamer@slide {fig: MBLLEN}{5}
+\beamer@slide {fig: RetinexNet}{5}
+\beamer@slide {fig: Supervised Learning}{5}
+\beamer@slide {fig: input}{6}
+\beamer@slide {fig: LLNet}{6}
+\beamer@slide {fig: RetinexNet_LOL}{6}
+\beamer@slide {fig: MBLLEN_LOL}{6}
+\beamer@slide {fig: EnlightenGAN}{6}
+\beamer@slide {fig: RRDNet}{6}
+\beamer@slide {fig: DRBN}{6}
+\beamer@slide {fig: Zero-DCE++}{6}
+\beamer@slide {fig: KinD++}{6}
+\beamer@slide {fig: URetinexNet}{6}
+\beamer@slide {fig: VE-LOL-L Visual}{6}
+\beamer@slide {fig: Total architecture}{8}
+\beamer@slide {fig: Abstract}{9}
+\beamer@slide {fig: PACUT}{9}
+\beamer@slide {fig: Up-sampling and down-sampling}{9}
+\beamer@slide {fig: The proposed initial architecture(Abstract Picture)}{9}
+\beamer@slide {fig: Parallel architecture combining u-net and transformer}{9}
+\beamer@slide {fig: LLI}{10}
+\beamer@slide {fig: LLI_canny}{10}
+\beamer@slide {fig: LLI_rcf}{10}
+\beamer@slide {fig: LLI_hog}{10}
+\beamer@slide {fig: LLI_lbp}{10}
+\beamer@slide {fig: GI}{10}
+\beamer@slide {fig: GT_canny}{10}
+\beamer@slide {fig: GT_rcf}{10}
+\beamer@slide {fig: GT_hog}{10}
+\beamer@slide {fig: GT_lbp}{10}
+\beamer@slide {fig: LLI Structure Information}{10}
+\beamer@slide {fig: Edge Detection Network}{11}
+\beamer@slide {fig: LLI Input}{13}
+\beamer@slide {fig: LightenNet}{13}
+\beamer@slide {fig: LLI LLNet}{13}
+\beamer@slide {fig: LLI RetinexNet}{13}
+\beamer@slide {fig: KinD}{13}
+\beamer@slide {fig: MBLLEN_contrast}{13}
+\beamer@slide {fig: LLI EnlightenGAN}{13}
+\beamer@slide {fig: Zero-DCE}{13}
+\beamer@slide {fig: Ours}{13}
+\beamer@slide {fig: GT}{13}
+\beamer@slide {fig: LOL}{13}

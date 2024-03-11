@@ -1,0 +1,135 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: inception_templet.aux
+The style file: unsrt.bst
+Database file #1: reference.bib
+Repeated entry---line 237 of file reference.bib
+ : @inproceedings{woo2018cbam
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 551 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 799 of file reference.bib
+ : @article{yang2021locally
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 813 of file reference.bib
+ : @inproceedings{zhang2020attention
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 831 of file reference.bib
+ : @inproceedings{li2018multi
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 847 of file reference.bib
+ : @inproceedings{zamir2020learning
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 865 of file reference.bib
+ : @article{li2020visual
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 999 of file reference.bib
+ : @inproceedings{peng2021conformer
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1173 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1283 of file reference.bib
+ : @article{wang2004image
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1327 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1397 of file reference.bib
+ : @inproceedings{wang2022uformer
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1413 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1435 of file reference.bib
+ : @inproceedings{guo2020zero
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1473 of file reference.bib
+ : @article{lore2017llnet
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2153 of file reference.bib
+ : @inproceedings{xu2020learning
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2169 of file reference.bib
+ : @article{wang2004image
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2333 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2355 of file reference.bib
+ : @article{liu2021benchmarking
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2395 of file reference.bib
+ : @incollection{dong2010fast
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2569 of file reference.bib
+ : @article{mittal2012making
+ :                          ,
+I'm skipping whatever remains of this entry
+Warning--empty publisher in dong2010fast
+Warning--can't use both volume and number fields in lv2018mbllen
+Warning--can't use both volume and number fields in wang2023ultra
+Warning--can't use both volume and number fields in zhu2020eemefn
+You've used 65 entries,
+            1791 wiz_defined-function locations,
+            799 strings with 16722 characters,
+and the built_in function-call counts, 20388 in all, are:
+= -- 1853
+> -- 969
+< -- 35
++ -- 346
+- -- 281
+* -- 1391
+:= -- 2987
+add.period$ -- 207
+call.type$ -- 65
+change.case$ -- 65
+chr.to.int$ -- 0
+cite$ -- 69
+duplicate$ -- 942
+empty$ -- 1886
+format.name$ -- 281
+if$ -- 4696
+int.to.chr$ -- 0
+int.to.str$ -- 65
+missing$ -- 64
+newline$ -- 327
+num.names$ -- 65
+pop$ -- 235
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 579
+stack$ -- 0
+substring$ -- 1573
+swap$ -- 376
+text.length$ -- 35
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 201
+width$ -- 67
+write$ -- 723
+(There were 21 error messages)

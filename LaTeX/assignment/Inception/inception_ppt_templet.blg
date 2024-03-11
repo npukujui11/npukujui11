@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: inception_ppt_templet.aux
+The style file: elsarticle-harv.bst
+Database file #1: reference.bib
+Repeated entry---line 551 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 999 of file reference.bib
+ : @inproceedings{peng2021conformer
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1173 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1327 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1413 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1435 of file reference.bib
+ : @inproceedings{guo2020zero
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1473 of file reference.bib
+ : @article{lore2017llnet
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2333 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2355 of file reference.bib
+ : @article{liu2021benchmarking
+ :                             ,
+I'm skipping whatever remains of this entry
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 31 entries,
+            2990 wiz_defined-function locations,
+            807 strings with 11393 characters,
+and the built_in function-call counts, 25034 in all, are:
+= -- 1930
+> -- 1158
+< -- 21
++ -- 450
+- -- 411
+* -- 2768
+:= -- 3552
+add.period$ -- 80
+call.type$ -- 31
+change.case$ -- 291
+chr.to.int$ -- 31
+cite$ -- 31
+duplicate$ -- 1794
+empty$ -- 1691
+format.name$ -- 514
+if$ -- 4759
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 345
+newline$ -- 157
+num.names$ -- 124
+pop$ -- 652
+preamble$ -- 1
+purify$ -- 260
+quote$ -- 0
+skip$ -- 625
+stack$ -- 0
+substring$ -- 1082
+swap$ -- 1390
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 279
+warning$ -- 0
+while$ -- 153
+width$ -- 0
+write$ -- 438
+(There were 9 error messages)

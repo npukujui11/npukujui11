@@ -3,11 +3,11 @@
 \beamer@subsectionintoc {1}{2}{研究背景和现状}{6}{0}{1}
 \beamer@subsubsectionintoc {1}{2}{1}{传统方法}{6}{0}{1}
 \beamer@subsubsectionintoc {1}{2}{2}{基于深度学习的低照度图像增强方法}{9}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{3}{研究背景}{13}{0}{1}
-\beamer@sectionintoc {2}{研究内容}{18}{0}{2}
-\beamer@subsectionintoc {2}{1}{Total Architecture}{18}{0}{2}
-\beamer@subsectionintoc {2}{2}{PACUT}{20}{0}{2}
-\beamer@subsectionintoc {2}{3}{Edge Detection Network}{27}{0}{2}
-\beamer@sectionintoc {3}{具体工作内容}{32}{0}{3}
-\beamer@subsectionintoc {3}{1}{Dataset}{32}{0}{3}
-\beamer@subsectionintoc {3}{2}{Train}{33}{0}{3}
+\beamer@subsectionintoc {1}{3}{研究目的}{13}{0}{1}
+\beamer@sectionintoc {2}{研究内容}{19}{0}{2}
+\beamer@subsectionintoc {2}{1}{Total Architecture}{19}{0}{2}
+\beamer@subsectionintoc {2}{2}{PACUT}{21}{0}{2}
+\beamer@subsectionintoc {2}{3}{Edge Detection Network}{28}{0}{2}
+\beamer@sectionintoc {3}{具体工作内容}{33}{0}{3}
+\beamer@subsectionintoc {3}{1}{Dataset}{33}{0}{3}
+\beamer@subsectionintoc {3}{2}{Train}{34}{0}{3}
