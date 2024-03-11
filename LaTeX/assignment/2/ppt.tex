@@ -18,7 +18,7 @@
 
 \begin{document}
 	
-	\title{Hybrid Parallel CNN-Transformer Architecture for Enhanced Low-Light Image}
+	\title{工作汇报}
 	\author[Gu Rui (LZU)]{Gu Rui \inst{1}}
 	\institute[*]{\inst{1} School of Information Science and Engineering,\\
 		Lanzhou University\\
@@ -59,68 +59,56 @@
 %		\end{itemize}		
 %	\end{frame}
 	
-	\section{Introduction}
+	\section{模型结构}
 	
-	\subsection{Background}
+	\subsection{Architecture}
 	
 	\begin{frame}
-
-		Low-light image enhancement (LLIE) is an important task in image processing, whose goal is to improve in perceived quality of images taken in low-light environments.
+		\begin{figure}[htbp]
+			\begin{center}
+				\includegraphics[width=0.8\textwidth]{picture/LLIE/My Architecture/ULite_Enhance}
+			\end{center}
+		\end{figure}
 		
-		% 弱光增强旨在从黑暗和噪声图像中恢复正常光线和无噪声图像，这是一个长期存在的重要计算机视觉课题。
-
-		\begin{itemize} 
-			\item \textbf{Scope of Application}
-
-			Video Surveillance 
+		\begin{minipage}{.45\textwidth}
+			\textbf{\tiny Architecture}
+			\begin{itemize}\tiny
+				\item [-] U-Net
+				% 通过一个简单的 U-Net 去对外观建模，可以理解成先简单地学习到一个正常光照的 coarse version。其中，损失函数为一个重建损失加感知损失。
 				
-			Autonomous Driving
-				          			
-			Computational Photography
-		\end{itemize}
-		
-		% 它具有广泛的应用领域，包括视频监控，自动驾驶和计算摄影方面。特别是，智能手机摄影已经变得无处不在。受限于相机光圈的大小、实时处理的要求以及存储器的约束，在昏暗环境中用智能手机的相机拍摄照片尤其具有挑战性。
-			
-		\begin{itemize} 
-			\item \textbf{Challenge}
+				\item [-] Structure-Aware Feature Extractor
+				% 对于结构信息建模部分，借鉴了 GAN prior 的思路，但是不用预训练的GAN 模型。这里设计到一个结构特征的提取Structure-Aware Feature Extractor (SAFE)
 				
-			% 传统方法包括基于直方图均衡的方法和基于 Retinex 模型的方法。
-			Artifacts and Color Deviations 
-			% 传统方法一般通过有效的先验或正则化来解决噪声问题。但是寻找到有效的先验和正则化相当具有挑战性，不正确的先验或正则化可能导致增强结果中的伪像和颜色偏差。
+				\item [-] Structure-Guided Enhancement Module
+				% 为了利用得到的结构图来提高外观，作者设计了一个结构导向增强模块 Structure-Guided Enhancement Module（SGEM模块）初始外观建模结果。在 SGEM 中，根据结构映射生成空间自适应核和归一化参数。然后，对SGEM 解码器的每一层的特征进行空间全处理y−自适应卷积和归一化。虽然 SGEM 的整体架构采用了一个简单的U-Net 的形式，但它可以有效地增强原始的外观。
+			\end{itemize}
+		\end{minipage}
+		\begin{minipage}{.45\textwidth}
+			\textbf{\tiny Edge Detection}
+			\begin{itemize}\tiny
+				\item [-] Too few datasets for extracting edge information
+				% 论文指出低光数据集图片较少，所以结构信息提取模块的训练会受限，因此作者引入其他结构信息提取的数据集做额外训练可以进一步提升performance
 				
-			Noise
-			% 但是这些方法存在一些局限性，例如在 Retinex 模型中通常忽略噪声，因此在增强结果中保留或放大噪声；
+				\item [-] Semantic maps and depth maps
+				% 作者提出除了边缘结构图作为引导信息，也可以使用其他特征，比如语义图（ Ours with SEG.）和深度图（ Ours with Dep.），总体表现没有边缘图好，但是也比一些现有的增强方法好。
 				
-			Robustness
-			% 但是现有的低光照图像增强技术聚焦于构建数据驱动的深度网络，通常其网络模型复杂，导致计算效率低、推理速度慢，并且由于对于训练数据分布的依赖性导致其在未知场景下的性能缺乏保障。
-			% 物体边缘不清晰时，像素级损失往往会模糊边缘，破坏图像细节。
-			
-			Existing methods may not be able to recover image edge details in extremely dark or bright areas.
-			% 现有的方法可能无法在极暗或极明亮的区域恢复图像的边缘细节。
-			
+				\item [-] Input image or initial enhanced image
+				% 作者没有说 Appearance Modeling 的结果去提取边缘会达到什么效果？
 				
-		\end{itemize}
+				% 此外作者做消融实验的过程中，使用一个 SOTA 边缘提取网络代替论文中的structural modeling 模块（但是感觉在低光照下很难提取到有效的边缘，合理点的话需要先对输入亮度增强一下）
+			\end{itemize}
+		\end{minipage}
 	\end{frame}
 	
-	\subsection{Possible Contributions}
+	\subsection{Sub-Model}
 	
 	\begin{frame}
 		
-		\begin{itemize} 
-			\item \textbf{Possible Contributions I}
-			
-			A parallel network architecture for low-light image enhancement
-			
-			\item \textbf{Possible Contributions II}
-			
-			An edge network that generates edge graphs of low-light images
-			% 一种生成弱光图像边缘图的边缘网络
-			
-			\item \textbf{Possible Contributions III}
-			
-			A model that can better solve the local edge distortion problem in low-light images
-			% 一种能够较好的解决弱光图像中的局部边缘失真问题的模型
-		\end{itemize}
+		\begin{figure}[htbp]
+			\begin{center}
+				\includegraphics[width=0.8\textwidth]{picture/LLIE/My Architecture/Encoder_Decoder}
+			\end{center}
+		\end{figure}
 
 	\end{frame}
 	
@@ -138,132 +126,16 @@
 %		\end{itemize}
 %	\end{frame}
 	
-	\section{Literature Review}
-	
-	\subsection{SOTA}
+	\subsection{Swin Transformer Block}
 	
 	\begin{frame}
 		
-		Low-Light image enhancement related work.
-		
-		\begin{itemize} 
-			\item \textbf{Current SOTA}\textcolor{blue}{\citep{wang2023brighten}}
-			% 目前的 SOTA 模型
-			
-			Recent advances in this area mainly focus on the refinement of the lightness, while ignoring the role of chrominance.
-			
-			% 近年来该领域的研究进展主要集中在亮度的细化上，而忽略了色度的作用。
-			
-			% 目前为止传统方法和基于学习的方法大多主要着眼于提高亮度的质量，这容易导致严重的色度信息丢失和不愉快的视觉效果。
-			
-			\begin{itemize}
-			
-			\item BCNet (Brihten-and-Colorize Network)	
-				
-			% 作者提出了一个“亮度和着色”网络，它将图像着色引入 LLIE，以解决上述问题。
-			
-			% BCNet 可以实现精确色彩的 LLIE，同时可以根据用户喜好定制不同饱和度和色彩风格的增强。
-			
-			% 具体来说，BCNet 将 LLIE 视为一个多任务学习问题:增亮和着色。增亮子任务与其他传统的 LLIE 方法一致，以获得良好的亮度。着色子任务是通过将弱光图像的色度作为颜色指导来完成的，就像用户指导图像着色一样。
-			
-				\begin{itemize}
-					
-					\item Multitasking-learning Architecture 
-					
-					% BCNet 采用多任务学习架构，该架构包含一个编码器和两个特定任务的解码器。编码器以弱光亮度作为输入，而两个特定任务的解码器分别输出预测亮度和色度。通过同时训练两个子任务，增亮子任务可以为着色子任务提供正常亮度信息。此外，引入颜色分类损失，将着色转化为分类任务，缓解着色子任务中的颜色消失。
-					
-					% 特点：多任务学习架构通过在相关任务之间共享知识，旨在提高学习效率和模型的泛化能力。
-					
-					\item Brightening
-					% 增亮
-					
-					\item Colorization
-					% 着色
-					
-				\end{itemize}
-			
-			\item The Color Guidance Can Be Simply Manipulated
-			
-			% 在完成模型训练后，用户可以简单地操纵颜色指导(即输入的低光色度)，以获得定制的结果。
-			
-				\begin{itemize}
-					
-					\item Chrominance
-					% 色度信息在自定义增强中起着重要作用。
-					
-					
-					% 色度是指颜色的纯度，它描述了颜色中纯色的强度相对于灰色的程度。色度是一个相对于白色背景的概念，它衡量的是颜色与白色之间的差异程度。
-					
-					% 饱和度也是描述颜色纯度的一个度量，但它是相对于颜色的最大纯度版本的。
-					% 饱和度是一个相对于颜色自身最鲜艳状态的概念，它衡量的是颜色的强度或深度。
-					\item Local Consistency
-					% 有方法利用 HSV 色彩空间中的直方图实现了色彩定制，而直方图作为全局信息很难保证局部一致性。
-					% 局部一致性指在一幅图像中，相邻像素通常具有相似的颜色和亮度，这种现象就是局部一致性的体现。这一概念在边缘检测、纹理分析、图像分割等任务中非常重要。
-				\end{itemize}
-			
-			\end{itemize}
-
-			
-		\end{itemize}
-			
-	\end{frame}
-	
-	\begin{frame}
-		
-		% 近年来该领域的研究进展主要集中在亮度的细化上，而忽略了色度的作用。
-		
-		\begin{figure}
-			\centering
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/Input}
-				\captionsetup{font=scriptsize}
-				\label{fig: Input}
-				\caption*{Input}
-			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/GT}
-				\captionsetup{font=scriptsize}
-				\label{fig: GT}	
-				\caption*{GT}
-			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/Ours}
-				\captionsetup{font=scriptsize}
-				\label{fig: Ours}	
-				\caption*{Ours}
-			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/DeepUPE(CVPR 2019)}
-				\captionsetup{font=scriptsize}
-				\label{fig: DeepUPE(CVPR 2019)}	
-				\caption*{DeepUPE(CVPR 2019)}
-			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/SNR-Aware(CVPR 2022)}
-				\captionsetup{font=scriptsize}
-				\label{fig: SNR-Aware(CVPR 2022)}	
-				\caption*{SNR-Aware(CVPR 2022)}
-			\end{minipage}
-			\begin{minipage}{.31\textwidth}
-				\centering
-				\includegraphics[width=.8\linewidth]{picture/LLIE/SCNet/MIRNet-v2(TPAMI 2022)}
-				\captionsetup{font=scriptsize}
-				\label{fig: MIRNet-v2(TPAMI 2022)}	
-				\caption*{MIRNet-v2(TPAMI 2022)}
-			\end{minipage}
-			
-			\captionsetup{font=scriptsize}
-			\caption{
-				\label{fig: color}
-				Enhancement with accurate color.
-			}
+		\begin{figure}[htbp]
+			\begin{center}
+				\includegraphics[width=0.8\textwidth]{picture/LLIE/My Architecture/Swin Transformer}
+			\end{center}
 		\end{figure}
-		
+			
 	\end{frame}
 	
 	\subsection{Structure Modeling and Guidance}

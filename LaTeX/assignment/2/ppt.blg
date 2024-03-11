@@ -3,9 +3,21 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: ppt.aux
 The style file: elsarticle-harv.bst
 Database file #1: reference.bib
-Repeated entry---line 551 of file reference.bib
+Repeated entry---line 493 of file reference.bib
+ : @inproceedings{peng2021conformer
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 580 of file reference.bib
  : @article{wei2018deep
  :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 657 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 700 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
 I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 11 entries,
@@ -49,4 +61,4 @@ warning$ -- 0
 while$ -- 62
 width$ -- 0
 write$ -- 160
-(There was 1 error message)
+(There were 4 error messages)
