@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  11 MAR 2024 23:26
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  11 MAR 2024 23:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1239,26 +1239,26 @@ Package fontspec Info: Font family 'MicrosoftYaHei(0)' created for font
  (./ppt.aux)
 \openout1 = `ppt.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1294,57 +1294,57 @@ LaTeX Font Info:    ... okay on input line 19.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 21.
 (./ppt.out) (./ppt.out)
 \@outlinefile=\write5
 \openout5 = `ppt.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 19.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 19.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 19.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 19.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 21.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 19.
+(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 19.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 19.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/b/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 19.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 19.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 19.
+(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 19.
+(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 19.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 19.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 19.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 19.
+(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> TU/lmr/b/n on input line 19.
+(Font)                  OT1/lmss/b/n --> TU/lmr/b/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 19.
+(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 19.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 19.
+(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 19.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 21.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictiona
 ry-English.dict
@@ -1381,85 +1381,99 @@ Package caption Info: End \AtBeginDocument code.
  (./ppt.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 22.
+(hyperref)                setting the option has no effect on input line 24.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-40.
+42.
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-0.
+2.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-40.
+42.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-40.
+42.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 40.
+(Font)              <10.95> on input line 42.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 40.
+(Font)              <8> on input line 42.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 40.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
+(Font)              <6> on input line 42.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
 
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
 
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 40.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 42.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 40.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 42.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 40.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 42.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 40.
+(Font)              <5> on input line 42.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 40.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 42.
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [1
 
 ] (./ppt.toc)
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+
 [2
 
 ]
 File: picture/LLIE/My Architecture/ULite_Enhance.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/ULite_Enhance.jpg>
 
-Overfull \vbox (3.78429pt too high) detected at line 101
+Overfull \vbox (3.78429pt too high) detected at line 103
  []
 
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
 [3
 
 ]
 File: picture/LLIE/My Architecture/Encoder_Decoder.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/Encoder_Decoder.jpg>
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [4
 
 ]
 File: picture/LLIE/My Architecture/Swin Transformer.jpg Graphic file (type bmp)
 
 <picture/LLIE/My Architecture/Swin Transformer.jpg>
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [5
 
-] [6
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [6
 
 ]
 File: picture/LLIE/Structure Modeling and Guidance/Input.jpg Graphic file (type
@@ -1481,47 +1495,60 @@ File: picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg Graphic fil
 e (type bmp)
 <picture/LLIE/Structure Modeling and Guidance/Ground Truth.jpg>
 
-Overfull \vbox (66.88719pt too high) detected at line 233
+Overfull \vbox (66.88719pt too high) detected at line 235
  []
 
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
 [7
 
 ]
 File: picture/LLIE/Structure Modeling and Guidance/Overview.jpg Graphic file (t
 ype bmp)
 <picture/LLIE/Structure Modeling and Guidance/Overview.jpg>
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [8
 
 ]
 File: picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101).jpg
  Graphic file (type bmp)
 <picture/LLIE/Conformer/Comparison of feature maps of CNN (ResNet-101).jpg>
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [9
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 345.
+(Font)              <10> on input line 347.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 345.
+(Font)              <7> on input line 347.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 345.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 347.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 345.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 347.
 File: picture/LLIE/Conformer/the proposed Conformer.jpg Graphic file (type bmp)
 
 <picture/LLIE/Conformer/the proposed Conformer.jpg>
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [10
 
-] [11
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [11
 
 ]
 File: picture/LLIE/My Architecture/Total architecture.pdf Graphic file (type pd
 f)
 <use picture/LLIE/My Architecture/Total architecture.pdf>
 
-Overfull \vbox (13.96182pt too high) detected at line 406
+Overfull \vbox (13.96182pt too high) detected at line 408
  []
 
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
 [12
 
 ]
@@ -1536,27 +1563,39 @@ icture).jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/The proposed initial architecture(Abstract Pictur
 e).jpg>
 
-Overfull \vbox (39.11928pt too high) detected at line 466
+Overfull \vbox (39.11928pt too high) detected at line 468
  []
 
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
 [13
 
 ]
 File: picture/LLIE/My Architecture/U-Net and AM.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/U-Net and AM.jpg>
 
-Overfull \vbox (41.93544pt too high) detected at line 498
+Overfull \vbox (41.93544pt too high) detected at line 500
  []
 
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
 [14
 
-] [15
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [15
 
-] [16
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [16
 
 ]
 File: picture/LLIE/My Architecture/Patch Embedding.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/Patch Embedding.jpg>
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [17
 
 ]
@@ -1564,14 +1603,22 @@ File: picture/LLIE/My Architecture/Patch Embedding(ViT).jpg Graphic file (type
 bmp)
 <picture/LLIE/My Architecture/Patch Embedding(ViT).jpg>
 
-Overfull \vbox (25.88324pt too high) detected at line 605
+Overfull \vbox (25.88324pt too high) detected at line 607
  []
 
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
 [18
 
-] [19
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [19
 
-] [20
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [20
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00044.png Graphic file (ty
@@ -1604,9 +1651,14 @@ ile (type bmp)
 File: picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png Graphic f
 ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00044_lbp.png>
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [21
 
-] [22
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [22
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection/low00269.png Graphic file (ty
@@ -1628,24 +1680,37 @@ File: picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png Graphic f
 ile (type bmp)
 <picture/LLIE/My Architecture/Edge Detection/normal00269_lbp.png>
 
-Overfull \vbox (14.862pt too high) detected at line 832
+Overfull \vbox (14.862pt too high) detected at line 834
  []
 
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
 [23
 
 ]
 File: picture/LLIE/My Architecture/Edge Detection Network.jpg Graphic file (typ
 e bmp)
 <picture/LLIE/My Architecture/Edge Detection Network.jpg>
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
  [24
 
-] [25
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [25
 
-] [26
+]
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [26
 
 ] [27
 
-] (./ppt.bbl) [28
+] (./ppt.bbl)
+File: picture/badge-white_160x160.png Graphic file (type bmp)
+<picture/badge-white_160x160.png>
+ [28
 
 ]
 \tf@nav=\write6
@@ -1662,10 +1727,10 @@ Package rerunfilecheck Info: File `ppt.out' has not changed.
 (rerunfilecheck)             Checksum: FC817B4D7404AFF5A42215A74192B7D2;1785.
  ) 
 Here is how much of TeX's memory you used:
- 34540 strings out of 476683
- 787763 string characters out of 5805371
- 1867012 words of memory out of 5000000
- 54039 multiletter control sequences out of 15000+600000
+ 34550 strings out of 476683
+ 788065 string characters out of 5805371
+ 1868012 words of memory out of 5000000
+ 54047 multiletter control sequences out of 15000+600000
  537579 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,19n,122p,522b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
