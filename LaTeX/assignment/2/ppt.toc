@@ -1,0 +1,14 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Background}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Possible Contributions}{4}{0}{1}
+\beamer@sectionintoc {2}{Literature Review}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{SOTA}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Structure Modeling and Guidance}{7}{0}{2}
+\beamer@subsectionintoc {2}{3}{Conformer}{10}{0}{2}
+\beamer@sectionintoc {3}{Proposed Model}{12}{0}{3}
+\beamer@subsectionintoc {3}{1}{Total Architecture}{12}{0}{3}
+\beamer@subsectionintoc {3}{2}{PACUT}{14}{0}{3}
+\beamer@subsectionintoc {3}{3}{Edge Detection Network}{21}{0}{3}
+\beamer@sectionintoc {4}{Experimental Plan}{26}{0}{4}
+\beamer@subsectionintoc {4}{1}{Dataset}{26}{0}{4}
+\beamer@subsectionintoc {4}{2}{Train}{27}{0}{4}
