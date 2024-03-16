@@ -3,10 +3,6 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: reference.bib
-Repeated entry---line 119 of file reference.bib
- : @inproceedings{woo2018cbam
- :                           ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 393 of file reference.bib
  : @article{yang2021locally
  :                         ,
@@ -14,22 +10,6 @@ I'm skipping whatever remains of this entry
 Repeated entry---line 400 of file reference.bib
  : @inproceedings{zhang2020attention
  :                                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 409 of file reference.bib
- : @inproceedings{li2018multi
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 417 of file reference.bib
- : @inproceedings{zamir2020learning
- :                                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 426 of file reference.bib
- : @article{li2020visual
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 493 of file reference.bib
- : @inproceedings{peng2021conformer
- :                                 ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 580 of file reference.bib
  : @article{wei2018deep
@@ -55,53 +35,45 @@ Repeated entry---line 891 of file reference.bib
  : @inproceedings{zhang2020attention
  :                                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 900 of file reference.bib
- : @inproceedings{li2018multi
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 908 of file reference.bib
- : @inproceedings{zamir2020learning
- :                                 ,
-I'm skipping whatever remains of this entry
-You've used 40 entries,
+You've used 24 entries,
             1791 wiz_defined-function locations,
-            666 strings with 11577 characters,
-and the built_in function-call counts, 13459 in all, are:
-= -- 1263
-> -- 569
-< -- 25
-+ -- 204
-- -- 164
-* -- 849
-:= -- 1883
-add.period$ -- 129
-call.type$ -- 40
-change.case$ -- 40
+            590 strings with 8188 characters,
+and the built_in function-call counts, 7810 in all, are:
+= -- 740
+> -- 312
+< -- 13
++ -- 113
+- -- 89
+* -- 493
+:= -- 1097
+add.period$ -- 76
+call.type$ -- 24
+change.case$ -- 24
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 664
-empty$ -- 1270
-format.name$ -- 164
-if$ -- 3180
+cite$ -- 24
+duplicate$ -- 382
+empty$ -- 742
+format.name$ -- 89
+if$ -- 1835
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 40
-newline$ -- 203
-num.names$ -- 40
-pop$ -- 173
+int.to.str$ -- 24
+missing$ -- 24
+newline$ -- 123
+num.names$ -- 24
+pop$ -- 95
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 448
+skip$ -- 259
 stack$ -- 0
-substring$ -- 1083
-swap$ -- 300
-text.length$ -- 25
+substring$ -- 656
+swap$ -- 168
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 133
-width$ -- 42
-write$ -- 447
-(There were 15 error messages)
+while$ -- 77
+width$ -- 26
+write$ -- 267
+(There were 8 error messages)
