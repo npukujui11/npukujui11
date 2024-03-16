@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.8)  12 MAR 2024 00:26
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  16 MAR 2024 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1483,9 +1483,21 @@ File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
  [7
 
 ]
+
+Package natbib Warning: Citation `wei2018deep' on page 8 undefined on input lin
+e 193.
+
+
+Package natbib Warning: Citation `cai2018learning' on page 8 undefined on input
+ line 193.
+
+
+Package natbib Warning: Citation `jiang2019learning' on page 8 undefined on inp
+ut line 193.
+
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 <picture/lzu-logo/png/logo-white_530x160.png>
- [8
+[8
 
 ]
 File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
@@ -1504,21 +1516,19 @@ File: picture/lzu-logo/png/logo-white_530x160.png Graphic file (type bmp)
 \tf@snm=\write8
 \openout8 = `ppt.snm'.
 
- (./ppt.aux)
 
-Package rerunfilecheck Warning: File `ppt.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `ppt.out':
-(rerunfilecheck)             Before: 80AA1A9D9B10B41BD633FA978924F63A;1020
-(rerunfilecheck)             After:  0B1F957CC300F162849A2696F6BBED14;860.
+Package natbib Warning: There were undefined citations.
+
+(./ppt.aux)
+Package rerunfilecheck Info: File `ppt.out' has not changed.
+(rerunfilecheck)             Checksum: 0B1F957CC300F162849A2696F6BBED14;860.
  ) 
 Here is how much of TeX's memory you used:
- 33993 strings out of 476683
- 754467 string characters out of 5805371
+ 33968 strings out of 476683
+ 754136 string characters out of 5805371
  1861012 words of memory out of 5000000
- 53529 multiletter control sequences out of 15000+600000
+ 53504 multiletter control sequences out of 15000+600000
  529973 words of font info for 93 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,19n,122p,445b,864s stack positions out of 10000i,1000n,20000p,200000b,200000s
