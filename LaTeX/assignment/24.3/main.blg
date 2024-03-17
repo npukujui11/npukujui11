@@ -3,90 +3,86 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: reference.bib
-Repeated entry---line 785 of file reference.bib
+Repeated entry---line 393 of file reference.bib
  : @article{yang2021locally
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 799 of file reference.bib
+Repeated entry---line 400 of file reference.bib
  : @inproceedings{zhang2020attention
  :                                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1159 of file reference.bib
+Repeated entry---line 580 of file reference.bib
  : @article{wei2018deep
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1313 of file reference.bib
+Repeated entry---line 657 of file reference.bib
  : @article{cai2018learning
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1399 of file reference.bib
+Repeated entry---line 700 of file reference.bib
  : @article{cai2018learning
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1699 of file reference.bib
- : @inproceedings{liu2021swin
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1767 of file reference.bib
+Repeated entry---line 884 of file reference.bib
  : @article{yang2021locally
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1781 of file reference.bib
+Repeated entry---line 891 of file reference.bib
  : @inproceedings{zhang2020attention
  :                                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1891 of file reference.bib
+Repeated entry---line 946 of file reference.bib
  : @inproceedings{xu2020learning
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1923 of file reference.bib
+Repeated entry---line 962 of file reference.bib
  : @inproceedings{fu2016weighted
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1959 of file reference.bib
+Repeated entry---line 980 of file reference.bib
  : @article{wei2018deep
  :                     ,
 I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in lv2018mbllen
-You've used 32 entries,
+You've used 25 entries,
             1791 wiz_defined-function locations,
-            631 strings with 9696 characters,
-and the built_in function-call counts, 10555 in all, are:
-= -- 980
-> -- 448
-< -- 19
-+ -- 161
-- -- 129
-* -- 686
-:= -- 1489
-add.period$ -- 100
-call.type$ -- 32
-change.case$ -- 32
+            598 strings with 8310 characters,
+and the built_in function-call counts, 7657 in all, are:
+= -- 710
+> -- 338
+< -- 11
++ -- 122
+- -- 97
+* -- 542
+:= -- 1132
+add.period$ -- 79
+call.type$ -- 25
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 510
-empty$ -- 996
-format.name$ -- 129
-if$ -- 2468
+cite$ -- 26
+duplicate$ -- 339
+empty$ -- 719
+format.name$ -- 97
+if$ -- 1743
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 32
-newline$ -- 163
-num.names$ -- 32
-pop$ -- 127
+int.to.str$ -- 25
+missing$ -- 25
+newline$ -- 128
+num.names$ -- 25
+pop$ -- 78
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 343
+skip$ -- 193
 stack$ -- 0
-substring$ -- 875
-swap$ -- 224
-text.length$ -- 19
+substring$ -- 656
+swap$ -- 123
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 104
-width$ -- 34
-write$ -- 356
-(There were 11 error messages)
+while$ -- 79
+width$ -- 27
+write$ -- 280
+(There were 10 error messages)

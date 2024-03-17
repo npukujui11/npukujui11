@@ -104,6 +104,22 @@ Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
 \newblock Deep retinex decomposition for low-light enhancement.
 \newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
 
+\bibitem{hao2020low}
+Shijie Hao, Xu~Han, Yanrong Guo, Xin Xu, and Meng Wang.
+\newblock Low-light image enhancement with semi-decoupled decomposition.
+\newblock {\em IEEE transactions on multimedia}, 22(12):3025--3038, 2020.
+
+\bibitem{ravirathinam2021c}
+Praveen Ravirathinam, Divyam Goel, and J~Jennifer Ranjani.
+\newblock C-lienet: a multi-context low-light image enhancement network.
+\newblock {\em IEEE Access}, 9:31053--31064, 2021.
+
+\bibitem{xu2021novel}
+Yadong Xu, Cheng Yang, Beibei Sun, Xiaoan Yan, and Minglong Chen.
+\newblock A novel multi-scale fusion framework for detail-preserving low-light
+  image enhancement.
+\newblock {\em Information Sciences}, 548:378--397, 2021.
+
 \bibitem{dinh20231m}
 Binh-Duong Dinh, Thanh-Thu Nguyen, Thi-Thao Tran, and Van-Truong Pham.
 \newblock 1m parameters are enough? a lightweight cnn-based model for medical
@@ -130,69 +146,5 @@ Haiyang Jiang and Yinqiang Zheng.
 \newblock Learning to see moving objects in the dark.
 \newblock In {\em Proceedings of the IEEE/CVF International Conference on
   Computer Vision}, pages 7324--7333, 2019.
-
-\bibitem{liu2021swin}
-Ze~Liu, Yutong Lin, Yue Cao, Han Hu, Yixuan Wei, Zheng Zhang, Stephen Lin, and
-  Baining Guo.
-\newblock Swin transformer: Hierarchical vision transformer using shifted
-  windows.
-\newblock In {\em Proceedings of the IEEE/CVF international conference on
-  computer vision}, pages 10012--10022, 2021.
-
-\bibitem{dong2022cswin}
-Xiaoyi Dong, Jianmin Bao, Dongdong Chen, Weiming Zhang, Nenghai Yu, Lu~Yuan,
-  Dong Chen, and Baining Guo.
-\newblock Cswin transformer: A general vision transformer backbone with
-  cross-shaped windows.
-\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
-  Pattern Recognition}, pages 12124--12134, 2022.
-
-\bibitem{bertasius2015high}
-Gedas Bertasius, Jianbo Shi, and Lorenzo Torresani.
-\newblock High-for-low and low-for-high: Efficient boundary detection from deep
-  object features and its applications to high-level vision.
-\newblock In {\em Proceedings of the IEEE international conference on computer
-  vision}, pages 504--512, 2015.
-
-\bibitem{xie2015holistically}
-Saining Xie and Zhuowen Tu.
-\newblock Holistically-nested edge detection.
-\newblock In {\em Proceedings of the IEEE international conference on computer
-  vision}, pages 1395--1403, 2015.
-
-\bibitem{liu2017richer}
-Yun Liu, Ming-Ming Cheng, Xiaowei Hu, Kai Wang, and Xiang Bai.
-\newblock Richer convolutional features for edge detection.
-\newblock In {\em Proceedings of the IEEE conference on computer vision and
-  pattern recognition}, pages 3000--3009, 2017.
-
-\bibitem{deng2020deep}
-Ruoxi Deng and Shengjun Liu.
-\newblock Deep structural contour detection.
-\newblock In {\em Proceedings of the 28th ACM international conference on
-  multimedia}, pages 304--312, 2020.
-
-\bibitem{su2021pixel}
-Zhuo Su, Wenzhe Liu, Zitong Yu, Dewen Hu, Qing Liao, Qi~Tian, Matti
-  Pietik{\"a}inen, and Li~Liu.
-\newblock Pixel difference networks for efficient edge detection.
-\newblock In {\em Proceedings of the IEEE/CVF international conference on
-  computer vision}, pages 5117--5127, 2021.
-
-\bibitem{krizhevsky2012imagenet}
-Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
-\newblock Imagenet classification with deep convolutional neural networks.
-\newblock {\em Advances in neural information processing systems}, 25, 2012.
-
-\bibitem{simonyan2014very}
-Karen Simonyan and Andrew Zisserman.
-\newblock Very deep convolutional networks for large-scale image recognition.
-\newblock {\em arXiv preprint arXiv:1409.1556}, 2014.
-
-\bibitem{he2016deep}
-Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
-\newblock Deep residual learning for image recognition.
-\newblock In {\em Proceedings of the IEEE conference on computer vision and
-  pattern recognition}, pages 770--778, 2016.
 
 \end{thebibliography}
