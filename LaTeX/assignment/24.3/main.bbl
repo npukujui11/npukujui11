@@ -50,6 +50,60 @@ Timo Ojala, Matti Pietikainen, and Topi Maenpaa.
 \newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
   24(7):971--987, 2002.
 
+\bibitem{chen2018learning}
+Chen Chen, Qifeng Chen, Jia Xu, and Vladlen Koltun.
+\newblock Learning to see in the dark.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3291--3300, 2018.
+
+\bibitem{wang2013naturalness}
+Shuhang Wang, Jin Zheng, Hai-Miao Hu, and Bo~Li.
+\newblock Naturalness preserved enhancement algorithm for non-uniform
+  illumination images.
+\newblock {\em IEEE transactions on image processing}, 22(9):3538--3548, 2013.
+
+\bibitem{fu2016weighted}
+Xueyang Fu, Delu Zeng, Yue Huang, Xiao-Ping Zhang, and Xinghao Ding.
+\newblock A weighted variational model for simultaneous reflectance and
+  illumination estimation.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2782--2790, 2016.
+
+\bibitem{wang2018esrgan}
+Xintao Wang, Ke~Yu, Shixiang Wu, Jinjin Gu, Yihao Liu, Chao Dong, Yu~Qiao, and
+  Chen Change~Loy.
+\newblock Esrgan: Enhanced super-resolution generative adversarial networks.
+\newblock In {\em Proceedings of the European conference on computer vision
+  (ECCV) workshops}, pages 0--0, 2018.
+
+\bibitem{xu2020learning}
+Ke~Xu, Xin Yang, Baocai Yin, and Rynson~WH Lau.
+\newblock Learning to restore low-light images via
+  decomposition-and-enhancement.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 2281--2290, 2020.
+
+\bibitem{loh2019getting}
+Yuen~Peng Loh and Chee~Seng Chan.
+\newblock Getting to know low-light images with the exclusively dark dataset.
+\newblock {\em Computer Vision and Image Understanding}, 178:30--42, 2019.
+
+\bibitem{jiang2021enlightengan}
+Yifan Jiang, Xinyu Gong, Ding Liu, Yu~Cheng, Chen Fang, Xiaohui Shen, Jianchao
+  Yang, Pan Zhou, and Zhangyang Wang.
+\newblock Enlightengan: Deep light enhancement without paired supervision.
+\newblock {\em IEEE transactions on image processing}, 30:2340--2349, 2021.
+
+\bibitem{lv2018mbllen}
+Feifan Lv, Feng Lu, Jianhua Wu, and Chongsoon Lim.
+\newblock Mbllen: Low-light image/video enhancement using cnns.
+\newblock In {\em BMVC}, volume 220, page~4, 2018.
+
+\bibitem{wei2018deep}
+Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
+\newblock Deep retinex decomposition for low-light enhancement.
+\newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
+
 \bibitem{dinh20231m}
 Binh-Duong Dinh, Thanh-Thu Nguyen, Thi-Thao Tran, and Van-Truong Pham.
 \newblock 1m parameters are enough? a lightweight cnn-based model for medical
@@ -64,11 +118,6 @@ Hu~Cao, Yueyue Wang, Joy Chen, Dongsheng Jiang, Xiaopeng Zhang, Qi~Tian, and
 \newblock Swin-unet: Unet-like pure transformer for medical image segmentation.
 \newblock In {\em European conference on computer vision}, pages 205--218.
   Springer, 2022.
-
-\bibitem{wei2018deep}
-Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
-\newblock Deep retinex decomposition for low-light enhancement.
-\newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
 
 \bibitem{cai2018learning}
 Jianrui Cai, Shuhang Gu, and Lei Zhang.
