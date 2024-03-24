@@ -1,0 +1,150 @@
+\begin{thebibliography}{10}
+
+\bibitem{ji1994adaptive}
+T-L Ji, Malur~K Sundareshan, and Hans Roehrig.
+\newblock Adaptive image contrast enhancement based on human visual properties.
+\newblock {\em IEEE transactions on medical imaging}, 13(4):573--586, 1994.
+
+\bibitem{land1965}
+Edwin~H Land.
+\newblock The retinex.
+\newblock In {\em Ciba Foundation Symposium-Colour Vision: Physiology and
+  Experimental Psychology}, pages 217--227. Wiley Online Library, 1965.
+
+\bibitem{land1977retinex}
+Edwin~H Land.
+\newblock The retinex theory of color vision.
+\newblock {\em Scientific american}, 237(6):108--129, 1977.
+
+\bibitem{jobson1997properties}
+Daniel~J Jobson, Zia-ur Rahman, and Glenn~A Woodell.
+\newblock Properties and performance of a center/surround retinex.
+\newblock {\em IEEE transactions on image processing}, 6(3):451--462, 1997.
+
+\bibitem{yang2021locally}
+Chenglin Yang, Siyuan Qiao, Adam Kortylewski, and Alan Yuille.
+\newblock Locally enhanced self-attention: Combining self-attention and
+  convolution as local and context terms.
+\newblock {\em arXiv preprint arXiv:2107.05637}, 2021.
+
+\bibitem{zhang2020attention}
+Cheng Zhang, Qingsen Yan, Yu~Zhu, Xianjun Li, Jinqiu Sun, and Yanning Zhang.
+\newblock Attention-based network for low-light image enhancement.
+\newblock In {\em 2020 IEEE international conference on multimedia and expo
+  (ICME)}, pages 1--6. IEEE, 2020.
+
+\bibitem{jain1991unsupervised}
+Anil~K Jain and Farshid Farrokhnia.
+\newblock Unsupervised texture segmentation using gabor filters.
+\newblock {\em Pattern recognition}, 24(12):1167--1186, 1991.
+
+\bibitem{lowe2004distinctive}
+David~G Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em International journal of computer vision}, 60:91--110, 2004.
+
+\bibitem{ojala2002multiresolution}
+Timo Ojala, Matti Pietikainen, and Topi Maenpaa.
+\newblock Multiresolution gray-scale and rotation invariant texture
+  classification with local binary patterns.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  24(7):971--987, 2002.
+
+\bibitem{chen2018learning}
+Chen Chen, Qifeng Chen, Jia Xu, and Vladlen Koltun.
+\newblock Learning to see in the dark.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3291--3300, 2018.
+
+\bibitem{wang2013naturalness}
+Shuhang Wang, Jin Zheng, Hai-Miao Hu, and Bo~Li.
+\newblock Naturalness preserved enhancement algorithm for non-uniform
+  illumination images.
+\newblock {\em IEEE transactions on image processing}, 22(9):3538--3548, 2013.
+
+\bibitem{fu2016weighted}
+Xueyang Fu, Delu Zeng, Yue Huang, Xiao-Ping Zhang, and Xinghao Ding.
+\newblock A weighted variational model for simultaneous reflectance and
+  illumination estimation.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2782--2790, 2016.
+
+\bibitem{wang2018esrgan}
+Xintao Wang, Ke~Yu, Shixiang Wu, Jinjin Gu, Yihao Liu, Chao Dong, Yu~Qiao, and
+  Chen Change~Loy.
+\newblock Esrgan: Enhanced super-resolution generative adversarial networks.
+\newblock In {\em Proceedings of the European conference on computer vision
+  (ECCV) workshops}, pages 0--0, 2018.
+
+\bibitem{xu2020learning}
+Ke~Xu, Xin Yang, Baocai Yin, and Rynson~WH Lau.
+\newblock Learning to restore low-light images via
+  decomposition-and-enhancement.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 2281--2290, 2020.
+
+\bibitem{loh2019getting}
+Yuen~Peng Loh and Chee~Seng Chan.
+\newblock Getting to know low-light images with the exclusively dark dataset.
+\newblock {\em Computer Vision and Image Understanding}, 178:30--42, 2019.
+
+\bibitem{jiang2021enlightengan}
+Yifan Jiang, Xinyu Gong, Ding Liu, Yu~Cheng, Chen Fang, Xiaohui Shen, Jianchao
+  Yang, Pan Zhou, and Zhangyang Wang.
+\newblock Enlightengan: Deep light enhancement without paired supervision.
+\newblock {\em IEEE transactions on image processing}, 30:2340--2349, 2021.
+
+\bibitem{lv2018mbllen}
+Feifan Lv, Feng Lu, Jianhua Wu, and Chongsoon Lim.
+\newblock Mbllen: Low-light image/video enhancement using cnns.
+\newblock In {\em BMVC}, volume 220, page~4, 2018.
+
+\bibitem{wei2018deep}
+Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu.
+\newblock Deep retinex decomposition for low-light enhancement.
+\newblock {\em arXiv preprint arXiv:1808.04560}, 2018.
+
+\bibitem{hao2020low}
+Shijie Hao, Xu~Han, Yanrong Guo, Xin Xu, and Meng Wang.
+\newblock Low-light image enhancement with semi-decoupled decomposition.
+\newblock {\em IEEE transactions on multimedia}, 22(12):3025--3038, 2020.
+
+\bibitem{ravirathinam2021c}
+Praveen Ravirathinam, Divyam Goel, and J~Jennifer Ranjani.
+\newblock C-lienet: a multi-context low-light image enhancement network.
+\newblock {\em IEEE Access}, 9:31053--31064, 2021.
+
+\bibitem{xu2021novel}
+Yadong Xu, Cheng Yang, Beibei Sun, Xiaoan Yan, and Minglong Chen.
+\newblock A novel multi-scale fusion framework for detail-preserving low-light
+  image enhancement.
+\newblock {\em Information Sciences}, 548:378--397, 2021.
+
+\bibitem{dinh20231m}
+Binh-Duong Dinh, Thanh-Thu Nguyen, Thi-Thao Tran, and Van-Truong Pham.
+\newblock 1m parameters are enough? a lightweight cnn-based model for medical
+  image segmentation.
+\newblock In {\em 2023 Asia Pacific Signal and Information Processing
+  Association Annual Summit and Conference (APSIPA ASC)}, pages 1279--1284.
+  IEEE, 2023.
+
+\bibitem{cao2022swin}
+Hu~Cao, Yueyue Wang, Joy Chen, Dongsheng Jiang, Xiaopeng Zhang, Qi~Tian, and
+  Manning Wang.
+\newblock Swin-unet: Unet-like pure transformer for medical image segmentation.
+\newblock In {\em European conference on computer vision}, pages 205--218.
+  Springer, 2022.
+
+\bibitem{cai2018learning}
+Jianrui Cai, Shuhang Gu, and Lei Zhang.
+\newblock Learning a deep single image contrast enhancer from multi-exposure
+  images.
+\newblock {\em IEEE Transactions on Image Processing}, 27(4):2049--2062, 2018.
+
+\bibitem{jiang2019learning}
+Haiyang Jiang and Yinqiang Zheng.
+\newblock Learning to see moving objects in the dark.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 7324--7333, 2019.
+
+\end{thebibliography}

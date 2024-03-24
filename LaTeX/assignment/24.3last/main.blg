@@ -1,0 +1,88 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+Database file #1: reference.bib
+Repeated entry---line 393 of file reference.bib
+ : @article{yang2021locally
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 400 of file reference.bib
+ : @inproceedings{zhang2020attention
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 580 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 657 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 700 of file reference.bib
+ : @article{cai2018learning
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 884 of file reference.bib
+ : @article{yang2021locally
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 891 of file reference.bib
+ : @inproceedings{zhang2020attention
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 946 of file reference.bib
+ : @inproceedings{xu2020learning
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 962 of file reference.bib
+ : @inproceedings{fu2016weighted
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 980 of file reference.bib
+ : @article{wei2018deep
+ :                     ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in lv2018mbllen
+You've used 25 entries,
+            1791 wiz_defined-function locations,
+            598 strings with 8310 characters,
+and the built_in function-call counts, 7657 in all, are:
+= -- 710
+> -- 338
+< -- 11
++ -- 122
+- -- 97
+* -- 542
+:= -- 1132
+add.period$ -- 79
+call.type$ -- 25
+change.case$ -- 25
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 339
+empty$ -- 719
+format.name$ -- 97
+if$ -- 1743
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 25
+newline$ -- 128
+num.names$ -- 25
+pop$ -- 78
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 193
+stack$ -- 0
+substring$ -- 656
+swap$ -- 123
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 79
+width$ -- 27
+write$ -- 280
+(There were 10 error messages)
