@@ -147,4 +147,42 @@ Haiyang Jiang and Yinqiang Zheng.
 \newblock In {\em Proceedings of the IEEE/CVF International Conference on
   Computer Vision}, pages 7324--7333, 2019.
 
+\bibitem{guo2020zero}
+Chunle Guo, Chongyi Li, Jichang Guo, Chen~Change Loy, Junhui Hou, Sam Kwong,
+  and Runmin Cong.
+\newblock Zero-reference deep curve estimation for low-light image enhancement.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 1780--1789, 2020.
+
+\bibitem{zhang2019kindling}
+Yonghua Zhang, Jiawan Zhang, and Xiaojie Guo.
+\newblock Kindling the darkness: A practical low-light image enhancer.
+\newblock In {\em Proceedings of the 27th ACM international conference on
+  multimedia}, pages 1632--1640, 2019.
+
+\bibitem{yang2020fidelity}
+Wenhan Yang, Shiqi Wang, Yuming Fang, Yue Wang, and Jiaying Liu.
+\newblock From fidelity to perceptual quality: A semi-supervised approach for
+  low-light image enhancement.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 3063--3072, 2020.
+
+\bibitem{zhu2020zero}
+Anqi Zhu, Lin Zhang, Ying Shen, Yong Ma, Shengjie Zhao, and Yicong Zhou.
+\newblock Zero-shot restoration of underexposed images via robust retinex
+  decomposition.
+\newblock In {\em 2020 IEEE International Conference on Multimedia and Expo
+  (ICME)}, pages 1--6. IEEE, 2020.
+
+\bibitem{zhang2021beyond}
+Yonghua Zhang, Xiaojie Guo, Jiayi Ma, Wei Liu, and Jiawan Zhang.
+\newblock Beyond brightening low-light images.
+\newblock {\em International Journal of Computer Vision}, 129:1013--1037, 2021.
+
+\bibitem{lim2020dslr}
+Seokjae Lim and Wonjun Kim.
+\newblock Dslr: Deep stacked laplacian restorer for low-light image
+  enhancement.
+\newblock {\em IEEE Transactions on Multimedia}, 23:4272--4284, 2020.
+
 \end{thebibliography}
