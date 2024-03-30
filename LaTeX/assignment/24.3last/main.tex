@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{article}
+\documentclass[a4paper]{ctexart}
 
 \usepackage{tabularx} % extra features for tabular environment
 \usepackage{amsmath}  % improve math presentation
@@ -25,15 +25,23 @@
 \usepackage{bbm}					  % 输入指示函数
 \usepackage{tablefootnote}			  % 表格注释
 \usepackage{pythonhighlight}
-\usepackage{fancyhdr}
+%\usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{tocloft}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead{}
-\fancyfoot{}
-\fancyhead[R]{\small Page \thepage\ of \pageref*{LastPage}}
-\fancyhead[L]{\small Report}
+\usepackage{authblk}
+\usepackage{setspace}
+
+\usepackage[section]{placeins}
+
+% 设置页面边距
+\geometry{a4paper, top=1.7cm, bottom=1.6cm, left=1.6cm, right=1.6cm}
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead{}
+%\fancyfoot{}
+%\fancyhead[R]{\small Page \thepage\ of \pageref*{LastPage}}
+%\fancyhead[L]{\zihao{-5} \songti 开题报告}
 
 \usepackage{listings}                 % 导入代码块
 \usepackage{xcolor}
@@ -60,11 +68,11 @@
 	urlcolor=blue         
 }
 %++++++++++++++++++++++++++++++++++++++++
-\titleformat{\section}{\Large\bfseries\songti}{\thesection}{1em}{}
-\titleformat{\subsection}{\large\bfseries\songti}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalsize\bfseries\songti}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}{\small\bfseries\songti}{\paragraph}{1em}{}
-\titleformat{\subparagraph}{\footnotesize\bfseries\songti}{\subparagraph}{1em}{}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalsize\bfseries}{\paragraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalsize\bfseries}{\subparagraph}{1em}{}
 
 \begin{document}
 	
@@ -96,16 +104,20 @@
 	
 	\newpage	
 	
+	\section{摘要}
+	
+		\textcolor{red}{低光图像增强(LLIE)旨在增强图像亮度并恢复低光图像细节。然而，现有基于深度学习的LLIE模型仍面临诸如信息丢失、细节恢复不足、噪声、色差和细节失真等挑战，导致无法准确恢复低光图像(LLI)中的暗部细节，且模型往往过于复杂且存在冗余。为了解决这些问题，本文提出了一种简单而有效的LLIE模型，称为上下文网络(xxx-Net)。该模型由两个核心部分组成：1) 基于U-Net架构的编码器和解码器，用于处理图像的整体结构；2) 位于模型中心的BottleNeck块，由Swin Transformer块组成，用于捕获弱光图像的全局上下文信息。此外，我们还引入了即插即用的Cbam块，以学习和强调弱光图像中的局部细节。通过大量实验，我们证明了xxx-Net在恢复低光图像的暗部区域方面具有出色的性能，同时具有较少的参数和更快的推理速度，从而在低光图像增强任务中取得了显著的进步。}
+	
 	\section{引言}
 		
-		低光图像增强（Low-Light Image Enhancement, LLIE）是图像处理领域的一个关键任务，旨在提升低光环境下拍摄图像的视觉质量。该领域的最新进展主要由深度学习技术推动，包括多种学习策略、网络架构、损失函数和训练数据集的应用。低光图像增强在视觉监控、自动驾驶和计算摄影等多个领域具有广泛应用。尤其在智能手机摄影领域，由于相机光圈大小、实时处理需求和存储限制，低光环境下的图像拍摄面临着显著挑战。
+		\textcolor{red}{低光图像增强（Low-Light Image Enhancement, LLIE）是视觉监控、自动驾驶和计算摄影等领域的重要应用之一。低光条件下拍摄的照片常常会遭受多种退化现象，如低对比度、可见度不足、噪声和色彩失真，这些问题不仅影响视觉感知，还会干扰后续的高级图像处理任务。}因此，低光图像增强是图像处理领域的一个关键任务，旨在提升低光环境下拍摄图像的视觉质量。\textcolor{red}{近年来，该领域的发展主要受到深度学习技术的驱动，涉及多种学习策略、网络架构、损失函数和训练数据集的运用。然而，在低光图像中恢复照度并精确恢复极暗区域的细节信息依然是一项充满挑战的任务。}%尤其在智能手机摄影领域，由于相机光圈大小、实时处理需求和存储限制，低光环境下的图像拍摄面临着显著挑战。
+		\textcolor{red}{为应对这一挑战，研究人员提出了众多LLIE方法，包括传统方法和基于深度学习的方法。}
+		
 		
 		%介绍传统的低光图像增强方法
-		传统的低光增强方法，如基于直方图均衡化\cite{ji1994adaptive}和Retinex理论\cite{land1965, land1977retinex, jobson1997properties}的方法，虽然能够在一定程度上改善图像质量，但存在一些局限性。直方图均衡化能够提高图像的全局对比度，但可能增加背景噪声的对比度并降低有用图像内容的对比度，导致视觉效果不佳。Retinex算法旨在消除图像照度分量的干扰并还原图像真实色彩，但通常忽略噪声问题，可能导致增强结果中噪声的保留或放大，并且其复杂的优化过程增加了模型的复杂度。
-		
+		\textcolor{red}{传统的低光图像增强技术，如基于直方图均衡化\cite{ji1994adaptive}和Retinex理论\cite{land1965, land1977retinex, jobson1997properties}的方法，能在一定程度上提升图像的视觉质量。这些方法通常依赖于各种图像先验来构建模型，以逆向恢复退化的图像。然而，尽管这些传统技术能够增强图像的整体对比度，它们往往也会加剧背景噪声的对比度，同时减弱有价值的图像细节的对比度，从而影响最终的视觉效果。}%Retinex算法旨在消除图像照度分量的干扰并还原图像真实色彩，但通常忽略噪声问题，可能导致增强结果中噪声的保留或放大，并且其复杂的优化过程增加了模型的复杂度。	
 		%传统的低光增强方法，如基于直方图均衡\cite{ji1994adaptive}和 Retinex\cite{land1965, land1977retinex, jobson1997properties}的方法，直方图均衡化重新调整图像的直方图分布，一方面增加了图像的全局对比度，另一方面使得亮度在整个图像的分布更加均匀。直方图均衡化的方法非常快速有效，并且是一个可逆操作，但缺点在于其不加选择地处理数据，可能增加背景噪声的对比度，同时降低有用的图像内容的对比度，导致视觉效果欠佳。此外，该方法也无法适用于复杂多变的低光照场景。Retinex 算法的核心思想是消除源图像照度分量干扰，依据反射分量信息还原图像真实色彩。基于 Retinex 的方法能够很大程度改善图像质量，但在应用的过程中仍存在不可忽视的缺点。例如，其通常忽略噪声问题，可能导致增强结果中噪声的保留或放大；有效的先验或正则化的选择具有挑战性，不准确的先验可能导致伪影和颜色偏差；此外，这些方法的复杂优化过程也导致最终的模型较为复杂。
-		
-		近年来，基于深度学习的低光图像增强技术取得了显著成就，特别是卷积神经网络（CNN）在多个计算机视觉任务中展现出卓越的性能。CNN通过利用注意力机制\cite{yang2021locally,zhang2020attention}和上下文信息，能够从原始图像中有效提取局部特征\cite{jain1991unsupervised, lowe2004distinctive, ojala2002multiresolution}。在低光图像中，亮度较低、对比度较弱的区域之间存在一定的关联性和相互作用，如果模型能够捕获全局光照，将有助于恢复图像的整体亮度和对比度\cite{chen2018learning, wang2013naturalness}\footnote{Retinex 理论的一个关键思想是图像的颜色和亮度感知取决于全局光照条件，因此捕获和调整全局光照信息对于图像增强和恢复至关重要。}。在图像处理领域，尤其是在低光图像恢复和增强方面，保持图像的结构完整性是一个重要的挑战。Fu 等人\cite{fu2016weighted}引入了一种加权变分模型，通过边缘感知权重来保持图像的结构完整性，从而在增强过程中保持边缘和细节信息。随后，Wang 等人\cite{wang2018esrgan}在其提出的 ESRGAN 模型中强调了集成全局和局部特征的重要性，包括保持边缘和纹理细节的完整性，以增强图像的感知质量。最近，Xu\cite{xu2020learning}提出了一种基于深度学习的方法，通过分解和增强来恢复低光图像，其中在分解阶段保持了图像的结构信息，包括边缘和纹理细节，这对于后续的增强阶段至关重要。因此，即使在低光条件下，对象的轮廓和边缘仍然是重要的视觉特征，捕获这些全局的边缘信息对于保持图像的结构完整性至关重要。
+		近年来，基于深度学习的低光图像增强技术取得了显著成就，其通过设计各种模块和损失函数来学习从低光图像到正常光图像的映射。由于深度学习方法强大的学习能力，往往能够产生更好的细节恢复结果。CNN通过利用注意力机制\cite{yang2021locally,zhang2020attention}和上下文信息，能够从原始图像中有效提取局部特征\cite{jain1991unsupervised, lowe2004distinctive, ojala2002multiresolution}。在低光图像中，亮度较低、对比度较弱的区域之间存在一定的关联性和相互作用，如果模型能够捕获全局光照，将有助于恢复图像的整体亮度和对比度\cite{chen2018learning, wang2013naturalness}\footnote{Retinex 理论的一个关键思想是图像的颜色和亮度感知取决于全局光照条件，因此捕获和调整全局光照信息对于图像增强和恢复至关重要。}。在图像处理领域，尤其是在低光图像恢复和增强方面，保持图像的结构完整性是一个重要的挑战。Fu 等人\cite{fu2016weighted}引入了一种加权变分模型，通过边缘感知权重来保持图像的结构完整性，从而在增强过程中保持边缘和细节信息。随后，Wang 等人\cite{wang2018esrgan}在其提出的 ESRGAN 模型中强调了集成全局和局部特征的重要性，包括保持边缘和纹理细节的完整性，以增强图像的感知质量。最近，Xu\cite{xu2020learning}提出了一种基于深度学习的方法，通过分解和增强来恢复低光图像，其中在分解阶段保持了图像的结构信息，包括边缘和纹理细节，这对于后续的增强阶段至关重要。因此，即使在低光条件下，对象的轮廓和边缘仍然是重要的视觉特征，捕获这些全局的边缘信息对于保持图像的结构完整性至关重要。
 		
 		在低光条件下捕获和恢复图像中的纹理和模式是图像增强领域的一项重要挑战。Loh等人\cite{loh2019getting}通过对低光照图像的特性进行研究，强调了在弱光条件下保持图像纹理和模式的重要性。进一步地，Jiang 等人\cite{jiang2021enlightengan}提出了一种基于生成对抗网络的方法，有效地恢复了低光图像中的细节，包括难以辨识的纹理和模式。同样，Lv 等人\cite{lv2018mbllen}通过卷积神经网络增强了低光图像和视频，专注于恢复纹理和模式的细节，从而提供更丰富的图像内容。因此，尽管弱光图像中的纹理和模式可能难以辨识，但它们对于理解图像内容仍然非常重要。理解图像内容的关键在于识别不同对象和场景元素之间的空间关系。Wei 等人\cite{wei2018deep}提出的深度 Retinex 分解方法通过在特征提取过程中考虑全局依赖关系来进一步提高低光图像的质量。
 		
@@ -350,11 +362,33 @@
 		
 	\section{实验进度}
 		
-		\textcolor{red}{使用了Embed Expanding模块替换之前的reshape部分。}
+		\textcolor{blue}{使用了Patch Expanding模块替换之前的reshape+permute部分的代码。}
 		
-		\textcolor{red}{使用了一种效率更高的感知损失函数的实现方式。}
+		\textcolor{red}{使用原先的reshape方法取代Patch Expanding，因为发现Embed Expanding中的rearrange方法可能会导致结果偏暗，如Fig. \ref{fig: Embed Expanding and reshape}所示。}
+		
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}{0.6\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot}
+				\captionsetup{font=scriptsize}
+				\caption{Patch Expanding}
+				\label{fig: Expanding}
+			\end{subfigure}
+			\begin{subfigure}{0.6\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot1}
+				\captionsetup{font=scriptsize}
+				\caption{Reshape}
+				\label{fig: Reshape}	
+			\end{subfigure}
+			\caption{
+				\label{fig: Embed Expanding and reshape}
+				使用Patch Expanding部分的增强图片亮度会比较暗，如Fig. \ref{fig: Expanding}所示
+			}
+		\end{figure}
+		
+		\textcolor{blue}{使用了一种效率更高的感知损失函数的实现方式。}
 	
-		\textcolor{red}{实现了Performance Evaluation章节中提到的全部图像评估算法(共11个)，其中包括全参考性评价标准(Full-reference)和非参考性评价标准(No-reference)，如Fig. \ref{fig: IQA Index}所示。}
+		\textcolor{blue}{实现了Performance Evaluation章节中提到的全部图像评估算法(共11个)，其中包括全参考性评价标准(Full-reference)和非参考性评价标准(No-reference)，如Fig. \ref{fig: IQA Index}所示。}
 		
 		\begin{figure}[htb]
 			\centering
@@ -388,7 +422,7 @@
 			}
 		\end{figure}
 		
-		\textcolor{red}{(不分先后)复现实现了Zero-DCE\cite{guo2020zero}, MBLLEN\cite{lv2018mbllen}, EnlightenGAN\cite{jiang2021enlightengan}, KinD\cite{zhang2019kindling}, DRBN\cite{yang2020fidelity}, Retinex-Net\cite{wei2018deep}, RRDNet\cite{zhu2020zero}, KinD++\cite{zhang2021beyond}, DSLR\cite{lim2020dslr},一共9种已知模型，可视化结果见Fig. \ref{fig: Experiment}。}
+		\textcolor{blue}{(不分先后)复现实现了Zero-DCE\cite{guo2020zero}, MBLLEN\cite{lv2018mbllen}, EnlightenGAN\cite{jiang2021enlightengan}, KinD\cite{zhang2019kindling}, DRBN\cite{yang2020fidelity}, Retinex-Net\cite{wei2018deep}, RRDNet\cite{zhu2020zero}, KinD++\cite{zhang2021beyond}, DSLR\cite{lim2020dslr},一共9种已知模型，可视化结果见Fig. \ref{fig: Experiment}和\ref{fig: Experiment1}。}
 	
 		\begin{figure}[htb]
 			\centering
@@ -453,6 +487,45 @@
 				\label{fig: DSLR}	
 			\end{subfigure}\\
 			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/TBEFN}
+				\captionsetup{font=scriptsize}
+				\caption{TBEFN}
+				\label{fig: TBEFN}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/ExCNet}
+				\captionsetup{font=scriptsize}
+				\caption{ExCNet}
+				\label{fig: ExCNet}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/RUAS}
+				\captionsetup{font=scriptsize}
+				\caption{RUAS}
+				\label{fig: RUAS}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/SCI}
+				\captionsetup{font=scriptsize}
+				\caption{SCI}
+				\label{fig: SCI}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/Zero-DCE++}
+				\captionsetup{font=scriptsize}
+				\caption{Zero-DCE++}
+				\label{fig: Zero-DCE++}
+			\end{subfigure}\\
+			
+			\caption{
+				\label{fig: Experiment}
+				LOL 数据集中图片，在9个模型下的可视化表现
+			}
+		\end{figure}
+		
+		\begin{figure}[htb]
+			\centering
+			\begin{subfigure}{0.19\textwidth}
 				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/Input1}
 				\captionsetup{font=scriptsize}
 				\caption{Input}
@@ -481,7 +554,8 @@
 				\captionsetup{font=scriptsize}
 				\caption{KinD}
 				\label{fig: KinD1}
-			\end{subfigure}\\
+			\end{subfigure}
+			\\
 			\begin{subfigure}{0.19\textwidth}
 				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/DRBN1}
 				\captionsetup{font=scriptsize}
@@ -511,14 +585,274 @@
 				\captionsetup{font=scriptsize}
 				\caption{DSLR}
 				\label{fig: DSLR1}	
+			\end{subfigure}\\
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/TBEFN1}
+				\captionsetup{font=scriptsize}
+				\caption{TBEFN}
+				\label{fig: TBEFN1}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/ExCNet1}
+				\captionsetup{font=scriptsize}
+				\caption{ExCNet}
+				\label{fig: ExCNet1}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/RUAS1}
+				\captionsetup{font=scriptsize}
+				\caption{RUAS}
+				\label{fig: RUAS1}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/SCI1}
+				\captionsetup{font=scriptsize}
+				\caption{SCI}
+				\label{fig: SCI1}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/Zero-DCE++1}
+				\captionsetup{font=scriptsize}
+				\caption{Zero-DCE++}
+				\label{fig: Zero-DCE++1}
+			\end{subfigure}
+		\caption{
+			\label{fig: Experiment1}
+			LOL 数据集中图片，在9个模型下的可视化表现
+		}
+		\end{figure}
+		
+		\textcolor{red}{复现了TBEFN, ExCNet, RUAS, SCI, Zero-DCE++，共5种已知模型，可视化结果见 Fig. \ref{fig: Experiment}和\ref{fig: Experiment1}}
+		
+		\textcolor{red}{累计进行了多组对照实验（约20次）, 其中PSNR最好情况在17左右，SSIM最好情况在0.6左右}
+		
+		\textcolor{red}{如 Fig. \ref{fig: myplot_ScConv}所示，添加ScConv模块(CVPR2023，代码未开源，使用github高赞复现代码)似乎会导致模型错误。}
+		\begin{figure}[htb]
+			\centering
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.7\linewidth]{picture/LLIE/Experiment/myplot_ScConv1}
+				\captionsetup{font=scriptsize}
+				\caption{使用ScConv模块，200次Epoch}
+				\label{fig: myplot_ScConv1}
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.7\linewidth]{picture/LLIE/Experiment/myplot_ScConv2_Epoch200}
+				\captionsetup{font=scriptsize}
+				\caption{使用ScConv模块，400次Epoch}
+				\label{fig: myplot_ScConv2_Epoch200}	
 			\end{subfigure}
 			\caption{
-				\label{fig: Experiment}
-				LOL 数据集中选取两张图片，在9个模型下的可视化表现
+				\label{fig: myplot_ScConv}
+				使用ScConv模块的模型可视化结果。
+			}
+		\end{figure}
+	
+		\textcolor{red}{如 Fig. \ref{fig: act}所示，使用不同的激活函数会使得增强图像呈现不同的结果，我们发现使用Sigmoid激活函数使得图像不失真，且ARMB能够有效增强图片视觉效果}
+	
+		\begin{figure}[htb]
+			\centering
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.5\linewidth]{picture/LLIE/Experiment/myplot_without_ScConv_use_GELU_Axial}
+				\captionsetup{font=scriptsize}
+				\caption{使用GELU激活函数，不使用ScConv模块，使用3$\times$3轴向可分离卷积}
+				\label{fig: myplot_without_ScConv_use_GELU_Axial}
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.5\linewidth]{picture/LLIE/Experiment/myplot_without_ScConv_Sigmoid_Axial}
+				\captionsetup{font=scriptsize}
+				\caption{使用Sigmoid激活函数，不使用ScConv模块，不使用3$\times$3轴向可分离卷积}
+				\label{fig: myplot_without_ScConv_Sigmoid_Axial}	
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.5\linewidth]{picture/LLIE/Experiment/myplot_use_GELU_without_ScConv_Axial_}
+				\captionsetup{font=scriptsize}
+				\caption{使用GELU激活函数，不使用ScConv模块，不使用3$\times$3轴向可分离卷积}
+				\label{fig: myplot_use_GELU_without_ScConv_Axial_}	
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.5\linewidth]{picture/LLIE/Experiment/myplot_use_Swish_without_ScConv}
+				\captionsetup{font=scriptsize}
+				\caption{使用Swish激活函数，不使用ScConv模块，使用3$\times$3轴向可分离卷积}
+				\label{fig: myplot_use_Swish_without_ScConv}	
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.5\linewidth]{picture/LLIE/Experiment/myplot_use_Sigmoid_without_ARMB}
+				\captionsetup{font=scriptsize}
+				\caption{使用Sigmoid激活函数，不使用ScConv模块，不使用ARMB模块}
+				\label{fig: myplot_use_Sigmoid_without_ARMB}	
+			\end{subfigure}
+			\caption{
+				\label{fig: act}
+			}
+		\end{figure}
+		\FloatBarrier
+		
+		\textcolor{red}{如 Fig. \ref{fig: dark}所示，通过实验我们发现，目前我们的模型暂时没法有效增强极暗区域，无法捕获极暗区域细节，对极暗区域内容细节无法还原。如 Fig. \ref{fig: dark1}所示，只有少数模型能够有效显示出背景中包含的极暗环境下的细节信息，分别是Retinex-Net，KinD++，DSLR, TBEFN，但Retinex-Net和TBEFN的增强图像噪声过大，KinD++只能还原部分细节。}
+		
+		
+		\begin{figure}[htb]
+			\centering
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.4\linewidth]{picture/LLIE/Experiment/myplot_Sigmoid_ScConv_Epoch20}
+				\captionsetup{font=scriptsize}
+				\caption{使用Sigmoid激活函数，使用修改后的ScConv模块，20个Epoch}
+				\label{fig: myplot_Sigmoid_ScConv_Epoch20}
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.4\linewidth]{picture/LLIE/Experiment/myplot_Sigmoid_ScConv_Epoch100}
+				\captionsetup{font=scriptsize}
+				\caption{使用Sigmoid激活函数，使用修改后的ScConv模块，100个Epoch}
+				\label{fig: myplot_Sigmoid_ScConv_Epoch100}	
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.4\linewidth]{picture/LLIE/Experiment/myplot_Sigmoid_without_ScConv_Epoch100}
+				\captionsetup{font=scriptsize}
+				\caption{使用Sigmoid激活函数，不使用修改后的ScConv模块，100个Epoch}
+				\label{fig: myplot_Sigmoid_without_ScConv_Epoch100}	
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.4\linewidth]{picture/LLIE/Experiment/myplot_Sigmoid_without_ScConv_Epoch140}
+				\captionsetup{font=scriptsize}
+				\caption{使用Sigmoid激活函数，不使用修改后的ScConv模块，140个Epoch}
+				\label{fig: myplot_Sigmoid_without_ScConv_Epoch140}	
+			\end{subfigure}
+			\caption{
+				\label{fig: dark}
 			}
 		\end{figure}
 		
-	
+		\begin{figure}[htb]
+			\centering
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/input2}
+				\captionsetup{font=scriptsize}
+				\caption{Input}
+				\label{fig: input2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/Zero-DCE2}				
+				\captionsetup{font=scriptsize}
+				\caption{Zero-DCE}
+				\label{fig: Zero-DCE2}	
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/MBLLEN2}
+				\captionsetup{font=scriptsize}
+				\caption{MBLLEN}
+				\label{fig: MBLLEN2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/EnlightenGAN2}
+				\captionsetup{font=scriptsize}
+				\caption{EnlightenGAN}
+				\label{fig: EnlightenGAN2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/KinD2}
+				\captionsetup{font=scriptsize}
+				\caption{KinD}
+				\label{fig: KinD2}
+			\end{subfigure}\\
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/Retinex-Net2}
+				\captionsetup{font=scriptsize}
+				\caption{Retinex-Net}
+				\label{fig: Retinex-Net2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/RRDNet2}
+				\captionsetup{font=scriptsize}
+				\caption{RRDNet}
+				\label{fig: RRDNet2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/KinD++2}
+				\captionsetup{font=scriptsize}
+				\caption{KinD++}
+				\label{fig: KinD++2}	
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/DSLR2}
+				\captionsetup{font=scriptsize}
+				\caption{DSLR}
+				\label{fig: DSLR2}	
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/TBEFN2}
+				\captionsetup{font=scriptsize}
+				\caption{TBEFN}
+				\label{fig: TBEFN2}
+			\end{subfigure}\\
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/ExCNet2}
+				\captionsetup{font=scriptsize}
+				\caption{ExCNet}
+				\label{fig: ExCNet2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/RUAS2}
+				\captionsetup{font=scriptsize}
+				\caption{RUAS}
+				\label{fig: RUAS2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/SCI2}
+				\captionsetup{font=scriptsize}
+				\caption{SCI}
+				\label{fig: SCI2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/Zero-DCE++2}
+				\captionsetup{font=scriptsize}
+				\caption{Zero-DCE++}
+				\label{fig: Zero-DCE++2}
+			\end{subfigure}
+			\begin{subfigure}{0.19\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/input_gt}
+				\captionsetup{font=scriptsize}
+				\caption{GT}
+				\label{fig: input_gt}
+			\end{subfigure}
+			\caption{
+				\label{fig: dark1}
+				LOL\_Syn数据集中的极弱光图片，在13个模型下的可视化表现。
+			}
+		\end{figure}
+		
+		\textcolor{red}{如 Fig. \ref{fig: Axial}所示，通过实验我们发现，轴向深度可分离卷积会抑制增强效果。}
+		
+		\begin{figure}[htb]
+			\centering
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.6\linewidth]{picture/LLIE/Experiment/myplot_sigmoid_stem3x3_without_ScConv_Axial}
+				\captionsetup{font=scriptsize}
+				\caption{使用Sigmoid激活函数，不使用修改后的ScConv模块，将3x3轴向深度可分离卷积替换为3$\times$3Conv}
+				\label{fig: myplot_sigmoid_stem3x3_without_ScConv_Axial}
+			\end{subfigure}
+			\begin{subfigure}{\textwidth}
+				\centering
+				\includegraphics[width=0.6\linewidth]{picture/LLIE/Experiment/myplot_Sigmoid_without_ScConv_conv3x3}
+				\captionsetup{font=scriptsize}
+				\caption{使用Sigmoid激活函数，不使用修改后的ScConv模块，使用3x3轴向深度可分离卷积}
+				\label{fig: myplot_Sigmoid_without_ScConv_conv3x3}	
+			\end{subfigure}
+			\caption{
+				\label{fig: Axial}
+			}
+		\end{figure}
+		
 		\renewcommand{\refname}{References}
 		
 		
