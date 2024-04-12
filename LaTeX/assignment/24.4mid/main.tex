@@ -425,6 +425,139 @@
 
 		\subsection*{实验部分}
 		
+		我们在原有模型的基础上增加了残差连接(Residual connection)，原有的模型分支在经过Feature Extract模块后乘以一个激活因子$\lambda$(Activator factor)与残差连接相加得到最后的输出结果。其中 Stem 网络由两个 16 通道的 $3\times 3$ Conv 组成，stride=1，padding=1。Feature Extract模块由两个 16 通道和 3 通道的 $3 \times 3$ Conv组成，stride=1，padding=1，具体模型见Fig. \ref{fig: skip model}。此外，我们在 Encoder 和 Decoder 之间的跳跃连接(Skip connection)中添加 FPN 块，以自底向上融合高层次特征(Fig. \ref{fig: skip model_fpn})。\textcolor{red}{结论：跳跃连接和Stem网络能够显著提高模型评价指标，但是FPN模块的提升并不是很大。}
+		
+		
+		
+		
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=0.7\linewidth]{picture/LLIE/My Architecture/skip_model}
+			%\captionsetup{font=scriptsize}
+			\caption{增加了跳跃连接的模型}
+			\label{fig: skip model}	
+		\end{figure}
+		
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.65$, PSNR = 19.355, SSIM = 0.889}
+				\label{fig: lambda = 0.65}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.60$, PSNR = 20.131, SSIM = 0.893}
+				\label{fig: lambda = 0.60}	
+			\end{subfigure}\\
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.55$, PSNR = 19.880, SSIM = 0.894}
+				\label{fig: lambda = 0.55}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.50}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.50$, PSNR = 20.501, SSIM = 0.909}
+				\label{fig: lambda = 0.50}	
+			\end{subfigure}\\
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.475}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.475$, PSNR = 20.207, SSIM = 0.890}
+				\label{fig: lambda = 0.475}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.45}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.45$, PSNR = 18.513, SSIM = 0.862}
+				\label{fig: lambda = 0.45}	
+			\end{subfigure}
+			\caption{
+				\label{fig: skip connection}
+				不同激活因子的可视化结果
+			}
+		\end{figure}
+		
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=0.7\linewidth]{picture/LLIE/My Architecture/skip_model_fpn}
+			%\captionsetup{font=scriptsize}
+			\caption{增加了跳跃连接和FPN的模型}
+			\label{fig: skip model_fpn}	
+		\end{figure}
+		
+		
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.40_fpn_ssim_0.8894_psnr_19.5127}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.40$, PSNR = 19.513, SSIM = 0.889}
+				\label{fig: fpn_lambda = 0.40}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.45_fpn_ssim_0.8803_psnr_19.5501}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.45$, PSNR = 19.5501, SSIM = 0.880}
+				\label{fig: fpn_lambda = 0.45}	
+			\end{subfigure}\\
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.50_fpn_ssim_0.8801_psnr_19.3493}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.50$, PSNR = 19.349, SSIM = 0.880}
+				\label{fig: fpn_lambda = 0.50}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55_fpn_ssim_0.9145_psnr_20.4681}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.55$, PSNR = 20.468, SSIM = 0.915}
+				\label{fig: fpn_lambda = 0.55}	
+			\end{subfigure}\\
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60_fpn_ssim_0.9071_psnr_20.6762}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.60$, PSNR = 20.676, SSIM = 0.907}
+				\label{fig: fpn_lambda = 0.60}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65_fpn_ssim_0.8414_psnr_18.2163}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.65$, PSNR = 18.216, SSIM = 0.841}
+				\label{fig: fpn_lambda = 0.65}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.70_fpn_ssim_0.8610_psnr_18.4118}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.70$, PSNR = 18.216, SSIM = 0.841}
+				\label{fig: fpn_lambda = 0.70}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.75_fpn_ssim_0.9040_psnr_19.6956}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.75$, PSNR = 19.6956, SSIM = 0.904}
+				\label{fig: fpn_lambda = 0.75}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.80_fpn_ssim_0.8959_psnr_20.1990}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.80$, PSNR = 20.199, SSIM = 0.896}
+				\label{fig: fpn_lambda = 0.80}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.85_fpn_ssim_0.9060_psnr_20.1129}
+				%\captionsetup{font=scriptsize}
+				\caption{$\lambda = 0.85$, PSNR = 20.113, SSIM = 0.906}
+				\label{fig: fpn_lambda = 0.85}	
+			\end{subfigure}
+			\caption{
+				\label{fig: skip_fpn}
+				不同激活因子在添加了FPN模块下的可视化结果
+			}
+		\end{figure}
 		
 		\renewcommand{\refname}{References}
 		

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  11 APR 2024 15:15
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  12 APR 2024 21:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -947,31 +947,88 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 File: picture/LLIE/My Architecture/Base module.jpg Graphic file (type bmp)
 <picture/LLIE/My Architecture/Base module.jpg>
- (./main.bbl
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not avail
 able
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
-9.
+429.
+ [2]
+File: picture/LLIE/My Architecture/skip_model.jpg Graphic file (type bmp)
+<picture/LLIE/My Architecture/skip_model.jpg>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65.png Graphic file (ty
+pe bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60.png Graphic file (ty
+pe bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55.png Graphic file (ty
+pe bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.50.png Graphic file (ty
+pe bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.50.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.475.png Graphic file (t
+ype bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.475.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.45.png Graphic file (ty
+pe bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.45.png>
+File: picture/LLIE/My Architecture/skip_model_fpn.jpg Graphic file (type bmp)
+<picture/LLIE/My Architecture/skip_model_fpn.jpg>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.40_fpn_ssim_0.8894_psnr
+_19.5127.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.40_fpn_ssim_0.8894_psnr_19.5
+127.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.45_fpn_ssim_0.8803_psnr
+_19.5501.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.45_fpn_ssim_0.8803_psnr_19.5
+501.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.50_fpn_ssim_0.8801_psnr
+_19.3493.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.50_fpn_ssim_0.8801_psnr_19.3
+493.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55_fpn_ssim_0.9145_psnr
+_20.4681.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55_fpn_ssim_0.9145_psnr_20.4
+681.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60_fpn_ssim_0.9071_psnr
+_20.6762.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60_fpn_ssim_0.9071_psnr_20.6
+762.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65_fpn_ssim_0.8414_psnr
+_18.2163.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65_fpn_ssim_0.8414_psnr_18.2
+163.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.70_fpn_ssim_0.8610_psnr
+_18.4118.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.70_fpn_ssim_0.8610_psnr_18.4
+118.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.75_fpn_ssim_0.9040_psnr
+_19.6956.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.75_fpn_ssim_0.9040_psnr_19.6
+956.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.80_fpn_ssim_0.8959_psnr
+_20.1990.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.80_fpn_ssim_0.8959_psnr_20.1
+990.png>
+File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.85_fpn_ssim_0.9060_psnr
+_20.1129.png Graphic file (type bmp)
+<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.85_fpn_ssim_0.9060_psnr_20.1
+129.png>
 
-[2]) [3] 
+(./main.bbl [3] [4]) [5]
+
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: A602DD65D720C77078E7E39E481C2521;164
-(rerunfilecheck)             After:  350F6C20DD7B20560368D358582DF825;75.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 350F6C20DD7B20560368D358582DF825;75.
  ) 
 Here is how much of TeX's memory you used:
- 21434 strings out of 476683
- 449502 string characters out of 5805371
- 1877012 words of memory out of 5000000
- 41317 multiletter control sequences out of 15000+600000
- 518982 words of font info for 90 fonts, out of 8000000 for 9000
+ 21861 strings out of 476683
+ 475976 string characters out of 5805371
+ 1879012 words of memory out of 5000000
+ 41687 multiletter control sequences out of 15000+600000
+ 522100 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,8n,97p,811b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,8n,97p,811b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (3 pages).
+Output written on main.pdf (5 pages).
