@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+
+\bibitem{zhang2023frc}
+Zhao Zhang, Huan Zheng, Richang Hong, Jicong Fan, Yi~Yang, and Shuicheng Yan.
+\newblock Frc-net: A simple yet effective architecture for low-light image
+  enhancement.
+\newblock {\em IEEE Transactions on Consumer Electronics}, 2023.
+
+\bibitem{ronneberger2015u}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em Medical image computing and computer-assisted
+  intervention--MICCAI 2015: 18th international conference, Munich, Germany,
+  October 5-9, 2015, proceedings, part III 18}, pages 234--241. Springer, 2015.
+
+\bibitem{zhang2021accurate}
+Yulun Zhang, Kunpeng Li, Kai Li, Gan Sun, Yu~Kong, and Yun Fu.
+\newblock Accurate and fast image denoising via attention guided scaling.
+\newblock {\em IEEE Transactions on Image Processing}, 30:6255--6265, 2021.
+
+\bibitem{sandler2018mobilenetv2}
+Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, and Liang-Chieh
+  Chen.
+\newblock Mobilenetv2: Inverted residuals and linear bottlenecks.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 4510--4520, 2018.
+
+\bibitem{guo2019pipeline}
+Yanhui Guo, Xue Ke, Jie Ma, and Jun Zhang.
+\newblock A pipeline neural network for low-light image enhancement.
+\newblock {\em IEEE Access}, 7:13737--13744, 2019.
+
+\bibitem{lin2017feature}
+Tsung-Yi Lin, Piotr Doll{\'a}r, Ross Girshick, Kaiming He, Bharath Hariharan,
+  and Serge Belongie.
+\newblock Feature pyramid networks for object detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2117--2125, 2017.
+
+\end{thebibliography}
