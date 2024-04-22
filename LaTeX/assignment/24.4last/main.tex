@@ -425,148 +425,121 @@
 
 		\subsection*{实验部分}
 		
-		我们在原有模型的基础上增加了残差连接(Residual connection)，原有的模型分支在经过Feature Extract模块后乘以一个激活因子$\lambda$(Activator factor)与残差连接相加得到最后的输出结果。其中 Stem 网络由两个 16 通道的 $3\times 3$ Conv 组成，stride=1，padding=1。Feature Extract模块由两个 16 通道和 3 通道的 $3 \times 3$ Conv组成，stride=1，padding=1，具体模型见Fig. \ref{fig: skip model}。此外，我们在 Encoder 和 Decoder 之间的跳跃连接(Skip connection)中添加 FPN 块，以自底向上融合高层次特征(Fig. \ref{fig: skip model_fpn})。\textcolor{red}{结论：跳跃连接和Stem网络能够显著提高模型评价指标，但是FPN模块的提升并不是很大。}
+		如 Fig. \ref{fig: myplot_different_color_channels_low00010}, Fig. \ref{fig: myplot_different_color_channels_low00747}, Fig. \ref{fig: myplot_different_color_channels_low00776}所示, 我们观察到在 Y/Cb/Cr 色彩空间中，Y 通道并不总是能有效地表现出足够的亮度信息。相对而言，在 H/S/V 色彩空间中，H 和 S 通道似乎能更一致地揭示出图像的纹理和结构信息，特别是在光照极低的情境下。这一发现指示了在处理低照度图像时，选择合适的色彩空间对于保留关键视觉信息至关重要。
+		
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_different_color_channels_low00010}
+				\captionsetup{font=scriptsize}
+				\caption{low00010}
+				\label{fig: myplot_different_color_channels_low00010}	
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_different_color_channels_low00747}
+				\captionsetup{font=scriptsize}
+				\caption{low00747}
+				\label{fig: myplot_different_color_channels_low00747}	
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_different_color_channels_low00776}
+				\captionsetup{font=scriptsize}
+				\caption{low00776}
+				\label{fig: myplot_different_color_channels_low00776}	
+			\end{subfigure}
+		\end{figure}
+		
+		\FloatBarrier
+		
+		在Fig. \ref{fig: myplot_different_color_channels_low00010}中展示的 low00010 图像分析中，我们可以观察到弱光条件下的RGB通道图片已经相对清晰。对应的 GT 图片主要显示了颜色的加深。此外，通过比较弱光图像与 GT 图像的 Y 通道，我们可以发现亮度特征得到了良好的体现。然而，在 low00747 和 low00776 图像中，如Fig. \ref{fig: myplot_different_color_channels_low00747}和Fig. \ref{fig: myplot_different_color_channels_low00776}所示，相比于 low00010 图像，这两张图片的RGB通道所提供的信息明显不足以支持有效的图像增强。在这些图像中，Y/Cb/Cr通道的 Y 通道同样未能提供足够的信息以供增强处理。
+		
+		在人造弱光图像的情况中，这种信息缺失更为明显，如Fig. \ref{fig: myplot_different_color_channels_r097088c1t}、Fig. \ref{fig: myplot_different_color_channels_r141669e5t}和Fig. \ref{fig: myplot_different_color_channels_r145221d9t}所示。这些结果表明，在处理不同的图像数据时，简单的颜色加深或亮度增强可能不足以恢复图像质量，特别是当原始数据在关键通道中缺乏足够信息时。
 		
 		
+		在对 HSV 色彩空间进行研究时，我们特别关注了 H 通道（色调）的特性。色调通道的分析表明，它能够有效地揭示图像中的颜色种类。在弱光环境下拍摄的图像中，H 通道不仅保留了颜色信息，而且清晰地展示了颜色的变化，这些变化在此环境下可视作“颜色噪声”。通过细致分析H通道，我们可以更有效地把握图像的纹理特征，并恢复出更接近真实场景的颜色表现。我们似乎通过综合利用色调通道提供的独特颜色识别能力，可以在不同光照条件下实现更精确的颜色复原，从而为低光图像处理提供了一种新的视角和方法论。
 		
 		
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.7\linewidth]{picture/LLIE/My Architecture/skip_model}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_different_color_channels_r097088c1t}
+				\captionsetup{font=scriptsize}
+				\caption{r097088c1t}
+				\label{fig: myplot_different_color_channels_r097088c1t}	
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_different_color_channels_r141669e5t}
+				\captionsetup{font=scriptsize}
+				\caption{r141669e5t}
+				\label{fig: myplot_different_color_channels_r141669e5t}	
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_different_color_channels_r145221d9t}
+				\captionsetup{font=scriptsize}
+				\caption{r145221d9t}
+				\label{fig: myplot_different_color_channels_r145221d9t}	
+			\end{subfigure}
+		\end{figure}
+		
+		\FloatBarrier
+		
+		\subsection*{改进方法}
+		
+		\subsubsection*{改进方法一}
+		CBAM主要由通道注意力(Channel attention)和空间注意力(Spatial attention)组成, 特征图的每一个通道都可以被认为是一个特征检测器(Feature detector)\cite{zeiler2014visualizing}。通道注意力掩膜(Mask)主要用于学习特征图通道之间的连接，这意味着该注意力旨在确定特征图的哪些层更有意义。在通道注意力模块，我们使用CBAM的初始设置，它使用每个特征图的最大池化和平均池化来聚合(Aggregate)整个图上的信息。与通道注意力机制不同，空间注意力机制专注于输入特征图中“哪里”包含了更多的具体细节(Different from channel attention, spatial attention focuses on 'where' the input feature maps carry more specific details.)。在CBAM（卷积块注意力模块）中，空间注意力模块的初始空间设置与通道注意力模块相同。由于直接使用最大池化和平均池化可能会导致过多的信息丢失，我们建议基于自注意力机制，采用一种更灵活的结构，如Fig.\ref{fig: SA_mod}所示。
+		
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=\linewidth]{picture/LLIE/Experiment/CBAM}
 			%\captionsetup{font=scriptsize}
-			\caption{增加了跳跃连接的模型}
-			\label{fig: skip model}	
+			\caption{CBAM}
+			\label{fig: CBAM}
 		\end{figure}
+		
+		首先，我们先对前一隐含层的特征$x$进行重塑(Reshape)得到$x \in \mathbb{R}^{C \times N}$。其中，$C$是通道的数量，$N$是所有其他维度的乘积。
+		
+		然后，对$x$进行$1 \times 1$卷积，得到$f, g, h$
+		\begin{equation}
+			\begin{aligned}
+				f(x) = W_f x, \
+				g(x) = W_g x, \
+				h(x) = W_h x.
+			\end{aligned}
+		\end{equation}
+		其中$W_f, W_g, W_h \in \mathbb{R}^{C^{*} \times C}$
+		
+		然后计算$f(x)$和$g(x)$中像素位置之间的一系列 softmax 权重：
+		\begin{equation}
+			\begin{aligned}
+				\beta_{j,i} = \frac{\exp(s_{ij})}{\sum_{i=1}^{N} \exp(s_{ij})}, \ where \ s_{ij} = f(x_i)^T g(x_j)
+			\end{aligned}
+		\end{equation}
+		计算的到的权重 $\beta$ 也被称为“注意力图”，本质上是量化图像中像素$j$对于像素$i$的“重要性”。由于这些权重 $\beta$ 是在特征集的整个高度和宽度上计算的，因此接收场不再局限于小内核的大小。
+		
+		自注意力层的输出计算为Eq. \ref{eq: v(x)}。
+		\begin{equation}
+			\begin{aligned}
+				o_j = v \left( \sum_{i=1}^{N} \beta_{j,i} h(x_i) \right) \\
+				v(x) = W_v x, \ W_v \in \mathbb{R}^{C \times C^*}
+			\end{aligned}
+			\label{eq: v(x)}
+		\end{equation}
+		
+		最后，我们将输入特征$x$添加到输出的加权中，
+		
+		\begin{equation}
+			\begin{aligned}
+				y_i = \gamma o_i + x_i
+			\end{aligned}
+		\end{equation}
 		
 		\begin{figure}[htbp]
 			\centering
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.65$, PSNR = 19.355, SSIM = 0.889}
-				\label{fig: lambda = 0.65}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.60$, PSNR = 20.131, SSIM = 0.893}
-				\label{fig: lambda = 0.60}	
-			\end{subfigure}\\
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.55$, PSNR = 19.880, SSIM = 0.894}
-				\label{fig: lambda = 0.55}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.50}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.50$, PSNR = 20.501, SSIM = 0.909}
-				\label{fig: lambda = 0.50}	
-			\end{subfigure}\\
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.475}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.475$, PSNR = 20.207, SSIM = 0.890}
-				\label{fig: lambda = 0.475}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.45}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.45$, PSNR = 18.513, SSIM = 0.862}
-				\label{fig: lambda = 0.45}	
-			\end{subfigure}
-			\caption{
-				\label{fig: skip connection}
-				不同激活因子的可视化结果
-			}
-		\end{figure}
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=0.7\linewidth]{picture/LLIE/My Architecture/skip_model_fpn}
+			\includegraphics[width=\linewidth]{picture/LLIE/Experiment/SA_modification}
 			%\captionsetup{font=scriptsize}
-			\caption{增加了跳跃连接和FPN的模型}
-			\label{fig: skip model_fpn}	
+			\caption{Specific structure of Spatial Attention Module embedded with self-attention mechanism}
+			\label{fig: SA_mod}
 		\end{figure}
-		
-		
-		\begin{figure}[htbp]
-			\centering
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.40_fpn_ssim_0.8894_psnr_19.5127}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.40$, PSNR = 19.513, SSIM = 0.889}
-				\label{fig: fpn_lambda = 0.40}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.45_fpn_ssim_0.8803_psnr_19.5501}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.45$, PSNR = 19.5501, SSIM = 0.880}
-				\label{fig: fpn_lambda = 0.45}	
-			\end{subfigure}\\
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.50_fpn_ssim_0.8801_psnr_19.3493}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.50$, PSNR = 19.349, SSIM = 0.880}
-				\label{fig: fpn_lambda = 0.50}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55_fpn_ssim_0.9145_psnr_20.4681}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.55$, PSNR = 20.468, SSIM = 0.915}
-				\label{fig: fpn_lambda = 0.55}	
-			\end{subfigure}\\
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60_fpn_ssim_0.9071_psnr_20.6762}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.60$, PSNR = 20.676, SSIM = 0.907}
-				\label{fig: fpn_lambda = 0.60}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65_fpn_ssim_0.8414_psnr_18.2163}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.65$, PSNR = 18.216, SSIM = 0.841}
-				\label{fig: fpn_lambda = 0.65}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.70_fpn_ssim_0.8610_psnr_18.4118}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.70$, PSNR = 18.216, SSIM = 0.841}
-				\label{fig: fpn_lambda = 0.70}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.75_fpn_ssim_0.9040_psnr_19.6956}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.75$, PSNR = 19.6956, SSIM = 0.904}
-				\label{fig: fpn_lambda = 0.75}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.80_fpn_ssim_0.8959_psnr_20.1990}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.80$, PSNR = 20.199, SSIM = 0.896}
-				\label{fig: fpn_lambda = 0.80}	
-			\end{subfigure}
-			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/myplot_skip_stem_lambda_0.85_fpn_ssim_0.9060_psnr_20.1129}
-				%\captionsetup{font=scriptsize}
-				\caption{$\lambda = 0.85$, PSNR = 20.113, SSIM = 0.906}
-				\label{fig: fpn_lambda = 0.85}	
-			\end{subfigure}
-			\caption{
-				\label{fig: skip_fpn}
-				不同激活因子在添加了FPN模块下的可视化结果
-			}
-		\end{figure}
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=0.7\linewidth]{picture/LLIE/Experiment/myplot_different_color_channels_low00010}
-			%\captionsetup{font=scriptsize}
-			\caption{}
-			\label{fig: myplot_different_color_channels_low00010}	
-		\end{figure}
-		
 		\renewcommand{\refname}{References}
 		
 		

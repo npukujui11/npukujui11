@@ -37,4 +37,11 @@ Tsung-Yi Lin, Piotr Doll{\'a}r, Ross Girshick, Kaiming He, Bharath Hariharan,
 \newblock In {\em Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pages 2117--2125, 2017.
 
+\bibitem{zeiler2014visualizing}
+Matthew~D Zeiler and Rob Fergus.
+\newblock Visualizing and understanding convolutional networks.
+\newblock In {\em Computer Vision--ECCV 2014: 13th European Conference, Zurich,
+  Switzerland, September 6-12, 2014, Proceedings, Part I 13}, pages 818--833.
+  Springer, 2014.
+
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  17 APR 2024 20:54
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  20 APR 2024 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -952,14 +952,43 @@ able
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
 429.
  [2]
-File: picture/LLIE/My Architecture/skip_model.jpg Graphic file (type bmp)
-<picture/LLIE/My Architecture/skip_model.jpg>
-File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65.png Graphic file (ty
-pe bmp)
-<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.65.png>
-File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60.png Graphic file (ty
-pe bmp)
-<picture/LLIE/Experiment/myplot_skip_stem_lambda_0.60.png>
-File: picture/LLIE/Experiment/myplot_skip_stem_lambda_0.55.png Graphic file (ty
-pe bmp)
-<picture/LLIE/Experiment/myplo
+File: picture/LLIE/Experiment/myplot_different_color_channels_low00010.png Grap
+hic file (type bmp)
+<picture/LLIE/Experiment/myplot_different_color_channels_low00010.png>
+File: picture/LLIE/Experiment/myplot_different_color_channels_low00747.png Grap
+hic file (type bmp)
+<picture/LLIE/Experiment/myplot_different_color_channels_low00747.png>
+File: picture/LLIE/Experiment/myplot_different_color_channels_low00776.png Grap
+hic file (type bmp)
+<picture/LLIE/Experiment/myplot_different_color_channels_low00776.png>
+File: picture/LLIE/Experiment/myplot_different_color_channels_r097088c1t.png Gr
+aphic file (type bmp)
+<picture/LLIE/Experiment/myplot_different_color_channels_r097088c1t.png>
+File: picture/LLIE/Experiment/myplot_different_color_channels_r141669e5t.png Gr
+aphic file (type bmp)
+<picture/LLIE/Experiment/myplot_different_color_channels_r141669e5t.png>
+File: picture/LLIE/Experiment/myplot_different_color_channels_r145221d9t.png Gr
+aphic file (type bmp)
+<picture/LLIE/Experiment/myplot_different_color_channels_r145221d9t.png>
+ [3]
+File: picture/LLIE/Experiment/CBAM.jpg Graphic file (type bmp)
+<picture/LLIE/Experiment/CBAM.jpg>
+File: picture/LLIE/Experiment/SA_modification.jpg Graphic file (type bmp)
+<picture/LLIE/Experiment/SA_modification.jpg>
+
+(./main.bbl [4]) [5] 
+enddocument/afterlastpage: lastpage setting LastPage.
+(./main.aux)
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 350F6C20DD7B20560368D358582DF825;75.
+ ) 
+Here is how much of TeX's memory you used:
+ 21677 strings out of 476683
+ 464413 string characters out of 5805371
+ 1878012 words of memory out of 5000000
+ 41550 multiletter control sequences out of 15000+600000
+ 518990 words of font info for 91 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 89i,8n,97p,811b,572s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (5 pages).
