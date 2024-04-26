@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{zhang2023frc}
 Zhao Zhang, Huan Zheng, Richang Hong, Jicong Fan, Yi~Yang, and Shuicheng Yan.
@@ -43,5 +43,30 @@ Matthew~D Zeiler and Rob Fergus.
 \newblock In {\em Computer Vision--ECCV 2014: 13th European Conference, Zurich,
   Switzerland, September 6-12, 2014, Proceedings, Part I 13}, pages 818--833.
   Springer, 2014.
+
+\bibitem{zhu2023biformer}
+Lei Zhu, Xinjiang Wang, Zhanghan Ke, Wayne Zhang, and Rynson~WH Lau.
+\newblock Biformer: Vision transformer with bi-level routing attention.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 10323--10333, 2023.
+
+\bibitem{guo2022segnext}
+Meng-Hao Guo, Cheng-Ze Lu, Qibin Hou, Zhengning Liu, Ming-Ming Cheng, and
+  Shi-Min Hu.
+\newblock Segnext: Rethinking convolutional attention design for semantic
+  segmentation.
+\newblock {\em Advances in Neural Information Processing Systems},
+  35:1140--1156, 2022.
+
+\bibitem{huang2023channel}
+Hejun Huang, Zuguo Chen, Ying Zou, Ming Lu, and Chaoyang Chen.
+\newblock Channel prior convolutional attention for medical image segmentation.
+\newblock {\em arXiv preprint arXiv:2306.05196}, 2023.
+
+\bibitem{lou2023transxnet}
+Meng Lou, Hong-Yu Zhou, Sibei Yang, and Yizhou Yu.
+\newblock Transxnet: Learning both global and local dynamics with a dual
+  dynamic token mixer for visual recognition.
+\newblock {\em arXiv preprint arXiv:2310.19380}, 2023.
 
 \end{thebibliography}

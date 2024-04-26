@@ -1,1 +1,3 @@
 \contentsline {section}{\numberline {1}实验进度}{2}{section.1}%
+\contentsline {paragraph}{Overkapping Spatial Reduction Attention(OSRA)}{9}{figure.caption.16}%
+\contentsline {subsection}{\numberline {1.1}其他改进}{10}{subsection.1.1}%
