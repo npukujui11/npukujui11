@@ -1,0 +1,72 @@
+\begin{thebibliography}{10}
+
+\bibitem{zhang2023frc}
+Zhao Zhang, Huan Zheng, Richang Hong, Jicong Fan, Yi~Yang, and Shuicheng Yan.
+\newblock Frc-net: A simple yet effective architecture for low-light image
+  enhancement.
+\newblock {\em IEEE Transactions on Consumer Electronics}, 2023.
+
+\bibitem{ronneberger2015u}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em Medical image computing and computer-assisted
+  intervention--MICCAI 2015: 18th international conference, Munich, Germany,
+  October 5-9, 2015, proceedings, part III 18}, pages 234--241. Springer, 2015.
+
+\bibitem{zhang2021accurate}
+Yulun Zhang, Kunpeng Li, Kai Li, Gan Sun, Yu~Kong, and Yun Fu.
+\newblock Accurate and fast image denoising via attention guided scaling.
+\newblock {\em IEEE Transactions on Image Processing}, 30:6255--6265, 2021.
+
+\bibitem{sandler2018mobilenetv2}
+Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, and Liang-Chieh
+  Chen.
+\newblock Mobilenetv2: Inverted residuals and linear bottlenecks.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 4510--4520, 2018.
+
+\bibitem{guo2019pipeline}
+Yanhui Guo, Xue Ke, Jie Ma, and Jun Zhang.
+\newblock A pipeline neural network for low-light image enhancement.
+\newblock {\em IEEE Access}, 7:13737--13744, 2019.
+
+\bibitem{lin2017feature}
+Tsung-Yi Lin, Piotr Doll{\'a}r, Ross Girshick, Kaiming He, Bharath Hariharan,
+  and Serge Belongie.
+\newblock Feature pyramid networks for object detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2117--2125, 2017.
+
+\bibitem{zeiler2014visualizing}
+Matthew~D Zeiler and Rob Fergus.
+\newblock Visualizing and understanding convolutional networks.
+\newblock In {\em Computer Vision--ECCV 2014: 13th European Conference, Zurich,
+  Switzerland, September 6-12, 2014, Proceedings, Part I 13}, pages 818--833.
+  Springer, 2014.
+
+\bibitem{zhu2023biformer}
+Lei Zhu, Xinjiang Wang, Zhanghan Ke, Wayne Zhang, and Rynson~WH Lau.
+\newblock Biformer: Vision transformer with bi-level routing attention.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 10323--10333, 2023.
+
+\bibitem{guo2022segnext}
+Meng-Hao Guo, Cheng-Ze Lu, Qibin Hou, Zhengning Liu, Ming-Ming Cheng, and
+  Shi-Min Hu.
+\newblock Segnext: Rethinking convolutional attention design for semantic
+  segmentation.
+\newblock {\em Advances in Neural Information Processing Systems},
+  35:1140--1156, 2022.
+
+\bibitem{huang2023channel}
+Hejun Huang, Zuguo Chen, Ying Zou, Ming Lu, and Chaoyang Chen.
+\newblock Channel prior convolutional attention for medical image segmentation.
+\newblock {\em arXiv preprint arXiv:2306.05196}, 2023.
+
+\bibitem{lou2023transxnet}
+Meng Lou, Hong-Yu Zhou, Sibei Yang, and Yizhou Yu.
+\newblock Transxnet: Learning both global and local dynamics with a dual
+  dynamic token mixer for visual recognition.
+\newblock {\em arXiv preprint arXiv:2310.19380}, 2023.
+
+\end{thebibliography}
