@@ -77,9 +77,9 @@
 \begin{document}
 	
 	
-	\title{\songti \zihao{4}4月工作汇报}
+	\title{\songti \zihao{4}5月工作汇报}
 	\author{\textrm{Ku Jui}}
-	\date{\textrm{April 2024}}
+	\date{\textrm{May 2024}}
 	\maketitle
 	
 	\renewcommand{\figurename}{Figure} % 可以重新定义abstract，因为ctex会覆盖thebibliography
@@ -485,110 +485,21 @@
 		
 		\subsection*{对注意力机制的改进方法}
 		
-		\subsubsection*{将CBAM块的空间注意力机制修改为自注意力机制}
+		\subsubsection*{MSAM}
 		
-		CBAM主要由通道注意力(Channel attention)和空间注意力(Spatial attention)组成, 特征图的每一个通道都可以被认为是一个特征检测器(Feature detector)\cite{zeiler2014visualizing}。通道注意力掩膜(Mask)主要用于学习特征图通道之间的连接，这意味着该注意力旨在确定特征图的哪些层更有意义。在通道注意力模块，我们使用CBAM的初始设置，它使用每个特征图的最大池化和平均池化来聚合(Aggregate)整个图上的信息。与通道注意力机制不同，空间注意力机制专注于输入特征图中“哪里”包含了更多的具体细节(Different from channel attention, spatial attention focuses on 'where' the input feature maps carry more specific details.)。在CBAM（卷积块注意力模块）中，空间注意力模块的初始空间设置与通道注意力模块相同。由于直接使用最大池化和平均池化可能会导致过多的信息丢失，我们建议基于自注意力机制，采用一种更灵活的结构，如Fig.\ref{fig: SA_mod}所示。
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=\linewidth]{picture/LLIE/Experiment/CBAM}
-			%\captionsetup{font=scriptsize}
-			\caption{CBAM}
-			\label{fig: CBAM}
-		\end{figure}
-		
-		首先，我们先对前一隐含层的特征$x$进行重塑(Reshape)得到$x \in \mathbb{R}^{C \times N}$。其中，$C$是通道的数量，$N$是所有其他维度的乘积。
-		
-		然后，对$x$进行$1 \times 1$卷积，得到$f, g, h$
-		\begin{equation}
-			\begin{aligned}
-				f(x) = W_f x, \
-				g(x) = W_g x, \
-				h(x) = W_h x.
-			\end{aligned}
-		\end{equation}
-		其中$W_f, W_g, W_h \in \mathbb{R}^{C^{*} \times C}$
-		
-		然后计算$f(x)$和$g(x)$中像素位置之间的一系列 softmax 权重：
-		\begin{equation}
-			\begin{aligned}
-				\beta_{j,i} = \frac{\exp(s_{ij})}{\sum_{i=1}^{N} \exp(s_{ij})}, \ where \ s_{ij} = f(x_i)^T g(x_j)
-			\end{aligned}
-		\end{equation}
-		计算的到的权重 $\beta$ 也被称为“注意力图”，本质上是量化图像中像素$j$对于像素$i$的“重要性”。由于这些权重 $\beta$ 是在特征集的整个高度和宽度上计算的，因此接收场不再局限于小内核的大小。
-		
-		自注意力层的输出计算为Eq. \ref{eq: v(x)}。
-		\begin{equation}
-			\begin{aligned}
-				o_j = v \left( \sum_{i=1}^{N} \beta_{j,i} h(x_i) \right) \\
-				v(x) = W_v x, \ W_v \in \mathbb{R}^{C \times C^*}
-			\end{aligned}
-			\label{eq: v(x)}
-		\end{equation}
-		
-		最后，我们将输入特征$x$添加到输出的加权中，
-		
-		\begin{equation}
-			\begin{aligned}
-				y_i = \gamma o_i + x_i
-			\end{aligned}
-		\end{equation}
+		我们将多尺度卷积注意模块 (Multi-scale convolutional attention, MSCA) 引入 CBAM 模块中，使得通道注意力也具备多尺度性能，多分支深度卷积或许可以更好的提取多尺度特征，如 Fig. \ref{fig: MSAM} 所示。
 		
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=\linewidth]{picture/LLIE/Experiment/SA_modification}
-			%\captionsetup{font=scriptsize}
-			\caption{Specific structure of Spatial Attention Module embedded with self-attention mechanism}
-			\label{fig: SA_mod}
-		\end{figure}
-		
-		\subsubsection*{BSAM注意力（完全实现）}
-		
-		基于CBAM块提出一种新颖的注意力 BSAM(BiLevel Spatial Attention Module)，即将 Channel Attention + Spartial Attention 修改为 BiLevel Attention + Spartial Attention。
-		\footnote{
-		我们受到 BiFormer \cite{zhu2023biformer}的启发，其提出的双层路由注意力利用稀疏性来节省计算和内存，只涉及 GPU 友好的密集矩阵乘法。
-			
-		其中Fig. \ref{fig: Vanilla attention}(a)是原始的注意力实现，其直接在全局范围内操作，导致高计算复杂性和大量内存占用；而对于Fig .\ref{fig: Vanilla attention}(b)-(d)，这些方法通过引入具有不同手工模式的稀疏注意力来减轻复杂性，例如局部窗口、轴向条纹和扩张窗口等；而Fig .\ref{fig: Vanilla attention}(e)则是基于可变形注意力通过不规则网格来实现图像自适应稀疏性；作者认为以上这些方法大都是通过将手工制作和与内容无关的稀疏性引入到注意力机制来试图缓解这个问题。因此，BiFormer 通过双层路由(Bi-level routing)提出了一种新颖的动态稀疏注意力(Dynamic sparse attention)，以实现更灵活的计算分配和内容感知，使其具备动态的查询感知稀疏性，如Fig .\ref{fig: Vanilla attention}(f)所示。}
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/BSAM}
-			%\captionsetup{font=scriptsize}
-			\caption{The overview of BSAM}
-			\label{fig: BSAM}
-		\end{figure}
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/Vanilla attention}
-			%\captionsetup{font=scriptsize}
-			\caption{Vanilla attention and its sparse variants. (a) Vanilla attention operates gloabally and incurs high computational complexity and heavy memory footprint. (b)-(d) Several works attempt to alleviate the complexity by introducing sparse attention with different handcrafted patterns, such as local window, axial stripe, dilated window. (e) Deformable attention enables image-adaptive sparsity via deforming a regular grid. (f) We achieve dynamic, query-aware sparsity with bi-level routing attention, which first searches top-k (k = 3 in this case) relevant regions, and then attends to the union of them.}
-			\label{fig: Vanilla attention}
-		\end{figure}
-		
-		\textcolor{red}{BiLevelRoutingAttention 实现了更复杂的双层路由机制，其中包括关键点和值的提取、路由计算和集成到高维特征映射。Github\footnote{https://github.com/rayleizhu/BiFormer/blob/public\_release/ops/bra\_legacy.py}给出了BiLevelRoutingAttention的详细实现，但是替换Channel Attention，对显存开销异常大，最终放弃该方法(Fig. \ref{fig: BSAM Experiment})。}
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/BSAM experiment}
-			%\captionsetup{font=scriptsize}
-			\caption{显存开销太大}
-			\label{fig: BSAM Experiment}
-		\end{figure}
-		
-		\subsubsection*{MSAM（完全实现）}
-		
-		我们将MSCA模块引入CBAM模块中，使得通道注意力也具备多尺度性能，多分支深度卷积或许可以更好的提取多尺度特征，如Fig. \ref{fig: MSAM}所示。
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/MSAM}
+			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/Attention/MSAM}
 			%\captionsetup{font=scriptsize}
 			\caption{MSAM}
 			\label{fig: MSAM}
 		\end{figure}
 		
-		\subsubsection*{CPCS注意力（完全实现）}
+		具体来说，MSCA 首先通过一个 $5 \times 5$ 的卷积核进行卷积操作，然后分别使用 $7 \times 7$、$11 \times 11$ 和 $21 \times 21$ 的多尺度深度卷积核对特征图进行处理，以捕捉不同尺度的特征信息。接着将这些尺度上的特征图相加，并与输入的残差特征相加，最后通过一个 $1 \times 1$ 的卷积核对通道进行调整，以获得最终的注意力特征表示。
+		
+		\subsubsection*{CPCS}
 		
 		SegNeXt 是一种用于语义分割的简单卷积网络体系结构\cite{guo2022segnext}，作者通过对已有成功分割方案进行了重新审视，发现了几个有助于性能提升地关键成分，进而促使作者设计了一种新型地卷积注意力架构方案，多尺度卷积注意模块(Multi-scale convolutional attention, MSCA)，其原理主要是将 CBAM 块中的通道注意力替换为 MSCA，使通道注意力具备多尺度性能。MSCA块证明了卷积注意比Transformer中的自注意机制更有效地编码上下文信息。
 		
@@ -596,17 +507,17 @@
 		
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/MSCA}
+			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/Attention/MSCA}
 			%\captionsetup{font=scriptsize}
 			\caption{MSCA}
 			\label{fig: MSCA}
 		\end{figure}
 			
-	 	SE 只整合了通道注意力，这限制了它选择重要区域的能力。CBAM 整合了通道注意力和空间注意力，但它在其输出特征的所有通道上强制执行一致的空间注意力分布。如Fig. \ref{fig: SE_CBAM_CPCA}(c)所示，作者\cite{huang2023channel}提出一种新的通道优先卷积注意力(Channel Prior Convolutional Attention, CPCS)方法，采用多尺度的深度可分离卷积模块构成空间注意力，可以在通道和空间维度上动态分配注意权重。
+	 	SE 只整合了通道注意力，这限制了它选择重要区域的能力。CBAM 整合了通道注意力和空间注意力，但它在其输出特征的所有通道上强制执行一致的空间注意力分布。如Fig. \ref{fig: SE_CBAM_CPCA}(c)所示，作者\cite{huang2023channel}提出一种新的通道优先卷积注意力(Channel Prior Convolutional Attention, CPCA)方法，采用多尺度的深度可分离卷积模块构成空间注意力，可以在通道和空间维度上动态分配注意权重。
 	 	
 	 	\begin{figure}[htbp]
 	 		\centering
-	 		\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/SE_CBAM_CPCA}
+	 		\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/Attention/SE_CBAM_CPCA}
 	 		%\captionsetup{font=scriptsize}
 	 		\caption{Schematic representation of the refined features of the three attention mechanisms (a) SE, (b) CBAM, and (c) CPCA.}
 	 		\label{fig: SE_CBAM_CPCA}
@@ -616,7 +527,7 @@
 		
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/CPCA}
+			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/Attention/CPCA}
 			%\captionsetup{font=scriptsize}
 			\caption{CPCA}
 			\label{fig: CPCA}
@@ -626,127 +537,91 @@
 		
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/CPMS}
+			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/Attention/CPMS}
 			%\captionsetup{font=scriptsize}
 			\caption{CPMS}
 			\label{fig: CPMS}
 		\end{figure}
 		
-		\subsubsection*{TransXNet中的聚合注意力(Aggregated Attention)改进(代码未实现，有想法)}
 		
-		经典的 ViTs 基于 MHSA 构建远距离建模实现全局感受野的覆盖，但缺乏像 CNNs 般的归纳偏差能力。因此在泛化能力上相对较弱，需要大量的训练样本和数据增强策略来弥补。为了解决这个问题，论文\cite{lou2023transxnet}针对性地引入了一种新的混合网络模块，称为 Dual Dynamic Token Mixer (D-Mixer)，它以一种依赖于输入的方式聚合全局信息和局部细节。具体来说，输入特征被分成两部分，分别经过一个全局自注意力模块和一个依赖于输入的深度卷积模块进行处理，然后将两个输出连接在一起。这种简单的设计可以使网络同时看到全局和局部信息，从而增强了归纳偏差。论文中的实验证明(Fig. \ref{fig: TransXNet Outperforms})，这种方法在感受野方面表现出色，即网络可以看到更广泛的上下文信息。
+		\subsection*{对UNet网络的改进方法}
+		
+		我们尝试了不同的 Encoder 和 Decoder 组合，如 Fig. \ref{fig: Encoder and Decoder} 所示，对于 Encoder 部分，我们首先应用注意力机制（Attention），然后使用 $3 \times 3$ 的轴向深度可分离卷积 (Depthwise Separable Convolution)，接着进行批标准化 (Batch Normalization) 和 $1 \times 1$ 卷积操作，最后通过最大池化 (MaxPooling) 进行特征压缩，最终使用 Sigmoid 激活函数。对于 Decoder 部分，我们首先将其与对应的 Encoder 的跳跃连接进行 Concat 操作，然后进行上采样 (Upsample) 操作，接着应用注意力机制 (Attention) ，再次使用 $3 \times 3$ 的轴向深度可分离卷积，再通过批标准化和 $1 \times 1$ 卷积操作，最终采用 Sigmoid 激活函数。
+		
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/Encoder and Decoder}
+			%\captionsetup{font=scriptsize}
+			\caption{Encoder 和 Decoder 的搭配}
+			\label{fig: Encoder and Decoder}
+		\end{figure}
+		
+		我们使用 MBLLEN 中的 EM 模块，旨在加强每个层级中Encoder和Decoder之间的特征连接，从而增强模型的表现能力，如 Fig .\ref{fig: U-Net Architecture}所示。
+		
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=0.8\linewidth]{picture/LLIE/Experiment/U-Net Architecture}
+			%\captionsetup{font=scriptsize}
+			\caption{加入 EM 模块}
+			\label{fig: U-Net Architecture}
+		\end{figure}
+		
+		其中呈现的效果如 Fig. \ref{fig: Visualization Results}，
+		我们分别进行了下列 6 种尝试：
+		\begin{itemize}
+			\item[(1)] 我们使用 3 层 UNet 结构(3个 Encoder 和 Decoder)，在 LOLv2 数据集下，模型训练的可视化结果，如 Fig. \ref{fig: ULite_Enhance_3_layer} 所示。 
+			\item[(2)] 我们使用 3 层 UNet 结构，并在同层级的 Encoder 和 Decoder 中添加 EM 模块，在 LOLv2 数据集下，模型训练的可视化结果，如 Fig. \ref{fig: ULite_Enhance_3_layer_EM} 所示。
+			\item[(3)] 我们使用 3 层 UNet 结构，添加 EM 模块，此外我们去除掉 BottleNeck 结构，并将最底层的 Encoder 和 Decoder 通道修改为 512，此外我们将激活函数从原先的 Sigmoid 设置为 ReLU，在 LOLv2 数据集下，模型训练的可视化结果，如 Fig. \ref{fig: ULite_Enhance_3_layer_EM_withou_Transformer_maxc_512_ReLU} 所示。
+			\item[(4)] 我们使用 3 层 UNet 结构，添加 EM 模块，此外我们去除掉 BottleNeck 结构，并将最底层的 Encoder 和 Decoder 通道修改为 256，在 LOLv2 数据集下，模型训练的可视化结果，如 Fig. \ref{fig: ULite_Enhance_3_layer_EM_without_Transformer} 所示。
+			\item[(5)] 我们使用 3 层 UNet 结构，添加 EM 模块，此外我们去除掉 BottleNeck 结构，并将最底层的 Encoder 和 Decoder 通道修改为 512，在 LOLv2 数据集下，模型训练的可视化结果，如 Fig. \ref{fig: ULite_Enhance_3_layer_EM_without_Transformer_maxc_512} 所示。
+			\item[(6)] 我们使用 4 层 UNet 结构，添加 EM 模块，此外我们去除掉 BottleNeck 结构，在 LOLv2 数据集下，模型训练的可视化结果，如 Fig. \ref{fig: ULite_Enhance_4_layer_EM_without_Transformer} 所示。
+		\end{itemize}
+		
 		
 		\begin{figure}[htbp]
 			\centering
 			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/FLOGs(G)}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/EM/ULite_Enhance_3_layer}
 				\captionsetup{font=scriptsize}
-				\caption{FLOGs(G)}
-				\label{fig: FLOGs(G)}	
+				\caption{3层结构的U-Net}
+				\label{fig: ULite_Enhance_3_layer}	
 			\end{subfigure}
 			\begin{subfigure}{0.45\textwidth}
-				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/Number of Parameters(M)}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM}
 				\captionsetup{font=scriptsize}
-				\caption{Number of Parameters(M)}
-				\label{fig: Number of Parameters(M)}	
+				\caption{添加EM模块的3层结构的U-Net}
+				\label{fig: ULite_Enhance_3_layer_EM}	
 			\end{subfigure}
-			\caption{Comparison of Top-1 accuracy on ImageNet-1K with recent SOTA
-				methods. Our proposed TransXNet outperforms all other models.}
-			\label{fig: TransXNet Outperforms}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_withou_Transformer_maxc_512_ReLU}
+				\captionsetup{font=scriptsize}
+				\caption{去除BottleNeck}
+				\label{fig: ULite_Enhance_3_layer_EM_withou_Transformer_maxc_512_ReLU}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_without_Transformer}
+				\captionsetup{font=scriptsize}
+				\caption{去除BottleNeck}
+				\label{fig: ULite_Enhance_3_layer_EM_without_Transformer}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_without_Transformer_maxc_512}
+				\captionsetup{font=scriptsize}
+				\caption{去除BottleNeck}
+				\label{fig: ULite_Enhance_3_layer_EM_without_Transformer_maxc_512}	
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/LLIE/Experiment/EM/ULite_Enhance_4_layer_EM_without_Transformer}
+				\captionsetup{font=scriptsize}
+				\caption{去除BottleNeck}
+				\label{fig: ULite_Enhance_4_layer_EM_without_Transformer}	
+			\end{subfigure}
+			\caption{呈现效果}
+			\label{fig: Visualization Results}
 		\end{figure}
-		
-		作者提出了一个轻量级的双动态 token 混频器(D-Mixer)，它以一种依赖输入的方式聚合全局信息和局部细节。D-Mixer 的工作原理是在均匀分割的特征段上分别应用高效的全局注意模块和输入依赖的深度卷积，从而赋予网络强大的归纳偏置和扩大有效接受野。用 D-Mixer 作为基本构建块来设计 TransXNet，这是一种新颖的混合 CNN-Transformer 视觉骨干网络。
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=\linewidth]{picture/LLIE/Experiment/the Proposed TransXNet}
-			%\captionsetup{font=scriptsize}
-			\caption{The overall architecture of the proposed TransXNet}
-			\label{fig: TransXNet}
-		\end{figure}
-		
-		如Fig. \ref{fig: TransXNet} 所示，提出的 TransXNet 采用了四个阶段的分层架构。每个阶段由一个 patch 嵌入层和几个顺序堆叠的块组成。使用 $7 \times 7$ 卷积层(stride = 4)实现第一个 patch 嵌入层，然后使用批归一化 (BN), 而其余阶段的 patch 嵌入层使用 $3 \times 3$ 卷积层 (stride = 2) 和 BN。每个块由一个动态位置编码层(DPE)、一个双动态 token 混频器 (D-Mixer) 和一个多尺度前馈网络 (MS-FFN) 组成。
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=\linewidth]{picture/LLIE/Experiment/D-Mixer}
-			%\captionsetup{font=scriptsize}
-			\caption{Workflow of the proposed D-Mixer.}
-			\label{fig: D-Mixer}
-		\end{figure}
-		
-		\paragraph{Overkapping Spatial Reduction Attention(OSRA)}
-		
-		空间降维注意 (SRA) 在前任的研究中得到了广泛的应用，利用稀疏标记区域关系高效提取全局信息。然而，为了减少标记技术而进行的非重叠空间缩减打破了 patch 边界附近的空间结构，降低了 token 的质量。为了解决这一问题，在 SRA 中引入了重叠空间缩减 (OSR)，通过使用更大的重叠斑块来更好地表示斑块边界附近的空间结构。在实践中，将 OSR 实例化为深度可分离卷积，其中步幅跟随 PVT，内核大小等于步幅加 3。
-		
-		\begin{equation}
-			\begin{aligned}
-				& \text{\textbf{Y} = OSR(\textbf{X})} \\
-				& \text{\textbf{Q} = Linear(\textbf{X})} \\
-				& \text{\textbf{K}, \textbf{V} = Split(Linear(\textbf{Y}+LR(\textbf{Y})))} \\
-				& \textbf{Z} = \text{Softmax} \left(\frac{\textbf{QK}^{\textbf{T}}}{\sqrt{d}}+ \textbf{B}\right) \textbf{V}
-			\end{aligned}
-		\end{equation}
-		
-		作者设计了一种像素聚焦注意力机制，它在每个 Query 附近具有细粒度的感知，同时保持全局信息的粗粒度意识。为了实现眼球运动中固有的像素级平移等价性，作者采用了一种双路径设计，包括以 Query 为中心的滑动窗口注意力和池化注意力。
-		
-		\subsection*{针对Block的改进优化(下周工作)}
-		
-		使用一种多尺度卷积核，与依赖大卷积核\footnote{
-		
-		大卷积核的优势？
-		
-		\begin{itemize}
-			
-			\item[1)] \textbf{捕捉更广泛的上下文信息}
-			
-			大卷积核能够覆盖更大的感受野(Receptive Field)，这意味着每次卷积操作可以观察到更多的输入信息。这对于理解图像中的大尺度结构特别有用，例如，可以帮助网络更好地理解场景的整体布局或大的物体形状。
-			
-			\item[2)] \textbf{减少层的深度}
-			
-			使用较大的卷积核可以在较少的层次中达到相同的感受野。例如，一个$7 \times 7$的卷积核直接提供了 49 个像素点的感受野，而要通过使用 $3 \times 3$ 的卷积核达到相同的感受野需要多个卷积层叠加。这可以在某些情况下减少网络的复杂性和提高计算效率。
-			
-		\end{itemize}
-		
-		}或膨胀卷积\footnote{
-		
-		膨胀卷积(Dilated Convolution)，也称为扩张卷积或空洞卷积(Atrous convolution)，是一种特殊类型的卷积操作，它通过引入一个称为膨胀率(Dilation rate)的参数来扩展卷积核的感受野，而不增加额外的计算成本或参数数量。这种技术在图像分割、音频处理和任何需要捕捉更广泛上下文信息的任务中特别有用。
-		
-		\begin{itemize}
-			
-			\item[(1)] \textbf{增加感受野}
-			
-			使用膨胀卷积可以在不增加额外参数的情况下增加卷积层的感受野。这允许网络在较深层捕捉到更广泛的上下文信息，而不需要通过增加层数或卷积核尺寸来实现。
-			
-			\item[(2)] \textbf{保持分辨率}
-			
-			在深层网络中，通过池化或步长卷积不断减小特征图的尺寸，会导致分辨率的损失。膨胀卷积允许网络在维持特征图尺寸的同时，获得更大的感受野，这对于需要精细空间分辨率的任务（如像素级的图像分割）非常有用。
-			
-			\item[(3)] \textbf{有效的参数利用}
-			
-			由于膨胀卷积不增加额外的参数，它是提升网络对上下文捕捉能力的一种参数效率很高的方式。
-			
-		\end{itemize}
-		
-		}的方法不同，PKINet 利用不同大小的多个深度卷积核，优势在于无需膨胀即可提取不同感受野中的多尺度纹理特征。
 		
 		\subsection{其他改进}
 		
-		一开始我们使用 F.interpolate 方法对特征图进行上采样和下采样，对于下采样(Down sample)操作而言，F.interpolate 的插值方法在缩小图像时可能引入平滑效果，这可能导致一些高频细节的丢失。相比之下，Maxpool 方法由于只保留最大值，通常能更好地保留图像中的显著特征，如边缘信息。Maxpool 操作比线性或双线性插值简单，通常计算速度更快，尤其是在GPU加速的深度学习应用中。因此我们尝试将下采样方法替换为 Maxpool2d 方法。
-		
-		对于上采样(Up sample)操作，nn.ConvTranspose2d, nn.Upsample 和 F.interpolate都可以增加输入数据的空间维度，但 nn.ConvTranspose2d 使用卷积核对输入进行操作以生成更大的输出。这不是真正的逆卷积操作，而是通过插入零填充到输入数据中来扩展输入特征图，然后应用正常的卷积。这可以被看作是卷积操作的逆过程，其常用于生成模型 (GANs) 和自动编码器 (AE) 中，用于从压缩的特征空间中重构出更高分辨率的输出。转置卷积可以学习在上采样过程中如何最优地恢复数据结构，这是它区别于简单上采样的关键特点。相对应的，这会导致计算成本较高，可能引入棋盘效应 (checkerboard artifacts)。而 nn.Upsample 和 F.interpolate 仅仅通过插值完成上采样工作。
-		
-		通过实验发现，如 Fig. \ref{fig: Maxpool2d} 所示，使用 Maxpool2d 效果并不好，几乎只剩下边缘信息。
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=\linewidth]{picture/LLIE/Experiment/Maxpool2d}
-			%\captionsetup{font=scriptsize}
-			\caption{Maxpool2d}
-			\label{fig: Maxpool2d}
-		\end{figure}
-		
-		同样，通过实验验证，使用 nn.ConvTranspose2d 的效果和采用 F.interpolate 效果类似。
 		
 		\renewcommand{\refname}{References}
 		

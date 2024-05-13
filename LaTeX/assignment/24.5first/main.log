@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  26 APR 2024 20:27
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  10 MAY 2024 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,45 +970,46 @@ aphic file (type bmp)
 File: picture/LLIE/Experiment/myplot_different_color_channels_r145221d9t.png Gr
 aphic file (type bmp)
 <picture/LLIE/Experiment/myplot_different_color_channels_r145221d9t.png>
+File: picture/LLIE/Experiment/Attention/MSAM.jpg Graphic file (type bmp)
+<picture/LLIE/Experiment/Attention/MSAM.jpg>
  [3]
-File: picture/LLIE/Experiment/CBAM.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/CBAM.jpg>
-File: picture/LLIE/Experiment/SA_modification.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/SA_modification.jpg>
-File: picture/LLIE/Experiment/BSAM.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/BSAM.jpg>
-
-[4]
-File: picture/LLIE/Experiment/Vanilla attention.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/Vanilla attention.jpg>
-File: picture/LLIE/Experiment/BSAM experiment.png Graphic file (type bmp)
-<picture/LLIE/Experiment/BSAM experiment.png>
-File: picture/LLIE/Experiment/MSAM.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/MSAM.jpg>
- [5]
-File: picture/LLIE/Experiment/MSCA.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/MSCA.jpg>
-File: picture/LLIE/Experiment/SE_CBAM_CPCA.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/SE_CBAM_CPCA.jpg>
-File: picture/LLIE/Experiment/CPCA.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/CPCA.jpg>
- [6] [7]
-File: picture/LLIE/Experiment/CPMS.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/CPMS.jpg>
-File: picture/LLIE/Experiment/FLOGs(G).jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/FLOGs(G).jpg>
-File: picture/LLIE/Experiment/Number of Parameters(M).jpg Graphic file (type bm
-p)
-<picture/LLIE/Experiment/Number of Parameters(M).jpg>
-File: picture/LLIE/Experiment/the Proposed TransXNet.jpg Graphic file (type bmp
+File: picture/LLIE/Experiment/Attention/MSCA.jpg Graphic file (type bmp)
+<picture/LLIE/Experiment/Attention/MSCA.jpg>
+File: picture/LLIE/Experiment/Attention/SE_CBAM_CPCA.jpg Graphic file (type bmp
 )
-<picture/LLIE/Experiment/the Proposed TransXNet.jpg>
-File: picture/LLIE/Experiment/D-Mixer.jpg Graphic file (type bmp)
-<picture/LLIE/Experiment/D-Mixer.jpg>
- [8] [9]
-File: picture/LLIE/Experiment/Maxpool2d.png Graphic file (type bmp)
-<picture/LLIE/Experiment/Maxpool2d.png>
- (./main.bbl [10]) [11]
+<picture/LLIE/Experiment/Attention/SE_CBAM_CPCA.jpg>
+File: picture/LLIE/Experiment/Attention/CPCA.jpg Graphic file (type bmp)
+<picture/LLIE/Experiment/Attention/CPCA.jpg>
+File: picture/LLIE/Experiment/Attention/CPMS.jpg Graphic file (type bmp)
+<picture/LLIE/Experiment/Attention/CPMS.jpg>
+
+[4] [5]
+File: picture/LLIE/Experiment/Encoder and Decoder.jpg Graphic file (type bmp)
+<picture/LLIE/Experiment/Encoder and Decoder.jpg>
+File: picture/LLIE/Experiment/U-Net Architecture.jpg Graphic file (type bmp)
+<picture/LLIE/Experiment/U-Net Architecture.jpg>
+ [6]
+File: picture/LLIE/Experiment/EM/ULite_Enhance_3_layer.png Graphic file (type b
+mp)
+<picture/LLIE/Experiment/EM/ULite_Enhance_3_layer.png>
+File: picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM.png Graphic file (typ
+e bmp)
+<picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM.png>
+File: picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_withou_Transformer_ma
+xc_512_ReLU.png Graphic file (type bmp)
+<picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_withou_Transformer_maxc_51
+2_ReLU.png>
+File: picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_without_Transformer.p
+ng Graphic file (type bmp)
+<picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_without_Transformer.png>
+File: picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_without_Transformer_m
+axc_512.png Graphic file (type bmp)
+<picture/LLIE/Experiment/EM/ULite_Enhance_3_layer_EM_without_Transformer_maxc_5
+12.png>
+File: picture/LLIE/Experiment/EM/ULite_Enhance_4_layer_EM_without_Transformer.p
+ng Graphic file (type bmp)
+<picture/LLIE/Experiment/EM/ULite_Enhance_4_layer_EM_without_Transformer.png>
+ (./main.bbl [7] [8]) [9]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
@@ -1016,12 +1017,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 318AEACDC567892CCE29573C8C8E9E11;164.
  ) 
 Here is how much of TeX's memory you used:
- 22057 strings out of 476683
- 481436 string characters out of 5805371
+ 21923 strings out of 476683
+ 478977 string characters out of 5805371
  1878012 words of memory out of 5000000
- 41913 multiletter control sequences out of 15000+600000
- 519006 words of font info for 93 fonts, out of 8000000 for 9000
+ 41782 multiletter control sequences out of 15000+600000
+ 518998 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,12n,97p,811b,572s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,8n,97p,811b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (11 pages).
+Output written on main.pdf (9 pages).

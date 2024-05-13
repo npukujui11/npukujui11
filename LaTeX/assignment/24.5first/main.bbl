@@ -44,12 +44,6 @@ Matthew~D Zeiler and Rob Fergus.
   Switzerland, September 6-12, 2014, Proceedings, Part I 13}, pages 818--833.
   Springer, 2014.
 
-\bibitem{zhu2023biformer}
-Lei Zhu, Xinjiang Wang, Zhanghan Ke, Wayne Zhang, and Rynson~WH Lau.
-\newblock Biformer: Vision transformer with bi-level routing attention.
-\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
-  pattern recognition}, pages 10323--10333, 2023.
-
 \bibitem{guo2022segnext}
 Meng-Hao Guo, Cheng-Ze Lu, Qibin Hou, Zhengning Liu, Ming-Ming Cheng, and
   Shi-Min Hu.
