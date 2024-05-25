@@ -1,0 +1,80 @@
+\begin{thebibliography}{10}
+
+\bibitem{zhang2023frc}
+Zhao Zhang, Huan Zheng, Richang Hong, Jicong Fan, Yi~Yang, and Shuicheng Yan.
+\newblock Frc-net: A simple yet effective architecture for low-light image
+  enhancement.
+\newblock {\em IEEE Transactions on Consumer Electronics}, 2023.
+
+\bibitem{ronneberger2015u}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em Medical image computing and computer-assisted
+  intervention--MICCAI 2015: 18th international conference, Munich, Germany,
+  October 5-9, 2015, proceedings, part III 18}, pages 234--241. Springer, 2015.
+
+\bibitem{zhang2021accurate}
+Yulun Zhang, Kunpeng Li, Kai Li, Gan Sun, Yu~Kong, and Yun Fu.
+\newblock Accurate and fast image denoising via attention guided scaling.
+\newblock {\em IEEE Transactions on Image Processing}, 30:6255--6265, 2021.
+
+\bibitem{sandler2018mobilenetv2}
+Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, and Liang-Chieh
+  Chen.
+\newblock Mobilenetv2: Inverted residuals and linear bottlenecks.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 4510--4520, 2018.
+
+\bibitem{guo2019pipeline}
+Yanhui Guo, Xue Ke, Jie Ma, and Jun Zhang.
+\newblock A pipeline neural network for low-light image enhancement.
+\newblock {\em IEEE Access}, 7:13737--13744, 2019.
+
+\bibitem{lin2017feature}
+Tsung-Yi Lin, Piotr Doll{\'a}r, Ross Girshick, Kaiming He, Bharath Hariharan,
+  and Serge Belongie.
+\newblock Feature pyramid networks for object detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2117--2125, 2017.
+
+\bibitem{guo2022segnext}
+Meng-Hao Guo, Cheng-Ze Lu, Qibin Hou, Zhengning Liu, Ming-Ming Cheng, and
+  Shi-Min Hu.
+\newblock Segnext: Rethinking convolutional attention design for semantic
+  segmentation.
+\newblock {\em Advances in Neural Information Processing Systems},
+  35:1140--1156, 2022.
+
+\bibitem{huang2023channel}
+Hejun Huang, Zuguo Chen, Ying Zou, Ming Lu, and Chaoyang Chen.
+\newblock Channel prior convolutional attention for medical image segmentation.
+\newblock {\em arXiv preprint arXiv:2306.05196}, 2023.
+
+\bibitem{lv2018mbllen}
+Feifan Lv, Feng Lu, Jianhua Wu, and Chongsoon Lim.
+\newblock Mbllen: Low-light image/video enhancement using cnns.
+\newblock In {\em BMVC}, volume 220, page~4, 2018.
+
+\bibitem{rudin1992nonlinear}
+Leonid~I Rudin, Stanley Osher, and Emad Fatemi.
+\newblock Nonlinear total variation based noise removal algorithms.
+\newblock {\em Physica D: nonlinear phenomena}, 60(1-4):259--268, 1992.
+
+\bibitem{DLN2020}
+Li-Wen Wang, Zhi-Song Liu, Wan-Chi Siu, and Daniel~P.K. Lun.
+\newblock Lightening network for low-light image enhancement.
+\newblock {\em IEEE Transactions on Image Processing}, 2020.
+
+\bibitem{haris2018deep}
+Muhammad Haris, Gregory Shakhnarovich, and Norimichi Ukita.
+\newblock Deep back-projection networks for super-resolution.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 1664--1673, 2018.
+
+\bibitem{shen2022low}
+Nuo Shen, Borui Zhou, Junlin Xie, and Xiaohan Sun.
+\newblock Low-light image enhancement via transformer-based network.
+\newblock In {\em Proceedings of the 2022 4th International Conference on
+  Image, Video and Signal Processing}, pages 41--47, 2022.
+
+\end{thebibliography}
