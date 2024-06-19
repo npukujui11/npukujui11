@@ -77,4 +77,17 @@ Nuo Shen, Borui Zhou, Junlin Xie, and Xiaohan Sun.
 \newblock In {\em Proceedings of the 2022 4th International Conference on
   Image, Video and Signal Processing}, pages 41--47, 2022.
 
+\bibitem{Soria_2023}
+Xavier Soria, Angel Sappa, Patricio Humanante, and Arash Akbarinia.
+\newblock Dense extreme inception network for edge detection.
+\newblock {\em Pattern Recognition}, 139:109461, July 2023.
+
+\bibitem{soria2023tiny}
+Xavier Soria, Yachuan Li, Mohammad Rouhani, and Angel~D. Sappa.
+\newblock Tiny and efficient model for the edge detection generalization, 2023.
+
+\bibitem{pu2022edter}
+Mengyang Pu, Yaping Huang, Yuming Liu, Qingji Guan, and Haibin Ling.
+\newblock Edter: Edge detection with transformer, 2022.
+
 \end{thebibliography}

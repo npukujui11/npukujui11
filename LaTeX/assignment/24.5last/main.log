@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  20 MAY 2024 23:17
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  19 JUN 2024 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -778,89 +778,97 @@ Package: authblk 2001/02/27 1.3 (PWD)
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count351
+\float@exts=\toks29
+\float@box=\box68
+\@float@everytoks=\toks30
+\@floatcapt=\box69
+)
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 69.
+Package hyperref Info: Option `colorlinks' set `true' on input line 70.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 77.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 77.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 77.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 77.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 77.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 77.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 77.
-LaTeX Font Info:    Redeclaring math accent \check on input line 77.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 77.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 77.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 77.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 77.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 78.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 78.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 78.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 78.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 78.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 78.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 78.
+LaTeX Font Info:    Redeclaring math accent \check on input line 78.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 78.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 78.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 78.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 78.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 77.
+(Font)              `operators' in the math version `normal' on input line 78.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 77.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 78.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 77.
+(Font)              `operators' in the math version `bold' on input line 78.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 77.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 78.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 77.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 78.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 77.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 78.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 77.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 78.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 77.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 78.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 77.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 78.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 77.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 78.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 77.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 78.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 77.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 78.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 77.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 78.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -896,15 +904,16 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 77.
+Package hyperref Info: Link coloring ON on input line 78.
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count351
+\c@lstlisting=\count352
 
 Package fontspec Info: Could not resolve font "SimSun/BI" (it probably doesn't
 (fontspec)             exist).
@@ -959,7 +968,7 @@ hic file (type bmp)
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not avail
 able
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
-452.
+453.
  [2]
 File: picture/LLIE/Experiment/myplot_different_color_channels_r097088c1t.png Gr
 aphic file (type bmp)
@@ -1003,20 +1012,142 @@ File: picture/LLIE/Experiment/UNet and LBP.jpg Graphic file (type bmp)
 <picture/LLIE/Experiment/UNet and LBP.jpg>
 File: picture/LLIE/Experiment/myplot_LAN.png Graphic file (type bmp)
 <picture/LLIE/Experiment/myplot_LAN.png>
- (./main.bbl [8] [9] [10]) [11]
+ [8] [9] [10]
+File: picture/Edge Detection/DCMP.jpg Graphic file (type bmp)
+<picture/Edge Detection/DCMP.jpg>
+
+
+LaTeX Warning: Reference `fig: LLtoEdge(trainbasenormal,inferencefromenhance)' 
+on page 11 undefined on input line 703.
+
+[11]
+Overfull \hbox (0.53902pt too wide) in paragraph at lines 713--713
+[]|[]| 
+ []
+
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.1.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.1.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.2.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.2.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.3.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.3.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.4.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.4.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.5.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.5.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.6.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.6.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.7.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.7.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.8.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.8.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.9.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.9.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=1.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=1.0.jpg>
+File: picture/Edge Detection/LLtoEdge(straight).png Graphic file (type bmp)
+<picture/Edge Detection/LLtoEdge(straight).png>
+File: picture/Edge Detection/LLtoEdge(trainbasenormal).png Graphic file (type b
+mp)
+<picture/Edge Detection/LLtoEdge(trainbasenormal).png>
+File: picture/Edge Detection/res(F-β)/Input/RGB_008.png Graphic file (type bmp)
+
+<picture/Edge Detection/res(F-β)/Input/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/RGB_008.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/Enhanced/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/GT/RGB_008.png Graphic file (type bmp)
+<picture/Edge Detection/res(F-β)/GT/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008.png Graphic file 
+(type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/RGB_008.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/GT Edges/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/Input/RGB_010.png Graphic file (type bmp)
+
+<picture/Edge Detection/res(F-β)/Input/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/RGB_010.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/Enhanced/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/GT/RGB_010.png Graphic file (type bmp)
+<picture/Edge Detection/res(F-β)/GT/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010.png Graphic file 
+(type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/RGB_010.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/GT Edges/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/Input/RGB_017.png Graphic file (type bmp)
+
+<picture/Edge Detection/res(F-β)/Input/RGB_017.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/RGB_017.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/Enhanced/RGB_017.png>
+File: picture/Edge Detection/res(F-β)/GT/RGB_017.png Graphic file (type bmp)
+<picture/Edge Detection/res(F-β)/GT/RGB_017.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017.png Graphic file 
+(type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/RGB_017.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/GT Edges/RGB_017.png>
+File: picture/Edge Detection/res(F-β)/Input/RGB_025.png Graphic file (type bmp)
+
+<picture/Edge Detection/res(F-β)/Input/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/RGB_025.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/Enhanced/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/GT/RGB_025.png Graphic file (type bmp)
+<picture/Edge Detection/res(F-β)/GT/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_025.png Graphic file 
+(type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_025.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/RGB_025.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/GT Edges/RGB_025.png>
+(./main.bbl [12] [13] [14]) [15]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 18D67A77D3EE8A6C801DE8CA833ED0C1;525.
+(rerunfilecheck)             Checksum: B0CC2A770906FD01CEF11F651BA478C9;664.
  ) 
 Here is how much of TeX's memory you used:
- 21979 strings out of 476683
- 477629 string characters out of 5805371
+ 22939 strings out of 476683
+ 529466 string characters out of 5805371
  1882012 words of memory out of 5000000
- 41838 multiletter control sequences out of 15000+600000
- 518998 words of font info for 92 fonts, out of 8000000 for 9000
+ 42744 multiletter control sequences out of 15000+600000
+ 523681 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,10n,97p,811b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,12n,97p,811b,668s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (11 pages).
+Output written on main.pdf (15 pages).

@@ -30,6 +30,7 @@
 \usepackage{tocloft}
 \usepackage{authblk}
 \usepackage{setspace}
+\usepackage{float}
 
 \usepackage[section]{placeins}
 
@@ -621,9 +622,9 @@
 		
 		\paragraph{LBP}
 		
-		弱光图像和正常光照图像差距体现在像素值上的不同，即弱光数值低，正常光数值高，弱光图像增强任务可以看作是一个映射(Mapping)，这个映射将弱光图像重建出正常光的图像，DLN\cite{DLN2020}中提出一种基于反投影理论 (Back-projection) 和注意力机制的但图像弱光图像增强方法。作者认为没有绝对的 NL (Normal lighting) 图像，NL 图像不过就是比 LL 图像像素值高一些，动态范围更大一些。受超分辨\cite{haris2018deep}的思想，希望利用反向投影从 LL 图像中重建出NL图像。 所以作者提出了 LBP (Lighting Back Projection) 模块(对特征图进行残差学习，增强明亮效果)，和 FA（Feature Aggregation）模块 (重新校准特征图特征)。
+		弱光图像和正常光照图像差距体现在像素值上的不同，即弱光数值低，正常光数值高，弱光图像增强任务可以看作是一个映射(Mapping)，这个映射将弱光图像重建出正常光的图像，DLN\cite{DLN2020}中提出一种基于反投影理论 (Back-projection) 和注意力机制的但图像弱光图像增强方法。作者认为基于深度学习的模型没有办法获得绝对的正常光照(Normal lighting)图像，正常光照图像只是比弱光图像像素值高一些，动态范围更大一些。受超分辨\cite{haris2018deep}的思想，希望利用反向投影从弱光图像中重建出正常光照图像。 所以作者提出了光反射投影模块(Lighting Back Projection, LBP) (对特征图进行残差学习，增强明亮效果)，和特征提取（Feature Aggregation, FA）模块(重新校准特征图特征)。
 
-		其中LBP模块如 Fig. \ref{fig: LBP}，我们基于LBP模块设置了一个并行结构，如 Fig. \ref{fig: UNet and LBP} 所示。
+		其中光反射投影模块(LBP)如 Fig. \ref{fig: LBP}，我们基于光反射投影模块设置了一个并行结构，如 Fig. \ref{fig: UNet and LBP} 所示。
 		
 		\begin{figure}[htbp]
 			\centering
@@ -665,6 +666,322 @@
 		\end{figure}
 		
 		增强结果如 Fig. \ref{fig：myplot_LAN}所示。
+		
+		\subsubsection{针对边缘细节的改进}
+		
+		我们利用当前效果比较好的边缘推测网络 DexiNed，并尝试对其进行改进，求解弱光图像对应的详细特征，以期后续能够进一步指导弱光图像增强，细化恢复的细节。我们的目标是通过一个改进的边缘特征捕获网络能够获取从弱光到其边缘特征的有效映射。我们进行了下列尝试，其中模型如 Fig. \ref{fig: DCMP} 所示，其中红色箭头是模型训练方向，蓝色箭头是模型的推理过程，其中低光图像 $\mathcal{I}_{i}^{LL}$ 通过 LAN 网络，可以获取初步增强的低光图像 $\mathcal{I}_{i}^{EL}$，表示为 $\mathcal{I}_{i}^{EL} = \mathcal{F}^{LAN} (\mathcal{I}_{i}^{LL})$。
+		
+		我们将图像边缘推测网络模型表示为 $\mathcal{F}_{i}^{\mathcal{E}}$，其中 $i=1$ 表示使用 DexiNed \cite{Soria_2023}模型，$i=2$ 表示使用 TEED \cite{soria2023tiny}模型，$i=3$ 表示使用 EDTER \cite{pu2022edter}模型 。边缘图像数据集为“正常-边缘”数据对，我们将正常光图像表示为 $\mathcal{N}_{i}$, 对正常光图像进行图像光照退化来模拟低光图像,表示为 $\mathcal{N}_{i}^{dege}$, 依次构建“低光-边缘”数据对，我们将基于边缘图像数据集（“正常-边缘”）构建的“低光-正常-边缘”数据对记为 $\mathcal{D}_{i}^{syn}$，基于弱光图像数据集（“低光-正常”）构建的“低光-正常-边缘”数据对记为 $\mathcal{D}_{i}^{low}$。
+		
+		\begin{itemize}
+			\item[1)]
+			其中 $\mathcal{D}_{2}^{syn}$ 基于 BIPEDv2 边缘数据集来尝试构建“低光-边缘”数据对，我们利用伽马矫正 (Gamma Correction) 和噪声模拟对 BIPEDv2 中的图像进行图像退化操作，以获取低光图像，进而获取“低光-正常-边缘”训练数据对，如 Fig. \ref{fig: degraded} 所示。
+			
+			\item[2)]
+			其中 $\mathcal{D}_{2}^{low}$ 基于 LOLv2 弱光数据集来尝试构建“低光-边缘”数据对，我们利用 Canny 算子获取真实图像 (GT) 的边缘特征图片，进而获“低光-正常-边缘”训练数据对。
+		\end{itemize}
+		
+		在边缘推测网络模型的训练中，我们有两种策略可供选择：一种是采用“低光-边缘”训练数据对，另一种是采用“正常-边缘”训练数据对。从一般性的认知来看，低光图像中的语义特征和边缘等特征受光照退化和噪声的影响较大，这使得边缘推测网络从低光数据中捕获边缘特征图的能力大幅减弱。此外，基于深度学习的边缘特征提取网络（如RCF、HED、DexiNed模型）在直接从弱光图像中提取边缘特征时，通常效果不佳。这是因为传统的基于编码器的模型主要提取内容特征，这对于生成标准图像（如 sRGB 图像）是足够的，但在详细的结构建模方面表现不足，这些模型通常使用短程操作，如卷积神经网络(CNN)，在捕捉低信噪比(SNR)的暗区域的有效表示时效果不佳。因此，采用“低光-边缘”训练数据对可能无法充分利用模型对边缘特征的捕获能力。
+		
+		为了克服这一问题，我们可以对低光图像进行逆图像退化操作，得到光照相对正常的图像，然后使用“正常-边缘”训练数据对来训练边缘推测网络模型。这种方法有两个显著优势：首先，逆图像退化操作不会扭曲低光图像的纹理和边缘特征，能够很好地保留图像的原始纹理和边缘信息。其次，我们的上游任务是端到端的图像增强任务，这一操作有助于保持端到端模型的整体性和一致性。在我们的实验中，通过对比两种训练策略，我们证明了采用“正常-边缘”训练数据对的有效性。具体来说，通过逆图像退化操作，我们能够更好地保留图像中的重要特征，从而提高边缘推测网络的性能。这不仅在理论上具有合理性，而且在实际实验中也得到了验证。采用“正常-边缘”训练数据对，不仅能够更好地捕获边缘特征，还能增强模型的鲁棒性和泛化能力。因此，针对边缘推测网络模型的训练，使用“正常-边缘”训练数据对是一个更为合理和有效的选择。
+		
+		我们设计的模型如Fig. \ref{fig: DCMP}所示，可以拓展出以下三种研究思路：
+		
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=0.8\linewidth]{picture/Edge Detection/DCMP}
+			%\captionsetup{font=scriptsize}
+			\caption{边缘特征检测网络}
+			\label{fig: DCMP}
+		\end{figure}
+		
+		\begin{itemize}
+			\item[1)]
+			使用图像 $\mathcal{N}_{i}$ 训练 $\mathcal{F}_{i}^{\mathcal{E}}$ 网络，对图像 $\mathcal{N}_{i}^{dege}$ 使用 $\mathcal{F}_{i}^{\mathcal{E}}$ 进行推理得到边缘结果，这一过程表示为 ${\left[\mathcal{F}\text{-}\alpha\right]}^{\mathcal{E}}_i = {\mathcal{F}}^\mathcal{E}_{i} (\mathcal{N}_{i}^{dege})$，这一思路的可视化结果见 Fig. \ref{fig: LLtoEdge(trainbasenormal)}；
+			
+			\item[2)]
+			使用图像 $\mathcal{N}_{i}$ 训练 $\mathcal{F}_{i}^{\mathcal{E}}$ 网络，对图像 $\mathcal{N}_{i}^{dege}$ 使用 LAN 增强后使用 $\mathcal{F}_{i}^{\mathcal{E}}$ 进行推理得到边缘结果，这一过程表示为 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_i =  \mathcal{F}_{i}^{\mathcal{E}} \left(\mathcal{F}^{LAN} (\mathcal{N}_{i}^{dege})\right)$，这一思路的可视化结果见 Fig.\ref{fig: LLtoEdge(trainbasenormal,inferencefromenhance)}
+			
+			\item[3)]
+			使用图像 $\mathcal{N}_{i}$ 训练 $\mathcal{F}_{i}^{\mathcal{E}}$ 网络，对图像 $\mathcal{N}_{i}^{dege}$ 使用 $\mathcal{F}_{i}^{\mathcal{E}}$ 进行推理得到边缘结果，图像 $\mathcal{N}_{i}^{dege}$ 使用 LAN 增强后再使用 $\mathcal{F}_{i}^{\mathcal{E}}$ 进行推理，二者结果相加，这一过程表示为 ${\left[\mathcal{F}\text{-}\gamma\right]}^{\mathcal{E}}_i = \mathcal{F}_{i}^{\mathcal{E}} (\mathcal{N}_{i}^{dege}) + \mathcal{F}_{i}^{\mathcal{E}} \left(\mathcal{F}^{LAN} (\mathcal{N}_{i}^{dege})\right)$ 。
+		\end{itemize}
+		
+		\begin{figure}[htbp]
+			\centering
+			\begin{minipage}{0.01\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{\rotatebox{90}{$\gamma$=0.1}}
+			\end{minipage}
+			\begin{minipage}{0.98\textwidth}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.0}
+				\label{fig: Gamma=0.1, Gauss Noise = 0.0}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.1}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.1}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.1}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.2}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.2}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.2}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.3}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.3}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.3}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.4}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.4}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.4}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.5}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.5}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.5}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.6}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.6}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.6}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.7}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.7}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.7}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.8}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.8}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.8}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 0.9}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.9}
+				\label{fig：Gamma=0.1, Gauss Noise = 0.9}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{$\mathcal{N}$= 1.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=1.0}
+				\label{fig：Gamma=0.1, Gauss Noise = 1.0}
+			\end{subfigure}
+			\vspace{-10pt}
+		\end{minipage}
+			\caption{我们通过矫正伽马值和高斯噪声以模拟不同程度的图像退化}
+			\label{fig: degraded}
+		\end{figure}
+		
+		
+		
+		在我们早期的研究和实验中，我们观察到基于深度学习的边缘特征提取网络（如RCF、HED、DexiNed模型）在直接从弱光图像中提取边缘特征时，通常效果不佳。这是因为传统的基于编码器的模型主要提取内容特征，这对于生成标准图像（如 sRGB 图像）是足够的，但在详细的结构建模方面表现不足，这些模型通常使用短程操作，如卷积神经网络(CNN)，在捕捉低信噪比(SNR)的暗区域的有效表示时效果不佳。为了改善这种情况，我们设计了一种训练策略，即首先使用一类数据集对DexiNed模型进行训练。这个过程如 Fig \ref{fig: DCMP} 中黄色部分所示，其训练结果的可视化如 Fig \ref{fig: LLtoEdge(straight)} 所示。
+		
+		进一步的实验表明，当我们使用正常光图像对 DexiNed 模型进行训练，然后将相应的弱光图像输入到经过训练的 DexiNed 模型中时，可以获得更好的边缘特征提取效果。这不仅在视觉上表现良好，而且在 ODS、OIS 和 AP 等评价指标上也有显著提升。基于这些发现，我们提出了一种有效的方法：首先使用正常光图像训练 DexiNed 模型，然后对弱光图像进行初步的增强处理，最后使用训练好的 DexiNed 模型对增强后的弱光图像进行推理，以获取边缘特征图。
+		
+		这种方法的理论基础在于，弱光图像在边缘和纹理特征上存在严重退化，传统的边缘提取网络难以直接从中捕获这些特征。然而，通过对光线的适当增强，可以在一定程度上恢复图像的边缘和纹理特征，从而帮助模型更准确地提取边缘信息。因此，利用正常光图像进行模型训练，然后对弱光图像进行增强处理，是获取弱光图像边缘特征的有效策略。
+		
+		综上所述，通过我们的研究，我们验证了利用正常光图像训练边缘特征提取模型并对弱光图像进行初步增强处理，可以显著改善弱光环境下的边缘特征提取效果。这一发现不仅为边缘检测任务提供了新的思路，也为弱光图像的处理提供了有效的方法和技术支持。
+		
+		\begin{table}[!htbp]
+			\centering
+			\small
+			%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+				\begin{tabular}{>{\centering\arraybackslash}m{5cm}|c|c|c}
+					
+					\hline
+					
+					\textbf{BIPEDv2} & \textbf{ODS} & \textbf{OIS} & \textbf{AP}  \\
+					
+					\hline
+					
+					Ori Train / Ori Inference  & .895 & .900 & .927 \\
+					
+					LL Train / LL Inference    & .100 & .130 & .130 \\
+
+					Ori Train / LL Inference   & .751 & .780 & .712 \\
+					
+					Ori Train / Enhanced Inference & .789 & .795 & .910 \\				
+					\hline
+					
+				\end{tabular}
+				%}
+			%\captionsetup{font=scriptsize} %设置标题字体与表格字体一致
+			\caption{
+				\label{tab: Result}
+				不同的训练和推理方式的结果} %表格的标题
+			
+		\end{table}
+		
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/LLtoEdge(straight)}
+				\captionsetup{font=scriptsize}
+				\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“低光-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 进行推理的可视化结果.}
+				\label{fig: LLtoEdge(straight)}
+			\end{subfigure}
+			\begin{subfigure}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/LLtoEdge(trainbasenormal)}
+				\captionsetup{font=scriptsize}
+				\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“正常-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 进行推理的可视化结果.}
+				\label{fig: LLtoEdge(trainbasenormal)}
+			\end{subfigure}
+			\caption{目前尝试的实验过程}
+		\end{figure}
+		
+		
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}{0.16\textwidth}
+				\caption*{Input image}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_008}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_008}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\caption*{Enhanced image}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_008}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_008 Enhanced}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\caption*{GT image}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_008}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_008 GT}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\caption*{Predicted Edges}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_008 Pred}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\caption*{NMS}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_008 Pred NMS}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\caption*{GT Edge}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_008}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_008 GT Edges}
+			\end{subfigure} \\
+			
+			\vspace{-10pt}
+			
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_010}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_010}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_010}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_010 Enhanced}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_010}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_010 GT}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_010 Pred}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_010 Pred NMS}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_010}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_010 GT Edges}
+			\end{subfigure} \\
+			
+			\vspace{-10pt}
+			
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_017}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_017}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_017}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_017 Enhanced}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_017}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_017 GT}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_017 Pred}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_017 Pred NMS}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_017}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_017 GT Edges}
+			\end{subfigure} \\
+			
+			\vspace{-10pt}
+			
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_025}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_025}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_025}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_025 Enhanced}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_025}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_025 GT}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_025}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_025 Pred}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_025}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_025 Pred NMS}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_025}
+				\captionsetup{font=scriptsize}
+				\label{fig: RGB_025 GT Edges}
+			\end{subfigure} \\
+			\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“正常-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 使用逆推退化操作后进行推理的可视化结果.}
+		\end{figure}
 		
 		\renewcommand{\refname}{References}
 		
