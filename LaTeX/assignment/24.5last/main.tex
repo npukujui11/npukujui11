@@ -20,7 +20,11 @@
 \usepackage{longtable}                % 导入 longtable 宏包，表格自动换行
 \usepackage{caption}
 \usepackage{subcaption}               % 设置子图
+\usepackage{caption}
+%\usepackage{subfigure}
+\usepackage{diagbox}
 \usepackage{color}					  % 文本颜色包
+\usepackage{colortbl}
 \usepackage{xcolor}
 \usepackage{bbm}					  % 输入指示函数
 \usepackage{tablefootnote}			  % 表格注释
@@ -665,11 +669,41 @@
 			\end{subfigure}
 		\end{figure}
 		
-		增强结果如 Fig. \ref{fig：myplot_LAN}所示。
+		增强的结果如 Fig. \ref{fig：myplot_LAN}所示。
+		
+		\paragraph{Zero-DCE} 
+		
+		低光图片与正常图片之间的一大区别是低光图片中的亮度低的像素占比更高，因此必然存在这样一个函数，这个函数表示如何将一种亮度映射到另一种亮度上，能够使得低光图片中亮度低的像素映射到正常光图像中的对应像素亮度。Zero-DCE 将低光图像到正常光图像的映射问题定义为一个曲线估计问题，通过利用深度学习方法去估计这一函数。Zero-DCE中将这一映射函数称为亮度增强曲线(Light-Enhancement Curve, LE-curve)，该曲线满足以下几个原则：
+		
+		\begin{itemize}
+			\item [1)]
+			由于亮度值落在区间 $[0, 1]$，为保证亮度值的值域不变，曲线在 0 处值要为 0 ，在 1 处值要为1。
+			
+			\item [2)]
+			曲线必须是单调递增的。不然可能会出现图像中原本较亮的地方反而变暗。
+			
+			\item [3)]
+			曲线必须是可导的。
+			
+		\end{itemize}
+		
+		该曲线可以被表示为式\ref{eq: LE-curve}
+		
+		\begin{equation}
+			\begin{aligned}
+				LE(I(x); \alpha) = I(x) + \alpha I(x)(1-I(x))
+			\end{aligned}
+			\label{eq: LE-curve}
+		\end{equation}
 		
 		\subsubsection{针对边缘细节的改进}
 		
-		我们利用当前效果比较好的边缘推测网络 DexiNed，并尝试对其进行改进，求解弱光图像对应的详细特征，以期后续能够进一步指导弱光图像增强，细化恢复的细节。我们的目标是通过一个改进的边缘特征捕获网络能够获取从弱光到其边缘特征的有效映射。我们进行了下列尝试，其中模型如 Fig. \ref{fig: DCMP} 所示，其中红色箭头是模型训练方向，蓝色箭头是模型的推理过程，其中低光图像 $\mathcal{I}_{i}^{LL}$ 通过 LAN 网络，可以获取初步增强的低光图像 $\mathcal{I}_{i}^{EL}$，表示为 $\mathcal{I}_{i}^{EL} = \mathcal{F}^{LAN} (\mathcal{I}_{i}^{LL})$。
+		% DexiNed的源码https://github.com/sdoski1/DexiNed/tree/master
+		% DexiNed的pytorch源码https://github.com/ParhomEsmaeili/DexiNed-Fine-Tuning-and-Evaluation/blob/main/main_altered.py
+		% 用于边缘图评估的matlab源码https://github.com/zeakey/edgeval/blob/master/benchmarkBoundary.m
+		% 边缘图评估的依赖工具包https://github.com/pdollar/edges
+		%                     https://github.com/pdollar/toolbox/tree/master/channels
+		我们利用当前效果比较好的边缘推测网络 DexiNed，并尝试对其进行改进，求解弱光图像对应的详细特征，以期后续能够进一步指导弱光图像增强，细化恢复的细节。我们的目标是通过一个改进的边缘特征捕获网络能够获取从弱光到其边缘特征的有效映射。我们进行了下列尝试，其中模型如 Fig. \ref{fig: DCMP} 所示，其中红色箭头是模型训练方向，蓝色箭头是模型的推理过程，其中低光图像 $\mathcal{I}_{i}^{LL}$ 通过 LAN 网络，可以获取初步增强的低光图像 $\mathcal{I}_{i}^{EL}$，表示为 $\mathcal{I}_{i}^{EL} = \mathcal{F}^{LAN} (\mathcal{I}_{i}^{LL})$。LAN 网络由一个三层深度的 U-Net 网络组成，主要实现对低光图像进行简单的亮度增强。
 		
 		我们将图像边缘推测网络模型表示为 $\mathcal{F}_{i}^{\mathcal{E}}$，其中 $i=1$ 表示使用 DexiNed \cite{Soria_2023}模型，$i=2$ 表示使用 TEED \cite{soria2023tiny}模型，$i=3$ 表示使用 EDTER \cite{pu2022edter}模型 。边缘图像数据集为“正常-边缘”数据对，我们将正常光图像表示为 $\mathcal{N}_{i}$, 对正常光图像进行图像光照退化来模拟低光图像,表示为 $\mathcal{N}_{i}^{dege}$, 依次构建“低光-边缘”数据对，我们将基于边缘图像数据集（“正常-边缘”）构建的“低光-正常-边缘”数据对记为 $\mathcal{D}_{i}^{syn}$，基于弱光图像数据集（“低光-正常”）构建的“低光-正常-边缘”数据对记为 $\mathcal{D}_{i}^{low}$。
 		
@@ -689,7 +723,7 @@
 		
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.8\linewidth]{picture/Edge Detection/DCMP}
+			\includegraphics[width=0.5\linewidth]{picture/Edge Detection/DCMP}
 			%\captionsetup{font=scriptsize}
 			\caption{边缘特征检测网络}
 			\label{fig: DCMP}
@@ -780,7 +814,7 @@
 				\label{fig：Gamma=0.1, Gauss Noise = 1.0}
 			\end{subfigure}\\
 			
-			\vspace{-10pt}
+			\vspace{-15pt}
 			
 			\begin{subfigure}{0.02\textwidth}
 				\captionsetup{font=scriptsize}
@@ -854,7 +888,7 @@
 				\label{fig：Gamma=0.2, Gauss Noise = 1.0}
 			\end{subfigure} \\
 			
-			\vspace{-10pt}
+			\vspace{-15pt}
 			
 			\begin{subfigure}{0.02\textwidth}
 				\captionsetup{font=scriptsize}
@@ -928,7 +962,7 @@
 				\label{fig：Gamma=0.3, Gauss Noise = 1.0}
 			\end{subfigure} \\
 			
-			\vspace{-10pt}
+			\vspace{-15pt}
 			
 			\begin{subfigure}{0.02\textwidth}
 				\captionsetup{font=scriptsize}
@@ -1001,13 +1035,493 @@
 				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.4, Gauss Noise=1.0}
 				\label{fig：Gamma=0.4, Gauss Noise = 1.0}
 			\end{subfigure} \\
-			\caption{我们通过矫正伽马值和高斯噪声以模拟不同程度的图像退化}
+			
+			\vspace{-15pt}
+			
+			\begin{subfigure}{0.02\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{\rotatebox{90}{~~~~~$\gamma$=0.5}}
+				\vspace{-2pt}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.0}
+				\label{fig: Gamma=0.5, Gauss Noise = 0.0}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.1}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.1}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.1}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.2}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.2}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.2}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.3}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.3}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.3}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.4}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.4}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.4}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.5}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.5}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.5}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.6}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.6}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.6}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.7}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.7}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.7}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.8}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.8}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.8}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.9}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.9}
+				\label{fig：Gamma=0.5, Gauss Noise = 0.9}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 1.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=1.0}
+				\label{fig：Gamma=0.5, Gauss Noise = 1.0}
+			\end{subfigure} \\
+			
+			\vspace{-15pt}
+			
+			\begin{subfigure}{0.02\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{\rotatebox{90}{~~~~~$\gamma$=0.6}}
+				\vspace{-2pt}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.0}
+				\label{fig: Gamma=0.6, Gauss Noise = 0.0}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.1}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.1}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.1}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.2}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.2}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.2}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.3}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.3}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.3}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.4}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.4}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.4}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.5}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.5}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.5}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.6}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.6}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.6}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.7}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.7}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.7}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.8}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.8}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.8}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.9}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.9}
+				\label{fig：Gamma=0.6, Gauss Noise = 0.9}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 1.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=1.0}
+				\label{fig：Gamma=0.6, Gauss Noise = 1.0}
+			\end{subfigure} \\
+			
+			\vspace{-15pt}
+			
+			\begin{subfigure}{0.02\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{\rotatebox{90}{~~~~~$\gamma$=0.7}}
+				\vspace{-2pt}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.0}
+				\label{fig: Gamma=0.7, Gauss Noise = 0.0}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.1}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.1}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.1}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.2}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.2}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.2}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.3}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.3}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.3}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.4}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.4}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.4}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.5}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.5}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.5}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.6}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.6}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.6}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.7}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.7}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.7}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.8}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.8}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.8}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.9}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.9}
+				\label{fig：Gamma=0.7, Gauss Noise = 0.9}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 1.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=1.0}
+				\label{fig：Gamma=0.7, Gauss Noise = 1.0}
+			\end{subfigure} \\
+			
+			\vspace{-15pt}
+			
+			\begin{subfigure}{0.02\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{\rotatebox{90}{~~~~~$\gamma$=0.8}}
+				\vspace{-2pt}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.0}
+				\label{fig: Gamma=0.8, Gauss Noise = 0.0}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.1}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.1}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.1}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.2}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.2}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.2}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.3}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.3}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.3}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.4}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.4}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.4}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.5}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.5}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.5}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.6}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.6}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.6}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.7}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.7}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.7}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.8}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.8}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.8}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.9}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.9}
+				\label{fig：Gamma=0.8, Gauss Noise = 0.9}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 1.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=1.0}
+				\label{fig：Gamma=0.8, Gauss Noise = 1.0}
+			\end{subfigure} \\
+			
+			\vspace{-15pt}
+			
+			\begin{subfigure}{0.02\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{\rotatebox{90}{~~~~~$\gamma$=0.9}}
+				\vspace{-2pt}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.0}
+				\label{fig: Gamma=0.9, Gauss Noise = 0.0}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.1}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.1}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.1}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.2}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.2}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.2}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.3}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.3}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.3}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.4}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.4}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.4}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.5}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.5}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.5}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.6}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.6}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.6}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.7}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.7}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.7}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.8}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.8}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.8}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.9}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.9}
+				\label{fig：Gamma=0.9, Gauss Noise = 0.9}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 1.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=1.0}
+				\label{fig：Gamma=0.9, Gauss Noise = 1.0}
+			\end{subfigure} \\
+			
+			\vspace{-15pt}
+			
+			\begin{subfigure}{0.02\textwidth}
+				\captionsetup{font=scriptsize}
+				\caption*{\rotatebox{90}{~~~~~$\gamma$=1.0}}
+				\vspace{-2pt}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.0}
+				\label{fig: Gamma=1.0, Gauss Noise = 0.0}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.1}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.1}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.1}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.2}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.2}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.2}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.3}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.3}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.3}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.4}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.4}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.4}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.5}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.5}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.5}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.6}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.6}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.6}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.7}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.7}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.7}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.8}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.8}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.8}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 0.9}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.9}
+				\label{fig：Gamma=1.0, Gauss Noise = 0.9}
+			\end{subfigure}
+			\begin{subfigure}{0.08\textwidth}
+				\captionsetup{font=scriptsize}
+				%\caption*{$\mathcal{N}$= 1.0}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=1.0}
+				\label{fig：Gamma=1.0, Gauss Noise = 1.0}
+			\end{subfigure} \\
+			
+			\caption{我们通过矫正 $\gamma$ 值和高斯噪声 $\mathcal{N}$ 以模拟不同程度的图像退化,具体来说，我们将 $\gamma$ 值和 $\mathcal{N}$ 设置为 $\left[ 0, 1\right]$，并列举了各种搭配组合下退化的图像。此外，我们计算了每一种搭配组合下低光数据集的 PSNR 和 SSIM，选取最接近于接近低光数据集的图像退化搭配组合。}
 			\label{fig: degraded}
 		\end{figure}
 		
-		
-		
-		在我们早期的研究和实验中，我们观察到基于深度学习的边缘特征提取网络（如RCF、HED、DexiNed模型）在直接从弱光图像中提取边缘特征时，通常效果不佳。这是因为传统的基于编码器的模型主要提取内容特征，这对于生成标准图像（如 sRGB 图像）是足够的，但在详细的结构建模方面表现不足，这些模型通常使用短程操作，如卷积神经网络(CNN)，在捕捉低信噪比(SNR)的暗区域的有效表示时效果不佳。为了改善这种情况，我们设计了一种训练策略，即首先使用一类数据集对DexiNed模型进行训练。这个过程如 Fig \ref{fig: DCMP} 中黄色部分所示，其训练结果的可视化如 Fig \ref{fig: LLtoEdge(straight)} 所示。
+		\begin{table}
+			\centering
+			\small
+			\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
+			\begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|c|c|c|c|c|c|c|c|c|c|c|}
+				\hline
+				\diagbox{$\gamma$}{SSIM \textbackslash PSNR}{$\mathcal{N}$} & $\mathcal{N} = 0.0$ & $\mathcal{N} = 0.1$ & $\mathcal{N} = 0.2$ & $\mathcal{N} = 0.3$ & $\mathcal{N} = 0.4$ & $\mathcal{N} = 0.5$ & $\mathcal{N} = 0.6$ & $\mathcal{N} = 0.7$ & $\mathcal{N} = 0.8$ & $\mathcal{N} = 0.9$ & $\mathcal{N} = 1.0$\\
+				\hline
+				$\gamma = 0.1$ & \diagbox{0.1660}{6.1554}  & \diagbox{0.0959}{6.4417}  & \diagbox{0.0606}{6.6640}  & \diagbox{0.0435}{6.7398}  & \diagbox{0.0332}{6.6769}  & \diagbox{0.0266}{6.5347} & \diagbox{0.0222}{6.3718} & \diagbox{0.0190}{6.2156} & \diagbox{0.0167}{6.0778} & \diagbox{0.0150}{5.9585} & \diagbox{0.0136}{5.8565} \\
+				\hline
+				$\gamma = 0.2$ & \diagbox{0.3415}{8.1001}  & \cellcolor{yellow}\diagbox{0.1521}{8.1968}  & \diagbox{0.0866}{8.1781}  & \diagbox{0.0588}{7.9832}  & \diagbox{0.0436}{7.6728}  & \diagbox{0.0342}{7.3333} & \diagbox{0.0280}{7.0231} & \diagbox{0.0238}{6.7600} & \diagbox{0.0207}{6.5416} & \diagbox{0.0184}{6.3612} & \diagbox{0.0166}{6.2111} \\
+				\hline
+				$\gamma = 0.3$ & \diagbox{0.5139}{10.1027} & \cellcolor{yellow}\diagbox{0.1990}{9.9589}  & \diagbox{0.1058}{9.5971}  & \diagbox{0.0690}{9.0532}  & \diagbox{0.0498}{8.4615}  & \diagbox{0.0384}{7.9259} & \diagbox{0.0312}{7.4841} & \diagbox{0.0263}{7.1307} & \diagbox{0.0227}{6.8492} & \diagbox{0.0201}{6.6227} & \diagbox{0.0180}{6.4381} \\
+				\hline
+				$\gamma = 0.4$ & \diagbox{0.6675}{12.2212} & \diagbox{0.2366}{11.7569} & \diagbox{0.1192}{10.9091} & \diagbox{0.0753}{9.9467}  & \diagbox{0.0532}{9.0669}  & \diagbox{0.0406}{8.3538} & \diagbox{0.0326}{7.8023} & \diagbox{0.0273}{7.3798} & \diagbox{0.0235}{7.0517} & \diagbox{0.0207}{6.7924} & \diagbox{0.0186}{6.5837} \\
+				\hline
+				$\gamma = 0.5$ & \diagbox{0.7917}{14.5296} & \diagbox{0.2646}{13.6013} & \diagbox{0.1279}{12.0932} & \diagbox{0.0787}{10.6659} & \diagbox{0.0548}{9.5171}  & \diagbox{0.0413}{8.6556} & \diagbox{0.0331}{8.0202} & \diagbox{0.0276}{7.5463} & \diagbox{0.0237}{7.1847} & \diagbox{0.0208}{6.9028} & \diagbox{0.0186}{6.6772} \\
+				\hline
+				$\gamma = 0.6$ & \diagbox{0.8821}{17.1143} & \diagbox{0.2833}{15.4492} & \diagbox{0.1326}{13.0987} & \diagbox{0.0799}{11.2094} & \diagbox{0.0549}{9.8329}  & \diagbox{0.0412}{8.8591} & \diagbox{0.0328}{8.1632} & \diagbox{0.0273}{7.6538} & \diagbox{0.0234}{7.2699} & \diagbox{0.0206}{6.9726} & \diagbox{0.0184}{6.7366} \\
+				\hline
+				$\gamma = 0.7$ & \diagbox{0.9422}{20.2024} & \diagbox{0.2944}{17.2510} & \diagbox{0.1345}{13.9015} & \diagbox{0.0798}{11.5989} & \diagbox{0.0544}{10.0485} & \diagbox{0.0406}{8.9936} & \diagbox{0.0322}{8.2569} & \diagbox{0.0268}{7.7231} & \diagbox{0.0230}{7.3246} & \diagbox{0.0202}{7.0176} & \diagbox{0.0180}{6.7741} \\
+				\hline
+				$\gamma = 0.8$ & \diagbox{0.9778}{24.2759} & \diagbox{0.2994}{18.8603} & \diagbox{0.1342}{14.4761} & \diagbox{0.0787}{11.8536} & \diagbox{0.0533}{10.1836} & \diagbox{0.0396}{9.0772} & \diagbox{0.0314}{8.3141} & \diagbox{0.0261}{7.7663} & \diagbox{0.0223}{7.3586} & \diagbox{0.0196}{7.0445} & \diagbox{0.0175}{6.7974} \\
+				\hline
+				$\gamma = 0.9$ & \diagbox{0.9949}{30.6200} & \diagbox{0.2998}{19.9949} & \diagbox{0.1325}{14.8087} & \diagbox{0.0770}{11.9930} & \diagbox{0.0519}{10.2575} & \diagbox{0.0385}{9.1227} & \diagbox{0.0305}{8.3455} & \diagbox{0.0253}{7.7899} & \diagbox{0.0217}{7.3768} & \diagbox{0.0190}{7.0601} & \diagbox{0.0170}{6.8101} \\
+				\hline
+				$\gamma = 1.0$ & \diagbox{1}{$\infty$}     & \diagbox{0.2976}{20.4729} & \diagbox{0.1302}{14.9476} & \diagbox{0.0752}{12.0577} & \diagbox{0.0505}{10.2963} & \diagbox{0.0374}{9.1496} & \diagbox{0.0296}{8.3660} & \diagbox{0.0246}{7.8064} & \diagbox{0.0211}{7.3903} & \diagbox{0.0185}{7.0720} & \diagbox{0.0166}{6.8203} \\
+				\hline
+			\end{tabular}
+			}
+			\caption{LOL-v2数据集中的Real Captured 的 PSNR 为 8.817 dB, SSIM 为 0.192。我们想要通过计算了每一种 $\gamma$ 值和高斯噪声值 $\mathcal{N}$ 搭配对应的 $\mathcal{D}_{2}^{syn}$ 数据集的 PSNR 和 SSIM，以获取尽可能接近于真实弱光数据集的图像退化。我们通过计算这些数据集和真实弱光数据集PSNR和SSIM的标准化差值，选取了最接近于接近低光数据集的图像退化搭配组合。我们将 $\gamma$ 值设置为 0.25，$\mathcal{N}$ 设置为 0.1，此时，$\mathcal{D}_{2}^{syn}$ 数据集的 PSNR 为 9.075 dB，SSIM 为 0.1767。}
+			% Gamma: 0.25, Noise Level: 0.1
+			% Average PSNR: 9.074948466590183
+			% Average SSIM: 0.1767813303256974
+			\label{tab: degraded}
+		\end{table}
+
+		在我们早期的研究和实验中，我们观察到基于深度学习的边缘特征提取网络(如RCF、HED、DexiNed模型)在直接从弱光图像中提取边缘特征时，通常效果不佳。这是因为传统的基于编码器的模型主要提取内容特征，这对于生成标准图像（如 sRGB 图像）是足够的，但在详细的结构建模方面表现不足，这些模型通常使用短程操作，如卷积神经网络(CNN)，在捕捉低信噪比(SNR)的暗区域的有效表示时效果不佳。为了改善这种情况，我们设计了一种训练策略，即首先使用一类数据集对DexiNed模型进行训练。这个过程如 Fig \ref{fig: DCMP} 中黄色部分所示，其训练结果的可视化如 Fig \ref{fig: LLtoEdge(straight)} 所示。
 		
 		进一步的实验表明，当我们使用正常光图像对 DexiNed 模型进行训练，然后将相应的弱光图像输入到经过训练的 DexiNed 模型中时，可以获得更好的边缘特征提取效果。这不仅在视觉上表现良好，而且在 ODS、OIS 和 AP 等评价指标上也有显著提升。基于这些发现，我们提出了一种有效的方法：首先使用正常光图像训练 DexiNed 模型，然后对弱光图像进行初步的增强处理，最后使用训练好的 DexiNed 模型对增强后的弱光图像进行推理，以获取边缘特征图。
 		
@@ -1015,11 +1529,17 @@
 		
 		综上所述，通过我们的研究，我们验证了利用正常光图像训练边缘特征提取模型并对弱光图像进行初步增强处理，可以显著改善弱光环境下的边缘特征提取效果。这一发现不仅为边缘检测任务提供了新的思路，也为弱光图像的处理提供了有效的方法和技术支持。
 		
+		\paragraph{NMS}
+		
+		深度神经网络输出的边缘一般都比较宽，这是因为图像的边缘常常是灰度值跳跃比较大的地方，这些跳跃比较大的区域常常范围是比较宽的。如果用这个比较宽泛的区域作为边缘，显然会有很大的不足，我们需要使得边缘只有1-2个像素的范围，这样的边缘区域才足够精确。因此，我们在对边缘推测网络的结果进行评估之前需要进行非极大值抑制(Non-maximunm supression, NMS)操作。
+		
+		%\footnote{https://www.zhihu.com/question/37172820}{https://zhuanlan.zhihu.com/p/549550255}中详细解释了canny算子中的非极大值抑制的基本原理。
+		
 		\begin{table}[!htbp]
 			\centering
 			\small
 			%\resizebox{\textwidth}{!}{ %按照宽度调整调整表格大小
-				\begin{tabular}{>{\centering\arraybackslash}m{5cm}|c|c|c}
+				\begin{tabular}{>{\centering\arraybackslash}m{5cm} c c c}
 					
 					\hline
 					
@@ -1062,145 +1582,126 @@
 			\caption{目前尝试的实验过程}
 		\end{figure}
 		
+		\begin{figure}[htbp]
+			\centering
+			\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“低光-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\alpha\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 使用逆图像退化操作后进行推理的可视化结果.}
+		\end{figure}
+		
+		\begin{figure}[htbp]
+			\centering
+			\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“低光-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 使用逆图像退化操作后进行推理的可视化结果.}
+		\end{figure}
 		
 		\begin{figure}[htbp]
 			\centering
 			\begin{subfigure}{0.16\textwidth}
-				\caption*{Input image}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_008}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_008}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\caption*{Enhanced image}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_008}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_008 Enhanced}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\caption*{GT image}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_008}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_008 GT}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\caption*{Predicted Edges}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_008 Pred}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\caption*{NMS}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_008 Pred NMS}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\caption*{GT Edge}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_008}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_008 GT Edges}
-			\end{subfigure} \\
-			
-			\vspace{-10pt}
-			
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_010}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_010}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_010}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_010 Enhanced}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_010}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_010 GT}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_010 Pred}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_010 Pred NMS}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_010}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_010 GT Edges}
-			\end{subfigure} \\
-			
-			\vspace{-10pt}
-			
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_017}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_017}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_017}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_017 Enhanced}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_017}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_017 GT}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_017 Pred}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_017 Pred NMS}
-			\end{subfigure}
-			\begin{subfigure}{0.16\textwidth}
-				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_017}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_017 GT Edges}
-			\end{subfigure} \\
-			
-			\vspace{-10pt}
-			
-			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_008} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_010} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_017} \\
 				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/RGB_025}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_025}
+				\caption{Input image}
+				\label{fig: Input}
 			\end{subfigure}
 			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_008} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_010} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_017} \\
 				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/RGB_025}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_025 Enhanced}
+				\caption{Enhanced image}
+				\label{fig: Enhanced}
 			\end{subfigure}
 			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_008} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_010} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_017} \\
 				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/RGB_025}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_025 GT}
+				\caption{GT image}
+				\label{fig: GT image}
 			\end{subfigure}
 			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017} \\
 				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/RGB_025}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_025 Pred}
+				\caption{Predicted Edges}
+				\label{fig: Predicted Edges}
 			\end{subfigure}
 			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017} \\
 				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_025}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_025 Pred NMS}
+				\caption{NMS}
+				\label{fig: NMS}
 			\end{subfigure}
 			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_008} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_010} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_017} \\
 				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/RGB_025}
-				\captionsetup{font=scriptsize}
-				\label{fig: RGB_025 GT Edges}
-			\end{subfigure} \\
-			\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“正常-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 使用逆推退化操作后进行推理的可视化结果.}
+				\caption{GT Edge}
+				\label{fig: GT Edge}
+			\end{subfigure}
+			
+			\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“正常-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 使用逆图像退化操作后进行推理的可视化结果. 基于 $\mathcal{D}^{syn}_{2}$ 数据集，对模型 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 的评估结果为 ODS=0.812, OIS=0.842, AP=0.815, R50=0.871}
+		\end{figure}
+		
+		\begin{figure}[htbp]
+			\centering
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/normal00690} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/normal00691} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/normal00692} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Input/normal00693}
+				\caption{Input image}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/normal00690} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/normal00691} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/normal00692} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Enhanced/normal00693}
+				\caption{Enhanced image}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/normal00690} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/normal00691} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/normal00692} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT/normal00693}
+				\caption{GT image}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/normal00690} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/normal00691} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/normal00692} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges/normal00693}
+				\caption{Predicted Edges}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00690} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00691} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00692} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00693}
+				\caption{NMS}
+			\end{subfigure}
+			\begin{subfigure}{0.16\textwidth}
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/normal00690} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/normal00691} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/normal00692} \\
+				\includegraphics[width=\linewidth]{picture/Edge Detection/res(F-β)/GT Edges/normal00693}
+				\caption{GT Edge}
+			\end{subfigure}
+			\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“正常-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{I}_{1 \sim 4}^{LL}$ 进行推理的可视化结果.}
+			% 基于 $\mathcal{D}^{low}_{2}$ 数据集，对模型 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 的评估结果为 ODS=0.844 OIS=0.866 AP=0.795 R50=0.925
+		\end{figure}
+		
+		\begin{figure}[htbp]
+			\centering
+			\caption{基于 $\mathcal{D}^{syn}_{2}$ 使用“正常-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\alpha\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 使用逆图像退化操作后进行推理的可视化结果.}
+		\end{figure}
+		
+		\begin{figure}[htbp]
+			\centering
+			\caption{基于 $\mathcal{D}^{low}_{2}$ 使用“正常-边缘”数据对，对 ${\left[\mathcal{F}\text{-}\beta\right]}^{\mathcal{E}}_1$ 进行训练，对 $\mathcal{N}_{1 \sim 4}^{dege}$ 使用逆图像退化操作后进行推理的可视化结果.}
 		\end{figure}
 		
 		\renewcommand{\refname}{References}

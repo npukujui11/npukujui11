@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  20 JUN 2024 00:31
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  22 JUN 2024 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -622,6 +622,54 @@ Package caption Info: New subtype `subfigure' on input line 239.
 Package caption Info: New subtype `subtable' on input line 239.
 \c@subtable=\count331
 )
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/diagbox/diagbox.sty
+Package: diagbox 2020/02/09 v2.3 Making table heads with diagonal lines
+
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
+
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: xetex.def on input line 112.
+Package pict2e Info: Driver file for pict2e: p2e-xetex.def on input line 114.
+
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/pict2e/p2e-xetex.def
+File: p2e-xetex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks28
+\@arclen=\dimen290
+\@arcrad=\dimen291
+\pIIe@tempdima=\dimen292
+\pIIe@tempdimb=\dimen293
+\pIIe@tempdimc=\dimen294
+\pIIe@tempdimd=\dimen295
+\pIIe@tempdime=\dimen296
+\pIIe@tempdimf=\dimen297
+)
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count332
+\calc@Bcount=\count333
+\calc@Adimen=\dimen298
+\calc@Bdimen=\dimen299
+\calc@Askip=\skip74
+\calc@Bskip=\skip75
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count334
+\calc@Cskip=\skip76
+)
+\diagbox@boxa=\box66
+\diagbox@boxb=\box67
+\diagbox@boxm=\box68
+\diagbox@wd=\dimen300
+\diagbox@ht=\dimen301
+\diagbox@insepl=\dimen302
+\diagbox@insepr=\dimen303
+\diagbox@outsepl=\dimen304
+\diagbox@outsepr=\dimen305
+)
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
 
@@ -631,6 +679,12 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: xetex.def on input line 149.
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(d:/Soft/texlive/2023/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks29
+\minrowclearance=\skip77
+\rownum=\count335
+)
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
@@ -663,19 +717,6 @@ Package: tablefootnote 2014/01/26 v1.1c Table foot notes (HMM)
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
 
-(d:/Soft/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count332
-\calc@Bcount=\count333
-\calc@Adimen=\dimen290
-\calc@Bdimen=\dimen291
-\calc@Askip=\skip74
-\calc@Bskip=\skip75
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count334
-\calc@Cskip=\skip76
-)
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
@@ -684,31 +725,31 @@ Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 ))
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count335
+\etb@tempcnta=\count336
 ))
 (./pythonhighlight.sty
 Package: pythonhighlight 2011/09/19 python code highlighting; provided by Olivi
 er Verdier <olivier.verdier@gmail.com>
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count336
-\lst@gtempboxa=\box66
-\lst@token=\toks28
-\lst@length=\count337
-\lst@currlwidth=\dimen292
-\lst@column=\count338
-\lst@pos=\count339
-\lst@lostspace=\dimen293
-\lst@width=\dimen294
-\lst@newlines=\count340
-\lst@lineno=\count341
-\lst@maxwidth=\dimen295
+\lst@mode=\count337
+\lst@gtempboxa=\box69
+\lst@token=\toks30
+\lst@length=\count338
+\lst@currlwidth=\dimen306
+\lst@column=\count339
+\lst@pos=\count340
+\lst@lostspace=\dimen307
+\lst@width=\dimen308
+\lst@newlines=\count341
+\lst@lineno=\count342
+\lst@maxwidth=\dimen309
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count342
-\lst@skipnumbers=\count343
-\lst@framebox=\box67
+\c@lstnumber=\count343
+\lst@skipnumbers=\count344
+\lst@framebox=\box70
 )
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
@@ -717,8 +758,8 @@ Package: listings 2023/02/27 1.9 (Carsten Heinz)
 
 (d:/Soft/texlive/2023/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
-\l__xeCJK_listings_max_char_int=\count344
-\l__xeCJK_listings_flag_int=\count345
+\l__xeCJK_listings_max_char_int=\count345
+\l__xeCJK_listings_flag_int=\count346
 ))
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2023/03/07 v2.0a lastpage: 2.09 or 2e? (HMM)
@@ -733,142 +774,142 @@ Package: lastpagemodern 2023-03-07 v2.0a Refers to last page's name (HMM; JPG)
 )) (d:/Soft/texlive/2023/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
-\cftparskip=\skip77
-\cftbeforetoctitleskip=\skip78
-\cftaftertoctitleskip=\skip79
-\cftbeforepartskip=\skip80
-\cftpartnumwidth=\skip81
-\cftpartindent=\skip82
-\cftbeforesecskip=\skip83
-\cftsecindent=\skip84
-\cftsecnumwidth=\skip85
-\cftbeforesubsecskip=\skip86
-\cftsubsecindent=\skip87
-\cftsubsecnumwidth=\skip88
-\cftbeforesubsubsecskip=\skip89
-\cftsubsubsecindent=\skip90
-\cftsubsubsecnumwidth=\skip91
-\cftbeforeparaskip=\skip92
-\cftparaindent=\skip93
-\cftparanumwidth=\skip94
-\cftbeforesubparaskip=\skip95
-\cftsubparaindent=\skip96
-\cftsubparanumwidth=\skip97
-\cftbeforeloftitleskip=\skip98
-\cftafterloftitleskip=\skip99
-\cftbeforefigskip=\skip100
-\cftfigindent=\skip101
-\cftfignumwidth=\skip102
-\c@lofdepth=\count346
-\c@lotdepth=\count347
-\cftbeforelottitleskip=\skip103
-\cftafterlottitleskip=\skip104
-\cftbeforetabskip=\skip105
-\cfttabindent=\skip106
-\cfttabnumwidth=\skip107
+\cftparskip=\skip78
+\cftbeforetoctitleskip=\skip79
+\cftaftertoctitleskip=\skip80
+\cftbeforepartskip=\skip81
+\cftpartnumwidth=\skip82
+\cftpartindent=\skip83
+\cftbeforesecskip=\skip84
+\cftsecindent=\skip85
+\cftsecnumwidth=\skip86
+\cftbeforesubsecskip=\skip87
+\cftsubsecindent=\skip88
+\cftsubsecnumwidth=\skip89
+\cftbeforesubsubsecskip=\skip90
+\cftsubsubsecindent=\skip91
+\cftsubsubsecnumwidth=\skip92
+\cftbeforeparaskip=\skip93
+\cftparaindent=\skip94
+\cftparanumwidth=\skip95
+\cftbeforesubparaskip=\skip96
+\cftsubparaindent=\skip97
+\cftsubparanumwidth=\skip98
+\cftbeforeloftitleskip=\skip99
+\cftafterloftitleskip=\skip100
+\cftbeforefigskip=\skip101
+\cftfigindent=\skip102
+\cftfignumwidth=\skip103
+\c@lofdepth=\count347
+\c@lotdepth=\count348
+\cftbeforelottitleskip=\skip104
+\cftafterlottitleskip=\skip105
+\cftbeforetabskip=\skip106
+\cfttabindent=\skip107
+\cfttabnumwidth=\skip108
 )
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/preprint/authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
-\affilsep=\skip108
-\@affilsep=\skip109
-\c@Maxaffil=\count348
-\c@authors=\count349
-\c@affil=\count350
+\affilsep=\skip109
+\@affilsep=\skip110
+\c@Maxaffil=\count349
+\c@authors=\count350
+\c@affil=\count351
 )
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count351
-\float@exts=\toks29
-\float@box=\box68
-\@float@everytoks=\toks30
-\@floatcapt=\box69
+\c@float@type=\count352
+\float@exts=\toks31
+\float@box=\box71
+\@float@everytoks=\toks32
+\@floatcapt=\box72
 )
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 70.
+Package hyperref Info: Option `colorlinks' set `true' on input line 74.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 78.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 78.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 78.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 78.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 78.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 78.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 78.
-LaTeX Font Info:    Redeclaring math accent \check on input line 78.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 78.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 78.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 78.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 78.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 82.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 82.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 82.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 82.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 82.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 82.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 82.
+LaTeX Font Info:    Redeclaring math accent \check on input line 82.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 82.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 82.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 82.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 82.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 78.
+(Font)              `operators' in the math version `normal' on input line 82.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 78.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 82.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 78.
+(Font)              `operators' in the math version `bold' on input line 82.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 78.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 82.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 78.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 78.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 78.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 78.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 78.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 82.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 78.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 78.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 78.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 78.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 82.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -904,7 +945,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 78.
+Package hyperref Info: Link coloring ON on input line 82.
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
@@ -913,7 +954,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count352
+\c@lstlisting=\count353
 
 Package fontspec Info: Could not resolve font "SimSun/BI" (it probably doesn't
 (fontspec)             exist).
@@ -968,7 +1009,7 @@ hic file (type bmp)
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not avail
 able
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
-453.
+457.
  [2]
 File: picture/LLIE/Experiment/myplot_different_color_channels_r097088c1t.png Gr
 aphic file (type bmp)
@@ -1018,7 +1059,7 @@ File: picture/Edge Detection/DCMP.jpg Graphic file (type bmp)
 
 
 LaTeX Warning: Reference `fig: LLtoEdge(trainbasenormal,inferencefromenhance)' 
-on page 11 undefined on input line 703.
+on page 11 undefined on input line 737.
 
 [11]
 File: picture/Edge Detection/degrade/RGB_001 Gamma=0.1, Gauss Noise=0.0.jpg Gra
@@ -1153,6 +1194,205 @@ phic file (type bmp)
 File: picture/Edge Detection/degrade/RGB_001 Gamma=0.4, Gauss Noise=1.0.jpg Gra
 phic file (type bmp)
 <picture/Edge Detection/degrade/RGB_001 Gamma=0.4, Gauss Noise=1.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.1.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.1.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.2.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.2.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.3.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.3.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.4.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.4.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.5.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.5.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.6.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.6.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.7.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.7.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.8.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.8.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.9.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=0.9.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=1.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.5, Gauss Noise=1.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.1.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.1.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.2.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.2.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.3.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.3.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.4.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.4.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.5.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.5.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.6.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.6.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.7.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.7.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.8.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.8.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.9.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=0.9.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=1.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.6, Gauss Noise=1.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.1.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.1.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.2.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.2.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.3.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.3.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.4.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.4.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.5.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.5.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.6.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.6.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.7.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.7.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.8.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.8.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.9.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=0.9.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=1.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.7, Gauss Noise=1.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.1.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.1.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.2.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.2.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.3.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.3.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.4.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.4.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.5.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.5.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.6.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.6.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.7.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.7.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.8.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.8.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.9.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=0.9.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=1.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.8, Gauss Noise=1.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.1.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.1.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.2.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.2.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.3.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.3.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.4.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.4.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.5.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.5.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.6.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.6.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.7.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.7.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.8.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.8.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.9.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=0.9.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=1.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=0.9, Gauss Noise=1.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.0.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.1.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.1.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.2.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.2.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.3.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.3.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.4.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.4.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.5.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.5.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.6.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.6.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.7.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.7.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.8.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.8.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.9.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=0.9.jpg>
+File: picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=1.0.jpg Gra
+phic file (type bmp)
+<picture/Edge Detection/degrade/RGB_001 Gamma=1.0, Gauss Noise=1.0.jpg>
+ [12]
 File: picture/Edge Detection/LLtoEdge(straight).png Graphic file (type bmp)
 <picture/Edge Detection/LLtoEdge(straight).png>
 File: picture/Edge Detection/LLtoEdge(trainbasenormal).png Graphic file (type b
@@ -1161,72 +1401,146 @@ mp)
 File: picture/Edge Detection/res(F-β)/Input/RGB_008.png Graphic file (type bmp)
 
 <picture/Edge Detection/res(F-β)/Input/RGB_008.png>
-File: picture/Edge Detection/res(F-β)/Enhanced/RGB_008.png Graphic file (type b
-mp)
-<picture/Edge Detection/res(F-β)/Enhanced/RGB_008.png>
-File: picture/Edge Detection/res(F-β)/GT/RGB_008.png Graphic file (type bmp)
-<picture/Edge Detection/res(F-β)/GT/RGB_008.png>
-File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008.png Graphic file 
-(type bmp)
-<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008.png>
-File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008.png Graphic f
-ile (type bmp)
-<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008.png>
-File: picture/Edge Detection/res(F-β)/GT Edges/RGB_008.png Graphic file (type b
-mp)
-<picture/Edge Detection/res(F-β)/GT Edges/RGB_008.png>
 File: picture/Edge Detection/res(F-β)/Input/RGB_010.png Graphic file (type bmp)
 
 <picture/Edge Detection/res(F-β)/Input/RGB_010.png>
-File: picture/Edge Detection/res(F-β)/Enhanced/RGB_010.png Graphic file (type b
-mp)
-<picture/Edge Detection/res(F-β)/Enhanced/RGB_010.png>
-File: picture/Edge Detection/res(F-β)/GT/RGB_010.png Graphic file (type bmp)
-<picture/Edge Detection/res(F-β)/GT/RGB_010.png>
-File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010.png Graphic file 
-(type bmp)
-<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010.png>
-File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010.png Graphic f
-ile (type bmp)
-<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010.png>
-File: picture/Edge Detection/res(F-β)/GT Edges/RGB_010.png Graphic file (type b
-mp)
-<picture/Edge Detection/res(F-β)/GT Edges/RGB_010.png>
 File: picture/Edge Detection/res(F-β)/Input/RGB_017.png Graphic file (type bmp)
 
 <picture/Edge Detection/res(F-β)/Input/RGB_017.png>
-File: picture/Edge Detection/res(F-β)/Enhanced/RGB_017.png Graphic file (type b
-mp)
-<picture/Edge Detection/res(F-β)/Enhanced/RGB_017.png>
-File: picture/Edge Detection/res(F-β)/GT/RGB_017.png Graphic file (type bmp)
-<picture/Edge Detection/res(F-β)/GT/RGB_017.png>
-File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017.png Graphic file 
-(type bmp)
-<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017.png>
-File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017.png Graphic f
-ile (type bmp)
-<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017.png>
-File: picture/Edge Detection/res(F-β)/GT Edges/RGB_017.png Graphic file (type b
-mp)
-<picture/Edge Detection/res(F-β)/GT Edges/RGB_017.png>
 File: picture/Edge Detection/res(F-β)/Input/RGB_025.png Graphic file (type bmp)
 
 <picture/Edge Detection/res(F-β)/Input/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/RGB_008.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/Enhanced/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/RGB_010.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/Enhanced/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/RGB_017.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/Enhanced/RGB_017.png>
 File: picture/Edge Detection/res(F-β)/Enhanced/RGB_025.png Graphic file (type b
 mp)
 <picture/Edge Detection/res(F-β)/Enhanced/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/GT/RGB_008.png Graphic file (type bmp)
+<picture/Edge Detection/res(F-β)/GT/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/GT/RGB_010.png Graphic file (type bmp)
+<picture/Edge Detection/res(F-β)/GT/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/GT/RGB_017.png Graphic file (type bmp)
+<picture/Edge Detection/res(F-β)/GT/RGB_017.png>
 File: picture/Edge Detection/res(F-β)/GT/RGB_025.png Graphic file (type bmp)
 <picture/Edge Detection/res(F-β)/GT/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008.png Graphic file 
+(type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010.png Graphic file 
+(type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017.png Graphic file 
+(type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/RGB_017.png>
 File: picture/Edge Detection/res(F-β)/Predicted Edges/RGB_025.png Graphic file 
 (type bmp)
 <picture/Edge Detection/res(F-β)/Predicted Edges/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_017.png>
 File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_025.png Graphic f
 ile (type bmp)
 <picture/Edge Detection/res(F-β)/Predicted Edges NMS/RGB_025.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/RGB_008.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/GT Edges/RGB_008.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/RGB_010.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/GT Edges/RGB_010.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/RGB_017.png Graphic file (type b
+mp)
+<picture/Edge Detection/res(F-β)/GT Edges/RGB_017.png>
 File: picture/Edge Detection/res(F-β)/GT Edges/RGB_025.png Graphic file (type b
 mp)
 <picture/Edge Detection/res(F-β)/GT Edges/RGB_025.png>
- (./main.bbl [12] [13] [14]) [15]
+File: picture/Edge Detection/res(F-β)/Input/normal00690.png Graphic file (type 
+bmp)
+<picture/Edge Detection/res(F-β)/Input/normal00690.png>
+File: picture/Edge Detection/res(F-β)/Input/normal00691.png Graphic file (type 
+bmp)
+<picture/Edge Detection/res(F-β)/Input/normal00691.png>
+File: picture/Edge Detection/res(F-β)/Input/normal00692.png Graphic file (type 
+bmp)
+<picture/Edge Detection/res(F-β)/Input/normal00692.png>
+File: picture/Edge Detection/res(F-β)/Input/normal00693.png Graphic file (type 
+bmp)
+<picture/Edge Detection/res(F-β)/Input/normal00693.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/normal00690.png Graphic file (ty
+pe bmp)
+<picture/Edge Detection/res(F-β)/Enhanced/normal00690.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/normal00691.png Graphic file (ty
+pe bmp)
+<picture/Edge Detection/res(F-β)/Enhanced/normal00691.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/normal00692.png Graphic file (ty
+pe bmp)
+<picture/Edge Detection/res(F-β)/Enhanced/normal00692.png>
+File: picture/Edge Detection/res(F-β)/Enhanced/normal00693.png Graphic file (ty
+pe bmp)
+<picture/Edge Detection/res(F-β)/Enhanced/normal00693.png>
+File: picture/Edge Detection/res(F-β)/GT/normal00690.png Graphic file (type bmp
+)
+<picture/Edge Detection/res(F-β)/GT/normal00690.png>
+File: picture/Edge Detection/res(F-β)/GT/normal00691.png Graphic file (type bmp
+)
+<picture/Edge Detection/res(F-β)/GT/normal00691.png>
+File: picture/Edge Detection/res(F-β)/GT/normal00692.png Graphic file (type bmp
+)
+<picture/Edge Detection/res(F-β)/GT/normal00692.png>
+File: picture/Edge Detection/res(F-β)/GT/normal00693.png Graphic file (type bmp
+)
+<picture/Edge Detection/res(F-β)/GT/normal00693.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/normal00690.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/normal00690.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/normal00691.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/normal00691.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/normal00692.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/normal00692.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges/normal00693.png Graphic f
+ile (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges/normal00693.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00690.png Graph
+ic file (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00690.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00691.png Graph
+ic file (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00691.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00692.png Graph
+ic file (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00692.png>
+File: picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00693.png Graph
+ic file (type bmp)
+<picture/Edge Detection/res(F-β)/Predicted Edges NMS/normal00693.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/normal00690.png Graphic file (ty
+pe bmp)
+<picture/Edge Detection/res(F-β)/GT Edges/normal00690.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/normal00691.png Graphic file (ty
+pe bmp)
+<picture/Edge Detection/res(F-β)/GT Edges/normal00691.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/normal00692.png Graphic file (ty
+pe bmp)
+<picture/Edge Detection/res(F-β)/GT Edges/normal00692.png>
+File: picture/Edge Detection/res(F-β)/GT Edges/normal00693.png Graphic file (ty
+pe bmp)
+<picture/Edge Detection/res(F-β)/GT Edges/normal00693.png>
+ (./main.bbl [13] [14] [15] [16
+
+]) [17]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
@@ -1237,12 +1551,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B0CC2A770906FD01CEF11F651BA478C9;664.
  ) 
 Here is how much of TeX's memory you used:
- 23737 strings out of 476683
- 584642 string characters out of 5805371
- 1886012 words of memory out of 5000000
- 43503 multiletter control sequences out of 15000+600000
+ 26064 strings out of 476683
+ 725730 string characters out of 5805371
+ 1959012 words of memory out of 5000000
+ 45731 multiletter control sequences out of 15000+600000
  523681 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,12n,97p,811b,668s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,21n,97p,811b,668s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (15 pages).
+Output written on main.pdf (17 pages).
