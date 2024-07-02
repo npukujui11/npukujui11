@@ -1,0 +1,235 @@
+\begin{thebibliography}{10}
+
+\bibitem{liu2021retinex}
+Risheng Liu, Long Ma, Jiaao Zhang, Xin Fan, and Zhongxuan Luo.
+\newblock Retinex-inspired unrolling with cooperative prior architecture search
+  for low-light image enhancement.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 10561--10570, 2021.
+
+\bibitem{xu2020learning}
+Ke~Xu, Xin Yang, Baocai Yin, and Rynson~WH Lau.
+\newblock Learning to restore low-light images via
+  decomposition-and-enhancement.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 2281--2290, 2020.
+
+\bibitem{zhang2023frc}
+Zhao Zhang, Huan Zheng, Richang Hong, Jicong Fan, Yi~Yang, and Shuicheng Yan.
+\newblock Frc-net: A simple yet effective architecture for low-light image
+  enhancement.
+\newblock {\em IEEE Transactions on Consumer Electronics}, 2023.
+
+\bibitem{guo2023low}
+Xiaojie Guo and Qiming Hu.
+\newblock Low-light image enhancement via breaking down the darkness.
+\newblock {\em International Journal of Computer Vision}, 131(1):48--66, 2023.
+
+\bibitem{ronneberger2015u}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em Medical image computing and computer-assisted
+  intervention--MICCAI 2015: 18th international conference, Munich, Germany,
+  October 5-9, 2015, proceedings, part III 18}, pages 234--241. Springer, 2015.
+
+\bibitem{zhang2021accurate}
+Yulun Zhang, Kunpeng Li, Kai Li, Gan Sun, Yu~Kong, and Yun Fu.
+\newblock Accurate and fast image denoising via attention guided scaling.
+\newblock {\em IEEE Transactions on Image Processing}, 30:6255--6265, 2021.
+
+\bibitem{yang2021locally}
+Chenglin Yang, Siyuan Qiao, Adam Kortylewski, and Alan Yuille.
+\newblock Locally enhanced self-attention: Combining self-attention and
+  convolution as local and context terms.
+\newblock {\em arXiv preprint arXiv:2107.05637}, 2021.
+
+\bibitem{zhang2020attention}
+Cheng Zhang, Qingsen Yan, Yu~Zhu, Xianjun Li, Jinqiu Sun, and Yanning Zhang.
+\newblock Attention-based network for low-light image enhancement.
+\newblock In {\em 2020 IEEE international conference on multimedia and expo
+  (ICME)}, pages 1--6. IEEE, 2020.
+
+\bibitem{jain1991unsupervised}
+Anil~K Jain and Farshid Farrokhnia.
+\newblock Unsupervised texture segmentation using gabor filters.
+\newblock {\em Pattern recognition}, 24(12):1167--1186, 1991.
+
+\bibitem{lowe2004distinctive}
+David~G Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em International journal of computer vision}, 60:91--110, 2004.
+
+\bibitem{ojala2002multiresolution}
+Timo Ojala, Matti Pietikainen, and Topi Maenpaa.
+\newblock Multiresolution gray-scale and rotation invariant texture
+  classification with local binary patterns.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  24(7):971--987, 2002.
+
+\bibitem{chen2018learning}
+Chen Chen, Qifeng Chen, Jia Xu, and Vladlen Koltun.
+\newblock Learning to see in the dark.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3291--3300, 2018.
+
+\bibitem{wang2013naturalness}
+Shuhang Wang, Jin Zheng, Hai-Miao Hu, and Bo~Li.
+\newblock Naturalness preserved enhancement algorithm for non-uniform
+  illumination images.
+\newblock {\em IEEE transactions on image processing}, 22(9):3538--3548, 2013.
+
+\bibitem{guo2019pipeline}
+Yanhui Guo, Xue Ke, Jie Ma, and Jun Zhang.
+\newblock A pipeline neural network for low-light image enhancement.
+\newblock {\em IEEE Access}, 7:13737--13744, 2019.
+
+\bibitem{lin2017feature}
+Tsung-Yi Lin, Piotr Doll{\'a}r, Ross Girshick, Kaiming He, Bharath Hariharan,
+  and Serge Belongie.
+\newblock Feature pyramid networks for object detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2117--2125, 2017.
+
+\bibitem{li2018multi}
+Juncheng Li, Faming Fang, Kangfu Mei, and Guixu Zhang.
+\newblock Multi-scale residual network for image super-resolution.
+\newblock In {\em Proceedings of the European conference on computer vision
+  (ECCV)}, pages 517--532, 2018.
+
+\bibitem{zamir2020learning}
+Syed~Waqas Zamir, Aditya Arora, Salman Khan, Munawar Hayat, Fahad~Shahbaz Khan,
+  Ming-Hsuan Yang, and Ling Shao.
+\newblock Learning enriched features for real image restoration and
+  enhancement.
+\newblock In {\em Computer Vision--ECCV 2020: 16th European Conference,
+  Glasgow, UK, August 23--28, 2020, Proceedings, Part XXV 16}, pages 492--511.
+  Springer, 2020.
+
+\bibitem{li2020visual}
+Xiaoxiao Li, Xiaopeng Guo, Liye Mei, Mingyu Shang, Jie Gao, Maojing Shu, and
+  Xiang Wang.
+\newblock Visual perception model for rapid and adaptive low-light image
+  enhancement.
+\newblock {\em arXiv preprint arXiv:2005.07343}, 2020.
+
+\bibitem{xu2023low}
+Xiaogang Xu, Ruixing Wang, and Jiangbo Lu.
+\newblock Low-light image enhancement via structure modeling and guidance.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition}, pages 9893--9903, 2023.
+
+\bibitem{zhu2020eemefn}
+Minfeng Zhu, Pingbo Pan, Wei Chen, and Yi~Yang.
+\newblock Eemefn: Low-light image enhancement via edge-enhanced multi-exposure
+  fusion network.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~34, pages 13106--13113, 2020.
+
+\bibitem{rana2021edge}
+Deepanshu Rana, Kanishk~Jayant Lal, and Anil~Singh Parihar.
+\newblock Edge guided low-light image enhancement.
+\newblock In {\em 2021 5th International Conference on Intelligent Computing
+  and Control Systems (ICICCS)}, pages 871--877. IEEE, 2021.
+
+\bibitem{wang2004image}
+Zhou Wang, Alan~C Bovik, Hamid~R Sheikh, and Eero~P Simoncelli.
+\newblock Image quality assessment: from error visibility to structural
+  similarity.
+\newblock {\em IEEE transactions on image processing}, 13(4):600--612, 2004.
+
+\bibitem{sandler2018mobilenetv2}
+Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, and Liang-Chieh
+  Chen.
+\newblock Mobilenetv2: Inverted residuals and linear bottlenecks.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 4510--4520, 2018.
+
+\bibitem{guo2022segnext}
+Meng-Hao Guo, Cheng-Ze Lu, Qibin Hou, Zhengning Liu, Ming-Ming Cheng, and
+  Shi-Min Hu.
+\newblock Segnext: Rethinking convolutional attention design for semantic
+  segmentation.
+\newblock {\em Advances in Neural Information Processing Systems},
+  35:1140--1156, 2022.
+
+\bibitem{huang2023channel}
+Hejun Huang, Zuguo Chen, Ying Zou, Ming Lu, and Chaoyang Chen.
+\newblock Channel prior convolutional attention for medical image segmentation.
+\newblock {\em arXiv preprint arXiv:2306.05196}, 2023.
+
+\bibitem{lv2018mbllen}
+Feifan Lv, Feng Lu, Jianhua Wu, and Chongsoon Lim.
+\newblock Mbllen: Low-light image/video enhancement using cnns.
+\newblock In {\em BMVC}, volume 220, page~4, 2018.
+
+\bibitem{rudin1992nonlinear}
+Leonid~I Rudin, Stanley Osher, and Emad Fatemi.
+\newblock Nonlinear total variation based noise removal algorithms.
+\newblock {\em Physica D: nonlinear phenomena}, 60(1-4):259--268, 1992.
+
+\bibitem{DLN2020}
+Li-Wen Wang, Zhi-Song Liu, Wan-Chi Siu, and Daniel~P.K. Lun.
+\newblock Lightening network for low-light image enhancement.
+\newblock {\em IEEE Transactions on Image Processing}, 2020.
+
+\bibitem{haris2018deep}
+Muhammad Haris, Gregory Shakhnarovich, and Norimichi Ukita.
+\newblock Deep back-projection networks for super-resolution.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 1664--1673, 2018.
+
+\bibitem{shen2022low}
+Nuo Shen, Borui Zhou, Junlin Xie, and Xiaohan Sun.
+\newblock Low-light image enhancement via transformer-based network.
+\newblock In {\em Proceedings of the 2022 4th International Conference on
+  Image, Video and Signal Processing}, pages 41--47, 2022.
+
+\bibitem{justusson2006median}
+BI~Justusson.
+\newblock Median filtering: Statistical properties.
+\newblock {\em Two-dimensional digital signal prcessing II: transforms and
+  median filters}, pages 161--196, 2006.
+
+\bibitem{basu2002gaussian}
+Mitra Basu.
+\newblock Gaussian-based edge-detection methods-a survey.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part C
+  (Applications and Reviews)}, 32(3):252--260, 2002.
+
+\bibitem{wilson2013survey}
+Beshiba Wilson and Julia Punitha~Malar Dhas.
+\newblock A survey of non-local means based filters for image denoising.
+\newblock {\em International Journal of Engineering Research \& Technology},
+  2(10):3768--3771, 2013.
+
+\bibitem{tian2020deep}
+Chunwei Tian, Lunke Fei, Wenxian Zheng, Yong Xu, Wangmeng Zuo, and Chia-Wen
+  Lin.
+\newblock Deep learning on image denoising: An overview.
+\newblock {\em Neural Networks}, 131:251--275, 2020.
+
+\bibitem{stark2000adaptive}
+J~Alex Stark.
+\newblock Adaptive image contrast enhancement using generalizations of
+  histogram equalization.
+\newblock {\em IEEE Transactions on image processing}, 9(5):889--896, 2000.
+
+\bibitem{ketcham1974image}
+David~J Ketcham, Roger~W Lowe, and J~William Weber.
+\newblock Image enhancement techniques for cockpit displays.
+\newblock {\em Hughes Aircraft Co Culver City Ca Display Systems Lab}, 6, 1974.
+
+\bibitem{Soria_2023}
+Xavier Soria, Angel Sappa, Patricio Humanante, and Arash Akbarinia.
+\newblock Dense extreme inception network for edge detection.
+\newblock {\em Pattern Recognition}, 139:109461, July 2023.
+
+\bibitem{soria2023tiny}
+Xavier Soria, Yachuan Li, Mohammad Rouhani, and Angel~D. Sappa.
+\newblock Tiny and efficient model for the edge detection generalization, 2023.
+
+\bibitem{pu2022edter}
+Mengyang Pu, Yaping Huang, Yuming Liu, Qingji Guan, and Haibin Ling.
+\newblock Edter: Edge detection with transformer, 2022.
+
+\end{thebibliography}

@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{已知问题}{3}{0}{1}
+\beamer@sectionintoc {2}{模型提出}{4}{0}{2}
+\beamer@sectionintoc {3}{模型结构}{5}{0}{3}
+\beamer@subsectionintoc {3}{1}{模型架构}{5}{0}{3}
+\beamer@subsectionintoc {3}{2}{V通道增强模型}{6}{0}{3}
+\beamer@subsectionintoc {3}{3}{增强模型组件}{7}{0}{3}
+\beamer@subsectionintoc {3}{4}{边缘模型组件}{8}{0}{3}
+\beamer@sectionintoc {4}{后续计划}{9}{0}{4}
+\beamer@subsectionintoc {4}{1}{模型的改进}{9}{0}{4}

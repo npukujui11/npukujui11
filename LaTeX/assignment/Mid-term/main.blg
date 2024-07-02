@@ -1,0 +1,98 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+Database file #1: reference.bib
+Repeated entry---line 301 of file reference.bib
+ : @inproceedings{xu2020learning
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 583 of file reference.bib
+ : @article{yang2021locally
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 590 of file reference.bib
+ : @inproceedings{zhang2020attention
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 599 of file reference.bib
+ : @inproceedings{li2018multi
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 607 of file reference.bib
+ : @inproceedings{zamir2020learning
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 616 of file reference.bib
+ : @article{li2020visual
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 825 of file reference.bib
+ : @article{wang2004image
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1074 of file reference.bib
+ : @article{yang2021locally
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1081 of file reference.bib
+ : @inproceedings{zhang2020attention
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1090 of file reference.bib
+ : @inproceedings{li2018multi
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1098 of file reference.bib
+ : @inproceedings{zamir2020learning
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1136 of file reference.bib
+ : @inproceedings{xu2020learning
+ :                              ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "pietikainen2010local"
+Warning--can't use both volume and number fields in zhu2020eemefn
+Warning--can't use both volume and number fields in lv2018mbllen
+You've used 39 entries,
+            1791 wiz_defined-function locations,
+            666 strings with 11075 characters,
+and the built_in function-call counts, 11700 in all, are:
+= -- 1066
+> -- 533
+< -- 18
++ -- 192
+- -- 153
+* -- 792
+:= -- 1714
+add.period$ -- 119
+call.type$ -- 39
+change.case$ -- 39
+chr.to.int$ -- 0
+cite$ -- 41
+duplicate$ -- 534
+empty$ -- 1094
+format.name$ -- 153
+if$ -- 2682
+int.to.chr$ -- 0
+int.to.str$ -- 39
+missing$ -- 37
+newline$ -- 196
+num.names$ -- 39
+pop$ -- 135
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 334
+stack$ -- 0
+substring$ -- 939
+swap$ -- 210
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 114
+width$ -- 41
+write$ -- 426
+(There were 12 error messages)
