@@ -165,7 +165,7 @@
 		%		
 		%	}。具体而言，我们在 U-Net 网络中的每一个跳跃连接(Skip connection)加入 FPN 模块，采用层层递进的策略，尽可能的减少特征图下采样带来的特征损失。
 	%	
-	%	\textbf{解决第三个问题:}我们需要使用一个称为线性瓶颈(Linear bottlenecks)和反向残差(Inverted residuals)的基本模块来构建编码器网络, 基本模块如Fig. \ref{fig: Base module} 所示，使用激活函数为ReLU6\footnote{
+	%	\textbf{解决第三个问题:}我们需要使用一个称为线性瓶颈(Linear bottlenecks)和反向残差(Inverted residuals)的基本模块来构建编码器网络, 基本模块如图\ref{fig: Base module} 所示，使用激活函数为ReLU6\footnote{
 		%		\begin{equation*}
 			%			f(x) = \min \left( \max \left(0, x\right), 6\right)
 			%		\end{equation*}
@@ -666,7 +666,7 @@
 		%		
 		%		}。具体而言，我们在 U-Net 网络中的每一个跳跃连接(Skip connection)加入 FPN 模块，采用层层递进的策略，尽可能的减少特征图下采样带来的特征损失。
 	%		
-	%		\textbf{解决第三个问题:}我们需要使用一个称为线性瓶颈(Linear bottlenecks)和反向残差(Inverted residuals)的基本模块来构建编码器网络, 基本模块如Fig. \ref{fig: Base module} 所示，使用激活函数为ReLU6\footnote{
+	%		\textbf{解决第三个问题:}我们需要使用一个称为线性瓶颈(Linear bottlenecks)和反向残差(Inverted residuals)的基本模块来构建编码器网络, 基本模块如图\ref{fig: Base module} 所示，使用激活函数为ReLU6\footnote{
 		%		\begin{equation*}
 			%			f(x) = \min \left( \max \left(0, x\right), 6\right)
 			%		\end{equation*}
@@ -682,7 +682,7 @@
 	
 	\subsection*{实验部分}
 	
-	如图\ref{fig: myplot_different_color_channels_low00010}, 图\ref{fig: myplot_different_color_channels_low00747}, 图\ref{fig: myplot_different_color_channels_low00776}所示, 我们观察到在 Y/Cb/Cr 色彩空间中，Y 通道并不总是能有效地表现出足够的亮度信息。相对而言，在 H/S/V 色彩空间中，H 和 S 通道似乎能通过色相和色彩饱和度的改变从而揭示出一定的图像纹理和结构信息，特别是在光照极低的情境下。这一发现指示了在处理低照度图像时，选择合适的色彩空间对于保留关键视觉信息至关重要。
+	如图\ref{fig: myplot_different_color_channels_low00010},图\ref{fig: myplot_different_color_channels_low00747},图\ref{fig: myplot_different_color_channels_low00776}所示, 我们观察到在 Y/Cb/Cr 色彩空间中，Y 通道并不总是能有效地表现出足够的亮度信息。相对而言，在 H/S/V 色彩空间中，H 和 S 通道似乎能通过色相和色彩饱和度的改变从而揭示出一定的图像纹理和结构信息，特别是在光照极低的情境下。这一发现指示了在处理低照度图像时，选择合适的色彩空间对于保留关键视觉信息至关重要。
 	
 	\begin{figure}[htbp]
 		\centering
@@ -727,9 +727,9 @@
 	
 	\FloatBarrier
 	
-	在图\ref{fig: myplot_different_color_channels_low00010}中展示的 low00010 图像分析中，我们可以观察到低光条件下的RGB通道图片已经相对清晰。对应的 GT 图片主要显示了颜色的加深。此外，通过比较低光图像与 GT 图像的 Y 通道，我们可以发现亮度特征得到了良好的体现。然而，在 low00747 和 low00776 图像中，如Fig. \ref{fig: myplot_different_color_channels_low00747}和Fig. \ref{fig: myplot_different_color_channels_low00776}所示，相比于 low00010 图像，这两张图片的RGB通道所提供的信息明显不足以支持有效的图像增强。在这些图像中，Y/Cb/Cr通道的 Y 通道同样未能提供足够的信息以供增强处理。
+	在图\ref{fig: myplot_different_color_channels_low00010}中展示的 low00010 图像分析中，我们可以观察到低光条件下的RGB通道图片已经相对清晰。对应的 GT 图片主要显示了颜色的加深。此外，通过比较低光图像与 GT 图像的 Y 通道，我们可以发现亮度特征得到了良好的体现。然而，在 low00747 和 low00776 图像中，如图\ref{fig: myplot_different_color_channels_low00747}和图\ref{fig: myplot_different_color_channels_low00776}所示，相比于 low00010 图像，这两张图片的RGB通道所提供的信息明显不足以支持有效的图像增强。在这些图像中，Y/Cb/Cr通道的 Y 通道同样未能提供足够的信息以供增强处理。
 	
-	在人造低光图像的情况中，这种信息缺失更为明显，如Fig. \ref{fig: myplot_different_color_channels_r097088c1t}、Fig. \ref{fig: myplot_different_color_channels_r141669e5t}和Fig. \ref{fig: myplot_different_color_channels_r145221d9t}所示。这些结果表明，在处理不同的图像数据时，简单的颜色加深或亮度增强可能不足以恢复图像质量，特别是当原始数据在关键通道中缺乏足够信息时。
+	在人造低光图像的情况中，这种信息缺失更为明显，如图\ref{fig: myplot_different_color_channels_r097088c1t}、图\ref{fig: myplot_different_color_channels_r141669e5t}和图\ref{fig: myplot_different_color_channels_r145221d9t}所示。这些结果表明，在处理不同的图像数据时，简单的颜色加深或亮度增强可能不足以恢复图像质量，特别是当原始数据在关键通道中缺乏足够信息时。
 	
 	
 	在对 HSV 色彩空间进行研究时，我们特别关注了 H(Hue) 通道（色调）的特性。色调通道的分析表明，它能够有效地揭示图像中的颜色种类。在低光环境下拍摄的图像中，H 通道不仅保留了颜色信息，而且清晰地展示了颜色的变化，这些变化在此环境下可视作“颜色噪声”。通过细致分析H通道，我们可以更有效地把握图像的纹理特征，并恢复出更接近真实场景的颜色表现。我们似乎通过综合利用色调通道提供的独特颜色识别能力，可以在不同光照条件下实现更精确的颜色复原，从而为低光图像处理提供了一种新的视角和方法论。
@@ -777,7 +777,7 @@
 	
 	\subsubsection*{MSAM}
 	
-	我们将多尺度卷积注意模块 (Multi-scale convolutional attention, MSCA) 引入 CBAM 模块中，使得通道注意力也具备多尺度性能，多分支深度卷积或许可以更好的提取多尺度特征，如 Fig. \ref{fig: MSAM} 所示。
+	我们将多尺度卷积注意模块 (Multi-scale convolutional attention, MSCA) 引入 CBAM 模块中，使得通道注意力也具备多尺度性能，多分支深度卷积或许可以更好的提取多尺度特征，如图\ref{fig: MSAM} 所示。
 	
 	\begin{figure}[htbp]
 		\centering
@@ -793,7 +793,7 @@
 	
 	%		SegNeXt 是一种用于语义分割的简单卷积网络体系结构\cite{guo2022segnext}，作者通过对已有成功分割方案进行了重新审视，发现了几个有助于性能提升地关键成分，进而促使作者设计了一种新型地卷积注意力架构方案，多尺度卷积注意模块(Multi-scale convolutional attention, MSCA)，其原理主要是将 CBAM 块中的通道注意力替换为 MSCA，使通道注意力具备多尺度性能。MSCA块证明了卷积注意比Transformer中的自注意机制更有效地编码上下文信息。
 	%		
-	%		如 Fig. \ref{fig: MSCA} 所示，MSCA包含三个部分：深度卷积聚合局部信息，多分支深度可分离卷积捕获多尺度上下文，以及 $1 \times 1$ 卷积建模不同通道之间的关系。通过采用多尺度深度卷积模块，可以有效地提取空间关系，同时保留通道先验\cite{huang2023channel}。
+	%		如图\ref{fig: MSCA} 所示，MSCA包含三个部分：深度卷积聚合局部信息，多分支深度可分离卷积捕获多尺度上下文，以及 $1 \times 1$ 卷积建模不同通道之间的关系。通过采用多尺度深度卷积模块，可以有效地提取空间关系，同时保留通道先验\cite{huang2023channel}。
 	%		
 	%		\begin{figure}[htbp]
 		%			\centering
@@ -805,7 +805,7 @@
 	%			
 	%	 	SE 只整合了通道注意力，这限制了它选择重要区域的能力。
 	
-	CBAM 整合了通道注意力和空间注意力，但它在其输出特征的所有通道上强制执行一致的空间注意力分布。如Fig. \ref{fig: SE_CBAM_CPCA}(c)所示，作者\cite{huang2023channel}提出一种新的通道优先卷积注意力(Channel Prior Convolutional Attention, CPCA)方法，采用多尺度的深度可分离卷积模块构成空间注意力，可以在通道和空间维度上动态分配注意权重。
+	CBAM 整合了通道注意力和空间注意力，但它在其输出特征的所有通道上强制执行一致的空间注意力分布。如图\ref{fig: SE_CBAM_CPCA}(c)所示，作者\cite{huang2023channel}提出一种新的通道优先卷积注意力(Channel Prior Convolutional Attention, CPCA)方法，采用多尺度的深度可分离卷积模块构成空间注意力，可以在通道和空间维度上动态分配注意权重。
 	
 	\begin{figure}[htbp]
 		\centering
@@ -815,7 +815,7 @@
 		\label{fig: SE_CBAM_CPCA}
 	\end{figure}
 	
-	CPCA的整体结构包括通道注意力和空间注意力的顺序放置。特征图的空间信息是由通道注意力通过平均池化和最大池化等操作来聚合的。随后，空间信息通过共享多层感知器(shared MLP)进行处理并添加以生成通道注意力图。通道先验是通过输入特征和通道注意力图的元素相乘获得的。随后，通道先验被输入到深度卷积模块中以生成空间注意力图。卷积模块接收空间注意力图以进行通道混合。最终，通过通道混合结果与通道先验的逐元素相乘，获得细化的特征作为输出。多尺度深度可分离卷积注意力原理图见Fig. \ref{fig: CPCA}.
+	CPCA的整体结构包括通道注意力和空间注意力的顺序放置。特征图的空间信息是由通道注意力通过平均池化和最大池化等操作来聚合的。随后，空间信息通过共享多层感知器(shared MLP)进行处理并添加以生成通道注意力图。通道先验是通过输入特征和通道注意力图的元素相乘获得的。随后，通道先验被输入到深度卷积模块中以生成空间注意力图。卷积模块接收空间注意力图以进行通道混合。最终，通过通道混合结果与通道先验的逐元素相乘，获得细化的特征作为输出。多尺度深度可分离卷积注意力原理图见图\ref{fig: CPCA}.
 	
 	\begin{figure}[htbp]
 		\centering
@@ -825,7 +825,7 @@
 		\label{fig: CPCA}
 	\end{figure}
 	
-	我们结合上述两种方法，如 Fig. \ref{fig: CPMS} 所示，设计一种多尺度通道注意力和多尺度深度可分离卷积空间注意力(Channel Prior Multi-Scale Attention, CPMS)
+	我们结合上述两种方法，如图\ref{fig: CPMS} 所示，设计一种多尺度通道注意力和多尺度深度可分离卷积空间注意力(Channel Prior Multi-Scale Attention, CPMS)
 	
 	\begin{figure}[htbp]
 		\centering
@@ -838,7 +838,7 @@
 	
 	\subsection*{对UNet网络的改进方法}
 	
-	我们尝试了不同的 Encoder 和 Decoder 组合，如 Fig. \ref{fig: Encoder and Decoder} 所示，对于 Encoder 部分，我们首先应用注意力机制（Attention），然后使用 $3 \times 3$ 的轴向深度可分离卷积 (Depthwise Separable Convolution)，接着进行批标准化 (Batch Normalization) 和 $1 \times 1$ 卷积操作，最后通过最大池化 (MaxPooling) 进行特征压缩，最终使用 Sigmoid 激活函数。对于 Decoder 部分，我们首先将其与对应的 Encoder 的跳跃连接进行 Concat 操作，然后进行上采样 (Upsample) 操作，接着应用注意力机制 (Attention) ，再次使用 $3 \times 3$ 的轴向深度可分离卷积，再通过批标准化和 $1 \times 1$ 卷积操作，最终采用 PReLU 激活函数。
+	我们尝试了不同的 Encoder 和 Decoder 组合，如图\ref{fig: Encoder and Decoder} 所示，对于 Encoder 部分，我们首先应用注意力机制（Attention），然后使用 $3 \times 3$ 的轴向深度可分离卷积 (Depthwise Separable Convolution)，接着进行批标准化 (Batch Normalization) 和 $1 \times 1$ 卷积操作，最后通过最大池化 (MaxPooling) 进行特征压缩，最终使用 Sigmoid 激活函数。对于 Decoder 部分，我们首先将其与对应的 Encoder 的跳跃连接进行 Concat 操作，然后进行上采样 (Upsample) 操作，接着应用注意力机制 (Attention) ，再次使用 $3 \times 3$ 的轴向深度可分离卷积，再通过批标准化和 $1 \times 1$ 卷积操作，最终采用 PReLU 激活函数。
 	
 	\begin{figure}[htbp]
 		\centering
@@ -856,10 +856,10 @@
 		\end{subfigure}
 	\end{figure}
 	
-	我们使用 MBLLEN\cite{lv2018mbllen} 中的 EM 模块，旨在加强每个层级中Encoder和Decoder之间的特征连接，从而增强模型的表现能力，如 Fig .\ref{fig: Baseline} 所示。
+	我们使用 MBLLEN\cite{lv2018mbllen} 中的 EM 模块，旨在加强每个层级中Encoder和Decoder之间的特征连接，从而增强模型的表现能力，如图\ref{fig: Baseline} 所示。
 	
 	
-	我们将激活函数修改为 ReLU 和 PReLU, 其中可视化结果分别如 Fig. \ref{fig: Baseline_ReLU} 和 Fig. \ref{fig: Baseline_PReLU} 所示。
+	我们将激活函数修改为 ReLU 和 PReLU, 其中可视化结果分别如图\ref{fig: Baseline_ReLU} 和 图\ref{fig: Baseline_PReLU} 所示。
 	
 	\begin{figure}[htbp]
 		\centering
@@ -953,7 +953,7 @@
 		\end{subfigure}
 	\end{figure}
 	
-	增强的结果如 Fig. \ref{fig：myplot_LAN}所示。
+	增强的结果如图\ref{fig：myplot_LAN}所示。
 	
 	\paragraph{Zero-DCE} 
 	
@@ -1048,13 +1048,13 @@
 	% 用于边缘图评估的matlab源码https://github.com/zeakey/edgeval/blob/master/benchmarkBoundary.m
 	% 边缘图评估的依赖工具包https://github.com/pdollar/edges
 	%                     https://github.com/pdollar/toolbox/tree/master/channels
-	我们利用当前效果比较好的边缘推测网络 DexiNed，并尝试对其进行改进，求解低光图像对应的详细特征，以期后续能够进一步指导低光图像增强，细化恢复的细节。我们的目标是通过一个改进的边缘特征捕获网络能够获取从低光到其边缘特征的有效映射。我们进行了下列尝试，其中模型如 Fig. \ref{fig: DCMP} 所示，其中红色箭头是模型训练方向，蓝色箭头是模型的推理过程，其中低光图像 $\mathcal{I}_{i}^{LL}$ 通过 LAN 网络，可以获取初步增强的低光图像 $\mathcal{I}_{i}^{EL}$，表示为 $\mathcal{I}_{i}^{EL} = \mathcal{F}^{LAN} (\mathcal{I}_{i}^{LL})$。LAN 网络由一个三层深度的 U-Net 网络组成，主要实现对低光图像进行简单的亮度增强。
+	我们利用当前效果比较好的边缘推测网络 DexiNed，并尝试对其进行改进，求解低光图像对应的详细特征，以期后续能够进一步指导低光图像增强，细化恢复的细节。我们的目标是通过一个改进的边缘特征捕获网络能够获取从低光到其边缘特征的有效映射。我们进行了下列尝试，其中模型如图\ref{fig: DCMP} 所示，其中红色箭头是模型训练方向，蓝色箭头是模型的推理过程，其中低光图像 $\mathcal{I}_{i}^{LL}$ 通过 LAN 网络，可以获取初步增强的低光图像 $\mathcal{I}_{i}^{EL}$，表示为 $\mathcal{I}_{i}^{EL} = \mathcal{F}^{LAN} (\mathcal{I}_{i}^{LL})$。LAN 网络由一个三层深度的 U-Net 网络组成，主要实现对低光图像进行简单的亮度增强。
 	
 	我们将图像边缘推测网络模型表示为 $\mathcal{F}_{i}^{\mathcal{E}}$，其中 $i=1$ 表示使用 DexiNed \cite{Soria_2023}模型，$i=2$ 表示使用 TEED \cite{soria2023tiny}模型，$i=3$ 表示使用 EDTER \cite{pu2022edter}模型 。边缘图像数据集为“正常-边缘”数据对，我们将正常光图像表示为 $\mathcal{N}_{i}$, 对正常光图像进行图像光照退化来模拟低光图像,表示为 $\mathcal{N}_{i}^{dege}$, 依次构建“低光-边缘”数据对，我们将基于边缘图像数据集（“正常-边缘”）构建的“低光-正常-边缘”数据对记为 $\mathcal{D}_{i}^{syn}$，基于低光图像数据集（“低光-正常”）构建的“低光-正常-边缘”数据对记为 $\mathcal{D}_{i}^{low}$。
 	
 	\begin{itemize}
 		\item[1)]
-		其中 $\mathcal{D}_{2}^{syn}$ 基于 BIPEDv2 边缘数据集来尝试构建“低光-边缘”数据对，我们利用伽马矫正 (Gamma Correction) 和噪声模拟对 BIPEDv2 中的图像进行图像退化操作，以获取低光图像，进而获取“低光-正常-边缘”训练数据对，如 Fig. \ref{fig: degraded} 所示。
+		其中 $\mathcal{D}_{2}^{syn}$ 基于 BIPEDv2 边缘数据集来尝试构建“低光-边缘”数据对，我们利用伽马矫正 (Gamma Correction) 和噪声模拟对 BIPEDv2 中的图像进行图像退化操作，以获取低光图像，进而获取“低光-正常-边缘”训练数据对，如图\ref{fig: degraded} 所示。
 		
 		\item[2)]
 		其中 $\mathcal{D}_{2}^{low}$ 基于 LOLv2 低光数据集来尝试构建“低光-边缘”数据对，我们利用 Canny 算子获取真实图像 (GT) 的边缘特征图片，进而获“低光-正常-边缘”训练数据对。
@@ -1064,7 +1064,7 @@
 	
 	为了克服这一问题，我们可以对低光图像进行逆图像退化操作，得到光照相对正常的图像，然后使用“正常-边缘”训练数据对来训练边缘推测网络模型。这种方法有两个显著优势：首先，逆图像退化操作不会扭曲低光图像的纹理和边缘特征，能够很好地保留图像的原始纹理和边缘信息。其次，我们的上游任务是端到端的图像增强任务，这一操作有助于保持端到端模型的整体性和一致性。在我们的实验中，通过对比两种训练策略，我们证明了采用“正常-边缘”训练数据对的有效性。具体来说，通过逆图像退化操作，我们能够更好地保留图像中的重要特征，从而提高边缘推测网络的性能。这不仅在理论上具有合理性，而且在实际实验中也得到了验证。采用“正常-边缘”训练数据对，不仅能够更好地捕获边缘特征，还能增强模型的鲁棒性和泛化能力。因此，针对边缘推测网络模型的训练，使用“正常-边缘”训练数据对是一个更为合理和有效的选择。
 	
-	我们设计的模型如Fig. \ref{fig: DCMP}所示，可以拓展出以下三种研究思路：
+	我们设计的模型如图\ref{fig: DCMP}所示，可以拓展出以下三种研究思路：
 	
 	\begin{figure}[htbp]
 		\centering
@@ -1866,7 +1866,7 @@
 		\label{tab: degraded}
 	\end{table}
 	
-	在我们早期的研究和实验中，我们观察到基于深度学习的边缘特征提取网络(如RCF、HED、DexiNed模型)在直接从低光图像中提取边缘特征时，通常效果不佳。这是因为传统的基于编码器的模型主要提取内容特征，这对于生成标准图像（如 sRGB 图像）是足够的，但在详细的结构建模方面表现不足，这些模型通常使用短程操作，如卷积神经网络(CNN)，在捕捉低信噪比(SNR)的暗区域的有效表示时效果不佳。为了改善这种情况，我们设计了一种训练策略，即首先使用$\mathcal{D}^{syn}_2$对DexiNed模型进行训练。这个过程如图\ref{fig: DCMP} 中黄色部分所示。
+	在我们早期的研究和实验中，我们观察到基于深度学习的边缘特征提取网络(如RCF、HED、DexiNed模型)在直接从低光图像中提取边缘特征时，通常效果不佳。这是因为传统的基于编码器的模型主要提取内容特征，这对于生成标准图像（如 sRGB图像）是足够的，但在详细的结构建模方面表现不足，这些模型通常使用短程操作，如卷积神经网络(CNN)，在捕捉低信噪比(SNR)的暗区域的有效表示时效果不佳。为了改善这种情况，我们设计了一种训练策略，即首先使用$\mathcal{D}^{syn}_2$对DexiNed模型进行训练。这个过程如图\ref{fig: DCMP} 中黄色部分所示。
 	
 	进一步的实验表明，当我们使用正常光图像对 DexiNed 模型进行训练，然后将相应的低光图像输入到经过训练的 DexiNed 模型中时，可以获得更好的边缘特征提取效果。这不仅在视觉上表现良好，而且在 ODS、OIS 和 AP 等评价指标上也有显著提升。基于这些发现，我们提出了一种有效的方法：首先使用正常光图像训练 DexiNed 模型，然后对低光图像进行初步的增强处理，最后使用训练好的 DexiNed 模型对增强后的低光图像进行推理，以获取边缘特征图。
 	
