@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  13 AUG 2024 12:13
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  20 SEP 2024 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,20 +700,4 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                Make it at least 4.08003pt, for example:
 (fancyhdr)                \setlength{\footskip}{4.08003pt}.
 
-[2] (./CV.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package rerunfilecheck Info: File `CV.out' has not changed.
-(rerunfilecheck)             Checksum: 186D9D96AA8DAB6651C2C5D9DB4BEBFF;396.
- ) 
-Here is how much of TeX's memory you used:
- 16620 strings out of 476683
- 347292 string characters out of 5805371
- 1910012 words of memory out of 5000000
- 36627 multiletter control sequences out of 15000+600000
- 516844 words of font info for 83 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 72i,11n,78p,377b,626s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on CV.pdf (2 pages).
+[2

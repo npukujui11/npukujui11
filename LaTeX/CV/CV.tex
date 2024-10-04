@@ -129,7 +129,7 @@
 	\resumeSubHeadingListEnd
 	
 	\resumeItemListStart	
-	\resumeItem{GPA \ 3.8/4.0 \ 【专业排名】\ 前10\%}
+	\resumeItem{GPA \ 3.85/5.0 \ 【专业排名】\ 前10\%}
 	\resumeItemListEnd
 	
 	\vspace{-8pt}
@@ -156,7 +156,7 @@
 			\vspace{3pt}
 			\begin{multicols}{2}
 				\begin{itemize}[itemsep=-5pt, parsep=5pt]
-					\small \item 英语（CET-4 520分）;
+					\small \item 英语（CET-4 520分， CET-6 462分）;
 					\small \item “工大出版社杯”数学建模二等奖;
 					\small \item 校级优秀奖学金数次;
 					\small \item 西工大校内 ACM 编程比赛二等奖;
@@ -198,11 +198,23 @@
 		\resumeItemListStart
 			\resumeItem{基于\textbf{Unity}游戏引擎和\textbf{Pico}平台，模拟一些真实场景，旨在通过PC端的蓝牙控制激发佩戴VR眼镜的实验者产生晕动症状（类似3D眩晕），为后续的晕动症脱敏训练提供实验支持。我们通过 \textbf{Unity Asset} 获取一些游戏模型、材质、插件等，如海面水系统，蓝牙插件等，加快Pico端的开发速度，并通过使用\textbf{C\texttt{\#}}编写脚本来控制游戏对象的行为和手柄输入.}
 			\resumeItem{基于\textbf{WinForm}框架，结合第三方蓝牙库32feet实现一个Window程序，该程序通过串口蓝牙传输控制指令到VR设备以切换不同的场景。}
-			\resumeItem{该项目为医学研究人员提供了一个有效的实验平台，提供了晕动症治疗和预防相关的的基础数据和技术支持。}
+			\resumeItem{该项目为医学研究人员提供了一个有效的实验平台，提供了晕动症治疗和预防相关的基础数据和技术支持。}
 		\resumeItemListEnd
 		% 这里要强调一些项目开发过程中遇到的问题以及我是如何解决的？比如如何优化应用的相应速度，如何处理大量数据的加载和现实，或者如何处理复杂的用户交互场景？以及控制协议的设置。
 		% 详细讲解你在项目中使用的 WinForm 控件、设计模式（如 MVC/MVP）
 		% 讲一下软件的模块化设置，如何确保系统的可维护性和可升级性。
+		
+		\resumeSubheading
+		{基于跳表的键值型数据库（KV存储）}{2023.07 -- 2023.08}
+		{硕士期间横向项目$|$ \emph{\textbf{C\texttt{++}, LRU, pthread}}}{ }
+		
+		\resumeItemListStart
+		\resumeItem{项目主要使用\textbf{C\texttt{++}}实现基于跳表的键值型数据库，功能主要涵盖对键值对的增加、删除、修改、查询、设置过期时间等操作。数据库基于\textbf{LRU}算法对设置了过期时间的键值对进行管理。}
+		\resumeItem{实现了基于跳表数据结构的存储引擎，能够进行增删改查键值对、设置过期时间等操作。利用模板类和模板函数，实现了泛型编程，支持存储\textbf{int, string}等基本数据类型，也可以通过运算符重载支持自定义数据类型。}
+		\resumeItem{基于\textbf{LRU}算法，通过哈希表和双链表实现了对设置了过期时间的键值对的管理，实现了数据库对过期键值对进行定期删除和惰性删除的策略。此外，实现了数据库周期性数据存盘的策略。}
+		\resumeItemListEnd
+	
+		% 特地项目结束才主动离职选择考研，不想让别人说自己是害怕苦难就走了，有些考研的同事，选择提前离开。
 		
 		\resumeSubheading
 		{汽车CVT软件开发工程师}{2019.07 -- 2021.08}
@@ -212,8 +224,6 @@
 		\resumeItem{主要参与\textbf{CVT}嵌入式控制软件架构的设计工作，并参与构建公司内部A-SPICE软件开发体系（涵盖使用需求管理工具\textbf{DOORS}，系统设计工具\textbf{EA}，开发和仿真工具\textbf{ASCET}，主要负责开发规范，流程规范，文档设计规范，版本控制）。此外，个人负责整个软件中车辆驾驶模式识别模块与液压控制模块（占比15\texttt{\%}）的软件功能实现和测试。}
 		\resumeItem{项目涵盖的控制软件在离职时已基本完成系统测试与标定工作，在21年9月发布搭载该软件的2021款五菱星辰1.5T CVT，累计销量达7w台。2022年车质网发布的“2021年国内汽车投诉销量比排行榜”显示，该车型投诉销量比为\textbf{万分之0.2}排名榜单第一。}
 		\resumeItemListEnd
-	
-		% 特地项目结束才主动离职选择考研，不想让别人说自己是害怕苦难就走了，有些考研的同事，选择提前离开。
 	
 		\resumeSubheading	
 		{嵌入式软件开发实习生}{2018.07 -- 2018.09}
