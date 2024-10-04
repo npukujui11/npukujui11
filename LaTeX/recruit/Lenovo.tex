@@ -1,0 +1,292 @@
+\documentclass[a4paper]{ctexart}
+
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{ctex}
+\usepackage{titlesec}
+%\usepackage{CJKutf8, CJK}
+\usepackage{makecell}                 % 三线表-竖线
+\usepackage{booktabs}                 % 三线表-短细横线
+% \usepackage{natbib}
+\usepackage{graphicx}				  % 表格单元格逆时针
+\usepackage{multirow}				  % 合并单元格
+\usepackage{array}
+\usepackage{amssymb}				  % 勾
+\usepackage{amsmath}
+\usepackage{longtable}                % 导入 longtable 宏包，表格自动换行
+\usepackage{caption}
+\usepackage{subcaption}               % 设置子图
+\usepackage{caption}
+%\usepackage{subfigure}
+\usepackage{diagbox}
+\usepackage{color}					  % 文本颜色包
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{bbm}					  % 输入指示函数
+\usepackage{tablefootnote}			  % 表格注释
+\usepackage{pythonhighlight}
+%\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tocloft}
+\usepackage{authblk}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage[section]{placeins}
+
+% 设置页面边距
+\geometry{a4paper, top=1.7cm, bottom=1.6cm, left=1.6cm, right=1.6cm}
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead{}
+%\fancyfoot{}
+%\fancyhead[R]{\small Page \thepage\ of \pageref*{LastPage}}
+%\fancyhead[L]{\zihao{-5} \songti 开题报告}
+
+\usepackage{listings}                 % 导入代码块
+\usepackage{xcolor}
+
+% 定义适合黑色背景的配色方案
+\definecolor{vscodeblue}{RGB}{97, 175, 239}  % keywords
+\definecolor{vscodegreen}{RGB}{152, 195, 121}% comments
+\definecolor{vscodepurple}{RGB}{198, 120, 221}% strings
+\definecolor{vscodegray}{RGB}{153,153,153}   % line numbers
+\definecolor{vscodeorange}{RGB}{224,108,117} % function names
+\definecolor{vscodebackground}{RGB}{40,44,52} % 黑色背景
+\definecolor{vscodewhite}{RGB}{248,248,242}  % 白色字体
+
+% 设置 C++ 代码块的样式，适合黑色背景
+\lstset{
+	language=C++,
+	backgroundcolor=\color{vscodebackground},  % 黑色背景
+	basicstyle=\ttfamily\footnotesize\color{vscodewhite}, % 白色文字，紧凑的字体大小
+	keywordstyle=\color{vscodeblue}\bfseries,  % 关键字颜色
+	commentstyle=\color{vscodegreen}\itshape,  % 注释颜色
+	stringstyle=\color{vscodepurple},          % 字符串颜色
+	numberstyle=\tiny\color{vscodegray},       % 行号颜色
+	numbers=left,                              % 行号显示在左侧
+	stepnumber=1,                              % 每行都显示行号
+	numbersep=5pt,                             % 行号与代码之间的距离
+	tabsize=4,                                 % tab 键宽度
+	showspaces=false,                          % 不显示空格符号
+	showstringspaces=false,                    % 字符串中的空格不显示特殊符号
+	breaklines=true,                           % 自动换行
+	breakatwhitespace=true,                    % 只在空格处换行
+	columns=fullflexible,                      % 紧凑的代码对齐
+	keepspaces=true,                           % 保持空格符号
+	frame=single,                              % 给代码块加框
+	framesep=3pt,                              % 代码与框之间的距离
+	rulecolor=\color{vscodegray},              % 框的颜色
+	escapeinside={(*@}{@*)},                   % 允许LaTeX注释
+	xleftmargin=10pt,                          % 左边距
+	xrightmargin=10pt,                         % 右边距
+}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+%++++++++++++++++++++++++++++++++++++++++
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalsize\bfseries}{\paragraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalsize\bfseries}{\subparagraph}{1em}{}
+
+\begin{document}
+	
+\section{爆破}
+	
+\begin{center}
+	\Large \textbf{爆破}
+\end{center}
+	
+\noindent\textbf{时间限制：} 3000MS
+	
+\noindent\textbf{内存限制：} 589824KB
+	
+\vspace{10pt}
+	
+\noindent\textbf{题目描述：}
+	
+小明当起了矿场的爆破工程师。小明工作的矿场可以看作一个 \texttt{N$\times$N}的二维网格，小明可以将一个炸弹放置到矿场的任意位置，若干时间后炸弹会爆炸，将炸弹所在处及相邻位置炸开，让工人们可以轻松获得那些位置的矿物。现在给出这个矿场的矿物数量分布，请你帮小明找出一个最佳位置，使得炸完后能获得的矿物数量最大。你只需要告诉小明这个最大数量即可。在第\texttt{i}行\texttt{j}列的矿物数量为\texttt{a[][]}(当\texttt{1$\leq$i, j$\leq$N})，否则为 \texttt{0}(即超出矿场边界时不会获得任何矿物)。若放置炸弹在\texttt{(i,j)}，爆炸范围为\texttt{(i,j),(i+1,j),(i,j+1),(i-1,j),(i,j-1)}。注意小明只能把炸弹放置到矿场内，但可能爆炸范围超出边界。
+	
+\noindent\textbf{输入描述：}
+	
+第一行一个整数\texttt{N}，表示小明工作的矿场大小。
+
+接下来\texttt{N}行，每行\texttt{N}个整数。接下来的第\texttt{i}行开\texttt{a[i][1]a[i][2]$\cdots$a[][N]}。表示这矿场内所有位置的矿物数量。
+
+对于\texttt{100\%}的数据，\texttt{1$\leq$N$\leq$800,0$\leq$a[i][j]$\leq$100000}
+	
+\noindent\textbf{输出描述：} 
+	
+输出一个整数表示小明安放一个炸弹，其爆炸范围内矿物数量之和的最大值。
+	
+\noindent\textbf{样例输入1：}
+	
+\lstset{numbers=none}
+\begin{lstlisting}
+5
+1 2 3 3 4
+0 0 0 0 0
+0 0 1 0 0
+0 0 0 0 0
+9 0 9 9 9
+\end{lstlisting}
+\lstset{numbers=left}
+	
+\noindent\textbf{样例输出1：}
+\lstset{numbers=none}
+\begin{lstlisting}
+27
+\end{lstlisting}
+\lstset{numbers=left}
+	
+	
+\vspace{10pt}
+	
+\noindent\textbf{思路分析：}
+	
+	
+	
+	
+\noindent\textbf{实现代码：}
+
+\begin{lstlisting}
+#include <iostream>
+#include <vector>
+#include <algorithm> // 用于 std::max
+
+using namespace std;
+
+int main() {
+	int N;
+	cin >> N;
+	vector<vector<int>> a(N, vector<int>(N)); // 二维数组的定义
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			cin >> a[i][j]; // 输入数组的元素
+		}
+	}
+	
+	int maxMinerals = 0;
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			int currentMinerals = a[i][j]; // 当前炸弹位置的矿物数量
+			if (i > 0) {
+				currentMinerals += a[i - 1][j]; // 上方位置
+			}
+			if (i < N - 1) {
+				currentMinerals += a[i + 1][j]; // 下方位置
+			}
+			if (j > 0) {
+				currentMinerals += a[i][j - 1]; // 左侧位置
+			}
+			if (j < N - 1) {
+				currentMinerals += a[i][j + 1]; // 右侧位置
+			}
+			maxMinerals = max(maxMinerals, currentMinerals); // 更新最大矿物数量
+		}
+	}
+	
+	cout << maxMinerals << endl; // 输出结果
+	return 0;
+}
+
+\end{lstlisting}
+	
+\newpage
+	
+\section{切分}
+	
+\begin{center}
+	\Large \textbf{切分}
+\end{center}
+	
+\noindent\textbf{时间限制：} 3000MS
+	
+\noindent\textbf{内存限制：} 589824KB
+	
+\vspace{10pt}
+	
+\noindent\textbf{题目描述：}
+	
+小明今年儿童节获得了妈妈送的一个可爱的字符串\texttt{S}。而这个字符串也是一个数字串，\texttt{S}仅由数字\texttt{'0','1',$\cdots$,'9'}构成。小明在课上记住了如下定义：记字符串\texttt{S}的长度为\texttt{|S|}，其中第\texttt{i}位字符为\texttt{S}，一个子串由相邻不间断的字符构成，字符\texttt{S[i],S[i+1],$\cdots$,S[j]}构成其中一个子串，表示为\texttt{S[i,j](1$\leq$i$\leq$j$\leq$|S|)}。例如，\texttt{'abcdefg'}有子串\texttt{'abc''bcde'} ，但\texttt{'abd'}不是其子串。小明想象着如同切蛋糕一样切分字符串。小明会确定两个端点\texttt{i,j(1$\leq$i$\leq$j$\leq$|S|)}，将子串\texttt{S[i,j]}取出。小明对数字有着独特的品味，特别的，他希望切出来的这个子串能被\texttt{4}整除。小明想知道他有多少种选择端点的方案，使得他的品味得到满足。注意切出的子串允许出现前导\texttt{0}，即\texttt{"0123"}数值上与\texttt{"123"}相同。两种选择端点的方案不同当前仅当在两个方案中左端点或者右端点不相同，或者两个端点均是不同的。
+	
+\noindent\textbf{输入描述：}
+	
+第一行一个字符串S，表示小明的字符串。
+
+对于\texttt{100\%}的数据，\texttt{1$\leq$|S|$\leq$50000}，其中\texttt{S}中仅包含数字。
+	
+\noindent\textbf{输出描述：} 
+	
+输出一行一个整数表示答案。
+	
+\noindent\textbf{样例输入1：}
+	
+\lstset{numbers=none}
+\begin{lstlisting}
+104
+\end{lstlisting}
+\lstset{numbers=left}
+	
+\noindent\textbf{样例输出1：}
+\lstset{numbers=none}
+\begin{lstlisting}
+4
+\end{lstlisting}
+\lstset{numbers=left}
+	
+\vspace{10pt}
+	
+\noindent\textbf{思路分析：}
+	
+
+	
+\noindent\textbf{实现代码：}
+	
+\begin{lstlisting}
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+	string s;
+	cin >> s;
+	int n = s.length();
+	int count = 0;
+	
+	for (int i = 0; i < n; i++) {
+		// 单个字符组成的子串
+		int singleDigit = s[i] - '0';
+		if (singleDigit % 4 == 0) {
+			count++;
+		}
+		
+		// 两个字符组成的子串
+		if (i > 0) {
+			int twoDigitNumber = (s[i - 1] - '0') * 10 + (s[i] - '0');
+			if (twoDigitNumber % 4 == 0) {
+				count += i; // 包含前导0的子串总数
+			}
+		}
+	}
+	
+	cout << count << endl;
+	
+	return 0;
+}
+\end{lstlisting}
+	
+	
+\end{document}
