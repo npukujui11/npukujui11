@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  6 SEP 2024 17:35
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  6 OCT 2024 01:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -976,6 +976,8 @@ Package fontspec Info: Could not resolve font "FangSong/B" (it probably
 Package fontspec Info: Could not resolve font "FangSong/I" (it probably
 (fontspec)             doesn't exist).
 
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.53937> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 111.
 
 Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             with options [Script={CJK}].
@@ -987,54 +989,52 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 190.
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not avail
 able
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
-185.
+191.
  [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 213
-.
 
-(d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Warning: Font shape `TU/FangSong(0)/m/it' undefined
+(Font)              using `TU/FangSong(0)/m/n' instead on input line 213.
+
+[2] [3] [4]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 407
+.
+ (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 213
+LaTeX Font Info:    Trying to load font information for U+msb on input line 407
 .
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 292.
+) [5] [6] [7]
+[8] [9]
+File: picture/huawei_0904_3_1_output_interpretation.jpg Graphic file (type bmp)
 
+<picture/huawei_0904_3_1_output_interpretation.jpg>
+ [10] [11] [12] [13] [14]
 
-LaTeX Font Warning: Font shape `TU/FangSong(0)/m/it' undefined
-(Font)              using `TU/FangSong(0)/m/n' instead on input line 302.
-
-[3] [4] [5] [6] [7] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./Huawei.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-Package rerunfilecheck Warning: File `Huawei.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Huawei.out':
-(rerunfilecheck)             Before: 088721D649B94B2165AD13A9C026770D;273
-(rerunfilecheck)             After:  96337F596FA8096E2355A91922FF6CB7;249.
+Package rerunfilecheck Info: File `Huawei.out' has not changed.
+(rerunfilecheck)             Checksum: 96337F596FA8096E2355A91922FF6CB7;249.
  ) 
 Here is how much of TeX's memory you used:
- 22110 strings out of 476683
- 461697 string characters out of 5805371
- 2081012 words of memory out of 5000000
- 41977 multiletter control sequences out of 15000+600000
- 517400 words of font info for 81 fonts, out of 8000000 for 9000
+ 22260 strings out of 476683
+ 466514 string characters out of 5805371
+ 2153012 words of memory out of 5000000
+ 42117 multiletter control sequences out of 15000+600000
+ 517408 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,6n,97p,541b,1807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,7n,97p,541b,1848s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Huawei.pdf (7 pages).
+Output written on Huawei.pdf (14 pages).

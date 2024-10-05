@@ -108,15 +108,15 @@
 	\Large \textbf{二叉树消消乐}
 \end{center}
 	
-\noindent\textbf{时间限制：} 1000MS
-	
-\noindent\textbf{内存限制：} 256MB
+\noindent\textbf{时间限制：} \textbf{C/C\texttt{++}} 1000ms，其他语言：2000ms
+
+\noindent\textbf{内存限制：} \textbf{C/C\texttt{++}} 256MB，其他语言：512MB
 	
 \vspace{10pt}
 	
 \noindent\textbf{题目描述：}
 	
-给定原始二叉树和参照二叉树(输入的二叉树均为满二叉树，二叉树节点的值范围为[1,1000]，二叉树的深度不超过1000)，现对原始二叉树和参照二叉树中相同层级目值相同的节点进行消除，消除规则为原始二叉树和参照二叉中存在多个值相同的节点只能消除等数量的，消除后的节点变为无效节点，请按节点值出现频率从高到低输出消除后原始二叉树中有效节点的值(如果原始二叉树消除后没有有效节点返回0)。
+给定原始二叉树和参照二叉树(输入的二叉树均为满二叉树，二叉树节点的值范围为[1,1000]，二叉树的深度不超过1000)，现对原始二叉树和参照二叉树中相同层级目值相同的节点进行消除，消除规则为原始二叉树和参照二叉树中存在多个值相同的节点只能消除等数量的，消除后的节点变为无效节点，请按节点值出现频率从高到低输出消除后原始二叉树中有效节点的值(如果原始二叉树消除后没有有效节点返回0)。
 	
 \noindent\textbf{输入描述：}
 	
@@ -150,12 +150,9 @@
 \end{lstlisting}
 \lstset{numbers=left}
 	
-\noindent 样例1解释：原始二叉树 A 消除参照二叉树 B 中的重复元素后，有效节点剩余2个3，1个6，1个5，1个4，1个1，3出现的频率2, 6、5、4、1出现的频率为1，按值从大到小排序，所以排序结果为36541。
-
-
+\noindent 样例 1 解释：原始二叉树 A 消除参照二叉树 B 中的重复元素后，有效节点剩余 2 个 3，1 个 6，1 个 5，1 个 4，1 个 1，3 出现的频率 2, 6、5、4、1 出现的频率为 1，按值从大到小排序，所以排序结果为 36541。
 
 \noindent\textbf{样例输入2：}
-	
 \lstset{numbers=none}
 \begin{lstlisting}
 15
@@ -171,15 +168,120 @@
 79865
 \end{lstlisting}
 \lstset{numbers=left}
+
+\noindent 样例 2 解释：原始二叉树 A 消除参照二叉树 B 中的重复元素后，有效节点剩余 3 个 7，2 个 9，2 个 8，2 个 6，1 个 5，8 出现的频率 3, 7 出现的频率为 2，6 出现的频率为 2，6 的值比 5 大，所以排序结果为 79865。
 	
 \vspace{10pt}
 	
 \noindent\textbf{思路分析：}
+\begin{itemize}
+	\item [1.] \textbf{按照题目要求构建二叉树} 
+	
+	\item [2.] \textbf{统计参照二叉树每一层节点的出现次数，这一步可以使用哈希表来完成}
+	
+	\item [3.] \textbf{遍历原始二叉树，每一层的节点减去当前参照二叉树的对应节点的值的数量即可}
+\end{itemize}
+
+\noindent\textbf{难点分析：}
 
 \noindent\textbf{实现代码：}
 	
 \begin{lstlisting}
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <unordered_map>
+#include <algorithm>
 
+using namespace std;
+
+int main() { 
+	int n, m;
+	cin >> n;
+	
+	vector<int> nums1(n);
+	for (int i = 0; i < n; ++i) { 
+		cin >> nums1[i];
+	}
+	
+	cin >> m;
+	vector<int> nums2(m);
+	for (int i = 0; i < m; ++i) { 
+		cin >> nums2[i];
+	}
+	
+	// 定义一个二维哈希表，用于统计参照二叉树每层结点的出现次数
+	vector<unordered_map<int, int>> nums2_cnt(1001);
+	deque<int> q; // 用于层序遍历的队列
+	
+	q.push_back(0); // 根结点的层号为 0
+	int depth = 0; // 当前结点的深度
+	
+	// 统计参照二叉树每层结点的出现次数
+	while (!q.empty()) { 
+		int length = q.size(); // 当前层的结点个数
+		for (int i = 0; i < length; ++i) { 
+			int node = q.front(); // 取队首元素
+			q.pop_front(); // 出队
+			nums2_cnt[depth][nums2[node]]++; // 当前结点的出现次数加 1
+			if (node * 2 + 1 < m) { 
+				q.push_back(node * 2 + 1); // 左孩子入队
+				q.push_back(node * 2 + 2); // 右孩子入队
+			}
+		}
+		depth++;
+	}
+	
+	// 使用哈希表统计原始二叉树的结点出现次数
+	unordered_map<int, int> nums1_cnt;
+	for (int num : nums1) {
+		nums1_cnt[num]++; 
+	}
+	
+	// 遍历原始二叉树，逐层处理并减去参照树对应层的结点
+	q.push_back(0); // 根结点的层号为 0
+	depth = 0; // 当前结点的深度
+	
+	while (!q.empty()) {
+		int length = q.size();
+		unordered_map<int, int> cur; // 临时哈希表，用于存储当前层结点的出现次数
+		
+		for (int i = 0; i < length; ++i) { 
+			int node = q.front(); // 取队首元素
+			q.pop_front(); // 出队
+			cur[nums1[node]]++; // 当前结点的出现次数加 1
+			if (node * 2 + 1 < n) { 
+				q.push_back(node * 2 + 1); // 左孩子入队
+				q.push_back(node * 2 + 2); // 右孩子入队
+			}
+		}
+		
+		for (auto &kv : cur) { 
+			int k = kv.first;
+			int v = kv.second;
+			if (nums2_cnt[depth][k] >= 0) { 
+				nums1_cnt[k] = max(nums1_cnt[k] - nums2_cnt[depth][k], 0); // 减去参照树对应层的结点
+			}
+		}
+		depth++;
+	}
+	
+	vector<pair<int, int>> sorted_dic(nums1_cnt.begin(), nums1_cnt.end());
+	sort(sorted_dic.begin(), sorted_dic.end(), [](const pair<int, int> &a, const pair<int, int> &b) { 
+		if (a.second != b.second)
+		return a.second > b.second;
+		return a.first > b.first;
+	});
+	
+	// 输出结果
+	for (auto &p : sorted_dic) {
+		if (p.second > 0)
+		cout << p.first;
+	}
+	cout << endl;
+	
+	return 0;
+}
 \end{lstlisting}
 	
 \newpage
@@ -190,9 +292,9 @@
 	\Large \textbf{好友推荐系统}
 \end{center}
 	
-\noindent\textbf{时间限制：} 1000MS
+\noindent\textbf{时间限制：} \textbf{C/C\texttt{++}} 1000ms，其他语言：2000ms
 	
-\noindent\textbf{内存限制：} 256MB
+\noindent\textbf{内存限制：} \textbf{C/C\texttt{++}} 256MB，其他语言：512MB
 	
 \vspace{10pt}
 	
@@ -210,15 +312,25 @@
 	
 \noindent\textbf{输入描述：}
 	
-第一行输入一个整数 $n (1 \leq n \leq 100)$，表示物品的数量。
+第一行包含四个整数 N，M、K 和 L，分别表示用户的数量(N)，好友记录条数(M)、查询的用户编号(K)和推荐的好友数量(L)。
 	
-第二行输入 $n$ 个整数 $a_1,a_2,\cdots,a_n (a_i \in [1,2])$ 代表物品类别。其中 $a_i = 1$ 表示物品是第一类，$a_i = 2$ 表示物品是第二类。
-	
-第三行输入 $n$ 个整数 $b_i,b_2,\cdots,b_n (b_i \in [0,1])$ 代表物品是否可被移动，其中 $b_i = 1$ 表示第 $i$ 个物品可以移动，$b_i = 0$ 表示第 $i$ 个物品不可以移动。
+接下来 M 行，每行包含两个整数编号 X 和 Y，表示编号为 X 和 Y 用户是好友。
+
+1) 输入格式都是标准的，无需考虑输出异常场景(不会包含用户和自己是好友的输入，例如 1 1)
+
+2) 用户数不超过 1024
+
+3) 好友记录数不超过10240
 	
 \noindent\textbf{输出描述：} 
 	
-在一行上输出一个正整数，表示不美观程度的最小值.
+根据输入 K 和 L，输出和用户 K 相似度最高的 L 个用户编码。
+
+1) 输出相似度最高的前 L 个用户编码，按照相似度从高到低排序；
+
+2) 如果有相似度相同的可能好友，按照用户编号从小到大排序；
+
+3) 如果推荐的好友个数不足 L 个，则推荐与用户 K \textbf{无共同好友关系}的用户(陌生人)作为可能好友;如果推荐仍不满足 L 个用户，剩余推荐用户编码使用 0 来占位。
 	
 \noindent\textbf{样例输入1：}
 	
@@ -285,8 +397,200 @@
 \vspace{10pt}
 	
 \noindent\textbf{思路分析：}
+
+\begin{itemize}
+	\item [1.] \textbf{相似度计算} 
+		相似度衡量两个用户是否有共同好友。推荐好友时，优先推荐相似度高的用户。如果两个用户的相似度相同，则推荐编号较小的用户。
+		
+	\item [2.] \textbf{特殊情况处理}
+		\begin{itemize}
+			\item[$\bullet$] 如果用户没有好友，则不会推荐好友；
+			\item[$\bullet$] 如果没有足够的用户进行推荐，需要补充陌生人，最后补充0。
+		\end{itemize}
+\end{itemize}
+
+\noindent\textbf{难点分析：}
+\begin{itemize}
+	\item [1.] \textbf{数据结构的选择和使用} 
 	
-\noindent\textbf{实现代码：}
+	题目中涉及用户与用户之间的好友关系，这其实是一个图的建模问题。我们需要用适合的方式来存储每个用户及其好友的关系。这里选择了邻接表 \texttt{vector<set<int>> friends} 来存储用户之间的好友关系，每个用户的好友使用 \texttt{set} 存储，以便能够快速查找、插入和删除好友信息。
+	
+	\textbf{难点}：如果不熟悉图的表示方法以及如何选择合适的数据结构（如邻接矩阵或邻接表），可能会在存储和查找好友关系上遇到问题。
+	
+	\item [2.] \textbf{相似度计算逻辑}
+	
+	题目要求推荐相似度高的用户，具体的标准是与目标用户 K 有共同好友的用户。遍历目标用户 K 的所有好友后，还需要继续遍历这些好友的好友，找出哪些用户与目标用户有共同好友。
+	
+	\textbf{难点}：这里的相似度计算涉及两层嵌套的循环，逻辑上容易出错。如果不仔细设计，可能会忽略掉一些潜在的推荐对象，或者误算一些用户的相似度。
+	
+	\item [3.] \textbf{排序规则的处理}
+	
+	按照相似度排序，处理相似度相同的情况：对于找到的潜在好友，需要按相似度从高到低排序。如果相似度相同，则按照用户 ID 进行升序排序。这涉及自定义排序规则的设计和实现。
+	
+	\textbf{难点}：自定义排序逻辑涉及到多个条件的判断，在实现过程中容易出错，比如优先级设置不当、排序不稳定等问题。
+	
+	\item [4.] \textbf{推荐数量不足的处理}
+	
+	补充非好友或空位：如果找到的潜在好友数量不足 L 个，还需要补充没有共同好友的非好友（即所谓的“陌生人”），如果仍然不足 L 个，则用 0 填补空位。这部分逻辑在实现上需要注意确保推荐结果的数量始终为 L，并且需要防止重复推荐。
+	
+	\textbf{难点}：如何优雅地处理“推荐不足 L 个”的情况，补充非好友并确保不重复推荐，设计这部分逻辑时需要严密的控制条件。
+	
+	\item [5.] \textbf{边界条件的处理}
+	
+	特殊情况：有一些特殊情况需要特别处理，比如目标用户 K 没有好友的情况，或者社交网络中总用户数 N 较少的情况。这些情况可能会导致潜在好友数量不足，需要特别处理以防止程序出错或产生不符合预期的输出。
+	
+	\textbf{难点}：边界条件的处理如果不仔细考虑，可能会导致错误的输出或程序崩溃。例如，处理目标用户没有好友的情况时，需要确保相似度计算不会发生。
+	
+\end{itemize}
+
+\noindent\textbf{代码实现：}
+
+1. \textbf{首先我们定义用户结构体 \texttt{User}}：
+
+1) \texttt{User} 结构体定义了用户的编号 \texttt{id} 和相似度 \texttt{similarity}。
+
+2) 定义自定义的排序规则：相似度高优先；如果相似度相同，编号较小的用户优先。
+
+\begin{lstlisting}
+/**
+* User 结构体，用于存储用户编号和相似度
+* 
+* id                           表示用户的编号（ID），即社交网络中用户的唯一标识。
+* similarity                   表示用户与用户K的相似度，即用户K的好友中有多少个是该用户的好友；
+*                              相似度越高，表示他们有越多的共同好友。
+* User(int id, int similarity) 含参构造函数，创建User对象时直接赋值给 id 和 similarity 这两个成员变量。
+*                              User user(3, 5); 表示用户编号为3，与用户K的相似度为5。
+* bool operator<(const User& other) const;               
+*                              重载小于号运算符，用于自定义排序规则，相似度高优先，相似度相同时编号小优先。
+*                              用于实现两个用户对象之间的比较，用于排序推荐好友列表。
+*                              (const User& other) 表示传入的参数是一个 User 类型的对象。
+*                              const         修饰函数，表示该函数不会修改成员变量的值。
+*                              bool          返回值类型。
+*                              return true   表示当前对象小于传入的对象。
+*                              return false  表示当前对象大于传入的对象。
+*/
+struct User {
+	int id, similarity;
+	User(int id, int similarity) : id(id), similarity(similarity) {}
+	// 自定义排序规则：相似度高优先，相似度相同时编号小优先
+	bool operator<(const User& other) const {
+		if (similarity == other.similarity)
+		// 如果两个用户的相似度相同，选择 id 值较小的用户排在前面。
+		return id < other.id;
+		return similarity > other.similarity;
+	}
+};
+\end{lstlisting}
+
+2. \textbf{数据结构初始化和输入}
+
+1) 在好友推荐系统中，我们可以使用邻接表来表示社交网络中的好友关系，社交网络中的用户可以被看作图中的顶点，用户之间的好友关系则被视为边。通过邻接表可以高效地存储和查找某个用户地好友列表，从而方便进行好友推荐、共同好友计算等操作。
+
+2) 我们使用邻接表 \texttt{vector<set<int>> friends(N + 1);} 来存储每个用户的好友列表。我们通过遍历输入，构建每个用户的好友列表。
+
+\begin{lstlisting}
+/*
+* 通过邻接表来构建图
+* 1 -> 2 -> 3 -> 8
+* 2 -> 1 -> 3 -> 7
+* 3 -> 1 -> 2 -> 4 -> 5
+* 4 -> 3 -> 5
+* 5 -> 3 -> 4 -> 6
+* 6 -> 5 -> 7
+* 7 -> 6 -> 8 -> 2
+* 8 -> 7 -> 1
+*/
+\end{lstlisting}
+
+3. \textbf{计算用户 K 的潜在好友的相似度}
+
+1) 我们需要计算用户 K 的潜在好友的相似度，通过一个哈希表 \texttt{unordered\_map<int, int> similarity;} 用于存储与用户 K 的相似度。
+
+2) 我们遍历用户 K 的所有好友，在遍历这些好友的好友。对于每个不是 K 本身且不是 K 好友的用户，其相似度计数\texttt{+1}。
+
+\begin{lstlisting}
+/*
+* unordered_map<int, int> similarity; 用于存储用户的好友关系。
+* Key : Value
+* 5 : 1
+* 4 : 1
+* 7 : 2
+*/
+\end{lstlisting}
+
+4. \textbf{构建潜在好友列表并排序}
+
+1) 我们构建潜在好友列表并排序，我们再遍历一遍所有用户，跳过 K 自己和 K 的现在好友；
+
+2) 对每个用户构建 \texttt{User} 结构体，并存入 \texttt{potentialFriends}；
+
+3) 然后对潜在好友进行排序，排序的优先级是相似度高优先，相似度相同编号小优先。
+
+\begin{lstlisting}
+// 将结果放入一个用户结构体数组中
+vector<User> potentialFriends;
+for (int i = 1; i <= N; ++i) {
+	if (i != K && !friends[K].count(i)) { // 不是自己且不是好友
+		// 如果 similarity 中存在 i，则取出 i 的相似度，否则相似度为 0
+		int sim = similarity.count(i) ? similarity[i] : 0; 
+		// 将用户编号和相似度放入数组中
+		potentialFriends.push_back(User(i, sim));
+	}
+}
+
+// 对所有潜在好友进行排序
+sort(potentialFriends.begin(), potentialFriends.end());
+\end{lstlisting}
+
+\begin{lstlisting}
+/*
+* User ID: 7, Similarity: 2
+* User ID: 4, Similarity: 1
+* User ID: 5, Similarity: 1
+* User ID: 6, Similarity: 0
+*/
+\end{lstlisting}
+
+5. \textbf{推荐好友并补充到 L 个}
+
+1) 我们首先按照排序好的\texttt{potentialFriends}推荐好友，最多推荐 L 个；
+
+2) 如果推荐不足 L 个，则补充没有共同好友的陌生人；
+
+3) 如果仍然不足 L 个，则补充 0。
+
+\begin{lstlisting}
+vector<int> result;
+int recommended = 0; // 记录已推荐的好友数量
+
+// 按照相似度高低输出潜在好友
+for (const User& user : potentialFriends) {
+	if (recommended < L) {
+		result.push_back(user.id);
+		recommended++;
+	} else {
+		break;
+	}
+}
+
+// 如果推荐不足L个，补充陌生人（没有与用户K共同好友的非好友）
+for (int i = 1; i <= N && recommended < L; ++i) {
+	if (i != K && !friends[K].count(i) && similarity.count(i) == 0) {
+		if (find(result.begin(), result.end(), i) == result.end()) { // 避免重复推荐
+			result.push_back(i);
+			recommended++;
+		}
+	}
+}
+
+// 如果仍不足L个，补充0
+while (recommended < L) {
+	result.push_back(0);
+	recommended++;
+}
+\end{lstlisting}
+
+\noindent\textbf{完整代码：}
 	
 \begin{lstlisting}
 #include <iostream>
@@ -302,6 +606,7 @@ struct User {
 	// 自定义排序规则：相似度高优先，相似度相同时编号小优先
 	bool operator<(const User& other) const {
 		if (similarity == other.similarity)
+		// 如果两个用户的相似度相同，选择 id 值较小的用户排在前面。
 		return id < other.id;
 		return similarity > other.similarity;
 	}
@@ -310,8 +615,6 @@ struct User {
 int main() {
 	int N, M, K, L;
 	cin >> N >> M >> K >> L;
-	
-	
 	
 	vector<set<int>> friends(N + 1); // 邻接表，存储每个用户的好友列表
 	
@@ -342,7 +645,9 @@ int main() {
 	vector<User> potentialFriends;
 	for (int i = 1; i <= N; ++i) {
 		if (i != K && !friends[K].count(i)) { // 不是自己且不是好友
-			int sim = similarity.count(i) ? similarity[i] : 0;
+			// 如果 similarity 中存在 i，则取出 i 的相似度，否则相似度为 0
+			int sim = similarity.count(i) ? similarity[i] : 0; 
+			// 将用户编号和相似度放入数组中
 			potentialFriends.push_back(User(i, sim));
 		}
 	}
@@ -351,7 +656,7 @@ int main() {
 	sort(potentialFriends.begin(), potentialFriends.end());
 	
 	vector<int> result;
-	int recommended = 0;
+	int recommended = 0; // 记录已推荐的好友数量
 	
 	// 按照相似度高低输出潜在好友
 	for (const User& user : potentialFriends) {
@@ -380,7 +685,7 @@ int main() {
 	}
 	
 	// 输出结果
-	for (int i = 0; i < result.size(); ++i) {
+	for (auto i = 0u; i < result.size(); ++i) {
 		if (i > 0) cout << " ";
 		cout << result[i];
 	}
@@ -398,157 +703,290 @@ int main() {
 	\Large \textbf{维修工}
 \end{center}
 	
-\noindent\textbf{时间限制：} 1000MS
-	
-\noindent\textbf{内存限制：} 256MB
+\noindent\textbf{时间限制：} \textbf{C/C\texttt{++}} 1000ms，其他语言：2000ms
+
+\noindent\textbf{内存限制：} \textbf{C/C\texttt{++}} 256MB，其他语言：512MB
 	
 \vspace{10pt}
 	
 \noindent\textbf{题目描述：}
 	
-小红有一棵有 $n$ 个节点的树，其中每个节点是红色或者黑色，她想知道，删除一个红色节点以及与它相连的全部边后，剩余的连通块 \dag 中黑色节点数量的最大值是多少。
+维修工要给 n 个客户更换设备，为每个用户更换一个设备。维修工背包内最多装 k 个设备，如果背包里有设备可以直接前往下一个客户更换或回公司补充设备，没有则需要回公司取设备。这些客户有优先级，维修工需要按照优先级给客户更换设备，优先级 level 用数字表示，数字小的优先级高。维修工从公司出发，给 n 个客户更换设备，最后再返回公司。请计算维修工完成这项工作所需要经历的最短总距离是多少。维修工可以走斜线，请参考样例1图示。
 	
-	\dag：对于树上的两个点，如果它们相互连通，则称他们位于同一个连通块里；显然，在执行删除操作后，剩余部分至多构成两个连通块。
+\noindent\textbf{输入描述：}
 	
-	\noindent\textbf{输入描述：}
+第一行两个正整数 $n, k(1 \leq k \leq n \leq 2000)$，表示客户数和维修工背包容量。
 	
-	第一行输入一个整数 $n (1 \leq n \leq 10^5)$ 代表节点的数量。
+第二行两个正整数 $x, y$，用空格分隔 $(1 \leq x, y \leq 10^6)$，表示公司的坐标。
 	
-	第二行输入一个长度为 $n$ 的字符串 $s_1,s_2,\cdots,s_n (s_1 \epsilon$ \texttt{{'R','B'})} 代表第 $i$ 个节点的颜色为 $s_i$。若 $s_i$ 为 \texttt{'B'} 表示节点的颜色为黑色，若 $s_i$ 为 \texttt{'R'} 则表示节点的颜色为红色。保证 $s$ 中至少有一个红色节点。
+接下来 n 行每行三个正整数 $x_i, y_i, level_{i}$，用空格分割，$(1 \leq x_i, y_i \leq 10^6, 1 \leq level_{i} \leq n)$.$(x_i, y_i)$ 表示第 i 个客户的位置坐标，$level_{i}$ 表示第 $i$ 个客户的优先级，保证所有客户优先级不同，客户和公司坐标不会重叠。
 	
-	此后 $n-1$ 行，第 $i$ 行输入两个整数 $u_i$ 和 $v_i(1 \leq u_i, v_i \leq n; u_i \neq v_i)$ 表示树上第 $i$ 条边连接节点 $u_i$ 和 $v_i$。
+\noindent\textbf{输出描述：} 
 	
-	\noindent\textbf{输出描述：} 
+输出最短总距离，结果四舍五入并保留一位小数，例如：9.0
 	
-	在一行上输出一个整数代表最大值。
+\noindent\textbf{样例输入1：}
 	
-	\noindent\textbf{样例输入1：}
+\lstset{numbers=none}
+\begin{lstlisting}
+3 2
+1 1
+3 1 1
+1 2 2
+3 2 3
+\end{lstlisting}
+\lstset{numbers=left}
 	
-	\lstset{numbers=none}
-	\begin{lstlisting}
-		10
-		RRBBBBBBBB
-		1 2
-		1 3
-		1 4
-		1 5
-		1 7 
-		2 8
-		4 6
-		4 10
-		6 9
-	\end{lstlisting}
-	\lstset{numbers=left}
+\noindent\textbf{样例输出1：}
+\lstset{numbers=none}
+\begin{lstlisting}
+9.2
+\end{lstlisting}
+\lstset{numbers=left}
+
+\noindent\textbf{样例解释：}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\linewidth]{picture/huawei_0904_3_1_output_interpretation}
+	\captionsetup{font=scriptsize}
+\end{figure}
+红色箭头为最短距离的规划路径，顺序为图中红色序号，如图红色箭头5为客户3直达到公司。
+
+\noindent\textbf{样例输入2：}
+
+\lstset{numbers=none}
+\begin{lstlisting}
+4 1
+2 2
+1 1 1
+1 3 4
+3 1 2
+3 3 3
+\end{lstlisting}
+\lstset{numbers=left}
+
+\noindent\textbf{样例输出2：}
+\lstset{numbers=none}
+\begin{lstlisting}
+11.3
+\end{lstlisting}
+\lstset{numbers=left}
+维修工背包容量是1，逐个按优先级为每个客户更换设备，到每个客户单程距离计算为$\sqrt{2}$，往返一个客户距离是$2\sqrt{2}$，总路程为$8\sqrt{2}$，最短总距离四舍五入后为11.3。
 	
-	\noindent\textbf{样例输出1：}
-	\lstset{numbers=none}
-	\begin{lstlisting}
-		7
-	\end{lstlisting}
-	\lstset{numbers=left}
+\vspace{10pt}
 	
+\noindent\textbf{思路分析：}
+\begin{itemize}
+	\item [1.] \textbf{客户的优先级排序} 
 	
-	\vspace{10pt}
+	因为每个客户有不同的优先级（level），题目要求维护工根据客户优先级的顺序服务。所以在计算最短路径之前，我们首先要对客户按优先级进行排序。优先级排序后，维护工可以根据顺序为客户提供服务，这也是问题中的一个要求。
 	
-	\noindent\textbf{思路分析：}
+	\item [2.] \textbf{距离计算}
 	
+	维护工需要计算每次从公司出发到某个客户的距离，以及客户之间的距离。
+	
+	\begin{equation*}
+		\begin{aligned}
+			\mathcal{D} = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
+		\end{aligned}
+		\label{eq: Euclidean distance}
+	\end{equation*}	
+	
+	\item[3.] \textbf{动态规划解决方案}
 	\begin{itemize}
-		\item[1.] 输入读取与初始化：
-		\begin{itemize}
-			\item[·] 首先，读取节点的数量 n，再读取每个节点的颜色信息（由 \texttt{'R'} 表示红色，\texttt{'B'} 表示黑色）。
-			\item[·] 然后，读取 n-1 条边的信息，并构建无向图，这个图表示的是树的结构。
-		\end{itemize}
+		\item [$\bullet$] \texttt{dp[i]} 表示服务前 i 个客户的最小总距离。
 		
-		\item[2.] DFS计算每个子树中的黑色节点数量：
-		\begin{itemize}
-			\item[·] 利用 DFS（深度优先搜索）从树的根节点开始（这里选择 1 号节点作为根节点），计算每个节点的子树中黑色节点的数量。
-			\item[·] \texttt{sub\_black[node]} 记录了以 \texttt{node} 为根节点的子树中黑色节点的数量。如果当前节点是黑色节点，\texttt{sub\_black[node]} 增加 1，否则保持不变。
-			\item[·] 对于每个节点的所有相邻节点（子节点），递归地计算其子树中的黑色节点数量并累加到当前节点。
-		\end{itemize}
-		
-		\item[3.] 寻找删除红色节点后黑色节点最多的连通块；
-		\begin{itemize}
-			\item[·] \texttt{total\_black} 表示整棵树中所有的黑色节点总数。
-			\item[·] 对于每一个红色节点，我们检查它的邻居节点。如果邻居节点的子树中的黑色节点数量小于当前红色节点的子树，那么说明这个邻居节点的子树在删除红色节点后将成为独立的连通块，因此可以更新最大黑色连通块。
-			\item[·] 如果邻居节点的子树黑色节点数量大于等于当前红色节点的子树，那么我们计算整个树减去红色节点子树后剩余的黑色节点，并更新最大值。
-		\end{itemize}
-		
-		\item[4.] 输出结果。
+		\item [$\bullet$] 每次服务客户时，维护工最多可以携带 k 台设备。
 	\end{itemize}
 	
-	\noindent\textbf{实现代码：}
+	\item[4.] \textbf{路径枚举}
+	\begin{itemize}
+		\item[$\bullet$] 维护工最多一次可以为 k 个客户服务。我们通过枚举每个客户服务顺序，尝试每一条可能的路径，计算其距离并更新 \texttt{dp} 表。
+		
+		\item[$\bullet$] 路径计算的过程包括：
+			\begin{itemize}
+				\item[1)] 从公司出发到第一个客户的距离。
+				\item[2)] 客户之间的距离。
+				\item[3)] 服务完最后一个客户后返回公司的距离。
+			\end{itemize}
+	\end{itemize}
 	
-	\begin{lstlisting}
-		#include <iostream>
-		#include <vector>
-		#include <algorithm>
+\end{itemize}
+
+\noindent\textbf{代码实现:}
+
+1. \textbf{首先我们定义用户结构体 \texttt{Customer}}：
+\begin{lstlisting}
+struct Customer {
+	int x;
+	int y;
+	int level;
+};
+\end{lstlisting}
+\texttt{Customer} 结构体用于存储每个客户的坐标和优先级
+
+2. \textbf{计算两点间距离的函数}
+\begin{lstlisting}
+double distance(int x1, int y1, int x2, int y2) { 
+	double res;
+	res = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+	return res;
+}
+\end{lstlisting}
+
+3. \textbf{计算最小距离的核心函数}
+
+1) 首先，我们对客户按 level 进行排序，以便优先为优先级较高的客户服务。
+\begin{lstlisting}
+// Sort customers by priority (level)
+sort(customers.begin(), customers.end(), [](Customer a, Customer b) {
+	return a.level < b.level;
+});
+\end{lstlisting}
+
+2) 使用\texttt{dp[i]}用于存储前 i 个客户的最小距离
+\begin{lstlisting}
+// dp[i] represents the minimum total distance to serve the first i customers
+vector<double> dp(n + 1, numeric_limits<double>::max());
+dp[0] = 0.0; // Base case: no customers served yet, distance is 0
+\end{lstlisting}
+
+3) 预先计算了从公司到每个客户以及客户之间的所有距离。为了避免重复计算，加快后续的动态规划过程。
+	\begin{itemize}
+		\item[i] 计算公司到每个客户的距离
 		
-		using namespace std;
+		\item[ii] 计算客户之间的距离 
+	\end{itemize}
+	
+\begin{lstlisting}
+// Precompute distances from the company to each customer and between customers
+vector<vector<double>> dist(n + 1, vector<double>(n + 1));
+for (int i = 0; i < n; ++i) { 
+	dist[0][i + 1] = distance(company_x, company_y, customers[i].x, customers[i].y);
+	dist[i + 1][0] = dist[0][i + 1]; // Return to company
+	for (int j = 0; j < n; ++j) { 
+		dist[i + 1][j + 1] = distance(customers[i].x, customers[i].y, customers[j].x, customers[j].y);
+	}
+}
+\end{lstlisting}
+
+4) 遍历每个可能的路径组合，计算从公司出发服务客户的最短距离。每次更新 \texttt{dp}表，确保其存储的是最短的路径总距离。
+	
+	\begin{itemize}
+		\item[i] 外层循环 \texttt{for (int i = 0; i < n; ++i)} 枚举每个客户 \texttt{i} 作为本次服务的起点，也就是说从公司出发后先服务客户 \texttt{i}。
 		
-		const int MAX_N = 100005;  // 最大节点数
+		\item[ii] 内层循环 \texttt{for (int j = i; j < n; ++j)} 从客户 \texttt{i} 开始，尝试服务 \texttt{i} 到 \texttt{j} 的客户组（最多 \texttt{k} 个客户），如果客户数量不超过 \texttt{k}，则计算这段路径的总距离。
 		
-		vector<int> adj[MAX_N];    // 邻接表表示树的结构
-		int sub_black[MAX_N];      // 记录每个节点的子树中黑色节点的数量
-		char col[MAX_N];           // 记录每个节点的颜色，'R' 表示红色，'B' 表示黑色
-		int n;                     // 节点数
+		\item[iii] 累加路径距离：首先计算从公司到第 \texttt{i} 个客户的距离 \texttt{dist[0][i + 1]}，然后依次累加从 \texttt{i} 到 \texttt{j} 之间的客户的距离，最后再加上从第 \texttt{j} 个客户返回公司的距离。
 		
-		// DFS 计算每个子树中黑色节点的数量
-		void dfs(int node, int parent) {
-			sub_black[node] = (col[node] == 'B') ? 1 : 0;  // 如果当前节点是黑色，计数+1
-			for (int nei : adj[node]) {  // 遍历相邻节点
-				if (nei != parent) {     // 避免回到父节点，防止死循环
-					dfs(nei, node);      // 递归处理子节点
-					sub_black[node] += sub_black[nei];  // 累加子树中的黑色节点数量
+		\item[iv] 更新 \texttt{dp} 表：对于每次找到的有效客户组合 \texttt{[i, j]}，我们更新 \texttt{dp[j + 1]}，表示服务完前 \texttt{j+1} 个客户后，所走的最短总距离。
+	\end{itemize}
+
+\begin{lstlisting}
+// 暴力枚举
+for (int i = 0; i < n; ++i) { 
+	for (int j = i; j < n; ++j) {   
+		// 计算服务的客户数量
+		int num_customers = j - i + 1; 
+		// 如果这组客户数量 <= k，才能被维护工一次性处理
+		if (num_customers <= k) {
+			// 从公司到第i个客户的距离
+			double current_dist = dp[i] + dist[0][i + 1];
+			
+			for (int p = i; p < j; ++p) { 
+				current_dist += dist[p + 1][p + 2]; // 客户之间的距离
+			}
+			
+			// 从第 j 个客户返回公司
+			current_dist += dist[j + 1][0];
+			
+			// 更新dp[j+1]，即服务完前j+1个客户的最短距离
+			dp[j + 1] = min(dp[j + 1], current_dist); 
+		}
+	}
+}
+\end{lstlisting}
+
+\noindent\textbf{完整代码：}
+	
+\begin{lstlisting}
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <limits>
+
+using namespace std;
+
+struct Customer {
+	int x;
+	int y;
+	int level;
+};
+
+// Function to calculate the Euclidean distance between two points
+double distance(int x1, int y1, int x2, int y2) { 
+	double res;
+	res = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+	return res;
+}
+
+// Enumeration method to find the minimum total distance
+double calculate_min_distance(int n, int k, int company_x, int company_y, vector<Customer>& customers) { 
+	// Sort customers by priority (level)
+	sort(customers.begin(), customers.end(), [](Customer a, Customer b) {
+		return a.level < b.level;
+	});
+	
+	// dp[i] represents the minimum total distance to serve the first i customers
+	vector<double> dp(n + 1, numeric_limits<double>::max());
+	dp[0] = 0.0; // Base case: nno customers served yet, distance is 0
+	
+	// Precompute distances from the company to each customer and between customers
+	vector<vector<double>> dist(n + 1, vector<double>(n + 1));
+	for (int i = 0; i < n; ++i) { 
+		dist[0][i + 1] = distance(company_x, company_y, customers[i].x, customers[i].y);
+		dist[i + 1][0] = dist[0][i + 1]; // Return to company
+		for (int j = 0; j < n; ++j) { 
+			dist[i + 1][j + 1] = distance(customers[i].x, customers[i].y, customers[j].x, customers[j].y);
+		}
+	}
+	
+	// Enumerate all paths, trying every valid group of customers
+	for (int i = 0; i < n; ++i) { 
+		for (int j = i; j < n; ++j) { 
+			int num_customers = j - i + 1;
+			if (num_customers <= k) { // We can serve up to 'k' customers before returning to the company
+				double current_dist = dp[i] + dist[0][i + 1]; // Distance to serve the first 'i' customers
+				for (int p = i; p < j; ++p) { 
+					current_dist += dist[p + 1][p + 2]; // Distance between customers
 				}
+				current_dist += dist[j + 1][0]; // Return to the company after serving the last customer
+				dp[j + 1] = min(dp[j + 1], current_dist); // Update the minimum distance
 			}
 		}
-		
-		int main() {
-			cin >> n;  // 输入节点数
-			string colors;
-			cin >> colors;  // 输入每个节点的颜色信息
-			
-			// 将颜色信息存入 col 数组中，节点编号从1开始
-			for (int i = 0; i < n; ++i) {
-				col[i + 1] = colors[i]; 
-			}
-			
-			// 读取树的边信息，构建无向图
-			for (int i = 1; i < n; ++i) {
-				int u, v;
-				cin >> u >> v;
-				adj[u].push_back(v);
-				adj[v].push_back(u);
-			}
-			
-			// 计算以每个节点为根的子树中黑色节点的数量
-			dfs(1, -1);  // 从节点1开始，父节点设为-1（表示无父节点）
-			
-			int total_black = sub_black[1];  // 整棵树中黑色节点的总数
-			int max_black_comp = 0;  // 记录删除某个红色节点后最大的黑色连通块的数量
-			
-			// 遍历所有节点，找出红色节点
-			for (int i = 1; i <= n; ++i) {
-				if (col[i] == 'R') {  // 只有红色节点需要考虑删除的情况
-					for (int nei : adj[i]) {  // 遍历该红色节点的所有邻居节点
-						if (sub_black[nei] < sub_black[i]) {
-							// 邻居节点的子树形成一个独立的黑色连通块
-							max_black_comp = max(max_black_comp, sub_black[nei]);
-						} else {
-							// 其他部分形成一个连通块
-							max_black_comp = max(max_black_comp, total_black - sub_black[i]);
-						}
-					}
-				}
-			}
-			
-			// 输出删除红色节点后最大黑色连通块的数量
-			cout << max_black_comp << endl;
-			
-			return 0;
-		}
-		
-	\end{lstlisting}
+	}
 	
+	return dp[n];
+}
+
+int main() {
+	int n, k;
+	cin >> n >> k;
 	
+	int company_x, company_y;
+	cin >> company_x >> company_y;
+	
+	vector<Customer> customers(n);
+	for (int i = 0; i < n; ++i) { 
+		cin >> customers[i].x >> customers[i].y >> customers[i].level;
+	}
+	
+	double result = calculate_min_distance(n, k, company_x, company_y, customers);
+	printf("%.1f\n", result);
+	
+	return 0;
+}
+\end{lstlisting}
+
 \end{document}
