@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  6 OCT 2024 01:20
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.2)  6 OCT 2024 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -989,26 +989,27 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 190.
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not avail
 able
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
-191.
+190.
  [1
 
 ]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 204.
+
 
 LaTeX Font Warning: Font shape `TU/FangSong(0)/m/it' undefined
-(Font)              using `TU/FangSong(0)/m/n' instead on input line 213.
+(Font)              using `TU/FangSong(0)/m/n' instead on input line 227.
 
 [2] [3] [4]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 407
+LaTeX Font Info:    Trying to load font information for U+msa on input line 421
 .
  (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 407
+LaTeX Font Info:    Trying to load font information for U+msb on input line 421
 .
 
 (d:/Soft/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1031,7 +1032,7 @@ Package rerunfilecheck Info: File `Huawei.out' has not changed.
 Here is how much of TeX's memory you used:
  22260 strings out of 476683
  466514 string characters out of 5805371
- 2153012 words of memory out of 5000000
+ 2152012 words of memory out of 5000000
  42117 multiletter control sequences out of 15000+600000
  517408 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
