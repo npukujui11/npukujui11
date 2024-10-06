@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <deque>
+#include <queue>
 #include <unordered_map>
 #include <algorithm>
 
@@ -23,9 +23,9 @@ int main() {
 
     // 定义一个二维哈希表，用于统计参照二叉树每层结点的出现次数
     vector<unordered_map<int, int>> nums2_cnt(1001);
-    deque<int> q; // 用于层序遍历的队列
+    queue<int> q; // 用于层序遍历的队列
 
-    q.push_back(0); // 根结点的层号为 0
+    q.push(0); // 根结点的层号为 0
     int depth = 0; // 当前结点的深度
 
     // 统计参照二叉树每层结点的出现次数
@@ -33,11 +33,11 @@ int main() {
         int length = q.size(); // 当前层的结点个数
         for (int i = 0; i < length; ++i) { 
             int node = q.front(); // 取队首元素
-            q.pop_front(); // 出队
+            q.pop(); // 出队
             nums2_cnt[depth][nums2[node]]++; // 当前结点的出现次数加 1
             if (node * 2 + 1 < m) { 
-                q.push_back(node * 2 + 1); // 左孩子入队
-                q.push_back(node * 2 + 2); // 右孩子入队
+                q.push(node * 2 + 1); // 左孩子入队
+                q.push(node * 2 + 2); // 右孩子入队
             }
         }
         depth++;
@@ -50,7 +50,7 @@ int main() {
     }
 
     // 遍历原始二叉树，逐层处理并减去参照树对应层的结点
-    q.push_back(0); // 根结点的层号为 0
+    q.push(0); // 根结点的层号为 0
     depth = 0; // 当前结点的深度
 
     while (!q.empty()) {
@@ -59,11 +59,11 @@ int main() {
 
         for (int i = 0; i < length; ++i) { 
             int node = q.front(); // 取队首元素
-            q.pop_front(); // 出队
+            q.pop(); // 出队
             cur[nums1[node]]++; // 当前结点的出现次数加 1
             if (node * 2 + 1 < n) { 
-                q.push_back(node * 2 + 1); // 左孩子入队
-                q.push_back(node * 2 + 2); // 右孩子入队
+                q.push(node * 2 + 1); // 左孩子入队
+                q.push(node * 2 + 2); // 右孩子入队
             }
         }
 
